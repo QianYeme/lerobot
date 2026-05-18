@@ -350,11 +350,10 @@ def record_loop(
         # Applies a pipeline to the raw robot observation, default is IdentityProcessor
         obs_processed = robot_observation_processor(obs)
 
-        if policy is not None or dataset is not None:
-            observation_frame = build_dataset_frame(dataset.features, obs_processed, prefix=OBS_STR)
-
         # Get action from either policy or teleop
         if policy is not None and preprocessor is not None and postprocessor is not None:
+            observation_frame = build_dataset_frame(dataset.features, obs_processed, prefix=OBS_STR)
+
             action_values = predict_action(
                 observation=observation_frame,
                 policy=policy,
@@ -373,6 +372,12 @@ def record_loop(
                 teleop.send_feedback(obs)
             act = teleop.get_action()
 
+            if "gripper.pos" in act:
+                obs_processed["master_gripper.pos"] = act["gripper.pos"]
+
+            if dataset is not None:
+                observation_frame = build_dataset_frame(dataset.features, obs_processed, prefix=OBS_STR)
+
             # Applies a pipeline to the raw teleop action, default is IdentityProcessor
             act_processed_teleop = teleop_action_processor((act, obs))
 
@@ -382,6 +387,10 @@ def record_loop(
             keyboard_action = teleop_keyboard.get_action()
             base_action = robot._from_keyboard_to_base_action(keyboard_action)
             act = {**arm_action, **base_action} if len(base_action) > 0 else arm_action
+
+            if dataset is not None:
+                observation_frame = build_dataset_frame(dataset.features, obs_processed, prefix=OBS_STR)
+
             act_processed_teleop = teleop_action_processor((act, obs))
         else:
             no_action_count += 1

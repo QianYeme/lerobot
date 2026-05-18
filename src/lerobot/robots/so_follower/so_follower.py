@@ -67,6 +67,14 @@ class SOFollower(Robot):
         return {f"{motor}.pos": float for motor in self.bus.motors}
 
     @property
+    def _gripper_force_ft(self) -> dict[str, type]:
+        return {
+            "gripper.load": float,
+            "gripper.curr": float,
+            "master_gripper.pos": float,
+        }
+
+    @property
     def _cameras_ft(self) -> dict[str, tuple]:
         return {
             cam: (self.config.cameras[cam].height, self.config.cameras[cam].width, 3) for cam in self.cameras
@@ -74,7 +82,7 @@ class SOFollower(Robot):
 
     @cached_property
     def observation_features(self) -> dict[str, type | tuple]:
-        return {**self._motors_ft, **self._cameras_ft}
+        return {**self._motors_ft, **self._gripper_force_ft, **self._cameras_ft}
 
     @cached_property
     def action_features(self) -> dict[str, type]:
@@ -176,10 +184,22 @@ class SOFollower(Robot):
 
     @check_if_not_connected
     def get_observation(self) -> RobotObservation:
-        # Read arm position
         start = time.perf_counter()
-        obs_dict = self.bus.sync_read("Present_Position")
-        obs_dict = {f"{motor}.pos": val for motor, val in obs_dict.items()}
+
+        arm_motors = [m for m in self.bus.motors if m != "gripper"]
+        arm_pos = self.bus.sync_read("Present_Position", motors=arm_motors)
+        obs_dict = {f"{motor}.pos": val for motor, val in arm_pos.items()}
+
+        gripper_telemetry = self.bus.sync_read_multi(
+            ["Present_Position", "Present_Load", "Present_Current"],
+            motors=["gripper"],
+        )
+        obs_dict["gripper.pos"] = gripper_telemetry["Present_Position"]["gripper"]
+        obs_dict["gripper.load"] = gripper_telemetry["Present_Load"]["gripper"]
+        obs_dict["gripper.curr"] = gripper_telemetry["Present_Current"]["gripper"]
+
+        obs_dict["master_gripper.pos"] = 0.0
+
         dt_ms = (time.perf_counter() - start) * 1e3
         logger.debug(f"{self} read state: {dt_ms:.1f}ms")
 

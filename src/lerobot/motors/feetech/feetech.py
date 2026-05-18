@@ -13,12 +13,13 @@
 # limitations under the License.
 
 import logging
+from collections.abc import Sequence
 from copy import deepcopy
 from enum import Enum
 from pprint import pformat
 
 from ..encoding_utils import decode_sign_magnitude, encode_sign_magnitude
-from ..motors_bus import Motor, MotorCalibration, NameOrID, SerialMotorsBus, Value, get_address
+from ..motors_bus import Motor, MotorCalibration, NameOrID, SerialMotorsBus, Value, assert_same_address, get_address
 from .tables import (
     FIRMWARE_MAJOR_VERSION,
     FIRMWARE_MINOR_VERSION,
@@ -327,6 +328,63 @@ class FeetechMotorsBus(SerialMotorsBus):
                 ids_values[id_] = decode_sign_magnitude(ids_values[id_], sign_bit)
 
         return ids_values
+
+    def sync_read_multi(
+        self,
+        data_names: list[str],
+        motors: NameOrID | Sequence[NameOrID] | None = None,
+        *,
+        normalize: bool = True,
+        num_retry: int = 0,
+    ) -> dict[str, dict[str, Value]]:
+        self._assert_protocol_is_compatible("sync_read")
+
+        names = self._get_motors_list(motors)
+        ids = [self.motors[motor].id for motor in names]
+        models = [self.motors[motor].model for motor in names]
+
+        addr_info = []
+        for data_name in data_names:
+            if self._has_different_ctrl_tables:
+                assert_same_address(self.model_ctrl_table, models, data_name)
+            model = next(iter(models))
+            addr, length = get_address(self.model_ctrl_table, model, data_name)
+            addr_info.append((data_name, addr, length))
+
+        start_addr = min(addr for _, addr, _ in addr_info)
+        end_addr = max(addr + length for _, addr, length in addr_info)
+        total_length = end_addr - start_addr
+
+        err_msg = (
+            f"Failed to sync read block from {start_addr=} ({total_length=}B) "
+            f"on {ids=} after {num_retry + 1} tries."
+        )
+        self._setup_sync_reader(ids, start_addr, total_length)
+
+        comm = self._comm_success
+        for n_try in range(1 + num_retry):
+            comm = self.sync_reader.txRxPacket()
+            if self._is_comm_success(comm):
+                break
+            logger.debug(
+                f"Failed to sync read block @{start_addr=} ({total_length=}B) on {ids=} ({n_try=}): "
+                + self.packet_handler.getTxRxResult(comm)
+            )
+
+        if not self._is_comm_success(comm):
+            raise ConnectionError(f"{err_msg} {self.packet_handler.getTxRxResult(comm)}")
+
+        result: dict[str, dict[str, Value]] = {}
+        for data_name, addr, length in addr_info:
+            raw_ids_values = {id_: self.sync_reader.getData(id_, addr, length) for id_ in ids}
+            decoded = self._decode_sign(data_name, raw_ids_values)
+            if normalize and data_name in self.normalized_data:
+                normalized = self._normalize(decoded)
+                result[data_name] = {self._id_to_name(id_): value for id_, value in normalized.items()}
+            else:
+                result[data_name] = {self._id_to_name(id_): value for id_, value in decoded.items()}
+
+        return result
 
     def _split_into_byte_chunks(self, value: int, length: int) -> list[int]:
         return _split_into_byte_chunks(value, length)

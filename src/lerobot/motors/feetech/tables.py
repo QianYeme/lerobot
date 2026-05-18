@@ -213,6 +213,7 @@ STS_SMS_SERIES_ENCODINGS_TABLE = {
     "Present_Position": 15,
     "Present_Velocity": 15,
     "Present_Speed": 15,
+    "Present_Current": 10,
 }
 
 MODEL_ENCODING_TABLE = {
