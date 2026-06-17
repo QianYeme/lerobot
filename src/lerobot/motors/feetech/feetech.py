@@ -19,7 +19,15 @@ from enum import Enum
 from pprint import pformat
 
 from ..encoding_utils import decode_sign_magnitude, encode_sign_magnitude
-from ..motors_bus import Motor, MotorCalibration, NameOrID, SerialMotorsBus, Value, assert_same_address, get_address
+from ..motors_bus import (
+    Motor,
+    MotorCalibration,
+    NameOrID,
+    SerialMotorsBus,
+    Value,
+    assert_same_address,
+    get_address,
+)
 from .tables import (
     FIRMWARE_MAJOR_VERSION,
     FIRMWARE_MINOR_VERSION,
