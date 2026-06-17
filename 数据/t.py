@@ -1,5 +1,4 @@
 import json
-import numpy as np
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -16,8 +15,14 @@ def check_info_json():
     action_dim = info["features"]["action"]["shape"][0]
 
     # 基线维度（修改前只有这些）
-    baseline = {"shoulder_pan.pos", "shoulder_lift.pos", "elbow_flex.pos",
-                "wrist_flex.pos", "wrist_roll.pos", "gripper.pos"}
+    baseline = {
+        "shoulder_pan.pos",
+        "shoulder_lift.pos",
+        "elbow_flex.pos",
+        "wrist_flex.pos",
+        "wrist_roll.pos",
+        "gripper.pos",
+    }
     expanded_state = [n for n in state_names if n not in baseline]
     expanded_action = [n for n in action_names if n not in baseline]
 
@@ -33,7 +38,7 @@ def check_info_json():
         print(f"    [{i}] {name}{tag}")
 
     if expanded_state or expanded_action:
-        print(f"\n  检测到维度扩展:")
+        print("\n  检测到维度扩展:")
         for n in expanded_state:
             print(f"    + observation: {n}")
         for n in expanded_action:
@@ -60,7 +65,7 @@ def check_parquet_direct():
         pf = pq.ParquetFile(str(parquet_path))
         batch = next(pf.iter_batches(batch_size=3))
         df = batch.to_pandas()
-        print(f"\n=== Parquet 数据验证（前 3 帧） ===")
+        print("\n=== Parquet 数据验证（前 3 帧） ===")
         print(f"  列名: {list(df.columns)}")
 
         if "observation.state" in df.columns:
