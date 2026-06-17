@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx skills *)",
+      "Bash(python3 *)",
+      "Bash(where python3 *)",
+      "Bash(where python *)",
+      "Bash(D:/ProgramData/anaconda3/python.exe -c \"print\\('hello'\\)\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(D:/ProgramData/anaconda3/python.exe -c ' *)",
+      "Bash(D:/ProgramData/anaconda3/python.exe *)"
+    ]
+  }
+}
