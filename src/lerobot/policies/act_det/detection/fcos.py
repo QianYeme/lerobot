@@ -30,6 +30,8 @@ class FCOSHead(nn.Module):
         num_classes: Number of object classes (excluding background).
         num_convs: Number of convolutional layers in each tower.
         gn_groups: Number of groups for GroupNorm.
+        inject_dim: If set, adds a 1×1 Conv projection (256 → inject_dim) for
+            feature injection (Innovation 2). Default None = no injection.
     """
 
     def __init__(
@@ -38,11 +40,13 @@ class FCOSHead(nn.Module):
         num_classes: int = 1,
         num_convs: int = 4,
         gn_groups: int = 32,
+        inject_dim: int | None = None,
     ):
         super().__init__()
         self.in_channels = in_channels
         self.num_classes = num_classes
         self.num_convs = num_convs
+        self.inject_dim = inject_dim
 
         # Shared feature towers (one per branch).
         self.cls_feature = self._make_tower(in_channels)
@@ -58,6 +62,10 @@ class FCOSHead(nn.Module):
         self.scales = nn.ParameterList([
             nn.Parameter(torch.tensor(1.0)) for _ in range(3)
         ])
+
+        # Injection projection: 256 → inject_dim (Innovation 2).
+        if inject_dim is not None:
+            self.inject_proj = nn.Conv2d(in_channels * 2, inject_dim, kernel_size=1)
 
         self._reset_parameters()
 
@@ -90,6 +98,11 @@ class FCOSHead(nn.Module):
         nn.init.normal_(self.ctr_pred.weight, std=0.01)
         nn.init.constant_(self.ctr_pred.bias, 0)
 
+        # Injection projection (Innovation 2).
+        if self.inject_dim is not None:
+            nn.init.normal_(self.inject_proj.weight, std=0.01)
+            nn.init.constant_(self.inject_proj.bias, 0)
+
     def forward(self, features: list[Tensor]) -> tuple[list[Tensor], list[Tensor], list[Tensor]]:
         """Forward pass over multiple FPN feature levels.
 
@@ -118,6 +131,60 @@ class FCOSHead(nn.Module):
             ctr_preds_list.append(self.ctr_pred(ctr_feat))
 
         return cls_logits_list, reg_preds_list, ctr_preds_list
+
+    # Mapping from level name to index in the feature list [P2, P3, P4].
+    _LEVEL_TO_IDX: dict[str, int] = {"p2": 0, "p3": 1, "p4": 2}
+
+    def get_inject_features(
+        self,
+        features: list[Tensor],
+        levels: list[str],
+    ) -> list[Tensor]:
+        """Extract FCOS tower intermediate features for injection (Innovation 2).
+
+        For each requested FPN level:
+          1. Runs cls_tower, reg_tower, ctr_tower on the feature map.
+          2. Concatenates cls_f (128ch) + reg_f (128ch) → 256ch.
+          3. Gates with centerness: ×(1.0 + sigmoid(ctr_pred)), so
+             high-confidence regions are amplified up to 2×.
+          4. Projects 256 → inject_dim via 1×1 Conv.
+
+        Args:
+            features: List of [P2, P3, P4] FPN feature maps, each (B, C, H, W).
+            levels: Which levels to extract, e.g. ["p4"] or ["p3", "p4"].
+
+        Returns:
+            List of projected feature tensors (B, inject_dim, H, W), one per
+            requested level, in the same order as ``levels``.
+        """
+        if self.inject_dim is None:
+            raise ValueError(
+                "FCOSHead was not initialized with inject_dim. "
+                "Set inject_dim in the constructor to use feature injection."
+            )
+
+        level_indices = [self._LEVEL_TO_IDX[l] for l in levels]
+        inject_tokens = []
+
+        for idx in level_indices:
+            feat = features[idx]
+            cls_feat = self.cls_feature(feat)  # (B, 128, H, W)
+            reg_feat = self.reg_feature(feat)  # (B, 128, H, W)
+            ctr_feat = self.ctr_feature(feat)  # (B, 128, H, W)
+
+            # Centerness gate (raw logit → sigmoid → [0,1], then +1 → [1,2]).
+            ctr_pred = self.ctr_pred(ctr_feat)  # (B, 1, H, W)
+            gate = 1.0 + torch.sigmoid(ctr_pred)  # values in [1, 2]
+
+            # Concatenate cls + reg intermediate features.
+            combined = torch.cat([cls_feat, reg_feat], dim=1)  # (B, 256, H, W)
+            gated = combined * gate
+
+            # Project to inject_dim.
+            projected = self.inject_proj(gated)  # (B, inject_dim, H, W)
+            inject_tokens.append(projected)
+
+        return inject_tokens
 
 
 def compute_fcos_loss(

@@ -1,0 +1,101 @@
+meta:
+  profile: academic-paper
+  figureType: architecture
+  theme: academic-color
+  layout: horizontal
+  canvas: "900x700"
+  print: { target: cn-thesis }
+  title: "(b) FPN 与辅助监督分支"
+  description: "FPN融合多尺度特征后分两路：FCOS检测头(bbox监督)和Mask Decoder(像素监督)，仅在训练时存在。"
+  legend: "虚线框 = 仅训练  |  点线箭头 = 梯度/Loss流"
+
+modules:
+  - id: input_stage
+    label: Backbone Features
+  - id: fpn_stage
+    label: Feature Pyramid Network
+  - id: det_stage
+    label: Detection Branch (Training Only)
+  - id: mask_stage
+    label: Mask Branch (Training Only)
+
+nodes:
+  - id: features_in
+    label: "F2 / F3 / F4\nfrom ResNet18"
+    type: tensor3d
+    module: input_stage
+    bounds: { x: 40, y: 120, width: 120, height: 52 }
+
+  - id: fpn
+    label: "Feature Pyramid Network\nP2 (60x80) / P3 (30x40) / P4 (15x20)"
+    type: attention
+    module: fpn_stage
+    bounds: { x: 220, y: 110, width: 230, height: 64 }
+
+  - id: fcos_head
+    label: "FCOS Detection Head\nCLS Tower / REG Tower / CTR Tower\n(Shared weights across levels)"
+    type: process
+    module: det_stage
+    bounds: { x: 520, y: 40, width: 240, height: 68 }
+    style:
+      fontSize: 12
+
+  - id: det_loss
+    label: "Detection Loss\nFocal + L1 + BCE"
+    type: loss
+    module: det_stage
+    bounds: { x: 520, y: 180, width: 160, height: 56 }
+
+  - id: mask_dec
+    label: "Mask Decoder\nP4+P3+P2 Fusion Up\n-> 480x640 mask"
+    type: process
+    module: mask_stage
+    bounds: { x: 520, y: 300, width: 210, height: 68 }
+    style:
+      fontSize: 12
+
+  - id: mask_loss
+    label: "Mask Loss\nL1 |pred - GT|"
+    type: loss
+    module: mask_stage
+    bounds: { x: 520, y: 440, width: 150, height: 56 }
+
+  - id: sam2_gt
+    label: "SAM2 GT Mask\n(.npz offline)"
+    type: input
+    module: mask_stage
+    bounds: { x: 260, y: 460, width: 140, height: 52 }
+
+  - id: to_fusion
+    label: "P2/P3/P4 -> Fusion"
+    type: text
+    bounds: { x: 220, y: 230, width: 130, height: 18 }
+    style:
+      fontSize: 10
+      fontStyle: 2
+
+edges:
+  - from: features_in
+    to: fpn
+    type: primary
+  - from: fpn
+    to: fcos_head
+    type: primary
+  - from: fpn
+    to: mask_dec
+    type: primary
+  - from: fcos_head
+    to: det_loss
+    type: optional
+    label: "grad"
+    labelOffset: { x: 12, y: 0 }
+  - from: mask_dec
+    to: mask_loss
+    type: optional
+    label: "grad"
+    labelOffset: { x: 12, y: 0 }
+  - from: sam2_gt
+    to: mask_loss
+    type: data
+    label: "GT mask"
+    labelOffset: { x: 0, y: -12 }

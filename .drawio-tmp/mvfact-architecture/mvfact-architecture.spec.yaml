@@ -1,0 +1,370 @@
+meta:
+  profile: academic-paper
+  figureType: architecture
+  theme: academic-color
+  layout: vertical
+  canvas: 1000x980
+  print:
+    target: cn-thesis
+  title: M-VF-ACT 模型训练架构图
+  description: 检测分支(FCOS)和Mask分支作为辅助监督塑造共享Backbone。推理时两者丢弃，FPN和Fusion仍运行以保留空间注意力引导。
+  legend: 实线框 = 推理保留模块  |  虚线框 = 训练辅助模块
+modules:
+  - id: input_stage
+    label: Input
+  - id: backbone_stage
+    label: Backbone & Aug
+  - id: aux_stage
+    label: Auxiliary Heads (Training Only)
+  - id: fusion_stage
+    label: Feature Fusion
+  - id: transformer_stage
+    label: Transformer
+  - id: output_stage
+    label: Output & Loss
+nodes:
+  - id: top_cam
+    label: |-
+      Top Camera
+      (480x640x3)
+    type: input
+    module: input_stage
+    bounds:
+      x: 80
+      'y': 40
+      width: 134
+      height: 52
+  - id: wrist_cam
+    label: |-
+      Wrist Camera
+      (480x640x3)
+    type: input
+    module: input_stage
+    bounds:
+      x: 310
+      'y': 40
+      width: 134
+      height: 52
+  - id: robot_state
+    label: Robot State (9-dim)
+    type: input
+    module: input_stage
+    bounds:
+      x: 560
+      'y': 40
+      width: 134
+      height: 52
+  - id: data_aug
+    label: |-
+      Data Augmentation
+      (Color / Noise / Occlusion)
+      Only Top, Training Only
+    type: process
+    module: backbone_stage
+    bounds:
+      x: 50
+      'y': 160
+      width: 184
+      height: 68
+    style:
+      fontSize: 12
+  - id: resnet
+    label: |-
+      Shared ResNet18
+      (layer2 / layer3 / layer4)
+    type: conv
+    module: backbone_stage
+    bounds:
+      x: 310
+      'y': 160
+      width: 184
+      height: 68
+  - id: resnet_features
+    label: |-
+      F2 (128ch,60x80)
+      F3 (256ch,30x40)
+      F4 (512ch,15x20)
+    type: tensor3d
+    module: backbone_stage
+    bounds:
+      x: 580
+      'y': 150
+      width: 140
+      height: 72
+  - id: fpn
+    label: |-
+      Feature Pyramid Network
+      P2 / P3 / P4
+    type: attention
+    module: aux_stage
+    bounds:
+      x: 60
+      'y': 310
+      width: 200
+      height: 56
+  - id: fcos_head
+    label: |-
+      FCOS Detection Head
+      (CLS / REG / CTR)
+    type: process
+    module: aux_stage
+    bounds:
+      x: 340
+      'y': 290
+      width: 170
+      height: 52
+  - id: det_loss
+    label: |-
+      Detection Loss
+      Focal + L1 + BCE
+    type: loss
+    module: aux_stage
+    bounds:
+      x: 570
+      'y': 290
+      width: 140
+      height: 52
+  - id: mask_decoder
+    label: |-
+      Mask Decoder
+      (FPN Fusion -> 480x640)
+    type: process
+    module: aux_stage
+    bounds:
+      x: 340
+      'y': 380
+      width: 170
+      height: 52
+  - id: mask_loss
+    label: |-
+      Mask Loss
+      L1 |pred - GT|
+    type: loss
+    module: aux_stage
+    bounds:
+      x: 570
+      'y': 380
+      width: 130
+      height: 52
+  - id: sam2_gt
+    label: |-
+      SAM2 GT Mask
+      (.npz offline)
+    type: input
+    module: aux_stage
+    bounds:
+      x: 750
+      'y': 380
+      width: 130
+      height: 52
+  - id: fusion
+    label: |-
+      Detection-Feature Fusion
+      Attention Map x4 -> Enhanced F4
+    type: attention
+    module: fusion_stage
+    bounds:
+      x: 60
+      'y': 500
+      width: 260
+      height: 56
+  - id: enhanced_f4
+    label: |-
+      Enhanced F4
+      (512ch, 15x20)
+    type: tensor3d
+    module: fusion_stage
+    bounds:
+      x: 420
+      'y': 500
+      width: 120
+      height: 52
+  - id: wrist_f4
+    label: |-
+      Wrist F4
+      (512ch, 15x20)
+    type: tensor3d
+    module: fusion_stage
+    bounds:
+      x: 650
+      'y': 240
+      width: 120
+      height: 48
+  - id: encoder
+    label: |-
+      Transformer Encoder
+      [Latent | State | Tokens...]
+    type: attention
+    module: transformer_stage
+    bounds:
+      x: 60
+      'y': 640
+      width: 300
+      height: 60
+  - id: decoder
+    label: |-
+      Transformer Decoder
+      Queries x Cross-Attention
+    type: attention
+    module: transformer_stage
+    bounds:
+      x: 450
+      'y': 640
+      width: 260
+      height: 60
+  - id: action_head
+    label: |-
+      Action Head
+      Linear -> (chunk, 6)
+    type: output
+    module: output_stage
+    bounds:
+      x: 60
+      'y': 790
+      width: 170
+      height: 56
+  - id: total_loss
+    label: Total Loss = Action_L1 + KL + det_weight x Det_Loss + mask_weight x Mask_Loss
+    type: formula
+    module: output_stage
+    bounds:
+      x: 290
+      'y': 790
+      width: 530
+      height: 48
+    style:
+      fontSize: 13
+  - id: legend_text
+    label: Solid = Inference modules    Dashed = Training-only modules    Dotted = Gradient/Loss flow
+    type: text
+    module: output_stage
+    bounds:
+      x: 80
+      'y': 900
+      width: 640
+      height: 24
+    style:
+      fontSize: 13
+edges:
+  - from: top_cam
+    to: data_aug
+    type: primary
+  - from: wrist_cam
+    to: resnet
+    type: primary
+    label: Wrist
+    labelOffset:
+      x: 0
+      'y': -14
+  - from: data_aug
+    to: resnet
+    type: primary
+    label: Top (aug)
+    labelOffset:
+      x: 0
+      'y': -14
+  - from: resnet
+    to: resnet_features
+    type: data
+  - from: resnet_features
+    to: fpn
+    type: data
+    label: F2/F3/F4
+    labelOffset:
+      x: 0
+      'y': -14
+  - from: fpn
+    to: fcos_head
+    type: primary
+  - from: fpn
+    to: mask_decoder
+    type: primary
+  - from: fcos_head
+    to: det_loss
+    type: optional
+    label: grad
+    labelOffset:
+      x: 0
+      'y': -12
+  - from: mask_decoder
+    to: mask_loss
+    type: optional
+    label: grad
+    labelOffset:
+      x: 0
+      'y': -12
+  - from: sam2_gt
+    to: mask_loss
+    type: data
+    label: GT
+    labelOffset:
+      x: 0
+      'y': -12
+  - from: fpn
+    to: fusion
+    type: primary
+  - from: resnet_features
+    to: fusion
+    type: data
+    label: F4 skip
+    labelOffset:
+      x: 0
+      'y': -14
+  - from: fusion
+    to: enhanced_f4
+    type: primary
+  - from: resnet
+    to: wrist_f4
+    type: data
+    label: Wrist F4
+    labelOffset:
+      x: 0
+      'y': -14
+  - from: enhanced_f4
+    to: encoder
+    type: primary
+    label: Top tokens
+    labelOffset:
+      x: 0
+      'y': -14
+  - from: wrist_f4
+    to: encoder
+    type: data
+    label: Wrist tokens
+    labelOffset:
+      x: 0
+      'y': -14
+  - from: robot_state
+    to: encoder
+    type: data
+    label: State token
+    labelOffset:
+      x: 0
+      'y': -14
+  - from: encoder
+    to: decoder
+    type: primary
+  - from: decoder
+    to: action_head
+    type: primary
+  - from: action_head
+    to: total_loss
+    type: optional
+    label: L1
+    labelOffset:
+      x: 0
+      'y': -12
+  - from: det_loss
+    to: total_loss
+    type: optional
+    label: det x Ldet
+    labelOffset:
+      x: 0
+      'y': -12
+  - from: mask_loss
+    to: total_loss
+    type: optional
+    label: mask x Lmask
+    labelOffset:
+      x: 0
+      'y': -12

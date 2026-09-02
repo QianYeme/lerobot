@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "title": "YOLO-Style Detector",
+  "type": "academic-diagram",
+  "source": "generated",
+  "profile": "academic-paper",
+  "theme": "academic-color",
+  "layout": "horizontal",
+  "counts": {
+    "nodes": 11,
+    "edges": 11,
+    "modules": 4
+  },
+  "nodes": [
+    {
+      "id": "image",
+      "label": "Image batch",
+      "type": "input",
+      "module": "inputStage"
+    },
+    {
+      "id": "tensor0",
+      "label": "H x W x 3",
+      "type": "tensor3d",
+      "module": "inputStage"
+    },
+    {
+      "id": "stem",
+      "label": "Stem Conv",
+      "type": "conv",
+      "module": "backbone"
+    },
+    {
+      "id": "csp",
+      "label": "CSP blocks",
+      "type": "conv",
+      "module": "backbone"
+    },
+    {
+      "id": "spp",
+      "label": "SPPF",
+      "type": "pool",
+      "module": "backbone"
+    },
+    {
+      "id": "p3",
+      "label": "P3 feature",
+      "type": "tensor3d",
+      "module": "neck"
+    },
+    {
+      "id": "fuse",
+      "label": "PAN fusion",
+      "type": "attention",
+      "module": "neck"
+    },
+    {
+      "id": "p5",
+      "label": "P5 feature",
+      "type": "tensor3d",
+      "module": "neck"
+    },
+    {
+      "id": "detectSmall",
+      "label": "Small head",
+      "type": "output",
+      "module": "head"
+    },
+    {
+      "id": "detectLarge",
+      "label": "Large head",
+      "type": "output",
+      "module": "head"
+    },
+    {
+      "id": "loss",
+      "label": "Box + cls loss",
+      "type": "loss",
+      "module": "head"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "from": "image",
+      "to": "tensor0",
+      "type": "primary"
+    },
+    {
+      "id": "edge-2",
+      "from": "tensor0",
+      "to": "stem",
+      "type": "primary"
+    },
+    {
+      "id": "edge-3",
+      "from": "stem",
+      "to": "csp",
+      "type": "primary"
+    },
+    {
+      "id": "edge-4",
+      "from": "csp",
+      "to": "spp",
+      "type": "primary"
+    },
+    {
+      "id": "edge-5",
+      "from": "spp",
+      "to": "p3",
+      "type": "data",
+      "label": "multi-scale"
+    },
+    {
+      "id": "edge-6",
+      "from": "p3",
+      "to": "fuse",
+      "type": "primary"
+    },
+    {
+      "id": "edge-7",
+      "from": "fuse",
+      "to": "p5",
+      "type": "primary"
+    },
+    {
+      "id": "edge-8",
+      "from": "fuse",
+      "to": "detectSmall",
+      "type": "data",
+      "label": "P3/P4"
+    },
+    {
+      "id": "edge-9",
+      "from": "p5",
+      "to": "detectLarge",
+      "type": "data",
+      "label": "P5"
+    },
+    {
+      "id": "edge-10",
+      "from": "detectSmall",
+      "to": "loss",
+      "type": "optional"
+    },
+    {
+      "id": "edge-11",
+      "from": "detectLarge",
+      "to": "loss",
+      "type": "optional"
+    }
+  ],
+  "modules": [
+    {
+      "id": "inputStage",
+      "label": "Input"
+    },
+    {
+      "id": "backbone",
+      "label": "Backbone"
+    },
+    {
+      "id": "neck",
+      "label": "Neck / Fusion"
+    },
+    {
+      "id": "head",
+      "label": "Head and Loss"
+    }
+  ]
+}

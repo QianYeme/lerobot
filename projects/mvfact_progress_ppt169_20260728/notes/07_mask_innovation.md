@@ -1,0 +1,1 @@
+这一页重点展开我们的核心创新。透明杯在RGB中几乎看不见——FCOS的稀疏bbox监督只能定位，无法刻画边缘。Mask Decoder用SAM2生成的逐像素mask作为训练标签，通过密集的L1 loss让Backbone学会区分透明杯和背景。这是FCOS和Mask Decoder的互补关系。

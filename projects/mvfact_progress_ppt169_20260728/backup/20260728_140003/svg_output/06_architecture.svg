@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="4" fill="#1A56DB"/>
+
+  <text x="80" y="50" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700" fill="#1F2937">M-VF-ACT 在原始 ACT 基础上新增三个训练辅助分支，推理时零额外依赖</text>
+
+  <!-- Architecture flow - simplified top-to-bottom -->
+  <!-- Input row -->
+  <rect x="80" y="85" width="160" height="48" rx="0" fill="#1A56DB"/>
+  <text x="160" y="114" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">Top Camera (480x640x3)</text>
+
+  <rect x="300" y="85" width="160" height="48" rx="0" fill="#1A56DB"/>
+  <text x="380" y="114" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">Wrist Camera (480x640x3)</text>
+
+  <rect x="620" y="85" width="160" height="48" rx="0" fill="#0EA5E9"/>
+  <text x="700" y="114" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">Robot State (6/9 dim)</text>
+
+  <!-- Arrows down -->
+  <line x1="160" y1="133" x2="160" y2="165" stroke="#1A56DB" stroke-width="2"/>
+  <line x1="300" y1="133" x2="300" y2="165" stroke="#1A56DB" stroke-width="2"/>
+  <line x1="700" y1="133" x2="700" y2="250" stroke="#1A56DB" stroke-width="2"/>
+
+  <!-- Data Aug (dashed style = training only) -->
+  <rect x="30" y="165" width="170" height="40" rx="0" fill="none" stroke="#6B7280" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="115" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280" text-anchor="middle">Data Aug (仅训练)</text>
+  <line x1="160" y1="205" x2="200" y2="225" stroke="#6B7280" stroke-width="2"/>
+
+  <!-- Shared ResNet18 -->
+  <rect x="240" y="225" width="240" height="56" rx="0" fill="#1A56DB"/>
+  <text x="360" y="256" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Shared ResNet18</text>
+  <text x="360" y="273" font-family="Microsoft YaHei, Arial, sans-serif" font-size="11" fill="#A3C4F3" text-anchor="middle">layer2(F2)/layer3(F3)/layer4(F4)</text>
+
+  <line x1="130" y1="205" x2="200" y2="245" stroke="#A0C4F0" stroke-width="1.5"/>
+
+  <!-- Down arrows from ResNet -->
+  <line x1="360" y1="281" x2="360" y2="310" stroke="#1A56DB" stroke-width="2"/>
+
+  <!-- FPN -->
+  <rect x="250" y="310" width="220" height="44" rx="0" fill="#F0F4F8" stroke="#1A56DB" stroke-width="2"/>
+  <text x="360" y="337" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" fill="#1A56DB" text-anchor="middle">Feature Pyramid Network</text>
+
+  <!-- Three arrows from FPN -->
+  <line x1="300" y1="354" x2="150" y2="400" stroke="#1A56DB" stroke-width="2"/>
+  <line x1="360" y1="354" x2="360" y2="400" stroke="#1A56DB" stroke-width="2"/>
+  <line x1="520" y1="354" x2="620" y2="470" stroke="#1A56DB" stroke-width="2"/>
+
+  <!-- FCOS Head -->
+  <rect x="80" y="400" width="155" height="48" rx="0" fill="none" stroke="#E0245E" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="157" y="426" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#E0245E" text-anchor="middle">FCOS Detection Head</text>
+  <text x="157" y="442" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">(仅训练)</text>
+
+  <!-- Mask Decoder -->
+  <rect x="270" y="400" width="180" height="48" rx="0" fill="none" stroke="#E0245E" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="360" y="426" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#E0245E" text-anchor="middle">Mask Decoder</text>
+  <text x="360" y="442" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">(仅训练，480x640 mask)</text>
+
+  <!-- Loss boxes -->
+  <rect x="80" y="470" width="155" height="36" rx="0" fill="#F0F4F8"/>
+  <text x="157" y="493" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#1F2937" text-anchor="middle">Detection Loss</text>
+  <rect x="270" y="470" width="180" height="36" rx="0" fill="#F0F4F8"/>
+  <text x="360" y="493" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#1F2937" text-anchor="middle">Mask Loss (L1)</text>
+
+  <!-- Down from FPN to Fusion -->
+  <line x1="520" y1="332" x2="520" y2="470" stroke="#1A56DB" stroke-width="2"/>
+
+  <!-- Feature Fusion -->
+  <rect x="430" y="470" width="190" height="60" rx="0" fill="#1A56DB"/>
+  <text x="525" y="498" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Feature Fusion Module</text>
+  <text x="525" y="518" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#A3C4F3" text-anchor="middle">空间注意力图 x4 → 增强 F4</text>
+
+  <!-- Transformer -->
+  <line x1="525" y1="530" x2="525" y2="555" stroke="#1A56DB" stroke-width="2"/>
+
+  <rect x="400" y="555" width="250" height="52" rx="0" fill="#1A56DB"/>
+  <text x="525" y="580" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Transformer Encoder + Decoder</text>
+  <text x="525" y="598" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#A3C4F3" text-anchor="middle">[Latent | State | Top tokens | Wrist tokens]</text>
+
+  <!-- Action -->
+  <line x1="525" y1="607" x2="525" y2="630" stroke="#1A56DB" stroke-width="2"/>
+
+  <rect x="430" y="630" width="190" height="40" rx="0" fill="#1A56DB"/>
+  <text x="525" y="655" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">Action Head → (chunk, 6)</text>
+
+  <!-- Right annotation panel -->
+  <rect x="680" y="165" width="520" height="260" rx="0" fill="#F0F4F8"/>
+  <text x="710" y="200" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2937">三个训练辅助分支 (推理丢弃)</text>
+
+  <text x="710" y="235" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1A56DB">1. Data Augmentation</text>
+  <text x="730" y="255" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">色彩抖动 / 高斯噪声 / 随机遮挡</text>
+  <text x="730" y="272" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">仅 Top 视角, prob=0.9, 在线增强</text>
+
+  <text x="710" y="305" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#E0245E">2. FCOS Detection Head</text>
+  <text x="730" y="325" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">三塔: 分类 + 回归 + 中心度 / Focal+L1+BCE</text>
+  <text x="730" y="342" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">塑造 Backbone → "杯子在哪"的定位能力</text>
+
+  <text x="710" y="375" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#E0245E">3. Mask Decoder</text>
+  <text x="730" y="395" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">FPN 三层上采样融合 → 480x640 mask</text>
+  <text x="730" y="412" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">逐像素 L1 Loss ← SAM2 GT</text>
+
+  <!-- Bottom: inference note -->
+  <rect x="680" y="450" width="520" height="70" rx="0" fill="#1A56DB"/>
+  <text x="710" y="478" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">推理时：FCOS + Mask Decoder 丢弃</text>
+  <text x="710" y="502" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#A3C4F3">但 Backbone + FPN + Fusion Module 仍运行 → 权重已被检测Mask梯度"雕刻"</text>
+
+  <rect x="80" y="695" width="1" height="15" fill="#E5E7EB"/>
+  <text x="95" y="705" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">模型架构总览</text>
+  <text x="1200" y="705" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="end">6 / 12</text>
+</svg>

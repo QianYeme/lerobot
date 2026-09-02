@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="4" fill="#1A56DB"/>
+
+  <text x="80" y="65" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36" font-weight="700" fill="#1F2937">透明杯力控抓取面临三重核心挑战，模仿学习泛化能力不足是根本瓶颈</text>
+  <rect x="80" y="85" width="60" height="3" fill="#1A56DB"/>
+
+  <!-- Three challenge cards in a row -->
+  <rect x="80" y="130" width="350" height="260" rx="0" fill="#F0F4F8"/>
+  <rect x="80" y="130" width="350" height="4" fill="#E0245E"/>
+  <text x="110" y="170" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="700" fill="#E0245E">挑战 1：视觉感知困难</text>
+  <text x="110" y="210" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">透明塑料杯在 RGB 图像中几乎不可见</text>
+  <text x="110" y="240" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">杯壁与灰色桌面融为一体</text>
+  <text x="110" y="270" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">边缘仅有微弱折射亮线</text>
+  <text x="110" y="300" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">传统 CNN 特征提取困难</text>
+  <text x="110" y="350" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">→ 需要增强视觉感知能力</text>
+
+  <rect x="465" y="130" width="350" height="260" rx="0" fill="#F0F4F8"/>
+  <rect x="465" y="130" width="350" height="4" fill="#E0245E"/>
+  <text x="495" y="170" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="700" fill="#E0245E">挑战 2：力控接触判断</text>
+  <text x="495" y="210" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">视觉无法判断夹爪是否接触杯壁</text>
+  <text x="495" y="240" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">接触延迟 → 杯子滑落</text>
+  <text x="495" y="270" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">接触过度 → 杯子捏碎</text>
+  <text x="495" y="300" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">不同水量需要不同力度</text>
+  <text x="495" y="350" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">→ 需要力觉-视觉联合感知</text>
+
+  <rect x="850" y="130" width="350" height="260" rx="0" fill="#F0F4F8"/>
+  <rect x="850" y="130" width="350" height="4" fill="#E0245E"/>
+  <text x="880" y="170" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="700" fill="#E0245E">挑战 3：位置泛化能力</text>
+  <text x="880" y="210" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">训练集位置固定 → 测试时过拟合</text>
+  <text x="880" y="240" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">论文验证：固定位置训练 80%</text>
+  <text x="880" y="270" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">→ 随机位置测试骤降至 3.3%</text>
+  <text x="880" y="300" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937">即使随机训练也仅 20%</text>
+  <text x="880" y="350" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">→ 需要数据增强 + 检测Mask引导</text>
+
+  <!-- Bottom takeaway -->
+  <rect x="80" y="430" width="1120" height="80" rx="0" fill="#1A56DB"/>
+  <text x="120" y="465" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">本文核心思路：在原始 ACT 基础上，通过数据增强 + 目标检测 + Mask 引导感知，提升模型对透明物体的视觉感知和泛化能力</text>
+  <text x="120" y="495" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#A3C4F3">基于论文"增强视觉感知的ACT算法在机械臂装配任务研究"的改进与扩展</text>
+
+  <!-- Page number -->
+  <rect x="80" y="550" width="1120" height="1" fill="#E5E7EB"/>
+  <text x="80" y="590" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">研究背景</text>
+  <text x="1200" y="590" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="end">3 / 12</text>
+</svg>

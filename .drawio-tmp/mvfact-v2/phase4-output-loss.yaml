@@ -1,0 +1,102 @@
+meta:
+  profile: academic-paper
+  figureType: architecture
+  theme: academic-color
+  layout: horizontal
+  canvas: "900x600"
+  print: { target: cn-thesis }
+  title: "(d) 输出与总损失"
+  description: "Decoder输出经Action Head预测动作序列。训练时联合动作/检测/Mask三路损失优化。推理时仅Action Head运行。"
+  legend: "实线框 = 推理保留  |  虚线框 = 仅训练  |  点线 = 损失/梯度流"
+
+modules:
+  - id: output_stage
+    label: Action Prediction
+  - id: loss_stage
+    label: Training Losses
+  - id: total_stage
+    label: Joint Optimization
+
+nodes:
+  - id: decoder_out
+    label: "Decoder Output\n(B, chunk, 512)"
+    type: tensor3d
+    module: output_stage
+    bounds: { x: 40, y: 120, width: 130, height: 52 }
+
+  - id: action_head
+    label: "Action Head\nLinear (512 -> 6)"
+    type: output
+    module: output_stage
+    bounds: { x: 240, y: 120, width: 150, height: 56 }
+
+  - id: action_out
+    label: "Predicted Actions\n(chunk_size, 6)\nJoint Position Targets"
+    type: tensor3d
+    module: output_stage
+    bounds: { x: 460, y: 110, width: 150, height: 68 }
+
+  - id: action_loss
+    label: "Action L1 Loss\n|GT - Pred|"
+    type: loss
+    module: loss_stage
+    bounds: { x: 180, y: 250, width: 140, height: 56 }
+
+  - id: det_loss
+    label: "Detection Loss\nFocal + L1 + BCE"
+    type: loss
+    module: loss_stage
+    bounds: { x: 360, y: 250, width: 150, height: 56 }
+
+  - id: mask_loss
+    label: "Mask Loss\nL1 |pred - SAM2 GT|"
+    type: loss
+    module: loss_stage
+    bounds: { x: 550, y: 250, width: 160, height: 56 }
+
+  - id: total_loss
+    label: "Total Loss = Action_L1 + KL + det_weight x Det_Loss + mask_weight x Mask_Loss"
+    type: formula
+    module: total_stage
+    bounds: { x: 120, y: 390, width: 600, height: 48 }
+    style:
+      fontSize: 13
+
+  - id: det_annot
+    label: " (Training Only)"
+    type: text
+    bounds: { x: 360, y: 310, width: 100, height: 16 }
+    style:
+      fontSize: 9
+      fontStyle: 2
+
+  - id: mask_annot
+    label: " (Training Only)"
+    type: text
+    bounds: { x: 550, y: 310, width: 100, height: 16 }
+    style:
+      fontSize: 9
+      fontStyle: 2
+
+edges:
+  - from: decoder_out
+    to: action_head
+    type: primary
+  - from: action_head
+    to: action_out
+    type: primary
+  - from: action_out
+    to: total_loss
+    type: optional
+    label: "L1 loss"
+    labelOffset: { x: 0, y: -14 }
+  - from: det_loss
+    to: total_loss
+    type: optional
+    label: "det_weight x"
+    labelOffset: { x: 0, y: -14 }
+  - from: mask_loss
+    to: total_loss
+    type: optional
+    label: "mask_weight x"
+    labelOffset: { x: 0, y: -14 }

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="4" fill="#1A56DB"/>
+
+  <text x="80" y="55" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700" fill="#1F2937">实验数据决定创新 2/3/4 的优先级，而非直觉</text>
+
+  <!-- Four future innovations -->
+  <text x="80" y="100" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" fill="#1A56DB">根据 E1-E6 的实验失败模式，决定下一步方向</text>
+
+  <!-- Decision branches -->
+  <rect x="80" y="130" width="540" height="170" rx="0" fill="#F0F4F8"/>
+  <rect x="80" y="130" width="540" height="4" fill="#10B981"/>
+  <text x="110" y="162" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#10B981">路径 A: 杯子定位不准 (位置偏差)</text>
+  <text x="110" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">抓取位置偏移 → 夹爪未对准杯子中心</text>
+  <text x="110" y="215" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">→ 优化 Mask Decoder 或检查 SAM2 Mask 质量</text>
+  <text x="110" y="250" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">→ 调整 mask_weight / 双视角Mask / 更多标注</text>
+  <text x="110" y="282" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">直接优化现有模块，无需引入新创新</text>
+
+  <rect x="660" y="130" width="540" height="170" rx="0" fill="#F0F4F8"/>
+  <rect x="660" y="130" width="540" height="4" fill="#E0245E"/>
+  <text x="690" y="162" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#E0245E">路径 B: 接触判断延迟</text>
+  <text x="690" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">夹爪已接触杯壁 → 模型未感知 → 滑落/捏碎</text>
+  <text x="690" y="215" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">→ 实现 创新2: Visual-Force Fusion</text>
+  <text x="690" y="240" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">Force Token + Cross-Attention 融合</text>
+  <text x="690" y="265" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">力感训练仅需自动采集，无额外标注</text>
+  <text x="690" y="282" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">力感数据在数据集中已自动记录，无标注成本</text>
+
+  <rect x="80" y="330" width="540" height="170" rx="0" fill="#F0F4F8"/>
+  <rect x="80" y="330" width="540" height="4" fill="#F59E0B"/>
+  <text x="110" y="362" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#F59E0B">路径 C: 抓取力度不适</text>
+  <text x="110" y="390" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">不同水量 → 夹持力度固定 → 不适应</text>
+  <text x="110" y="415" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">→ 实现 创新3: Hybrid Action Head</text>
+  <text x="110" y="440" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">位置头 + 力控头双路输出</text>
+  <text x="110" y="465" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">力控标签: master_gripper.pos - gripper.pos</text>
+  <text x="110" y="482" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">仅数据集B (有力感9dim) 可跑此创新</text>
+
+  <rect x="660" y="330" width="540" height="170" rx="0" fill="#F0F4F8"/>
+  <rect x="660" y="330" width="540" height="4" fill="#0EA5E9"/>
+  <text x="690" y="362" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#0EA5E9">路径 D: 水晃动/洒液</text>
+  <text x="690" y="390" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">移动时水晃动 → 单帧无法预判运动趋势</text>
+  <text x="690" y="415" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">→ 实现 创新4: Frame Stacking</text>
+  <text x="690" y="440" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">t, t-1, t-2 三帧堆叠 → 时序上下文</text>
+  <text x="690" y="465" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">n_obs_steps=3, channel 维度拼接</text>
+  <text x="690" y="482" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">无需额外数据/标注，自动帧组装</text>
+
+  <!-- Bottom success gate -->
+  <rect x="80" y="535" width="1120" height="64" rx="0" fill="#1A56DB"/>
+  <text x="110" y="565" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">路径 E: 实验成功率达到预期 (E3/E6 &gt; 50%) → 创新2/3/4 留作"未来工作"</text>
+  <text x="110" y="588" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#A3C4F3">不再引入新模块，聚焦写论文：消融实验分析 + 失败案例总结 + 讨论泛化性</text>
+
+  <rect x="80" y="620" width="1120" height="1" fill="#E5E7EB"/>
+  <text x="80" y="650" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">预期结论与决策门</text>
+  <text x="1200" y="650" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="end">10 / 12</text>
+</svg>

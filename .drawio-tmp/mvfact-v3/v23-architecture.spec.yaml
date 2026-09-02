@@ -1,0 +1,435 @@
+meta:
+  profile: academic-paper
+  figureType: architecture
+  theme: academic-color
+  layout: horizontal
+  canvas: 1400x920
+  print:
+    target: cn-thesis
+    widthPt: 700
+    minPt: 7
+  title: V2/V3 Training Architecture (Detection Branch + Mask Guidance)
+  description: >-
+    Dual-view images share a ResNet18 backbone. The top view feeds an FPN whose pyramid features drive the FCOS
+    detection head, the Mask Decoder (both training-only losses) and the detection-feature fusion that enhances F4
+    before the Transformer encoder. The wrist view follows the standard ACT path.
+  legend: Dashed container = training only | Dotted arrow = gradient / loss flow | Solid = training + inference
+modules:
+  - id: input_stage
+    label: Input
+  - id: aug_stage
+    label: Top View Only (Training Only)
+  - id: backbone_stage
+    label: Shared ResNet18 Backbone
+  - id: fpn_stage
+    label: Feature Pyramid Network (Top View)
+  - id: det_stage
+    label: Detection Branch (Training Only)
+  - id: mask_stage
+    label: 'Mask Branch (Training Only, Innovation 1)'
+  - id: fusion_stage
+    label: Detection-Feature Fusion (Training + Inference)
+  - id: act_stage
+    label: ACT Transformer (CVAE)
+nodes:
+  - id: top_cam
+    label: |-
+      Top RGB
+      (3, 480, 640)
+    type: input
+    module: input_stage
+    bounds:
+      x: 30
+      'y': 60
+      width: 130
+      height: 54
+    style:
+      fontSize: 15
+  - id: wrist_cam
+    label: |-
+      Wrist RGB
+      (3, 480, 640)
+    type: input
+    module: input_stage
+    bounds:
+      x: 30
+      'y': 170
+      width: 130
+      height: 54
+    style:
+      fontSize: 15
+  - id: data_aug
+    label: |-
+      Aug (top view)
+      Color/Noise/Occl p=0.9
+    type: process
+    module: aug_stage
+    bounds:
+      x: 220
+      'y': 60
+      width: 240
+      height: 60
+    style:
+      fontSize: 15
+  - id: f2
+    label: 'F2 (128, 60x80)'
+    type: tensor3d
+    module: backbone_stage
+    bounds:
+      x: 500
+      'y': 100
+      width: 120
+      height: 46
+    style:
+      fontSize: 14
+  - id: f3
+    label: 'F3 (256, 30x40)'
+    type: tensor3d
+    module: backbone_stage
+    bounds:
+      x: 500
+      'y': 168
+      width: 120
+      height: 46
+    style:
+      fontSize: 14
+  - id: f4
+    label: 'F4 (512, 15x20)'
+    type: tensor3d
+    module: backbone_stage
+    bounds:
+      x: 500
+      'y': 236
+      width: 120
+      height: 46
+    style:
+      fontSize: 14
+  - id: fpn
+    label: |-
+      FPN
+      P2 (60x80)  P3 (30x40)
+      P4 (15x20)
+    type: attention
+    module: fpn_stage
+    bounds:
+      x: 680
+      'y': 280
+      width: 240
+      height: 74
+    style:
+      fontSize: 15
+  - id: fcos_head
+    label: |-
+      FCOS Head
+      CLS/REG/CTR towers
+      shared GN
+    type: process
+    module: det_stage
+    bounds:
+      x: 680
+      'y': 30
+      width: 220
+      height: 70
+    style:
+      fontSize: 14
+  - id: det_loss
+    label: |-
+      Detection Loss
+      Focal + L1 + BCE
+    type: loss
+    module: det_stage
+    bounds:
+      x: 960
+      'y': 34
+      width: 150
+      height: 54
+    style:
+      fontSize: 14
+  - id: cvat_gt
+    label: |-
+      CVAT GT
+      bbox (XML)
+    type: input
+    module: det_stage
+    bounds:
+      x: 1150
+      'y': 34
+      width: 130
+      height: 54
+    style:
+      fontSize: 14
+  - id: fusion
+    label: |-
+      Det-Feature Fusion
+      P2-4 attn
+      enhance F4
+    type: attention
+    module: fusion_stage
+    bounds:
+      x: 960
+      'y': 200
+      width: 230
+      height: 74
+    style:
+      fontSize: 14
+  - id: enhanced_f4
+    label: |-
+      enhanced F4
+      (512, 15x20)
+    type: tensor3d
+    module: fusion_stage
+    bounds:
+      x: 1220
+      'y': 210
+      width: 130
+      height: 58
+    style:
+      fontSize: 14
+  - id: mask_dec
+    label: |-
+      Mask Decoder
+      P4+P3+P2 fuse
+      -> 480x640
+    type: process
+    module: mask_stage
+    bounds:
+      x: 680
+      'y': 400
+      width: 220
+      height: 74
+    style:
+      fontSize: 14
+  - id: mask_loss
+    label: |-
+      Mask Loss
+      L1 |pred - GT|
+    type: loss
+    module: mask_stage
+    bounds:
+      x: 960
+      'y': 408
+      width: 150
+      height: 58
+    style:
+      fontSize: 14
+  - id: sam2_gt
+    label: |-
+      SAM2 GT Mask
+      (NPZ, offline)
+    type: input
+    module: mask_stage
+    bounds:
+      x: 1140
+      'y': 408
+      width: 130
+      height: 58
+    style:
+      fontSize: 14
+  - id: wrist_f4
+    label: |-
+      wrist F4
+      (512, 15x20)
+    type: tensor3d
+    bounds:
+      x: 680
+      'y': 600
+      width: 120
+      height: 46
+    style:
+      fontSize: 14
+  - id: conv_flatten
+    label: |-
+      1x1 Conv + Flatten
+      -> image tokens x600
+    type: process
+    module: act_stage
+    bounds:
+      x: 1180
+      'y': 500
+      width: 210
+      height: 70
+    style:
+      fontSize: 14
+  - id: robot_state
+    label: |-
+      Robot State
+      (6/9-dim)
+    type: input
+    module: act_stage
+    bounds:
+      x: 950
+      'y': 610
+      width: 130
+      height: 50
+    style:
+      fontSize: 14
+  - id: enc
+    label: |-
+      Transformer Encoder
+      latent|state|imgs
+    type: attention
+    module: act_stage
+    bounds:
+      x: 1180
+      'y': 600
+      width: 210
+      height: 76
+    style:
+      fontSize: 14
+  - id: dec
+    label: |-
+      Transformer Decoder
+      learned queries x100
+    type: attention
+    module: act_stage
+    bounds:
+      x: 1180
+      'y': 720
+      width: 210
+      height: 70
+    style:
+      fontSize: 14
+  - id: action_head
+    label: |-
+      Action Head
+      Linear -> 6
+    type: process
+    module: act_stage
+    bounds:
+      x: 1180
+      'y': 830
+      width: 210
+      height: 56
+    style:
+      fontSize: 14
+  - id: action_loss
+    label: Action L1 Loss
+    type: loss
+    module: act_stage
+    bounds:
+      x: 980
+      'y': 840
+      width: 150
+      height: 54
+    style:
+      fontSize: 14
+  - id: action_gt
+    label: |-
+      Action GT
+      (B, 100, 6)
+    type: input
+    module: act_stage
+    bounds:
+      x: 30
+      'y': 840
+      width: 130
+      height: 50
+    style:
+      fontSize: 14
+  - id: legend
+    label: |-
+      Legend: dashed container = training only
+                dotted arrow = gradient / loss flow
+                solid = training + inference; accent = proposed
+    type: text
+    bounds:
+      x: 30
+      'y': 700
+      width: 500
+      height: 70
+    style:
+      fontSize: 14
+edges:
+  - from: top_cam
+    to: data_aug
+    type: primary
+  - from: wrist_cam
+    to: f2
+    type: primary
+    label: wrist view
+    labelPosition: start
+    labelOffset:
+      x: 0
+      'y': -28
+  - from: data_aug
+    to: f2
+    type: primary
+  - from: f2
+    to: fpn
+    type: primary
+  - from: f3
+    to: fpn
+    type: primary
+  - from: f4
+    to: fpn
+    type: primary
+  - from: fpn
+    to: fcos_head
+    type: primary
+  - from: fcos_head
+    to: det_loss
+    type: optional
+  - from: cvat_gt
+    to: det_loss
+    type: data
+    label: GT
+    labelOffset:
+      x: -10
+      'y': -28
+  - from: fpn
+    to: fusion
+    type: primary
+  - from: f4
+    to: fusion
+    type: data
+  - from: fpn
+    to: mask_dec
+    type: primary
+  - from: mask_dec
+    to: mask_loss
+    type: optional
+  - from: sam2_gt
+    to: mask_loss
+    type: data
+    label: GT
+    labelOffset:
+      x: -10
+      'y': -28
+  - from: fusion
+    to: enhanced_f4
+    type: primary
+  - from: f4
+    to: wrist_f4
+    type: primary
+  - from: enhanced_f4
+    to: conv_flatten
+    type: primary
+  - from: wrist_f4
+    to: conv_flatten
+    type: primary
+  - from: conv_flatten
+    to: enc
+    type: primary
+  - from: robot_state
+    to: enc
+    type: primary
+  - from: enc
+    to: dec
+    type: primary
+  - from: dec
+    to: action_head
+    type: primary
+  - from: action_head
+    to: action_loss
+    type: primary
+    label: actions
+    labelOffset:
+      x: 0
+      'y': -28
+  - from: action_gt
+    to: action_loss
+    type: data
+    label: GT
+    labelOffset:
+      x: 0
+      'y': -28

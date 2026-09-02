@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1280" height="4" fill="#1A56DB"/>
+  <!-- Left blue stripe -->
+  <rect x="0" y="0" width="4" height="720" fill="#1A56DB"/>
+
+  <!-- Title block -->
+  <text x="160" y="220" font-family="Microsoft YaHei, Arial, sans-serif" font-size="48" font-weight="700" fill="#1F2937">增强视觉感知的ACT算法</text>
+  <text x="160" y="290" font-family="Microsoft YaHei, Arial, sans-serif" font-size="48" font-weight="700" fill="#1F2937">在力控透明杯抓取任务中的应用</text>
+  <!-- Blue underline -->
+  <rect x="160" y="315" width="120" height="4" fill="#1A56DB"/>
+
+  <!-- Subtitle -->
+  <text x="160" y="390" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" fill="#6B7280">暨南大学 智能科学与工程学院 人工智能专业</text>
+  <text x="160" y="430" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" fill="#6B7280">毕业设计阶段性成果汇报</text>
+
+  <!-- Author info block -->
+  <rect x="160" y="490" width="400" height="140" rx="0" fill="#F0F4F8"/>
+  <text x="190" y="525" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#1F2937">学生：陈绮颖  2022101870</text>
+  <text x="190" y="560" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#1F2937">指导教师：李德平</text>
+  <text x="190" y="595" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#1F2937">2026 年 7 月</text>
+
+  <!-- Bottom right decoration -->
+  <rect x="1000" y="560" width="280" height="160" fill="#F0F4F8"/>
+  <text x="1040" y="610" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">LeRobot v3.0 + SO-ARM101</text>
+  <text x="1040" y="640" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">RTX 4090 / 16GB VRAM</text>
+  <text x="1040" y="670" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">Ubuntu 22.04 LTS / Python 3.12</text>
+  <text x="1040" y="700" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">180 episodes / 120K steps</text>
+</svg>

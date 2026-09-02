@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="4" fill="#1A56DB"/>
+
+  <text x="80" y="55" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700" fill="#1F2937">分四阶段推进，核心实验 ~48h，视结果进入创新2/3/4或直接写论文</text>
+
+  <!-- Timeline bar -->
+  <rect x="80" y="100" width="1120" height="8" rx="0" fill="#E5E7EB"/>
+
+  <!-- Phase A: Completed (past) -->
+  <text x="80" y="85" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#10B981" font-weight="700">已完成</text>
+
+  <rect x="80" y="130" width="280" height="180" rx="0" fill="#F0F4F8"/>
+  <rect x="80" y="130" width="280" height="4" fill="#10B981"/>
+  <text x="220" y="160" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#10B981" text-anchor="middle">Phase A: 实现完成</text>
+  <text x="110" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">论文版 ACTDet 实现</text>
+  <text x="110" y="212" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">创新1: Mask Decoder</text>
+  <text x="110" y="234" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">数据增强 + FPN + FCOS + 融合</text>
+  <text x="110" y="256" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">180ep 数据集采集 + 标注完成</text>
+  <text x="110" y="278" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">CVAT XML + SAM2 NPZ 就位</text>
+  <rect x="80" y="295" width="280" height="15" rx="0" fill="#10B981"/>
+  <text x="220" y="306" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">6月17日 - 7月15日</text>
+
+  <!-- Phase B: Current (highlighted) -->
+  <text x="420" y="85" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#E0245E" font-weight="700">当前阶段</text>
+
+  <rect x="420" y="130" width="280" height="180" rx="0" fill="#F0F4F8"/>
+  <rect x="420" y="130" width="280" height="4" fill="#E0245E"/>
+  <text x="560" y="160" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#E0245E" text-anchor="middle">Phase B: 环境准备</text>
+  <text x="450" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">Ubuntu 安装 LeRobot + SAM2</text>
+  <text x="450" y="212" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">数据集加载验证</text>
+  <text x="450" y="234" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">SAM2 mask 生成脚本运行</text>
+  <text x="450" y="256" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">小批量测试 (steps=1000)</text>
+  <text x="450" y="278" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">确认 annotations/ 目录完整</text>
+  <rect x="420" y="295" width="280" height="15" rx="0" fill="#E0245E"/>
+  <text x="560" y="306" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">7月下旬 (1天)</text>
+
+  <!-- Phase C: Training (large block) -->
+  <rect x="760" y="130" width="440" height="180" rx="0" fill="#F0F4F8"/>
+  <rect x="760" y="130" width="440" height="4" fill="#1A56DB"/>
+  <text x="980" y="160" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#1A56DB" text-anchor="middle">Phase C: 核心实验 (6组)</text>
+  <text x="790" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">E1-E3 (数据集A, ~24h) → 无力感baseline</text>
+  <text x="790" y="212" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">E4-E6 (数据集B, ~24h) → 有力感对比</text>
+  <text x="790" y="234" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">WandB 看板实时监控</text>
+  <text x="790" y="256" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">每 10K steps eval + 记录成功率</text>
+  <text x="790" y="278" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">失败模式分类 (抓取/移动/放下)</text>
+  <rect x="760" y="295" width="440" height="15" rx="0" fill="#1A56DB"/>
+  <text x="980" y="306" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">8月上旬 (~2天)</text>
+
+  <!-- Phase D: Decision -->
+  <rect x="80" y="340" width="1120" height="100" rx="0" fill="#1A56DB"/>
+  <text x="110" y="375" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Phase D: 决策分支 (8月中下旬)</text>
+
+  <text x="110" y="405" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#A3C4F3">路径 1: 失败模式清晰 → 实现创新2/3中优先级最高的模块 + 子实验消融</text>
+  <text x="110" y="428" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#A3C4F3">路径 2: 成功率满意 → 停止新开发，聚焦论文写作 (5章 + 实验分析 + 结论)</text>
+
+  <!-- Sub-experiments -->
+  <text x="80" y="485" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2937">子实验（按需，每组 ~8h)</text>
+
+  <rect x="80" y="505" width="260" height="60" rx="0" fill="#F0F4F8"/>
+  <text x="210" y="528" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937" text-anchor="middle">数据增强消融</text>
+  <text x="210" y="550" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">噪声/色彩/遮挡 vs 全关</text>
+
+  <rect x="360" y="505" width="260" height="60" rx="0" fill="#F0F4F8"/>
+  <text x="490" y="528" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937" text-anchor="middle">检测/Mask视角消融</text>
+  <text x="490" y="550" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">Top only vs 双视角</text>
+
+  <rect x="640" y="505" width="260" height="60" rx="0" fill="#F0F4F8"/>
+  <text x="770" y="528" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937" text-anchor="middle">Mask权重调优</text>
+  <text x="770" y="550" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">mask_weight = 0.5/1/5</text>
+
+  <rect x="920" y="505" width="280" height="60" rx="0" fill="#F0F4F8"/>
+  <text x="1060" y="528" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937" text-anchor="middle">力感信号对比</text>
+  <text x="1060" y="550" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">E1-E3 vs E4-E6 差值分析</text>
+
+  <rect x="80" y="590" width="1120" height="1" fill="#E5E7EB"/>
+  <text x="80" y="625" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">时间线</text>
+  <text x="1200" y="625" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="end">11 / 12</text>
+</svg>

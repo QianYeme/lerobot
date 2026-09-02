@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="4" fill="#1A56DB"/>
+  <rect x="0" y="0" width="4" height="720" fill="#1A56DB"/>
+
+  <text x="640" y="280" font-family="Microsoft YaHei, Arial, sans-serif" font-size="52" font-weight="700" fill="#1F2937" text-anchor="middle">感谢聆听</text>
+  <text x="640" y="330" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" fill="#6B7280" text-anchor="middle">欢迎提问与建议</text>
+
+  <rect x="440" y="370" width="400" height="3" fill="#E5E7EB"/>
+
+  <text x="640" y="420" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937" text-anchor="middle">陈绮颖  2022101870</text>
+  <text x="640" y="450" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937" text-anchor="middle">暨南大学 · 智能科学与工程学院</text>
+  <text x="640" y="480" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#1F2937" text-anchor="middle">指导教师：李德平</text>
+
+  <rect x="640" y="520" width="80" height="3" fill="#1A56DB" x_translate="-40"/>
+
+  <text x="640" y="570" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">LeRobot v3.0  ·  SO-ARM101  ·  Python 3.12  ·  PyTorch 2.x</text>
+  <text x="640" y="595" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">GitHub: https://github.com/huggingface/lerobot</text>
+
+  <text x="640" y="680" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">12 / 12</text>
+</svg>

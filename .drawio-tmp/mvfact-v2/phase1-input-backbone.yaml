@@ -1,0 +1,105 @@
+meta:
+  profile: academic-paper
+  figureType: architecture
+  theme: academic-color
+  layout: horizontal
+  canvas: "900x650"
+  print: { target: cn-thesis }
+  title: "(a) 输入与Backbone"
+  description: "双视角图像经数据增强后进入共享ResNet18提取多尺度特征。"
+  legend: "虚线框 = 仅训练"
+
+modules:
+  - id: input_stage
+    label: Input
+  - id: aug_stage
+    label: Augmentation
+  - id: backbone_stage
+    label: Shared Backbone
+  - id: output_stage
+    label: Multi-Scale Features
+
+nodes:
+  - id: top_cam
+    label: "Top Camera\n(480x640x3)"
+    type: input
+    module: input_stage
+    bounds: { x: 40, y: 80, width: 130, height: 52 }
+
+  - id: wrist_cam
+    label: "Wrist Camera\n(480x640x3)"
+    type: input
+    module: input_stage
+    bounds: { x: 40, y: 280, width: 130, height: 52 }
+
+  - id: data_aug
+    label: "Data Augmentation\nColor / Noise / Occlusion\n(Training Only)"
+    type: process
+    module: aug_stage
+    bounds: { x: 260, y: 60, width: 200, height: 64 }
+    style:
+      fontSize: 13
+
+  - id: resnet
+    label: "Shared ResNet18\n(layer2 / layer3 / layer4)"
+    type: conv
+    module: backbone_stage
+    bounds: { x: 560, y: 140, width: 200, height: 72 }
+
+  - id: f2
+    label: "F2\n(128ch, 60x80)"
+    type: tensor3d
+    module: output_stage
+    bounds: { x: 840, y: 60, width: 50, height: 52 }
+
+  - id: f3
+    label: "F3\n(256ch, 30x40)"
+    type: tensor3d
+    module: output_stage
+    bounds: { x: 840, y: 136, width: 50, height: 52 }
+
+  - id: f4
+    label: "F4\n(512ch, 15x20)"
+    type: tensor3d
+    module: output_stage
+    bounds: { x: 840, y: 212, width: 50, height: 52 }
+
+  - id: wrist_label
+    label: "Top path"
+    type: text
+    bounds: { x: 310, y: 32, width: 60, height: 20 }
+    style:
+      fontSize: 11
+      fontStyle: 2
+
+  - id: wrist_label2
+    label: "Wrist path"
+    type: text
+    bounds: { x: 450, y: 235, width: 70, height: 20 }
+    style:
+      fontSize: 11
+      fontStyle: 2
+
+edges:
+  - from: top_cam
+    to: data_aug
+    type: primary
+  - from: data_aug
+    to: resnet
+    type: primary
+    label: "augmented"
+    labelOffset: { x: 0, y: -14 }
+  - from: wrist_cam
+    to: resnet
+    type: primary
+    label: "original"
+    labelOffset: { x: 0, y: -14 }
+  - from: resnet
+    to: f2
+    type: data
+  - from: resnet
+    to: f3
+    type: data
+  - from: resnet
+    to: f4
+    type: data

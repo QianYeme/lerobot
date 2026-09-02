@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="4" fill="#1A56DB"/>
+
+  <text x="80" y="55" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700" fill="#1F2937">已搭建完整的真实物理实验平台，完成 180 个遥操作 episode 的数据采集</text>
+
+  <!-- Left: Hardware -->
+  <text x="80" y="100" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" fill="#1A56DB">硬件配置</text>
+  <rect x="80" y="115" width="540" height="210" rx="0" fill="#F0F4F8"/>
+
+  <text x="110" y="148" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2937">机械臂</text>
+  <text x="110" y="174" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1F2937">LeRobot SO-ARM101 单臂 (主动臂 + 从动臂)</text>
+  <text x="110" y="198" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">6 自由度 + 夹爪 / UART 通信 / 3D 打印主体</text>
+
+  <text x="110" y="238" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2937">摄像头</text>
+  <text x="110" y="264" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1F2937">2 x RGB 摄像头 (640x480, 30fps)</text>
+  <text x="110" y="288" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">Top (全局视角, ~45deg) + Wrist (腕部近景, ~30deg)</text>
+
+  <text x="110" y="318" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">操作台: 60x60cm 硅胶垫 / 工件: 半满透明塑料杯</text>
+
+  <!-- Right: Data specs -->
+  <text x="680" y="100" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" fill="#1A56DB">数据集规格</text>
+
+  <rect x="680" y="115" width="260" height="100" rx="0" fill="#F0F4F8"/>
+  <text x="710" y="142" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">数据集 A (无力感)</text>
+  <text x="710" y="168" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="700" fill="#1A56DB">90 episode</text>
+  <text x="710" y="195" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">state=6dim / kind1(固定50) + kind2(随机40)</text>
+
+  <rect x="960" y="115" width="240" height="100" rx="0" fill="#F0F4F8"/>
+  <text x="990" y="142" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">数据集 B (有力感)</text>
+  <text x="990" y="168" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="700" fill="#1A56DB">90 episode</text>
+  <text x="990" y="195" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">state=9dim / +load +curr +master_gripper</text>
+
+  <!-- Collection flow -->
+  <text x="80" y="360" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" fill="#1A56DB">数据采集流程</text>
+
+  <!-- Flow steps -->
+  <rect x="80" y="380" width="200" height="60" rx="0" fill="#1A56DB"/>
+  <text x="180" y="410" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">1. 遥操作示教</text>
+  <text x="180" y="430" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#A3C4F3" text-anchor="middle">人控主动臂 → 从动臂跟随</text>
+
+  <text x="310" y="410" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" fill="#1A56DB">→</text>
+
+  <rect x="350" y="380" width="200" height="60" rx="0" fill="#1A56DB"/>
+  <text x="450" y="410" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">2. 多模态记录</text>
+  <text x="450" y="430" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#A3C4F3" text-anchor="middle">双视角视频 + 关节/力感/时间戳</text>
+
+  <text x="580" y="410" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" fill="#1A56DB">→</text>
+
+  <rect x="620" y="380" width="200" height="60" rx="0" fill="#1A56DB"/>
+  <text x="720" y="410" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">3. LeRobot 格式存储</text>
+  <text x="720" y="430" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#A3C4F3" text-anchor="middle">Parquet + MP4 分层目录</text>
+
+  <text x="850" y="410" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" fill="#1A56DB">→</text>
+
+  <rect x="890" y="380" width="200" height="60" rx="0" fill="#1A56DB"/>
+  <text x="990" y="410" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">4. 标注 + 预处理</text>
+  <text x="990" y="430" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#A3C4F3" text-anchor="middle">CVAT XML + SAM2 Mask</text>
+
+  <!-- Data format info -->
+  <text x="80" y="480" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" fill="#1A56DB">目录结构</text>
+  <rect x="80" y="495" width="1120" height="120" rx="0" fill="#F0F4F8"/>
+  <text x="110" y="525" font-family="Consolas, Courier New, monospace" font-size="14" fill="#1F2937">dataset_root/</text>
+  <text x="110" y="548" font-family="Consolas, Courier New, monospace" font-size="14" fill="#1F2937">  meta/info.json + data/file-000.parquet + videos/{top,gripper}/file-000.mp4</text>
+  <text x="110" y="571" font-family="Consolas, Courier New, monospace" font-size="14" fill="#1F2937">  annotations/{top,gripper}/episode_xxx.xml    (CVAT 1.1, 逐帧 bbox)</text>
+  <text x="110" y="594" font-family="Consolas, Courier New, monospace" font-size="14" fill="#1F2937">  annotations/masks/top/episode_xxx.npz         (SAM2 离线生成, 逐像素 mask)</text>
+
+  <rect x="80" y="635" width="1" height="30" fill="#E5E7EB"/>
+  <text x="95" y="655" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">实验平台</text>
+  <text x="1200" y="655" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="end">4 / 12</text>
+</svg>

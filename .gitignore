@@ -177,3 +177,8 @@ outputs/
 *.urdf
 *.xml
 *.part
+
+# Local datasets & checkpoints (too large for GitHub)
+数据集/
+数据/
+checkpoints/

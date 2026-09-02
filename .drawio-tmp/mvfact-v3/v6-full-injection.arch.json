@@ -1,0 +1,372 @@
+{
+  "version": 1,
+  "title": "V6 Full-Injection Training Architecture (FCOS + Mask Feature Injection)",
+  "type": "academic-diagram",
+  "source": "generated",
+  "profile": "academic-paper",
+  "theme": "academic-color",
+  "layout": "horizontal",
+  "counts": {
+    "nodes": 27,
+    "edges": 27,
+    "modules": 7
+  },
+  "nodes": [
+    {
+      "id": "top_cam",
+      "label": "Top RGB\n(3, 480, 640)",
+      "type": "input",
+      "module": "input_stage"
+    },
+    {
+      "id": "wrist_cam",
+      "label": "Wrist RGB\n(3, 480, 640)",
+      "type": "input",
+      "module": "input_stage"
+    },
+    {
+      "id": "data_aug",
+      "label": "Aug (top view)\nColor/Noise/Occl p=0.9",
+      "type": "process",
+      "module": "aug_stage"
+    },
+    {
+      "id": "f2",
+      "label": "F2 (128, 60x80)",
+      "type": "tensor3d",
+      "module": "backbone_stage"
+    },
+    {
+      "id": "f3",
+      "label": "F3 (256, 30x40)",
+      "type": "tensor3d",
+      "module": "backbone_stage"
+    },
+    {
+      "id": "f4",
+      "label": "F4 (512, 15x20)",
+      "type": "tensor3d",
+      "module": "backbone_stage"
+    },
+    {
+      "id": "fpn",
+      "label": "FPN\nP2 (60x80)  P3 (30x40)\nP4 (15x20)",
+      "type": "attention"
+    },
+    {
+      "id": "fcos_head",
+      "label": "FCOS Head\ncls+reg+ctr towers",
+      "type": "process",
+      "module": "det_stage"
+    },
+    {
+      "id": "det_loss",
+      "label": "Detection Loss\nFocal+L1+BCE",
+      "type": "loss",
+      "module": "det_stage"
+    },
+    {
+      "id": "cvat_gt",
+      "label": "CVAT GT\nbbox (XML)",
+      "type": "input",
+      "module": "det_stage"
+    },
+    {
+      "id": "fusion",
+      "label": "Det-Feature Fusion\nP2-4 attn\nenhance F4",
+      "type": "attention",
+      "module": "fusion_stage"
+    },
+    {
+      "id": "enhanced_f4",
+      "label": "enhanced F4\n(512, 15x20)",
+      "type": "tensor3d",
+      "module": "fusion_stage"
+    },
+    {
+      "id": "mask_dec",
+      "label": "Mask Decoder\nP4+P3+P2 fuse -> f432",
+      "type": "process",
+      "module": "mask_stage"
+    },
+    {
+      "id": "mask_loss",
+      "label": "Mask Loss\nL1 |pred - GT|",
+      "type": "loss",
+      "module": "mask_stage"
+    },
+    {
+      "id": "sam2_gt",
+      "label": "SAM2 GT Mask\n(NPZ, offline)",
+      "type": "input",
+      "module": "mask_stage"
+    },
+    {
+      "id": "wrist_f4",
+      "label": "wrist F4\n(512, 15x20)",
+      "type": "tensor3d"
+    },
+    {
+      "id": "conv_flatten",
+      "label": "1x1 Conv + Flatten\nimage tokens x300/cam",
+      "type": "process",
+      "module": "act_stage"
+    },
+    {
+      "id": "token_bar",
+      "label": "latent|state|top_img|wrist_img\n+fcos+mask",
+      "type": "process",
+      "module": "act_stage"
+    },
+    {
+      "id": "fcos_tag",
+      "label": "fcos x300",
+      "type": "text"
+    },
+    {
+      "id": "mask_tag",
+      "label": "mask x300",
+      "type": "text"
+    },
+    {
+      "id": "robot_state",
+      "label": "Robot State\n(6/9-dim)",
+      "type": "input",
+      "module": "act_stage"
+    },
+    {
+      "id": "enc",
+      "label": "Transformer Encoder\n+ pos embeddings",
+      "type": "attention",
+      "module": "act_stage"
+    },
+    {
+      "id": "dec",
+      "label": "Transformer Decoder\nlearned queries x100",
+      "type": "attention",
+      "module": "act_stage"
+    },
+    {
+      "id": "action_head",
+      "label": "Action Head\nLinear -> 6",
+      "type": "process",
+      "module": "act_stage"
+    },
+    {
+      "id": "action_loss",
+      "label": "Action L1 Loss",
+      "type": "loss",
+      "module": "act_stage"
+    },
+    {
+      "id": "action_gt",
+      "label": "Action GT\n(B, 100, 6)",
+      "type": "input",
+      "module": "act_stage"
+    },
+    {
+      "id": "legend",
+      "label": "dashed container = training only\ndotted = gradient / loss flow\nsolid = training + inference\npurple = feature injection (Innov. 2/3)",
+      "type": "text"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "from": "top_cam",
+      "to": "data_aug",
+      "type": "primary"
+    },
+    {
+      "id": "edge-2",
+      "from": "wrist_cam",
+      "to": "f2",
+      "type": "primary",
+      "label": "wrist view"
+    },
+    {
+      "id": "edge-3",
+      "from": "data_aug",
+      "to": "f2",
+      "type": "primary"
+    },
+    {
+      "id": "edge-4",
+      "from": "f2",
+      "to": "fpn",
+      "type": "primary"
+    },
+    {
+      "id": "edge-5",
+      "from": "f3",
+      "to": "fpn",
+      "type": "primary"
+    },
+    {
+      "id": "edge-6",
+      "from": "f4",
+      "to": "fpn",
+      "type": "primary"
+    },
+    {
+      "id": "edge-7",
+      "from": "fpn",
+      "to": "fcos_head",
+      "type": "primary"
+    },
+    {
+      "id": "edge-8",
+      "from": "fcos_head",
+      "to": "det_loss",
+      "type": "optional"
+    },
+    {
+      "id": "edge-9",
+      "from": "cvat_gt",
+      "to": "det_loss",
+      "type": "data",
+      "label": "GT"
+    },
+    {
+      "id": "edge-10",
+      "from": "fpn",
+      "to": "fusion",
+      "type": "primary"
+    },
+    {
+      "id": "edge-11",
+      "from": "f4",
+      "to": "fusion",
+      "type": "data"
+    },
+    {
+      "id": "edge-12",
+      "from": "fpn",
+      "to": "mask_dec",
+      "type": "primary"
+    },
+    {
+      "id": "edge-13",
+      "from": "mask_dec",
+      "to": "mask_loss",
+      "type": "optional"
+    },
+    {
+      "id": "edge-14",
+      "from": "sam2_gt",
+      "to": "mask_loss",
+      "type": "data",
+      "label": "GT"
+    },
+    {
+      "id": "edge-15",
+      "from": "fusion",
+      "to": "enhanced_f4",
+      "type": "primary"
+    },
+    {
+      "id": "edge-16",
+      "from": "f4",
+      "to": "wrist_f4",
+      "type": "primary"
+    },
+    {
+      "id": "edge-17",
+      "from": "enhanced_f4",
+      "to": "conv_flatten",
+      "type": "primary"
+    },
+    {
+      "id": "edge-18",
+      "from": "wrist_f4",
+      "to": "conv_flatten",
+      "type": "primary"
+    },
+    {
+      "id": "edge-19",
+      "from": "conv_flatten",
+      "to": "token_bar",
+      "type": "primary"
+    },
+    {
+      "id": "edge-20",
+      "from": "fcos_head",
+      "to": "token_bar",
+      "type": "primary"
+    },
+    {
+      "id": "edge-21",
+      "from": "mask_dec",
+      "to": "token_bar",
+      "type": "primary"
+    },
+    {
+      "id": "edge-22",
+      "from": "token_bar",
+      "to": "enc",
+      "type": "primary"
+    },
+    {
+      "id": "edge-23",
+      "from": "robot_state",
+      "to": "enc",
+      "type": "primary"
+    },
+    {
+      "id": "edge-24",
+      "from": "enc",
+      "to": "dec",
+      "type": "primary"
+    },
+    {
+      "id": "edge-25",
+      "from": "dec",
+      "to": "action_head",
+      "type": "primary"
+    },
+    {
+      "id": "edge-26",
+      "from": "action_head",
+      "to": "action_loss",
+      "type": "primary",
+      "label": "actions"
+    },
+    {
+      "id": "edge-27",
+      "from": "action_gt",
+      "to": "action_loss",
+      "type": "data",
+      "label": "GT"
+    }
+  ],
+  "modules": [
+    {
+      "id": "input_stage",
+      "label": "Input"
+    },
+    {
+      "id": "aug_stage",
+      "label": "Top View Only (Training Only)"
+    },
+    {
+      "id": "backbone_stage",
+      "label": "Shared ResNet18 Backbone"
+    },
+    {
+      "id": "det_stage",
+      "label": "Detection Branch"
+    },
+    {
+      "id": "mask_stage",
+      "label": "Mask Branch"
+    },
+    {
+      "id": "fusion_stage",
+      "label": "Detection-Feature Fusion (Training + Inference)"
+    },
+    {
+      "id": "act_stage",
+      "label": "ACT Transformer (CVAE)"
+    }
+  ]
+}

@@ -1,0 +1,504 @@
+meta:
+  profile: academic-paper
+  figureType: architecture
+  theme: academic-color
+  layout: horizontal
+  canvas: 1500x1040
+  print:
+    target: cn-thesis
+    widthPt: 700
+    minPt: 7
+  title: V6 Full-Injection Training Architecture (FCOS + Mask Feature Injection)
+  description: >-
+    Same V2/V3 backbone-FPN-ACT pipeline with the two explicit feature injections: the FCOS tower intermediate features
+    (cls+reg, centerness-gated, projected 256->512) and the Mask Decoder fused feature f432 (32ch 60x80, pooled to
+    15x20) become extra 300-token groups appended to the encoder sequence after the image tokens. The prediction layers
+    (cls_logits/reg_pred/ctr_pred, pred_mask) stay training-only; the injection paths run in both training and
+    inference.
+  legend: >-
+    Dashed container = training only | Dotted arrow = gradient / loss flow | Solid = training + inference | Purple =
+    feature injection (Innov. 2/3)
+modules:
+  - id: input_stage
+    label: Input
+  - id: aug_stage
+    label: Top View Only (Training Only)
+  - id: backbone_stage
+    label: Shared ResNet18 Backbone
+  - id: det_stage
+    label: Detection Branch
+  - id: mask_stage
+    label: Mask Branch
+  - id: fusion_stage
+    label: Detection-Feature Fusion (Training + Inference)
+  - id: act_stage
+    label: ACT Transformer (CVAE)
+nodes:
+  - id: top_cam
+    label: |-
+      Top RGB
+      (3, 480, 640)
+    type: input
+    module: input_stage
+    bounds:
+      x: 30
+      'y': 60
+      width: 130
+      height: 54
+    style:
+      fontSize: 15
+  - id: wrist_cam
+    label: |-
+      Wrist RGB
+      (3, 480, 640)
+    type: input
+    module: input_stage
+    bounds:
+      x: 30
+      'y': 170
+      width: 130
+      height: 54
+    style:
+      fontSize: 15
+  - id: data_aug
+    label: |-
+      Aug (top view)
+      Color/Noise/Occl p=0.9
+    type: process
+    module: aug_stage
+    bounds:
+      x: 220
+      'y': 60
+      width: 240
+      height: 60
+    style:
+      fontSize: 15
+  - id: f2
+    label: 'F2 (128, 60x80)'
+    type: tensor3d
+    module: backbone_stage
+    bounds:
+      x: 500
+      'y': 100
+      width: 120
+      height: 46
+    style:
+      fontSize: 15
+  - id: f3
+    label: 'F3 (256, 30x40)'
+    type: tensor3d
+    module: backbone_stage
+    bounds:
+      x: 500
+      'y': 168
+      width: 120
+      height: 46
+    style:
+      fontSize: 15
+  - id: f4
+    label: 'F4 (512, 15x20)'
+    type: tensor3d
+    module: backbone_stage
+    bounds:
+      x: 500
+      'y': 236
+      width: 120
+      height: 46
+    style:
+      fontSize: 15
+  - id: fpn
+    label: |-
+      FPN
+      P2 (60x80)  P3 (30x40)
+      P4 (15x20)
+    type: attention
+    bounds:
+      x: 680
+      'y': 280
+      width: 240
+      height: 74
+    style:
+      fontSize: 15
+  - id: fcos_head
+    label: |-
+      FCOS Head
+      cls+reg+ctr towers
+    type: process
+    module: det_stage
+    bounds:
+      x: 1130
+      'y': 30
+      width: 230
+      height: 70
+    style:
+      fontSize: 15
+  - id: det_loss
+    label: |-
+      Detection Loss
+      Focal+L1+BCE
+    type: loss
+    module: det_stage
+    bounds:
+      x: 950
+      'y': 34
+      width: 150
+      height: 54
+    style:
+      fontSize: 15
+  - id: cvat_gt
+    label: |-
+      CVAT GT
+      bbox (XML)
+    type: input
+    module: det_stage
+    bounds:
+      x: 790
+      'y': 34
+      width: 130
+      height: 54
+    style:
+      fontSize: 15
+  - id: fusion
+    label: |-
+      Det-Feature Fusion
+      P2-4 attn
+      enhance F4
+    type: attention
+    module: fusion_stage
+    bounds:
+      x: 960
+      'y': 200
+      width: 230
+      height: 74
+    style:
+      fontSize: 15
+  - id: enhanced_f4
+    label: |-
+      enhanced F4
+      (512, 15x20)
+    type: tensor3d
+    module: fusion_stage
+    bounds:
+      x: 1230
+      'y': 210
+      width: 130
+      height: 58
+    style:
+      fontSize: 15
+  - id: mask_dec
+    label: |-
+      Mask Decoder
+      P4+P3+P2 fuse -> f432
+    type: process
+    module: mask_stage
+    bounds:
+      x: 680
+      'y': 420
+      width: 230
+      height: 74
+    style:
+      fontSize: 15
+  - id: mask_loss
+    label: |-
+      Mask Loss
+      L1 |pred - GT|
+    type: loss
+    module: mask_stage
+    bounds:
+      x: 960
+      'y': 428
+      width: 150
+      height: 58
+    style:
+      fontSize: 15
+  - id: sam2_gt
+    label: |-
+      SAM2 GT Mask
+      (NPZ, offline)
+    type: input
+    module: mask_stage
+    bounds:
+      x: 1140
+      'y': 428
+      width: 140
+      height: 58
+    style:
+      fontSize: 15
+  - id: wrist_f4
+    label: |-
+      wrist F4
+      (512, 15x20)
+    type: tensor3d
+    bounds:
+      x: 680
+      'y': 610
+      width: 120
+      height: 46
+    style:
+      fontSize: 15
+  - id: conv_flatten
+    label: |-
+      1x1 Conv + Flatten
+      image tokens x300/cam
+    type: process
+    module: act_stage
+    bounds:
+      x: 1100
+      'y': 540
+      width: 240
+      height: 60
+    style:
+      fontSize: 15
+  - id: token_bar
+    label: |-
+      latent|state|top_img|wrist_img
+      +fcos+mask
+    type: process
+    module: act_stage
+    bounds:
+      x: 1000
+      'y': 630
+      width: 470
+      height: 48
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: fcos_tag
+    label: fcos x300
+    type: text
+    bounds:
+      x: 1398
+      'y': 330
+      width: 100
+      height: 30
+    style:
+      fontSize: 15
+      fontColor: '#9C27B0'
+  - id: mask_tag
+    label: mask x300
+    type: text
+    bounds:
+      x: 940
+      'y': 545
+      width: 100
+      height: 30
+    style:
+      fontSize: 15
+      fontColor: '#9C27B0'
+  - id: robot_state
+    label: |-
+      Robot State
+      (6/9-dim)
+    type: input
+    module: act_stage
+    bounds:
+      x: 960
+      'y': 740
+      width: 130
+      height: 50
+    style:
+      fontSize: 15
+  - id: enc
+    label: |-
+      Transformer Encoder
+      + pos embeddings
+    type: attention
+    module: act_stage
+    bounds:
+      x: 1180
+      'y': 730
+      width: 240
+      height: 80
+    style:
+      fontSize: 15
+  - id: dec
+    label: |-
+      Transformer Decoder
+      learned queries x100
+    type: attention
+    module: act_stage
+    bounds:
+      x: 1180
+      'y': 850
+      width: 240
+      height: 64
+    style:
+      fontSize: 15
+  - id: action_head
+    label: |-
+      Action Head
+      Linear -> 6
+    type: process
+    module: act_stage
+    bounds:
+      x: 1180
+      'y': 950
+      width: 240
+      height: 56
+    style:
+      fontSize: 15
+  - id: action_loss
+    label: Action L1 Loss
+    type: loss
+    module: act_stage
+    bounds:
+      x: 960
+      'y': 970
+      width: 150
+      height: 54
+    style:
+      fontSize: 15
+  - id: action_gt
+    label: |-
+      Action GT
+      (B, 100, 6)
+    type: input
+    module: act_stage
+    bounds:
+      x: 30
+      'y': 970
+      width: 130
+      height: 50
+    style:
+      fontSize: 15
+  - id: legend
+    label: |-
+      dashed container = training only
+      dotted = gradient / loss flow
+      solid = training + inference
+      purple = feature injection (Innov. 2/3)
+    type: text
+    bounds:
+      x: 30
+      'y': 630
+      width: 390
+      height: 96
+    style:
+      fontSize: 15
+edges:
+  - from: top_cam
+    to: data_aug
+    type: primary
+  - from: wrist_cam
+    to: f2
+    type: primary
+    label: wrist view
+    labelPosition: start
+    labelOffset:
+      x: 0
+      'y': -28
+  - from: data_aug
+    to: f2
+    type: primary
+  - from: f2
+    to: fpn
+    type: primary
+  - from: f3
+    to: fpn
+    type: primary
+  - from: f4
+    to: fpn
+    type: primary
+  - from: fpn
+    to: fcos_head
+    type: primary
+    waypoints:
+      - x: 700
+        'y': 150
+      - x: 1245
+        'y': 150
+  - from: fcos_head
+    to: det_loss
+    type: optional
+  - from: cvat_gt
+    to: det_loss
+    type: data
+    label: GT
+    labelOffset:
+      x: -10
+      'y': -28
+  - from: fpn
+    to: fusion
+    type: primary
+  - from: f4
+    to: fusion
+    type: data
+  - from: fpn
+    to: mask_dec
+    type: primary
+  - from: mask_dec
+    to: mask_loss
+    type: optional
+  - from: sam2_gt
+    to: mask_loss
+    type: data
+    label: GT
+    labelOffset:
+      x: -10
+      'y': -28
+  - from: fusion
+    to: enhanced_f4
+    type: primary
+  - from: f4
+    to: wrist_f4
+    type: primary
+  - from: enhanced_f4
+    to: conv_flatten
+    type: primary
+  - from: wrist_f4
+    to: conv_flatten
+    type: primary
+    waypoints:
+      - x: 820
+        'y': 700
+      - x: 1100
+        'y': 700
+  - from: conv_flatten
+    to: token_bar
+    type: primary
+  - from: fcos_head
+    to: token_bar
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+    waypoints:
+      - x: 1390
+        'y': 65
+  - from: mask_dec
+    to: token_bar
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+    waypoints:
+      - x: 930
+        'y': 650
+  - from: token_bar
+    to: enc
+    type: primary
+  - from: robot_state
+    to: enc
+    type: primary
+  - from: enc
+    to: dec
+    type: primary
+  - from: dec
+    to: action_head
+    type: primary
+  - from: action_head
+    to: action_loss
+    type: primary
+    label: actions
+    labelOffset:
+      x: 0
+      'y': -28
+  - from: action_gt
+    to: action_loss
+    type: data
+    label: GT
+    labelOffset:
+      x: 0
+      'y': -28

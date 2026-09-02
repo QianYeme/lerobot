@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="4" fill="#1A56DB"/>
+
+  <text x="80" y="80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36" font-weight="700" fill="#1F2937">目录</text>
+  <rect x="80" y="100" width="60" height="3" fill="#1A56DB"/>
+
+  <!-- Section 1 -->
+  <rect x="80" y="145" width="37" height="37" rx="0" fill="#1A56DB"/>
+  <text x="91" y="170" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="140" y="170" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700" fill="#1F2937">研究背景与实验平台</text>
+  <text x="140" y="200" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#6B7280">问题定义 / 硬件搭建 / 数据采集 / CVAT + SAM2 标注</text>
+
+  <!-- Section 2 -->
+  <rect x="80" y="260" width="37" height="37" rx="0" fill="#1A56DB"/>
+  <text x="91" y="285" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="140" y="285" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700" fill="#1F2937">模型架构创新：M-VF-ACT</text>
+  <text x="140" y="315" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#6B7280">检测分支(FCOS) / Mask-Guided Perception / 特征融合 / 数据增强</text>
+
+  <!-- Section 3 -->
+  <rect x="80" y="375" width="37" height="37" rx="0" fill="#1A56DB"/>
+  <text x="91" y="400" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="140" y="400" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700" fill="#1F2937">实验计划与横向对比</text>
+  <text x="140" y="430" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#6B7280">6组核心实验 / 消融实验 / 评价指标 / 决策门</text>
+
+  <!-- Section 4 -->
+  <rect x="80" y="490" width="37" height="37" rx="0" fill="#6B7280"/>
+  <text x="91" y="515" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="140" y="515" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="700" fill="#1F2937">预期贡献与时间线</text>
+  <text x="140" y="545" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" fill="#6B7280">创新路线图 / 阶段性产出 / 下一步行动</text>
+
+  <!-- Right: project stats -->
+  <rect x="800" y="145" width="400" height="170" rx="0" fill="#F0F4F8"/>
+  <text x="840" y="180" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2937">项目概况</text>
+  <text x="840" y="212" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1F2937">数据集：2大类, 每类90episode</text>
+  <text x="840" y="240" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1F2937">模型：ACTDet (58M params)</text>
+  <text x="840" y="268" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1F2937">训练：120,000 steps / batch=8</text>
+  <text x="840" y="296" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1F2937">代码：~1,600 lines / 13 files</text>
+
+  <text x="80" y="690" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280">2 / 12</text>
+</svg>

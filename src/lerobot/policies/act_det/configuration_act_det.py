@@ -26,18 +26,26 @@ from lerobot.policies.act.configuration_act import ACTConfig
 class ACTDetConfig(ACTConfig):
     """Configuration for the ACTDet (Action Chunking Transformer with Detection) policy.
 
-    Extends the standard ACT config with detection branch, data augmentation,
-    and feature fusion parameters.
+    Extends the standard ACT config with detection branch, mask-guided perception,
+    data augmentation, and feature fusion parameters.
 
     The detection branch adds a Feature Pyramid Network (FPN) and FCOS detection
     head on top of the shared ResNet18 backbone, with detection-guided feature
     fusion to inject spatial attention into the action branch.
+
+    The mask-guided perception branch adds a lightweight Mask Decoder that uses
+    SAM 2 pre-generated masks as pixel-wise supervision to teach the backbone
+    fine-grained visual features of transparent objects.
 
     Args:
         use_detection: Master switch for the detection branch.
         det_weight: Weight multiplier for the detection loss in joint training.
         det_cameras: Per-camera detection configuration.
         annotation_dir: Path to CVAT XML annotation directory (None = no labels).
+        use_mask_guidance: Master switch for the mask-guided perception branch.
+        mask_weight: Weight multiplier for the mask loss.
+        mask_dir: Path to SAM 2 pre-generated NPZ masks (None = {annotation_dir}/masks).
+        mask_decoder_channels: Hidden channels in the Mask Decoder upsampling path.
         fpn_channels: FPN output channel count.
         fcos_num_classes: Number of object classes (1 = cup only).
         fcos_strides: Strides for each FPN level.
@@ -104,3 +112,29 @@ class ACTDetConfig(ACTConfig):
     aug_occlusion_enable: bool = True
     aug_occlusion_area_ratio: tuple[float, float] = (0.1, 0.3)
     aug_occlusion_gray_range: tuple[float, float] = (0.3, 0.7)
+
+    # --- Mask-Guided Perception ---
+    use_mask_guidance: bool = True
+    mask_weight: float = 1.0
+    mask_dir: str | None = None
+    mask_decoder_channels: int = 32
+    mask_cameras: dict = field(
+        default_factory=lambda: {
+            "observation.images.top": {"enable": True},
+            "observation.images.wrist": {"enable": False},
+        }
+    )
+
+    # --- Feature Injection (Innovation 2 & 3) ---
+    # FCOS Feature Injection: extract cls_tower + reg_tower intermediate features,
+    # gate with centerness, project to dim_model, and append as extra Encoder tokens.
+    fcos_feature_inject: bool = False
+    # Which FPN levels to inject FCOS features from. ["p4"] = 300 tokens,
+    # ["p3","p4"] = 1500, ["p2","p3","p4"] = 6300.
+    fcos_inject_levels: list[str] = field(default_factory=lambda: ["p4"])
+
+    # Mask Feature Injection: extract Mask Decoder f432 intermediate features,
+    # project to dim_model, pool, and append as extra Encoder tokens.
+    mask_feature_inject: bool = False
+    # Spatial resolution to pool the mask inject features to before flattening.
+    mask_inject_pool_size: tuple[int, int] = (15, 20)

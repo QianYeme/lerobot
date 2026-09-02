@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "title": "Inference-Path Comparison across Versions (V1 / V2-V3 / V4 / V5 / V6)",
+  "type": "academic-diagram",
+  "source": "generated",
+  "profile": "academic-paper",
+  "theme": "academic-color",
+  "layout": "horizontal",
+  "counts": {
+    "nodes": 26,
+    "edges": 13,
+    "modules": 5
+  },
+  "nodes": [
+    {
+      "id": "p1",
+      "label": "Backbone\nF4 (top + wrist)",
+      "type": "process",
+      "module": "m1"
+    },
+    {
+      "id": "x1",
+      "label": "✗ none",
+      "type": "text",
+      "module": "m1"
+    },
+    {
+      "id": "t1",
+      "label": "latent|state|top|wrist",
+      "type": "process",
+      "module": "m1"
+    },
+    {
+      "id": "a1",
+      "label": "ACT CVAE\nenc -> dec -> action (6)",
+      "type": "attention",
+      "module": "m1"
+    },
+    {
+      "id": "n1",
+      "label": "✓ F4 -> tokens -> ACT\n✗ no extra branches",
+      "type": "text",
+      "module": "m1"
+    },
+    {
+      "id": "p2",
+      "label": "Backbone -> FPN ->\nFusion (enhanced F4)",
+      "type": "process",
+      "module": "m2"
+    },
+    {
+      "id": "x2",
+      "label": "✗ none",
+      "type": "text",
+      "module": "m2"
+    },
+    {
+      "id": "t2",
+      "label": "latent|state|top|wrist",
+      "type": "process",
+      "module": "m2"
+    },
+    {
+      "id": "a2",
+      "label": "ACT CVAE\nenc -> dec -> action (6)",
+      "type": "attention",
+      "module": "m2"
+    },
+    {
+      "id": "n2",
+      "label": "✓ FPN + Fusion run\n✗ det/mask heads dropped",
+      "type": "text",
+      "module": "m2"
+    },
+    {
+      "id": "p4",
+      "label": "Backbone -> FPN ->\nFusion (enhanced F4)",
+      "type": "process",
+      "module": "m4"
+    },
+    {
+      "id": "inj4",
+      "label": "✓ FCOS injection\ncls+reg gate -> 300 tok",
+      "type": "process",
+      "module": "m4"
+    },
+    {
+      "id": "t4",
+      "label": "latent|state|top|wrist\n+fcos",
+      "type": "process",
+      "module": "m4"
+    },
+    {
+      "id": "a4",
+      "label": "ACT CVAE\nenc -> dec -> action (6)",
+      "type": "attention",
+      "module": "m4"
+    },
+    {
+      "id": "n4",
+      "label": "✓ FCOS tower runs\n✗ final pred layers",
+      "type": "text",
+      "module": "m4"
+    },
+    {
+      "id": "p5",
+      "label": "Backbone -> FPN ->\nFusion (enhanced F4)",
+      "type": "process",
+      "module": "m5"
+    },
+    {
+      "id": "inj5",
+      "label": "✓ Mask injection\nf432 pool -> 300 tok",
+      "type": "process",
+      "module": "m5"
+    },
+    {
+      "id": "t5",
+      "label": "latent|state|top|wrist\n+mask",
+      "type": "process",
+      "module": "m5"
+    },
+    {
+      "id": "a5",
+      "label": "ACT CVAE\nenc -> dec -> action (6)",
+      "type": "attention",
+      "module": "m5"
+    },
+    {
+      "id": "n5",
+      "label": "✓ mask f432 runs\n✗ det branch, pred_mask",
+      "type": "text",
+      "module": "m5"
+    },
+    {
+      "id": "p6",
+      "label": "Backbone -> FPN ->\nFusion (enhanced F4)",
+      "type": "process",
+      "module": "m6"
+    },
+    {
+      "id": "inj6",
+      "label": "✓ FCOS + Mask injection\n2 x 300 tokens",
+      "type": "process",
+      "module": "m6"
+    },
+    {
+      "id": "t6",
+      "label": "latent|state|top|wrist\nfcos|mask",
+      "type": "process",
+      "module": "m6"
+    },
+    {
+      "id": "a6",
+      "label": "ACT CVAE\nenc -> dec -> action (6)",
+      "type": "attention",
+      "module": "m6"
+    },
+    {
+      "id": "n6",
+      "label": "✓ both injections run\n✗ pred layers, pred_mask",
+      "type": "text",
+      "module": "m6"
+    },
+    {
+      "id": "legend",
+      "label": "✓ runs at inference | ✗ dropped at inference (training-only)\npurple = feature injection | ACT CVAE identical in all versions",
+      "type": "text"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "from": "p1",
+      "to": "t1",
+      "type": "primary"
+    },
+    {
+      "id": "edge-2",
+      "from": "t1",
+      "to": "a1",
+      "type": "primary"
+    },
+    {
+      "id": "edge-3",
+      "from": "p2",
+      "to": "t2",
+      "type": "primary"
+    },
+    {
+      "id": "edge-4",
+      "from": "t2",
+      "to": "a2",
+      "type": "primary"
+    },
+    {
+      "id": "edge-5",
+      "from": "p4",
+      "to": "inj4",
+      "type": "primary"
+    },
+    {
+      "id": "edge-6",
+      "from": "inj4",
+      "to": "t4",
+      "type": "primary"
+    },
+    {
+      "id": "edge-7",
+      "from": "t4",
+      "to": "a4",
+      "type": "primary"
+    },
+    {
+      "id": "edge-8",
+      "from": "p5",
+      "to": "inj5",
+      "type": "primary"
+    },
+    {
+      "id": "edge-9",
+      "from": "inj5",
+      "to": "t5",
+      "type": "primary"
+    },
+    {
+      "id": "edge-10",
+      "from": "t5",
+      "to": "a5",
+      "type": "primary"
+    },
+    {
+      "id": "edge-11",
+      "from": "p6",
+      "to": "inj6",
+      "type": "primary"
+    },
+    {
+      "id": "edge-12",
+      "from": "inj6",
+      "to": "t6",
+      "type": "primary"
+    },
+    {
+      "id": "edge-13",
+      "from": "t6",
+      "to": "a6",
+      "type": "primary"
+    }
+  ],
+  "modules": [
+    {
+      "id": "m1",
+      "label": "V1: baseline ACT"
+    },
+    {
+      "id": "m2",
+      "label": "V2/V3: det+mask"
+    },
+    {
+      "id": "m4",
+      "label": "V4: +FCOS inject"
+    },
+    {
+      "id": "m5",
+      "label": "V5: +Mask inject"
+    },
+    {
+      "id": "m6",
+      "label": "V6: +both inject"
+    }
+  ]
+}

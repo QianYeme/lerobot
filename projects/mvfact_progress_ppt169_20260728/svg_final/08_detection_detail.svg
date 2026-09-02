@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="4" fill="#1A56DB"/>
+
+  <text x="80" y="50" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700" fill="#1F2937">FPN 三路输出：FCOS 并行独立，Mask Decoder 串行融合，源于输出性质的根本差异</text>
+
+  <!-- Left half: FCOS - parallel -->
+  <text x="80" y="90" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" fill="#1A56DB">FCOS Head (并行独立)</text>
+
+  <!-- FPN outputs -->
+  <rect x="80" y="110" width="100" height="32" rx="0" fill="#1A56DB"/>
+  <text x="130" y="131" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">P2 (60x80)</text>
+  <rect x="210" y="110" width="100" height="32" rx="0" fill="#1A56DB"/>
+  <text x="260" y="131" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">P3 (30x40)</text>
+  <rect x="340" y="110" width="100" height="32" rx="0" fill="#1A56DB"/>
+  <text x="390" y="131" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">P4 (15x20)</text>
+
+  <!-- Arrows down to heads -->
+  <line x1="130" y1="142" x2="130" y2="170" stroke="#1A56DB" stroke-width="2"/>
+  <line x1="260" y1="142" x2="260" y2="170" stroke="#1A56DB" stroke-width="2"/>
+  <line x1="390" y1="142" x2="390" y2="170" stroke="#1A56DB" stroke-width="2"/>
+
+  <!-- Three heads -->
+  <rect x="60" y="170" width="140" height="56" rx="0" fill="none" stroke="#E0245E" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="130" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#E0245E" text-anchor="middle">FCOS Head</text>
+  <text x="130" y="207" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">CLS + REG + CTR</text>
+  <text x="130" y="220" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">(共享权重)</text>
+
+  <rect x="190" y="170" width="140" height="56" rx="0" fill="none" stroke="#E0245E" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="260" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#E0245E" text-anchor="middle">FCOS Head</text>
+  <text x="260" y="207" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">CLS + REG + CTR</text>
+  <text x="260" y="220" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">(共享权重)</text>
+
+  <rect x="320" y="170" width="140" height="56" rx="0" fill="none" stroke="#E0245E" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="390" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#E0245E" text-anchor="middle">FCOS Head</text>
+  <text x="390" y="207" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">CLS + REG + CTR</text>
+  <text x="390" y="220" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">(共享权重)</text>
+
+  <!-- Three loss separate -->
+  <rect x="60" y="240" width="400" height="36" rx="0" fill="#F0F4F8"/>
+  <text x="260" y="263" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937" text-anchor="middle">三层各自算Loss → 求平均 → Detection Loss (Focal+L1+BCE)</text>
+
+  <text x="80" y="310" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">关键词: 稀疏结构化 / 每层可独立预测 bbox / 三层NMS合并</text>
+
+  <!-- Divider -->
+  <rect x="530" y="80" width="2" height="270" fill="#E5E7EB"/>
+
+  <!-- Right half: Mask Decoder - serial fusion -->
+  <text x="570" y="90" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" fill="#E0245E">Mask Decoder (串行融合)</text>
+
+  <!-- Same three FPN inputs -->
+  <rect x="570" y="110" width="100" height="32" rx="0" fill="#E0245E"/>
+  <text x="620" y="131" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">P4 (15x20)</text>
+  <rect x="700" y="110" width="100" height="32" rx="0" fill="#E0245E"/>
+  <text x="750" y="131" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">P3 (30x40)</text>
+  <rect x="830" y="110" width="100" height="32" rx="0" fill="#E0245E"/>
+  <text x="880" y="131" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">P2 (60x80)</text>
+
+  <!-- Serial flow -->
+  <line x1="620" y1="142" x2="620" y2="170" stroke="#E0245E" stroke-width="2"/>
+  <line x1="750" y1="142" x2="750" y2="170" stroke="#E0245E" stroke-width="2"/>
+  <line x1="880" y1="142" x2="880" y2="260" stroke="#E0245E" stroke-width="2"/>
+
+  <rect x="570" y="170" width="160" height="40" rx="0" fill="none" stroke="#E0245E" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="650" y="190" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#E0245E" text-anchor="middle">1x1 Conv 32ch + upsample</text>
+  <text x="650" y="205" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">P4 up → concat P3</text>
+
+  <line x1="650" y1="210" x2="650" y2="235" stroke="#E0245E" stroke-width="2"/>
+
+  <rect x="570" y="235" width="300" height="40" rx="0" fill="none" stroke="#E0245E" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="720" y="255" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#E0245E" text-anchor="middle">3x3 Conv 32ch + upsample → concat P2</text>
+  <text x="720" y="270" font-family="Microsoft YaHei, Arial, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">P4语义(P2细节(边缘) → 一张 mask</text>
+
+  <line x1="720" y1="275" x2="720" y2="300" stroke="#E0245E" stroke-width="2"/>
+
+  <rect x="620" y="300" width="200" height="36" rx="0" fill="#E0245E"/>
+  <text x="720" y="323" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">1x1 Conv 1ch → Sigmoid</text>
+
+  <line x1="720" y1="336" x2="720" y2="355" stroke="#E0245E" stroke-width="2"/>
+
+  <text x="720" y="372" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#E0245E" text-anchor="middle">480 x 640 mask (单张)</text>
+
+  <text x="570" y="400" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">关键词: 密集逐像素 / 只能合成一张图 / 需要三层"商量"出一个统一结果</text>
+
+  <!-- Bottom: Comparison table -->
+  <text x="80" y="460" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" fill="#1F2937">并行 vs 串行：根本原因是输出性质不同</text>
+
+  <rect x="80" y="482" width="1120" height="32" rx="0" fill="#1A56DB"/>
+  <text x="130" y="503" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">维度</text>
+  <text x="350" y="503" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">FCOS (并行独立)</text>
+  <text x="850" y="503" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Mask Decoder (串行融合)</text>
+
+  <rect x="80" y="514" width="1120" height="28" rx="0" fill="#FFFFFF"/>
+  <text x="130" y="533" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">输出类型</text>
+  <text x="350" y="533" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">稀疏结构化: 4个坐标 + 1个分类</text>
+  <text x="850" y="533" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">密集逐像素: 480x640 个概率值</text>
+
+  <rect x="80" y="542" width="1120" height="28" rx="0" fill="#F0F4F8"/>
+  <text x="130" y="561" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">三层如何处理</text>
+  <text x="350" y="561" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">各层独立预测，NMS 合并 → 可重叠存在</text>
+  <text x="850" y="561" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">P4语义(P3形状(P2边缘 → 逐级统一</text>
+
+  <rect x="80" y="570" width="1120" height="28" rx="0" fill="#FFFFFF"/>
+  <text x="130" y="589" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">推理行为</text>
+  <text x="350" y="589" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">丢弃 (Backbone 已学会定位)</text>
+  <text x="850" y="589" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#1F2937">丢弃 (Backbone 已学会识别透明物)</text>
+
+  <rect x="80" y="620" width="1120" height="1" fill="#E5E7EB"/>
+  <text x="80" y="650" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">检测+Mask分支详解</text>
+  <text x="1200" y="650" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="end">8 / 12</text>
+</svg>

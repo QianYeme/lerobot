@@ -1,0 +1,116 @@
+meta:
+  profile: academic-paper
+  figureType: architecture
+  theme: academic-color
+  layout: horizontal
+  canvas: "900x650"
+  print: { target: cn-thesis }
+  title: "(c) 特征融合与Transformer"
+  description: "Top视角经FPN+Fusion增强后与Wrist视角F4、Robot State一同进入Transformer Encoder->Decoder。"
+  legend: "Fusion Module 推理时仍运行 (权重已被检测梯度塑造)"
+
+modules:
+  - id: top_stage
+    label: Top Camera Path
+  - id: fusion_stage
+    label: Feature Fusion
+  - id: encoder_stage
+    label: Transformer Encoder
+  - id: decoder_stage
+    label: Transformer Decoder
+
+nodes:
+  - id: fpn_out
+    label: "FPN\nP2/P3/P4"
+    type: tensor3d
+    module: top_stage
+    bounds: { x: 40, y: 50, width: 90, height: 48 }
+
+  - id: f4_skip
+    label: "F4 skip\n(from ResNet)"
+    type: tensor3d
+    module: top_stage
+    bounds: { x: 40, y: 130, width: 90, height: 48 }
+
+  - id: fusion
+    label: "Detection-Feature Fusion\nSpatial Attention Map (15x20)\n x4 Up -> Enhance F4"
+    type: attention
+    module: fusion_stage
+    bounds: { x: 190, y: 55, width: 250, height: 72 }
+    style:
+      fontSize: 12
+
+  - id: enhanced_f4
+    label: "Enhanced F4\n(512ch, 15x20)"
+    type: tensor3d
+    module: top_stage
+    bounds: { x: 500, y: 65, width: 110, height: 48 }
+
+  - id: wrist_f4
+    label: "Wrist F4\n(512ch, 15x20)"
+    type: tensor3d
+    module: top_stage
+    bounds: { x: 40, y: 240, width: 110, height: 48 }
+
+  - id: robot_state
+    label: "Robot State\n(9-dim)"
+    type: input
+    module: top_stage
+    bounds: { x: 40, y: 340, width: 110, height: 48 }
+
+  - id: encoder
+    label: "Transformer Encoder\n[Latent | State | Top Tokens | Wrist Tokens]\nMulti-Head Self-Attn + 2D PE"
+    type: attention
+    module: encoder_stage
+    bounds: { x: 500, y: 200, width: 280, height: 72 }
+    style:
+      fontSize: 12
+
+  - id: decoder
+    label: "Transformer Decoder\nLearned Queries x Cross-Attention\nLayer x N"
+    type: attention
+    module: decoder_stage
+    bounds: { x: 500, y: 360, width: 260, height: 68 }
+    style:
+      fontSize: 12
+
+  - id: latent_label
+    label: "Latent z (zeros at inference)"
+    type: text
+    bounds: { x: 340, y: 340, width: 130, height: 18 }
+    style:
+      fontSize: 10
+      fontStyle: 2
+
+edges:
+  - from: fpn_out
+    to: fusion
+    type: primary
+    label: "P2/P3/P4"
+    labelOffset: { x: 0, y: -12 }
+  - from: f4_skip
+    to: fusion
+    type: data
+    label: "skip"
+    labelOffset: { x: 0, y: -12 }
+  - from: fusion
+    to: enhanced_f4
+    type: primary
+  - from: enhanced_f4
+    to: encoder
+    type: primary
+    label: "300 tokens"
+    labelOffset: { x: 0, y: -14 }
+  - from: wrist_f4
+    to: encoder
+    type: data
+    label: "300 tokens"
+    labelOffset: { x: 0, y: -14 }
+  - from: robot_state
+    to: encoder
+    type: data
+    label: "1 token"
+    labelOffset: { x: 0, y: -14 }
+  - from: encoder
+    to: decoder
+    type: primary

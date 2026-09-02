@@ -1,0 +1,459 @@
+{
+  "version": 1,
+  "title": "Feature Injection Mechanisms (Innov. 2 FCOS Branch, Innov. 3 Mask Branch)",
+  "type": "academic-diagram",
+  "source": "generated",
+  "profile": "academic-paper",
+  "theme": "academic-color",
+  "layout": "horizontal",
+  "counts": {
+    "nodes": 37,
+    "edges": 35,
+    "modules": 2
+  },
+  "nodes": [
+    {
+      "id": "p4a",
+      "label": "P4 from FPN\n(512, 15x20)",
+      "type": "input",
+      "module": "panel_a"
+    },
+    {
+      "id": "cls",
+      "label": "CLS Tower\nconv x4",
+      "type": "process",
+      "module": "panel_a"
+    },
+    {
+      "id": "reg",
+      "label": "REG Tower\nconv x4",
+      "type": "process",
+      "module": "panel_a"
+    },
+    {
+      "id": "ctr",
+      "label": "CTR Tower\nconv x4",
+      "type": "process",
+      "module": "panel_a"
+    },
+    {
+      "id": "cls_feat",
+      "label": "cls_feature\n(128, 15x20)",
+      "type": "tensor3d",
+      "module": "panel_a"
+    },
+    {
+      "id": "reg_feat",
+      "label": "reg_feature\n(128, 15x20)",
+      "type": "tensor3d",
+      "module": "panel_a"
+    },
+    {
+      "id": "ctr_pred",
+      "label": "ctr_pred\n(1, 15x20)",
+      "type": "tensor3d",
+      "module": "panel_a"
+    },
+    {
+      "id": "cls_logits",
+      "label": "cls_logits (C)\nfinal conv",
+      "type": "process",
+      "module": "panel_a"
+    },
+    {
+      "id": "reg_pred",
+      "label": "reg_pred (4)\nfinal conv",
+      "type": "process",
+      "module": "panel_a"
+    },
+    {
+      "id": "ctr_loss",
+      "label": "Centerness BCE",
+      "type": "loss",
+      "module": "panel_a"
+    },
+    {
+      "id": "cat_a",
+      "label": "Concat\n(256, 15x20)",
+      "type": "process",
+      "module": "panel_a"
+    },
+    {
+      "id": "gate",
+      "label": "Centerness Gate\nx(1+sigmoid(ctr))",
+      "type": "process",
+      "module": "panel_a"
+    },
+    {
+      "id": "proj_a",
+      "label": "1x1 Conv\n256 -> 512",
+      "type": "process",
+      "module": "panel_a"
+    },
+    {
+      "id": "toks_a",
+      "label": "+ 2D pos-enc\n300 tokens (15x20)",
+      "type": "process",
+      "module": "panel_a"
+    },
+    {
+      "id": "det_loss",
+      "label": "Focal + GIoU Loss",
+      "type": "loss",
+      "module": "panel_a"
+    },
+    {
+      "id": "gt_a",
+      "label": "GT bbox",
+      "type": "input",
+      "module": "panel_a"
+    },
+    {
+      "id": "txt_a",
+      "label": "-> Encoder (V6)",
+      "type": "text"
+    },
+    {
+      "id": "p4b",
+      "label": "P4 from FPN\n(512, 15x20)",
+      "type": "input",
+      "module": "panel_b"
+    },
+    {
+      "id": "p3b",
+      "label": "P3 from FPN\n(256, 30x40)",
+      "type": "input",
+      "module": "panel_b"
+    },
+    {
+      "id": "p2b",
+      "label": "P2 from FPN\n(128, 60x80)",
+      "type": "input",
+      "module": "panel_b"
+    },
+    {
+      "id": "r4",
+      "label": "reduce P4\n1x1 Conv 32ch",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "r3",
+      "label": "reduce P3\n1x1 Conv 32ch",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "r2",
+      "label": "reduce P2\n1x1 Conv 32ch",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "up4",
+      "label": "upsample (60x80)",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "cat43",
+      "label": "Concat (64ch)",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "up43",
+      "label": "upsample (60x80)",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "proj_b",
+      "label": "1x1 Conv\n32 -> 512",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "pool",
+      "label": "adaptive avg pool\n(15,20)",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "toks_b",
+      "label": "300 tokens\n(15x20, 512)",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "txt_b",
+      "label": "-> Encoder (V6)",
+      "type": "text"
+    },
+    {
+      "id": "fuse43",
+      "label": "fuse (conv)\nf43 (32, 60x80)",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "cat432",
+      "label": "Concat (64ch)",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "fuse432",
+      "label": "fuse (conv)\nf432 (32, 60x80)",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "pred_mask",
+      "label": "pred_mask x8\n(480x640)",
+      "type": "process",
+      "module": "panel_b"
+    },
+    {
+      "id": "mask_loss",
+      "label": "L1 Mask Loss",
+      "type": "loss",
+      "module": "panel_b"
+    },
+    {
+      "id": "sam2_gt",
+      "label": "SAM2 GT Mask\n(NPZ, offline)",
+      "type": "input",
+      "module": "panel_b"
+    },
+    {
+      "id": "legend",
+      "label": "purple = injection (train + inference)\ndotted = gradient / training only",
+      "type": "text"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "from": "p4a",
+      "to": "cls",
+      "type": "primary"
+    },
+    {
+      "id": "edge-2",
+      "from": "p4a",
+      "to": "reg",
+      "type": "primary"
+    },
+    {
+      "id": "edge-3",
+      "from": "p4a",
+      "to": "ctr",
+      "type": "primary"
+    },
+    {
+      "id": "edge-4",
+      "from": "cls",
+      "to": "cls_feat",
+      "type": "primary"
+    },
+    {
+      "id": "edge-5",
+      "from": "reg",
+      "to": "reg_feat",
+      "type": "primary"
+    },
+    {
+      "id": "edge-6",
+      "from": "ctr",
+      "to": "ctr_pred",
+      "type": "primary"
+    },
+    {
+      "id": "edge-7",
+      "from": "cls_feat",
+      "to": "cls_logits",
+      "type": "optional"
+    },
+    {
+      "id": "edge-8",
+      "from": "reg_feat",
+      "to": "reg_pred",
+      "type": "optional"
+    },
+    {
+      "id": "edge-9",
+      "from": "ctr_pred",
+      "to": "ctr_loss",
+      "type": "optional"
+    },
+    {
+      "id": "edge-10",
+      "from": "cls_feat",
+      "to": "cat_a",
+      "type": "primary"
+    },
+    {
+      "id": "edge-11",
+      "from": "reg_feat",
+      "to": "cat_a",
+      "type": "primary"
+    },
+    {
+      "id": "edge-12",
+      "from": "ctr_pred",
+      "to": "gate",
+      "type": "data"
+    },
+    {
+      "id": "edge-13",
+      "from": "cat_a",
+      "to": "gate",
+      "type": "primary"
+    },
+    {
+      "id": "edge-14",
+      "from": "gate",
+      "to": "proj_a",
+      "type": "primary"
+    },
+    {
+      "id": "edge-15",
+      "from": "proj_a",
+      "to": "toks_a",
+      "type": "primary"
+    },
+    {
+      "id": "edge-16",
+      "from": "cls_logits",
+      "to": "det_loss",
+      "type": "optional"
+    },
+    {
+      "id": "edge-17",
+      "from": "reg_pred",
+      "to": "det_loss",
+      "type": "optional"
+    },
+    {
+      "id": "edge-18",
+      "from": "gt_a",
+      "to": "det_loss",
+      "type": "data",
+      "label": "GT"
+    },
+    {
+      "id": "edge-19",
+      "from": "p4b",
+      "to": "r4",
+      "type": "primary"
+    },
+    {
+      "id": "edge-20",
+      "from": "p3b",
+      "to": "r3",
+      "type": "primary"
+    },
+    {
+      "id": "edge-21",
+      "from": "p2b",
+      "to": "r2",
+      "type": "primary"
+    },
+    {
+      "id": "edge-22",
+      "from": "r4",
+      "to": "up4",
+      "type": "primary"
+    },
+    {
+      "id": "edge-23",
+      "from": "r3",
+      "to": "cat43",
+      "type": "primary"
+    },
+    {
+      "id": "edge-24",
+      "from": "up4",
+      "to": "cat43",
+      "type": "primary"
+    },
+    {
+      "id": "edge-25",
+      "from": "cat43",
+      "to": "fuse43",
+      "type": "primary"
+    },
+    {
+      "id": "edge-26",
+      "from": "fuse43",
+      "to": "up43",
+      "type": "primary"
+    },
+    {
+      "id": "edge-27",
+      "from": "r2",
+      "to": "cat432",
+      "type": "primary"
+    },
+    {
+      "id": "edge-28",
+      "from": "up43",
+      "to": "cat432",
+      "type": "primary"
+    },
+    {
+      "id": "edge-29",
+      "from": "cat432",
+      "to": "fuse432",
+      "type": "primary"
+    },
+    {
+      "id": "edge-30",
+      "from": "fuse432",
+      "to": "pred_mask",
+      "type": "primary"
+    },
+    {
+      "id": "edge-31",
+      "from": "pred_mask",
+      "to": "mask_loss",
+      "type": "optional"
+    },
+    {
+      "id": "edge-32",
+      "from": "sam2_gt",
+      "to": "mask_loss",
+      "type": "data",
+      "label": "GT"
+    },
+    {
+      "id": "edge-33",
+      "from": "fuse432",
+      "to": "proj_b",
+      "type": "primary"
+    },
+    {
+      "id": "edge-34",
+      "from": "proj_b",
+      "to": "pool",
+      "type": "primary"
+    },
+    {
+      "id": "edge-35",
+      "from": "pool",
+      "to": "toks_b",
+      "type": "primary"
+    }
+  ],
+  "modules": [
+    {
+      "id": "panel_a",
+      "label": "(a) FCOS Feature Injection (Innov. 2)"
+    },
+    {
+      "id": "panel_b",
+      "label": "(b) Mask Feature Injection (Innov. 3)"
+    }
+  ]
+}

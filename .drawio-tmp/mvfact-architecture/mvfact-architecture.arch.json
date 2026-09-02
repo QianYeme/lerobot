@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "title": "M-VF-ACT 模型训练架构图",
+  "type": "academic-diagram",
+  "source": "generated",
+  "profile": "academic-paper",
+  "theme": "academic-color",
+  "layout": "vertical",
+  "counts": {
+    "nodes": 20,
+    "edges": 22,
+    "modules": 6
+  },
+  "nodes": [
+    {
+      "id": "top_cam",
+      "label": "Top Camera\n(480x640x3)",
+      "type": "input",
+      "module": "input_stage"
+    },
+    {
+      "id": "wrist_cam",
+      "label": "Wrist Camera\n(480x640x3)",
+      "type": "input",
+      "module": "input_stage"
+    },
+    {
+      "id": "robot_state",
+      "label": "Robot State (9-dim)",
+      "type": "input",
+      "module": "input_stage"
+    },
+    {
+      "id": "data_aug",
+      "label": "Data Augmentation\n(Color / Noise / Occlusion)\nOnly Top, Training Only",
+      "type": "process",
+      "module": "backbone_stage"
+    },
+    {
+      "id": "resnet",
+      "label": "Shared ResNet18\n(layer2 / layer3 / layer4)",
+      "type": "conv",
+      "module": "backbone_stage"
+    },
+    {
+      "id": "resnet_features",
+      "label": "F2 (128ch,60x80)\nF3 (256ch,30x40)\nF4 (512ch,15x20)",
+      "type": "tensor3d",
+      "module": "backbone_stage"
+    },
+    {
+      "id": "fpn",
+      "label": "Feature Pyramid Network\nP2 / P3 / P4",
+      "type": "attention",
+      "module": "aux_stage"
+    },
+    {
+      "id": "fcos_head",
+      "label": "FCOS Detection Head\n(CLS / REG / CTR)",
+      "type": "process",
+      "module": "aux_stage"
+    },
+    {
+      "id": "det_loss",
+      "label": "Detection Loss\nFocal + L1 + BCE",
+      "type": "loss",
+      "module": "aux_stage"
+    },
+    {
+      "id": "mask_decoder",
+      "label": "Mask Decoder\n(FPN Fusion -> 480x640)",
+      "type": "process",
+      "module": "aux_stage"
+    },
+    {
+      "id": "mask_loss",
+      "label": "Mask Loss\nL1 |pred - GT|",
+      "type": "loss",
+      "module": "aux_stage"
+    },
+    {
+      "id": "sam2_gt",
+      "label": "SAM2 GT Mask\n(.npz offline)",
+      "type": "input",
+      "module": "aux_stage"
+    },
+    {
+      "id": "fusion",
+      "label": "Detection-Feature Fusion\nAttention Map x4 -> Enhanced F4",
+      "type": "attention",
+      "module": "fusion_stage"
+    },
+    {
+      "id": "enhanced_f4",
+      "label": "Enhanced F4\n(512ch, 15x20)",
+      "type": "tensor3d",
+      "module": "fusion_stage"
+    },
+    {
+      "id": "wrist_f4",
+      "label": "Wrist F4\n(512ch, 15x20)",
+      "type": "tensor3d",
+      "module": "fusion_stage"
+    },
+    {
+      "id": "encoder",
+      "label": "Transformer Encoder\n[Latent | State | Tokens...]",
+      "type": "attention",
+      "module": "transformer_stage"
+    },
+    {
+      "id": "decoder",
+      "label": "Transformer Decoder\nQueries x Cross-Attention",
+      "type": "attention",
+      "module": "transformer_stage"
+    },
+    {
+      "id": "action_head",
+      "label": "Action Head\nLinear -> (chunk, 6)",
+      "type": "output",
+      "module": "output_stage"
+    },
+    {
+      "id": "total_loss",
+      "label": "Total Loss = Action_L1 + KL + det_weight x Det_Loss + mask_weight x Mask_Loss",
+      "type": "formula",
+      "module": "output_stage"
+    },
+    {
+      "id": "legend_text",
+      "label": "Solid = Inference modules    Dashed = Training-only modules    Dotted = Gradient/Loss flow",
+      "type": "text",
+      "module": "output_stage"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "from": "top_cam",
+      "to": "data_aug",
+      "type": "primary"
+    },
+    {
+      "id": "edge-2",
+      "from": "wrist_cam",
+      "to": "resnet",
+      "type": "primary",
+      "label": "Wrist"
+    },
+    {
+      "id": "edge-3",
+      "from": "data_aug",
+      "to": "resnet",
+      "type": "primary",
+      "label": "Top (aug)"
+    },
+    {
+      "id": "edge-4",
+      "from": "resnet",
+      "to": "resnet_features",
+      "type": "data"
+    },
+    {
+      "id": "edge-5",
+      "from": "resnet_features",
+      "to": "fpn",
+      "type": "data",
+      "label": "F2/F3/F4"
+    },
+    {
+      "id": "edge-6",
+      "from": "fpn",
+      "to": "fcos_head",
+      "type": "primary"
+    },
+    {
+      "id": "edge-7",
+      "from": "fpn",
+      "to": "mask_decoder",
+      "type": "primary"
+    },
+    {
+      "id": "edge-8",
+      "from": "fcos_head",
+      "to": "det_loss",
+      "type": "optional",
+      "label": "grad"
+    },
+    {
+      "id": "edge-9",
+      "from": "mask_decoder",
+      "to": "mask_loss",
+      "type": "optional",
+      "label": "grad"
+    },
+    {
+      "id": "edge-10",
+      "from": "sam2_gt",
+      "to": "mask_loss",
+      "type": "data",
+      "label": "GT"
+    },
+    {
+      "id": "edge-11",
+      "from": "fpn",
+      "to": "fusion",
+      "type": "primary"
+    },
+    {
+      "id": "edge-12",
+      "from": "resnet_features",
+      "to": "fusion",
+      "type": "data",
+      "label": "F4 skip"
+    },
+    {
+      "id": "edge-13",
+      "from": "fusion",
+      "to": "enhanced_f4",
+      "type": "primary"
+    },
+    {
+      "id": "edge-14",
+      "from": "resnet",
+      "to": "wrist_f4",
+      "type": "data",
+      "label": "Wrist F4"
+    },
+    {
+      "id": "edge-15",
+      "from": "enhanced_f4",
+      "to": "encoder",
+      "type": "primary",
+      "label": "Top tokens"
+    },
+    {
+      "id": "edge-16",
+      "from": "wrist_f4",
+      "to": "encoder",
+      "type": "data",
+      "label": "Wrist tokens"
+    },
+    {
+      "id": "edge-17",
+      "from": "robot_state",
+      "to": "encoder",
+      "type": "data",
+      "label": "State token"
+    },
+    {
+      "id": "edge-18",
+      "from": "encoder",
+      "to": "decoder",
+      "type": "primary"
+    },
+    {
+      "id": "edge-19",
+      "from": "decoder",
+      "to": "action_head",
+      "type": "primary"
+    },
+    {
+      "id": "edge-20",
+      "from": "action_head",
+      "to": "total_loss",
+      "type": "optional",
+      "label": "L1"
+    },
+    {
+      "id": "edge-21",
+      "from": "det_loss",
+      "to": "total_loss",
+      "type": "optional",
+      "label": "det x Ldet"
+    },
+    {
+      "id": "edge-22",
+      "from": "mask_loss",
+      "to": "total_loss",
+      "type": "optional",
+      "label": "mask x Lmask"
+    }
+  ],
+  "modules": [
+    {
+      "id": "input_stage",
+      "label": "Input"
+    },
+    {
+      "id": "backbone_stage",
+      "label": "Backbone & Aug"
+    },
+    {
+      "id": "aux_stage",
+      "label": "Auxiliary Heads (Training Only)"
+    },
+    {
+      "id": "fusion_stage",
+      "label": "Feature Fusion"
+    },
+    {
+      "id": "transformer_stage",
+      "label": "Transformer"
+    },
+    {
+      "id": "output_stage",
+      "label": "Output & Loss"
+    }
+  ]
+}

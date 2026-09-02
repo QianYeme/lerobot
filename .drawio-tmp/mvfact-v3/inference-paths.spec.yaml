@@ -1,0 +1,439 @@
+meta:
+  profile: academic-paper
+  figureType: architecture
+  theme: academic-color
+  layout: horizontal
+  canvas: 1500x740
+  print:
+    target: cn-thesis
+    widthPt: 700
+    minPt: 7
+  title: Inference-Path Comparison across Versions (V1 / V2-V3 / V4 / V5 / V6)
+  description: >-
+    Inference-time data path of each ACTDet version; all columns share the same ACT CVAE transformer (6-dim actions). V1
+    (baseline ACT): backbone F4 only. V2/V3: FPN + Det-Feature Fusion (enhanced F4); the det/mask heads are
+    training-only and dropped at inference. V4 adds the FCOS feature injection (Innov. 2), V5 adds the Mask f432
+    injection (Innov. 3), V6 adds both; each injection appends 300 tokens to the encoder sequence (see Fig. 2b).
+  legend: >-
+    ✓ = runs at inference | ✗ = dropped at inference (training-only) | purple = feature injection (Innov. 2/3) | the ACT
+    CVAE transformer is identical across versions
+modules:
+  - id: m1
+    label: 'V1: baseline ACT'
+  - id: m2
+    label: 'V2/V3: det+mask'
+  - id: m4
+    label: 'V4: +FCOS inject'
+  - id: m5
+    label: 'V5: +Mask inject'
+  - id: m6
+    label: 'V6: +both inject'
+nodes:
+  - id: p1
+    label: |-
+      Backbone
+      F4 (top + wrist)
+    type: process
+    module: m1
+    bounds:
+      x: 40
+      'y': 90
+      width: 250
+      height: 64
+    style:
+      fontSize: 15
+  - id: x1
+    label: ✗ none
+    type: text
+    module: m1
+    bounds:
+      x: 40
+      'y': 215
+      width: 100
+      height: 30
+    style:
+      fontSize: 15
+      fontColor: '#6B7280'
+  - id: t1
+    label: latent|state|top|wrist
+    type: process
+    module: m1
+    bounds:
+      x: 40
+      'y': 320
+      width: 250
+      height: 48
+    style:
+      fontSize: 15
+  - id: a1
+    label: |-
+      ACT CVAE
+      enc -> dec -> action (6)
+    type: attention
+    module: m1
+    bounds:
+      x: 40
+      'y': 430
+      width: 250
+      height: 70
+    style:
+      fontSize: 15
+  - id: n1
+    label: |-
+      ✓ F4 -> tokens -> ACT
+      ✗ no extra branches
+    type: text
+    module: m1
+    bounds:
+      x: 40
+      'y': 550
+      width: 250
+      height: 56
+    style:
+      fontSize: 15
+  - id: p2
+    label: |-
+      Backbone -> FPN ->
+      Fusion (enhanced F4)
+    type: process
+    module: m2
+    bounds:
+      x: 325
+      'y': 90
+      width: 250
+      height: 64
+    style:
+      fontSize: 15
+  - id: x2
+    label: ✗ none
+    type: text
+    module: m2
+    bounds:
+      x: 325
+      'y': 215
+      width: 100
+      height: 30
+    style:
+      fontSize: 15
+      fontColor: '#6B7280'
+  - id: t2
+    label: latent|state|top|wrist
+    type: process
+    module: m2
+    bounds:
+      x: 325
+      'y': 320
+      width: 250
+      height: 48
+    style:
+      fontSize: 15
+  - id: a2
+    label: |-
+      ACT CVAE
+      enc -> dec -> action (6)
+    type: attention
+    module: m2
+    bounds:
+      x: 325
+      'y': 430
+      width: 250
+      height: 70
+    style:
+      fontSize: 15
+  - id: n2
+    label: |-
+      ✓ FPN + Fusion run
+      ✗ det/mask heads dropped
+    type: text
+    module: m2
+    bounds:
+      x: 325
+      'y': 550
+      width: 250
+      height: 56
+    style:
+      fontSize: 15
+  - id: p4
+    label: |-
+      Backbone -> FPN ->
+      Fusion (enhanced F4)
+    type: process
+    module: m4
+    bounds:
+      x: 610
+      'y': 90
+      width: 250
+      height: 64
+    style:
+      fontSize: 15
+  - id: inj4
+    label: |-
+      ✓ FCOS injection
+      cls+reg gate -> 300 tok
+    type: process
+    module: m4
+    bounds:
+      x: 610
+      'y': 200
+      width: 250
+      height: 64
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: t4
+    label: |-
+      latent|state|top|wrist
+      +fcos
+    type: process
+    module: m4
+    bounds:
+      x: 610
+      'y': 320
+      width: 250
+      height: 48
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: a4
+    label: |-
+      ACT CVAE
+      enc -> dec -> action (6)
+    type: attention
+    module: m4
+    bounds:
+      x: 610
+      'y': 430
+      width: 250
+      height: 70
+    style:
+      fontSize: 15
+  - id: n4
+    label: |-
+      ✓ FCOS tower runs
+      ✗ final pred layers
+    type: text
+    module: m4
+    bounds:
+      x: 610
+      'y': 550
+      width: 250
+      height: 56
+    style:
+      fontSize: 15
+  - id: p5
+    label: |-
+      Backbone -> FPN ->
+      Fusion (enhanced F4)
+    type: process
+    module: m5
+    bounds:
+      x: 895
+      'y': 90
+      width: 250
+      height: 64
+    style:
+      fontSize: 15
+  - id: inj5
+    label: |-
+      ✓ Mask injection
+      f432 pool -> 300 tok
+    type: process
+    module: m5
+    bounds:
+      x: 895
+      'y': 200
+      width: 250
+      height: 64
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: t5
+    label: |-
+      latent|state|top|wrist
+      +mask
+    type: process
+    module: m5
+    bounds:
+      x: 895
+      'y': 320
+      width: 250
+      height: 48
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: a5
+    label: |-
+      ACT CVAE
+      enc -> dec -> action (6)
+    type: attention
+    module: m5
+    bounds:
+      x: 895
+      'y': 430
+      width: 250
+      height: 70
+    style:
+      fontSize: 15
+  - id: n5
+    label: |-
+      ✓ mask f432 runs
+      ✗ det branch, pred_mask
+    type: text
+    module: m5
+    bounds:
+      x: 895
+      'y': 550
+      width: 250
+      height: 56
+    style:
+      fontSize: 15
+  - id: p6
+    label: |-
+      Backbone -> FPN ->
+      Fusion (enhanced F4)
+    type: process
+    module: m6
+    bounds:
+      x: 1180
+      'y': 90
+      width: 250
+      height: 64
+    style:
+      fontSize: 15
+  - id: inj6
+    label: |-
+      ✓ FCOS + Mask injection
+      2 x 300 tokens
+    type: process
+    module: m6
+    bounds:
+      x: 1180
+      'y': 200
+      width: 250
+      height: 64
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: t6
+    label: |-
+      latent|state|top|wrist
+      fcos|mask
+    type: process
+    module: m6
+    bounds:
+      x: 1180
+      'y': 320
+      width: 250
+      height: 48
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: a6
+    label: |-
+      ACT CVAE
+      enc -> dec -> action (6)
+    type: attention
+    module: m6
+    bounds:
+      x: 1180
+      'y': 430
+      width: 250
+      height: 70
+    style:
+      fontSize: 15
+  - id: n6
+    label: |-
+      ✓ both injections run
+      ✗ pred layers, pred_mask
+    type: text
+    module: m6
+    bounds:
+      x: 1180
+      'y': 550
+      width: 250
+      height: 56
+    style:
+      fontSize: 15
+  - id: legend
+    label: |-
+      ✓ runs at inference | ✗ dropped at inference (training-only)
+      purple = feature injection | ACT CVAE identical in all versions
+    type: text
+    bounds:
+      x: 390
+      'y': 648
+      width: 720
+      height: 56
+    style:
+      fontSize: 15
+edges:
+  - from: p1
+    to: t1
+    type: primary
+    style:
+      exitX: 0.8
+      exitY: 1
+      entryX: 0.8
+      entryY: 0
+  - from: t1
+    to: a1
+    type: primary
+  - from: p2
+    to: t2
+    type: primary
+    style:
+      exitX: 0.8
+      exitY: 1
+      entryX: 0.8
+      entryY: 0
+  - from: t2
+    to: a2
+    type: primary
+  - from: p4
+    to: inj4
+    type: primary
+  - from: inj4
+    to: t4
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - from: t4
+    to: a4
+    type: primary
+  - from: p5
+    to: inj5
+    type: primary
+  - from: inj5
+    to: t5
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - from: t5
+    to: a5
+    type: primary
+  - from: p6
+    to: inj6
+    type: primary
+  - from: inj6
+    to: t6
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - from: t6
+    to: a6
+    type: primary

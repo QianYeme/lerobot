@@ -19,10 +19,12 @@ Extends the standard ACT model with:
   - Online data augmentation (color jitter, noise, occlusion) for the global camera.
   - A shared Feature Pyramid Network (FPN) on the ResNet18 backbone.
   - An FCOS detection head for object localization.
+  - A Mask Decoder for mask-guided perception (transparent object fine features).
   - A detection-guided feature fusion module that injects spatial attention
     into the action branch.
 
-Jointly trained with: Total Loss = action_L1 + KL_div + det_weight * detection_loss.
+Jointly trained with:
+    Total Loss = action_L1 + KL_div + det_weight * detection_loss + mask_weight * mask_loss
 """
 
 from __future__ import annotations
@@ -44,7 +46,9 @@ from lerobot.policies.act_det.detection.augmentation import ImageAugmentation
 from lerobot.policies.act_det.detection.fcos import FCOSHead, compute_fcos_loss
 from lerobot.policies.act_det.detection.fpn import FeaturePyramidNetwork
 from lerobot.policies.act_det.detection.fusion import DetectionFeatureFusion
+from lerobot.policies.act_det.detection.mask_decoder import MaskDecoder
 from lerobot.policies.act_det.label_loader import LabelLoader
+from lerobot.policies.act_det.mask_loader import MaskLoader
 from lerobot.policies.pretrained import PreTrainedPolicy
 from lerobot.utils.constants import ACTION, OBS_ENV_STATE, OBS_IMAGES, OBS_STATE
 
@@ -150,6 +154,12 @@ class ACTDetPolicy(PreTrainedPolicy):
             loss = loss + det_total * self.config.det_weight
             loss_dict.update(det_components)
 
+        # Add mask loss if available.
+        mask_loss = self.model.get_mask_loss()
+        if mask_loss is not None and getattr(self.config, "use_mask_guidance", False):
+            loss = loss + mask_loss["mask_loss"] * getattr(self.config, "mask_weight", 1.0)
+            loss_dict.update(mask_loss)
+
         return loss, loss_dict
 
 
@@ -196,6 +206,7 @@ class ACTDetModel(nn.Module):
                 num_classes=config.fcos_num_classes,
                 num_convs=config.fcos_num_convs,
                 gn_groups=config.fcos_gn_groups,
+                inject_dim=config.dim_model if getattr(config, "fcos_feature_inject", False) else None,
             )
             self.fusion = DetectionFeatureFusion(
                 fpn_channels=config.fpn_channels,
@@ -212,6 +223,27 @@ class ACTDetModel(nn.Module):
                     k: k.split(".")[-1] for k in config.det_cameras
                 },
             )
+
+            # ---- Mask-Guided Perception ----
+            self.use_mask_guidance = getattr(config, "use_mask_guidance", False)
+            if self.use_mask_guidance:
+                mask_dir = getattr(config, "mask_dir", None) or (
+                    f"{annotation_dir}/masks" if annotation_dir else None
+                )
+                self.mask_loader = MaskLoader(
+                    mask_dir=mask_dir,
+                    camera_keys={
+                        k: k.split(".")[-1] for k in config.det_cameras
+                    },
+                )
+                self.mask_decoder = MaskDecoder(
+                    fpn_channels=config.fpn_channels,
+                    mid_channels=getattr(config, "mask_decoder_channels", 32),
+                    inject_dim=config.dim_model if getattr(config, "mask_feature_inject", False) else None,
+                )
+            else:
+                self.mask_loader = None
+                self.mask_decoder = None
 
         # ---- Augmentation (top camera only) ----
         self.aug_enable = getattr(config, "aug_enable", False)
@@ -283,8 +315,9 @@ class ACTDetModel(nn.Module):
         self.decoder_pos_embed = nn.Embedding(config.chunk_size, config.dim_model)
         self.action_head = nn.Linear(config.dim_model, self.config.action_feature.shape[0])
 
-        # Stash detection loss values computed during forward.
+        # Stash detection and mask loss values computed during forward.
         self._det_loss = None
+        self._mask_loss = None
 
         self._reset_parameters()
 
@@ -298,6 +331,10 @@ class ACTDetModel(nn.Module):
         """Return the detection loss computed during the last forward pass."""
         return self._det_loss
 
+    def get_mask_loss(self) -> dict[str, float] | None:
+        """Return the mask loss computed during the last forward pass."""
+        return self._mask_loss
+
     def forward(self, batch: dict[str, Tensor]) -> tuple[Tensor, tuple[Tensor, Tensor] | tuple[None, None]]:
         """Forward pass through ACTDet.
 
@@ -307,6 +344,7 @@ class ACTDetModel(nn.Module):
         """
         training = self.training
         self._det_loss = None
+        self._mask_loss = None
 
         if self.config.use_vae and training:
             assert ACTION in batch
@@ -363,8 +401,12 @@ class ACTDetModel(nn.Module):
         det_strides = self.config.fcos_strides if self.use_detection else None
         det_size_ranges = self.config.fcos_size_ranges if self.use_detection else None
 
+        # Track mask losses across cameras.
+        total_mask_loss = torch.tensor(0.0, device=device)
+        total_mask_frames = 0
+
         if self.config.image_features:
-            image_features = self.config.image_features  # e.g. ["observation.images.top", "observation.images.wrist"]
+            image_features = list(self.config.image_features.keys())  # ["observation.images.top", ...]
 
             for cam_idx, img in enumerate(batch[OBS_IMAGES]):
                 cam_key = image_features[cam_idx] if cam_idx < len(image_features) else f"cam_{cam_idx}"
@@ -404,6 +446,23 @@ class ACTDetModel(nn.Module):
                         )
                         all_det_targets.append(targets_per_img)
 
+                    # ---- Mask Decoder (per-camera switch, training only) ----
+                    mask_cam_enabled = (
+                        self.use_mask_guidance
+                        and getattr(self.config, "mask_cameras", {}).get(cam_key, {}).get("enable", False)
+                    )
+                    if training and mask_cam_enabled:
+                        pred_mask = self.mask_decoder(p2, p3, p4)  # (B, 1, 480, 640)
+
+                        # Load SAM 2 GT masks for each image in the batch.
+                        gt_masks = self._load_mask_batch(
+                            batch, cam_key, img_idx=cam_idx, device=device
+                        )
+                        if gt_masks is not None:
+                            mask_loss = F.l1_loss(pred_mask, gt_masks, reduction="mean")
+                            total_mask_loss = total_mask_loss + mask_loss
+                            total_mask_frames += batch_size
+
                     # Feature fusion (always run — generates spatial attention during inference too).
                     enhanced_f4 = self.fusion(p2, p3, p4, f4)  # (B, 512, 15, 20)
 
@@ -419,6 +478,43 @@ class ACTDetModel(nn.Module):
                 cam_pos_embed = einops.rearrange(cam_pos_embed, "b c h w -> (h w) b c")
                 encoder_in_tokens.extend(list(cam_features))
                 encoder_in_pos_embed.extend(list(cam_pos_embed))
+
+                # ---- FCOS Feature Injection (Innovation 2) ----
+                # Inject cls+reg tower intermediate features, gated by centerness,
+                # as extra Encoder tokens right after this camera's image tokens.
+                if (
+                    cam_enabled
+                    and getattr(self.config, "fcos_feature_inject", False)
+                ):
+                    fcos_inject = self.fcos_head.get_inject_features(
+                        fpn_features,
+                        levels=getattr(self.config, "fcos_inject_levels", ["p4"]),
+                    )
+                    for inj_feat in fcos_inject:
+                        inj_pos = self.encoder_cam_feat_pos_embed(inj_feat).to(dtype=inj_feat.dtype)
+                        inj_flat = einops.rearrange(inj_feat, "b c h w -> (h w) b c")
+                        inj_pos_flat = einops.rearrange(inj_pos, "b c h w -> (h w) b c")
+                        encoder_in_tokens.extend(list(inj_flat))
+                        encoder_in_pos_embed.extend(list(inj_pos_flat))
+
+                # ---- Mask Feature Injection (Innovation 3) ----
+                # Inject Mask Decoder f432 intermediate features (pooled) as
+                # extra Encoder tokens right after FCOS inject tokens.
+                if (
+                    cam_enabled
+                    and self.use_mask_guidance
+                    and getattr(self.config, "mask_feature_inject", False)
+                    and getattr(self.config, "mask_cameras", {}).get(cam_key, {}).get("enable", False)
+                ):
+                    mask_inject = self.mask_decoder.get_inject_features(
+                        p2, p3, p4,
+                        pool_size=getattr(self.config, "mask_inject_pool_size", (15, 20)),
+                    )
+                    mask_pos = self.encoder_cam_feat_pos_embed(mask_inject).to(dtype=mask_inject.dtype)
+                    mask_flat = einops.rearrange(mask_inject, "b c h w -> (h w) b c")
+                    mask_pos_flat = einops.rearrange(mask_pos, "b c h w -> (h w) b c")
+                    encoder_in_tokens.extend(list(mask_flat))
+                    encoder_in_pos_embed.extend(list(mask_pos_flat))
 
         # ---- Compute detection loss ----
         if (
@@ -445,6 +541,10 @@ class ACTDetModel(nn.Module):
                 for k, v in det_dict.items():
                     total_det_components[k] = total_det_components.get(k, 0.0) + v
             self._det_loss = (total_det_loss, total_det_components)
+
+        # ---- Store mask loss ----
+        if total_mask_frames > 0:
+            self._mask_loss = {"mask_loss": (total_mask_loss / total_mask_frames).item()}
 
         # ---- Transformer encoder → decoder → action head ----
         encoder_in_tokens = torch.stack(encoder_in_tokens, axis=0)
@@ -484,6 +584,11 @@ class ACTDetModel(nn.Module):
             List of dicts, one per batch element, with keys "labels" and "bboxes".
             Empty dicts for frames/sequences without annotations.
         """
+        # If episode_index/frame_index are not in the batch (e.g. streaming mode),
+        # detection targets cannot be built — skip with empty targets.
+        if "episode_index" not in batch or "frame_index" not in batch:
+            return [{}] * batch[OBS_IMAGES][img_idx].shape[0]
+
         batch_size = batch[OBS_IMAGES][img_idx].shape[0]
         targets = []
 
@@ -501,7 +606,57 @@ class ACTDetModel(nn.Module):
 
     def _get_img_key(self, cam_idx: int) -> str:
         """Map camera index to its canonical key."""
-        features = self.config.image_features
+        features = list(self.config.image_features.keys()) if self.config.image_features else []
         if features and cam_idx < len(features):
             return features[cam_idx]
         return f"cam_{cam_idx}"
+
+    def _load_mask_batch(
+        self,
+        batch: dict[str, Tensor],
+        cam_key: str,
+        img_idx: int = 0,
+        device: torch.device | None = None,
+    ) -> Tensor | None:
+        """Load SAM 2 GT masks for each image in the batch.
+
+        Args:
+            batch: Training batch containing episode_index and frame_index.
+            cam_key: Canonical camera key (e.g. "observation.images.top").
+            img_idx: Camera index.
+            device: Target device for the output tensor.
+
+        Returns:
+            (B, 1, 480, 640) tensor of GT masks, or None if no masks available.
+        """
+        if self.mask_loader is None or not self.mask_loader.enabled:
+            return None
+
+        # If episode_index/frame_index are not in the batch, skip mask loading.
+        if "episode_index" not in batch or "frame_index" not in batch:
+            return None
+
+        batch_size = batch[OBS_IMAGES][img_idx].shape[0]
+        masks_per_image = []
+
+        for b in range(batch_size):
+            ep = int(batch["episode_index"][b].item())
+            frm = int(batch["frame_index"][b].item())
+
+            mask = self.mask_loader.get_mask(cam_key, ep, frm)
+            if mask is None:
+                return None  # If any frame in batch lacks a mask, skip the whole batch.
+
+            # mask is (H, W) numpy float32 → (1, H, W) torch.
+            mask_tensor = torch.from_numpy(mask).unsqueeze(0).float()
+            masks_per_image.append(mask_tensor)
+
+        if not masks_per_image:
+            return None
+
+        gt_masks = torch.stack(masks_per_image, dim=0)  # (B, 1, 480, 640)
+
+        if device is not None:
+            gt_masks = gt_masks.to(device, non_blocking=True)
+
+        return gt_masks

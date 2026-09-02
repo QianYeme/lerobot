@@ -1,0 +1,711 @@
+meta:
+  profile: academic-paper
+  figureType: architecture
+  theme: academic-color
+  layout: horizontal
+  canvas: 1500x960
+  print:
+    target: cn-thesis
+    widthPt: 700
+    minPt: 7
+  title: 'Feature Injection Mechanisms (Innov. 2 FCOS Branch, Innov. 3 Mask Branch)'
+  description: >-
+    Zoom-in of the two injection paths in the V6 figure. (a) FCOS injection: the CLS/REG tower intermediate features
+    cls_feature(128) and reg_feature(128) are concatenated (256ch), gated by centerness (1+sigmoid(ctr_pred)), projected
+    256->512, position-encoded and pooled into 300 tokens; the final prediction layers and losses are training-only. (b)
+    Mask injection: P4/P3/P2 are reduced to 32ch and fused in two rounds into f432 (32ch, 60x80); f432 feeds the
+    training-only pred_mask upsample and the injection path (1x1 conv 32->512, adaptive avg pool to 15x20 = 300 tokens)
+    that runs in training and inference.
+  legend: Purple = injection path (train + inference) | Dotted = gradient / training only
+modules:
+  - id: panel_a
+    label: (a) FCOS Feature Injection (Innov. 2)
+  - id: panel_b
+    label: (b) Mask Feature Injection (Innov. 3)
+nodes:
+  - id: p4a
+    label: |-
+      P4 from FPN
+      (512, 15x20)
+    type: input
+    module: panel_a
+    bounds:
+      x: 60
+      'y': 60
+      width: 180
+      height: 50
+    style:
+      fontSize: 15
+  - id: cls
+    label: |-
+      CLS Tower
+      conv x4
+    type: process
+    module: panel_a
+    bounds:
+      x: 60
+      'y': 180
+      width: 170
+      height: 54
+    style:
+      fontSize: 15
+  - id: reg
+    label: |-
+      REG Tower
+      conv x4
+    type: process
+    module: panel_a
+    bounds:
+      x: 270
+      'y': 180
+      width: 170
+      height: 54
+    style:
+      fontSize: 15
+  - id: ctr
+    label: |-
+      CTR Tower
+      conv x4
+    type: process
+    module: panel_a
+    bounds:
+      x: 480
+      'y': 180
+      width: 170
+      height: 54
+    style:
+      fontSize: 15
+  - id: cls_feat
+    label: |-
+      cls_feature
+      (128, 15x20)
+    type: tensor3d
+    module: panel_a
+    bounds:
+      x: 60
+      'y': 300
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+  - id: reg_feat
+    label: |-
+      reg_feature
+      (128, 15x20)
+    type: tensor3d
+    module: panel_a
+    bounds:
+      x: 270
+      'y': 300
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+  - id: ctr_pred
+    label: |-
+      ctr_pred
+      (1, 15x20)
+    type: tensor3d
+    module: panel_a
+    bounds:
+      x: 480
+      'y': 300
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+  - id: cls_logits
+    label: |-
+      cls_logits (C)
+      final conv
+    type: process
+    module: panel_a
+    bounds:
+      x: 60
+      'y': 440
+      width: 140
+      height: 50
+    style:
+      fontSize: 15
+  - id: reg_pred
+    label: |-
+      reg_pred (4)
+      final conv
+    type: process
+    module: panel_a
+    bounds:
+      x: 270
+      'y': 440
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+  - id: ctr_loss
+    label: Centerness BCE
+    type: loss
+    module: panel_a
+    bounds:
+      x: 480
+      'y': 440
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+  - id: cat_a
+    label: |-
+      Concat
+      (256, 15x20)
+    type: process
+    module: panel_a
+    bounds:
+      x: 60
+      'y': 600
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: gate
+    label: |-
+      Centerness Gate
+      x(1+sigmoid(ctr))
+    type: process
+    module: panel_a
+    bounds:
+      x: 270
+      'y': 600
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: proj_a
+    label: |-
+      1x1 Conv
+      256 -> 512
+    type: process
+    module: panel_a
+    bounds:
+      x: 480
+      'y': 600
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: toks_a
+    label: |-
+      + 2D pos-enc
+      300 tokens (15x20)
+    type: process
+    module: panel_a
+    bounds:
+      x: 420
+      'y': 690
+      width: 200
+      height: 50
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: det_loss
+    label: Focal + GIoU Loss
+    type: loss
+    module: panel_a
+    bounds:
+      x: 155
+      'y': 540
+      width: 180
+      height: 50
+    style:
+      fontSize: 15
+  - id: gt_a
+    label: GT bbox
+    type: input
+    module: panel_a
+    bounds:
+      x: 30
+      'y': 740
+      width: 90
+      height: 50
+    style:
+      fontSize: 15
+  - id: txt_a
+    label: '-> Encoder (V6)'
+    type: text
+    bounds:
+      x: 420
+      'y': 765
+      width: 200
+      height: 32
+    style:
+      fontSize: 15
+  - id: p4b
+    label: |-
+      P4 from FPN
+      (512, 15x20)
+    type: input
+    module: panel_b
+    bounds:
+      x: 730
+      'y': 60
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: p3b
+    label: |-
+      P3 from FPN
+      (256, 30x40)
+    type: input
+    module: panel_b
+    bounds:
+      x: 730
+      'y': 180
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: p2b
+    label: |-
+      P2 from FPN
+      (128, 60x80)
+    type: input
+    module: panel_b
+    bounds:
+      x: 730
+      'y': 300
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: r4
+    label: |-
+      reduce P4
+      1x1 Conv 32ch
+    type: process
+    module: panel_b
+    bounds:
+      x: 930
+      'y': 60
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: r3
+    label: |-
+      reduce P3
+      1x1 Conv 32ch
+    type: process
+    module: panel_b
+    bounds:
+      x: 930
+      'y': 180
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: r2
+    label: |-
+      reduce P2
+      1x1 Conv 32ch
+    type: process
+    module: panel_b
+    bounds:
+      x: 930
+      'y': 300
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: up4
+    label: upsample (60x80)
+    type: process
+    module: panel_b
+    bounds:
+      x: 1130
+      'y': 60
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+  - id: cat43
+    label: Concat (64ch)
+    type: process
+    module: panel_b
+    bounds:
+      x: 1130
+      'y': 180
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+  - id: up43
+    label: upsample (60x80)
+    type: process
+    module: panel_b
+    bounds:
+      x: 1130
+      'y': 300
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+  - id: proj_b
+    label: |-
+      1x1 Conv
+      32 -> 512
+    type: process
+    module: panel_b
+    bounds:
+      x: 1130
+      'y': 420
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: pool
+    label: |-
+      adaptive avg pool
+      (15,20)
+    type: process
+    module: panel_b
+    bounds:
+      x: 1130
+      'y': 540
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: toks_b
+    label: |-
+      300 tokens
+      (15x20, 512)
+    type: process
+    module: panel_b
+    bounds:
+      x: 1130
+      'y': 660
+      width: 170
+      height: 50
+    style:
+      fontSize: 15
+      fillColor: '#F3E5F5'
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - id: txt_b
+    label: '-> Encoder (V6)'
+    type: text
+    bounds:
+      x: 1130
+      'y': 725
+      width: 160
+      height: 32
+    style:
+      fontSize: 15
+  - id: fuse43
+    label: |-
+      fuse (conv)
+      f43 (32, 60x80)
+    type: process
+    module: panel_b
+    bounds:
+      x: 1330
+      'y': 180
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: cat432
+    label: Concat (64ch)
+    type: process
+    module: panel_b
+    bounds:
+      x: 1330
+      'y': 380
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: fuse432
+    label: |-
+      fuse (conv)
+      f432 (32, 60x80)
+    type: process
+    module: panel_b
+    bounds:
+      x: 1330
+      'y': 490
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: pred_mask
+    label: |-
+      pred_mask x8
+      (480x640)
+    type: process
+    module: panel_b
+    bounds:
+      x: 1330
+      'y': 600
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: mask_loss
+    label: L1 Mask Loss
+    type: loss
+    module: panel_b
+    bounds:
+      x: 1330
+      'y': 710
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: sam2_gt
+    label: |-
+      SAM2 GT Mask
+      (NPZ, offline)
+    type: input
+    module: panel_b
+    bounds:
+      x: 1330
+      'y': 820
+      width: 160
+      height: 50
+    style:
+      fontSize: 15
+  - id: legend
+    label: |-
+      purple = injection (train + inference)
+      dotted = gradient / training only
+    type: text
+    bounds:
+      x: 540
+      'y': 904
+      width: 420
+      height: 56
+    style:
+      fontSize: 15
+edges:
+  - from: p4a
+    to: cls
+    type: primary
+  - from: p4a
+    to: reg
+    type: primary
+  - from: p4a
+    to: ctr
+    type: primary
+  - from: cls
+    to: cls_feat
+    type: primary
+  - from: reg
+    to: reg_feat
+    type: primary
+  - from: ctr
+    to: ctr_pred
+    type: primary
+  - from: cls_feat
+    to: cls_logits
+    type: optional
+    style:
+      exitX: 0.412
+      exitY: 1
+      entryX: 0.5
+      entryY: 0
+  - from: reg_feat
+    to: reg_pred
+    type: optional
+    style:
+      exitX: 0.5
+      exitY: 1
+      entryX: 0.5
+      entryY: 0
+  - from: ctr_pred
+    to: ctr_loss
+    type: optional
+    style:
+      exitX: 0.5
+      exitY: 1
+      entryX: 0.5
+      entryY: 0
+  - from: cls_feat
+    to: cat_a
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+    waypoints:
+      - x: 40
+        'y': 325
+      - x: 40
+        'y': 625
+  - from: reg_feat
+    to: cat_a
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+    waypoints:
+      - x: 460
+        'y': 325
+      - x: 460
+        'y': 680
+      - x: 230
+        'y': 680
+      - x: 230
+        'y': 645
+  - from: ctr_pred
+    to: gate
+    type: data
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 1.5
+      dashed: true
+    waypoints:
+      - x: 450
+        'y': 310
+      - x: 450
+        'y': 590
+      - x: 360
+        'y': 590
+  - from: cat_a
+    to: gate
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - from: gate
+    to: proj_a
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - from: proj_a
+    to: toks_a
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+      exitX: 0.235
+      exitY: 1
+      entryX: 0.5
+      entryY: 0
+  - from: cls_logits
+    to: det_loss
+    type: optional
+    style:
+      exitX: 0.936
+      exitY: 1
+      entryX: 0.2
+      entryY: 0
+  - from: reg_pred
+    to: det_loss
+    type: optional
+    style:
+      exitX: 0.176
+      exitY: 1
+      entryX: 0.806
+      entryY: 0
+  - from: gt_a
+    to: det_loss
+    type: data
+    label: GT
+    labelOffset:
+      x: 0
+      'y': -28
+  - from: p4b
+    to: r4
+    type: primary
+  - from: p3b
+    to: r3
+    type: primary
+  - from: p2b
+    to: r2
+    type: primary
+  - from: r4
+    to: up4
+    type: primary
+  - from: r3
+    to: cat43
+    type: primary
+  - from: up4
+    to: cat43
+    type: primary
+  - from: cat43
+    to: fuse43
+    type: primary
+  - from: fuse43
+    to: up43
+    type: primary
+    waypoints:
+      - x: 1410
+        'y': 260
+      - x: 1215
+        'y': 260
+  - from: r2
+    to: cat432
+    type: primary
+    waypoints:
+      - x: 1090
+        'y': 390
+      - x: 1330
+        'y': 390
+  - from: up43
+    to: cat432
+    type: primary
+  - from: cat432
+    to: fuse432
+    type: primary
+  - from: fuse432
+    to: pred_mask
+    type: primary
+  - from: pred_mask
+    to: mask_loss
+    type: optional
+  - from: sam2_gt
+    to: mask_loss
+    type: data
+    label: GT
+    labelOffset:
+      x: 14
+      'y': -28
+  - from: fuse432
+    to: proj_b
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+    waypoints:
+      - x: 1300
+        'y': 515
+      - x: 1300
+        'y': 445
+  - from: proj_b
+    to: pool
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2
+  - from: pool
+    to: toks_b
+    type: primary
+    style:
+      strokeColor: '#9C27B0'
+      strokeWidth: 2

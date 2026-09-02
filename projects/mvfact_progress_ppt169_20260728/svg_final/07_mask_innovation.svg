@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1280" height="4" fill="#E0245E"/>
+
+  <text x="80" y="50" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700" fill="#1F2937">创新1: Mask-Guided Perception — 用逐像素监督教会Backbone"看见"透明物体</text>
+
+  <!-- Left: Problem/solution -->
+  <text x="80" y="90" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#6B7280">核心问题</text>
+  <text x="80" y="118" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" fill="#1F2937">透明塑料杯在 RGB 中几乎不可见 → 视觉 backbone 需要更强的监督信号</text>
+
+  <text x="80" y="160" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#E0245E">解决方案：Mask Decoder 作为训练辅助监督</text>
+
+  <!-- Flow diagram -->
+  <rect x="80" y="185" width="160" height="36" rx="0" fill="#1A56DB"/>
+  <text x="160" y="208" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#FFFFFF" text-anchor="middle">FPN: P2/P3/P4</text>
+
+  <text x="260" y="208" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#1A56DB">→</text>
+
+  <rect x="300" y="170" width="190" height="66" rx="0" fill="#E0245E"/>
+  <text x="395" y="194" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Mask Decoder</text>
+  <text x="395" y="214" font-family="Microsoft YaHei, Arial, sans-serif" font-size="11" fill="#FFB0C0" text-anchor="middle">P4→P3→P2 逐级上采样融合</text>
+  <text x="395" y="230" font-family="Microsoft YaHei, Arial, sans-serif" font-size="11" fill="#FFB0C0" text-anchor="middle">输出 480x640 mask, Sigmoid</text>
+
+  <text x="510" y="208" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#1A56DB">→</text>
+
+  <rect x="550" y="185" width="160" height="36" rx="0" fill="#F0F4F8" stroke="#E0245E" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="630" y="208" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#E0245E" text-anchor="middle">Mask L1 Loss |pred-GT|</text>
+
+  <line x1="630" y1="221" x2="630" y2="260" stroke="#6B7280" stroke-width="1.5"/>
+
+  <rect x="550" y="260" width="160" height="36" rx="0" fill="#F0F4F8"/>
+  <text x="630" y="283" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#1F2937" text-anchor="middle">SAM2 GT Mask (.npz)</text>
+
+  <!-- Right: Key design points -->
+  <rect x="760" y="80" width="440" height="250" rx="0" fill="#F0F4F8"/>
+  <text x="790" y="112" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2937">关键设计</text>
+
+  <text x="790" y="145" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">1. Mask Decoder 和 FCOS 是 FPN 上的并行兄弟节点</text>
+  <text x="810" y="168" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">两者都是训练辅助监督，通过损失梯度联合塑造 Backbone</text>
+
+  <text x="790" y="200" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">2. 逐像素 L1 Loss (mask_weight=1.0)</text>
+  <text x="810" y="223" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">数值范围与 Action L1 Loss 同量级，无需额外放大</text>
+
+  <text x="790" y="255" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">3. 推理时丢弃，Backbone 已内化感知</text>
+  <text x="810" y="278" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">Mask Decoder 不运行 → Backbone 已被像素级梯度"雕刻"</text>
+
+  <text x="790" y="310" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">4. mask_cameras 独立视角开关</text>
+  <text x="810" y="328" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" fill="#6B7280">默认 Top 开 / Wrist 关，可配置切换</text>
+
+  <!-- Bottom: Why it matters -->
+  <text x="80" y="370" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#1F2937">为什么对透明杯重要</text>
+
+  <rect x="80" y="390" width="350" height="130" rx="0" fill="#F0F4F8"/>
+  <text x="110" y="422" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#1A56DB">FCOS (稀疏监督)</text>
+  <text x="110" y="450" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">告诉你"杯子在这个框里"</text>
+  <text x="110" y="474" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">梯度只在 bbox 中心点附近有效</text>
+  <text x="110" y="498" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">对透明杯边缘 → 几乎无梯度信号</text>
+
+  <text x="470" y="475" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" fill="#E0245E">+</text>
+
+  <rect x="510" y="390" width="350" height="130" rx="0" fill="#F0F4F8"/>
+  <text x="540" y="422" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" font-weight="700" fill="#E0245E">Mask Decoder (密集监督)</text>
+  <text x="540" y="450" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">告诉你"每个像素是不是杯子"</text>
+  <text x="540" y="474" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">杯壁像素 → 明确的 0/1 梯度</text>
+  <text x="540" y="498" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">约束 Backbone 学会区分透明物/背景</text>
+
+  <!-- Overlap bar -->
+  <rect x="80" y="545" width="1120" height="3" fill="#E0245E"/>
+  <text x="80" y="575" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#1F2937">两者互补：FCOS 定位杯子区域 → Mask Decoder 精确刻画杯子轮廓 → 推理时 Backbone 同时具备了定位 + 轮廓感知能力</text>
+
+  <rect x="80" y="610" width="1120" height="1" fill="#E5E7EB"/>
+  <text x="80" y="645" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280">Mask-Guided Perception</text>
+  <text x="1200" y="645" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" fill="#6B7280" text-anchor="end">7 / 12</text>
+</svg>
