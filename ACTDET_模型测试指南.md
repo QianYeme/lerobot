@@ -15,6 +15,8 @@
 
 9 个实验全部训练完成（120000 steps）。checkpoint 目录统一为 `<运行目录>/checkpointsE<X>/last/pretrained_model`。
 
+> 模型已上传 Hugging Face（15 个仓库），新机器上下载命令见 **《模型下载指南.md》**。
+
 | 实验 | 版本 | 类型 | state | 检测 | Mask引导 | FCOS注入 | Mask注入 | 数据集 | 真机次数 |
 |------|------|------|-------|------|----------|----------|----------|--------|----------|
 | E1 | V1 基线 ACT | act | 6 维 | – | – | – | – | formal_A | **30（核心）** |
@@ -43,6 +45,8 @@ outputs/train/2026-08-08/12-34-49_act_det/checkpointsE9/last/pretrained_model  #
 
 - 数据集 A（formal_A）：6 维 state（5 关节 + gripper.pos），50ep 固定水位 + 40ep 随机水位 = 90ep
 - 数据集 B（formal1_B）：9 维 state（5 关节 + gripper.pos + gripper.load + gripper.curr + master_gripper.pos），同样 90ep
+
+> 测试时一律使用 `pretrained_model/` 目录（模型权重 + 配置）。同级的 `training_state/` 只保存优化器/调度器/随机数状态，仅用于 `lerobot-train --resume` 断点续训，无法用于测试。
 
 ---
 
