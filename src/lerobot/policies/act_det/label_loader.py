@@ -35,7 +35,7 @@ class LabelLoader:
     Args:
         annotation_dir: Root directory containing per-camera annotation subdirs.
         camera_keys: Mapping from canonical camera key to subdirectory name.
-                     e.g. {"observation.images.top": "top", "observation.images.wrist": "gripper"}
+                     e.g. {"observation.images.top": "top", "observation.images.gripper": "gripper"}
         enabled: Whether detection labels are available. If False, all lookups
                  return None.
     """
@@ -79,11 +79,11 @@ class LabelLoader:
         if not self._enabled:
             return None
 
-        camera_subdir = self._camera_keys.get(camera_key)
-        if camera_subdir is None:
-            return None
-
-        key = self._make_key(camera_subdir, episode_index, frame_index)
+        # `_load_all` stores entries keyed by the canonical camera key (it reverse-maps
+        # each annotation subdir back to its canonical key). Look up with the same
+        # canonical key instead of the subdir name, otherwise detection labels are
+        # never found.
+        key = self._make_key(camera_key, episode_index, frame_index)
         return self._cache.get(key)
 
     def _make_key(self, camera: str, episode: int, frame: int) -> tuple:

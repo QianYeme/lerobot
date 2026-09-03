@@ -130,10 +130,20 @@ class ACTDetPolicy(PreTrainedPolicy):
 
         actions_hat, (mu_hat, log_sigma_x2_hat) = self.model(batch)
 
-        l1_loss = (
+        l1_loss_per_dim = (
             F.l1_loss(batch[ACTION], actions_hat, reduction="none")
             * ~batch["action_is_pad"].unsqueeze(-1)
-        ).mean()
+        )
+        if self.config.gripper_loss_weight != 1.0:
+            # Up-weight the gripper channel (last action dim) so it doesn't collapse
+            # to the mean under the L1 loss (open/close/release are rare events).
+            channel_weights = torch.ones(
+                actions_hat.shape[-1], device=actions_hat.device, dtype=actions_hat.dtype
+            )
+            channel_weights[-1] = self.config.gripper_loss_weight
+            l1_loss = (l1_loss_per_dim * channel_weights).mean()
+        else:
+            l1_loss = l1_loss_per_dim.mean()
 
         loss_dict = {"l1_loss": l1_loss.item()}
         if self.config.use_vae:
@@ -598,6 +608,13 @@ class ACTDetModel(nn.Module):
 
             labels = self.label_loader.get_labels(cam_key, ep, frm)
             if labels is not None:
+                # CVAT XML labels are class-name strings (e.g. "cup"); FCOS expects
+                # 0-based integer class indices (0..num_classes-1). Map names to
+                # indices (single-class dataset → index 0).
+                labels["labels"] = [
+                    0 if isinstance(name, str) else int(name)
+                    for name in labels.get("labels", [])
+                ]
                 targets.append(labels)
             else:
                 targets.append({})

@@ -141,9 +141,19 @@ class ACTPolicy(PreTrainedPolicy):
 
         actions_hat, (mu_hat, log_sigma_x2_hat) = self.model(batch)
 
-        l1_loss = (
+        l1_loss_per_dim = (
             F.l1_loss(batch[ACTION], actions_hat, reduction="none") * ~batch["action_is_pad"].unsqueeze(-1)
-        ).mean()
+        )
+        if self.config.gripper_loss_weight != 1.0:
+            # Up-weight the gripper channel (last action dim) so it doesn't collapse
+            # to the mean under the L1 loss (open/close/release are rare events).
+            channel_weights = torch.ones(
+                actions_hat.shape[-1], device=actions_hat.device, dtype=actions_hat.dtype
+            )
+            channel_weights[-1] = self.config.gripper_loss_weight
+            l1_loss = (l1_loss_per_dim * channel_weights).mean()
+        else:
+            l1_loss = l1_loss_per_dim.mean()
 
         loss_dict = {"l1_loss": l1_loss.item()}
         if self.config.use_vae:

@@ -32,7 +32,7 @@ Example:
 python src/lerobot/scripts/offline_eval_act_det.py \
     --checkpoint outputs/train/2026-08-08/12-34-49_act_det/checkpointsE9/last/pretrained_model \
     --dataset.repo_id formal1_B \
-    --dataset.root /root/autodl-tmp/lerobot/lerobot-main/数据集 \
+    --dataset.root /home/lyj/lerobot/数据集/formal1_B \
     --episodes 63-89
 ```
 
@@ -100,7 +100,9 @@ def infer_dataset_from_checkpoint(checkpoint: str | Path) -> tuple[str, str] | N
     m = re.search(r"数据集[\\/]([^\\/]+)", annotation_dir)
     if not m:
         return None
-    root = annotation_dir.split("数据集")[0] + "数据集"
+    # root must be the dataset folder itself (contains meta/data/videos),
+    # i.e. the parent of the annotations directory.
+    root = str(Path(annotation_dir).parent)
     return m.group(1), root
 
 
@@ -140,7 +142,14 @@ def evaluate(checkpoint: Path, dataset: LeRobotDataset, batch_size: int,
 
     with torch.no_grad():
         for step, batch in enumerate(dataloader):
+            # The ACT pre-processor round-trips the batch through an EnvTransition,
+            # which keeps episode_index/index/task_index but DROPS frame_index. The
+            # ACTDet detection/mask losses need frame_index to look up per-frame
+            # annotations, so save it before preprocessing and restore it afterwards.
+            frame_index = batch.get("frame_index")
             batch = preprocessor(batch)
+            if frame_index is not None:
+                batch["frame_index"] = frame_index
             _, loss_dict = policy.forward(batch)
             bs = batch["observation.state"].shape[0]
             total_frames += bs
@@ -163,7 +172,8 @@ def main():
     parser.add_argument("--dataset.repo_id", default=None,
                         help="Dataset id (e.g. formal_A). Auto-detected for act_det checkpoints.")
     parser.add_argument("--dataset.root", default=None,
-                        help="Root directory containing the dataset (e.g. .../数据集)")
+                        help="Dataset folder itself, containing meta/data/videos "
+                             "(e.g. .../数据集/formal1_B)")
     parser.add_argument("--episodes", default="63-89",
                         help="Episode spec to evaluate on, e.g. '63-89' (default: last 27 episodes)")
     parser.add_argument("--batch-size", type=int, default=8)
@@ -175,7 +185,8 @@ def main():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
     checkpoint = Path(args.checkpoint)
-    repo_id, root = args.dataset.repo_id, args.dataset.root
+    repo_id = getattr(args, "dataset.repo_id", None)
+    root = getattr(args, "dataset.root", None)
     if repo_id is None or root is None:
         inferred = infer_dataset_from_checkpoint(checkpoint)
         if inferred is None and repo_id is None:

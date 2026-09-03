@@ -104,6 +104,9 @@ def control(cfg: RecordConfig):
             log_say(f"Episode {episode + 1}/{cfg.dataset.num_episodes} — policy running", cfg.play_sounds)
             start_episode_t = time.perf_counter()
             timestamp = 0
+            loop_idx = 0
+            prev_gripper_target = None
+            prev_gripper_state = None
             while timestamp < cfg.dataset.episode_time_s:
                 if events["exit_early"]:
                     events["exit_early"] = False
@@ -132,7 +135,37 @@ def control(cfg: RecordConfig):
                     action_values, ds_meta.features
                 )
                 robot_action_to_send = robot_action_processor((act_processed_policy, obs))
-                robot.send_action(robot_action_to_send)
+
+                # ---- 夹爪诊断: 实际位置 / 模型目标 / 实际发送(可能被 max_relative_target 钳位) ----
+                gripper_target = act_processed_policy.get("gripper.pos")
+                gripper_actual = obs.get("gripper.pos")
+                sent_action = robot.send_action(robot_action_to_send)
+                gripper_sent = sent_action.get("gripper.pos")
+
+                if gripper_target is not None:
+                    # 夹爪"张开/闭合"状态(阈值对齐 demo: <20≈闭, >35≈张, 中间≈抓持)
+                    state = "闭" if gripper_target < 20 else ("张" if gripper_target > 35 else "中")
+                    if prev_gripper_state is not None and state != prev_gripper_state:
+                        # 只对"张→闭"(抓取) 和 "闭→张"(放下) 这两类关键转换报警
+                        if prev_gripper_state == "张" and state in ("闭", "中"):
+                            logging.info(
+                                f"[grasp] ★闭合抓取: target {prev_gripper_target:.1f} -> {gripper_target:.1f} "
+                                f"(t={timestamp:.1f}s)"
+                            )
+                        elif prev_gripper_state == "闭" and state in ("张", "中"):
+                            logging.info(
+                                f"[grasp] ★张开放下: target {prev_gripper_target:.1f} -> {gripper_target:.1f} "
+                                f"(t={timestamp:.1f}s)"
+                            )
+                    prev_gripper_state = state
+                    prev_gripper_target = gripper_target
+
+                if loop_idx % 15 == 0:
+                    logging.info(
+                        f"[gripper] t={timestamp:.1f}s 实际={gripper_actual:.1f} "
+                        f"目标={gripper_target:.1f} 发送={gripper_sent:.1f}"
+                    )
+                loop_idx += 1
 
                 dt_s = time.perf_counter() - start_loop_t
                 sleep_time_s = 1 / cfg.dataset.fps - dt_s

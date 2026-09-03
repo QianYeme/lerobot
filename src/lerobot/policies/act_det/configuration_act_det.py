@@ -63,10 +63,11 @@ class ACTDetConfig(ACTConfig):
     # --- Detection ---
     use_detection: bool = True
     det_weight: float = 10.0
+    # Note: `gripper_loss_weight` (action L1 loss weighting) is inherited from ACTConfig.
     det_cameras: dict = field(
         default_factory=lambda: {
             "observation.images.top": {"enable": True},
-            "observation.images.wrist": {"enable": False},
+            "observation.images.gripper": {"enable": False},
         }
     )
 
@@ -121,7 +122,7 @@ class ACTDetConfig(ACTConfig):
     mask_cameras: dict = field(
         default_factory=lambda: {
             "observation.images.top": {"enable": True},
-            "observation.images.wrist": {"enable": False},
+            "observation.images.gripper": {"enable": False},
         }
     )
 

@@ -122,6 +122,9 @@ class ACTConfig(PreTrainedConfig):
     # Training and loss computation.
     dropout: float = 0.1
     kl_weight: float = 10.0
+    # Up-weight the gripper channel (last action dim) in the L1 loss so it doesn't
+    # collapse to its mean (open/close/release are low-duty-cycle events).
+    gripper_loss_weight: float = 1.0
 
     # Training preset
     optimizer_lr: float = 1e-5
