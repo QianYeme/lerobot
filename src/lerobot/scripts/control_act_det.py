@@ -28,7 +28,7 @@ python src/lerobot/scripts/control_act_det.py \
     --robot.port=/dev/ttyUSB0 \
     --robot.cameras='{top: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
     --dataset.repo_id formal1_B \
-    --dataset.root /root/autodl-tmp/lerobot/lerobot-main/数据集 \
+    --dataset.root /root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B \
     --dataset.single_task="Cup pick and place" \
     --dataset.num_episodes 10 \
     --dataset.episode_time_s 60 \
@@ -42,6 +42,9 @@ Keys: right arrow = end current episode early, Esc = stop. The camera names in
 
 import logging
 import time
+from pathlib import Path
+
+import cv2
 
 from lerobot.configs import parser
 from lerobot.datasets.dataset_metadata import LeRobotDatasetMetadata
@@ -90,6 +93,24 @@ def control(cfg: RecordConfig):
     device = get_safe_torch_device(policy.config.device)
 
     robot.connect()
+
+    # Camera sanity check: save one frame per camera so the operator can confirm
+    # the policy is seeing the correct views (a wrong index_or_path fails silently
+    # and the policy runs "blind", which looks identical to model collapse).
+    obs = robot.get_observation()
+    check_dir = Path("outputs/camera_check")
+    check_dir.mkdir(parents=True, exist_ok=True)
+    image_keys = [k for k in obs if k.startswith("observation.images.")]
+    for key in image_keys:
+        cam_name = key.removeprefix("observation.images.")
+        path = check_dir / f"{cam_name}.jpg"
+        cv2.imwrite(str(path), obs[key])
+        logging.info("Camera frame saved: %s", path)
+    if not is_headless():
+        input(
+            f"已保存 {len(image_keys)} 路相机画面到 {check_dir}。\n"
+            "请确认 top=桌面全局视角、gripper=腕部视角且画面正常，按回车继续。"
+        )
 
     listener, events = init_keyboard_listener()
     try:

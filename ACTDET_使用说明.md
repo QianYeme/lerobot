@@ -240,7 +240,7 @@ lerobot-train \
 python src/lerobot/scripts/offline_eval_act_det.py \
     --checkpoint outputs/train/<运行目录>/checkpointsE<X>/last/pretrained_model \
     --dataset.repo_id=your_dataset_name \
-    --dataset.root=/path/to/数据集 \
+    --dataset.root=/path/to/数据集/your_dataset_name \
     --episodes 63-89
 ```
 
@@ -253,7 +253,7 @@ python src/lerobot/scripts/control_act_det.py \
     --robot.port=/dev/ttyUSB0 \
     --robot.cameras='{top: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
     --dataset.repo_id=your_dataset_name \
-    --dataset.root=/path/to/数据集 \
+    --dataset.root=/path/to/数据集/your_dataset_name \
     --dataset.single_task="Cup pick and place" \
     --dataset.num_episodes 10 \
     --dataset.episode_time_s 60 \

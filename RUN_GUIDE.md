@@ -117,12 +117,26 @@ done
 
 | 标记 | 含义 | 模型 |
 |------|------|------|
-| 🔴 **P0 立即重训** | 论文核心结论直接依赖 | E2、E5、E9 |
-| 🟡 **P1 核心对比** | 完整对比矩阵必需 | E3、E6、E7、E8 |
-| ⚪ **P2 消融（按需）** | 辅助结论 | E3b、E6b、E7b、E_A0、E_A1、E_A2 |
-| ✅ **无需重训** | 纯 ACT，无检测分支，不受 frame_index bug 影响 | E1、E4 |
+| 🔵 **第一步验证** | 先跑这 3 个确认改动有效，通过后再继续 | E4、E5、E6 |
+| 🔴 **P0 立即重训** | 论文核心结论直接依赖 | E2、E9 |
+| 🟡 **P1 核心对比** | 完整对比矩阵必需 | E3、E7、E8 |
+| ⚪ **P2 消融（按需）** | 辅助结论 | E3b、E6b、E7b、E_A0、E_A1、E_A2、E_R0 |
+| ✅ **无需重训** | 纯 ACT，无检测分支，不受 frame_index bug 影响 | E1 |
 
-> **结论**：15 个模型里，**13 个 act_det 模型都需要重训**（检测分支之前没被训练），只有 E1、E4 两个纯 ACT 不用。
+> **结论**：15 个模型里，**13 个 act_det 模型都需要重训**（检测分支之前没被训练）；纯 ACT 中只有 E1 不用重训，E4 需带夹爪权重重训（第一步验证之一）。
+
+### 第一步验证三件套（先跑这 3 个）
+
+> 目的：先验证本次改动是否有效，再决定是否继续全量重训（省 GPU 时间）。
+> 三个模型都在数据集 B（9-dim，与真机一致）上，一个改动对应一个模型：
+
+| 模型 | 角色 | 验证的改动 | 通过判据 |
+|------|------|-----------|---------|
+| **E4** | 基准（纯 ACT） | 根因 C：`gripper_loss_weight=3.0` | 真机夹爪诊断出现 张→闭 / 闭→张 转换，目标不再恒 ~11 |
+| **E5** | 检测头 | 根因 A：frame_index 保留 + label 查找修正 | 训练日志 `det_cls_loss`/`det_reg_loss` 明显下降（旧模型 det_reg≈40） |
+| **E6** | Mask 头 | 根因 A + mask 路径（`_load_mask_batch` 恢复工作） | `mask_loss` 非零且下降（旧模型恒为 0/None） |
+
+**流程**：E5 det 损失下降 + E6 mask_loss 非零下降 → 根因 A 修复有效；E4 真机夹爪出现张闭转换 → 根因 C 修复有效。通过后再跑 P0 其余（E2/E9）→ P1 → P2。
 
 ---
 
@@ -210,7 +224,7 @@ lerobot-train \
     --wandb.notes=E3b_det_mask_2cam_A
 ```
 
-### E4 — 标准 ACT 基线 (数据集 B，V1) ✅ 无需重训（frame_index 不影响；夹爪坍缩需带权重重训）
+### 🔵 E4 — 标准 ACT 基线 (数据集 B，V1) — 第一步验证（夹爪权重重训）
 
 ```bash
 screen -S E4_act_B
@@ -228,7 +242,7 @@ lerobot-train \
     --wandb.notes=E4_act_baseline_B
 ```
 
-### 🔴 E5 — 论文版检测 (数据集 B，V2) — P0 必须重训（E7/E8/E9 的对照基准）
+### 🔵 E5 — 论文版检测 (数据集 B，V2) — 第一步验证 + P0（E7/E8/E9 的对照基准）
 
 ```bash
 screen -S E5_det_B
@@ -249,7 +263,7 @@ lerobot-train \
     --wandb.notes=E5_det_B
 ```
 
-### 🟡 E6 — 检测+Mask (数据集 B，V3) — P1 必须重训
+### 🔵 E6 — 检测+Mask (数据集 B，V3) — 第一步验证 + P1
 
 ```bash
 screen -S E6_mask_B
@@ -471,12 +485,46 @@ lerobot-train \
 
 ---
 
-## 四、启动顺序
+## 四、数据组成消融（⚪ P2 按需）
+
+> **问题**：kind1(固定 50) + kind2(随机 40) 混合训练是否导致"固定方向"坍缩？
+> **实验**：E5 同配置，只用 kind2（随机杯位）训练——通过 `--dataset.episodes` 过滤，
+> 不需要复制数据集。若该模型真机上不再"固定方向"，说明混合数据确实有害。
+
+> ⚠️ **先确认 kind2 的 episode 区间**：默认假设 kind1=0–49、kind2=50–89（合并顺序决定）。
+> 如区间不同，把下面命令里的列表换成实际区间。
+
+### ⚪ E_R0 — 纯随机子集消融（E5 配置，仅 kind2 40 集）
 
 ```bash
-# 1. 先跑 P0（E2/E5/E9），检测修好后最核心的结论
-# 2. 再跑 P1（E3/E6/E7/E8）补全对比矩阵
-# 3. 最后 P2 消融（E3b/E6b/E7b/E_A0-A2），按需
+screen -S ER0_random_B
+cd /root/autodl-tmp/lerobot/lerobot-main
+
+lerobot-train \
+    --policy.type=act_det \
+    --policy.use_detection=true \
+    --policy.use_mask_guidance=false \
+    --policy.annotation_dir=/root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B/annotations \
+    --dataset.repo_id=/root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B \
+    --dataset.episodes='[50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89]' \
+    --dataset.video_backend=pyav \
+    --steps 120000 \
+    --batch_size 8 \
+    --policy.gripper_loss_weight=3.0 \
+    --policy.push_to_hub=false \
+    --wandb.mode=offline \
+    --wandb.notes=E_R0_random_only_B
+```
+
+---
+
+## 五、启动顺序
+
+```bash
+# 1. 先跑第一步验证三件套（E4/E5/E6），确认改动有效（判据见上方三件套表）
+# 2. 通过后跑 P0 其余（E2/E9）—— 论文最核心结论
+# 3. 再跑 P1（E3/E7/E8）补全对比矩阵
+# 4. 最后 P2 消融（E3b/E6b/E7b/E_A0-A2、E_R0），按需
 
 # 查看当前所有 screen
 screen -ls
@@ -493,12 +541,12 @@ nvidia-smi
 | 优先级 | ID | screen 名 | 数据集 | 版本 | 是否需重训 |
 |--------|----|-----------|--------|------|-----------|
 | ✅ 无需 | E1 | `E1_act_A` | A (6-dim) | V1 标准ACT | 否 |
-| ✅ 无需 | E4 | `E4_act_B` | B (9-dim) | V1 标准ACT | 否 |
+| 🔵 第一步 | E4 | `E4_act_B` | B (9-dim) | V1 标准ACT | 是（夹爪权重） |
 | 🔴 P0 | E2 | `E2_det_A` | A (6-dim) | V2 论文版 | **是** |
-| 🔴 P0 | E5 | `E5_det_B` | B (9-dim) | V2 论文版 | **是** |
+| 🔵 第一步 | E5 | `E5_det_B` | B (9-dim) | V2 论文版 | **是** |
 | 🔴 P0 | E9 | `E9_full_inj_B` | B (9-dim) | V6 全注入 | **是** |
 | 🟡 P1 | E3 | `E3_mask_A` | A (6-dim) | V3 检测+Mask(top) | **是** |
-| 🟡 P1 | E6 | `E6_mask_B` | B (9-dim) | V3 检测+Mask(top) | **是** |
+| 🔵 第一步 | E6 | `E6_mask_B` | B (9-dim) | V3 检测+Mask(top) | **是** |
 | 🟡 P1 | E7 | `E7_fcos_inj_B` | B (9-dim) | V4 +FCOS注入(无mask) | **是** |
 | 🟡 P1 | E8 | `E8_mask_inj_B` | B (9-dim) | V5 +Mask注入 | **是** |
 | ⚪ P2 | E3b | `E3b_mask_2cam_A` | A (6-dim) | V3b 检测+Mask(top+gripper) | **是** |
@@ -507,7 +555,8 @@ nvidia-smi
 | ⚪ P2 | E_A0 | `EA0_noaug_B` | B (9-dim) | 检测 无增强 | **是** |
 | ⚪ P2 | E_A1 | `EA1_occ_only_B` | B (9-dim) | 检测 仅遮挡 | **是** |
 | ⚪ P2 | E_A2 | `EA2_no_occ_B` | B (9-dim) | 检测 无遮挡 | **是** |
+| ⚪ P2 | E_R0 | `ER0_random_B` | B 仅kind2(40集) | V2 论文版 | **是** |
 
 ---
 
-> **一句话总结**：E1/E4 不用重训；其余 13 个 act_det 模型全部需要重训，优先级 **P0=E2/E5/E9 → P1=E3/E6/E7/E8 → P2=其余**。重训前务必 `git push` 同步 `frame_index` 补丁到训练机，并确认检测 loss 开始下降。
+> **一句话总结**：先跑**第一步验证三件套 E4/E5/E6**（基准/检测头/Mask头，各验证一处改动），判据通过后再继续：**P0=E2/E9 → P1=E3/E7/E8 → P2=其余+E_R0**。重训前务必 `git push` 同步 `frame_index` 补丁到训练机。
