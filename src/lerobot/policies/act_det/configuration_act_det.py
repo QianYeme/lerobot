@@ -45,6 +45,7 @@ class ACTDetConfig(ACTConfig):
         use_mask_guidance: Master switch for the mask-guided perception branch.
         mask_weight: Weight multiplier for the mask loss.
         mask_dir: Path to SAM 2 pre-generated NPZ masks (None = {annotation_dir}/masks).
+        mask_cache_episodes: LRU cap for cached mask arrays (None = cache all, ~40 GB RAM for formal1_B).
         mask_decoder_channels: Hidden channels in the Mask Decoder upsampling path.
         fpn_channels: FPN output channel count.
         fcos_num_classes: Number of object classes (1 = cup only).
@@ -62,7 +63,12 @@ class ACTDetConfig(ACTConfig):
 
     # --- Detection ---
     use_detection: bool = True
-    det_weight: float = 10.0
+    # Detection loss weight in the joint loss. Was 10.0 under the (buggy) unnormalized
+    # pixel regression scale, which let det_total (~30) dominate the action L1 (~0.7)
+    # by ~400x. With the regression targets now normalized by stride, det_total drops to
+    # single digits, so weight 1.0 keeps detection as a meaningful but not dominant
+    # auxiliary signal (FCOS paper uses balance lambda=1). Tune 0.1-1.0 if needed.
+    det_weight: float = 1.0
     # Note: `gripper_loss_weight` (action L1 loss weighting) is inherited from ACTConfig.
     det_cameras: dict = field(
         default_factory=lambda: {
@@ -118,6 +124,7 @@ class ACTDetConfig(ACTConfig):
     use_mask_guidance: bool = True
     mask_weight: float = 1.0
     mask_dir: str | None = None
+    mask_cache_episodes: int | None = None
     mask_decoder_channels: int = 32
     mask_cameras: dict = field(
         default_factory=lambda: {

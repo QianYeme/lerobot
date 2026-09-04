@@ -23,19 +23,25 @@ class MaskLoader:
     """Loads and caches NPZ mask files for fast per-frame lookup.
 
     Uses an LRU cache to keep recently accessed episode masks in memory.
-    Typical cache footprint: ~8 episodes × 718 frames × 480×640 × 4 bytes ≈ 3.5 GB.
+    Masks are stored as float16 to halve memory: caching all 90 episodes of
+    formal1_B costs ~40 GB RAM (90 × 717 × 480 × 640 × 2 bytes). The NPZ files
+    are compressed (np.savez_compressed), so every cache miss re-decompresses a
+    whole episode (~880 MB uncompressed, seconds each) — with a small cache most
+    of the training step time is spent here. Hence the default is to cache
+    everything.
 
     Args:
         mask_dir: Root directory containing per-camera mask NPZ files.
         camera_keys: Mapping from canonical camera key to subdirectory name.
-        max_cache_episodes: Maximum number of episode mask arrays to keep in memory.
+        max_cache_episodes: Maximum number of episode mask arrays to keep in
+            memory. None = cache all episodes (~40 GB RAM for formal1_B).
     """
 
     def __init__(
         self,
         mask_dir: str | None = None,
         camera_keys: dict[str, str] | None = None,
-        max_cache_episodes: int = 8,
+        max_cache_episodes: int | None = None,
     ):
         self._cache: OrderedDict[tuple, np.ndarray] = OrderedDict()
         self._max_cache = max_cache_episodes
@@ -94,10 +100,10 @@ class MaskLoader:
                     # Take the first array.
                     masks = list(data.values())[0]
 
-                masks = masks.astype(np.float32)
+                masks = masks.astype(np.float16)
 
                 # LRU eviction.
-                if len(self._cache) >= self._max_cache:
+                if self._max_cache is not None and len(self._cache) >= self._max_cache:
                     self._cache.popitem(last=False)
 
                 self._cache[cache_key] = masks

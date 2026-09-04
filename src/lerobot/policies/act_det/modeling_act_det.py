@@ -245,6 +245,7 @@ class ACTDetModel(nn.Module):
                     camera_keys={
                         k: k.split(".")[-1] for k in config.det_cameras
                     },
+                    max_cache_episodes=getattr(config, "mask_cache_episodes", None),
                 )
                 self.mask_decoder = MaskDecoder(
                     fpn_channels=config.fpn_channels,
