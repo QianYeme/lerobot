@@ -281,17 +281,20 @@ def compute_fcos_loss(
                     if not in_bbox.any():
                         continue
 
-                    # Distances to four edges for positive pixels.
-                    l_target = coords_x[in_bbox] - x1
-                    t_target = coords_y[in_bbox] - y1
-                    r_target = x2 - coords_x[in_bbox]
-                    b_target = y2 - coords_y[in_bbox]
+                    # Distances to four edges for positive pixels, normalized by this
+                    # FPN level's stride (standard FCOS: targets live in feature-map
+                    # units so the exp(s_i)·exp(x) head regresses small positive values,
+                    # not raw pixel distances). Centerness below is scale-invariant and
+                    # therefore unaffected by this normalization.
+                    l_target = (coords_x[in_bbox] - x1) / stride
+                    t_target = (coords_y[in_bbox] - y1) / stride
+                    r_target = (x2 - coords_x[in_bbox]) / stride
+                    b_target = (y2 - coords_y[in_bbox]) / stride
 
                     cls_target[in_bbox] = label + 1  # 0 = background, 1..C = classes
-                    reg_target[in_bbox, 0] = l_target
-                    reg_target[in_bbox, 1] = t_target
-                    reg_target[in_bbox, 2] = r_target
-                    reg_target[in_bbox, 3] = b_target
+                    reg_target[in_bbox] = torch.stack(
+                        [l_target, t_target, r_target, b_target], dim=-1
+                    )
 
                     # Centerness = sqrt(min(l,r)/max(l,r) * min(t,b)/max(t,b)).
                     lr_min = torch.min(l_target, r_target)

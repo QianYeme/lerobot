@@ -267,6 +267,9 @@ lerobot-train \
 
 ```bash
 screen -S E6_mask_B
+screen -r E6_mask_B
+screen -X -S <名字> quit
+
 cd /root/autodl-tmp/lerobot/lerobot-main
 
 lerobot-train \
@@ -290,6 +293,7 @@ lerobot-train \
 
 ```bash
 screen -S E6b_mask_2cam_B
+
 cd /root/autodl-tmp/lerobot/lerobot-main
 
 lerobot-train \

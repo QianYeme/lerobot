@@ -178,6 +178,9 @@ def main():
                         help="Episode spec to evaluate on, e.g. '63-89' (default: last 27 episodes)")
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--num-workers", type=int, default=0)
+    parser.add_argument("--dataset.video_backend", default="pyav",
+                        help="Video decode backend (default 'pyav', matching training). "
+                             "torchcodec needs system FFmpeg libs and fails on some machines.")
     parser.add_argument("--output", default=None,
                         help="JSON path for the results (default: <checkpoint>/offline_eval_results.json)")
     args = parser.parse_args()
@@ -203,7 +206,8 @@ def main():
     chunk_size = json.load(open(checkpoint / "config.json", encoding="utf-8"))["chunk_size"]
     delta_timestamps = {"action": [i / ds_meta.fps for i in range(chunk_size)]}
     dataset = LeRobotDataset(
-        repo_id, root=root, episodes=episodes, delta_timestamps=delta_timestamps
+        repo_id, root=root, episodes=episodes, delta_timestamps=delta_timestamps,
+        video_backend=getattr(args, "dataset.video_backend", "pyav"),
     )
 
     metrics = evaluate(checkpoint, dataset, args.batch_size, args.num_workers)
