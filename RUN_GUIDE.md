@@ -593,6 +593,9 @@ ls /root/autodl-tmp/lerobot/lerobot-main/outputs/train/
 
 # 1) 续训：120000 → 240000 步
 screen -S E6_resume_B
+screen -S E5_resume_B
+screen -S E4_resume_B
+
 cd /root/autodl-tmp/lerobot/lerobot-main
 
 lerobot-train \
@@ -601,7 +604,29 @@ lerobot-train \
     --steps=240000 \
     --wandb.mode=offline \
     --wandb.notes=E6_mask_B_resume_240k
+
+ lerobot-train \
+      --config_path=/root/autodl-tmp/lerobot/lerobot-main/outputs/train/2026-09-04/12-58-39_act_det/checkpoints/last/pretrained_model/train_config.json \
+      --resume=true \
+      --steps=240000 \
+      --wandb.mode=offline \
+      --wandb.notes=E6_resume_240k
+
+lerobot-train \
+      --config_path=/root/autodl-tmp/lerobot/lerobot-main/outputs/train/2026-09-04/12-57-58_act_det/checkpoints/last/pretrained_model/train_config.json \
+      --resume=true \
+      --steps=240000 \
+      --wandb.mode=offline \
+      --wandb.notes=E5_resume_240k
+
+lerobot-train \
+      --config_path=/root/autodl-tmp/lerobot/lerobot-main/outputs/train/2026-09-04/12-57-40_act/checkpoints/last/pretrained_model/train_config.json \
+      --resume=true \
+      --steps=240000 \
+      --wandb.mode=offline \
+      --wandb.notes=E4_resume_240k
 ```
+
 
 > ⚠️ `<日期>/<时间>_act_det` 换成 E6 实际目录名（`ls` 确认，选 `use_mask_guidance=true`）。
 > ⚠️ `--config_path=` 必须用 `=`（脚本只匹配 `--config_path=` 前缀）。

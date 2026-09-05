@@ -13,6 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import csv
 import dataclasses
 import logging
 import time
@@ -54,6 +55,29 @@ from lerobot.utils.utils import (
     init_logging,
     inside_slurm,
 )
+
+# Superset of columns written to `<output_dir>/metrics.csv` at every log step.
+# Keys come from `MetricsTracker.to_dict()` (steps/samples/episodes/epochs/loss/
+# grad_norm/lr/update_s/dataloading_s) plus the per-component losses returned in
+# the policy `output_dict` (l1_loss/kld_loss/det_*_loss/mask_loss). Missing columns
+# are left empty (restval=""), so a single schema works for act / act_det variants.
+METRICS_CSV_FIELDS = [
+    "steps",
+    "samples",
+    "episodes",
+    "epochs",
+    "loss",
+    "grad_norm",
+    "lr",
+    "update_s",
+    "dataloading_s",
+    "l1_loss",
+    "kld_loss",
+    "det_cls_loss",
+    "det_reg_loss",
+    "det_ctr_loss",
+    "mask_loss",
+]
 
 
 def update_policy(
@@ -203,6 +227,22 @@ def train(cfg: TrainPipelineConfig, accelerator: Accelerator | None = None):
         wandb_logger = None
         if is_main_process:
             logging.info(colored("Logs will be saved locally.", "yellow", attrs=["bold"]))
+
+    # Append-only metrics CSV so loss curves can be plotted after training.
+    # Resuming reopens the same file in append mode, so the curve continues.
+    metrics_csv_file = None
+    metrics_csv_writer = None
+    if is_main_process:
+        metrics_csv_path = cfg.output_dir / "metrics.csv"
+        metrics_csv_file = metrics_csv_path.open("a", newline="")
+        metrics_csv_writer = csv.DictWriter(
+            metrics_csv_file,
+            fieldnames=METRICS_CSV_FIELDS,
+            extrasaction="ignore",
+            restval="",
+        )
+        if metrics_csv_path.stat().st_size == 0:
+            metrics_csv_writer.writeheader()
 
     if cfg.seed is not None:
         set_seed(cfg.seed, accelerator=accelerator)
@@ -452,6 +492,11 @@ def train(cfg: TrainPipelineConfig, accelerator: Accelerator | None = None):
                         }
                     )
                 wandb_logger.log_dict(wandb_log_dict, step)
+            if metrics_csv_writer is not None:
+                row = train_tracker.to_dict()
+                if output_dict:
+                    row.update(output_dict)
+                metrics_csv_writer.writerow(row)
             train_tracker.reset_averages()
 
         if cfg.save_checkpoint and is_saving_step:
@@ -525,6 +570,8 @@ def train(cfg: TrainPipelineConfig, accelerator: Accelerator | None = None):
 
     if is_main_process:
         progbar.close()
+        if metrics_csv_file is not None:
+            metrics_csv_file.close()
 
     if eval_env:
         close_envs(eval_env)
