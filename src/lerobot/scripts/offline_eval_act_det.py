@@ -132,8 +132,12 @@ def evaluate(checkpoint: Path, dataset: LeRobotDataset, batch_size: int,
     policy = POLICY_CLASSES[cfg.type].from_pretrained(checkpoint, config=cfg)
     policy.train()  # required so detection/mask losses are computed
 
-    # Same pre-processing as training (normalization with dataset stats).
-    preprocessor, _ = make_pre_post_processors(policy_cfg=cfg, dataset_stats=dataset.meta.stats)
+    # Load the SAVED pre-processor from the checkpoint so normalization matches
+    # training exactly. Training runs with `use_imagenet_stats=True`, which overrides
+    # image mean/std with ImageNet stats; rebuilding from `dataset.meta.stats` would
+    # use the raw camera stats (std ~0.01) and amplify the images ~100x, so the
+    # action L1 would be systematically ~10x too high.
+    preprocessor, _ = make_pre_post_processors(policy_cfg=cfg, pretrained_path=str(checkpoint))
 
     dataloader = DataLoader(
         dataset,
