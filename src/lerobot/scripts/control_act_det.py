@@ -100,9 +100,12 @@ def control(cfg: RecordConfig):
     obs = robot.get_observation()
     check_dir = Path("outputs/camera_check")
     check_dir.mkdir(parents=True, exist_ok=True)
-    image_keys = [k for k in obs if k.startswith("observation.images.")]
+    # NOTE: raw `robot.get_observation()` returns bare camera keys (`gripper`, `top`),
+    # NOT `observation.images.*` — the prefix is added later by robot_observation_processor.
+    # So match against the robot's own camera names, not the `observation.images.` prefix.
+    image_keys = [k for k in obs if k in robot.cameras and obs[k] is not None]
     for key in image_keys:
-        cam_name = key.removeprefix("observation.images.")
+        cam_name = key
         path = check_dir / f"{cam_name}.jpg"
         cv2.imwrite(str(path), obs[key])
         logging.info("Camera frame saved: %s", path)

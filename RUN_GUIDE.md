@@ -564,3 +564,82 @@ nvidia-smi
 ---
 
 > **一句话总结**：先跑**第一步验证三件套 E4/E5/E6**（基准/检测头/Mask头，各验证一处改动），判据通过后再继续：**P0=E2/E9 → P1=E3/E7/E8 → P2=其余+E_R0**。重训前务必 `git push` 同步 `frame_index` 补丁到训练机。
+
+---
+
+## 六、强化训练（2026-09-05 追加：相机已确认正确，主因是训练强度不足）
+
+> **背景**：真机「固定姿态、不追杯子」排查后，相机序号已目视确认正确（gripper=2、top=4，
+> 早先「index 4 绿色」是相机 `connect()` 后暖机瞬态误判）。离线评测：动作 `l1=0.508`
+> （仅优于常量均值基线 0.763 约 34% = **半坍缩**）、检测 `det_cls=1.92`（仍不自信）。
+> A/C/D/E 四个结构性 bug 均已修，现在的问题是**训练还没训够**，不是 bug、不是相机。
+
+### 决策：resume 续训（不要从零重训）
+
+1. **ACT/ACTDet 无学习率调度器**（`ACTConfig.get_scheduler_preset()` 返回 `None`，
+   LR 恒 `1e-5`，`validate()` 里 scheduler 为 `None`）→ **不存在余弦退火到 0 导致 resume
+   学不动的问题**，继续训练 = 干净续训。
+2. 现有 E6 是 09-04 重训、A/C/D/E 修复**已全部 baked-in**（`det_reg=1.48` 证明 E 生效），
+   不是需要重来的脏模型。
+3. 省钱省时：120000 步（5090 上约 8h）不浪费。
+
+> 唯一需要从零重训：resume 后前几千步 `l1`/`det_cls` 不再下降（= 已收敛），再走「超参强化」。
+
+### E6 续训（检测+Mask，数据集 B）——主推
+
+```bash
+# 0) 在训练机（AutoDL）找到 E6 上次输出目录（选 use_mask_guidance=true 的那个 = E6）
+ls /root/autodl-tmp/lerobot/lerobot-main/outputs/train/
+
+# 1) 续训：120000 → 240000 步
+screen -S E6_resume_B
+cd /root/autodl-tmp/lerobot/lerobot-main
+
+lerobot-train \
+    --config_path=/root/autodl-tmp/lerobot/lerobot-main/outputs/train/<日期>/<时间>_act_det/checkpoints/last/pretrained_model/train_config.json \
+    --resume=true \
+    --steps=240000 \
+    --wandb.mode=offline \
+    --wandb.notes=E6_mask_B_resume_240k
+```
+
+> ⚠️ `<日期>/<时间>_act_det` 换成 E6 实际目录名（`ls` 确认，选 `use_mask_guidance=true`）。
+> ⚠️ `--config_path=` 必须用 `=`（脚本只匹配 `--config_path=` 前缀）。
+> ⚠️ 续训前确认 AutoDL 代码仍是训 E6 时的版本（`fcos.py` stride 归一化 + `det_weight=1.0`），
+>   可 `git -C /root/autodl-tmp/lerobot/lerobot-main status` 核对。
+> ⚠️ 续训的新 checkpoint 存到**同一输出目录**（checkpoints/140000、…、240000），原 120000 不删，
+>   `last` 链接自动指向最新。
+
+### 续训后验证
+
+- 前 5000 步盯日志：`l1_loss` 是否继续降（0.508 → 目标 <0.4）、`det_cls_loss` 是否继续降
+  （1.92 → 目标 <1.0）、`det_reg_loss` 保持个位数。
+- 两者持续降 → 训到 240000，甚至 300000。
+- 前 5000 步基本不降 → 已收敛，停掉，改走「超参强化」路线（见下）。
+
+### 备选：从零重训（仅当 resume 证明已收敛时用）
+
+> 超参已 baked 进 config.json，改超参必须从零（resume 不会干净生效）。
+
+```bash
+screen -S E6_strong_B
+cd /root/autodl-tmp/lerobot/lerobot-main
+
+lerobot-train \
+    --policy.type=act_det \
+    --policy.use_detection=true \
+    --policy.use_mask_guidance=true \
+    --policy.annotation_dir=/root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B/annotations \
+    --dataset.repo_id=/root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B \
+    --dataset.video_backend=pyav \
+    --steps 240000 \
+    --batch_size 8 \
+    --policy.gripper_loss_weight=3.0 \
+    --policy.focal_gamma=1.0 \
+    --policy.push_to_hub=false \
+    --wandb.mode=offline \
+    --wandb.notes=E6_strong_B_240k
+```
+
+> `focal_gamma` 是 `ACTDetConfig` 已定义字段（默认 2.0）。检测头对「小目标+少正样本」迟迟
+> 不自信时，gamma 2→1 降低对已分对样本的抑制、让头更敢学。这是备选微调，非主推。
