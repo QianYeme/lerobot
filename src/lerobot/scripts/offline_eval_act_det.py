@@ -115,13 +115,21 @@ def collate(batch: list[dict]) -> dict:
     return out
 
 def evaluate(checkpoint: Path, dataset: LeRobotDataset, batch_size: int,
-             num_workers: int) -> dict:
+             num_workers: int, annotation_dir: str | None = None) -> dict:
     cfg = PreTrainedConfig.from_pretrained(checkpoint)
     if cfg.type not in POLICY_CLASSES:
         raise ValueError(f"Unsupported policy type {cfg.type!r} in {checkpoint}")
 
+    # Checkpoints trained on a remote machine (e.g. AutoDL) bake an absolute
+    # `annotation_dir`/`mask_dir` into config.json that doesn't exist locally.
+    # Let the caller override both so detection/mask losses can be computed on
+    # a local copy of the dataset.
+    if annotation_dir is not None:
+        cfg.annotation_dir = annotation_dir
+        cfg.mask_dir = f"{annotation_dir}/masks"
+
     logging.info("Loading policy %s from %s", cfg.type, checkpoint)
-    policy = POLICY_CLASSES[cfg.type].from_pretrained(checkpoint)
+    policy = POLICY_CLASSES[cfg.type].from_pretrained(checkpoint, config=cfg)
     policy.train()  # required so detection/mask losses are computed
 
     # Same pre-processing as training (normalization with dataset stats).
@@ -181,6 +189,9 @@ def main():
     parser.add_argument("--dataset.video_backend", default="pyav",
                         help="Video decode backend (default 'pyav', matching training). "
                              "torchcodec needs system FFmpeg libs and fails on some machines.")
+    parser.add_argument("--annotation-dir", default=None,
+                        help="Override the checkpoint's annotation_dir (and derived mask_dir) "
+                             "for local evaluation, e.g. /home/lyj/lerobot/数据集/formal1_B/annotations")
     parser.add_argument("--output", default=None,
                         help="JSON path for the results (default: <checkpoint>/offline_eval_results.json)")
     args = parser.parse_args()
@@ -210,7 +221,8 @@ def main():
         video_backend=getattr(args, "dataset.video_backend", "pyav"),
     )
 
-    metrics = evaluate(checkpoint, dataset, args.batch_size, args.num_workers)
+    metrics = evaluate(checkpoint, dataset, args.batch_size, args.num_workers,
+                       annotation_dir=getattr(args, "annotation_dir", None))
 
     print("\n===== Offline evaluation results =====")
     print(f"checkpoint : {checkpoint}")
