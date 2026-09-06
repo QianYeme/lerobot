@@ -91,7 +91,11 @@ class LabelLoader:
 
     def _load_all(self):
         """Parse all XML files in the annotation directory and populate the cache."""
-        if not self._annotation_dir.exists():
+        # Use `os.path.isdir` (not `Path.exists`) so an inaccessible path — e.g. the
+        # AutoDL training path `/root/...` baked into a checkpoint's `annotation_dir`
+        # — degrades to False instead of raising PermissionError on a local machine.
+        # Labels are only consumed during training, so skipping at inference is safe.
+        if not os.path.isdir(self._annotation_dir):
             return
 
         for camera_subdir in os.listdir(self._annotation_dir):

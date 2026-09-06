@@ -1,5 +1,6 @@
 # LeRobot 附件标注方法完整实现指南
 ls /dev/ttyACM*
+lerobot-find-cameras opencv
 
 sudo chmod 666 /dev/ttyACM*
 sudo chmod 666 /dev/video*
@@ -63,7 +64,7 @@ python src/lerobot/scripts/control_act_det.py \
       --dataset.fps 30
 
 python src/lerobot/scripts/control_act_det.py \
-      --policy.path=outputs/train/2026-08-08/01-17-03_act_det/checkpointsE5/last/pretrained_model \
+      --policy.path=outputs/train/2026-08-08/01-17-21_act_det/checkpointsE6/last/pretrained_model \
       --policy.annotation_dir=/home/lyj/lerobot/数据集/formal1_B/annotations \
       --policy.temporal_ensemble_coeff=0.01 \
       --policy.n_action_steps=1 \
@@ -79,6 +80,24 @@ python src/lerobot/scripts/control_act_det.py \
       --dataset.num_episodes 1 \
       --dataset.episode_time_s 60 \
       --dataset.fps 30
+
+python src/lerobot/scripts/control_act_det.py \
+    --policy.path=outputs/train/E5_det_B_240k \
+    --policy.n_action_steps=1 \
+    --policy.temporal_ensemble_coeff=0.01 \
+    --robot.type=so101_follower \
+    --robot.port=/dev/ttyACM0 \
+    --robot.id=nn \
+    --robot.max_relative_target=5 \
+    --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width:
+  640, height: 480, fps: 30}}' \
+    --dataset.repo_id formal1_B \
+    --dataset.root /home/lyj/lerobot/数据集/formal1_B \
+    --dataset.single_task="Pick up the half-filled transparent plastic cup steadily without spilling" \
+    --dataset.num_episodes 1 \
+    --dataset.episode_time_s 60 \
+    --dataset.reset_time_s 15 \
+    --dataset.fps 30
 
 outputs/train/2026-08-07/02-55-15_act/checkpointsE1/last/pretrained_model   
   ┌──────┬────────────────────────────────────────────────────────────────────────────────┬───────────┐
