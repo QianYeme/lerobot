@@ -495,10 +495,12 @@ lerobot-train \
 > **实验**：E5 同配置，只用 kind2（随机杯位）训练——通过 `--dataset.episodes` 过滤，
 > 不需要复制数据集。若该模型真机上不再"固定方向"，说明混合数据确实有害。
 
-> ⚠️ **先确认 kind2 的 episode 区间**：默认假设 kind1=0–49、kind2=50–89（合并顺序决定）。
-> 如区间不同，把下面命令里的列表换成实际区间。
+> ✅ **kind2 区间已证实 = 50–89**（2026-09-06 用标注 bbox 定量核对）：
+> kind1(0–49) 杯心 cx=433±6.5（固定一个点），kind2(50–89) 杯心 cx=278±157（铺满桌面）。
+> 故把 50–79（30 集）当训练、80–89（10 集）留作离线评测 held-out，
+> 这样训练/验证**全是随机杯位**，模型无法靠"去固定点"拿低 loss，验证"定位"是否真学会。
 
-### ⚪ E_R0 — 纯随机子集消融（E5 配置，仅 kind2 40 集）
+### ⚪ E_R0 — 纯随机子集消融（E5 配置，kind2 30 集训练 + 10 集留出）
 
 ```bash
 screen -S ER0_random_B
@@ -510,7 +512,7 @@ lerobot-train \
     --policy.use_mask_guidance=false \
     --policy.annotation_dir=/root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B/annotations \
     --dataset.repo_id=/root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B \
-    --dataset.episodes='[50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89]' \
+    --dataset.episodes='[50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79]' \
     --dataset.video_backend=pyav \
     --steps 120000 \
     --batch_size 8 \
@@ -519,6 +521,19 @@ lerobot-train \
     --wandb.mode=offline \
     --wandb.notes=E_R0_random_only_B
 ```
+
+训练完成后离线评测 held-out（80–89，随机杯位）：
+
+```bash
+python src/lerobot/scripts/offline_eval_act_det.py \
+    --policy.path=outputs/train/<ER0输出目录> \
+    --dataset.repo_id=/root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B \
+    --dataset.episodes='[80,81,82,83,84,85,86,87,88,89]' \
+    --annotation-dir=/root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B/annotations
+```
+
+> **判据**：held-out l1 若明显低于 E5 全集的 0.508，说明"去掉固定位捷径"让动作预测变强；
+> 真机上杯子放任意新位置，若机械臂开始**追踪杯子**（不再是固定方向），则 P0 成立。
 
 ---
 

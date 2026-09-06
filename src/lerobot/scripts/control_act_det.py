@@ -23,21 +23,28 @@ lerobot-record).
 Example:
 ```shell
 python src/lerobot/scripts/control_act_det.py \
-    --policy.path outputs/train/2026-08-08/12-34-49_act_det/checkpointsE9/last/pretrained_model \
-    --robot.type=so_follower \
-    --robot.port=/dev/ttyUSB0 \
-    --robot.cameras='{top: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+    --policy.path=outputs/train/E6_mask_B_240k \
+    --robot.type=so101_follower \
+    --robot.port=/dev/ttyACM0 \
+    --robot.id=nn \
+    --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
     --dataset.repo_id formal1_B \
-    --dataset.root /root/autodl-tmp/lerobot/lerobot-main/数据集/formal1_B \
-    --dataset.single_task="Cup pick and place" \
+    --dataset.root /home/lyj/lerobot/数据集/formal1_B \
+    --dataset.single_task="Pick up the half-filled transparent plastic cup steadily without spilling" \
     --dataset.num_episodes 10 \
     --dataset.episode_time_s 60 \
     --dataset.reset_time_s 15 \
     --dataset.fps 30
 ```
 
+`--policy.path` is the 240k checkpoint dir (HF repo layout: config.json +
+model.safetensors + policy_pre/postprocessor files). Available models:
+  E6_mask_B_240k = ACTDet + mask guidance,  E5_det_B_240k = ACTDet (det only),
+  E4_act_B_240k = pure ACT. Each lives directly under outputs/train/.
+
 Keys: right arrow = end current episode early, Esc = stop. The camera names in
-`--robot.cameras` must match the dataset's camera keys (`top`, `gripper`).
+`--robot.cameras` must match the dataset's camera keys (`top`, `gripper`);
+`top` = desktop global view (probe index 4), `gripper` = wrist view (index 2).
 """
 
 import logging
@@ -84,9 +91,14 @@ def control(cfg: RecordConfig):
     ds_meta = LeRobotDatasetMetadata(cfg.dataset.repo_id, root=cfg.dataset.root)
 
     policy = make_policy(cfg.policy, ds_meta=ds_meta)
+    # Load the SAVED pre/post-processors from the checkpoint so normalization matches
+    # training (training uses dataset.use_imagenet_stats=True → ImageNet stats baked into
+    # the checkpoint's normalizer). Rebuilding from `dataset_stats=ds_meta.stats` would use
+    # raw camera stats (std~0.01) and ~100x-amplify the images, producing a degenerate
+    # constant-pose policy. Mirrors the offline_eval_act_det.py fix.
     preprocessor, postprocessor = make_pre_post_processors(
         policy_cfg=cfg.policy,
-        dataset_stats=ds_meta.stats,
+        pretrained_path=str(cfg.policy.pretrained_path),
     )
 
     _, robot_action_processor, robot_observation_processor = make_default_processors()
