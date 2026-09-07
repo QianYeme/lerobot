@@ -129,7 +129,13 @@ class ACTConfig(PreTrainedConfig):
     # Training preset
     optimizer_lr: float = 1e-5
     optimizer_weight_decay: float = 1e-4
-    optimizer_lr_backbone: float = 1e-5
+    # Backbone lr raised from 1e-5 to 1e-4 so the ImageNet-pretrained ResNet actually
+    # adapts to the task scene. At 1e-5 the vision features barely move from ImageNet,
+    # so the model cannot extract "cup position" and falls back to the temporally-smooth
+    # joint state — which collapses the policy to a constant pose (fixed direction / no
+    # pickup-putdown). 1e-4 matches the DiffusionPolicy default and is a standard value
+    # for fine-tuning a pretrained ResNet. The non-backbone params stay at `optimizer_lr`.
+    optimizer_lr_backbone: float = 1e-4
 
     def __post_init__(self):
         super().__post_init__()
