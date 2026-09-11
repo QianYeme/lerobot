@@ -11,21 +11,19 @@
 """
 Offline evaluation for trained ACT / ACTDet checkpoints on a local LeRobot dataset.
 
-Computes the training-equivalent metrics on held-out episodes (no robot required):
+Computes inference-mode metrics on held-out episodes (no robot required):
 
-  - action L1    : mean |action_hat - action| over the chunk, padded positions masked
+  - inference action L1: mean |action_hat - action| with the same zero latent
+                         used during real-robot inference; padded positions masked
   - detection loss: focal cls + reg + centerness components (act_det with use_detection)
   - mask loss     : L1 between pred_mask and SAM2 NPZ ground-truth masks
                     (act_det with use_mask_guidance)
 
-The policy runs in train mode (under torch.no_grad()) so that the detection and
-mask losses, which are gated by `training` in ACTDetModel.forward, are computed
-exactly like during training. Batches go through the same ACT pre-processor
-pipeline as in `lerobot_train.py` (normalization with dataset stats), and
-episode_index/frame_index pass through unchanged so annotation lookups work.
-Because train mode keeps dropout and the online top-camera augmentation active,
-the numbers carry a small random noise — run twice and average if you need
-tighter estimates.
+The policy remains in eval mode, so CVAE inference uses zero z and dropout/image
+augmentation are disabled. ACTDet auxiliary losses are requested explicitly
+without switching the model back to train mode. Batches use the preprocessor
+saved with the checkpoint, and episode/frame indices are retained for annotation
+lookups.
 
 Example:
 ```shell
@@ -58,17 +56,27 @@ from lerobot.datasets.lerobot_dataset import LeRobotDataset
 from lerobot.policies.act.modeling_act import ACTPolicy
 from lerobot.policies.act_det.modeling_act_det import ACTDetPolicy
 from lerobot.policies.factory import make_pre_post_processors
+from lerobot.utils.constants import ACTION, OBS_IMAGES
 
 POLICY_CLASSES = {"act": ACTPolicy, "act_det": ACTDetPolicy}
 
 METRIC_KEYS = [
-    "l1_loss",
-    "kld_loss",
+    "inference_l1_loss",
     "det_cls_loss",
     "det_reg_loss",
     "det_ctr_loss",
     "mask_loss",
 ]
+
+
+def inference_l1_loss(policy, batch: dict, actions_hat: torch.Tensor) -> torch.Tensor:
+    """Match the training L1 definition, but use inference-mode predictions."""
+    loss_per_dim = torch.abs(batch[ACTION] - actions_hat) * ~batch["action_is_pad"].unsqueeze(-1)
+    if policy.config.gripper_loss_weight != 1.0:
+        weights = torch.ones(actions_hat.shape[-1], device=actions_hat.device, dtype=actions_hat.dtype)
+        weights[-1] = policy.config.gripper_loss_weight
+        loss_per_dim = loss_per_dim * weights
+    return loss_per_dim.mean()
 
 
 def parse_episodes(spec: str) -> list[int]:
@@ -130,7 +138,7 @@ def evaluate(checkpoint: Path, dataset: LeRobotDataset, batch_size: int,
 
     logging.info("Loading policy %s from %s", cfg.type, checkpoint)
     policy = POLICY_CLASSES[cfg.type].from_pretrained(checkpoint, config=cfg)
-    policy.train()  # required so detection/mask losses are computed
+    policy.eval()
 
     # Load the SAVED pre-processor from the checkpoint so normalization matches
     # training exactly. Training runs with `use_imagenet_stats=True`, which overrides
@@ -162,7 +170,23 @@ def evaluate(checkpoint: Path, dataset: LeRobotDataset, batch_size: int,
             batch = preprocessor(batch)
             if frame_index is not None:
                 batch["frame_index"] = frame_index
-            _, loss_dict = policy.forward(batch)
+            model_batch = dict(batch)
+            if cfg.image_features:
+                model_batch[OBS_IMAGES] = [batch[key] for key in cfg.image_features]
+
+            if cfg.type == "act_det":
+                actions_hat = policy.model(model_batch, compute_aux_losses=True)[0]
+            else:
+                actions_hat = policy.model(model_batch)[0]
+
+            loss_dict = {"inference_l1_loss": inference_l1_loss(policy, batch, actions_hat).item()}
+            if cfg.type == "act_det":
+                det_loss = policy.model.get_detection_loss()
+                if det_loss is not None:
+                    loss_dict.update(det_loss[1])
+                mask_loss = policy.model.get_mask_loss()
+                if mask_loss is not None:
+                    loss_dict.update(mask_loss)
             bs = batch["observation.state"].shape[0]
             total_frames += bs
             for key in METRIC_KEYS:

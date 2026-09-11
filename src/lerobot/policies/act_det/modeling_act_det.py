@@ -346,7 +346,11 @@ class ACTDetModel(nn.Module):
         """Return the mask loss computed during the last forward pass."""
         return self._mask_loss
 
-    def forward(self, batch: dict[str, Tensor]) -> tuple[Tensor, tuple[Tensor, Tensor] | tuple[None, None]]:
+    def forward(
+        self,
+        batch: dict[str, Tensor],
+        compute_aux_losses: bool | None = None,
+    ) -> tuple[Tensor, tuple[Tensor, Tensor] | tuple[None, None]]:
         """Forward pass through ACTDet.
 
         Returns:
@@ -354,6 +358,9 @@ class ACTDetModel(nn.Module):
             latent_params: (mu, log_sigma_x2) or (None, None)
         """
         training = self.training
+        # Offline evaluation needs clean eval-mode action predictions (zero z,
+        # no dropout/augmentation) while still measuring detection/mask losses.
+        compute_aux_losses = training if compute_aux_losses is None else compute_aux_losses
         self._det_loss = None
         self._mask_loss = None
 
@@ -431,7 +438,11 @@ class ACTDetModel(nn.Module):
                     # Augment each image in the batch independently.
                     augmented_imgs = []
                     for b in range(img.shape[0]):
-                        aug_img = self.augmentation(img[b])
+                        aug_img = self.augmentation(
+                            img[b],
+                            normalization_mean=self.config.aug_normalization_mean,
+                            normalization_std=self.config.aug_normalization_std,
+                        )
                         augmented_imgs.append(aug_img)
                     img = torch.stack(augmented_imgs, dim=0)
 
@@ -444,8 +455,9 @@ class ACTDetModel(nn.Module):
                     fpn_features = self.fpn([f2, f3, f4])  # [P2, P3, P4]
                     p2, p3, p4 = fpn_features
 
-                    # FCOS head (only compute loss during training).
-                    if training:
+                    # FCOS loss is normally training-only, but can be requested
+                    # explicitly by the offline evaluator while the model stays in eval mode.
+                    if compute_aux_losses:
                         cls_logits, reg_preds, ctr_preds = self.fcos_head(fpn_features)
                         all_det_cls_logits.append(cls_logits)
                         all_det_reg_preds.append(reg_preds)
@@ -457,12 +469,12 @@ class ACTDetModel(nn.Module):
                         )
                         all_det_targets.append(targets_per_img)
 
-                    # ---- Mask Decoder (per-camera switch, training only) ----
+                    # ---- Mask Decoder (per-camera switch) ----
                     mask_cam_enabled = (
                         self.use_mask_guidance
                         and getattr(self.config, "mask_cameras", {}).get(cam_key, {}).get("enable", False)
                     )
-                    if training and mask_cam_enabled:
+                    if compute_aux_losses and mask_cam_enabled:
                         pred_mask = self.mask_decoder(p2, p3, p4)  # (B, 1, 480, 640)
 
                         # Load SAM 2 GT masks for each image in the batch.
@@ -529,7 +541,7 @@ class ACTDetModel(nn.Module):
 
         # ---- Compute detection loss ----
         if (
-            training
+            compute_aux_losses
             and self.use_detection
             and all_det_cls_logits
             and len(all_det_targets) > 0
