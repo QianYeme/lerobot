@@ -59,6 +59,8 @@ class ACTDetConfig(ACTConfig):
         aug_color_jitter_enable: Enable color jitter augmentation.
         aug_noise_enable: Enable Gaussian noise augmentation.
         aug_occlusion_enable: Enable random occlusion augmentation.
+        aug_normalization_mean: Image normalization mean used by the saved preprocessor.
+        aug_normalization_std: Image normalization std used by the saved preprocessor.
     """
 
     # --- Detection ---
@@ -119,6 +121,11 @@ class ACTDetConfig(ACTConfig):
     aug_occlusion_enable: bool = True
     aug_occlusion_area_ratio: tuple[float, float] = (0.1, 0.3)
     aug_occlusion_gray_range: tuple[float, float] = (0.3, 0.7)
+    # The model receives normalized images. Augmentation temporarily maps them
+    # back to RGB [0, 1], applies pixel-space transforms, then normalizes again.
+    # These defaults match training with `use_imagenet_stats=True`.
+    aug_normalization_mean: tuple[float, float, float] = (0.485, 0.456, 0.406)
+    aug_normalization_std: tuple[float, float, float] = (0.229, 0.224, 0.225)
 
     # --- Mask-Guided Perception ---
     use_mask_guidance: bool = True

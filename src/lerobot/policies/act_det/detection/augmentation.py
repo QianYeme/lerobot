@@ -77,17 +77,37 @@ class ImageAugmentation:
         self.occlusion_area_ratio = occlusion_area_ratio
         self.occlusion_gray_range = occlusion_gray_range
 
-    def __call__(self, image: Tensor) -> Tensor:
+    def __call__(
+        self,
+        image: Tensor,
+        normalization_mean: tuple[float, ...] | None = None,
+        normalization_std: tuple[float, ...] | None = None,
+    ) -> Tensor:
         """Apply enabled augmentations to a single image.
 
         Args:
-            image: (C, H, W) image tensor, pixel values in [0, 1].
+            image: (C, H, W) image tensor. If normalization parameters are
+                provided, this is the normalized image produced by the
+                preprocessor; otherwise values must be in [0, 1].
+            normalization_mean: Per-channel mean used to normalize ``image``.
+            normalization_std: Per-channel std used to normalize ``image``.
 
         Returns:
-            Augmented image of the same shape and value range.
+            Augmented image in the same space as the input.
         """
         if not self.training:
             return image
+
+        if (normalization_mean is None) != (normalization_std is None):
+            raise ValueError("normalization_mean and normalization_std must be provided together")
+
+        mean = std = None
+        if normalization_mean is not None and normalization_std is not None:
+            if len(normalization_mean) != image.shape[0] or len(normalization_std) != image.shape[0]:
+                raise ValueError("normalization parameters must match the image channel count")
+            mean = image.new_tensor(normalization_mean).view(-1, 1, 1)
+            std = image.new_tensor(normalization_std).view(-1, 1, 1)
+            image = torch.clamp(image * std + mean, 0.0, 1.0)
 
         # Color jitter.
         if self.color_jitter_enable and random.random() < self.probability:
@@ -101,6 +121,8 @@ class ImageAugmentation:
         if self.random_occlusion_enable and random.random() < self.probability:
             image = self._apply_random_occlusion(image)
 
+        if mean is not None and std is not None:
+            image = (image - mean) / std
         return image
 
     @property
