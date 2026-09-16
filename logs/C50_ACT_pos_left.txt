@@ -1,0 +1,240 @@
+INFO 2026-09-16 21:41:27 a_opencv.py:179 OpenCVCamera(4) connected.
+INFO 2026-09-16 21:41:28 a_opencv.py:179 OpenCVCamera(2) connected.
+INFO 2026-09-16 21:41:28 follower.py:113 nn SOFollower connected.
+INFO 2026-09-16 21:41:29 _act_det.py:133 Camera frame saved: outputs/camera_check/top.jpg
+INFO 2026-09-16 21:41:29 _act_det.py:133 Camera frame saved: outputs/camera_check/gripper.jpg
+Loading weights from local directory
+已保存 2 路相机画面到 outputs/camera_check。
+请确认 top=桌面全局视角、gripper=腕部视角且画面正常，按回车继续。INFO 2026-09-16 21:41:29 _act_det.py:161 Action log: outputs/control_logs/20260916_214129_C50_ACT_s1000.csv
+INFO 2026-09-16 21:41:29 ls/utils.py:140 Episode 1/1 — policy running
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'elbow_flex': {   'original goal_pos': 92.73128509521484,
+                      'safe goal_pos': 92.97802197802197},
+    'shoulder_lift': {   'original goal_pos': -100.80643463134766,
+                         'safe goal_pos': -95.15384615384616},
+    'wrist_roll': {   'original goal_pos': -9.208427429199219,
+                      'safe goal_pos': -2.8461538461538463}}
+INFO 2026-09-16 21:41:30 _act_det.py:241 [gripper] t=0.0s 实际=2.0 目标=0.1 发送=0.1
+WARNING 2026-09-16 21:41:30 _act_det.py:250 Control loop is running slower (4.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'elbow_flex': {   'original goal_pos': 92.65802001953125,
+                      'safe goal_pos': 92.97802197802197},
+    'shoulder_lift': {   'original goal_pos': -100.7529525756836,
+                         'safe goal_pos': -95.15384615384616},
+    'wrist_roll': {   'original goal_pos': -9.214118957519531,
+                      'safe goal_pos': -2.8461538461538463}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'shoulder_lift': {   'original goal_pos': -100.7203140258789,
+                         'safe goal_pos': -95.32967032967034},
+    'wrist_roll': {   'original goal_pos': -9.4033203125,
+                      'safe goal_pos': -3.10989010989011}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'shoulder_lift': {   'original goal_pos': -100.58226776123047,
+                         'safe goal_pos': -97.26373626373626},
+    'wrist_roll': {   'original goal_pos': -9.984573364257812,
+                      'safe goal_pos': -5.043956043956044}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'shoulder_lift': {   'original goal_pos': -100.43535614013672,
+                         'safe goal_pos': -99.02197802197803},
+    'wrist_roll': {   'original goal_pos': -10.850631713867188,
+                      'safe goal_pos': -6.362637362637363}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -12.254135131835938,
+                      'safe goal_pos': -7.945054945054945}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -13.846176147460938,
+                      'safe goal_pos': -9.263736263736263}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -15.765846252441406,
+                      'safe goal_pos': -10.846153846153847}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -17.37120819091797,
+                      'safe goal_pos': -12.252747252747252}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -18.879817962646484,
+                      'safe goal_pos': -13.659340659340659}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -20.494747161865234,
+                      'safe goal_pos': -16.560439560439562}}
+WARNING 2026-09-16 21:41:30 _act_det.py:250 Control loop is running slower (18.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -22.13006591796875,
+                      'safe goal_pos': -17.087912087912088}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -23.62091064453125,
+                      'safe goal_pos': -18.142857142857142}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -25.15878677368164,
+                      'safe goal_pos': -19.9010989010989}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -26.638427734375,
+                      'safe goal_pos': -21.483516483516482}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -28.101253509521484,
+                      'safe goal_pos': -22.802197802197803}}
+INFO 2026-09-16 21:41:30 _act_det.py:241 [gripper] t=0.7s 实际=1.2 目标=0.2 发送=0.2
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -29.646987915039062,
+                      'safe goal_pos': -24.912087912087912}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -31.272968292236328,
+                      'safe goal_pos': -25.87912087912088}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -32.82846450805664,
+                      'safe goal_pos': -27.197802197802197}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -34.277767181396484,
+                      'safe goal_pos': -29.043956043956044}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -35.904136657714844,
+                      'safe goal_pos': -30.36263736263736}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -37.446449279785156,
+                      'safe goal_pos': -31.76923076923077}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -38.9842414855957,
+                      'safe goal_pos': -33.79120879120879}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -40.50160598754883,
+                      'safe goal_pos': -34.84615384615385}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -42.03592300415039,
+                      'safe goal_pos': -36.16483516483517}}
+WARNING 2026-09-16 21:41:30 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -43.55879211425781,
+                      'safe goal_pos': -38.010989010989015}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -45.1153564453125,
+                      'safe goal_pos': -39.59340659340659}}
+WARNING 2026-09-16 21:41:31 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -46.50529098510742,
+                      'safe goal_pos': -40.73626373626374}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -48.041439056396484,
+                      'safe goal_pos': -42.40659340659341}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -49.47784423828125,
+                      'safe goal_pos': -43.72527472527472}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -50.94867706298828,
+                      'safe goal_pos': -45.57142857142857}}
+INFO 2026-09-16 21:41:31 _act_det.py:241 [gripper] t=1.2s 实际=1.2 目标=1.6 发送=1.6
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -52.33644104003906,
+                      'safe goal_pos': -46.89010989010989}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -53.818275451660156,
+                      'safe goal_pos': -48.20879120879121}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -55.20720672607422,
+                      'safe goal_pos': -49.879120879120876}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -56.66413497924805,
+                      'safe goal_pos': -51.285714285714285}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -58.01239776611328,
+                      'safe goal_pos': -52.78021978021978}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -59.447635650634766,
+                      'safe goal_pos': -54.45054945054945}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -60.78888702392578,
+                      'safe goal_pos': -56.032967032967036}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -62.158477783203125,
+                      'safe goal_pos': -57.35164835164835}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -63.397613525390625,
+                      'safe goal_pos': -59.37362637362637}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -64.66661071777344,
+                      'safe goal_pos': -60.78021978021978}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -65.81814575195312,
+                      'safe goal_pos': -61.83516483516483}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -66.96913146972656,
+                      'safe goal_pos': -63.505494505494504}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -67.98391723632812,
+                      'safe goal_pos': -65.0}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -68.99910736083984,
+                      'safe goal_pos': -66.49450549450549}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -69.91999816894531,
+                      'safe goal_pos': -68.07692307692308}}
+INFO 2026-09-16 21:41:31 _act_det.py:241 [gripper] t=1.7s 实际=3.7 目标=5.2 发送=5.2
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -70.83815002441406,
+                      'safe goal_pos': -70.01098901098901}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -71.63983917236328,
+                      'safe goal_pos': -71.06593406593407}}
+WARNING 2026-09-16 21:41:31 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_roll': {   'original goal_pos': -72.44729614257812,
+                      'safe goal_pos': -72.38461538461539}}
+WARNING 2026-09-16 21:41:31 _act_det.py:250 Control loop is running slower (27.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:32 _act_det.py:250 Control loop is running slower (27.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:32 _act_det.py:241 [gripper] t=2.2s 实际=11.2 目标=13.8 发送=13.8
+INFO 2026-09-16 21:41:32 _act_det.py:233 [grasp] ★张开放下: target 19.6 -> 20.3 (t=2.5s)
+INFO 2026-09-16 21:41:32 _act_det.py:241 [gripper] t=2.7s 实际=21.6 目标=24.2 发送=24.2
+WARNING 2026-09-16 21:41:32 _act_det.py:250 Control loop is running slower (26.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:33 _act_det.py:241 [gripper] t=3.2s 实际=29.7 目标=31.5 发送=31.5
+WARNING 2026-09-16 21:41:33 _act_det.py:250 Control loop is running slower (17.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:33 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:33 _act_det.py:241 [gripper] t=3.8s 实际=34.0 目标=34.4 发送=34.4
+WARNING 2026-09-16 21:41:33 _act_det.py:250 Control loop is running slower (15.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:34 _act_det.py:241 [gripper] t=4.3s 实际=34.1 目标=34.6 发送=34.6
+WARNING 2026-09-16 21:41:34 _act_det.py:250 Control loop is running slower (21.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:34 _act_det.py:241 [gripper] t=4.8s 实际=34.1 目标=33.6 发送=33.6
+INFO 2026-09-16 21:41:35 _act_det.py:241 [gripper] t=5.3s 实际=32.4 目标=31.7 发送=31.7
+WARNING 2026-09-16 21:41:35 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:35 _act_det.py:241 [gripper] t=5.8s 实际=30.1 目标=29.2 发送=29.2
+INFO 2026-09-16 21:41:36 _act_det.py:241 [gripper] t=6.3s 实际=26.5 目标=25.2 发送=25.2
+WARNING 2026-09-16 21:41:36 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:36 _act_det.py:241 [gripper] t=6.8s 实际=22.0 目标=21.1 发送=21.1
+WARNING 2026-09-16 21:41:36 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:37 _act_det.py:241 [gripper] t=7.3s 实际=19.2 目标=18.7 发送=18.7
+WARNING 2026-09-16 21:41:37 _act_det.py:250 Control loop is running slower (27.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:37 _act_det.py:241 [gripper] t=7.8s 实际=17.4 目标=16.6 发送=16.6
+WARNING 2026-09-16 21:41:37 _act_det.py:250 Control loop is running slower (25.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:38 _act_det.py:241 [gripper] t=8.3s 实际=16.0 目标=15.5 发送=15.5
+WARNING 2026-09-16 21:41:38 _act_det.py:250 Control loop is running slower (27.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:38 _act_det.py:241 [gripper] t=8.8s 实际=15.3 目标=15.2 发送=15.2
+WARNING 2026-09-16 21:41:38 _act_det.py:250 Control loop is running slower (28.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:38 _act_det.py:250 Control loop is running slower (17.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:39 _act_det.py:250 Control loop is running slower (17.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:39 _act_det.py:250 Control loop is running slower (27.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:39 _act_det.py:250 Control loop is running slower (25.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:39 _act_det.py:241 [gripper] t=9.4s 实际=15.3 目标=14.9 发送=14.9
+INFO 2026-09-16 21:41:39 _act_det.py:241 [gripper] t=9.9s 实际=14.3 目标=14.1 发送=14.1
+WARNING 2026-09-16 21:41:40 _act_det.py:250 Control loop is running slower (26.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:40 _act_det.py:241 [gripper] t=10.4s 实际=14.0 目标=13.5 发送=13.5
+WARNING 2026-09-16 21:41:40 _act_det.py:250 Control loop is running slower (27.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:40 _act_det.py:241 [gripper] t=10.9s 实际=13.6 目标=13.3 发送=13.3
+WARNING 2026-09-16 21:41:40 _act_det.py:250 Control loop is running slower (26.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:41 _act_det.py:250 Control loop is running slower (26.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:41 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:41 _act_det.py:250 Control loop is running slower (17.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:41 _act_det.py:241 [gripper] t=11.4s 实际=13.6 目标=13.6 发送=13.6
+INFO 2026-09-16 21:41:41 _act_det.py:241 [gripper] t=11.9s 实际=13.6 目标=13.7 发送=13.7
+WARNING 2026-09-16 21:41:42 _act_det.py:250 Control loop is running slower (16.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:42 _act_det.py:241 [gripper] t=12.5s 实际=13.6 目标=13.9 发送=13.9
+WARNING 2026-09-16 21:41:42 _act_det.py:250 Control loop is running slower (18.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:42 _act_det.py:241 [gripper] t=13.0s 实际=13.9 目标=14.4 发送=14.4
+INFO 2026-09-16 21:41:43 _act_det.py:241 [gripper] t=13.5s 实际=14.5 目标=15.0 发送=15.0
+WARNING 2026-09-16 21:41:43 _act_det.py:250 Control loop is running slower (26.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:43 _act_det.py:250 Control loop is running slower (18.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:43 _act_det.py:241 [gripper] t=14.0s 实际=15.4 目标=15.9 发送=15.9
+WARNING 2026-09-16 21:41:44 _act_det.py:250 Control loop is running slower (24.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:44 _act_det.py:250 Control loop is running slower (27.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:44 _act_det.py:241 [gripper] t=14.5s 实际=16.2 目标=16.9 发送=16.9
+INFO 2026-09-16 21:41:44 _act_det.py:241 [gripper] t=15.0s 实际=17.0 目标=17.8 发送=17.8
+INFO 2026-09-16 21:41:45 _act_det.py:241 [gripper] t=15.5s 实际=18.1 目标=18.7 发送=18.7
+WARNING 2026-09-16 21:41:45 _act_det.py:250 Control loop is running slower (24.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:45 _act_det.py:241 [gripper] t=16.1s 实际=18.5 目标=19.1 发送=19.1
+WARNING 2026-09-16 21:41:46 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:41:46 _act_det.py:250 Control loop is running slower (24.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:41:46 _act_det.py:241 [gripper] t=16.6s 实际=18.5 目标=19.0 发送=19.0
