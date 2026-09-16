@@ -35,6 +35,9 @@ lerobot-teleoperate \
     --teleop.id=nn \
     --display_data=true
 
+调试
+
+
 lerobot-record  \
   --robot.type=so101_follower \
   --robot.port=/dev/ttyACM0 \
@@ -82,7 +85,7 @@ python src/lerobot/scripts/control_act_det.py \
       --dataset.fps 30
 
 python src/lerobot/scripts/control_act_det.py \
-    --policy.path=outputs/train/E5_det_B_240k \
+    --policy.path=outputs/train/E6_mask_B_240k \
     --policy.n_action_steps=1 \
     --policy.temporal_ensemble_coeff=0.01 \
     --robot.type=so101_follower \
@@ -100,37 +103,24 @@ python src/lerobot/scripts/control_act_det.py \
     --dataset.fps 30
 
 outputs/train/2026-08-07/02-55-15_act/checkpointsE1/last/pretrained_model   
-  ┌──────┬────────────────────────────────────────────────────────────────────────────────┬───────────┐
-  │ 模型 │                          --policy.path= 的 checkpoint                           │  数据集    │
-  ├──────┼────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E2   │ outputs/train/2026-08-07/02-56-09_act_det/checkpointsE2/last/pretrained_model   │ formal_A  │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E3   │ outputs/train/2026-08-07/16-25-39_act_det/checkpointsE3/last/pretrained_model   │ formal_A  │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E3b  │ outputs/train/2026-08-07/16-26-04_act_det/checkpointsE3b/last/pretrained_model  │ formal_A  │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E4   │ outputs/train/2026-08-07/16-28-36_act/checkpointsE4/last/pretrained_model       │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E5   │ outputs/train/2026-08-08/01-17-03_act_det/checkpointsE5/last/pretrained_model   │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E6   │ outputs/train/2026-08-08/01-17-21_act_det/checkpointsE6/last/pretrained_model   │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E6b  │ outputs/train/2026-08-08/01-17-41_act_det/checkpointsE6b/last/pretrained_model  │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E7   │ outputs/train/2026-08-08/12-32-41_act_det/checkpointsE7/last/pretrained_model   │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E7b  │ outputs/train/2026-08-09/00-03-00_act_det/checkpointsE7b/last/pretrained_model  │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E8   │ outputs/train/2026-08-08/12-33-40_act_det/checkpointsE8/last/pretrained_model   │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E9   │ outputs/train/2026-08-08/12-34-49_act_det/checkpointsE9/last/pretrained_model   │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E_A0 │ outputs/train/2026-08-09/00-03-19_act_det/checkpointsE_A0/last/pretrained_model │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E_A1 │ outputs/train/2026-08-09/00-03-39_act_det/checkpointsE_A1/last/pretrained_model │ formal1_B │
-  ├──────┼─────────────────────────────────────────────────────────────────────────────────┼───────────┤
-  │ E_A2 │ outputs/train/2026-08-09/09-02-51_act_det/checkpointsE_A2/last/pretrained_model │ formal1_B │
-  └──────┴─────────────────────────────────────────────────────────────────────────────────┴───────────┘
+
+python src/lerobot/scripts/control_act_det.py \
+      --policy.path=outputs/train/ER0_inject_random \
+      --policy.n_action_steps=1 \
+      --policy.temporal_ensemble_coeff=0.01 \
+      --robot.type=so101_follower \
+      --robot.port=/dev/ttyACM0 \
+      --robot.id=nn \
+      --robot.max_relative_target=5 \
+      --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+      --dataset.repo_id formal1_B \
+      --dataset.root /home/lyj/lerobot/数据集/formal1_B \
+      --dataset.single_task="Pick up the half-filled transparent plastic cup steadily without spilling" \
+      --dataset.num_episodes 1 \
+      --dataset.episode_time_s 60 \
+      --dataset.reset_time_s 15 \
+      --dataset.fps 30
+
 ## 1. 核心问题解答
 
 ### 1.1 tasks.jsonl 文件在哪里创建？
@@ -204,7 +194,7 @@ lerobot-record \
     --teleop.port=/dev/ttyACM1 \
     --teleop.id=nn \
     --display_data=true \
-    --dataset.repo_id=formal1/kind1 \
+    --dataset.repo_id=formal1/kind \
     --dataset.num_episodes=50 \
     --dataset.single_task="Pick up the half-filled transparent plastic cup steadily without spilling" \
     --dataset.push_to_hub=false \
