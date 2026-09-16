@@ -1,0 +1,611 @@
+INFO 2026-09-16 21:51:37 a_opencv.py:179 OpenCVCamera(4) connected.
+INFO 2026-09-16 21:51:38 a_opencv.py:179 OpenCVCamera(2) connected.
+INFO 2026-09-16 21:51:38 follower.py:113 nn SOFollower connected.
+INFO 2026-09-16 21:51:39 _act_det.py:133 Camera frame saved: outputs/camera_check/top.jpg
+INFO 2026-09-16 21:51:39 _act_det.py:133 Camera frame saved: outputs/camera_check/gripper.jpg
+Loading weights from local directory
+已保存 2 路相机画面到 outputs/camera_check。
+请确认 top=桌面全局视角、gripper=腕部视角且画面正常，按回车继续。INFO 2026-09-16 21:51:39 _act_det.py:161 Action log: outputs/control_logs/20260916_215139_C50_INJECT_s1000.csv
+INFO 2026-09-16 21:51:39 ls/utils.py:140 Episode 1/1 — policy running
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 51.875038146972656,
+                      'safe goal_pos': 68.49450549450549}}
+INFO 2026-09-16 21:51:40 _act_det.py:241 [gripper] t=0.0s 实际=2.6 目标=0.0 发送=0.0
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (3.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 52.13594055175781,
+                      'safe goal_pos': 68.49450549450549}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 52.60931396484375,
+                      'safe goal_pos': 67.96703296703296}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 51.66252136230469,
+                      'safe goal_pos': 66.47252747252747}}
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 51.57440185546875,
+                      'safe goal_pos': 65.41758241758242}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 51.137962341308594,
+                      'safe goal_pos': 64.36263736263736}}
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 51.45668029785156,
+                      'safe goal_pos': 63.043956043956044}}
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 50.459320068359375,
+                      'safe goal_pos': 61.901098901098905}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (28.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 50.025146484375,
+                      'safe goal_pos': 60.58241758241758}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (27.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 49.31543731689453,
+                      'safe goal_pos': 59.43956043956044}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 49.364959716796875,
+                      'safe goal_pos': 58.2967032967033}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 49.01453399658203,
+                      'safe goal_pos': 57.065934065934066}}
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 48.70832824707031,
+                      'safe goal_pos': 56.010989010989015}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 48.319313049316406,
+                      'safe goal_pos': 54.69230769230769}}
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 48.09095001220703,
+                      'safe goal_pos': 53.637362637362635}}
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 47.58903503417969,
+                      'safe goal_pos': 52.31868131868132}}
+INFO 2026-09-16 21:51:40 _act_det.py:241 [gripper] t=0.7s 实际=1.2 目标=0.1 发送=0.1
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 47.23779296875,
+                      'safe goal_pos': 51.175824175824175}}
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 46.72211456298828,
+                      'safe goal_pos': 50.120879120879124}}
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 46.433631896972656,
+                      'safe goal_pos': 48.714285714285715}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 45.867271423339844,
+                      'safe goal_pos': 47.57142857142857}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (28.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 45.107627868652344,
+                      'safe goal_pos': 46.34065934065934}}
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 44.375450134277344,
+                      'safe goal_pos': 45.10989010989011}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': 43.900230407714844,
+                      'safe goal_pos': 43.967032967032964}}
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:40 _act_det.py:250 Control loop is running slower (28.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:41 _act_det.py:241 [gripper] t=1.3s 实际=1.2 目标=0.6 发送=0.6
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (28.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (28.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (28.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:41 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:41 _act_det.py:241 [gripper] t=1.8s 实际=1.7 目标=2.8 发送=2.8
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:42 _act_det.py:241 [gripper] t=2.3s 实际=6.5 目标=8.7 发送=8.7
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (26.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (28.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:42 _act_det.py:241 [gripper] t=2.8s 实际=15.2 目标=18.2 发送=18.2
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (15.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (26.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:42 _act_det.py:233 [grasp] ★张开放下: target 19.6 -> 20.3 (t=2.9s)
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:42 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (24.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (26.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:43 _act_det.py:241 [gripper] t=3.3s 实际=25.7 目标=28.6 发送=28.6
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (28.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (16.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:43 _act_det.py:241 [gripper] t=3.9s 实际=34.7 目标=36.5 发送=36.5
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (24.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (26.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (28.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:43 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:44 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': -10.143989562988281,
+                      'safe goal_pos': -10.010989010989011}}
+WARNING 2026-09-16 21:51:44 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:44 ts/utils.py:113 Relative goal position magnitude had to be clamped to be safe.
+{   'wrist_flex': {   'original goal_pos': -11.369132995605469,
+                      'safe goal_pos': -11.153846153846153}}
+WARNING 2026-09-16 21:51:44 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:44 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:44 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:44 _act_det.py:241 [gripper] t=4.4s 实际=39.2 目标=40.0 发送=40.0
+INFO 2026-09-16 21:51:44 _act_det.py:241 [gripper] t=4.9s 实际=40.3 目标=40.9 发送=40.9
+WARNING 2026-09-16 21:51:44 _act_det.py:250 Control loop is running slower (15.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:44 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:45 _act_det.py:241 [gripper] t=5.4s 实际=40.7 目标=41.0 发送=41.0
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (15.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (28.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (22.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (28.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:45 _act_det.py:241 [gripper] t=6.0s 实际=40.7 目标=40.9 发送=40.9
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:45 _act_det.py:250 Control loop is running slower (14.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:46 _act_det.py:250 Control loop is running slower (26.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:46 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:46 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:46 _act_det.py:241 [gripper] t=6.5s 实际=40.6 目标=39.8 发送=39.8
+WARNING 2026-09-16 21:51:46 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:46 _act_det.py:250 Control loop is running slower (28.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:46 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:46 _act_det.py:241 [gripper] t=7.0s 实际=38.6 目标=38.0 发送=38.0
+WARNING 2026-09-16 21:51:46 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:46 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:46 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (27.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (27.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (23.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:47 _act_det.py:241 [gripper] t=7.5s 实际=36.7 目标=36.0 发送=36.0
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (27.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (27.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:47 _act_det.py:228 [grasp] ★闭合抓取: target 35.0 -> 34.9 (t=7.9s)
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:47 _act_det.py:241 [gripper] t=8.1s 实际=35.0 目标=34.5 发送=34.5
+WARNING 2026-09-16 21:51:47 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:48 _act_det.py:250 Control loop is running slower (28.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:48 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:48 _act_det.py:250 Control loop is running slower (24.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:48 _act_det.py:250 Control loop is running slower (28.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:48 _act_det.py:250 Control loop is running slower (25.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:48 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:48 _act_det.py:241 [gripper] t=8.6s 实际=34.4 目标=34.6 发送=34.6
+WARNING 2026-09-16 21:51:48 _act_det.py:250 Control loop is running slower (8.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:48 _act_det.py:250 Control loop is running slower (28.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:49 _act_det.py:241 [gripper] t=9.2s 实际=34.4 目标=34.9 发送=34.9
+INFO 2026-09-16 21:51:49 _act_det.py:241 [gripper] t=9.7s 实际=35.3 目标=35.5 发送=35.5
+WARNING 2026-09-16 21:51:49 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:49 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:50 _act_det.py:241 [gripper] t=10.2s 实际=36.7 目标=37.6 发送=37.6
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (25.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (27.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (28.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:50 _act_det.py:241 [gripper] t=10.7s 实际=38.5 目标=39.1 发送=39.1
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (27.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (27.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (27.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:50 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:51 _act_det.py:241 [gripper] t=11.2s 实际=38.7 目标=39.2 发送=39.2
+WARNING 2026-09-16 21:51:51 _act_det.py:250 Control loop is running slower (24.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:51 _act_det.py:250 Control loop is running slower (28.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:51 _act_det.py:250 Control loop is running slower (28.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:51 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:51 _act_det.py:241 [gripper] t=11.7s 实际=38.7 目标=39.2 发送=39.2
+WARNING 2026-09-16 21:51:51 _act_det.py:250 Control loop is running slower (15.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:52 _act_det.py:241 [gripper] t=12.2s 实际=38.7 目标=38.9 发送=38.9
+WARNING 2026-09-16 21:51:52 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:52 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:52 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:52 _act_det.py:241 [gripper] t=12.7s 实际=38.7 目标=38.4 发送=38.4
+INFO 2026-09-16 21:51:53 _act_det.py:241 [gripper] t=13.2s 实际=38.3 目标=37.8 发送=37.8
+WARNING 2026-09-16 21:51:53 _act_det.py:250 Control loop is running slower (27.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:53 _act_det.py:250 Control loop is running slower (15.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:53 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:53 _act_det.py:241 [gripper] t=13.8s 实际=37.6 目标=37.4 发送=37.4
+WARNING 2026-09-16 21:51:53 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:53 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:54 _act_det.py:250 Control loop is running slower (15.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:54 _act_det.py:241 [gripper] t=14.3s 实际=37.6 目标=37.9 发送=37.9
+INFO 2026-09-16 21:51:54 _act_det.py:241 [gripper] t=14.8s 实际=38.1 目标=38.9 发送=38.9
+WARNING 2026-09-16 21:51:54 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:54 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:54 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:54 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:55 _act_det.py:241 [gripper] t=15.3s 实际=40.1 目标=40.9 发送=40.9
+INFO 2026-09-16 21:51:55 _act_det.py:241 [gripper] t=15.8s 实际=41.6 目标=42.2 发送=42.2
+WARNING 2026-09-16 21:51:55 _act_det.py:250 Control loop is running slower (27.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:56 _act_det.py:241 [gripper] t=16.3s 实际=42.3 目标=42.6 发送=42.6
+WARNING 2026-09-16 21:51:56 _act_det.py:250 Control loop is running slower (15.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:56 _act_det.py:241 [gripper] t=16.9s 实际=42.5 目标=42.9 发送=42.9
+WARNING 2026-09-16 21:51:56 _act_det.py:250 Control loop is running slower (26.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:57 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:57 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:57 _act_det.py:241 [gripper] t=17.4s 实际=42.6 目标=43.1 发送=43.1
+INFO 2026-09-16 21:51:57 _act_det.py:241 [gripper] t=17.9s 实际=42.9 目标=43.4 发送=43.4
+WARNING 2026-09-16 21:51:58 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:58 _act_det.py:241 [gripper] t=18.4s 实际=43.0 目标=43.5 发送=43.5
+WARNING 2026-09-16 21:51:58 _act_det.py:250 Control loop is running slower (27.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:58 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:58 _act_det.py:250 Control loop is running slower (17.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:58 _act_det.py:250 Control loop is running slower (22.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:58 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:58 _act_det.py:241 [gripper] t=18.9s 实际=43.1 目标=43.4 发送=43.4
+WARNING 2026-09-16 21:51:58 _act_det.py:250 Control loop is running slower (15.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:58 _act_det.py:250 Control loop is running slower (27.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:58 _act_det.py:250 Control loop is running slower (28.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:59 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:59 _act_det.py:250 Control loop is running slower (28.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:59 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:59 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:59 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:59 _act_det.py:241 [gripper] t=19.4s 实际=43.1 目标=43.3 发送=43.3
+WARNING 2026-09-16 21:51:59 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:59 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:51:59 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:51:59 _act_det.py:241 [gripper] t=20.0s 实际=43.1 目标=43.3 发送=43.3
+WARNING 2026-09-16 21:51:59 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:00 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:00 _act_det.py:241 [gripper] t=20.5s 实际=43.1 目标=43.1 发送=43.1
+WARNING 2026-09-16 21:52:00 _act_det.py:250 Control loop is running slower (27.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:00 _act_det.py:241 [gripper] t=21.0s 实际=43.1 目标=42.8 发送=42.8
+WARNING 2026-09-16 21:52:00 _act_det.py:250 Control loop is running slower (15.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:01 _act_det.py:250 Control loop is running slower (28.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:01 _act_det.py:241 [gripper] t=21.5s 实际=42.9 目标=42.5 发送=42.5
+WARNING 2026-09-16 21:52:01 _act_det.py:250 Control loop is running slower (22.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:01 _act_det.py:241 [gripper] t=22.0s 实际=42.9 目标=42.6 发送=42.6
+WARNING 2026-09-16 21:52:01 _act_det.py:250 Control loop is running slower (26.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:01 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:01 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (27.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (26.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (28.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:02 _act_det.py:241 [gripper] t=22.5s 实际=42.9 目标=42.8 发送=42.8
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (28.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (25.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (28.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (25.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:02 _act_det.py:241 [gripper] t=23.0s 实际=42.9 目标=43.0 发送=43.0
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:02 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (28.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (23.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (28.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:03 _act_det.py:241 [gripper] t=23.6s 实际=42.9 目标=43.4 发送=43.4
+INFO 2026-09-16 21:52:03 _act_det.py:241 [gripper] t=24.1s 实际=43.4 目标=43.8 发送=43.8
+WARNING 2026-09-16 21:52:03 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (28.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (28.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (27.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (26.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:04 _act_det.py:241 [gripper] t=24.6s 实际=43.8 目标=44.1 发送=44.1
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (28.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (27.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (27.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:04 _act_det.py:241 [gripper] t=25.1s 实际=44.0 目标=44.3 发送=44.3
+WARNING 2026-09-16 21:52:04 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:05 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:05 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:05 _act_det.py:241 [gripper] t=25.6s 实际=44.2 目标=44.4 发送=44.4
+WARNING 2026-09-16 21:52:05 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:05 _act_det.py:241 [gripper] t=26.1s 实际=44.2 目标=44.6 发送=44.6
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (15.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (15.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (27.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:06 _act_det.py:241 [gripper] t=26.7s 实际=44.2 目标=44.8 发送=44.8
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (15.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (28.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:06 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:07 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:07 _act_det.py:241 [gripper] t=27.2s 实际=44.6 目标=45.0 发送=45.0
+INFO 2026-09-16 21:52:07 _act_det.py:241 [gripper] t=27.7s 实际=44.7 目标=45.2 发送=45.2
+WARNING 2026-09-16 21:52:07 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:07 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:07 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:08 _act_det.py:250 Control loop is running slower (21.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:08 _act_det.py:241 [gripper] t=28.2s 实际=44.9 目标=45.3 发送=45.3
+WARNING 2026-09-16 21:52:08 _act_det.py:250 Control loop is running slower (26.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:08 _act_det.py:250 Control loop is running slower (28.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:08 _act_det.py:250 Control loop is running slower (28.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:08 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:08 _act_det.py:241 [gripper] t=28.7s 实际=44.9 目标=45.2 发送=45.2
+WARNING 2026-09-16 21:52:08 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:09 _act_det.py:241 [gripper] t=29.2s 实际=44.9 目标=45.2 发送=45.2
+WARNING 2026-09-16 21:52:09 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:09 _act_det.py:241 [gripper] t=29.7s 实际=44.9 目标=45.3 发送=45.3
+WARNING 2026-09-16 21:52:09 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:09 _act_det.py:250 Control loop is running slower (15.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:10 _act_det.py:250 Control loop is running slower (22.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:10 _act_det.py:241 [gripper] t=30.3s 实际=44.9 目标=45.4 发送=45.4
+INFO 2026-09-16 21:52:10 _act_det.py:241 [gripper] t=30.8s 实际=44.9 目标=45.5 发送=45.5
+WARNING 2026-09-16 21:52:10 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:10 _act_det.py:250 Control loop is running slower (17.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:11 _act_det.py:250 Control loop is running slower (28.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:11 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:11 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:11 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:11 _act_det.py:241 [gripper] t=31.3s 实际=45.3 目标=45.5 发送=45.5
+WARNING 2026-09-16 21:52:11 _act_det.py:250 Control loop is running slower (27.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:11 _act_det.py:241 [gripper] t=31.8s 实际=45.3 目标=45.4 发送=45.4
+WARNING 2026-09-16 21:52:11 _act_det.py:250 Control loop is running slower (24.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:11 _act_det.py:250 Control loop is running slower (8.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:11 _act_det.py:250 Control loop is running slower (18.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:12 _act_det.py:241 [gripper] t=32.4s 实际=45.3 目标=45.0 发送=45.0
+WARNING 2026-09-16 21:52:12 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:12 _act_det.py:250 Control loop is running slower (24.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:12 _act_det.py:250 Control loop is running slower (27.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:12 _act_det.py:250 Control loop is running slower (22.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:12 _act_det.py:241 [gripper] t=33.0s 实际=45.1 目标=44.6 发送=44.6
+INFO 2026-09-16 21:52:13 _act_det.py:241 [gripper] t=33.5s 实际=44.7 目标=44.2 发送=44.2
+WARNING 2026-09-16 21:52:13 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:13 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:13 _act_det.py:250 Control loop is running slower (26.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:13 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:13 _act_det.py:250 Control loop is running slower (21.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:13 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:13 _act_det.py:241 [gripper] t=34.0s 实际=44.2 目标=43.8 发送=43.8
+WARNING 2026-09-16 21:52:13 _act_det.py:250 Control loop is running slower (22.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:14 _act_det.py:241 [gripper] t=34.5s 实际=43.8 目标=43.4 发送=43.4
+WARNING 2026-09-16 21:52:14 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:14 _act_det.py:250 Control loop is running slower (25.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:14 _act_det.py:241 [gripper] t=35.0s 实际=43.4 目标=43.2 发送=43.2
+WARNING 2026-09-16 21:52:15 _act_det.py:250 Control loop is running slower (20.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:15 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:15 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:15 _act_det.py:241 [gripper] t=35.5s 实际=43.4 目标=43.4 发送=43.4
+WARNING 2026-09-16 21:52:15 _act_det.py:250 Control loop is running slower (22.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:15 _act_det.py:250 Control loop is running slower (26.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:15 _act_det.py:250 Control loop is running slower (26.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:15 _act_det.py:241 [gripper] t=36.0s 实际=43.4 目标=43.7 发送=43.7
+WARNING 2026-09-16 21:52:16 _act_det.py:250 Control loop is running slower (14.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:16 _act_det.py:250 Control loop is running slower (27.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:16 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:16 _act_det.py:241 [gripper] t=36.6s 实际=43.8 目标=44.3 发送=44.3
+WARNING 2026-09-16 21:52:16 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:16 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:16 _act_det.py:241 [gripper] t=37.1s 实际=44.2 目标=44.6 发送=44.6
+INFO 2026-09-16 21:52:17 _act_det.py:241 [gripper] t=37.6s 实际=44.6 目标=45.0 发送=45.0
+WARNING 2026-09-16 21:52:17 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:17 _act_det.py:241 [gripper] t=38.1s 实际=44.6 目标=44.8 发送=44.8
+WARNING 2026-09-16 21:52:18 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:18 _act_det.py:241 [gripper] t=38.6s 实际=44.6 目标=44.3 发送=44.3
+WARNING 2026-09-16 21:52:18 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:18 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:18 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:18 _act_det.py:250 Control loop is running slower (25.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:18 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:18 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:18 _act_det.py:241 [gripper] t=39.1s 实际=44.2 目标=43.8 发送=43.8
+WARNING 2026-09-16 21:52:19 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:19 _act_det.py:241 [gripper] t=39.6s 实际=43.9 目标=43.5 发送=43.5
+WARNING 2026-09-16 21:52:19 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:19 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:19 _act_det.py:250 Control loop is running slower (25.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:19 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:19 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:19 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:19 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:19 _act_det.py:241 [gripper] t=40.1s 实际=43.8 目标=43.4 发送=43.4
+WARNING 2026-09-16 21:52:20 _act_det.py:250 Control loop is running slower (24.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:20 _act_det.py:241 [gripper] t=40.6s 实际=43.4 目标=43.0 发送=43.0
+WARNING 2026-09-16 21:52:20 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:20 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:20 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:20 _act_det.py:250 Control loop is running slower (27.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:20 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:20 _act_det.py:250 Control loop is running slower (25.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:20 _act_det.py:250 Control loop is running slower (28.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:20 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:21 _act_det.py:241 [gripper] t=41.1s 实际=43.1 目标=42.6 发送=42.6
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (27.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (28.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (28.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (26.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (28.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:21 _act_det.py:241 [gripper] t=41.7s 实际=42.7 目标=42.4 发送=42.4
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:21 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:22 _act_det.py:241 [gripper] t=42.2s 实际=42.7 目标=42.5 发送=42.5
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (25.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:22 _act_det.py:241 [gripper] t=42.7s 实际=42.7 目标=42.7 发送=42.7
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (15.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (28.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (28.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (27.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (26.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:22 _act_det.py:250 Control loop is running slower (28.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:23 _act_det.py:241 [gripper] t=43.2s 实际=42.7 目标=42.7 发送=42.7
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (15.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (28.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (28.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:23 _act_det.py:241 [gripper] t=43.8s 实际=42.7 目标=43.2 发送=43.2
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (28.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (23.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (28.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (28.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:23 _act_det.py:250 Control loop is running slower (28.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:24 _act_det.py:250 Control loop is running slower (8.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:24 _act_det.py:241 [gripper] t=44.4s 实际=43.2 目标=43.6 发送=43.6
+WARNING 2026-09-16 21:52:24 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:24 _act_det.py:250 Control loop is running slower (28.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:24 _act_det.py:241 [gripper] t=44.9s 实际=43.4 目标=43.8 发送=43.8
+WARNING 2026-09-16 21:52:24 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:24 _act_det.py:250 Control loop is running slower (27.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (28.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:25 _act_det.py:241 [gripper] t=45.4s 实际=43.4 目标=43.9 发送=43.9
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (18.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (28.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (28.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:25 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:25 _act_det.py:241 [gripper] t=45.9s 实际=43.4 目标=43.8 发送=43.8
+INFO 2026-09-16 21:52:26 _act_det.py:241 [gripper] t=46.4s 实际=43.4 目标=43.7 发送=43.7
+WARNING 2026-09-16 21:52:26 _act_det.py:250 Control loop is running slower (28.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:26 _act_det.py:250 Control loop is running slower (29.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:26 _act_det.py:241 [gripper] t=46.9s 实际=43.4 目标=43.7 发送=43.7
+WARNING 2026-09-16 21:52:26 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:26 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:26 _act_det.py:250 Control loop is running slower (28.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:26 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:27 _act_det.py:241 [gripper] t=47.4s 实际=43.4 目标=43.8 发送=43.8
+WARNING 2026-09-16 21:52:27 _act_det.py:250 Control loop is running slower (29.7 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:27 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:27 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:27 _act_det.py:250 Control loop is running slower (29.4 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:27 _act_det.py:250 Control loop is running slower (26.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:27 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:27 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:27 _act_det.py:250 Control loop is running slower (28.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:27 _act_det.py:241 [gripper] t=47.9s 实际=43.4 目标=43.8 发送=43.8
+INFO 2026-09-16 21:52:28 _act_det.py:241 [gripper] t=48.4s 实际=43.4 目标=43.8 发送=43.8
+WARNING 2026-09-16 21:52:28 _act_det.py:250 Control loop is running slower (28.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:28 _act_det.py:250 Control loop is running slower (28.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:28 _act_det.py:250 Control loop is running slower (28.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:28 _act_det.py:241 [gripper] t=48.9s 实际=43.4 目标=43.9 发送=43.9
+INFO 2026-09-16 21:52:29 _act_det.py:241 [gripper] t=49.4s 实际=43.8 目标=44.3 发送=44.3
+WARNING 2026-09-16 21:52:29 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:29 _act_det.py:250 Control loop is running slower (29.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:29 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:29 _act_det.py:241 [gripper] t=49.9s 实际=44.2 目标=44.5 发送=44.5
+WARNING 2026-09-16 21:52:29 _act_det.py:250 Control loop is running slower (29.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:29 _act_det.py:250 Control loop is running slower (15.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:29 _act_det.py:250 Control loop is running slower (26.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:30 _act_det.py:250 Control loop is running slower (19.5 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:30 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:30 _act_det.py:241 [gripper] t=50.5s 实际=44.2 目标=44.2 发送=44.2
+WARNING 2026-09-16 21:52:30 _act_det.py:250 Control loop is running slower (30.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:30 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:30 _act_det.py:241 [gripper] t=51.0s 实际=44.2 目标=43.8 发送=43.8
+WARNING 2026-09-16 21:52:30 _act_det.py:250 Control loop is running slower (29.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:31 _act_det.py:241 [gripper] t=51.5s 实际=44.0 目标=43.6 发送=43.6
+INFO 2026-09-16 21:52:31 _act_det.py:241 [gripper] t=52.0s 实际=43.7 目标=43.4 发送=43.4
+WARNING 2026-09-16 21:52:32 _act_det.py:250 Control loop is running slower (27.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:32 _act_det.py:241 [gripper] t=52.5s 实际=43.7 目标=43.3 发送=43.3
+WARNING 2026-09-16 21:52:32 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:32 _act_det.py:250 Control loop is running slower (28.3 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:32 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:32 _act_det.py:250 Control loop is running slower (26.8 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:32 _act_det.py:250 Control loop is running slower (29.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:32 _act_det.py:241 [gripper] t=53.0s 实际=43.4 目标=43.2 发送=43.2
+INFO 2026-09-16 21:52:33 _act_det.py:241 [gripper] t=53.5s 实际=43.4 目标=43.3 发送=43.3
+WARNING 2026-09-16 21:52:33 _act_det.py:250 Control loop is running slower (15.2 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+INFO 2026-09-16 21:52:33 _act_det.py:241 [gripper] t=54.0s 实际=43.4 目标=43.5 发送=43.5
+WARNING 2026-09-16 21:52:33 _act_det.py:250 Control loop is running slower (24.0 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:33 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:34 _act_det.py:250 Control loop is running slower (29.6 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:34 _act_det.py:250 Control loop is running slower (29.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:34 _act_det.py:250 Control loop is running slower (29.1 Hz) than the target FPS (30 Hz). Robot control might be unstable.
+WARNING 2026-09-16 21:52:34 _act_det.py:250 Control loop is running slower (26.9 Hz) than the target FPS (30 Hz). Robot control might be unstable.
