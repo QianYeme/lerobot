@@ -45,8 +45,12 @@ model.safetensors + policy_pre/postprocessor files). Available models:
 Keys: right arrow = end current episode early, Esc = stop. The camera names in
 `--robot.cameras` must match the dataset's camera keys (`top`, `gripper`);
 `top` = desktop global view (probe index 4), `gripper` = wrist view (index 2).
+
+Every control step is appended to `outputs/control_logs/<timestamp>_<model>.csv`
+(target and sent action per joint, plus gripper position) for post-hoc analysis.
 """
 
+import csv
 import logging
 import time
 from pathlib import Path
@@ -109,7 +113,13 @@ def control(cfg: RecordConfig):
     # Camera sanity check: save one frame per camera so the operator can confirm
     # the policy is seeing the correct views (a wrong index_or_path fails silently
     # and the policy runs "blind", which looks identical to model collapse).
+    # Read a short burst and keep the LAST frame: the first frames after connect()
+    # are warm-up transients (exposure / white balance) — one such frame once saved
+    # as a saturated-green JPEG and was misread as a wrong camera index.
     obs = robot.get_observation()
+    for _ in range(10):
+        time.sleep(0.05)
+        obs = robot.get_observation()
     check_dir = Path("outputs/camera_check")
     check_dir.mkdir(parents=True, exist_ok=True)
     # NOTE: raw `robot.get_observation()` returns bare camera keys (`gripper`, `top`),
@@ -126,6 +136,29 @@ def control(cfg: RecordConfig):
             f"已保存 {len(image_keys)} 路相机画面到 {check_dir}。\n"
             "请确认 top=桌面全局视角、gripper=腕部视角且画面正常，按回车继续。"
         )
+
+    # Per-step action CSV log: the terminal only prints gripper diagnostics, so
+    # without this there is no quantitative trace of the arm commands (e.g. how
+    # shoulder_pan responds when the cup is pushed left/right by hand).
+    action_names = ds_meta.features.get("action", {}).get("names") or []
+    ckpt_path = Path(cfg.policy.pretrained_path)
+    run_name = ckpt_path.name
+    for part in reversed(ckpt_path.parts[:-1]):
+        if part not in {"checkpoints", "pretrained_model"} and not part.isdigit():
+            run_name = part
+            break
+    log_dir = Path("outputs/control_logs")
+    log_dir.mkdir(parents=True, exist_ok=True)
+    csv_path = log_dir / f"{time.strftime('%Y%m%d_%H%M%S')}_{run_name}.csv"
+    csv_file = csv_path.open("w", newline="", encoding="utf-8")
+    csv_writer = csv.writer(csv_file)
+    csv_writer.writerow(
+        ["t_s", "episode"]
+        + [f"target.{name}" for name in action_names]
+        + [f"sent.{name}" for name in action_names]
+        + ["gripper_actual"]
+    )
+    logging.info("Action log: %s", csv_path)
 
     listener, events = init_keyboard_listener()
     try:
@@ -178,6 +211,14 @@ def control(cfg: RecordConfig):
                 sent_action = robot.send_action(robot_action_to_send)
                 gripper_sent = sent_action.get("gripper.pos")
 
+                csv_writer.writerow(
+                    [f"{time.perf_counter() - start_episode_t:.3f}", episode]
+                    + [act_processed_policy.get(name) for name in action_names]
+                    + [sent_action.get(name) for name in action_names]
+                    + [gripper_actual]
+                )
+                csv_file.flush()
+
                 if gripper_target is not None:
                     # 夹爪"张开/闭合"状态(阈值对齐 demo: <20≈闭, >35≈张, 中间≈抓持)
                     state = "闭" if gripper_target < 20 else ("张" if gripper_target > 35 else "中")
@@ -228,6 +269,7 @@ def control(cfg: RecordConfig):
         log_say("Stopping", cfg.play_sounds, blocking=True)
         if robot.is_connected:
             robot.disconnect()
+        csv_file.close()
         if not is_headless() and listener:
             listener.stop()
         log_say("Exiting", cfg.play_sounds)
