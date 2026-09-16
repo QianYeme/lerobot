@@ -233,6 +233,7 @@ def train(cfg: TrainPipelineConfig, accelerator: Accelerator | None = None):
     metrics_csv_file = None
     metrics_csv_writer = None
     if is_main_process:
+        cfg.output_dir.mkdir(parents=True, exist_ok=True)
         metrics_csv_path = cfg.output_dir / "metrics.csv"
         metrics_csv_file = metrics_csv_path.open("a", newline="")
         metrics_csv_writer = csv.DictWriter(

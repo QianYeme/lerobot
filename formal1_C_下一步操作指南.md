@@ -2,6 +2,182 @@
 
 日期：2026-09-15。适用于当前项目 `det` 分支。
 
+## 当前优先执行：前 50 集临时训练方案
+
+后 40 集（episode 050–089）的现有检测标注与 `formal1/kind2` 视频不匹配，正在重新标注。当前先使用已经人工检查通过的 episode 000–049 完成测试和训练。下面这份临时方案优先于后文的 90 集方案；在后 40 集重新验收通过之前，不执行原来的 72/18 划分和 90 集训练命令。
+
+本轮仍只验收静态杯位接近：动作应随杯位改变，并由操作者在接触前停止。训练使用完整演示，不提前裁掉抓取和放下阶段。
+
+### A. 数据选择：40 集训练、10 集验证
+
+继续使用现有 `formal1_C` 目录，不需要重新切分、拼接视频或复制数据。通过 episode 清单限制实际采样范围，禁止后 40 集进入本轮训练和验证。
+
+先按后文第 3 节设置 PROJECT、DATA_ROOT 并准备环境，再在执行训练/评估的 Bash 会话中运行以下命令，替代第 4 节的 72/18 清单：
+
+```bash
+export VAL_EPISODES='7,11,13,14,16,27,35,38,40,43'
+export TRAIN_EPISODES="$(python - <<'PY'
+import json
+val = {7,11,13,14,16,27,35,38,40,43}
+print(json.dumps([ep for ep in range(50) if ep not in val]))
+PY
+)"
+
+mkdir -p outputs/formal1_C50_phase1
+python - <<'PY'
+import json, os
+from pathlib import Path
+train = json.loads(os.environ['TRAIN_EPISODES'])
+val = list(map(int, os.environ['VAL_EPISODES'].split(',')))
+assert len(set(train)) == 40 and len(set(val)) == 10
+assert not set(train) & set(val)
+assert set(train) | set(val) == set(range(50))
+Path('outputs/formal1_C50_phase1/split.json').write_text(
+    json.dumps({'train': train, 'validation': val}, indent=2))
+print('Split OK: 40 train / 10 validation, episodes 0-49 only')
+PY
+```
+
+| 方位 | 前 50 集总数 | 训练 | 验证 |
+|---|---:|---:|---:|
+| 左侧 | 8 | 6 | 2 |
+| 左前 | 15 | 12 | 3 |
+| 正前 | 3 | 2 | 1 |
+| 右前 | 15 | 13 | 2 |
+| 右侧 | 9 | 7 | 2 |
+| 合计 | 50 | 40 | 10 |
+
+每次训练必须传入 `--dataset.episodes="$TRAIN_EPISODES"`，评估必须传入 `--episodes "$VAL_EPISODES"`。meta/info.json 中的 train 仍然是 0:90，不能靠它自动排除错误标注。
+
+### B. 前 50 集验收与训练
+
+第 5 节的叠图检查如果重跑，将代码中的 `for ep in range(90):` 改为 `for ep in range(50):`。最后的提示文字也改成 50 episodes；其他全数据结构检查可以保留，因为底层仍是完整 formal1_C。这样会生成前 50 集共 500 张检查图片。
+
+本轮训练三个模型，使用仓库脚本 `scripts/train_c50.sh`。不再依赖第 6 节的临时 `train_c` 函数，新开 screen 会话也能直接运行。
+
+| 模型 | 脚本参数 | 正式实验名 | 检测 / 注入 |
+|---|---|---|---|
+| ACT 基准 | act | C50_ACT_s1000 | 无检测 |
+| ACTDet 检测 | det | C50_DET_s1000 | top 检测，额外特征注入关闭 |
+| ACTDet 检测注入 | inject | C50_INJECT_s1000 | top 检测，开启 FCOS p4 特征注入 |
+
+三组都使用两路图像进行动作预测，关闭 Mask 和在线增强；seed=1000、batch=8、chunk_size=100、夹爪权重=3.0、视觉主干学习率=1e-4。检测与注入组之间只改变 `fcos_feature_inject`。`p4` 对应当前实现支持的注入层。
+
+#### B1. 启动前准备
+
+先将本地更新的指南及 `scripts/train_c50.sh` 同步到服务器。脚本尚未到服务器时不能执行以下命令。已安装依赖的 Python 环境需要在启动 screen 前激活。
+
+```bash
+cd /root/autodl-tmp/lerobot/lerobot-main
+export DATA_ROOT="$PWD/数据集/formal1_C"
+export PYTHONNOUSERSITE=1
+command -v screen
+command -v python
+command -v lerobot-train
+test -f scripts/train_c50.sh
+bash -n scripts/train_c50.sh
+screen -ls
+```
+
+如果缺少 screen，在该 Ubuntu 容器中安装后再继续：
+
+```bash
+apt-get update && apt-get install -y screen
+```
+
+脚本自动根据自身位置找到项目、默认使用项目下的数据集，并在每次启动时生成固定的 40/10 清单；不依赖终端里残留的 TRAIN_EPISODES。DATA_ROOT 可用于指定另一份同内容数据的位置。第 A 节的变量仍供手动评估使用。
+
+#### B2. 三组冒烟训练：各 2,000 步
+
+推荐单 GPU 串行执行：
+
+```bash
+screen -S C50_smoke bash scripts/train_c50.sh all 2000
+```
+
+脚本按 ACT → 检测 → 检测注入运行；任一组失败就停止队列。各自实验名为 `C50_ACT_smoke_s1000`、`C50_DET_smoke_s1000`、`C50_INJECT_smoke_s1000`。
+
+启动后按 **Ctrl+A，再按 D** 脱离 screen，训练继续。SSH 断开后重新登录，用以下命令返回：
+
+```bash
+screen -ls
+screen -r C50_smoke
+```
+
+如果同名会话仍显示 Attached，先确认没有另一人在使用；需要转移自己的旧连接时使用 `screen -d -r C50_smoke`。脚本完成或报错后该 screen 会话会结束，应查看持久化日志，不能仅凭会话消失判定成功。
+
+已完成的 ACT 冒烟不必覆盖重跑。已有输出目录时脚本会退出，保留原结果；只启动尚未完成的组，例如：
+
+```bash
+screen -S C50_det_smoke bash scripts/train_c50.sh det 2000
+# 上一组结束并通过后再执行：
+screen -S C50_inject_smoke bash scripts/train_c50.sh inject 2000
+```
+
+#### B3. 正式首轮：三组各 20,000 步
+
+确认三组冒烟均无报错、checkpoint 已保存且检测/注入组有有效检测损失后，执行：
+
+```bash
+screen -S C50_train bash scripts/train_c50.sh all 20000
+```
+
+依次运行三个实验，单卡默认采用这种方式。20,000 步是首次比较预算，不是收敛保证；冒烟和正式训练使用不同目录，正式训练重新初始化策略，不接续冒烟权重。
+
+若要单独管理某个模型，可用以下三个独立会话命令。单 GPU 请每组结束后再启动下一组；不要在串行队列运行期间再次启动同一模型。
+
+```bash
+screen -S C50_ACT bash scripts/train_c50.sh act 100000
+screen -S C50_DET bash scripts/train_c50.sh det 100000
+screen -S C50_INJECT bash scripts/train_c50.sh inject 100000
+```
+
+只有确认多 GPU 可用时才分卡并行，例如 `CUDA_VISIBLE_DEVICES=1 screen -S C50_DET bash scripts/train_c50.sh det 20000`。`screen` 本身不分配 GPU，也不隔离显存。
+
+#### B4. 日志、恢复与检查
+
+```bash
+# 不进入 screen 也能查看进度；Ctrl+C 只退出 tail，不会停止训练。
+tail -f outputs/formal1_C50_phase1/C50_ACT_s1000/train.log
+tail -f outputs/formal1_C50_phase1/C50_DET_s1000/train.log
+tail -f outputs/formal1_C50_phase1/C50_INJECT_s1000/train.log
+```
+
+每组日志目录还保存 `command.sh`、`split.json`、`code_commit.txt`、已跟踪代码修改补丁及环境清单。checkpoint 保存在 `outputs/train/<实验名>/checkpoints/`。如果使用之前临时函数完成了某组实验，旧日志仍在 `outputs/formal1_C_phase1/`，不会被脚本搬动。
+
+重新执行同名脚本不会覆盖或自动恢复已有实验。中断后通过 checkpoint 恢复，例如：
+
+```bash
+screen -S C50_DET_resume bash -c 'set -o pipefail; lerobot-train --config_path=outputs/train/C50_DET_s1000/checkpoints/last/pretrained_model/train_config.json --resume=true --steps=20000 2>&1 | tee -a outputs/formal1_C50_phase1/C50_DET_s1000/resume.log'
+```
+
+从中断处继续 20k 就用 `--steps=20000`；根据验证结果决定延长到 60k 时用 `--steps=60000`。ACT/注入组替换路径与会话名。恢复前确认配置文件存在；若尚未产生 checkpoint，不能恢复，先检查失败原因并另行保留/处理失败目录。
+
+启动日志核对：训练恰好 40 集、编号全部小于 50；两检测组 Mask=false；检测组注入=false，注入组注入=true、levels=[p4]。三组保持相同训练预算；显存不足时统一调整 batch 并记录，不只改其中一组。
+
+### C. 离线与真机评估如何替换
+
+第 7 节的评估循环首行改为：
+
+```bash
+for RUN in C50_ACT_s1000 C50_DET_s1000 C50_INJECT_s1000; do
+```
+
+其余循环体沿用第 7 节，并确保当前 VAL_EPISODES 仍是上面的 10 集。按方位评估时使用：左侧 `14,38`；左前 `13,27,43`；正前 `7`；右前 `16,40`；右侧 `11,35`，不使用后文包含 50 以上编号的五组清单。
+
+真机测试仍按第 9–10 节执行，但 CKPT 改成选中的 C50 checkpoint，TRIAL 名称加上 C50 标识。若延长训练或恢复 checkpoint，第 6 节恢复命令中的实验名也替换为对应 C50 名称。
+
+### D. 本轮能回答什么，以及限制
+
+- 可以验证检测监督是否参与学习、零 z 推理表现是否改善、动作是否随杯位改变，以及真机接近流程是否可用。
+- 正前方只有 2 集训练和 1 集验证，单次结果不稳定，不能据此宣称该方向已经可靠泛化。
+- 当前仍沿用 formal1_C 全部 90 集的归一化统计；限制 episodes 不等于重新计算训练 40 集统计。作为阶段性排查需注明这一点，正式严格对照时应使用仅训练集计算的统计。
+- 前 50 集训练是阶段性基线，不能替代最终 90 集实验，也不要与 90 集结果混用实验名称。
+
+后 40 集重新标注完成后，先检查两路相机、逐集边界及动态阶段叠图，再固定新的数据版本，恢复后文的 72/18 划分。正式比较建议三模型按统一设置重新训练；若从 C50 模型继续微调，应另记为微调实验。下文第 1–12 节保留原 90 集两模型方案作为参考，当前三模型训练以本节为准，不能用 C50 脚本直接启动 90 集实验。
+
+---
+
 ## 1. 本轮目标与范围
 
 已确认的目标：杯子在每次开始时处于不同的静态位置，机械臂从基本相同的初始关节姿态出发，运动方向与接近终点随杯位正确改变，在接触杯子前由操作者停止。
