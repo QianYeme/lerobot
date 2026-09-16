@@ -38,6 +38,82 @@ def _abs_stats(prediction: torch.Tensor, reference: torch.Tensor, is_pad: torch.
     return torch.abs(prediction - reference)[valid].sum().item(), int(valid.sum().item())
 
 
+def _detailed_abs_stats(
+    prediction: torch.Tensor,
+    reference: torch.Tensor,
+    is_pad: torch.Tensor,
+) -> tuple[torch.Tensor, torch.Tensor]:
+    """Return per-(horizon, action-dimension) absolute-error sums and counts."""
+    valid = (~is_pad).unsqueeze(-1).expand_as(prediction)
+    errors = torch.abs(prediction - reference)
+    return (errors * valid).sum(dim=0).cpu(), valid.sum(dim=0).cpu()
+
+
+def _summarize_details(
+    sums: dict[str, torch.Tensor],
+    counts: dict[str, torch.Tensor],
+    action_names: list[str],
+) -> dict:
+    action_dim = next(iter(sums.values())).shape[1]
+    if len(action_names) != action_dim:
+        action_names = [f"action_{idx}" for idx in range(action_dim)]
+
+    gripper_indices = [idx for idx, name in enumerate(action_names) if "gripper" in name.lower()]
+    arm_indices = [idx for idx in range(action_dim) if idx not in gripper_indices]
+    groups = {}
+    if arm_indices:
+        groups["arm"] = arm_indices
+    if gripper_indices:
+        groups["gripper"] = gripper_indices
+
+    result = {
+        "action_names": action_names,
+        "group_indices": groups,
+        "by_action_dim": {},
+        "by_action_group": {},
+        "by_horizon": {},
+        "by_horizon_and_action_dim": {},
+    }
+    for metric_name in sums:
+        metric_sums = sums[metric_name]
+        metric_counts = counts[metric_name]
+        matrix = metric_sums / metric_counts.clamp_min(1)
+        result["by_action_dim"][metric_name] = {
+            name: float(metric_sums[:, idx].sum() / metric_counts[:, idx].sum().clamp_min(1))
+            for idx, name in enumerate(action_names)
+        }
+        result["by_action_group"][metric_name] = {
+            group_name: float(
+                metric_sums[:, indices].sum() / metric_counts[:, indices].sum().clamp_min(1)
+            )
+            for group_name, indices in groups.items()
+        }
+        result["by_horizon"][metric_name] = [
+            float(metric_sums[step].sum() / metric_counts[step].sum().clamp_min(1))
+            for step in range(metric_sums.shape[0])
+        ]
+        result["by_horizon_and_action_dim"][metric_name] = matrix.tolist()
+
+    def subtract(left, right):
+        if isinstance(left, dict):
+            return {key: subtract(left[key], right[key]) for key in left}
+        if isinstance(left, list):
+            return [
+                subtract(left_value, right_value)
+                for left_value, right_value in zip(left, right, strict=True)
+            ]
+        return left - right
+
+    for section in ("by_action_dim", "by_action_group", "by_horizon", "by_horizon_and_action_dim"):
+        result[section]["swap_error_increase"] = subtract(
+            result[section]["swapped_action_l1"], result[section]["original_action_l1"]
+        )
+        result[section]["blank_error_increase"] = subtract(
+            result[section]["blank_action_l1"], result[section]["original_action_l1"]
+        )
+    return result
+
+
 def evaluate(
     checkpoint: Path,
     dataset: LeRobotDataset,
@@ -47,6 +123,7 @@ def evaluate(
     max_batches: int | None,
     action_steps: int | None,
     seed: int,
+    action_names: list[str],
 ) -> dict:
     if batch_size < 2:
         raise ValueError("batch_size must be at least 2 so images can be swapped")
@@ -74,6 +151,8 @@ def evaluate(
 
     totals = defaultdict(float)
     counts = defaultdict(int)
+    detail_sums: dict[str, torch.Tensor] = {}
+    detail_counts: dict[str, torch.Tensor] = {}
     batches = 0
     with torch.no_grad():
         for batch in dataloader:
@@ -106,6 +185,12 @@ def evaluate(
                 value_sum, value_count = _abs_stats(prediction, reference, is_pad)
                 totals[name] += value_sum
                 counts[name] += value_count
+                matrix_sum, matrix_count = _detailed_abs_stats(prediction, reference, is_pad)
+                if name not in detail_sums:
+                    detail_sums[name] = torch.zeros_like(matrix_sum)
+                    detail_counts[name] = torch.zeros_like(matrix_count)
+                detail_sums[name] += matrix_sum
+                detail_counts[name] += matrix_count
             batches += 1
 
     if batches == 0:
@@ -114,7 +199,13 @@ def evaluate(
     metrics = {name: totals[name] / counts[name] for name in totals}
     metrics["swap_error_increase"] = metrics["swapped_action_l1"] - metrics["original_action_l1"]
     metrics["blank_error_increase"] = metrics["blank_action_l1"] - metrics["original_action_l1"]
-    return {"batches": batches, "frames": batches * batch_size, "action_steps": steps, "metrics": metrics}
+    return {
+        "batches": batches,
+        "frames": batches * batch_size,
+        "action_steps": steps,
+        "metrics": metrics,
+        "details": _summarize_details(detail_sums, detail_counts, action_names),
+    }
 
 
 def main() -> None:
@@ -162,6 +253,7 @@ def main() -> None:
         args.max_batches,
         args.action_steps,
         args.seed,
+        metadata.features.get("action", {}).get("names") or [],
     )
     result.update({"checkpoint": str(checkpoint), "dataset": repo_id, "episodes": episodes})
 
