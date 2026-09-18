@@ -46,9 +46,10 @@ from lerobot.policies.act_det.detection.augmentation import ImageAugmentation
 from lerobot.policies.act_det.detection.fcos import FCOSHead, compute_fcos_loss
 from lerobot.policies.act_det.detection.fpn import FeaturePyramidNetwork
 from lerobot.policies.act_det.detection.fusion import DetectionFeatureFusion
-from lerobot.policies.act_det.detection.mask_decoder import MaskDecoder
+from lerobot.policies.act_det.detection.mask_decoder import MaskDecoder, mask_supervision_loss
 from lerobot.policies.act_det.label_loader import LabelLoader
 from lerobot.policies.act_det.mask_loader import MaskLoader
+from lerobot.policies.act_det.water_keypoint import WaterPointLabels, water_keypoint_loss
 from lerobot.policies.pretrained import PreTrainedPolicy
 from lerobot.utils.constants import ACTION, OBS_ENV_STATE, OBS_IMAGES, OBS_STATE
 
@@ -168,7 +169,11 @@ class ACTDetPolicy(PreTrainedPolicy):
         mask_loss = self.model.get_mask_loss()
         if mask_loss is not None and getattr(self.config, "use_mask_guidance", False):
             loss = loss + mask_loss["mask_loss"] * getattr(self.config, "mask_weight", 1.0)
-            loss_dict.update(mask_loss)
+            loss_dict.update({key: value.detach().item() for key, value in mask_loss.items()})
+
+        if self.model._water_loss is not None:
+            loss = loss + self.model._water_loss["water_keypoint_loss"] * self.config.water_keypoint_weight
+            loss_dict.update({key: value.detach().item() for key, value in self.model._water_loss.items()})
 
         return loss, loss_dict
 
@@ -224,6 +229,8 @@ class ACTDetModel(nn.Module):
                 fusion_hidden=config.fusion_hidden,
                 out_channels=backbone_out_channels,
             )
+            if config.fcos_feature_inject and config.fcos_inject_mode == "residual":
+                self.fcos_residual_alpha = nn.Parameter(torch.tensor(config.fcos_residual_alpha))
 
             # Annotation loader.
             annotation_dir = getattr(config, "annotation_dir", None)
@@ -246,6 +253,7 @@ class ACTDetModel(nn.Module):
                         k: k.split(".")[-1] for k in config.det_cameras
                     },
                     max_cache_episodes=getattr(config, "mask_cache_episodes", None),
+                    strict=True,
                 )
                 self.mask_decoder = MaskDecoder(
                     fpn_channels=config.fpn_channels,
@@ -255,6 +263,16 @@ class ACTDetModel(nn.Module):
             else:
                 self.mask_loader = None
                 self.mask_decoder = None
+
+        self.water_point_labels = None  # Lazy loading: deployment needs no label file.
+        if config.use_water_keypoint:
+            if "observation.images.top" not in config.image_features:
+                raise ValueError("Water keypoint requires a top image input feature")
+            self.water_decoder = MaskDecoder(
+                fpn_channels=config.fpn_channels,
+                mid_channels=config.mask_decoder_channels,
+                output_resolution=(60, 80),
+            )
 
         # ---- Augmentation (top camera only) ----
         self.aug_enable = getattr(config, "aug_enable", False)
@@ -329,6 +347,7 @@ class ACTDetModel(nn.Module):
         # Stash detection and mask loss values computed during forward.
         self._det_loss = None
         self._mask_loss = None
+        self._water_loss = None
 
         self._reset_parameters()
 
@@ -342,7 +361,7 @@ class ACTDetModel(nn.Module):
         """Return the detection loss computed during the last forward pass."""
         return self._det_loss
 
-    def get_mask_loss(self) -> dict[str, float] | None:
+    def get_mask_loss(self) -> dict[str, Tensor] | None:
         """Return the mask loss computed during the last forward pass."""
         return self._mask_loss
 
@@ -363,6 +382,7 @@ class ACTDetModel(nn.Module):
         compute_aux_losses = training if compute_aux_losses is None else compute_aux_losses
         self._det_loss = None
         self._mask_loss = None
+        self._water_loss = None
 
         if self.config.use_vae and training:
             assert ACTION in batch
@@ -421,7 +441,8 @@ class ACTDetModel(nn.Module):
 
         # Track mask losses across cameras.
         total_mask_loss = torch.tensor(0.0, device=device)
-        total_mask_frames = 0
+        total_mask_pixels = 0
+        total_mask_available_pixels = 0
 
         if self.config.image_features:
             image_features = list(self.config.image_features.keys())  # ["observation.images.top", ...]
@@ -455,6 +476,26 @@ class ACTDetModel(nn.Module):
                     fpn_features = self.fpn([f2, f3, f4])  # [P2, P3, P4]
                     p2, p3, p4 = fpn_features
 
+                    if compute_aux_losses and self.config.use_water_keypoint and cam_key == "observation.images.top":
+                        if "episode_index" not in batch or "frame_index" not in batch:
+                            raise ValueError("Water keypoint supervision requires episode_index and frame_index")
+                        if self.water_point_labels is None:
+                            if not self.config.water_keypoint_labels:
+                                raise FileNotFoundError("Water keypoint supervision requires a label file")
+                            self.water_point_labels = WaterPointLabels(self.config.water_keypoint_labels)
+                        labels = self.water_point_labels
+                        if tuple(img.shape[-2:]) != (labels.height, labels.width):
+                            raise ValueError("Water keypoint labels must match unresized input image dimensions")
+                        keys = [(int(ep.item()), int(frame.item()), "top")
+                                for ep, frame in zip(batch["episode_index"], batch["frame_index"], strict=True)]
+                        target, visible = labels.heatmaps(keys, self.water_decoder.output_resolution, device=device)
+                        logits = self.water_decoder(p2, p3, p4, return_logits=True)
+                        self._water_loss = {
+                            "water_keypoint_loss": water_keypoint_loss(logits, target, visible),
+                            "water_visible_frames": visible.sum(),
+                            "water_coverage": visible.float().mean(),
+                        }
+
                     # FCOS loss is normally training-only, but can be requested
                     # explicitly by the offline evaluator while the model stays in eval mode.
                     if compute_aux_losses:
@@ -475,22 +516,29 @@ class ACTDetModel(nn.Module):
                         and getattr(self.config, "mask_cameras", {}).get(cam_key, {}).get("enable", False)
                     )
                     if compute_aux_losses and mask_cam_enabled:
-                        pred_mask = self.mask_decoder(p2, p3, p4)  # (B, 1, 480, 640)
+                        mask_loss_type = self.config.mask_loss_type
+                        pred_mask = self.mask_decoder(p2, p3, p4, return_logits=mask_loss_type == "bce_dice")
+                        total_mask_available_pixels += pred_mask.numel()
 
                         # Load SAM 2 GT masks for each image in the batch.
-                        gt_masks = self._load_mask_batch(
+                        gt_masks, valid_masks = self._load_mask_batch(
                             batch, cam_key, img_idx=cam_idx, device=device
                         )
-                        if gt_masks is not None:
-                            mask_loss = F.l1_loss(pred_mask, gt_masks, reduction="mean")
-                            total_mask_loss = total_mask_loss + mask_loss
-                            total_mask_frames += batch_size
+                        valid_pixels = int(valid_masks.sum().item())
+                        mask_loss = mask_supervision_loss(pred_mask, gt_masks, mask_loss_type, valid_masks)
+                        total_mask_loss = total_mask_loss + mask_loss * max(valid_pixels, 1)
+                        total_mask_pixels += valid_pixels
 
                     # Feature fusion (always run — generates spatial attention during inference too).
                     enhanced_f4 = self.fusion(p2, p3, p4, f4)  # (B, 512, 15, 20)
 
                     # Project and flatten for Transformer encoder.
                     cam_features = self.encoder_img_feat_input_proj(enhanced_f4)
+                    if self.config.fcos_feature_inject and self.config.fcos_inject_mode == "residual":
+                        injected = self.fcos_head.get_inject_features(fpn_features, levels=["p4"])[0]
+                        if injected.shape != cam_features.shape:
+                            raise ValueError("Residual FCOS features must match projected image features")
+                        cam_features = cam_features + self.fcos_residual_alpha.clamp(0, 1) * injected
                 else:
                     # ---- Standard ACT path (no detection for this camera) ----
                     cam_features = self.encoder_img_feat_input_proj(f4)
@@ -508,6 +556,7 @@ class ACTDetModel(nn.Module):
                 if (
                     cam_enabled
                     and getattr(self.config, "fcos_feature_inject", False)
+                    and self.config.fcos_inject_mode == "tokens"
                 ):
                     fcos_inject = self.fcos_head.get_inject_features(
                         fpn_features,
@@ -566,8 +615,12 @@ class ACTDetModel(nn.Module):
             self._det_loss = (total_det_loss, total_det_components)
 
         # ---- Store mask loss ----
-        if total_mask_frames > 0:
-            self._mask_loss = {"mask_loss": (total_mask_loss / total_mask_frames).item()}
+        if total_mask_available_pixels > 0:
+            self._mask_loss = {
+                "mask_loss": total_mask_loss / max(total_mask_pixels, 1),
+                "mask_valid_pixels": torch.tensor(total_mask_pixels, device=device),
+                "mask_coverage": torch.tensor(total_mask_pixels / total_mask_available_pixels, device=device),
+            }
 
         # ---- Transformer encoder → decoder → action head ----
         encoder_in_tokens = torch.stack(encoder_in_tokens, axis=0)
@@ -647,7 +700,7 @@ class ACTDetModel(nn.Module):
         cam_key: str,
         img_idx: int = 0,
         device: torch.device | None = None,
-    ) -> Tensor | None:
+    ) -> tuple[Tensor, Tensor]:
         """Load SAM 2 GT masks for each image in the batch.
 
         Args:
@@ -657,36 +710,40 @@ class ACTDetModel(nn.Module):
             device: Target device for the output tensor.
 
         Returns:
-            (B, 1, 480, 640) tensor of GT masks, or None if no masks available.
+            GT masks and per-pixel validity, intersected with frame validity.
         """
         if self.mask_loader is None or not self.mask_loader.enabled:
-            return None
+            raise FileNotFoundError("MASK supervision requested without an available mask directory")
 
-        # If episode_index/frame_index are not in the batch, skip mask loading.
+        # Auxiliary supervision needs original dataset indices after preprocessing.
         if "episode_index" not in batch or "frame_index" not in batch:
-            return None
+            raise ValueError("MASK supervision requires episode_index and frame_index")
 
         batch_size = batch[OBS_IMAGES][img_idx].shape[0]
         masks_per_image = []
+        valid_per_image = []
+        mask_shape = tuple(self.mask_decoder.output_resolution)
 
         for b in range(batch_size):
             ep = int(batch["episode_index"][b].item())
             frm = int(batch["frame_index"][b].item())
 
-            mask = self.mask_loader.get_mask(cam_key, ep, frm)
+            mask, valid_pixels = self.mask_loader.get_mask_and_valid_pixels(cam_key, ep, frm)
             if mask is None:
-                return None  # If any frame in batch lacks a mask, skip the whole batch.
+                masks_per_image.append(torch.zeros((1, *mask_shape)))
+                valid_per_image.append(torch.zeros((1, *mask_shape), dtype=torch.bool))
+                continue  # Only explicitly invalid frames may return None in strict mode.
+            if mask.shape != mask_shape:
+                raise ValueError(f"MASK shape {mask.shape} != decoder shape {mask_shape}: {cam_key}, {ep}, {frm}")
 
             # mask is (H, W) numpy float32 → (1, H, W) torch.
             mask_tensor = torch.from_numpy(mask).unsqueeze(0).float()
             masks_per_image.append(mask_tensor)
-
-        if not masks_per_image:
-            return None
+            valid_per_image.append(torch.from_numpy(valid_pixels).unsqueeze(0))
 
         gt_masks = torch.stack(masks_per_image, dim=0)  # (B, 1, 480, 640)
 
         if device is not None:
             gt_masks = gt_masks.to(device, non_blocking=True)
 
-        return gt_masks
+        return gt_masks, torch.stack(valid_per_image, dim=0).to(device=device)

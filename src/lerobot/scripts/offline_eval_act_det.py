@@ -157,6 +157,7 @@ def evaluate(checkpoint: Path, dataset: LeRobotDataset, batch_size: int,
     )
 
     accum = defaultdict(float)
+    metric_counts = defaultdict(float)
     total_frames = 0
     start = time.perf_counter()
 
@@ -186,18 +187,20 @@ def evaluate(checkpoint: Path, dataset: LeRobotDataset, batch_size: int,
                     loss_dict.update(det_loss[1])
                 mask_loss = policy.model.get_mask_loss()
                 if mask_loss is not None:
-                    loss_dict.update(mask_loss)
+                    loss_dict.update({key: value.detach().item() for key, value in mask_loss.items()})
             bs = batch["observation.state"].shape[0]
             total_frames += bs
             for key in METRIC_KEYS:
                 if key in loss_dict and loss_dict[key] is not None:
-                    accum[key] += float(loss_dict[key]) * bs
+                    count = loss_dict.get("mask_valid_pixels", bs) if key == "mask_loss" else bs
+                    accum[key] += float(loss_dict[key]) * count
+                    metric_counts[key] += count
             if step % 50 == 0:
                 logging.info("Step %d (%d frames), %ds elapsed", step, total_frames,
                              time.perf_counter() - start)
 
     logging.info("Evaluated %d frames in %.1fs", total_frames, time.perf_counter() - start)
-    return {key: accum[key] / total_frames for key in METRIC_KEYS if key in accum}
+    return {key: accum[key] / metric_counts[key] for key in METRIC_KEYS if metric_counts[key] > 0}
 
 
 def main():

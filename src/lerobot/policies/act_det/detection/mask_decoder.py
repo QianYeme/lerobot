@@ -22,6 +22,41 @@ Architecture:
 
 from torch import nn
 import torch
+import torch.nn.functional as F  # noqa: N812
+
+
+def mask_supervision_loss(prediction, target, loss_type="l1", valid_pixels=None):
+    """Pixel mean L1 on probabilities, or stable BCE + per-frame soft Dice on logits."""
+    if valid_pixels is not None:
+        if valid_pixels.shape != prediction.shape or valid_pixels.dtype != torch.bool:
+            raise ValueError("MASK pixel validity must be boolean and match prediction shape")
+        weight = valid_pixels.to(torch.float32)
+        prediction = prediction.float()
+        target = target.float()
+        count = weight.sum().clamp_min(1)
+        if loss_type == "l1":
+            return ((prediction-target).abs()*weight).sum()/count
+        if loss_type != "bce_dice":
+            raise ValueError(f"Unknown MASK loss: {loss_type}")
+        probability = torch.sigmoid(prediction)*weight
+        masked_target = target*weight
+        dims = tuple(range(1,prediction.ndim))
+        intersection = (probability*masked_target).sum(dim=dims)
+        denominator = probability.sum(dim=dims)+masked_target.sum(dim=dims)
+        dice = (2*intersection+1e-6)/(denominator+1e-6)
+        frame_count = weight.sum(dim=dims)
+        bce = (F.binary_cross_entropy_with_logits(prediction,target,reduction="none")*weight).sum()/count
+        return bce+((1-dice)*frame_count).sum()/count
+    if loss_type == "l1":
+        return F.l1_loss(prediction, target)
+    if loss_type != "bce_dice":
+        raise ValueError(f"Unknown MASK loss: {loss_type}")
+    probability = torch.sigmoid(prediction)
+    dims = tuple(range(1, prediction.ndim))
+    intersection = (probability * target).sum(dim=dims)
+    denominator = probability.sum(dim=dims) + target.sum(dim=dims)
+    dice = (2 * intersection + 1e-6) / (denominator + 1e-6)
+    return F.binary_cross_entropy_with_logits(prediction, target) + (1 - dice).mean()
 
 
 class MaskDecoder(nn.Module):
@@ -93,7 +128,7 @@ class MaskDecoder(nn.Module):
             nn.init.normal_(self.inject_proj.weight, std=0.01)
             nn.init.constant_(self.inject_proj.bias, 0)
 
-    def forward(self, p2, p3, p4):
+    def forward(self, p2, p3, p4, return_logits: bool = False):
         """Predict pixel-wise mask from FPN features.
 
         Args:
@@ -122,6 +157,8 @@ class MaskDecoder(nn.Module):
         up = nn.functional.interpolate(f432, size=(h, w), mode="bilinear", align_corners=False)
 
         # → final prediction.
+        if return_logits:
+            return self.predict[:-1](up)
         return self.predict(up)  # (B, 1, 480, 640)
 
     def get_inject_features(
