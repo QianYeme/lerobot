@@ -7,7 +7,8 @@ Mask files are expected in the following structure:
     {annotation_dir}/masks/{camera_subdir}/episode_{index:03d}.npz
 
 Each .npz file contains a single array with shape (N_frames, H, W),
-dtype float32, values in [0, 1] after SIGMOID + Gaussian blur.
+values in [0, 1]. Optional boolean `valid` marks frames and `valid_pixels`
+with the same shape as masks marks supervised pixels. False pixels are unknown.
 """
 
 from __future__ import annotations
@@ -42,8 +43,12 @@ class MaskLoader:
         mask_dir: str | None = None,
         camera_keys: dict[str, str] | None = None,
         max_cache_episodes: int | None = None,
+        strict: bool = False,
     ):
         self._cache: OrderedDict[tuple, np.ndarray] = OrderedDict()
+        self._valid_cache: dict[tuple, np.ndarray] = {}
+        self._pixel_valid_cache: dict[tuple, np.ndarray | None] = {}
+        self._strict = strict
         self._max_cache = max_cache_episodes
         self._camera_keys = camera_keys or {}
         self._enabled = mask_dir is not None and os.path.isdir(mask_dir)
@@ -75,6 +80,8 @@ class MaskLoader:
             (H, W) float32 numpy array with values in [0, 1], or None.
         """
         if not self._enabled:
+            if self._strict:
+                raise FileNotFoundError("MASK directory is unavailable")
             return None
 
         camera_subdir = self._camera_keys.get(camera_key)
@@ -84,30 +91,42 @@ class MaskLoader:
         cache_key = (camera_subdir, episode_index)
         filepath = self._file_index.get(cache_key)
         if filepath is None:
+            if self._strict:
+                raise FileNotFoundError(f"Missing MASK episode: camera={camera_subdir}, episode={episode_index}")
             return None
 
         # Load entire episode mask array into cache if not present.
         if cache_key not in self._cache:
             try:
-                data = np.load(str(filepath))
-                # .npz files store arrays under 'arr_0' (default) or custom key.
-                # Try common keys.
-                if "arr_0" in data:
-                    masks = data["arr_0"]
-                elif "masks" in data:
-                    masks = data["masks"]
-                else:
-                    # Take the first array.
-                    masks = list(data.values())[0]
-
+                with np.load(str(filepath), allow_pickle=False) as data:
+                    key = "masks" if "masks" in data else "arr_0"
+                    masks = data[key]
+                    valid = data["valid"] if "valid" in data else np.ones(len(masks), dtype=bool)
+                    valid_pixels = data["valid_pixels"] if "valid_pixels" in data else None
+                if masks.ndim != 3 or not len(masks):
+                    raise ValueError(f"Expected nonempty (frames, H, W), got {masks.shape}")
+                if valid.shape != (len(masks),) or not np.isin(valid, [0, 1]).all():
+                    raise ValueError("Invalid per-frame MASK validity array")
+                if not np.isfinite(masks).all() or masks.min() < 0 or masks.max() > 1:
+                    raise ValueError("MASK values must be finite and within [0, 1]")
+                if valid_pixels is not None:
+                    if valid_pixels.shape != masks.shape or not np.isin(valid_pixels, [0, 1]).all():
+                        raise ValueError("Invalid per-pixel MASK validity array")
+                    valid_pixels = valid_pixels.astype(bool)
                 masks = masks.astype(np.float16)
 
                 # LRU eviction.
                 if self._max_cache is not None and len(self._cache) >= self._max_cache:
-                    self._cache.popitem(last=False)
+                    evicted_key, _ = self._cache.popitem(last=False)
+                    self._valid_cache.pop(evicted_key)
+                    self._pixel_valid_cache.pop(evicted_key)
 
                 self._cache[cache_key] = masks
-            except Exception:
+                self._valid_cache[cache_key] = valid.astype(bool)
+                self._pixel_valid_cache[cache_key] = valid_pixels
+            except Exception as exc:
+                if self._strict:
+                    raise ValueError(f"Cannot load MASK file {filepath}: {exc}") from exc
                 return None
 
         masks = self._cache[cache_key]
@@ -116,9 +135,22 @@ class MaskLoader:
         self._cache.move_to_end(cache_key)
 
         if frame_index < 0 or frame_index >= len(masks):
+            if self._strict:
+                raise FileNotFoundError(f"Missing MASK frame: {filepath}, frame={frame_index}, length={len(masks)}")
+            return None
+        if not self._valid_cache[cache_key][frame_index]:
             return None
 
         return masks[frame_index]  # (H, W)
+
+    def get_mask_and_valid_pixels(self, camera_key, episode_index, frame_index):
+        """Return target and supervised pixels; legacy targets supervise all pixels."""
+        mask = self.get_mask(camera_key, episode_index, frame_index)
+        if mask is None:
+            return None, None
+        camera_subdir = self._camera_keys.get(camera_key, camera_key.split(".")[-1])
+        pixels = self._pixel_valid_cache[(camera_subdir, episode_index)]
+        return mask, np.ones(mask.shape, dtype=bool) if pixels is None else pixels[frame_index]
 
     def _build_index(self):
         """Scan mask directory and build (camera, episode) → filepath mapping."""

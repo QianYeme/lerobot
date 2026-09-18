@@ -130,6 +130,7 @@ class ACTDetConfig(ACTConfig):
     # --- Mask-Guided Perception ---
     use_mask_guidance: bool = True
     mask_weight: float = 1.0
+    mask_loss_type: str = "l1"
     mask_dir: str | None = None
     mask_cache_episodes: int | None = None
     mask_decoder_channels: int = 32
@@ -144,6 +145,8 @@ class ACTDetConfig(ACTConfig):
     # FCOS Feature Injection: extract cls_tower + reg_tower intermediate features,
     # gate with centerness, project to dim_model, and append as extra Encoder tokens.
     fcos_feature_inject: bool = False
+    fcos_inject_mode: str = "tokens"
+    fcos_residual_alpha: float = 0.05
     # Which FPN levels to inject FCOS features from. ["p4"] = 300 tokens,
     # ["p3","p4"] = 1500, ["p2","p3","p4"] = 6300.
     fcos_inject_levels: list[str] = field(default_factory=lambda: ["p4"])
@@ -153,3 +156,28 @@ class ACTDetConfig(ACTConfig):
     mask_feature_inject: bool = False
     # Spatial resolution to pool the mask inject features to before flattening.
     mask_inject_pool_size: tuple[int, int] = (15, 20)
+
+    # Optional visible water-reference heatmap auxiliary task, top camera only.
+    use_water_keypoint: bool = False
+    water_keypoint_labels: str | None = None
+    water_keypoint_weight: float = 0.1
+
+    def __post_init__(self):
+        super().__post_init__()
+        if self.use_water_keypoint:
+            if not self.use_detection or self.use_mask_guidance or self.mask_feature_inject:
+                raise ValueError("Water keypoint requires DET and disables MASK supervision/injection")
+            if not self.det_cameras.get("observation.images.top", {}).get("enable", False):
+                raise ValueError("Water keypoint requires enabled top detection camera")
+            if self.aug_enable and self.aug_occlusion_enable:
+                raise ValueError("Water keypoint pilot requires random occlusion augmentation disabled")
+            if self.water_keypoint_weight < 0:
+                raise ValueError("water_keypoint_weight must be nonnegative")
+        if self.mask_loss_type not in ("l1", "bce_dice"):
+            raise ValueError("mask_loss_type must be 'l1' or 'bce_dice'")
+        if self.fcos_inject_mode not in ("tokens", "residual"):
+            raise ValueError("fcos_inject_mode must be 'tokens' or 'residual'")
+        if not 0 <= self.fcos_residual_alpha <= 1:
+            raise ValueError("fcos_residual_alpha must be in [0, 1]")
+        if self.fcos_inject_mode == "residual" and self.fcos_inject_levels != ["p4"]:
+            raise ValueError("Residual injection requires exactly the p4 level")
