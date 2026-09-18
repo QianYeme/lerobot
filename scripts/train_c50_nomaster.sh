@@ -9,7 +9,7 @@ case "$MODEL" in act|det|i0|i1|inject) ;; *) exit 2 ;; esac
 case "$MODE" in
   smoke) STEPS=20; SAVE_FREQ=20; LOG_FREQ=1 ;;
   short) STEPS=10000; SAVE_FREQ=1000; LOG_FREQ=100 ;;
-  train) STEPS=100000; SAVE_FREQ=5000; LOG_FREQ=100 ;;
+  train) STEPS=100000; SAVE_FREQ=10000; LOG_FREQ=100 ;;
   *) exit 2 ;;
 esac
 PROJECT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
