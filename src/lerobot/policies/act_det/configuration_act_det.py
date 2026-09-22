@@ -151,6 +151,17 @@ class ACTDetConfig(ACTConfig):
     # ["p3","p4"] = 1500, ["p2","p3","p4"] = 6300.
     fcos_inject_levels: list[str] = field(default_factory=lambda: ["p4"])
 
+    # Explicit FCOS box conditioning (C0): decode the top-scoring predicted box,
+    # stop action gradients at the decoded values, and encode the normalized
+    # [cx, cy, w, h, confidence, visible] vector as one Transformer token.
+    use_explicit_box_condition: bool = False
+    box_condition_mode: str = "token"
+    box_condition_camera: str = "observation.images.top"
+    box_condition_score_threshold: float = 0.25
+    box_condition_dropout: float = 0.0
+    box_condition_noise_std: float = 0.0
+    box_action_residual_alpha: float = 0.05
+
     # Mask Feature Injection: extract Mask Decoder f432 intermediate features,
     # project to dim_model, pool, and append as extra Encoder tokens.
     mask_feature_inject: bool = False
@@ -181,3 +192,26 @@ class ACTDetConfig(ACTConfig):
             raise ValueError("fcos_residual_alpha must be in [0, 1]")
         if self.fcos_inject_mode == "residual" and self.fcos_inject_levels != ["p4"]:
             raise ValueError("Residual injection requires exactly the p4 level")
+        if self.use_explicit_box_condition:
+            if not self.use_detection:
+                raise ValueError("Explicit box conditioning requires detection")
+        if self.box_condition_mode not in ("token", "state", "action_residual"):
+            raise ValueError("box_condition_mode must be 'token', 'state', or 'action_residual'")
+        if not 0 <= self.box_condition_score_threshold <= 1:
+            raise ValueError("box_condition_score_threshold must be in [0, 1]")
+        if not 0 <= self.box_condition_dropout <= 1:
+            raise ValueError("box_condition_dropout must be in [0, 1]")
+        if self.box_condition_noise_std < 0:
+            raise ValueError("box_condition_noise_std must be nonnegative")
+        if not 0 < self.box_action_residual_alpha < 1:
+            raise ValueError("box_action_residual_alpha must be strictly between 0 and 1")
+
+    def validate_features(self) -> None:
+        super().validate_features()
+        if self.use_explicit_box_condition:
+            if self.box_condition_camera not in self.image_features:
+                raise ValueError("Box condition camera must be an image input feature")
+            if not self.det_cameras.get(self.box_condition_camera, {}).get("enable", False):
+                raise ValueError("Box condition camera must have detection enabled")
+            if self.box_condition_mode in ("state", "action_residual") and self.robot_state_feature is None:
+                raise ValueError(f"Box condition mode '{self.box_condition_mode}' requires robot state")

@@ -80,6 +80,26 @@ def sync(device):
         torch.cuda.synchronize()
 
 
+def predict_chunk(policy, cfg, batch):
+    """Return a deterministic action chunk for ACT/ACTDet or Diffusion."""
+    if cfg.type != "diffusion":
+        return policy.predict_action_chunk(batch)
+    policy.reset()
+    # Diffusion schedulers may draw internal noise even when an explicit initial
+    # noise tensor is supplied; reset RNGs so repeated offline probes are exact.
+    torch.manual_seed(0)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(0)
+    batch_size = batch["observation.state"].shape[0]
+    action_dim = batch["action"].shape[-1]
+    noise = torch.zeros(
+        (batch_size, cfg.horizon, action_dim),
+        device=next(policy.parameters()).device,
+        dtype=next(policy.parameters()).dtype,
+    )
+    return policy.select_action(dict(batch), noise=noise).unsqueeze(1)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint", type=Path, required=True)
@@ -102,6 +122,9 @@ def main():
     if args.raw_master_zero and "master_gripper.pos" not in state_names:
         raise ValueError("Raw-master-zero requested for dataset without this field")
     policy = POLICY_CLASSES[cfg.type].from_pretrained(args.checkpoint, config=cfg).eval()
+    action_horizon = getattr(cfg, "chunk_size", None) or getattr(cfg, "n_action_steps", None)
+    if not action_horizon:
+        raise ValueError(f"Unsupported action horizon for policy type {cfg.type!r}")
     pre, post = make_pre_post_processors(cfg, pretrained_path=str(args.checkpoint),
                                        preprocessor_overrides={"device_processor": {"device": args.device}})
     args.output.mkdir(parents=True)
@@ -114,7 +137,7 @@ def main():
     for ep in parse_episodes(args.episodes):
         policy.reset()
         dataset = LeRobotDataset(args.repo_id, root=args.dataset_root, episodes=[ep],
-                                 delta_timestamps={"action": [i / info["fps"] for i in range(cfg.chunk_size)]},
+                                 delta_timestamps={"action": [i / info["fps"] for i in range(action_horizon)]},
                                  video_backend="pyav")
         length = min(len(dataset), args.max_frames) if args.max_frames is not None else len(dataset)
         if length < 2:
@@ -137,14 +160,14 @@ def main():
                 sync(args.device)
                 processed = time.perf_counter()
                 if frame == 0:
-                    first = policy.predict_action_chunk(batch)
-                    repeated = policy.predict_action_chunk(batch)
+                    first = predict_chunk(policy, cfg, batch)
+                    repeated = predict_chunk(policy, cfg, batch)
                     torch.testing.assert_close(first, repeated, rtol=1e-5, atol=1e-6)
                     for _ in range(3):
-                        policy.predict_action_chunk(batch)
+                        predict_chunk(policy, cfg, batch)
                     sync(args.device)
                     processed = time.perf_counter()
-                chunk = policy.predict_action_chunk(batch)
+                chunk = predict_chunk(policy, cfg, batch)
                 sync(args.device)
                 inferred = time.perf_counter()
                 predicted.append(chunk[0].cpu().numpy())

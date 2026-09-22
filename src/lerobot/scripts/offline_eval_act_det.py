@@ -55,10 +55,11 @@ from lerobot.datasets.dataset_metadata import LeRobotDatasetMetadata
 from lerobot.datasets.lerobot_dataset import LeRobotDataset
 from lerobot.policies.act.modeling_act import ACTPolicy
 from lerobot.policies.act_det.modeling_act_det import ACTDetPolicy
+from lerobot.policies.diffusion.modeling_diffusion import DiffusionPolicy
 from lerobot.policies.factory import make_pre_post_processors
 from lerobot.utils.constants import ACTION, OBS_IMAGES
 
-POLICY_CLASSES = {"act": ACTPolicy, "act_det": ACTDetPolicy}
+POLICY_CLASSES = {"act": ACTPolicy, "act_det": ACTDetPolicy, "diffusion": DiffusionPolicy}
 
 METRIC_KEYS = [
     "inference_l1_loss",
@@ -71,10 +72,17 @@ METRIC_KEYS = [
 
 def inference_l1_loss(policy, batch: dict, actions_hat: torch.Tensor) -> torch.Tensor:
     """Match the training L1 definition, but use inference-mode predictions."""
-    loss_per_dim = torch.abs(batch[ACTION] - actions_hat) * ~batch["action_is_pad"].unsqueeze(-1)
-    if policy.config.gripper_loss_weight != 1.0:
+    target = batch[ACTION]
+    if actions_hat.ndim == 2 and target.ndim == 3:
+        target = target[:, 0]
+        pad = batch["action_is_pad"][:, 0]
+    else:
+        pad = batch["action_is_pad"]
+    loss_per_dim = torch.abs(target - actions_hat) * ~pad.unsqueeze(-1)
+    gripper_loss_weight = getattr(policy.config, "gripper_loss_weight", 1.0)
+    if gripper_loss_weight != 1.0:
         weights = torch.ones(actions_hat.shape[-1], device=actions_hat.device, dtype=actions_hat.dtype)
-        weights[-1] = policy.config.gripper_loss_weight
+        weights[-1] = gripper_loss_weight
         loss_per_dim = loss_per_dim * weights
     return loss_per_dim.mean()
 
@@ -177,6 +185,14 @@ def evaluate(checkpoint: Path, dataset: LeRobotDataset, batch_size: int,
 
             if cfg.type == "act_det":
                 actions_hat = policy.model(model_batch, compute_aux_losses=True)[0]
+            elif cfg.type == "diffusion":
+                bsz = model_batch["observation.state"].shape[0]
+                noise = torch.zeros(
+                    (bsz, cfg.horizon, batch[ACTION].shape[-1]),
+                    device=next(policy.parameters()).device,
+                    dtype=next(policy.parameters()).dtype,
+                )
+                actions_hat = policy.select_action(model_batch, noise=noise)
             else:
                 actions_hat = policy.model(model_batch)[0]
 
@@ -245,7 +261,12 @@ def main():
     logging.info("Episodes: %d-%d (%d episodes)", episodes[0], episodes[-1], len(episodes))
 
     ds_meta = LeRobotDatasetMetadata(repo_id, root=root)
-    chunk_size = json.load(open(checkpoint / "config.json", encoding="utf-8"))["chunk_size"]
+    with open(checkpoint / "config.json", encoding="utf-8") as f:
+        checkpoint_cfg = json.load(f)
+    # ACT stores the action window as chunk_size; Diffusion stores it as horizon.
+    chunk_size = checkpoint_cfg.get("chunk_size") or checkpoint_cfg.get("horizon")
+    if not chunk_size:
+        raise ValueError(f"Checkpoint has neither chunk_size nor horizon: {checkpoint / 'config.json'}")
     delta_timestamps = {"action": [i / ds_meta.fps for i in range(chunk_size)]}
     dataset = LeRobotDataset(
         repo_id, root=root, episodes=episodes, delta_timestamps=delta_timestamps,
@@ -266,7 +287,7 @@ def main():
     output.write_text(json.dumps({
         "checkpoint": str(checkpoint),
         "dataset": repo_id,
-        "episodes": [episodes[0], episodes[-1]],
+        "episodes": episodes,
         "metrics": metrics,
     }, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\nResults saved to {output}")
