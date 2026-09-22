@@ -187,6 +187,84 @@ class FCOSHead(nn.Module):
         return inject_tokens
 
 
+def decode_fcos_top1_condition(
+    cls_logits: list[Tensor],
+    reg_preds: list[Tensor],
+    ctr_preds: list[Tensor],
+    strides: list[int],
+    image_size: tuple[int, int],
+    score_threshold: float,
+) -> Tensor:
+    """Decode one normalized box condition per image from single-class FCOS outputs.
+
+    The returned columns are ``[cx, cy, w, h, confidence, visible]``. Center
+    coordinates are normalized to ``[-1, 1]`` and sizes to ``[0, 1]``. Images
+    without a valid prediction use an all-zero vector, including ``visible=0``;
+    callers must use the visibility bit rather than interpreting zero coordinates
+    as an image-center prediction.
+    """
+    if not (len(cls_logits) == len(reg_preds) == len(ctr_preds) == len(strides)):
+        raise ValueError("FCOS outputs and strides must have the same number of levels")
+    if not cls_logits:
+        raise ValueError("At least one FCOS level is required")
+    if any(level.shape[1] != 1 for level in cls_logits):
+        raise ValueError("Explicit box conditioning currently supports one FCOS class")
+
+    height, width = image_size
+    if height <= 0 or width <= 0:
+        raise ValueError("image_size must contain positive dimensions")
+
+    level_conditions = []
+    level_scores = []
+    for cls_level, reg_level, ctr_level, stride in zip(
+        cls_logits, reg_preds, ctr_preds, strides, strict=True
+    ):
+        batch_size, _, _, level_width = cls_level.shape
+        scores = torch.sqrt(cls_level[:, 0].sigmoid() * ctr_level[:, 0].sigmoid()).flatten(1)
+        best_scores, flat_indices = scores.max(dim=1)
+        rows = torch.div(flat_indices, level_width, rounding_mode="floor")
+        cols = flat_indices % level_width
+
+        regression = reg_level.permute(0, 2, 3, 1).reshape(batch_size, -1, 4)
+        regression = regression.gather(1, flat_indices[:, None, None].expand(-1, 1, 4)).squeeze(1)
+        center_x = (cols.to(regression.dtype) + 0.5) * stride
+        center_y = (rows.to(regression.dtype) + 0.5) * stride
+        x1 = (center_x - regression[:, 0] * stride).clamp(0, width)
+        y1 = (center_y - regression[:, 1] * stride).clamp(0, height)
+        x2 = (center_x + regression[:, 2] * stride).clamp(0, width)
+        y2 = (center_y + regression[:, 3] * stride).clamp(0, height)
+
+        box_width = x2 - x1
+        box_height = y2 - y1
+        valid = (
+            torch.isfinite(torch.stack([x1, y1, x2, y2, best_scores], dim=1)).all(dim=1)
+            & (box_width > 0)
+            & (box_height > 0)
+        )
+        condition = torch.stack(
+            [
+                ((x1 + x2) / width) - 1,
+                ((y1 + y2) / height) - 1,
+                box_width / width,
+                box_height / height,
+                best_scores,
+                valid.to(best_scores.dtype),
+            ],
+            dim=1,
+        )
+        level_conditions.append(condition)
+        level_scores.append(best_scores.masked_fill(~valid, -1))
+
+    scores_by_level = torch.stack(level_scores, dim=1)
+    best_level = scores_by_level.argmax(dim=1)
+    conditions_by_level = torch.stack(level_conditions, dim=1)
+    condition = conditions_by_level.gather(
+        1, best_level[:, None, None].expand(-1, 1, conditions_by_level.shape[-1])
+    ).squeeze(1)
+    visible = scores_by_level.gather(1, best_level[:, None]).squeeze(1) >= score_threshold
+    return torch.where(visible[:, None], condition, torch.zeros_like(condition))
+
+
 def compute_fcos_loss(
     cls_logits: list[Tensor],
     reg_preds: list[Tensor],

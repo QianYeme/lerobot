@@ -59,7 +59,8 @@ from lerobot.utils.utils import (
 # Superset of columns written to `<output_dir>/metrics.csv` at every log step.
 # Keys come from `MetricsTracker.to_dict()` (steps/samples/episodes/epochs/loss/
 # grad_norm/lr/update_s/dataloading_s) plus the per-component losses returned in
-# the policy `output_dict` (l1_loss/kld_loss/det_*_loss/mask_loss). Missing columns
+# the policy `output_dict` (l1_loss/kld_loss/det_*_loss/mask_loss/box residual
+# diagnostics). Missing columns
 # are left empty (restval=""), so a single schema works for act / act_det variants.
 METRICS_CSV_FIELDS = [
     "steps",
@@ -77,6 +78,9 @@ METRICS_CSV_FIELDS = [
     "det_reg_loss",
     "det_ctr_loss",
     "mask_loss",
+    "box_action_residual_alpha",
+    "box_action_residual_abs_mean",
+    "box_action_residual_abs_max",
 ]
 
 
@@ -384,7 +388,7 @@ def train(cfg: TrainPipelineConfig, accelerator: Accelerator | None = None):
         logging.info(f"{num_total_params=} ({format_big_number(num_total_params)})")
 
     # create dataloader for offline training
-    if hasattr(cfg.policy, "drop_n_last_frames"):
+    if hasattr(cfg.policy, "drop_n_last_frames") and cfg.policy.drop_n_last_frames > 0:
         shuffle = False
         sampler = EpisodeAwareSampler(
             dataset.meta.episodes["dataset_from_index"],

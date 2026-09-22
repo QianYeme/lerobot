@@ -43,7 +43,11 @@ from lerobot.policies.act.modeling_act import (
 )
 from lerobot.policies.act_det.configuration_act_det import ACTDetConfig
 from lerobot.policies.act_det.detection.augmentation import ImageAugmentation
-from lerobot.policies.act_det.detection.fcos import FCOSHead, compute_fcos_loss
+from lerobot.policies.act_det.detection.fcos import (
+    FCOSHead,
+    compute_fcos_loss,
+    decode_fcos_top1_condition,
+)
 from lerobot.policies.act_det.detection.fpn import FeaturePyramidNetwork
 from lerobot.policies.act_det.detection.fusion import DetectionFeatureFusion
 from lerobot.policies.act_det.detection.mask_decoder import MaskDecoder, mask_supervision_loss
@@ -174,6 +178,12 @@ class ACTDetPolicy(PreTrainedPolicy):
         if self.model._water_loss is not None:
             loss = loss + self.model._water_loss["water_keypoint_loss"] * self.config.water_keypoint_weight
             loss_dict.update({key: value.detach().item() for key, value in self.model._water_loss.items()})
+
+        residual, alpha = self.model.get_box_action_residual()
+        if residual is not None:
+            loss_dict["box_action_residual_alpha"] = alpha.detach().item()
+            loss_dict["box_action_residual_abs_mean"] = residual.abs().mean().item()
+            loss_dict["box_action_residual_abs_max"] = residual.abs().max().item()
 
         return loss, loss_dict
 
@@ -330,26 +340,52 @@ class ACTDetModel(nn.Module):
                 backbone_out_channels, config.dim_model, kernel_size=1
             )
 
+        # Keep shared modules ahead of mode-specific box modules so the same
+        # seed produces identical shared initialization across C0/C1/C2.
+        self.decoder_pos_embed = nn.Embedding(config.chunk_size, config.dim_model)
+        self.action_head = nn.Linear(config.dim_model, self.config.action_feature.shape[0])
+        self._reset_parameters()
+
         # ---- Positional embeddings ----
         n_1d_tokens = 1  # latent
         if self.config.robot_state_feature:
             n_1d_tokens += 1
         if self.config.env_state_feature:
             n_1d_tokens += 1
+        if config.use_explicit_box_condition and config.box_condition_mode == "token":
+            n_1d_tokens += 1
         self.encoder_1d_feature_pos_embed = nn.Embedding(n_1d_tokens, config.dim_model)
         if self.config.image_features:
             self.encoder_cam_feat_pos_embed = ACTSinusoidalPositionEmbedding2d(config.dim_model // 2)
 
-        # ---- Decoder ----
-        self.decoder_pos_embed = nn.Embedding(config.chunk_size, config.dim_model)
-        self.action_head = nn.Linear(config.dim_model, self.config.action_feature.shape[0])
+        if config.use_explicit_box_condition:
+            if config.box_condition_mode == "token":
+                self.box_condition_input_proj = nn.Sequential(
+                    nn.Linear(6, config.dim_model),
+                    nn.ReLU(),
+                    nn.Linear(config.dim_model, config.dim_model),
+                )
+            elif config.box_condition_mode == "state":
+                self.box_condition_state_proj = nn.Linear(6, config.dim_model, bias=False)
+            elif config.box_condition_mode == "action_residual":
+                condition_dim = self.config.robot_state_feature.shape[0] + 6
+                self.box_condition_action_residual = nn.Sequential(
+                    nn.Linear(condition_dim, config.dim_model),
+                    nn.ReLU(),
+                    nn.Linear(
+                        config.dim_model,
+                        config.chunk_size * self.config.action_feature.shape[0],
+                    ),
+                )
+                initial_logit = torch.logit(torch.tensor(config.box_action_residual_alpha))
+                self.box_condition_action_residual_logit = nn.Parameter(initial_logit)
 
         # Stash detection and mask loss values computed during forward.
         self._det_loss = None
         self._mask_loss = None
         self._water_loss = None
-
-        self._reset_parameters()
+        self._box_condition = None
+        self._box_action_residual = None
 
     def _reset_parameters(self):
         from itertools import chain
@@ -364,6 +400,16 @@ class ACTDetModel(nn.Module):
     def get_mask_loss(self) -> dict[str, Tensor] | None:
         """Return the mask loss computed during the last forward pass."""
         return self._mask_loss
+
+    def get_box_condition(self) -> Tensor | None:
+        """Return the detached box condition used by the latest forward pass."""
+        return self._box_condition
+
+    def get_box_action_residual(self) -> tuple[Tensor | None, Tensor | None]:
+        """Return the latest C2 residual action and its effective sigmoid gate."""
+        if self.config.box_condition_mode != "action_residual":
+            return None, None
+        return self._box_action_residual, self.box_condition_action_residual_logit.sigmoid()
 
     def forward(
         self,
@@ -383,6 +429,8 @@ class ACTDetModel(nn.Module):
         self._det_loss = None
         self._mask_loss = None
         self._water_loss = None
+        self._box_condition = None
+        self._box_action_residual = None
 
         if self.config.use_vae and training:
             assert ACTION in batch
@@ -424,9 +472,18 @@ class ACTDetModel(nn.Module):
 
         # ---- Build Transformer encoder inputs ----
         encoder_in_tokens = [self.encoder_latent_input_proj(latent_sample)]
-        encoder_in_pos_embed = list(self.encoder_1d_feature_pos_embed.weight.unsqueeze(1))
-
+        base_1d_token_count = 1
         if self.config.robot_state_feature:
+            base_1d_token_count += 1
+        if self.config.env_state_feature:
+            base_1d_token_count += 1
+        encoder_in_pos_embed = list(
+            self.encoder_1d_feature_pos_embed.weight[:base_1d_token_count].unsqueeze(1)
+        )
+
+        robot_state_token_index = None
+        if self.config.robot_state_feature:
+            robot_state_token_index = len(encoder_in_tokens)
             encoder_in_tokens.append(self.encoder_robot_state_input_proj(batch[OBS_STATE]))
         if self.config.env_state_feature:
             encoder_in_tokens.append(self.encoder_env_state_input_proj(batch[OBS_ENV_STATE]))
@@ -438,6 +495,9 @@ class ACTDetModel(nn.Module):
         all_det_targets = []
         det_strides = self.config.fcos_strides if self.use_detection else None
         det_size_ranges = self.config.fcos_size_ranges if self.use_detection else None
+        image_encoder_in_tokens = []
+        image_encoder_in_pos_embed = []
+        box_action_residual = None
 
         # Track mask losses across cameras.
         total_mask_loss = torch.tensor(0.0, device=device)
@@ -498,8 +558,62 @@ class ACTDetModel(nn.Module):
 
                     # FCOS loss is normally training-only, but can be requested
                     # explicitly by the offline evaluator while the model stays in eval mode.
-                    if compute_aux_losses:
+                    need_fcos_outputs = compute_aux_losses or (
+                        self.config.use_explicit_box_condition
+                        and cam_key == self.config.box_condition_camera
+                    )
+                    if need_fcos_outputs:
                         cls_logits, reg_preds, ctr_preds = self.fcos_head(fpn_features)
+
+                    if (
+                        self.config.use_explicit_box_condition
+                        and cam_key == self.config.box_condition_camera
+                    ):
+                        box_condition = decode_fcos_top1_condition(
+                            cls_logits,
+                            reg_preds,
+                            ctr_preds,
+                            strides=self.config.fcos_strides,
+                            image_size=tuple(img.shape[-2:]),
+                            score_threshold=self.config.box_condition_score_threshold,
+                        ).detach()
+                        if training and self.config.box_condition_noise_std > 0:
+                            coordinate_noise = torch.randn_like(box_condition[:, :4])
+                            coordinate_noise *= self.config.box_condition_noise_std
+                            box_condition = box_condition.clone()
+                            box_condition[:, :4] += coordinate_noise * box_condition[:, 5:6]
+                            box_condition[:, :2].clamp_(-1, 1)
+                            box_condition[:, 2:4].clamp_(0, 1)
+                        if training and self.config.box_condition_dropout > 0:
+                            keep = (
+                                torch.rand(
+                                    (batch_size, 1), device=box_condition.device
+                                ) >= self.config.box_condition_dropout
+                            )
+                            box_condition = box_condition * keep
+                        self._box_condition = box_condition
+                        if self.config.box_condition_mode == "token":
+                            encoder_in_tokens.append(self.box_condition_input_proj(box_condition))
+                            encoder_in_pos_embed.append(
+                                self.encoder_1d_feature_pos_embed.weight[base_1d_token_count].unsqueeze(0)
+                            )
+                        elif self.config.box_condition_mode == "state":
+                            if robot_state_token_index is None:
+                                raise ValueError("State box conditioning requires a robot state token")
+                            encoder_in_tokens[robot_state_token_index] = (
+                                encoder_in_tokens[robot_state_token_index]
+                                + self.box_condition_state_proj(box_condition)
+                            )
+                        elif self.config.box_condition_mode == "action_residual":
+                            state_box_condition = torch.cat((batch[OBS_STATE], box_condition), dim=-1)
+                            box_action_residual = self.box_condition_action_residual(state_box_condition)
+                            box_action_residual = box_action_residual.reshape(
+                                batch_size,
+                                self.config.chunk_size,
+                                self.config.action_feature.shape[0],
+                            )
+
+                    if compute_aux_losses:
                         all_det_cls_logits.append(cls_logits)
                         all_det_reg_preds.append(reg_preds)
                         all_det_ctr_preds.append(ctr_preds)
@@ -547,8 +661,8 @@ class ACTDetModel(nn.Module):
                 cam_pos_embed = self.encoder_cam_feat_pos_embed(cam_features).to(dtype=cam_features.dtype)
                 cam_features = einops.rearrange(cam_features, "b c h w -> (h w) b c")
                 cam_pos_embed = einops.rearrange(cam_pos_embed, "b c h w -> (h w) b c")
-                encoder_in_tokens.extend(list(cam_features))
-                encoder_in_pos_embed.extend(list(cam_pos_embed))
+                image_encoder_in_tokens.extend(list(cam_features))
+                image_encoder_in_pos_embed.extend(list(cam_pos_embed))
 
                 # ---- FCOS Feature Injection (Innovation 2) ----
                 # Inject cls+reg tower intermediate features, gated by centerness,
@@ -566,8 +680,8 @@ class ACTDetModel(nn.Module):
                         inj_pos = self.encoder_cam_feat_pos_embed(inj_feat).to(dtype=inj_feat.dtype)
                         inj_flat = einops.rearrange(inj_feat, "b c h w -> (h w) b c")
                         inj_pos_flat = einops.rearrange(inj_pos, "b c h w -> (h w) b c")
-                        encoder_in_tokens.extend(list(inj_flat))
-                        encoder_in_pos_embed.extend(list(inj_pos_flat))
+                        image_encoder_in_tokens.extend(list(inj_flat))
+                        image_encoder_in_pos_embed.extend(list(inj_pos_flat))
 
                 # ---- Mask Feature Injection (Innovation 3) ----
                 # Inject Mask Decoder f432 intermediate features (pooled) as
@@ -585,8 +699,8 @@ class ACTDetModel(nn.Module):
                     mask_pos = self.encoder_cam_feat_pos_embed(mask_inject).to(dtype=mask_inject.dtype)
                     mask_flat = einops.rearrange(mask_inject, "b c h w -> (h w) b c")
                     mask_pos_flat = einops.rearrange(mask_pos, "b c h w -> (h w) b c")
-                    encoder_in_tokens.extend(list(mask_flat))
-                    encoder_in_pos_embed.extend(list(mask_pos_flat))
+                    image_encoder_in_tokens.extend(list(mask_flat))
+                    image_encoder_in_pos_embed.extend(list(mask_pos_flat))
 
         # ---- Compute detection loss ----
         if (
@@ -622,6 +736,11 @@ class ACTDetModel(nn.Module):
                 "mask_coverage": torch.tensor(total_mask_pixels / total_mask_available_pixels, device=device),
             }
 
+        # Keep all 1D tokens ahead of spatial tokens even when the condition
+        # camera is not the first image feature in dataset order.
+        encoder_in_tokens.extend(image_encoder_in_tokens)
+        encoder_in_pos_embed.extend(image_encoder_in_pos_embed)
+
         # ---- Transformer encoder → decoder → action head ----
         encoder_in_tokens = torch.stack(encoder_in_tokens, axis=0)
         encoder_in_pos_embed = torch.stack(encoder_in_pos_embed, axis=0)
@@ -640,6 +759,10 @@ class ACTDetModel(nn.Module):
         )
         decoder_out = decoder_out.transpose(0, 1)  # (B, S, C)
         actions = self.action_head(decoder_out)
+        if box_action_residual is not None:
+            alpha = self.box_condition_action_residual_logit.sigmoid()
+            actions = actions + alpha * box_action_residual
+            self._box_action_residual = box_action_residual.detach()
 
         return actions, (mu, log_sigma_x2)
 
