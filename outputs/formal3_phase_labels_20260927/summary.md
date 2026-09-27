@@ -1,6 +1,6 @@
 # formal3 动作区间标签导出总结
 
-状态：`PARTIAL_PASS`；`training_ready=false`
+状态：`PASS`；`training_ready=true`
 
 ## 结果
 
@@ -28,4 +28,4 @@
 
 ## 下一 Gate
 
-按新版三个事件重新审核 60 集，结果写入 `review_ui_v2_intervals/`。在全部审核完成前不得启动正式训练。
+60 集人工审核已完成，最终逐帧标签位于 `final_reviewed_labels/`：35,917帧全部覆盖，其中有效监督27,235帧、unknown 8,682帧。下一步建立相位辅助 ACTDet 的单变量训练合同并先跑真实批次 smoke；高成本训练仍需单独授权。

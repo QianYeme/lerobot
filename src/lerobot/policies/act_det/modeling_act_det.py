@@ -53,6 +53,7 @@ from lerobot.policies.act_det.detection.fusion import DetectionFeatureFusion
 from lerobot.policies.act_det.detection.mask_decoder import MaskDecoder, mask_supervision_loss
 from lerobot.policies.act_det.label_loader import LabelLoader
 from lerobot.policies.act_det.mask_loader import MaskLoader
+from lerobot.policies.act_det.phase_supervision import PhaseLabels, phase_classification_loss
 from lerobot.policies.act_det.water_keypoint import WaterPointLabels, water_keypoint_loss
 from lerobot.policies.pretrained import PreTrainedPolicy
 from lerobot.utils.constants import ACTION, OBS_ENV_STATE, OBS_IMAGES, OBS_STATE
@@ -178,6 +179,10 @@ class ACTDetPolicy(PreTrainedPolicy):
         if self.model._water_loss is not None:
             loss = loss + self.model._water_loss["water_keypoint_loss"] * self.config.water_keypoint_weight
             loss_dict.update({key: value.detach().item() for key, value in self.model._water_loss.items()})
+
+        if self.model._phase_loss is not None:
+            loss = loss + self.model._phase_loss["phase_loss"] * self.config.phase_weight
+            loss_dict.update({key: value.detach().item() for key, value in self.model._phase_loss.items()})
 
         residual, alpha = self.model.get_box_action_residual()
         if residual is not None:
@@ -346,6 +351,10 @@ class ACTDetModel(nn.Module):
         self.action_head = nn.Linear(config.dim_model, self.config.action_feature.shape[0])
         self._reset_parameters()
 
+        if config.use_phase_aux:
+            self.phase_head = nn.Linear(config.dim_model, config.phase_num_classes)
+            self.phase_labels = None
+
         # ---- Positional embeddings ----
         n_1d_tokens = 1  # latent
         if self.config.robot_state_feature:
@@ -384,6 +393,7 @@ class ACTDetModel(nn.Module):
         self._det_loss = None
         self._mask_loss = None
         self._water_loss = None
+        self._phase_loss = None
         self._box_condition = None
         self._box_action_residual = None
 
@@ -429,6 +439,7 @@ class ACTDetModel(nn.Module):
         self._det_loss = None
         self._mask_loss = None
         self._water_loss = None
+        self._phase_loss = None
         self._box_condition = None
         self._box_action_residual = None
 
@@ -497,6 +508,7 @@ class ACTDetModel(nn.Module):
         det_size_ranges = self.config.fcos_size_ranges if self.use_detection else None
         image_encoder_in_tokens = []
         image_encoder_in_pos_embed = []
+        phase_visual_features = []
         box_action_residual = None
 
         # Track mask losses across cameras.
@@ -657,6 +669,9 @@ class ACTDetModel(nn.Module):
                     # ---- Standard ACT path (no detection for this camera) ----
                     cam_features = self.encoder_img_feat_input_proj(f4)
 
+                if self.config.use_phase_aux:
+                    phase_visual_features.append(cam_features.mean(dim=(-2, -1)))
+
                 # Positional embedding and flatten.
                 cam_pos_embed = self.encoder_cam_feat_pos_embed(cam_features).to(dtype=cam_features.dtype)
                 cam_features = einops.rearrange(cam_features, "b c h w -> (h w) b c")
@@ -740,6 +755,28 @@ class ACTDetModel(nn.Module):
         # camera is not the first image feature in dataset order.
         encoder_in_tokens.extend(image_encoder_in_tokens)
         encoder_in_pos_embed.extend(image_encoder_in_pos_embed)
+
+        if self.config.use_phase_aux:
+            phase_features = torch.stack(phase_visual_features, dim=0).mean(dim=0)
+            phase_logits = self.phase_head(phase_features)
+            if compute_aux_losses:
+                if "episode_index" not in batch or "frame_index" not in batch:
+                    raise ValueError("Phase supervision requires episode_index and frame_index")
+                if self.phase_labels is None:
+                    if not self.config.phase_labels:
+                        raise FileNotFoundError("Phase supervision requires a label file")
+                    self.phase_labels = PhaseLabels(self.config.phase_labels)
+                phase_targets = self.phase_labels.targets(
+                    batch["episode_index"], batch["frame_index"], device=device
+                )
+                valid = phase_targets >= 0
+                phase_loss = phase_classification_loss(phase_logits, phase_targets)
+                correct = (phase_logits.argmax(dim=-1)[valid] == phase_targets[valid]).sum()
+                self._phase_loss = {
+                    "phase_loss": phase_loss,
+                    "phase_valid_frames": valid.sum(),
+                    "phase_accuracy": correct.float() / valid.sum().clamp_min(1),
+                }
 
         # ---- Transformer encoder → decoder → action head ----
         encoder_in_tokens = torch.stack(encoder_in_tokens, axis=0)

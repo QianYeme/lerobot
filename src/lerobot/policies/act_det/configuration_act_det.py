@@ -173,6 +173,13 @@ class ACTDetConfig(ACTConfig):
     water_keypoint_labels: str | None = None
     water_keypoint_weight: float = 0.1
 
+    # Optional four-class phase auxiliary supervision. The classifier observes
+    # pooled visual features only and is not fed back into the action decoder.
+    use_phase_aux: bool = False
+    phase_labels: str | None = None
+    phase_weight: float = 0.1
+    phase_num_classes: int = 4
+
     def __post_init__(self):
         super().__post_init__()
         if self.use_water_keypoint:
@@ -186,6 +193,10 @@ class ACTDetConfig(ACTConfig):
                 raise ValueError("water_keypoint_weight must be nonnegative")
         if self.mask_loss_type not in ("l1", "bce_dice"):
             raise ValueError("mask_loss_type must be 'l1' or 'bce_dice'")
+        if self.phase_weight < 0:
+            raise ValueError("phase_weight must be nonnegative")
+        if self.phase_num_classes != 4:
+            raise ValueError("Reviewed phase supervision requires exactly four classes")
         if self.fcos_inject_mode not in ("tokens", "residual"):
             raise ValueError("fcos_inject_mode must be 'tokens' or 'residual'")
         if not 0 <= self.fcos_residual_alpha <= 1:
@@ -208,6 +219,8 @@ class ACTDetConfig(ACTConfig):
 
     def validate_features(self) -> None:
         super().validate_features()
+        if self.use_phase_aux and not self.image_features:
+            raise ValueError("Phase auxiliary supervision requires image inputs")
         if self.use_explicit_box_condition:
             if self.box_condition_camera not in self.image_features:
                 raise ValueError("Box condition camera must be an image input feature")

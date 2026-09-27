@@ -1,6 +1,6 @@
 # formal3 四阶段标签导出合同
 
-状态：PARTIAL_PASS
+状态：PASS
 
 ## 问题与范围
 
@@ -56,4 +56,4 @@
 - 审核脚本保存三个事件的边界和备注；用户明确确认当前片段后，episode 级 `reviewed=true`。任何后续编辑都会撤销确认；脚本必须拒绝越界或乱序边界。
 - 单元测试、真实数据 smoke 和 `git diff --check` 通过
 
-本轮最高状态为 `PARTIAL_PASS`：在 60 个 episode 的边界审核完成前，`training_ready` 必须为 `false`。
+60 个 episode 的人工边界审核、JSON/CSV一致性检查和最终逐帧冻结均已完成。最终证据位于 `final_reviewed_labels/`，状态 `PASS`、`training_ready=true`；这只授权进入训练合同设计和真实批次 smoke，不等于已经授权高成本训练。
