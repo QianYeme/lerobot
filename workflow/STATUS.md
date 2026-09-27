@@ -47,6 +47,12 @@
 - 固定val10已用于正式比较，后续不应继续把它当开发调参集。
 - 服务器大型raw输出受租用实例生命周期影响，关键汇总已同步本地，但仍需保持证据清单。
 
+## 2026-09-27：Formal3 四路线训练准备
+
+- `formal3_kind_merged_nomaster_fit48` 已发布到 Hugging Face 数据集 `QYyyyyyyy/formal3_kind_merged_nomaster_fit48`：60 episodes、35,917 frames，包含双相机视频、NOMASTER 数据、训练48集统计、top检测标注、固定48/12划分和最终人工阶段标签。
+- 四路线合同位于 `outputs/formal3_mixed_p4_20260927/experiment.md`，状态为 `PREPARED`：纯 Diffusion、DET基线、C1 state-box显式坐标注入、DET+phase(weight=0.10)。C1沿用已通过Gate的 state token加法，不使用未通过Gate的C2 action residual。
+- 四路 batch=8 的真实数据并发2-step预检全部退出0，无OOM/NaN；正式100k训练尚未授权、未启动，服务器无残留训练进程或screen。
+
 ## 关键入口
 
 - 工作流：`leorbot_workflow.md`
