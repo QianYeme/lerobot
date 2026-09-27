@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formal3 阶段审核台</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="kicker">FORMAL3 / PHASE REVIEW</p>
+        <h1>动作区间审核台</h1>
+      </div>
+      <div class="progress-block">
+        <span id="saveState">载入中</span>
+        <strong id="progressText">0 / 60</strong>
+        <div class="progress-track"><i id="progressBar"></i></div>
+      </div>
+    </header>
+
+    <main class="workspace" hidden>
+      <aside class="episode-rail">
+        <div class="rail-tools">
+          <input id="episodeSearch" type="search" placeholder="跳转 episode…" aria-label="搜索 episode" />
+          <select id="filter" aria-label="筛选状态">
+            <option value="all">全部</option>
+            <option value="pending">待审核</option>
+            <option value="complete">已完成</option>
+          </select>
+        </div>
+        <div id="episodeList" class="episode-list"></div>
+      </aside>
+
+      <section class="viewer">
+        <div class="viewer-head">
+          <div>
+            <span id="episodeLabel" class="episode-label">EPISODE 000</span>
+            <span id="diagnostic" class="diagnostic" hidden>LOAD 仅诊断</span>
+          </div>
+          <span id="frameReadout" class="frame-readout">帧 0 / 0</span>
+        </div>
+        <video id="video" preload="metadata" controls></video>
+        <div class="transport">
+          <button data-step-frame="-5">−5 帧</button>
+          <button data-step-frame="-1">−1 帧</button>
+          <button id="playPause" class="primary">播放 / 暂停</button>
+          <button data-step-frame="1">+1 帧</button>
+          <button data-step-frame="5">+5 帧</button>
+        </div>
+        <div class="shortcut-help">
+          <span><kbd>Space</kbd> 播放</span><span><kbd>←</kbd><kbd>→</kbd> 单帧</span><span><kbd>1–3</kbd> 选择步骤</span><span><kbd>F</kbd> 取当前步骤首边界</span>
+        </div>
+      </section>
+
+      <section class="review-panel">
+        <div class="panel-head">
+          <div><p class="kicker">EVENT REVIEW</p><h2>动作边界确认</h2></div>
+        </div>
+        <details class="phase-guide">
+          <summary>三个审核项与四个训练阶段</summary>
+          <ol>
+            <li><strong>闭爪区间：</strong>从夹爪开始持续向内运动，到闭合动作基本稳定。审核整个范围，不必争论唯一一帧。</li>
+            <li><strong>抬升开始：</strong>机械臂真正开始向上或搬运杯子的边界，可晚于闭爪稳定。</li>
+            <li><strong>释放区间：</strong>从放置后夹爪开始张开，到张开动作基本稳定。</li>
+            <li><strong>训练映射：</strong>闭爪前是 approach，闭爪开始至抬升是 grasp，抬升至释放是 lift_place，释放以后是 release。</li>
+          </ol>
+        </details>
+        <div id="stepList"></div>
+        <label class="episode-note">片段备注<textarea id="episodeNote" rows="2" placeholder="可选：记录遮挡、重抓或边界依据"></textarea></label>
+        <div class="navigation">
+          <button id="previousEpisode">上一段</button>
+          <button id="nextPending" class="primary">确认通过并进入下一待审</button>
+        </div>
+      </section>
+    </main>
+
+    <div id="errorState" class="error-state" hidden><strong>无法载入审核数据</strong><p></p></div>
+    <script src="app.js"></script>
+  </body>
+</html>

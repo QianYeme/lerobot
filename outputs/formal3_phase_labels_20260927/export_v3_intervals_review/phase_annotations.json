@@ -1,0 +1,2798 @@
+{
+  "schema_version": 1,
+  "source": "automatic_gripper_telemetry",
+  "reviewed": false,
+  "training_ready": false,
+  "interval_convention": "episode-local [start, stop) frames",
+  "phases": {
+    "unknown": -1,
+    "approach": 0,
+    "grasp": 1,
+    "lift_place": 2,
+    "release": 3
+  },
+  "config": {
+    "open_threshold": 30.0,
+    "close_threshold": 25.0,
+    "sustain_frames": 3,
+    "baseline_frames": 60,
+    "contact_delta": 40.0,
+    "motion_margin": 0.1,
+    "contact_tolerance": 15,
+    "hold_frames": 9,
+    "hold_seconds": 0.3
+  },
+  "dataset": {
+    "path": "D:\\lerobot\\lerobot-main\\数据集\\formal3\\kind_merged",
+    "episodes": 60,
+    "frames": 35917,
+    "fps": 30.0,
+    "info_sha256": "74b150d84c69c346477406824f9a00538c2c262dcb5c538b79bd8de89448ca00",
+    "episodes_sha256": "7a0ceb1f55b91bcff3e8fb0621cb88861ae4ef110de179267e826d22e2e407af",
+    "data_sha256": "c225c45f3c9c86bd4aa5462b6138e35591457cc29614508318df33c8d6aa8e7f"
+  },
+  "episodes": {
+    "0": {
+      "length": 599,
+      "events": {
+        "open": 118,
+        "close": 209,
+        "contact": 209,
+        "actual_close": 212,
+        "close_motion_start": 182,
+        "close_motion_end": 228,
+        "release_motion_start": 317,
+        "release_motion_end": 362,
+        "release": 344,
+        "reset_close": 393,
+        "load_baseline": 0.0,
+        "contact_threshold": 40.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 182,
+          "phase": "approach"
+        },
+        {
+          "start": 182,
+          "stop": 229,
+          "phase": "grasp"
+        },
+        {
+          "start": 229,
+          "stop": 317,
+          "phase": "lift_place"
+        },
+        {
+          "start": 317,
+          "stop": 393,
+          "phase": "release"
+        },
+        {
+          "start": 393,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "1": {
+      "length": 599,
+      "events": {
+        "open": 131,
+        "close": 199,
+        "contact": 199,
+        "actual_close": 202,
+        "close_motion_start": 172,
+        "close_motion_end": 204,
+        "release_motion_start": 287,
+        "release_motion_end": 342,
+        "release": 324,
+        "reset_close": 376,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 172,
+          "phase": "approach"
+        },
+        {
+          "start": 172,
+          "stop": 205,
+          "phase": "grasp"
+        },
+        {
+          "start": 205,
+          "stop": 287,
+          "phase": "lift_place"
+        },
+        {
+          "start": 287,
+          "stop": 376,
+          "phase": "release"
+        },
+        {
+          "start": 376,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "2": {
+      "length": 599,
+      "events": {
+        "open": 125,
+        "close": 210,
+        "contact": 210,
+        "actual_close": 213,
+        "close_motion_start": 187,
+        "close_motion_end": 216,
+        "release_motion_start": 354,
+        "release_motion_end": 392,
+        "release": 373,
+        "reset_close": 438,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 187,
+          "phase": "approach"
+        },
+        {
+          "start": 187,
+          "stop": 217,
+          "phase": "grasp"
+        },
+        {
+          "start": 217,
+          "stop": 354,
+          "phase": "lift_place"
+        },
+        {
+          "start": 354,
+          "stop": 438,
+          "phase": "release"
+        },
+        {
+          "start": 438,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "3": {
+      "length": 599,
+      "events": {
+        "open": 146,
+        "close": 260,
+        "contact": 263,
+        "actual_close": 263,
+        "close_motion_start": 217,
+        "close_motion_end": 271,
+        "release_motion_start": 399,
+        "release_motion_end": 429,
+        "release": 418,
+        "reset_close": 478,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 217,
+          "phase": "approach"
+        },
+        {
+          "start": 217,
+          "stop": 272,
+          "phase": "grasp"
+        },
+        {
+          "start": 272,
+          "stop": 399,
+          "phase": "lift_place"
+        },
+        {
+          "start": 399,
+          "stop": 478,
+          "phase": "release"
+        },
+        {
+          "start": 478,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "4": {
+      "length": 599,
+      "events": {
+        "open": 163,
+        "close": 251,
+        "contact": 251,
+        "actual_close": 254,
+        "close_motion_start": 204,
+        "close_motion_end": 276,
+        "release_motion_start": 355,
+        "release_motion_end": 408,
+        "release": 397,
+        "reset_close": 437,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 204,
+          "phase": "approach"
+        },
+        {
+          "start": 204,
+          "stop": 277,
+          "phase": "grasp"
+        },
+        {
+          "start": 277,
+          "stop": 355,
+          "phase": "lift_place"
+        },
+        {
+          "start": 355,
+          "stop": 437,
+          "phase": "release"
+        },
+        {
+          "start": 437,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "5": {
+      "length": 599,
+      "events": {
+        "open": 119,
+        "close": 235,
+        "contact": 235,
+        "actual_close": 240,
+        "close_motion_start": 210,
+        "close_motion_end": 260,
+        "release_motion_start": 374,
+        "release_motion_end": 409,
+        "release": 387,
+        "reset_close": 445,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 210,
+          "phase": "approach"
+        },
+        {
+          "start": 210,
+          "stop": 261,
+          "phase": "grasp"
+        },
+        {
+          "start": 261,
+          "stop": 374,
+          "phase": "lift_place"
+        },
+        {
+          "start": 374,
+          "stop": 445,
+          "phase": "release"
+        },
+        {
+          "start": 445,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "6": {
+      "length": 599,
+      "events": {
+        "open": 127,
+        "close": 251,
+        "contact": 391,
+        "actual_close": 255,
+        "close_motion_start": 208,
+        "close_motion_end": 272,
+        "release_motion_start": 395,
+        "release_motion_end": 422,
+        "release": 405,
+        "reset_close": 452,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 208,
+          "phase": "approach"
+        },
+        {
+          "start": 208,
+          "stop": 273,
+          "phase": "grasp"
+        },
+        {
+          "start": 273,
+          "stop": 395,
+          "phase": "lift_place"
+        },
+        {
+          "start": 395,
+          "stop": 452,
+          "phase": "release"
+        },
+        {
+          "start": 452,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [
+        "load_contact_mismatch_diagnostic"
+      ],
+      "reviewed": false
+    },
+    "7": {
+      "length": 599,
+      "events": {
+        "open": 115,
+        "close": 214,
+        "contact": 214,
+        "actual_close": 218,
+        "close_motion_start": 186,
+        "close_motion_end": 224,
+        "release_motion_start": 385,
+        "release_motion_end": 416,
+        "release": 400,
+        "reset_close": 448,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 186,
+          "phase": "approach"
+        },
+        {
+          "start": 186,
+          "stop": 225,
+          "phase": "grasp"
+        },
+        {
+          "start": 225,
+          "stop": 385,
+          "phase": "lift_place"
+        },
+        {
+          "start": 385,
+          "stop": 448,
+          "phase": "release"
+        },
+        {
+          "start": 448,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "8": {
+      "length": 599,
+      "events": {
+        "open": 131,
+        "close": 222,
+        "contact": 222,
+        "actual_close": 225,
+        "close_motion_start": 175,
+        "close_motion_end": 232,
+        "release_motion_start": 387,
+        "release_motion_end": 415,
+        "release": 398,
+        "reset_close": 442,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 175,
+          "phase": "approach"
+        },
+        {
+          "start": 175,
+          "stop": 233,
+          "phase": "grasp"
+        },
+        {
+          "start": 233,
+          "stop": 387,
+          "phase": "lift_place"
+        },
+        {
+          "start": 387,
+          "stop": 442,
+          "phase": "release"
+        },
+        {
+          "start": 442,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "9": {
+      "length": 599,
+      "events": {
+        "open": 125,
+        "close": 206,
+        "contact": 206,
+        "actual_close": 209,
+        "close_motion_start": 190,
+        "close_motion_end": 213,
+        "release_motion_start": 331,
+        "release_motion_end": 407,
+        "release": 386,
+        "reset_close": 453,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 190,
+          "phase": "approach"
+        },
+        {
+          "start": 190,
+          "stop": 214,
+          "phase": "grasp"
+        },
+        {
+          "start": 214,
+          "stop": 331,
+          "phase": "lift_place"
+        },
+        {
+          "start": 331,
+          "stop": 453,
+          "phase": "release"
+        },
+        {
+          "start": 453,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "10": {
+      "length": 599,
+      "events": {
+        "open": 217,
+        "close": 298,
+        "contact": 298,
+        "actual_close": 301,
+        "close_motion_start": 252,
+        "close_motion_end": 305,
+        "release_motion_start": 452,
+        "release_motion_end": 478,
+        "release": 466,
+        "reset_close": 497,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 252,
+          "phase": "approach"
+        },
+        {
+          "start": 252,
+          "stop": 306,
+          "phase": "grasp"
+        },
+        {
+          "start": 306,
+          "stop": 452,
+          "phase": "lift_place"
+        },
+        {
+          "start": 452,
+          "stop": 497,
+          "phase": "release"
+        },
+        {
+          "start": 497,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "11": {
+      "length": 599,
+      "events": {
+        "open": 118,
+        "close": 225,
+        "contact": 225,
+        "actual_close": 228,
+        "close_motion_start": 216,
+        "close_motion_end": 286,
+        "release_motion_start": 350,
+        "release_motion_end": 403,
+        "release": 389,
+        "reset_close": 432,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 216,
+          "phase": "approach"
+        },
+        {
+          "start": 216,
+          "stop": 287,
+          "phase": "grasp"
+        },
+        {
+          "start": 287,
+          "stop": 350,
+          "phase": "lift_place"
+        },
+        {
+          "start": 350,
+          "stop": 432,
+          "phase": "release"
+        },
+        {
+          "start": 432,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "12": {
+      "length": 599,
+      "events": {
+        "open": 103,
+        "close": 216,
+        "contact": 216,
+        "actual_close": 220,
+        "close_motion_start": 176,
+        "close_motion_end": 237,
+        "release_motion_start": 384,
+        "release_motion_end": 417,
+        "release": 388,
+        "reset_close": 449,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 176,
+          "phase": "approach"
+        },
+        {
+          "start": 176,
+          "stop": 238,
+          "phase": "grasp"
+        },
+        {
+          "start": 238,
+          "stop": 384,
+          "phase": "lift_place"
+        },
+        {
+          "start": 384,
+          "stop": 449,
+          "phase": "release"
+        },
+        {
+          "start": 449,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "13": {
+      "length": 599,
+      "events": {
+        "open": 126,
+        "close": 258,
+        "contact": 258,
+        "actual_close": 262,
+        "close_motion_start": 227,
+        "close_motion_end": 265,
+        "release_motion_start": 419,
+        "release_motion_end": 450,
+        "release": 428,
+        "reset_close": 491,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 227,
+          "phase": "approach"
+        },
+        {
+          "start": 227,
+          "stop": 266,
+          "phase": "grasp"
+        },
+        {
+          "start": 266,
+          "stop": 419,
+          "phase": "lift_place"
+        },
+        {
+          "start": 419,
+          "stop": 491,
+          "phase": "release"
+        },
+        {
+          "start": 491,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "14": {
+      "length": 599,
+      "events": {
+        "open": 138,
+        "close": 239,
+        "contact": 239,
+        "actual_close": 242,
+        "close_motion_start": 196,
+        "close_motion_end": 242,
+        "release_motion_start": 414,
+        "release_motion_end": 446,
+        "release": 419,
+        "reset_close": 494,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 196,
+          "phase": "approach"
+        },
+        {
+          "start": 196,
+          "stop": 243,
+          "phase": "grasp"
+        },
+        {
+          "start": 243,
+          "stop": 414,
+          "phase": "lift_place"
+        },
+        {
+          "start": 414,
+          "stop": 494,
+          "phase": "release"
+        },
+        {
+          "start": 494,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "15": {
+      "length": 599,
+      "events": {
+        "open": 148,
+        "close": 243,
+        "contact": 243,
+        "actual_close": 248,
+        "close_motion_start": 185,
+        "close_motion_end": 284,
+        "release_motion_start": 371,
+        "release_motion_end": 424,
+        "release": 402,
+        "reset_close": 477,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 185,
+          "phase": "approach"
+        },
+        {
+          "start": 185,
+          "stop": 285,
+          "phase": "grasp"
+        },
+        {
+          "start": 285,
+          "stop": 371,
+          "phase": "lift_place"
+        },
+        {
+          "start": 371,
+          "stop": 477,
+          "phase": "release"
+        },
+        {
+          "start": 477,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "16": {
+      "length": 599,
+      "events": {
+        "open": 142,
+        "close": 238,
+        "contact": 238,
+        "actual_close": 241,
+        "close_motion_start": 177,
+        "close_motion_end": 245,
+        "release_motion_start": 397,
+        "release_motion_end": 421,
+        "release": 408,
+        "reset_close": 464,
+        "load_baseline": 36.0,
+        "contact_threshold": 76.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 177,
+          "phase": "approach"
+        },
+        {
+          "start": 177,
+          "stop": 246,
+          "phase": "grasp"
+        },
+        {
+          "start": 246,
+          "stop": 397,
+          "phase": "lift_place"
+        },
+        {
+          "start": 397,
+          "stop": 464,
+          "phase": "release"
+        },
+        {
+          "start": 464,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "17": {
+      "length": 599,
+      "events": {
+        "open": 133,
+        "close": 212,
+        "contact": 212,
+        "actual_close": 216,
+        "close_motion_start": 188,
+        "close_motion_end": 284,
+        "release_motion_start": 390,
+        "release_motion_end": 430,
+        "release": 406,
+        "reset_close": 477,
+        "load_baseline": 44.0,
+        "contact_threshold": 84.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 188,
+          "phase": "approach"
+        },
+        {
+          "start": 188,
+          "stop": 285,
+          "phase": "grasp"
+        },
+        {
+          "start": 285,
+          "stop": 390,
+          "phase": "lift_place"
+        },
+        {
+          "start": 390,
+          "stop": 477,
+          "phase": "release"
+        },
+        {
+          "start": 477,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "18": {
+      "length": 599,
+      "events": {
+        "open": 159,
+        "close": 248,
+        "contact": 248,
+        "actual_close": 252,
+        "close_motion_start": 236,
+        "close_motion_end": 256,
+        "release_motion_start": 413,
+        "release_motion_end": 463,
+        "release": 432,
+        "reset_close": 488,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 236,
+          "phase": "approach"
+        },
+        {
+          "start": 236,
+          "stop": 257,
+          "phase": "grasp"
+        },
+        {
+          "start": 257,
+          "stop": 413,
+          "phase": "lift_place"
+        },
+        {
+          "start": 413,
+          "stop": 488,
+          "phase": "release"
+        },
+        {
+          "start": 488,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "19": {
+      "length": 598,
+      "events": {
+        "open": 146,
+        "close": 246,
+        "contact": 246,
+        "actual_close": 249,
+        "close_motion_start": 236,
+        "close_motion_end": 250,
+        "release_motion_start": 395,
+        "release_motion_end": 452,
+        "release": 422,
+        "reset_close": 484,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 236,
+          "phase": "approach"
+        },
+        {
+          "start": 236,
+          "stop": 251,
+          "phase": "grasp"
+        },
+        {
+          "start": 251,
+          "stop": 395,
+          "phase": "lift_place"
+        },
+        {
+          "start": 395,
+          "stop": 484,
+          "phase": "release"
+        },
+        {
+          "start": 484,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "20": {
+      "length": 598,
+      "events": {
+        "open": 124,
+        "close": 238,
+        "contact": 238,
+        "actual_close": 241,
+        "close_motion_start": 218,
+        "close_motion_end": 242,
+        "release_motion_start": 345,
+        "release_motion_end": 423,
+        "release": 408,
+        "reset_close": 444,
+        "load_baseline": 0.0,
+        "contact_threshold": 40.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 218,
+          "phase": "approach"
+        },
+        {
+          "start": 218,
+          "stop": 243,
+          "phase": "grasp"
+        },
+        {
+          "start": 243,
+          "stop": 345,
+          "phase": "lift_place"
+        },
+        {
+          "start": 345,
+          "stop": 444,
+          "phase": "release"
+        },
+        {
+          "start": 444,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "21": {
+      "length": 598,
+      "events": {
+        "open": 114,
+        "close": 202,
+        "contact": 202,
+        "actual_close": 206,
+        "close_motion_start": 140,
+        "close_motion_end": 211,
+        "release_motion_start": 399,
+        "release_motion_end": 429,
+        "release": 413,
+        "reset_close": 449,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 140,
+          "phase": "approach"
+        },
+        {
+          "start": 140,
+          "stop": 212,
+          "phase": "grasp"
+        },
+        {
+          "start": 212,
+          "stop": 399,
+          "phase": "lift_place"
+        },
+        {
+          "start": 399,
+          "stop": 449,
+          "phase": "release"
+        },
+        {
+          "start": 449,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "22": {
+      "length": 598,
+      "events": {
+        "open": 119,
+        "close": 228,
+        "contact": 228,
+        "actual_close": 231,
+        "close_motion_start": 195,
+        "close_motion_end": 234,
+        "release_motion_start": 411,
+        "release_motion_end": 440,
+        "release": 422,
+        "reset_close": 465,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 195,
+          "phase": "approach"
+        },
+        {
+          "start": 195,
+          "stop": 235,
+          "phase": "grasp"
+        },
+        {
+          "start": 235,
+          "stop": 411,
+          "phase": "lift_place"
+        },
+        {
+          "start": 411,
+          "stop": 465,
+          "phase": "release"
+        },
+        {
+          "start": 465,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "23": {
+      "length": 598,
+      "events": {
+        "open": 122,
+        "close": 242,
+        "contact": 242,
+        "actual_close": 245,
+        "close_motion_start": 224,
+        "close_motion_end": 247,
+        "release_motion_start": 415,
+        "release_motion_end": 450,
+        "release": 419,
+        "reset_close": 475,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 224,
+          "phase": "approach"
+        },
+        {
+          "start": 224,
+          "stop": 248,
+          "phase": "grasp"
+        },
+        {
+          "start": 248,
+          "stop": 415,
+          "phase": "lift_place"
+        },
+        {
+          "start": 415,
+          "stop": 475,
+          "phase": "release"
+        },
+        {
+          "start": 475,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "24": {
+      "length": 598,
+      "events": {
+        "open": 105,
+        "close": 204,
+        "contact": 204,
+        "actual_close": 207,
+        "close_motion_start": 167,
+        "close_motion_end": 209,
+        "release_motion_start": 398,
+        "release_motion_end": 428,
+        "release": 403,
+        "reset_close": 461,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 167,
+          "phase": "approach"
+        },
+        {
+          "start": 167,
+          "stop": 210,
+          "phase": "grasp"
+        },
+        {
+          "start": 210,
+          "stop": 398,
+          "phase": "lift_place"
+        },
+        {
+          "start": 398,
+          "stop": 461,
+          "phase": "release"
+        },
+        {
+          "start": 461,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "25": {
+      "length": 598,
+      "events": {
+        "open": 117,
+        "close": 236,
+        "contact": 236,
+        "actual_close": 239,
+        "close_motion_start": 224,
+        "close_motion_end": 241,
+        "release_motion_start": 418,
+        "release_motion_end": 447,
+        "release": 429,
+        "reset_close": 476,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 224,
+          "phase": "approach"
+        },
+        {
+          "start": 224,
+          "stop": 242,
+          "phase": "grasp"
+        },
+        {
+          "start": 242,
+          "stop": 418,
+          "phase": "lift_place"
+        },
+        {
+          "start": 418,
+          "stop": 476,
+          "phase": "release"
+        },
+        {
+          "start": 476,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "26": {
+      "length": 598,
+      "events": {
+        "open": 113,
+        "close": 213,
+        "contact": 213,
+        "actual_close": 216,
+        "close_motion_start": 180,
+        "close_motion_end": 219,
+        "release_motion_start": 387,
+        "release_motion_end": 436,
+        "release": 414,
+        "reset_close": 466,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 180,
+          "phase": "approach"
+        },
+        {
+          "start": 180,
+          "stop": 220,
+          "phase": "grasp"
+        },
+        {
+          "start": 220,
+          "stop": 387,
+          "phase": "lift_place"
+        },
+        {
+          "start": 387,
+          "stop": 466,
+          "phase": "release"
+        },
+        {
+          "start": 466,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "27": {
+      "length": 598,
+      "events": {
+        "open": 114,
+        "close": 222,
+        "contact": 222,
+        "actual_close": 226,
+        "close_motion_start": 190,
+        "close_motion_end": 228,
+        "release_motion_start": 430,
+        "release_motion_end": 475,
+        "release": 452,
+        "reset_close": 516,
+        "load_baseline": 36.0,
+        "contact_threshold": 76.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 190,
+          "phase": "approach"
+        },
+        {
+          "start": 190,
+          "stop": 229,
+          "phase": "grasp"
+        },
+        {
+          "start": 229,
+          "stop": 430,
+          "phase": "lift_place"
+        },
+        {
+          "start": 430,
+          "stop": 516,
+          "phase": "release"
+        },
+        {
+          "start": 516,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "28": {
+      "length": 598,
+      "events": {
+        "open": 149,
+        "close": 247,
+        "contact": 247,
+        "actual_close": 251,
+        "close_motion_start": 231,
+        "close_motion_end": 252,
+        "release_motion_start": 429,
+        "release_motion_end": 459,
+        "release": 436,
+        "reset_close": 490,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 231,
+          "phase": "approach"
+        },
+        {
+          "start": 231,
+          "stop": 253,
+          "phase": "grasp"
+        },
+        {
+          "start": 253,
+          "stop": 429,
+          "phase": "lift_place"
+        },
+        {
+          "start": 429,
+          "stop": 490,
+          "phase": "release"
+        },
+        {
+          "start": 490,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "29": {
+      "length": 598,
+      "events": {
+        "open": 125,
+        "close": 225,
+        "contact": 225,
+        "actual_close": 228,
+        "close_motion_start": 176,
+        "close_motion_end": 229,
+        "release_motion_start": 314,
+        "release_motion_end": 431,
+        "release": 410,
+        "reset_close": 461,
+        "load_baseline": 36.0,
+        "contact_threshold": 76.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 176,
+          "phase": "approach"
+        },
+        {
+          "start": 176,
+          "stop": 230,
+          "phase": "grasp"
+        },
+        {
+          "start": 230,
+          "stop": 314,
+          "phase": "lift_place"
+        },
+        {
+          "start": 314,
+          "stop": 461,
+          "phase": "release"
+        },
+        {
+          "start": 461,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "30": {
+      "length": 598,
+      "events": {
+        "open": 133,
+        "close": 228,
+        "contact": 228,
+        "actual_close": 231,
+        "close_motion_start": 199,
+        "close_motion_end": 233,
+        "release_motion_start": 313,
+        "release_motion_end": 453,
+        "release": 437,
+        "reset_close": 482,
+        "load_baseline": 0.0,
+        "contact_threshold": 40.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 199,
+          "phase": "approach"
+        },
+        {
+          "start": 199,
+          "stop": 234,
+          "phase": "grasp"
+        },
+        {
+          "start": 234,
+          "stop": 313,
+          "phase": "lift_place"
+        },
+        {
+          "start": 313,
+          "stop": 482,
+          "phase": "release"
+        },
+        {
+          "start": 482,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "31": {
+      "length": 598,
+      "events": {
+        "open": 124,
+        "close": 224,
+        "contact": 224,
+        "actual_close": 228,
+        "close_motion_start": 201,
+        "close_motion_end": 231,
+        "release_motion_start": 417,
+        "release_motion_end": 451,
+        "release": 428,
+        "reset_close": 485,
+        "load_baseline": 24.0,
+        "contact_threshold": 64.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 201,
+          "phase": "approach"
+        },
+        {
+          "start": 201,
+          "stop": 232,
+          "phase": "grasp"
+        },
+        {
+          "start": 232,
+          "stop": 417,
+          "phase": "lift_place"
+        },
+        {
+          "start": 417,
+          "stop": 485,
+          "phase": "release"
+        },
+        {
+          "start": 485,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "32": {
+      "length": 598,
+      "events": {
+        "open": 128,
+        "close": 229,
+        "contact": 229,
+        "actual_close": 232,
+        "close_motion_start": 201,
+        "close_motion_end": 234,
+        "release_motion_start": 400,
+        "release_motion_end": 455,
+        "release": 428,
+        "reset_close": 496,
+        "load_baseline": 40.0,
+        "contact_threshold": 80.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 201,
+          "phase": "approach"
+        },
+        {
+          "start": 201,
+          "stop": 235,
+          "phase": "grasp"
+        },
+        {
+          "start": 235,
+          "stop": 400,
+          "phase": "lift_place"
+        },
+        {
+          "start": 400,
+          "stop": 496,
+          "phase": "release"
+        },
+        {
+          "start": 496,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "33": {
+      "length": 598,
+      "events": {
+        "open": 123,
+        "close": 244,
+        "contact": 244,
+        "actual_close": 248,
+        "close_motion_start": 227,
+        "close_motion_end": 249,
+        "release_motion_start": 449,
+        "release_motion_end": 483,
+        "release": 465,
+        "reset_close": 513,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 227,
+          "phase": "approach"
+        },
+        {
+          "start": 227,
+          "stop": 250,
+          "phase": "grasp"
+        },
+        {
+          "start": 250,
+          "stop": 449,
+          "phase": "lift_place"
+        },
+        {
+          "start": 449,
+          "stop": 513,
+          "phase": "release"
+        },
+        {
+          "start": 513,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "34": {
+      "length": 598,
+      "events": {
+        "open": 154,
+        "close": 246,
+        "contact": 246,
+        "actual_close": 252,
+        "close_motion_start": 237,
+        "close_motion_end": 298,
+        "release_motion_start": 411,
+        "release_motion_end": 452,
+        "release": 429,
+        "reset_close": 477,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 237,
+          "phase": "approach"
+        },
+        {
+          "start": 237,
+          "stop": 299,
+          "phase": "grasp"
+        },
+        {
+          "start": 299,
+          "stop": 411,
+          "phase": "lift_place"
+        },
+        {
+          "start": 411,
+          "stop": 477,
+          "phase": "release"
+        },
+        {
+          "start": 477,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "35": {
+      "length": 598,
+      "events": {
+        "open": 125,
+        "close": 239,
+        "contact": 239,
+        "actual_close": 243,
+        "close_motion_start": 227,
+        "close_motion_end": 244,
+        "release_motion_start": 448,
+        "release_motion_end": 487,
+        "release": 460,
+        "reset_close": 510,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 227,
+          "phase": "approach"
+        },
+        {
+          "start": 227,
+          "stop": 245,
+          "phase": "grasp"
+        },
+        {
+          "start": 245,
+          "stop": 448,
+          "phase": "lift_place"
+        },
+        {
+          "start": 448,
+          "stop": 510,
+          "phase": "release"
+        },
+        {
+          "start": 510,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "36": {
+      "length": 598,
+      "events": {
+        "open": 135,
+        "close": 276,
+        "contact": 276,
+        "actual_close": 280,
+        "close_motion_start": 262,
+        "close_motion_end": 389,
+        "release_motion_start": 459,
+        "release_motion_end": 497,
+        "release": 480,
+        "reset_close": 527,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 262,
+          "phase": "approach"
+        },
+        {
+          "start": 262,
+          "stop": 390,
+          "phase": "grasp"
+        },
+        {
+          "start": 390,
+          "stop": 459,
+          "phase": "lift_place"
+        },
+        {
+          "start": 459,
+          "stop": 527,
+          "phase": "release"
+        },
+        {
+          "start": 527,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "37": {
+      "length": 599,
+      "events": {
+        "open": 79,
+        "close": 172,
+        "contact": 172,
+        "actual_close": 175,
+        "close_motion_start": 161,
+        "close_motion_end": 178,
+        "release_motion_start": 323,
+        "release_motion_end": 379,
+        "release": 361,
+        "reset_close": 412,
+        "load_baseline": 30.0,
+        "contact_threshold": 70.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 161,
+          "phase": "approach"
+        },
+        {
+          "start": 161,
+          "stop": 179,
+          "phase": "grasp"
+        },
+        {
+          "start": 179,
+          "stop": 323,
+          "phase": "lift_place"
+        },
+        {
+          "start": 323,
+          "stop": 412,
+          "phase": "release"
+        },
+        {
+          "start": 412,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "38": {
+      "length": 599,
+      "events": {
+        "open": 161,
+        "close": 268,
+        "contact": 268,
+        "actual_close": 272,
+        "close_motion_start": 232,
+        "close_motion_end": 273,
+        "release_motion_start": 395,
+        "release_motion_end": 465,
+        "release": 445,
+        "reset_close": 494,
+        "load_baseline": 24.0,
+        "contact_threshold": 64.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 232,
+          "phase": "approach"
+        },
+        {
+          "start": 232,
+          "stop": 274,
+          "phase": "grasp"
+        },
+        {
+          "start": 274,
+          "stop": 395,
+          "phase": "lift_place"
+        },
+        {
+          "start": 395,
+          "stop": 494,
+          "phase": "release"
+        },
+        {
+          "start": 494,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "39": {
+      "length": 599,
+      "events": {
+        "open": 136,
+        "close": 283,
+        "contact": 283,
+        "actual_close": 286,
+        "close_motion_start": 239,
+        "close_motion_end": 291,
+        "release_motion_start": 473,
+        "release_motion_end": 513,
+        "release": 494,
+        "reset_close": 543,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 239,
+          "phase": "approach"
+        },
+        {
+          "start": 239,
+          "stop": 292,
+          "phase": "grasp"
+        },
+        {
+          "start": 292,
+          "stop": 473,
+          "phase": "lift_place"
+        },
+        {
+          "start": 473,
+          "stop": 543,
+          "phase": "release"
+        },
+        {
+          "start": 543,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "40": {
+      "length": 599,
+      "events": {
+        "open": 153,
+        "close": 254,
+        "contact": 254,
+        "actual_close": 258,
+        "close_motion_start": 218,
+        "close_motion_end": 259,
+        "release_motion_start": 410,
+        "release_motion_end": 461,
+        "release": 437,
+        "reset_close": 491,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 218,
+          "phase": "approach"
+        },
+        {
+          "start": 218,
+          "stop": 260,
+          "phase": "grasp"
+        },
+        {
+          "start": 260,
+          "stop": 410,
+          "phase": "lift_place"
+        },
+        {
+          "start": 410,
+          "stop": 491,
+          "phase": "release"
+        },
+        {
+          "start": 491,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "41": {
+      "length": 599,
+      "events": {
+        "open": 154,
+        "close": 254,
+        "contact": 254,
+        "actual_close": 257,
+        "close_motion_start": 238,
+        "close_motion_end": 261,
+        "release_motion_start": 402,
+        "release_motion_end": 480,
+        "release": 463,
+        "reset_close": 515,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 238,
+          "phase": "approach"
+        },
+        {
+          "start": 238,
+          "stop": 262,
+          "phase": "grasp"
+        },
+        {
+          "start": 262,
+          "stop": 402,
+          "phase": "lift_place"
+        },
+        {
+          "start": 402,
+          "stop": 515,
+          "phase": "release"
+        },
+        {
+          "start": 515,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "42": {
+      "length": 599,
+      "events": {
+        "open": 158,
+        "close": 265,
+        "contact": 265,
+        "actual_close": 268,
+        "close_motion_start": 243,
+        "close_motion_end": 303,
+        "release_motion_start": 430,
+        "release_motion_end": 487,
+        "release": 464,
+        "reset_close": 524,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 243,
+          "phase": "approach"
+        },
+        {
+          "start": 243,
+          "stop": 304,
+          "phase": "grasp"
+        },
+        {
+          "start": 304,
+          "stop": 430,
+          "phase": "lift_place"
+        },
+        {
+          "start": 430,
+          "stop": 524,
+          "phase": "release"
+        },
+        {
+          "start": 524,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "43": {
+      "length": 599,
+      "events": {
+        "open": 141,
+        "close": 258,
+        "contact": 258,
+        "actual_close": 262,
+        "close_motion_start": 230,
+        "close_motion_end": 263,
+        "release_motion_start": 439,
+        "release_motion_end": 493,
+        "release": 460,
+        "reset_close": 529,
+        "load_baseline": 0.0,
+        "contact_threshold": 40.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 230,
+          "phase": "approach"
+        },
+        {
+          "start": 230,
+          "stop": 264,
+          "phase": "grasp"
+        },
+        {
+          "start": 264,
+          "stop": 439,
+          "phase": "lift_place"
+        },
+        {
+          "start": 439,
+          "stop": 529,
+          "phase": "release"
+        },
+        {
+          "start": 529,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "44": {
+      "length": 599,
+      "events": {
+        "open": 139,
+        "close": 252,
+        "contact": 252,
+        "actual_close": 256,
+        "close_motion_start": 232,
+        "close_motion_end": 258,
+        "release_motion_start": 370,
+        "release_motion_end": 481,
+        "release": 465,
+        "reset_close": 514,
+        "load_baseline": 0.0,
+        "contact_threshold": 40.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 232,
+          "phase": "approach"
+        },
+        {
+          "start": 232,
+          "stop": 259,
+          "phase": "grasp"
+        },
+        {
+          "start": 259,
+          "stop": 370,
+          "phase": "lift_place"
+        },
+        {
+          "start": 370,
+          "stop": 514,
+          "phase": "release"
+        },
+        {
+          "start": 514,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "45": {
+      "length": 599,
+      "events": {
+        "open": 154,
+        "close": 274,
+        "contact": 274,
+        "actual_close": 278,
+        "close_motion_start": 242,
+        "close_motion_end": 281,
+        "release_motion_start": 467,
+        "release_motion_end": 498,
+        "release": 475,
+        "reset_close": 545,
+        "load_baseline": 24.0,
+        "contact_threshold": 64.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 242,
+          "phase": "approach"
+        },
+        {
+          "start": 242,
+          "stop": 282,
+          "phase": "grasp"
+        },
+        {
+          "start": 282,
+          "stop": 467,
+          "phase": "lift_place"
+        },
+        {
+          "start": 467,
+          "stop": 545,
+          "phase": "release"
+        },
+        {
+          "start": 545,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "46": {
+      "length": 599,
+      "events": {
+        "open": 129,
+        "close": 263,
+        "contact": 263,
+        "actual_close": 266,
+        "close_motion_start": 225,
+        "close_motion_end": 268,
+        "release_motion_start": 457,
+        "release_motion_end": 500,
+        "release": 466,
+        "reset_close": 534,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 225,
+          "phase": "approach"
+        },
+        {
+          "start": 225,
+          "stop": 269,
+          "phase": "grasp"
+        },
+        {
+          "start": 269,
+          "stop": 457,
+          "phase": "lift_place"
+        },
+        {
+          "start": 457,
+          "stop": 534,
+          "phase": "release"
+        },
+        {
+          "start": 534,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "47": {
+      "length": 599,
+      "events": {
+        "open": 113,
+        "close": 234,
+        "contact": 234,
+        "actual_close": 238,
+        "close_motion_start": 191,
+        "close_motion_end": 239,
+        "release_motion_start": 368,
+        "release_motion_end": 456,
+        "release": 425,
+        "reset_close": 503,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 191,
+          "phase": "approach"
+        },
+        {
+          "start": 191,
+          "stop": 240,
+          "phase": "grasp"
+        },
+        {
+          "start": 240,
+          "stop": 368,
+          "phase": "lift_place"
+        },
+        {
+          "start": 368,
+          "stop": 503,
+          "phase": "release"
+        },
+        {
+          "start": 503,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "48": {
+      "length": 599,
+      "events": {
+        "open": 157,
+        "close": 296,
+        "contact": 296,
+        "actual_close": 299,
+        "close_motion_start": 246,
+        "close_motion_end": 301,
+        "release_motion_start": 479,
+        "release_motion_end": 527,
+        "release": 499,
+        "reset_close": 573,
+        "load_baseline": 40.0,
+        "contact_threshold": 80.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 246,
+          "phase": "approach"
+        },
+        {
+          "start": 246,
+          "stop": 302,
+          "phase": "grasp"
+        },
+        {
+          "start": 302,
+          "stop": 479,
+          "phase": "lift_place"
+        },
+        {
+          "start": 479,
+          "stop": 573,
+          "phase": "release"
+        },
+        {
+          "start": 573,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "49": {
+      "length": 599,
+      "events": {
+        "open": 135,
+        "close": 280,
+        "contact": 280,
+        "actual_close": 285,
+        "close_motion_start": 246,
+        "close_motion_end": 301,
+        "release_motion_start": 480,
+        "release_motion_end": 517,
+        "release": 491,
+        "reset_close": 555,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 246,
+          "phase": "approach"
+        },
+        {
+          "start": 246,
+          "stop": 302,
+          "phase": "grasp"
+        },
+        {
+          "start": 302,
+          "stop": 480,
+          "phase": "lift_place"
+        },
+        {
+          "start": 480,
+          "stop": 555,
+          "phase": "release"
+        },
+        {
+          "start": 555,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "50": {
+      "length": 599,
+      "events": {
+        "open": 132,
+        "close": 267,
+        "contact": 267,
+        "actual_close": 270,
+        "close_motion_start": 238,
+        "close_motion_end": 272,
+        "release_motion_start": 436,
+        "release_motion_end": 493,
+        "release": 464,
+        "reset_close": 535,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 238,
+          "phase": "approach"
+        },
+        {
+          "start": 238,
+          "stop": 273,
+          "phase": "grasp"
+        },
+        {
+          "start": 273,
+          "stop": 436,
+          "phase": "lift_place"
+        },
+        {
+          "start": 436,
+          "stop": 535,
+          "phase": "release"
+        },
+        {
+          "start": 535,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "51": {
+      "length": 599,
+      "events": {
+        "open": 131,
+        "close": 238,
+        "contact": 238,
+        "actual_close": 241,
+        "close_motion_start": 189,
+        "close_motion_end": 243,
+        "release_motion_start": 422,
+        "release_motion_end": 487,
+        "release": 465,
+        "reset_close": 541,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 189,
+          "phase": "approach"
+        },
+        {
+          "start": 189,
+          "stop": 244,
+          "phase": "grasp"
+        },
+        {
+          "start": 244,
+          "stop": 422,
+          "phase": "lift_place"
+        },
+        {
+          "start": 422,
+          "stop": 541,
+          "phase": "release"
+        },
+        {
+          "start": 541,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "52": {
+      "length": 599,
+      "events": {
+        "open": 147,
+        "close": 250,
+        "contact": 250,
+        "actual_close": 254,
+        "close_motion_start": 239,
+        "close_motion_end": 297,
+        "release_motion_start": 430,
+        "release_motion_end": 484,
+        "release": 441,
+        "reset_close": 520,
+        "load_baseline": 0.0,
+        "contact_threshold": 40.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 239,
+          "phase": "approach"
+        },
+        {
+          "start": 239,
+          "stop": 298,
+          "phase": "grasp"
+        },
+        {
+          "start": 298,
+          "stop": 430,
+          "phase": "lift_place"
+        },
+        {
+          "start": 430,
+          "stop": 520,
+          "phase": "release"
+        },
+        {
+          "start": 520,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "53": {
+      "length": 599,
+      "events": {
+        "open": 151,
+        "close": 279,
+        "contact": 279,
+        "actual_close": 282,
+        "close_motion_start": 266,
+        "close_motion_end": 315,
+        "release_motion_start": 472,
+        "release_motion_end": 519,
+        "release": 489,
+        "reset_close": 558,
+        "load_baseline": 0.0,
+        "contact_threshold": 40.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 266,
+          "phase": "approach"
+        },
+        {
+          "start": 266,
+          "stop": 316,
+          "phase": "grasp"
+        },
+        {
+          "start": 316,
+          "stop": 472,
+          "phase": "lift_place"
+        },
+        {
+          "start": 472,
+          "stop": 558,
+          "phase": "release"
+        },
+        {
+          "start": 558,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "54": {
+      "length": 599,
+      "events": {
+        "open": 128,
+        "close": 278,
+        "contact": 278,
+        "actual_close": 281,
+        "close_motion_start": 259,
+        "close_motion_end": 281,
+        "release_motion_start": 463,
+        "release_motion_end": 499,
+        "release": 470,
+        "reset_close": 529,
+        "load_baseline": 44.0,
+        "contact_threshold": 84.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 259,
+          "phase": "approach"
+        },
+        {
+          "start": 259,
+          "stop": 282,
+          "phase": "grasp"
+        },
+        {
+          "start": 282,
+          "stop": 463,
+          "phase": "lift_place"
+        },
+        {
+          "start": 463,
+          "stop": 529,
+          "phase": "release"
+        },
+        {
+          "start": 529,
+          "stop": 599,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "55": {
+      "length": 598,
+      "events": {
+        "open": 135,
+        "close": 257,
+        "contact": 257,
+        "actual_close": 260,
+        "close_motion_start": 222,
+        "close_motion_end": 262,
+        "release_motion_start": 435,
+        "release_motion_end": 499,
+        "release": 475,
+        "reset_close": 535,
+        "load_baseline": 28.0,
+        "contact_threshold": 68.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 222,
+          "phase": "approach"
+        },
+        {
+          "start": 222,
+          "stop": 263,
+          "phase": "grasp"
+        },
+        {
+          "start": 263,
+          "stop": 435,
+          "phase": "lift_place"
+        },
+        {
+          "start": 435,
+          "stop": 535,
+          "phase": "release"
+        },
+        {
+          "start": 535,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "56": {
+      "length": 598,
+      "events": {
+        "open": 131,
+        "close": 260,
+        "contact": 260,
+        "actual_close": 263,
+        "close_motion_start": 219,
+        "close_motion_end": 271,
+        "release_motion_start": 450,
+        "release_motion_end": 494,
+        "release": 474,
+        "reset_close": 542,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 219,
+          "phase": "approach"
+        },
+        {
+          "start": 219,
+          "stop": 272,
+          "phase": "grasp"
+        },
+        {
+          "start": 272,
+          "stop": 450,
+          "phase": "lift_place"
+        },
+        {
+          "start": 450,
+          "stop": 542,
+          "phase": "release"
+        },
+        {
+          "start": 542,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "57": {
+      "length": 598,
+      "events": {
+        "open": 128,
+        "close": 238,
+        "contact": 238,
+        "actual_close": 242,
+        "close_motion_start": 220,
+        "close_motion_end": 259,
+        "release_motion_start": 416,
+        "release_motion_end": 465,
+        "release": 432,
+        "reset_close": 503,
+        "load_baseline": 32.0,
+        "contact_threshold": 72.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 220,
+          "phase": "approach"
+        },
+        {
+          "start": 220,
+          "stop": 260,
+          "phase": "grasp"
+        },
+        {
+          "start": 260,
+          "stop": 416,
+          "phase": "lift_place"
+        },
+        {
+          "start": 416,
+          "stop": 503,
+          "phase": "release"
+        },
+        {
+          "start": 503,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "58": {
+      "length": 598,
+      "events": {
+        "open": 166,
+        "close": 287,
+        "contact": 287,
+        "actual_close": 291,
+        "close_motion_start": 268,
+        "close_motion_end": 314,
+        "release_motion_start": 471,
+        "release_motion_end": 515,
+        "release": 488,
+        "reset_close": 548,
+        "load_baseline": 0.0,
+        "contact_threshold": 40.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 268,
+          "phase": "approach"
+        },
+        {
+          "start": 268,
+          "stop": 315,
+          "phase": "grasp"
+        },
+        {
+          "start": 315,
+          "stop": 471,
+          "phase": "lift_place"
+        },
+        {
+          "start": 471,
+          "stop": 548,
+          "phase": "release"
+        },
+        {
+          "start": 548,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    },
+    "59": {
+      "length": 598,
+      "events": {
+        "open": 144,
+        "close": 256,
+        "contact": 256,
+        "actual_close": 260,
+        "close_motion_start": 226,
+        "close_motion_end": 263,
+        "release_motion_start": 441,
+        "release_motion_end": 517,
+        "release": 488,
+        "reset_close": 556,
+        "load_baseline": 20.0,
+        "contact_threshold": 60.0
+      },
+      "intervals": [
+        {
+          "start": 0,
+          "stop": 226,
+          "phase": "approach"
+        },
+        {
+          "start": 226,
+          "stop": 264,
+          "phase": "grasp"
+        },
+        {
+          "start": 264,
+          "stop": 441,
+          "phase": "lift_place"
+        },
+        {
+          "start": 441,
+          "stop": 556,
+          "phase": "release"
+        },
+        {
+          "start": 556,
+          "stop": 598,
+          "phase": "unknown"
+        }
+      ],
+      "warnings": [],
+      "reviewed": false
+    }
+  }
+}

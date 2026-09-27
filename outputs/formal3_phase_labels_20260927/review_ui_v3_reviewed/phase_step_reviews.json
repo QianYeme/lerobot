@@ -1,0 +1,1385 @@
+{
+  "schema_version": 3,
+  "episodes": {
+    "0": {
+      "episode_index": 0,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 182,
+          "end_frame": 228,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 235,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 336,
+          "end_frame": 362,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "1": {
+      "episode_index": 1,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 172,
+          "end_frame": 204,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 206,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 316,
+          "end_frame": 342,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "2": {
+      "episode_index": 2,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 187,
+          "end_frame": 220,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 250,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 354,
+          "end_frame": 392,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "3": {
+      "episode_index": 3,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 224,
+          "end_frame": 274,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 276,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 399,
+          "end_frame": 429,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "4": {
+      "episode_index": 4,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 224,
+          "end_frame": 282,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 288,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 384,
+          "end_frame": 408,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "5": {
+      "episode_index": 5,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 209,
+          "end_frame": 263,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 265,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 374,
+          "end_frame": 409,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "6": {
+      "episode_index": 6,
+      "length": 599,
+      "load_diagnostic": true,
+      "steps": {
+        "closing": {
+          "start_frame": 208,
+          "end_frame": 270,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 272,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 395,
+          "end_frame": 422,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "7": {
+      "episode_index": 7,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 188,
+          "end_frame": 224,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 250,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 385,
+          "end_frame": 416,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "8": {
+      "episode_index": 8,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 195,
+          "end_frame": 236,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 255,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 387,
+          "end_frame": 415,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "9": {
+      "episode_index": 9,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 190,
+          "end_frame": 218,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 241,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 381,
+          "end_frame": 407,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "10": {
+      "episode_index": 10,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 276,
+          "end_frame": 312,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 319,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 460,
+          "end_frame": 478,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "11": {
+      "episode_index": 11,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 215,
+          "end_frame": 236,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 266,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 381,
+          "end_frame": 403,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "12": {
+      "episode_index": 12,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 198,
+          "end_frame": 242,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 246,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 384,
+          "end_frame": 417,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "13": {
+      "episode_index": 13,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 227,
+          "end_frame": 267,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 269,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 422,
+          "end_frame": 449,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "14": {
+      "episode_index": 14,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 209,
+          "end_frame": 243,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 280,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 414,
+          "end_frame": 438,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "15": {
+      "episode_index": 15,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 226,
+          "end_frame": 256,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 284,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 395,
+          "end_frame": 424,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "16": {
+      "episode_index": 16,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 222,
+          "end_frame": 247,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 269,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 398,
+          "end_frame": 421,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "17": {
+      "episode_index": 17,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 188,
+          "end_frame": 234,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 238,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 393,
+          "end_frame": 425,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "18": {
+      "episode_index": 18,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 236,
+          "end_frame": 258,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 289,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 419,
+          "end_frame": 448,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "19": {
+      "episode_index": 19,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 236,
+          "end_frame": 254,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 274,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 417,
+          "end_frame": 447,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "20": {
+      "episode_index": 20,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 218,
+          "end_frame": 248,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 272,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 404,
+          "end_frame": 423,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "21": {
+      "episode_index": 21,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 191,
+          "end_frame": 214,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 233,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 399,
+          "end_frame": 419,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "22": {
+      "episode_index": 22,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 203,
+          "end_frame": 242,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 263,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 411,
+          "end_frame": 435,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "23": {
+      "episode_index": 23,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 224,
+          "end_frame": 250,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 267,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 416,
+          "end_frame": 444,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "24": {
+      "episode_index": 24,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 173,
+          "end_frame": 214,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 236,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 399,
+          "end_frame": 425,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "25": {
+      "episode_index": 25,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 224,
+          "end_frame": 247,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 266,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 419,
+          "end_frame": 447,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "26": {
+      "episode_index": 26,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 180,
+          "end_frame": 222,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 252,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 403,
+          "end_frame": 438,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "27": {
+      "episode_index": 27,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 206,
+          "end_frame": 232,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 251,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 431,
+          "end_frame": 473,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "28": {
+      "episode_index": 28,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 231,
+          "end_frame": 256,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 281,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 429,
+          "end_frame": 459,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "29": {
+      "episode_index": 29,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 210,
+          "end_frame": 235,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 254,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 406,
+          "end_frame": 426,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "30": {
+      "episode_index": 30,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 199,
+          "end_frame": 238,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 252,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 429,
+          "end_frame": 448,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "31": {
+      "episode_index": 31,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 201,
+          "end_frame": 237,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 246,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 417,
+          "end_frame": 441,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "32": {
+      "episode_index": 32,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 201,
+          "end_frame": 240,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 250,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 420,
+          "end_frame": 455,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "33": {
+      "episode_index": 33,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 227,
+          "end_frame": 252,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 269,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 449,
+          "end_frame": 483,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "34": {
+      "episode_index": 34,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 236,
+          "end_frame": 260,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 272,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 414,
+          "end_frame": 447,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "35": {
+      "episode_index": 35,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 227,
+          "end_frame": 247,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 260,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 449,
+          "end_frame": 483,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "36": {
+      "episode_index": 36,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 262,
+          "end_frame": 289,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 303,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 459,
+          "end_frame": 498,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "37": {
+      "episode_index": 37,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 161,
+          "end_frame": 181,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 200,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 348,
+          "end_frame": 375,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "38": {
+      "episode_index": 38,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 246,
+          "end_frame": 277,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 289,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 436,
+          "end_frame": 460,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "39": {
+      "episode_index": 39,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 239,
+          "end_frame": 295,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 305,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 478,
+          "end_frame": 508,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "40": {
+      "episode_index": 40,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 218,
+          "end_frame": 263,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 271,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 421,
+          "end_frame": 456,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "41": {
+      "episode_index": 41,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 232,
+          "end_frame": 261,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 305,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 452,
+          "end_frame": 480,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "42": {
+      "episode_index": 42,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 243,
+          "end_frame": 280,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 302,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 458,
+          "end_frame": 487,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "43": {
+      "episode_index": 43,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 225,
+          "end_frame": 267,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 299,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 446,
+          "end_frame": 483,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "44": {
+      "episode_index": 44,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 228,
+          "end_frame": 264,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 272,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 459,
+          "end_frame": 481,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "45": {
+      "episode_index": 45,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 232,
+          "end_frame": 285,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 319,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 467,
+          "end_frame": 498,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "46": {
+      "episode_index": 46,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 233,
+          "end_frame": 274,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 283,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 457,
+          "end_frame": 495,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "47": {
+      "episode_index": 47,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 191,
+          "end_frame": 244,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 264,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 422,
+          "end_frame": 451,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "48": {
+      "episode_index": 48,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 246,
+          "end_frame": 304,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 305,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 492,
+          "end_frame": 527,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "49": {
+      "episode_index": 49,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 246,
+          "end_frame": 307,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 320,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 480,
+          "end_frame": 517,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "50": {
+      "episode_index": 50,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 238,
+          "end_frame": 275,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 285,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 437,
+          "end_frame": 493,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "51": {
+      "episode_index": 51,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 227,
+          "end_frame": 247,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 252,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 431,
+          "end_frame": 487,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "52": {
+      "episode_index": 52,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 233,
+          "end_frame": 258,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 287,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 431,
+          "end_frame": 479,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "53": {
+      "episode_index": 53,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 266,
+          "end_frame": 289,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 316,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 477,
+          "end_frame": 519,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "54": {
+      "episode_index": 54,
+      "length": 599,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 259,
+          "end_frame": 285,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 291,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 463,
+          "end_frame": 494,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "55": {
+      "episode_index": 55,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 233,
+          "end_frame": 265,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 267,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 459,
+          "end_frame": 499,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "56": {
+      "episode_index": 56,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 219,
+          "end_frame": 271,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 272,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 458,
+          "end_frame": 494,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "57": {
+      "episode_index": 57,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 214,
+          "end_frame": 250,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 260,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 416,
+          "end_frame": 464,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "58": {
+      "episode_index": 58,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 262,
+          "end_frame": 295,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 314,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 476,
+          "end_frame": 515,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    },
+    "59": {
+      "episode_index": 59,
+      "length": 598,
+      "load_diagnostic": false,
+      "steps": {
+        "closing": {
+          "start_frame": 224,
+          "end_frame": 268,
+          "note": ""
+        },
+        "lift_start": {
+          "frame": 277,
+          "note": ""
+        },
+        "release": {
+          "start_frame": 476,
+          "end_frame": 517,
+          "note": ""
+        }
+      },
+      "reviewed": true,
+      "note": ""
+    }
+  }
+}

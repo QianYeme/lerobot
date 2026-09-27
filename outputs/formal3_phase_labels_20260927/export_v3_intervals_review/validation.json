@@ -1,0 +1,27 @@
+{
+  "status": "partial_pass",
+  "training_ready": false,
+  "episodes": 60,
+  "frames": 35917,
+  "phase_counts": {
+    "unknown": 6510,
+    "approach": 12808,
+    "grasp": 2745,
+    "lift_place": 8788,
+    "release": 5066
+  },
+  "valid_frames": 29407,
+  "unknown_frames": 6510,
+  "anomaly_episodes": [],
+  "gates": {
+    "frame_coverage": true,
+    "episode_coverage": true,
+    "ep6_not_rejected_by_load_diagnostic": true,
+    "automatic_labels_not_marked_reviewed": true
+  },
+  "limitations": [
+    "Automatic telemetry labels are not human ground truth.",
+    "Unknown/reset frames are excluded from candidate supervision.",
+    "Real-robot calibration and force-control validation have not been performed."
+  ]
+}
