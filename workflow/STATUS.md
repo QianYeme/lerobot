@@ -53,6 +53,11 @@
 - 四路线合同位于 `outputs/formal3_mixed_p4_20260927/experiment.md`，状态为 `PREPARED`：纯 Diffusion、DET基线、C1 state-box显式坐标注入、DET+phase(weight=0.10)。C1沿用已通过Gate的 state token加法，不使用未通过Gate的C2 action residual。
 - 四路 batch=8 的真实数据并发2-step预检全部退出0，无OOM/NaN。用户确认后，正式100k训练已在服务器 `screen -S formal3_mixed_p4` 启动；四个主训练器均越过首批步骤，总显存约27.5 GB，预计以最慢ACTDet计约10–11小时。
 
+## 2026-09-28：C1显式坐标弱使用阻塞
+
+- C1-100k在Formal3快速反事实中确认“检测准但动作弱使用坐标”：左/中/右框可见、顺序与方向均正确，但coordinate-only pan跨度仅`0.00561`（要求`>=0.05`），zero/reverse最大影响为`0.00973/0.00342`，box-effect Gate失败。
+- 该问题记为`CONFIRMED_BLOCKER`；不得通过延长原C1训练、单纯增大检测loss或无约束放大残差处理。下一轮先做带反事实敏感性损失与特征尺度监控的5k–10k短训，过Gate后才允许100k。详见`../outputs/formal3_mixed_p4_20260927/c1_weak_conditioning_diagnosis.md`。
+
 ## 关键入口
 
 - 工作流：`leorbot_workflow.md`
