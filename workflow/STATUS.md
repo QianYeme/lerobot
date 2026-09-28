@@ -58,6 +58,11 @@
 - C1-100k在Formal3快速反事实中确认“检测准但动作弱使用坐标”：左/中/右框可见、顺序与方向均正确，但coordinate-only pan跨度仅`0.00561`（要求`>=0.05`），zero/reverse最大影响为`0.00973/0.00342`，box-effect Gate失败。
 - 该问题记为`CONFIRMED_BLOCKER`；不得通过延长原C1训练、单纯增大检测loss或无约束放大残差处理。下一轮先做带反事实敏感性损失与特征尺度监控的5k–10k短训，过Gate后才允许100k。详见`../outputs/formal3_mixed_p4_20260927/c1_weak_conditioning_diagnosis.md`。
 
+## 2026-09-28：Formal3部署资产发布
+
+- 四个100k部署目录已发布并完成Hub端文件/大小校验：`QYyyyyyyy/F3_P4_{DIFFUSION_BASE,DET_BASE,DET_C1_STATE,DET_PHASE_W010}_s1000`。只发布`pretrained_model`部署文件，不包含优化器或中间checkpoint。
+- 真机只需从`QYyyyyyyy/formal3_kind_merged_nomaster_fit48`下载`meta/**`；checkpoint自身pre/postprocessor携带训练归一化参数。指南见`../docc/指南/Formal3_四模型真机测试指南_2026-09-28.md`。
+
 ## 关键入口
 
 - 工作流：`leorbot_workflow.md`
