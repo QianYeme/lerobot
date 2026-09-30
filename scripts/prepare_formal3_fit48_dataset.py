@@ -39,22 +39,40 @@ def main() -> None:
     parser.add_argument("--target", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--seed", type=int, default=1000)
+    parser.add_argument(
+        "--split-record", type=Path,
+        help="Existing fit48 manifest/record whose train/development episode lists must be reused",
+    )
     args = parser.parse_args()
     if args.target.exists() or args.output.exists():
         raise FileExistsError("Refusing to overwrite target dataset view or split record")
 
     info = json.loads((args.source_root / "meta/info.json").read_text(encoding="utf-8"))
-    if info["total_episodes"] != 60 or info["total_frames"] != 35917:
+    if info["total_episodes"] != 60 or info["total_frames"] <= 0:
         raise ValueError("Unexpected formal3 dataset identity")
     state_names = info["features"]["observation.state"]["names"]
     if len(state_names) != 8 or "master_gripper.pos" in state_names:
         raise ValueError("Split source is not the frozen NOMASTER dataset")
-    if not (args.source_root / "annotations/manifest.json").is_file():
+    if not any((args.source_root / "annotations" / name).is_file()
+               for name in ("manifest.json", "manifest.source.json")):
         raise FileNotFoundError("Detection annotation Gate manifest is missing")
 
-    rng = np.random.default_rng(args.seed)
-    development = sorted(rng.choice(60, 12, replace=False).tolist())
-    train = sorted(set(range(60)) - set(development))
+    if args.split_record:
+        frozen = json.loads(args.split_record.read_text(encoding="utf-8"))
+        train = sorted(frozen["train"])
+        development = sorted(frozen["development"])
+        split_source = {
+            "path": str(args.split_record.resolve()),
+            "sha256": hashlib.sha256(args.split_record.read_bytes()).hexdigest(),
+        }
+    else:
+        rng = np.random.default_rng(args.seed)
+        development = sorted(rng.choice(60, 12, replace=False).tolist())
+        train = sorted(set(range(60)) - set(development))
+        split_source = None
+    if len(train) != 48 or len(development) != 12 or set(train) & set(development) \
+            or set(train) | set(development) != set(range(60)):
+        raise ValueError("The frozen split must be a disjoint 48/12 partition of episodes 0..59")
     data = pq.read_table(args.source_root / "data/chunk-000/file-000.parquet")
     mask = np.isin(data["episode_index"].to_numpy(), train)
     stats = json.loads((args.source_root / "meta/stats.json").read_text(encoding="utf-8"))
@@ -63,9 +81,13 @@ def main() -> None:
 
     target_meta = args.target / "meta"
     target_meta.mkdir(parents=True)
-    hardlink_tree(args.source_root / "meta/episodes", target_meta / "episodes")
-    for entry in ("info.json", "tasks.parquet"):
-        os.link(args.source_root / "meta" / entry, target_meta / entry)
+    for path in (args.source_root / "meta").rglob("*"):
+        relative = path.relative_to(args.source_root / "meta")
+        if path.is_dir():
+            (target_meta / relative).mkdir(parents=True, exist_ok=True)
+        elif path.name != "stats.json":
+            (target_meta / relative).parent.mkdir(parents=True, exist_ok=True)
+            os.link(path, target_meta / relative)
     for entry in ("data", "videos", "annotations"):
         hardlink_tree(args.source_root / entry, args.target / entry)
     (target_meta / "stats.json").write_text(
@@ -79,8 +101,9 @@ def main() -> None:
         "train_frames": int(mask.sum()),
         "development_frames": int((~mask).sum()),
         "statistics_episodes": train,
-        "normalization": "state/action recomputed from train only; images use ImageNet stats",
+        "normalization": "state/action recomputed from train only; camera statistics preserved from source",
         "source_root": str(args.source_root.resolve()),
+        "split_source": split_source,
     }
     manifest_path = target_meta / "formal3_fit48_manifest.json"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

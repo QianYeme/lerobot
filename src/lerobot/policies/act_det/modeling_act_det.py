@@ -147,11 +147,25 @@ class ACTDetPolicy(PreTrainedPolicy):
                 actions_hat.shape[-1], device=actions_hat.device, dtype=actions_hat.dtype
             )
             channel_weights[-1] = self.config.gripper_loss_weight
-            l1_loss = (l1_loss_per_dim * channel_weights).mean()
+            weighted = l1_loss_per_dim * channel_weights
         else:
-            l1_loss = l1_loss_per_dim.mean()
+            weighted = l1_loss_per_dim
+        if self.config.use_h0_action_aux:
+            # Up-weight the first chunk row (what n_action_steps=1 actually
+            # executes) so its systematic bias is not traded away against the
+            # other 99 rows of the chunk. The monitor keeps the raw row-0 loss
+            # (before weighting) so it stays comparable across weight values.
+            h0_l1_loss = weighted[:, 0].mean()
+            row_weights = torch.ones(
+                actions_hat.shape[1], device=actions_hat.device, dtype=actions_hat.dtype
+            )
+            row_weights[0] = self.config.h0_action_weight
+            weighted = weighted * row_weights[None, :, None]
+        l1_loss = weighted.mean()
 
         loss_dict = {"l1_loss": l1_loss.item()}
+        if self.config.use_h0_action_aux:
+            loss_dict["h0_l1_loss"] = h0_l1_loss.item()
         if self.config.use_vae:
             mean_kld = (
                 (-0.5 * (1 + log_sigma_x2_hat - mu_hat.pow(2) - (log_sigma_x2_hat).exp()))

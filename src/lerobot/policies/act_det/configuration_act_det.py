@@ -180,6 +180,13 @@ class ACTDetConfig(ACTConfig):
     phase_weight: float = 0.1
     phase_num_classes: int = 4
 
+    # Optional up-weighting of the first chunk row (h0) in the action L1 loss.
+    # Deployment with n_action_steps=1 executes h0 only, so this gives the
+    # model a direct incentive to reduce its systematic h0 bias. Default off:
+    # the loss path is unchanged and old checkpoints/configs load identically.
+    use_h0_action_aux: bool = False
+    h0_action_weight: float = 1.0
+
     def __post_init__(self):
         super().__post_init__()
         if self.use_water_keypoint:
@@ -195,6 +202,8 @@ class ACTDetConfig(ACTConfig):
             raise ValueError("mask_loss_type must be 'l1' or 'bce_dice'")
         if self.phase_weight < 0:
             raise ValueError("phase_weight must be nonnegative")
+        if self.h0_action_weight <= 0:
+            raise ValueError("h0_action_weight must be positive")
         if self.phase_num_classes != 4:
             raise ValueError("Reviewed phase supervision requires exactly four classes")
         if self.fcos_inject_mode not in ("tokens", "residual"):
