@@ -1,0 +1,578 @@
+{
+  "provenance": {
+    "dataset": "D:\\lerobot\\lerobot-main\\数据集\\formal3\\kind_merged",
+    "episodes": 60,
+    "frames": 35917,
+    "fps": 30,
+    "state_names": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos",
+      "gripper.load",
+      "gripper.curr",
+      "master_gripper.pos"
+    ],
+    "action_names": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "dataset_info_sha256": "74b150d84c69c346477406824f9a00538c2c262dcb5c538b79bd8de89448ca00",
+    "dataset_data_sha256": "c225c45f3c9c86bd4aa5462b6138e35591457cc29614508318df33c8d6aa8e7f",
+    "annotations": "D:\\lerobot\\lerobot-main\\outputs\\formal3_phase_labels_20260927\\final_reviewed_labels\\reviewed_phase_annotations.json",
+    "annotations_sha256": "08022ad824ea56d3aa157b696fff507db6f9646734977a89eb176667b5e8ad68",
+    "phase_semantics": {
+      "human_reviewed_boundaries": [
+        "closing_start",
+        "closing_end",
+        "lift_start",
+        "release_start",
+        "release_end"
+      ],
+      "automatically_derived": {
+        "free_open": "last 60 frames before closing_start",
+        "closing_contact": "closing_start:closing_end; S1/S2 unresolved",
+        "stable_grasp": "closing_end:lift_start",
+        "lift_place": "lift_start:release_start; S4/S5 unresolved",
+        "release": "release_start:release_end inclusive"
+      }
+    },
+    "success_failure_metadata": "absent",
+    "representative_episode": 13,
+    "window_frames": 15
+  },
+  "phase_statistics": {
+    "free_open": {
+      "gripper_pos": {
+        "n": 3600,
+        "median": 40.82758712768555,
+        "iqr": 4.482757568359375,
+        "p10": 36.2068977355957,
+        "p90": 45.7931022644043
+      },
+      "gripper_load": {
+        "n": 3600,
+        "median": 0.0,
+        "iqr": 88.0,
+        "p10": -80.0,
+        "p90": 64.0
+      },
+      "gripper_current": {
+        "n": 3600,
+        "median": 1.0,
+        "iqr": 1.0,
+        "p10": 0.0,
+        "p90": 2.0
+      },
+      "gripper_action": {
+        "n": 3600,
+        "median": 40.92940139770508,
+        "iqr": 4.334228515625,
+        "p10": 36.371761322021484,
+        "p90": 45.665771484375
+      }
+    },
+    "closing_contact": {
+      "gripper_pos": {
+        "n": 2156,
+        "median": 33.41379356384277,
+        "iqr": 12.275861740112305,
+        "p10": 21.89655113220215,
+        "p90": 40.620689392089844
+      },
+      "gripper_load": {
+        "n": 2156,
+        "median": 84.0,
+        "iqr": 80.0,
+        "p10": 36.0,
+        "p90": 188.0
+      },
+      "gripper_current": {
+        "n": 2156,
+        "median": 2.0,
+        "iqr": 2.0,
+        "p10": 0.0,
+        "p90": 4.0
+      },
+      "gripper_action": {
+        "n": 2156,
+        "median": 31.09919548034668,
+        "iqr": 13.04736328125,
+        "p10": 19.839141845703125,
+        "p90": 39.320823669433594
+      }
+    },
+    "stable_grasp": {
+      "gripper_pos": {
+        "n": 958,
+        "median": 20.965517044067383,
+        "iqr": 2.4137935638427734,
+        "p10": 18.34482765197754,
+        "p90": 22.89655113220215
+      },
+      "gripper_load": {
+        "n": 958,
+        "median": 0.0,
+        "iqr": 72.0,
+        "p10": -52.0,
+        "p90": 52.0
+      },
+      "gripper_current": {
+        "n": 958,
+        "median": 1.0,
+        "iqr": 1.0,
+        "p10": 0.0,
+        "p90": 2.0
+      },
+      "gripper_action": {
+        "n": 958,
+        "median": 20.911527633666992,
+        "iqr": 2.1224303245544434,
+        "p10": 18.588024139404297,
+        "p90": 22.69883918762207
+      }
+    },
+    "lift_place": {
+      "gripper_pos": {
+        "n": 9034,
+        "median": 20.827587127685547,
+        "iqr": 2.8965511322021484,
+        "p10": 17.172412872314453,
+        "p90": 23.358620834350575
+      },
+      "gripper_load": {
+        "n": 9034,
+        "median": -20.0,
+        "iqr": 68.0,
+        "p10": -48.0,
+        "p90": 48.0
+      },
+      "gripper_current": {
+        "n": 9034,
+        "median": 1.0,
+        "iqr": 1.0,
+        "p10": 0.0,
+        "p90": 1.0
+      },
+      "gripper_action": {
+        "n": 9034,
+        "median": 20.911527633666992,
+        "iqr": 3.2171573638916016,
+        "p10": 17.068811416625977,
+        "p90": 23.771224975585938
+      }
+    },
+    "release": {
+      "gripper_pos": {
+        "n": 1947,
+        "median": 30.620689392089844,
+        "iqr": 10.137929916381836,
+        "p10": 23.903447723388673,
+        "p90": 41.034481048583984
+      },
+      "gripper_load": {
+        "n": 1947,
+        "median": -104.0,
+        "iqr": 48.0,
+        "p10": -156.0,
+        "p90": -60.0
+      },
+      "gripper_current": {
+        "n": 1947,
+        "median": 1.0,
+        "iqr": 1.0,
+        "p10": 1.0,
+        "p90": 3.0
+      },
+      "gripper_action": {
+        "n": 1947,
+        "median": 33.24396896362305,
+        "iqr": 10.723859786987305,
+        "p10": 25.201072692871094,
+        "p90": 43.78909683227539
+      }
+    }
+  },
+  "free_vs_phase": {
+    "closing_contact": {
+      "gripper_pos": {
+        "cohens_d": -1.5913839444678863,
+        "histogram_overlap": 0.4375541125541128,
+        "episode_sign_consistency": 0.9833333333333333,
+        "episode_median_delta": -8.103448390960693
+      },
+      "gripper_load": {
+        "cohens_d": 1.6121877056433502,
+        "histogram_overlap": 0.42582405689548514,
+        "episode_sign_consistency": 1.0,
+        "episode_median_delta": 92.0
+      },
+      "gripper_current": {
+        "cohens_d": 0.8682789071155779,
+        "histogram_overlap": 0.666014223871367,
+        "episode_sign_consistency": 0.5833333333333334,
+        "episode_median_delta": 1.0
+      }
+    },
+    "stable_grasp": {
+      "gripper_pos": {
+        "cohens_d": -5.182427188883289,
+        "histogram_overlap": 0.003333333333333334,
+        "episode_sign_consistency": 1.0,
+        "episode_median_delta": -20.34482765197754
+      },
+      "gripper_load": {
+        "cohens_d": 0.06883947280852616,
+        "histogram_overlap": 0.8011946184180007,
+        "episode_sign_consistency": 0.5166666666666667,
+        "episode_median_delta": -6.0
+      },
+      "gripper_current": {
+        "cohens_d": -0.2120331457590939,
+        "histogram_overlap": 0.9298486430062637,
+        "episode_sign_consistency": 0.26666666666666666,
+        "episode_median_delta": 0.0
+      }
+    },
+    "lift_place": {
+      "gripper_pos": {
+        "cohens_d": -6.805901791181033,
+        "histogram_overlap": 0.006443189924482821,
+        "episode_sign_consistency": 1.0,
+        "episode_median_delta": -20.810344696044922
+      },
+      "gripper_load": {
+        "cohens_d": -0.037089672316472165,
+        "histogram_overlap": 0.7328558162989203,
+        "episode_sign_consistency": 0.6166666666666667,
+        "episode_median_delta": -10.0
+      },
+      "gripper_current": {
+        "cohens_d": -0.19881897223676093,
+        "histogram_overlap": 0.9312903106781795,
+        "episode_sign_consistency": 0.03333333333333333,
+        "episode_median_delta": 0.0
+      }
+    },
+    "release": {
+      "gripper_pos": {
+        "cohens_d": -1.7504614564639178,
+        "histogram_overlap": 0.35476673514809076,
+        "episode_sign_consistency": 0.9833333333333333,
+        "episode_median_delta": -10.068964958190918
+      },
+      "gripper_load": {
+        "cohens_d": -1.8660846062949423,
+        "histogram_overlap": 0.2790335558979629,
+        "episode_sign_consistency": 1.0,
+        "episode_median_delta": -110.0
+      },
+      "gripper_current": {
+        "cohens_d": 0.8190104547360272,
+        "histogram_overlap": 0.6736843006334536,
+        "episode_sign_consistency": 0.5,
+        "episode_median_delta": 0.25
+      }
+    }
+  },
+  "temporal_separability": {
+    "stable_grasp": {
+      "gripper_pos": {
+        "single": {
+          "feature": "single_phase_median",
+          "cohens_d": -7.874813453384935,
+          "histogram_overlap": 0.0
+        },
+        "window_features": {
+          "mean": {
+            "cohens_d": -7.814196601661873,
+            "histogram_overlap": 0.0
+          },
+          "std": {
+            "cohens_d": -1.3382682184487256,
+            "histogram_overlap": 0.39999999999999997
+          },
+          "slope": {
+            "cohens_d": 0.688181936512028,
+            "histogram_overlap": 0.36666666666666603
+          },
+          "delta": {
+            "cohens_d": 1.5576422464150348,
+            "histogram_overlap": 0.3166666666666671
+          },
+          "min": {
+            "cohens_d": -7.896200669863828,
+            "histogram_overlap": 0.0
+          },
+          "max": {
+            "cohens_d": -7.735308756270422,
+            "histogram_overlap": 0.0
+          }
+        },
+        "best_window": {
+          "feature": "min",
+          "cohens_d": -7.896200669863828,
+          "histogram_overlap": 0.0
+        }
+      },
+      "gripper_load": {
+        "single": {
+          "feature": "single_phase_median",
+          "cohens_d": -0.027968706776242656,
+          "histogram_overlap": 0.649999999999999
+        },
+        "window_features": {
+          "mean": {
+            "cohens_d": -1.0274537530275323,
+            "histogram_overlap": 0.433333333333333
+          },
+          "std": {
+            "cohens_d": -0.32954586852354634,
+            "histogram_overlap": 0.5833333333333331
+          },
+          "slope": {
+            "cohens_d": -0.5730538802712003,
+            "histogram_overlap": 0.649999999999999
+          },
+          "delta": {
+            "cohens_d": -0.5322490146748013,
+            "histogram_overlap": 0.5000000000000001
+          },
+          "min": {
+            "cohens_d": -0.48917086929717213,
+            "histogram_overlap": 0.5166666666666672
+          },
+          "max": {
+            "cohens_d": -1.4919985898872319,
+            "histogram_overlap": 0.36666666666666664
+          }
+        },
+        "best_window": {
+          "feature": "max",
+          "cohens_d": -1.4919985898872319,
+          "histogram_overlap": 0.36666666666666664
+        }
+      },
+      "gripper_current": {
+        "single": {
+          "feature": "single_phase_median",
+          "cohens_d": -0.45404449780832773,
+          "histogram_overlap": 0.6833333333333328
+        },
+        "window_features": {
+          "mean": {
+            "cohens_d": -0.3780068579554871,
+            "histogram_overlap": 0.5499999999999998
+          },
+          "std": {
+            "cohens_d": -0.5188892418198401,
+            "histogram_overlap": 0.5333333333333331
+          },
+          "slope": {
+            "cohens_d": -0.0849422695305806,
+            "histogram_overlap": 0.7666666666666678
+          },
+          "delta": {
+            "cohens_d": -0.13171079976022218,
+            "histogram_overlap": 0.8666666666666668
+          },
+          "min": {
+            "cohens_d": 0.34903998131241676,
+            "histogram_overlap": 0.9
+          },
+          "max": {
+            "cohens_d": -0.7246785124538689,
+            "histogram_overlap": 0.6833333333333327
+          }
+        },
+        "best_window": {
+          "feature": "max",
+          "cohens_d": -0.7246785124538689,
+          "histogram_overlap": 0.6833333333333327
+        }
+      }
+    },
+    "lift_place": {
+      "gripper_pos": {
+        "single": {
+          "feature": "single_phase_median",
+          "cohens_d": -7.930465546297948,
+          "histogram_overlap": 0.0
+        },
+        "window_features": {
+          "mean": {
+            "cohens_d": -6.710058172574112,
+            "histogram_overlap": 0.0
+          },
+          "std": {
+            "cohens_d": -0.043129758894098466,
+            "histogram_overlap": 0.5833333333333335
+          },
+          "slope": {
+            "cohens_d": 3.1091534924952753,
+            "histogram_overlap": 0.05
+          },
+          "delta": {
+            "cohens_d": 3.4576172770392817,
+            "histogram_overlap": 0.04999999999999996
+          },
+          "min": {
+            "cohens_d": -6.8013776281180185,
+            "histogram_overlap": 0.0
+          },
+          "max": {
+            "cohens_d": -6.5401749315300135,
+            "histogram_overlap": 0.0
+          }
+        },
+        "best_window": {
+          "feature": "min",
+          "cohens_d": -6.8013776281180185,
+          "histogram_overlap": 0.0
+        }
+      },
+      "gripper_load": {
+        "single": {
+          "feature": "single_phase_median",
+          "cohens_d": -0.3547222854808553,
+          "histogram_overlap": 0.6333333333333333
+        },
+        "window_features": {
+          "mean": {
+            "cohens_d": -5.441696787353526,
+            "histogram_overlap": 0.016666666666666666
+          },
+          "std": {
+            "cohens_d": -0.5948030989980022,
+            "histogram_overlap": 0.5499999999999998
+          },
+          "slope": {
+            "cohens_d": -1.4455249954595162,
+            "histogram_overlap": 0.2999999999999999
+          },
+          "delta": {
+            "cohens_d": -1.5460097336869894,
+            "histogram_overlap": 0.3166666666666665
+          },
+          "min": {
+            "cohens_d": -2.3592412058521606,
+            "histogram_overlap": 0.08333333333333341
+          },
+          "max": {
+            "cohens_d": -4.876975857601581,
+            "histogram_overlap": 0.050000000000000024
+          }
+        },
+        "best_window": {
+          "feature": "mean",
+          "cohens_d": -5.441696787353526,
+          "histogram_overlap": 0.016666666666666666
+        }
+      },
+      "gripper_current": {
+        "single": {
+          "feature": "single_phase_median",
+          "cohens_d": 0.0,
+          "histogram_overlap": 0.9666666666666659
+        },
+        "window_features": {
+          "mean": {
+            "cohens_d": -0.11186479982142726,
+            "histogram_overlap": 0.7333333333333346
+          },
+          "std": {
+            "cohens_d": 0.14365744639701625,
+            "histogram_overlap": 0.7166666666666658
+          },
+          "slope": {
+            "cohens_d": -0.0722286443068515,
+            "histogram_overlap": 0.6833333333333332
+          },
+          "delta": {
+            "cohens_d": 0.3053343138548173,
+            "histogram_overlap": 0.9166666666666657
+          },
+          "min": {
+            "cohens_d": -0.18494025670665823,
+            "histogram_overlap": 0.9666666666666668
+          },
+          "max": {
+            "cohens_d": 0.0764176476929113,
+            "histogram_overlap": 0.9333333333333335
+          }
+        },
+        "best_window": {
+          "feature": "delta",
+          "cohens_d": 0.3053343138548173,
+          "histogram_overlap": 0.9166666666666657
+        }
+      }
+    }
+  },
+  "hold_action_quality": {
+    "episodes": 60,
+    "action_range": {
+      "n": 60,
+      "median": 5.272564888000488,
+      "iqr": 1.854332447052002,
+      "p10": 3.923144721984863,
+      "p90": 6.98838176727295
+    },
+    "net_change": {
+      "n": 60,
+      "median": 4.110813140869141,
+      "iqr": 2.2564778327941895,
+      "p10": 1.6711349487304688,
+      "p90": 6.2734579086303714
+    },
+    "max_reopen_from_initial_closed": {
+      "n": 60,
+      "median": 4.110813140869141,
+      "iqr": 1.7873101234436035,
+      "p10": 1.6800716400146485,
+      "p90": 6.005362701416016
+    },
+    "reopen_ge_5deg_episodes": 15,
+    "reopen_ge_5deg_rate": 0.25
+  },
+  "signal_quality": {
+    "gripper_pos": {
+      "frames": 35917,
+      "missing_or_nonfinite": 0,
+      "unique_values": 810,
+      "min": 0.3448275923728943,
+      "max": 59.24137878417969,
+      "global_extreme_rate": 0.0015034663251385137
+    },
+    "gripper_load": {
+      "frames": 35917,
+      "missing_or_nonfinite": 0,
+      "unique_values": 202,
+      "min": -448.0,
+      "max": 500.0,
+      "global_extreme_rate": 0.0008631010385054431
+    },
+    "gripper_current": {
+      "frames": 35917,
+      "missing_or_nonfinite": 0,
+      "unique_values": 18,
+      "min": 0.0,
+      "max": 19.0,
+      "global_extreme_rate": 0.3088509619400284
+    },
+    "gripper_action": {
+      "frames": 35917,
+      "missing_or_nonfinite": 0,
+      "unique_values": 640,
+      "min": 0.08936550468206406,
+      "max": 59.60679244995117,
+      "global_extreme_rate": 0.000250577720856419
+    }
+  }
+}

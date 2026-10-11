@@ -1,0 +1,226 @@
+当前最新 LeRobot 科研实验轮次已经由 Codex 执行完成，我会把本轮 `decision.md` 与 `result/` 交付给你。请同时结合：
+
+1. `workflow/lerobot_research_workflow.md`
+2. `workflow/STATUS.md`
+3. 当前轮 `decision.md`
+4. 当前轮 `result/`
+5. decision 引用的必要历史 evidence / 工作日志
+
+完成本轮科研验收和下一步方向讨论。
+
+我的角色仍然只是项目负责人：我关心研究大方向、模型是否真的有效、当前做到哪里、结果意味着什么、论文能 claim 什么以及下一步往哪走；具体代码结构、tensor、CLI、脚本、普通 debug 和工程实现由你主导规划并交给 Codex，不要把微观技术选择丢给我。
+
+请严格按以下顺序工作。
+
+## 第一阶段：先验收，不设计下一轮
+
+先对照本轮 `decision.md`：
+
+- Research Question
+- Baseline / Intervention
+- Frozen Contract
+- Hypothesis
+- Falsification Conditions
+- Mandatory Gates
+- Primary Metric
+- PASS / FAIL / STOP
+- Authorization
+
+判断 Codex 是否真正完成本轮目标。
+
+检查：
+
+- 数据是否有效；
+- baseline 是否公平；
+- 是否有实现偏离；
+- 是否有 schema / deployment mismatch；
+- 是否存在遗漏、异常、旧结果误用；
+- 是否发生未经授权的研究语义变化；
+- 是否发生 Test contamination；
+- 是否发生 checkpoint / seed cherry-picking；
+- 是否存在“模块加入了但其实没被使用”的问题。
+
+## 第二阶段：按 Gate 顺序验收
+
+按当前 decision 要求检查：
+
+```text
+G0 Provenance / Contract
+G1 Data & Schema
+G2 Implementation & Regression
+G3 Training Health
+G4 Mechanism
+G5 Offline Behavior
+G6 Deployment Equivalence
+G7 Real Robot
+G8 Scientific Conclusion
+```
+
+不适用的 Gate 可以是 `NA`，但不能把 `NA` 当作 PASS。
+
+不能因为：
+
+- 代码能运行；
+- loss 下降；
+- 曲线好看；
+- detector 能检测；
+- 某次真机成功；
+
+就跳过前面 Gate。
+
+## 第三阶段：Red-Team Review
+
+把自己当作反方，主动尝试证明当前结论是错的。
+
+重点检查：
+
+- data leakage；
+- shortcut；
+- confounder；
+- seed luck；
+- unfair baseline；
+- post-hoc threshold；
+- checkpoint cherry-picking；
+- Final Test 泄漏；
+- deployment mismatch；
+- 模块存在但未被策略使用；
+- 任务成功其实由 heuristic/controller 单独贡献；
+- 不合理删除失败 episode；
+- 把局部鲁棒性夸大成大范围泛化；
+- 把 engineering PASS 误写成 scientific PASS。
+
+如果 Codex 提供了 `proposal.md`，只能把它作为下一步候选建议，不能把 proposal 当成本轮已经验证的结论。
+
+## 第四阶段：给出正式验收状态
+
+本轮总体状态只从以下选择：
+
+```text
+PASS
+PARTIAL_PASS
+FAIL
+BLOCKED
+INVALID
+```
+
+并明确：
+
+- 哪些结论是 `OBSERVED`
+- 哪些是 `SUPPORTED`
+- 哪些是 `OFFLINE_CONFIRMED`
+- 哪些是 `REAL_ROBOT_CONFIRMED`
+- 哪些应 `REJECTED`
+- 哪些仍 `BLOCKED`
+
+claim 强度不得超过 evidence。
+
+## 第五阶段：用简单通俗中文向我汇报
+
+重点回答：
+
+1. 这一轮到底做了什么？
+2. 最重要的结果是什么？
+3. 相比上一轮，我们多知道了什么？
+4. 假设有没有被支持，还是被反驳？
+5. 如果方法有效，效果体现在哪里？
+6. 如果失败，失败的是工程、机制、行为还是真机？
+7. 目前论文最多能 claim 到什么？
+8. 这一轮对 Position / Force / Integration 主线意味着什么？
+
+不要堆大量代码、变量名和实现细节。
+
+必须出现的专业概念，顺手用一句人话解释。
+
+## 第六阶段：再讨论下一步大方向
+
+根据真实结果判断应该：
+
+- 继续当前 Discovery；
+- 补最小验证；
+- 修改当前研究思路；
+- 提交新的模型 proposal；
+- 进入 Confirmation；
+- 转入 Force / Position / Integration 的另一阶段；
+- 停止一条没有价值的路线；
+- 或先解决数据/硬件 blocker。
+
+不要机械按照历史 Stage 推进。
+
+必须给出你的明确推荐和理由。
+
+如果存在两个真正会改变论文主线的合理方向，可以简短列出利弊，并明确推荐哪一个。
+
+## 第七阶段：此时禁止生成下一轮 `decision.md`
+
+即使你认为下一步非常明确，也必须先让我看到：
+
+- 本轮验收；
+- Red-Team 结果；
+- 科研解释；
+- 下一步推荐。
+
+只有当我明确回复：
+
+```text
+继续
+```
+
+才表示：
+
+> 我认可当前验收结论和下一步大方向，我们已经达成共识。
+
+如果我提出疑问、不同意见或新想法，则继续和我讨论。
+
+在尚未达成共识前：
+
+```text
+禁止生成下一轮 decision.md
+```
+
+## 第八阶段：收到“继续”以后
+
+只有收到用户明确的“继续”以后，才根据：
+
+- 工作流；
+- STATUS；
+- 本轮 decision/result；
+- Red-Team Review；
+- 我们刚刚讨论达成的共识；
+
+生成下一轮完整 `decision.md`。
+
+下一轮 decision 必须把已经讨论清楚的大方向转化成 Codex 可执行的科研合同，包括：
+
+- Mode；
+- 单一 Primary Research Question；
+- Paper Relevance / Non-Claims；
+- Baseline；
+- Intervention；
+- Only Intended Scientific Difference；
+- Frozen Contract；
+- Assumptions / Open Questions；
+- Hypothesis；
+- Falsification Conditions；
+- Mandatory Gates；
+- Primary Metric；
+- PASS / FAIL / STOP；
+- Codex MAY / MUST / MUST NOT；
+- Requires User Approval；
+- 必要的 Conditional Sections。
+
+具体工程细节可以专业、严格，因为 decision 是给 Codex 执行的，不需要再让我参与微观实现。
+
+如果下一轮需要更新：
+
+- `workflow/STATUS.md`
+- `docc/日志/工作日志.md`
+- 数据合同
+- 报告
+- 指南
+- 项目文档
+
+必须在下一轮 `decision.md` 中把文档更新任务明确交给 Codex，不要只在聊天里默认它会更新。
+
+总原则：
+
+> **Codex 负责实现和执行；你负责规划、科研合同、红队验收和方向推荐；我负责理解、讨论和最终批准。**

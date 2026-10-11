@@ -1,0 +1,28 @@
+{
+  "experiment_id": "D0_NEW_DATASET_V1",
+  "status": "BLOCKED_HARDWARE",
+  "target_episodes": 60,
+  "collected_episodes": 0,
+  "hardware_discovery": {
+    "serial_ports_detected": 0,
+    "camera_devices_detected": 0
+  },
+  "schedule": {
+    "seed": 20261008,
+    "rounds": 5,
+    "strata": 12,
+    "episodes_per_stratum": 5,
+    "total_rows": 60,
+    "each_round_covers_all_strata_once": true,
+    "round_orders_unique": true
+  },
+  "recorder_audit": {
+    "force_features_declared": ["gripper.pos", "gripper.load", "gripper.curr"],
+    "action_before_fix": "pre-clipping action_values",
+    "action_after_fix": "robot.send_action return value (actual sent target)"
+  },
+  "tests": {
+    "direct_checks_passed": 3,
+    "python_compile": "PASS"
+  }
+}

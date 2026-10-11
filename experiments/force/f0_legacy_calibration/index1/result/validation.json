@@ -1,0 +1,81 @@
+{
+  "experiment_id": "F0_LEGACY_FORCE_CALIBRATION",
+  "decision_revision": "r0",
+  "mode": "DIAGNOSIS",
+  "overall": "PARTIAL",
+  "scientific_conclusion_level": "OBSERVED",
+  "gates": {
+    "G0_provenance": {
+      "status": "PASS",
+      "metric": "60 episodes / 35917 frames / 30 FPS; original 9D state; source hashes recorded",
+      "threshold": "dataset, episode count, schema, source and MASTER/NOMASTER status confirmed",
+      "evidence": ["metrics.json#/provenance", "../../../../../results/experiments/F0_LEGACY_FORCE_CALIBRATION/provenance.json"],
+      "anomaly": null
+    },
+    "G1_signal_availability": {
+      "status": "PASS",
+      "metric": "35917/35917 finite rows for pos/load/current/action; current has 18 unique values and 30.9% global-extreme rows",
+      "threshold": "signals exist per frame, ordered, without large missing/nonfinite regions",
+      "evidence": ["metrics.json#/signal_quality", "../../../../../results/experiments/F0_LEGACY_FORCE_CALIBRATION/phase_signal_rows.parquet"],
+      "anomaly": "current is heavily quantized and dominated by zero"
+    },
+    "G2_phase_recoverability": {
+      "status": "PASS",
+      "metric": "five coarse phases recovered for all 60 episodes from 60/60 human-reviewed boundaries",
+      "threshold": "major phases recoverable; complete automatic S0-S6 separation not required",
+      "evidence": ["metrics.json#/provenance/phase_semantics", "../../../../../results/experiments/F0_LEGACY_FORCE_CALIBRATION/human_reviewed_boundaries.csv"],
+      "anomaly": "S1/S2 and S4/S5 remain UNRESOLVED_PHASE"
+    },
+    "G3_single_episode_structure": {
+      "status": "PASS",
+      "metric": "representative episode 13 plotted with pos/load/current/action and coarse phases",
+      "threshold": "at least one representative episode timeline",
+      "evidence": ["figures/representative_timeline.png"],
+      "anomaly": null
+    },
+    "G4_cross_episode_consistency": {
+      "status": "PASS",
+      "metric": "load closing delta +92 and release delta -110 with 60/60 episode sign consistency; stable/hold load-current overlap is high",
+      "threshold": "compare phase distributions and cross-episode trend consistency",
+      "evidence": ["metrics.json#/free_vs_phase", "figures/aligned_phase_timeline.png", "figures/phase_distribution.png"],
+      "anomaly": "force-related separation is transition-specific, not stable-hold-specific"
+    },
+    "G5_temporal_separability": {
+      "status": "PASS",
+      "metric": "stable-grasp load: single d=-0.028/overlap=0.650 vs 15-frame max d=-1.492/overlap=0.367; current remains weak",
+      "threshold": "single and temporal features compared",
+      "evidence": ["metrics.json#/temporal_separability", "../../../../../results/experiments/F0_LEGACY_FORCE_CALIBRATION/episode_phase_features.csv"],
+      "anomaly": "lift/place tail mixes suspended hold, support regain and pre-release transition"
+    },
+    "G6_hold_action_quality": {
+      "status": "PASS",
+      "metric": "median action range 5.27 deg; median reopening 4.11 deg; 15/60 episodes reopen >=5 deg",
+      "threshold": "hold/lift command stability, variation and systematic reopening reported; 5 deg is descriptive, not a frozen PASS threshold",
+      "evidence": ["metrics.json#/hold_action_quality", "figures/hold_action_analysis.png", "../../../../../results/experiments/F0_LEGACY_FORCE_CALIBRATION/hold_action_per_episode.csv"],
+      "anomaly": "expert command itself gradually reopens during combined lift/place"
+    },
+    "G7_real_robot": {
+      "status": "NA",
+      "metric": "not executed",
+      "threshold": "real-robot execution prohibited by decision",
+      "evidence": ["../decision.md"],
+      "anomaly": null
+    }
+  },
+  "falsification": {
+    "F1": "PARTIAL_TRIGGER: stable-grasp and lift/place absolute load/current distributions overlap heavily",
+    "F2": "TRIGGERED_FOR_STABLE_STATE: gripper.pos separates open/closed strongly while load/current add little stable-state information",
+    "F3": "NOT_TRIGGERED_FOR_TRANSITIONS: closing/release load sign is repeatable across all 60 episodes",
+    "F4": "PARTIAL_TRIGGER: expert action reopens >=5 deg in 25% of lift/place intervals and median reopening is 4.11 deg",
+    "F5": "PARTIAL_TRIGGER_CURRENT: current is quantized with many zeros; load has no large global saturation"
+  },
+  "required_visualizations": {
+    "representative_timeline": "PASS",
+    "aligned_phase_timeline": "PASS",
+    "phase_distribution": "PASS",
+    "hold_action_analysis": "PASS",
+    "success_vs_failure": "UNAVAILABLE_NO_GROUND_TRUTH_METADATA"
+  },
+  "next_stage_authorized": false,
+  "raw_evidence": "results/experiments/F0_LEGACY_FORCE_CALIBRATION/"
+}

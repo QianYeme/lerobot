@@ -1,0 +1,48 @@
+{
+  "dataset": "D:\\lerobot\\lerobot-main\\数据集\\formal3\\kind_merged",
+  "episodes": 60,
+  "frames": 35917,
+  "fps": 30,
+  "state_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos",
+    "gripper.load",
+    "gripper.curr",
+    "master_gripper.pos"
+  ],
+  "action_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+  ],
+  "dataset_info_sha256": "74b150d84c69c346477406824f9a00538c2c262dcb5c538b79bd8de89448ca00",
+  "dataset_data_sha256": "c225c45f3c9c86bd4aa5462b6138e35591457cc29614508318df33c8d6aa8e7f",
+  "annotations": "D:\\lerobot\\lerobot-main\\outputs\\formal3_phase_labels_20260927\\final_reviewed_labels\\reviewed_phase_annotations.json",
+  "annotations_sha256": "08022ad824ea56d3aa157b696fff507db6f9646734977a89eb176667b5e8ad68",
+  "phase_semantics": {
+    "human_reviewed_boundaries": [
+      "closing_start",
+      "closing_end",
+      "lift_start",
+      "release_start",
+      "release_end"
+    ],
+    "automatically_derived": {
+      "free_open": "last 60 frames before closing_start",
+      "closing_contact": "closing_start:closing_end; S1/S2 unresolved",
+      "stable_grasp": "closing_end:lift_start",
+      "lift_place": "lift_start:release_start; S4/S5 unresolved",
+      "release": "release_start:release_end inclusive"
+    }
+  },
+  "success_failure_metadata": "absent",
+  "representative_episode": 13,
+  "window_frames": 15
+}

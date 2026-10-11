@@ -1,9 +1,11 @@
 # LeRobot 项目当前状态
 
-> 更新时间：2026-09-30 17:30（B1 reset-preroll 100k训练及五节点dev12/train48/time-trim交叉评估全部完成；训练和评估exit均为0，但100k预注册Gate仅3/6通过，overall FAIL，B1淘汰并回退B2 `DET 100k + kick-start`）。这里保存当前快照，不保存完整历史。历史过程见 `../docc/日志/工作日志.md`；长期执行规则见 `leorbot_workflow.md`。
+> 更新时间：2026-10-08（Data Track 的 D0 工程预检完成，状态 `BLOCKED_HARDWARE / READY_FOR_COLLECTION`；真实采集 0/60）。这里保存当前快照，不保存完整历史。历史过程见 `../docc/日志/工作日志.md`；长期执行规则见 `lerobot_research_workflow.md`。
 
 ## 当前阶段
 
+- Data 主线：`D0_NEW_DATASET_V1` 已生成 seed=`20261008` 的冻结采集表（5 rounds × 12 strata = 60 episodes），并完成采集 schema 与 recorder 代码审计。当前机器未检测到机械臂串口或摄像头，故状态为 `BLOCKED_HARDWARE / READY_FOR_COLLECTION`，真实采集仍为 0/60，D-G0--D-G5 均未通过。连接 leader/follower 与 top/wrist 双相机后，必须先完成单 episode smoke 并核验 `state/action/load/current/video`，才可进入正式采集；QC PASS 前禁止生成 split 或训练模型。结果见 `../experiments/data/d0_new_dataset_v1/index1/result/summary.md`。
+- Force 主线：`F0_SIGNAL_CALIBRATION` 已按 `../experiments/force/f0_legacy_calibration/index1/decision.md` 完成，状态 `PARTIAL / OBSERVED`。原始 Formal3 的 `gripper.load` 在闭合与释放转换中有60/60跨集一致的符号结构，15帧窗口比单帧更可分；但 stable grasp / lift-place 的单帧 `load/current` 高度重叠，`current` 仅18个离散值且大量为0。expert action 在 lift/place 中重新张开中位4.11°，15/60集达到至少5°，说明旧数据本身可能促成真机 Lift 后重新张爪。S1/S2与S4/S5仍无法可靠细分。结果见 `../experiments/force/f0_legacy_calibration/index1/result/summary.md`；未授权 F1、训练或真机。
 - Formal3 主线：旧 reset-pair 与修复候选 reset-preroll 均为`FAILED / DIAGNOSED / REAL_ROBOT_BLOCKED`。B1 reset-preroll 100k训练健康、评估完整，但100k仅Gate3/5/6通过：train48首步方向11/48（需≥33）、dev12为3/12（需≥9）、train48 `|bias|=4.02°`（需≤2.5°）；幅度比1.133、任务区间arm MAE比0.849和完整性通过。完整结论见 `../outputs/formal3_preroll_p4_100k_20260929/summary.md`。
 - B1没有在100k解决真实复位frame0方向问题，且20k–100k无节点接近方向Gate，因此按冻结选择矩阵淘汰，不续训、不做seed变体、不进入真机。主线回退到已通过60/60离线闭环回放的B2 `DET 100k + kick-start`；下一阶段是部署dry-run与安全Gate，而不是继续训练。
 - Formal3 四模型 100k 与部署资产已完成；现阶段不以既有 teacher-forced 指标解除 reset-pair 的真机阻塞。
@@ -37,6 +39,8 @@
 
 ## 下一步
 
+0. Data D0：连接真实采集硬件并确定 leader/follower 串口及 top/wrist 相机路径；严格按 `../experiments/data/d0_new_dataset_v1/index1/result/collection_runbook.md` 先录制 1 条 smoke。仅当 schema、实际发送 action、双视频和力信号核验通过，才按冻结表采集60条。
+1. Force F0 已完成并停止。只有用户与 ChatGPT 验收本轮 `result/`、生成并批准新的 F1 `decision.md` 后，Codex 才能设计或训练最小 Force Module；当前不得自行进入 F1。
 1. ✅ h0动作辅助权重线已按合同完整执行并停止：实现（默认关闭）+本地5/5测试+服务器真实batch smoke通过，2k双候选train48诊断完成，预注册筛选BOTH FAIL（S1 |bias| 5.45/5.46 vs 需≤3.86；S2 cosine+ 10/8 vs 基线15/48更差），不延长训练。
 2. ✅ 阶段B选择已冻结：B1 reset-preroll 100k训练/评估完整但overall FAIL（Gate3/5/6通过，Gate1/2/4失败），按合同淘汰；B2 kick-start全量离线PASS（60/60接管、闭环arm MAE train48/dev12为1.63°/3.29°），`DET 100k + kick-start`成为唯一部署候选。规划文档：`docc/方案与规划/Formal3_起步方向修复_完整规划_2026-09-29.md`。
 3. 下一步只做B2部署准备：把离线mode B固化为显式`HOLD/KICK/NORMAL/ABORT`状态机，完成无电机dry-run和动作边界/超时/相机失联测试；随后采集夹爪`pos/load/current`标定并通过安全Gate。任何真机动作仍需用户另行授权。
@@ -109,7 +113,7 @@
 
 ## 关键入口
 
-- 工作流：`leorbot_workflow.md`
+- 工作流：`lerobot_research_workflow.md`
 - 工作日志：`../docc/日志/工作日志.md`
 - 阶段E报告：`../docc/报告/C50_阶段E评估报告_2026-09-19.md`
 - round 2指南：`../docc/指南/C50_真机测试指南_round2_2026-09-19.md`

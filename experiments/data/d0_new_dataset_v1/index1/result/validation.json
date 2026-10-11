@@ -1,0 +1,47 @@
+{
+  "experiment_id": "D0_NEW_DATASET_V1",
+  "decision_revision": "r0",
+  "mode": "ENGINEERING",
+  "overall": "BLOCKED_HARDWARE",
+  "gates": {
+    "D-G0_schema_integrity": {
+      "status": "BLOCKED",
+      "metric": "code path declares pos/load/curr and actual-sent action persistence is fixed, but no new hardware smoke dataset exists",
+      "evidence": ["metrics.json", "collection_runbook.md"],
+      "blocker": "no serial ports or cameras detected"
+    },
+    "D-G1_spatial_coverage": {
+      "status": "BLOCKED",
+      "metric": "60-row randomized schedule prepared; 0 actual cup positions collected",
+      "evidence": ["../../../../../results/experiments/D0_NEW_DATASET_V1/collection_schedule.csv"],
+      "blocker": "dataset not collected"
+    },
+    "D-G2_motion_phase_quality": {
+      "status": "BLOCKED",
+      "metric": "phase fields and protocol prepared; 0 episodes available",
+      "evidence": ["collection_runbook.md"],
+      "blocker": "dataset not collected"
+    },
+    "D-G3_hold_supervision_quality": {
+      "status": "BLOCKED",
+      "metric": "stable-close rule documented; no new action timeline available",
+      "evidence": ["collection_runbook.md"],
+      "blocker": "dataset not collected"
+    },
+    "D-G4_force_signal_integrity": {
+      "status": "BLOCKED",
+      "metric": "reader declares load/current; no hardware telemetry smoke available",
+      "evidence": ["metrics.json"],
+      "blocker": "hardware unavailable"
+    },
+    "D-G5_task_execution_summary": {
+      "status": "BLOCKED",
+      "metric": "review fields prepared; 0 task records",
+      "evidence": ["../../../../../results/experiments/D0_NEW_DATASET_V1/collection_schedule.csv"],
+      "blocker": "dataset not collected"
+    }
+  },
+  "split_manifest_created": false,
+  "model_training_started": false,
+  "next_action": "connect follower, leader and both cameras; run one-episode smoke and validate schema before formal collection"
+}

@@ -1,0 +1,123 @@
+请开始执行当前最新且已经由用户批准的 LeRobot 科研实验轮次。
+
+先完整阅读：
+
+1. `workflow/lerobot_research_workflow.md`
+2. `workflow/STATUS.md`
+3. 当前最新且尚未完成的 `experiments/<track>/<stage>/indexN/decision.md`
+4. decision 中明确引用的历史报告、数据合同、代码入口和已有 evidence
+
+然后严格以当前 `decision.md` 作为**唯一科研授权合同**完成本轮任务。
+
+你的角色是 Research Engineer / Executor：
+
+- 负责代码实现、调试、测试、训练、离线评估、已授权诊断、结果整理和证据保存；
+- 可以自主解决正常工程问题，并在同一轮内反复调试直至完成；
+- 可以自主增加不改变科研语义的只读诊断、测试、日志和证据工具；
+- 可以在发现更优研究结构时主动写 `proposal.md`；
+- 但不得自行改变科研问题、baseline、intervention、数据 split、observation/action 语义、primary metric、PASS 阈值、seed 计划、正式训练预算或真机协议；
+- 不得修改 `decision.md`。
+
+如果发现当前合同本身存在无法在不改变科研语义的情况下解决的问题：
+
+```text
+BLOCKED_CONTRACT
+```
+
+停止相关分支，保留已有有效证据，在结果中说明具体 blocker；不要自行修正 decision。
+
+必须执行当前 decision 指定的 mandatory Gates。特别注意：
+
+- 代码能运行不等于科研 PASS；
+- loss 下降不等于科研 PASS；
+- 模块存在不等于模型真的使用该模块；
+- 离线结果不等于真机结果；
+- 不允许看到结果后临时修改阈值、metric、数据或结构来“救”实验；
+- Final Test 若未在当前 Confirmation decision 中授权，禁止用于模型设计、调参或 checkpoint 选择；
+- 已有且语义仍适用的证据应优先复用，不为形式完整无意义重跑。
+
+Git / workspace：
+
+- 开始和结束时检查仓库状态；
+- 保护用户已有无关修改；
+- 禁止 `git add .`；
+- 只 stage 本轮相关文件；
+- 未经用户授权不得 push / publish；
+- raw results、大型生成物按项目规则保存在 canonical evidence 目录，不要为了 commit 强行纳入版本控制。
+
+Raw evidence 保存在：
+
+```text
+results/experiments/<experiment_id>/
+```
+
+尽量 append-only，失败尝试不得被覆盖或隐藏。
+
+完成本轮后，将紧凑交付写入：
+
+```text
+experiments/<track>/<stage>/indexN/result/
+```
+
+至少包含：
+
+```text
+summary.md
+metrics.json
+validation.json
+```
+
+必要时：
+
+```text
+figures/
+proposal.md
+```
+
+`summary.md` 至少说明：
+
+- 本轮实际做了什么；
+- 哪些代码/数据/实验被执行；
+- 关键结果；
+- mandatory Gate 状态；
+- 异常和 blocker；
+- 哪些结论可以支持；
+- 哪些结论不能支持；
+- raw evidence 路径。
+
+`validation.json` 必须让 ChatGPT 能直接审计：
+
+- 当前 decision 的每个 mandatory Gate；
+- PASS / FAIL / NA；
+- 关键 metric；
+- threshold；
+- evidence path；
+- anomaly / blocker。
+
+如果你发现一个新的、更好的模型结构或研究方向，只写：
+
+```text
+result/proposal.md
+```
+
+并标记：
+
+```text
+PENDING USER APPROVAL
+```
+
+不得执行该 proposal。
+
+完成当前 `decision.md` 的全部授权任务并交付后立即停止。
+
+不要：
+
+- 自行生成下一轮 `decision.md`；
+- 自行进入下一阶段；
+- 自行宣布论文结论已经确认；
+- 自行启动未授权 full training；
+- 自行启动未授权真机实验。
+
+你的最终任务是：
+
+> **忠实执行科研合同，并生产可供 ChatGPT 独立验收的证据，而不是替用户和 ChatGPT 决定下一步研究方向。**
