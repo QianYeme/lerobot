@@ -1,0 +1,442 @@
+{
+  "train_episodes": [
+    0,
+    2,
+    4,
+    6,
+    7,
+    9,
+    10,
+    13,
+    14,
+    17,
+    18,
+    19,
+    22,
+    23,
+    24,
+    25,
+    26,
+    29,
+    30,
+    32,
+    34,
+    35,
+    36,
+    38,
+    40,
+    42,
+    43,
+    45,
+    48,
+    49,
+    50,
+    51,
+    54,
+    55,
+    56,
+    57
+  ],
+  "dev_episodes": [
+    3,
+    5,
+    12,
+    15,
+    21,
+    28,
+    33,
+    39,
+    41,
+    47,
+    53,
+    58
+  ],
+  "final_test_used": false,
+  "rule": "reach/fine-alignment frames before first sustained gripper closing threshold",
+  "episodes": {
+    "0": {
+      "length": 479,
+      "open_median": 5.931559085845947,
+      "close_threshold": 21.56653938293457,
+      "close_start_frame": 55,
+      "selected_frames": 55,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "2": {
+      "length": 479,
+      "open_median": 3.878326892852783,
+      "close_threshold": 17.802281570434573,
+      "close_start_frame": 44,
+      "selected_frames": 44,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "4": {
+      "length": 479,
+      "open_median": 3.9543726444244385,
+      "close_threshold": 18.646388435363768,
+      "close_start_frame": 52,
+      "selected_frames": 52,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "6": {
+      "length": 479,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 15.923954105377199,
+      "close_start_frame": 22,
+      "selected_frames": 22,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "7": {
+      "length": 479,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 16.22813653945923,
+      "close_start_frame": 28,
+      "selected_frames": 28,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "9": {
+      "length": 479,
+      "open_median": 2.053231954574585,
+      "close_threshold": 17.21672954559326,
+      "close_start_frame": 44,
+      "selected_frames": 44,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "10": {
+      "length": 479,
+      "open_median": 1.1406843662261963,
+      "close_threshold": 16.48669147491455,
+      "close_start_frame": 35,
+      "selected_frames": 35,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "13": {
+      "length": 479,
+      "open_median": 1.2927756309509277,
+      "close_threshold": 18.009125900268554,
+      "close_start_frame": 46,
+      "selected_frames": 46,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "14": {
+      "length": 479,
+      "open_median": 4.866919994354248,
+      "close_threshold": 18.980988693237308,
+      "close_start_frame": 47,
+      "selected_frames": 47,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "17": {
+      "length": 479,
+      "open_median": 2.8897337913513184,
+      "close_threshold": 19.84790916442871,
+      "close_start_frame": 57,
+      "selected_frames": 57,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "18": {
+      "length": 479,
+      "open_median": 1.4448668956756592,
+      "close_threshold": 17.307985496521,
+      "close_start_frame": 38,
+      "selected_frames": 38,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "19": {
+      "length": 479,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 18.950570011138918,
+      "close_start_frame": 34,
+      "selected_frames": 34,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "22": {
+      "length": 479,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 16.62357416152954,
+      "close_start_frame": 54,
+      "selected_frames": 54,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "23": {
+      "length": 479,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 16.212928104400635,
+      "close_start_frame": 46,
+      "selected_frames": 46,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "24": {
+      "length": 479,
+      "open_median": 2.6615970134735107,
+      "close_threshold": 19.885931968688965,
+      "close_start_frame": 52,
+      "selected_frames": 52,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "25": {
+      "length": 479,
+      "open_median": 3.9543726444244385,
+      "close_threshold": 21.902661323547363,
+      "close_start_frame": 47,
+      "selected_frames": 47,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "26": {
+      "length": 479,
+      "open_median": 5.55133056640625,
+      "close_threshold": 19.802281188964844,
+      "close_start_frame": 25,
+      "selected_frames": 25,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "29": {
+      "length": 479,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 19.65019006729126,
+      "close_start_frame": 31,
+      "selected_frames": 31,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "30": {
+      "length": 479,
+      "open_median": 1.0646387338638306,
+      "close_threshold": 12.623573780059814,
+      "close_start_frame": 41,
+      "selected_frames": 41,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "32": {
+      "length": 479,
+      "open_median": 1.2927756309509277,
+      "close_threshold": 12.669201278686524,
+      "close_start_frame": 52,
+      "selected_frames": 52,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "34": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 11.60456304550171,
+      "close_start_frame": 56,
+      "selected_frames": 56,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "35": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 14.935360622406007,
+      "close_start_frame": 42,
+      "selected_frames": 42,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "36": {
+      "length": 479,
+      "open_median": 1.2927756309509277,
+      "close_threshold": 11.13307991027832,
+      "close_start_frame": 36,
+      "selected_frames": 36,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "38": {
+      "length": 479,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 12.45627374649048,
+      "close_start_frame": 42,
+      "selected_frames": 42,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "40": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 13.186312007904053,
+      "close_start_frame": 40,
+      "selected_frames": 40,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "42": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 12.349809932708741,
+      "close_start_frame": 48,
+      "selected_frames": 48,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "43": {
+      "length": 479,
+      "open_median": 1.4448668956756592,
+      "close_threshold": 13.27756633758545,
+      "close_start_frame": 37,
+      "selected_frames": 37,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "45": {
+      "length": 479,
+      "open_median": 1.2927756309509277,
+      "close_threshold": 14.129278182983398,
+      "close_start_frame": 36,
+      "selected_frames": 36,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "48": {
+      "length": 479,
+      "open_median": 1.1406843662261963,
+      "close_threshold": 13.064638710021974,
+      "close_start_frame": 41,
+      "selected_frames": 41,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "49": {
+      "length": 479,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 14.722432804107667,
+      "close_start_frame": 37,
+      "selected_frames": 37,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "50": {
+      "length": 479,
+      "open_median": 1.4448668956756592,
+      "close_threshold": 14.737642478942872,
+      "close_start_frame": 37,
+      "selected_frames": 37,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "51": {
+      "length": 479,
+      "open_median": 1.2927756309509277,
+      "close_threshold": 14.32699546813965,
+      "close_start_frame": 43,
+      "selected_frames": 43,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "54": {
+      "length": 479,
+      "open_median": 1.1406843662261963,
+      "close_threshold": 13.840304756164551,
+      "close_start_frame": 63,
+      "selected_frames": 63,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "55": {
+      "length": 479,
+      "open_median": 1.2927756309509277,
+      "close_threshold": 14.965778732299805,
+      "close_start_frame": 35,
+      "selected_frames": 35,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "56": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 13.85551290512085,
+      "close_start_frame": 26,
+      "selected_frames": 26,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "57": {
+      "length": 478,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 13.61216745376587,
+      "close_start_frame": 32,
+      "selected_frames": 32,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "3": {
+      "length": 479,
+      "open_median": 2.053231954574585,
+      "close_threshold": 16.733080863952637,
+      "close_start_frame": 57,
+      "selected_frames": 57,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "5": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 16.425855922698975,
+      "close_start_frame": 54,
+      "selected_frames": 54,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "12": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 15.872244167327882,
+      "close_start_frame": 56,
+      "selected_frames": 56,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "15": {
+      "length": 479,
+      "open_median": 3.117870807647705,
+      "close_threshold": 17.27756690979004,
+      "close_start_frame": 58,
+      "selected_frames": 58,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "21": {
+      "length": 479,
+      "open_median": 1.749049425125122,
+      "close_threshold": 15.832699012756349,
+      "close_start_frame": 46,
+      "selected_frames": 46,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "28": {
+      "length": 479,
+      "open_median": 3.422053337097168,
+      "close_threshold": 21.049430084228515,
+      "close_start_frame": 27,
+      "selected_frames": 27,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "33": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 13.034220790863039,
+      "close_start_frame": 47,
+      "selected_frames": 47,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "39": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 13.262357234954834,
+      "close_start_frame": 45,
+      "selected_frames": 45,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "41": {
+      "length": 479,
+      "open_median": 1.4448668956756592,
+      "close_threshold": 13.76425838470459,
+      "close_start_frame": 39,
+      "selected_frames": 39,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "47": {
+      "length": 479,
+      "open_median": 1.3688212633132935,
+      "close_threshold": 15.726235294342041,
+      "close_start_frame": 46,
+      "selected_frames": 46,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "53": {
+      "length": 479,
+      "open_median": 1.216729998588562,
+      "close_threshold": 14.463877773284914,
+      "close_start_frame": 37,
+      "selected_frames": 37,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    },
+    "58": {
+      "length": 479,
+      "open_median": 2.2813687324523926,
+      "close_threshold": 15.482889175415039,
+      "close_start_frame": 44,
+      "selected_frames": 44,
+      "rule": "frames before first 5-frame sustained gripper closing threshold"
+    }
+  }
+}

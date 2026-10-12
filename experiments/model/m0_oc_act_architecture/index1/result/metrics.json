@@ -1,0 +1,94 @@
+{
+  "shapes": {
+    "top_rgb": [
+      1,
+      3,
+      480,
+      640
+    ],
+    "dino_patches": [
+      1,
+      256,
+      384
+    ],
+    "similarity_map": [
+      1,
+      16,
+      16
+    ],
+    "object_tokens": [
+      1,
+      5,
+      387
+    ],
+    "adapter_output": [
+      1,
+      5,
+      128
+    ],
+    "cross_attention_output": [
+      602,
+      1,
+      128
+    ],
+    "act_encoder_input": [
+      602,
+      1,
+      128
+    ],
+    "state": [
+      1,
+      8
+    ],
+    "action_chunk": [
+      1,
+      4,
+      6
+    ]
+  },
+  "gradient_norms": {
+    "dino": 0.0,
+    "adapter": 0.26707926392555237,
+    "cross_attention": 0.3321900963783264,
+    "gate": 0.020638063549995422,
+    "act_action_head": 4.406457901000977
+  },
+  "dino_grad_is_none": true,
+  "gate_zero_equivalence_max_abs": 0.0,
+  "object_path_sensitivity": {
+    "zero_max_abs": 0.10335855185985565,
+    "shuffle_max_abs": 0.018111586570739746,
+    "spatial_shift_max_abs": 0.0012198686599731445
+  },
+  "checkpoint_roundtrip_max_abs": 0.0,
+  "baseline_checkpoint_roundtrip_max_abs": 0.0,
+  "baseline_loss_smoke": {
+    "total": 48.10564422607422,
+    "l1_loss": 48.10564422607422
+  },
+  "loss_smoke": {
+    "total": 48.10997009277344,
+    "l1_loss": 48.10997009277344
+  },
+  "resources": {
+    "act": {
+      "total": 11900870,
+      "trainable": 11900870,
+      "frozen": 0,
+      "parameter_bytes": 47603480,
+      "forward_latency_ms_batch1": 23.809479999999894,
+      "peak_vram_bytes": 561442304,
+      "checkpoint_size_bytes": 47698722
+    },
+    "oc_act": {
+      "total": 34090567,
+      "trainable": 12033991,
+      "frozen": 22056576,
+      "parameter_bytes": 136362268,
+      "forward_latency_ms_batch1": 22.502600000007078,
+      "peak_vram_bytes": 561442304,
+      "checkpoint_size_bytes": 136487761
+    }
+  },
+  "prototype_provenance": "NOT_FOR_FORMAL_TRAINING: deterministic M0 engineering smoke only"
+}

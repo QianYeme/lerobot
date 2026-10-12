@@ -1,0 +1,7 @@
+{
+  "dev_only": true,
+  "episodes_frozen": true,
+  "candidate": "R2_ACTION_LEVEL",
+  "final_test_used": false,
+  "real_robot_used": false
+}

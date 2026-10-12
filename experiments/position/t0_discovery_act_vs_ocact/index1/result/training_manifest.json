@@ -1,0 +1,15 @@
+{
+  "experiment": "T0_POSITION_DISCOVERY_ACT_VS_OCACT",
+  "seed": 1,
+  "train_episodes": [0, 2, 4, 6, 7, 9, 10, 13, 14, 17, 18, 19, 22, 23, 24, 25, 26, 29, 30, 32, 34, 35, 36, 38, 40, 42, 43, 45, 48, 49, 50, 51, 54, 55, 56, 57],
+  "dev_episodes": [3, 5, 12, 15, 21, 28, 33, 39, 41, 47, 53, 58],
+  "final_test_episodes": [1, 8, 11, 16, 20, 27, 31, 37, 44, 46, 52, 59],
+  "checkpoint_selection_rule": "best dev inference_l1 at fixed checkpoints; same rule for B0/P1",
+  "batch_size": 4,
+  "steps": 100000,
+  "chunk_size": 100,
+  "n_action_steps": 1,
+  "temperature": 0.2,
+  "prototype_sha256": "114de07e6cf6c0a2eba7fbede910212e0be6b0740751ab42855780c63b5fb876",
+  "final_test_used": false
+}

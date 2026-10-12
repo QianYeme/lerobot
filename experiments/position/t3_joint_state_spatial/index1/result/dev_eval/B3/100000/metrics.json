@@ -1,0 +1,45 @@
+{
+  "experiment": "T3_JOINT_STATE_SPATIAL_CONDITIONING",
+  "checkpoint": "/root/autodl-tmp/lerobot/results/experiments/T3_JOINT_STATE_SPATIAL_CONDITIONING/T3_B3_s1/checkpoints/100000/pretrained_model",
+  "model": "B3",
+  "episodes": [
+    3,
+    5,
+    12,
+    15,
+    21,
+    28,
+    33,
+    39,
+    41,
+    47,
+    53,
+    58
+  ],
+  "frames": 5748,
+  "device": "cuda:0",
+  "joint_path": false,
+  "metrics": {
+    "J0_normal": {
+      "all": 0.08546638481251548,
+      "h0_all": 0.08546638481251548,
+      "arm": 0.09052987741636956,
+      "gripper": 0.060148913749651145,
+      "per_action_dim": [
+        0.17576377093791962,
+        0.06478674709796906,
+        0.07913334667682648,
+        0.0647224634885788,
+        0.06786422431468964,
+        0.060140129178762436
+      ],
+      "position_stratified": {
+        "left": 0.0,
+        "middle": 0.0,
+        "right": 0.0
+      }
+    }
+  },
+  "final_test_used": false,
+  "real_robot_used": false
+}

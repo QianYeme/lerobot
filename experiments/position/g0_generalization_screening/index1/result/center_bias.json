@@ -1,0 +1,83 @@
+{
+  "B0_ACT": {
+    "first_action_left_right_l2": 0.7801266671843554,
+    "first_action_within_position_variance": 6.178994496663411,
+    "left_right_separation_over_within_std": 0.3138385000712704,
+    "edge_arm_l1": 0.17037090406511382,
+    "non_edge_arm_l1": 0.16224706468434422,
+    "edge_minus_non_edge_arm_l1": 0.008123839380769604,
+    "risk_rule": "diagnostic only; no hard threshold"
+  },
+  "P1_OCACT": {
+    "first_action_left_right_l2": 0.8308034895583412,
+    "first_action_within_position_variance": 6.218108495076497,
+    "left_right_separation_over_within_std": 0.33317251277431725,
+    "edge_arm_l1": 0.0868277014054944,
+    "non_edge_arm_l1": 0.08907351115421654,
+    "edge_minus_non_edge_arm_l1": -0.0022458097487221412,
+    "risk_rule": "diagnostic only; no hard threshold"
+  },
+  "B2_ACT": {
+    "first_action_left_right_l2": 0.8461816370431072,
+    "first_action_within_position_variance": 6.288502852121989,
+    "left_right_separation_over_within_std": 0.3374348742584016,
+    "edge_arm_l1": 0.09107273191579138,
+    "non_edge_arm_l1": 0.09387224624691713,
+    "edge_minus_non_edge_arm_l1": -0.0027995143311257548,
+    "risk_rule": "diagnostic only; no hard threshold"
+  },
+  "P3_FIXED_SPATIAL": {
+    "first_action_left_right_l2": 0.839783951952345,
+    "first_action_within_position_variance": 6.443930149078369,
+    "left_right_separation_over_within_std": 0.3308203060411948,
+    "edge_arm_l1": 0.09833352681749714,
+    "non_edge_arm_l1": 0.1020142616091866,
+    "edge_minus_non_edge_arm_l1": -0.003680734791689455,
+    "risk_rule": "diagnostic only; no hard threshold"
+  },
+  "B3_ACT": {
+    "first_action_left_right_l2": 0.8261805879558144,
+    "first_action_within_position_variance": 6.2307132085164385,
+    "left_right_separation_over_within_std": 0.3309833182724886,
+    "edge_arm_l1": 0.0877048197288582,
+    "non_edge_arm_l1": 0.09147302655736902,
+    "edge_minus_non_edge_arm_l1": -0.0037682068285108256,
+    "risk_rule": "diagnostic only; no hard threshold"
+  },
+  "P4_JOINT_SPATIAL": {
+    "first_action_left_right_l2": 0.7704809091780903,
+    "first_action_within_position_variance": 6.1275966962178545,
+    "left_right_separation_over_within_std": 0.3112553289542855,
+    "edge_arm_l1": 0.12368797812489021,
+    "non_edge_arm_l1": 0.13089523243298096,
+    "edge_minus_non_edge_arm_l1": -0.007207254308090744,
+    "risk_rule": "diagnostic only; no hard threshold"
+  },
+  "R1_RELATIONAL": {
+    "first_action_left_right_l2": 0.6972671387368494,
+    "first_action_within_position_variance": 5.567667802174886,
+    "left_right_separation_over_within_std": 0.295503439696634,
+    "edge_arm_l1": 0.14475491161930662,
+    "non_edge_arm_l1": 0.1483096124951511,
+    "edge_minus_non_edge_arm_l1": -0.0035547008758444743,
+    "risk_rule": "diagnostic only; no hard threshold"
+  },
+  "R2_ACTION_LEVEL": {
+    "first_action_left_right_l2": 0.7951177492827551,
+    "first_action_within_position_variance": 6.124154408772786,
+    "left_right_separation_over_within_std": 0.32129826635826475,
+    "edge_arm_l1": 0.14716373378165953,
+    "non_edge_arm_l1": 0.13049702582104428,
+    "edge_minus_non_edge_arm_l1": 0.016666707960615257,
+    "risk_rule": "diagnostic only; no hard threshold"
+  },
+  "R3_FILM": {
+    "first_action_left_right_l2": 0.8693027257341104,
+    "first_action_within_position_variance": 6.285892168680827,
+    "left_right_separation_over_within_std": 0.3467269330233316,
+    "edge_arm_l1": 0.13765063762752935,
+    "non_edge_arm_l1": 0.1280046628785521,
+    "edge_minus_non_edge_arm_l1": 0.009645974748977243,
+    "risk_rule": "diagnostic only; no hard threshold"
+  }
+}

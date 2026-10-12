@@ -1,0 +1,8 @@
+{
+  "dev_only": true,
+  "episodes_frozen": true,
+  "checkpoint": "results/experiments/T1_OCACT_EXPLICIT_SPATIAL_CONDITIONING/T1_B1_s1/checkpoints/100000/pretrained_model",
+  "p2_explicit_path": false,
+  "dino_frozen": true,
+  "tau": 0.2
+}

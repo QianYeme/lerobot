@@ -1,0 +1,6 @@
+{
+  "source": "H0 dev_mapping_validation.json",
+  "dev_pairs": 2,
+  "usable_for_gate": false,
+  "limitation": "G0 does not claim matched-state causal identification from two pairs."
+}

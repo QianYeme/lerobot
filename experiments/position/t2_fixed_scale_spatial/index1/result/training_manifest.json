@@ -1,0 +1,47 @@
+{
+  "experiment": "T2_FIXED_SCALE_SPATIAL_CONDITIONING",
+  "status": "preflight_passed",
+  "seed": 1,
+  "dataset": "formal4/kind_merged_nomaster",
+  "train_episodes": [0, 2, 4, 6, 7, 9, 10, 13, 14, 17, 18, 19, 22, 23, 24, 25, 26, 29, 30, 32, 34, 35, 36, 38, 40, 42, 43, 45, 48, 49, 50, 51, 54, 55, 56, 57],
+  "dev_episodes": [3, 5, 12, 15, 21, 28, 33, 39, 41, 47, 53, 58],
+  "forbidden_final_test_episodes": [1, 8, 11, 16, 20, 27, 31, 37, 44, 46, 52, 59],
+  "models": {
+    "B2": {
+      "explicit_spatial_conditioning": false,
+      "fixed_scale": null
+    },
+    "P3": {
+      "explicit_spatial_conditioning": true,
+      "fixed_scale": 0.5,
+      "spatial_features": ["x", "y", "confidence"],
+      "detach_detector": true
+    }
+  },
+  "frozen": [
+    "dataset split and preprocessing",
+    "OC-ACT prototype/object path",
+    "SpatialMLP, fusion point, transformer and optimizer settings",
+    "no auxiliary loss",
+    "no final-test or real-robot evaluation"
+  ],
+  "smoke": {
+    "status": "passed",
+    "steps": 2,
+    "models": ["B2", "P3"],
+    "notes": "Both runs used real Formal4 frames, finite loss, and checkpoint save. P3 has a non-trainable fixed residual scale."
+  },
+  "training": {
+    "steps": 100000,
+    "checkpoint_frequency": 10000,
+    "batch_size": 4,
+    "chunk_size": 100,
+    "n_action_steps": 1
+  },
+  "evaluation": {
+    "checkpoint": "100000",
+    "dev_only": true,
+    "required_counterfactuals": ["normal", "zero", "xy_shuffle", "x_flip", "y_flip"],
+    "directional_consistency_threshold": 0.7
+  }
+}

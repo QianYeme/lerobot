@@ -1,0 +1,10 @@
+{
+  "dev_only": true,
+  "episodes_frozen": true,
+  "checkpoint": "/root/autodl-tmp/lerobot/results/experiments/T3_JOINT_STATE_SPATIAL_CONDITIONING/T3_B3_s1/checkpoints/100000/pretrained_model",
+  "joint_path": false,
+  "dino_frozen": true,
+  "tau": 0.2,
+  "final_test_used": false,
+  "real_robot_used": false
+}

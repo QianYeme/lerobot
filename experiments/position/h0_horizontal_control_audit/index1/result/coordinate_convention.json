@@ -1,0 +1,7 @@
+{
+  "image_x": "pixel column increasing right",
+  "target_x": "P0.1 x_global; increasing image-coordinate direction",
+  "robot_horizontal_sign": "not independently calibrated; empirical Method-B projection sign is frozen from Train",
+  "fk_jacobian": "unavailable in project; Method B ridge projection used",
+  "final_test_used": false
+}

@@ -1,0 +1,4 @@
+{
+  "status": "not_run",
+  "reason": "T0.1 required D0-D9 first; pair construction requires a separate matched-frame pass and was not used to select action dimensions."
+}

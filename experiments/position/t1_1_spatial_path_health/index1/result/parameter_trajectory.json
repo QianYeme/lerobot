@@ -1,0 +1,11 @@
+{
+  "status": "NOT_RECORDED",
+  "available_checkpoints": [
+    100000
+  ],
+  "beta": {
+    "100000": 0.0031806775368750095
+  },
+  "component_gradient_history": "NOT_RECORDED",
+  "checkpoint_parameter_norms": "not extracted for missing intermediate checkpoints"
+}

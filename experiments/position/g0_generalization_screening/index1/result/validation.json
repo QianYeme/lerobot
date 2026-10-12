@@ -1,0 +1,23 @@
+{
+  "experiment": "G0_POSITION_GENERALIZATION_SCREENING",
+  "dev_episodes": [
+    3,
+    5,
+    12,
+    15,
+    21,
+    28,
+    33,
+    39,
+    41,
+    47,
+    53,
+    58
+  ],
+  "final_test_used": false,
+  "policy_retraining": false,
+  "architecture_change": false,
+  "real_robot_used": false,
+  "device": "cuda",
+  "status": "complete"
+}

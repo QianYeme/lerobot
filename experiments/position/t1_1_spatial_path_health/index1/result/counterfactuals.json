@@ -1,0 +1,18 @@
+{
+  "x_flip": {
+    "mean_abs_delta": 0.0015928886132314801,
+    "mean_abs_arm_delta": 0.0016167189460247755
+  },
+  "y_flip": {
+    "mean_abs_delta": 0.004188903607428074,
+    "mean_abs_arm_delta": 0.0032211102079600096
+  },
+  "xy_shuffle": {
+    "mean_abs_delta": 0.00041495580808259547,
+    "mean_abs_arm_delta": 0.00027091518859378994
+  },
+  "zero": {
+    "mean_abs_delta": 0.004652367439121008,
+    "mean_abs_arm_delta": 0.0041213976219296455
+  }
+}

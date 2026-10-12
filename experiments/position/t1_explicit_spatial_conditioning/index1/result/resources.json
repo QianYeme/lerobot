@@ -1,0 +1,9 @@
+{
+  "final_test_used": false,
+  "real_robot_used": false,
+  "offline_eval_hook": "fixed Dev evaluation after training",
+  "models_evaluated": [
+    "B1",
+    "P2"
+  ]
+}

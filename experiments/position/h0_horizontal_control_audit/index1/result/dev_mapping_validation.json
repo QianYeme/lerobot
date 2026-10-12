@@ -1,0 +1,28 @@
+{
+  "mapping_horizon": 1,
+  "train_pairs": {
+    "n": 33,
+    "n_nonzero": 33,
+    "sign_accuracy": 0.7878787878787878,
+    "pearson": 0.6667495204703892,
+    "spearman": 0.5711898395721925,
+    "mean_abs_pred": 0.0060983580281254975,
+    "sign_bootstrap_ci": [
+      0.6666666666666666,
+      0.9090909090909091
+    ]
+  },
+  "dev_pairs": {
+    "n": 2,
+    "n_nonzero": 2,
+    "sign_accuracy": 0.0,
+    "pearson": 0.0,
+    "spearman": 0.0,
+    "mean_abs_pred": 0.0059513623114658964,
+    "sign_bootstrap_ci": [
+      null,
+      null
+    ]
+  },
+  "gate": "mapping is diagnostic; no model selection performed"
+}

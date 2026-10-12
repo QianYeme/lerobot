@@ -1,0 +1,13 @@
+{
+  "dev_only": true,
+  "episodes_frozen": true,
+  "checkpoint": "/root/autodl-tmp/lerobot/results/experiments/T2_FIXED_SCALE_SPATIAL_CONDITIONING/T2_P3_s1/checkpoints/100000/pretrained_model",
+  "p2_explicit_path": true,
+  "dino_frozen": true,
+  "tau": 0.2,
+  "experiment": "T2_FIXED_SCALE_SPATIAL_CONDITIONING",
+  "model": "P3",
+  "fixed_scale": 0.5,
+  "final_test_used": false,
+  "real_robot_used": false
+}

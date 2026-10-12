@@ -1,0 +1,12 @@
+{
+  "diagnosis_ready": true,
+  "primary_class": "SCALE_STARVATION",
+  "secondary_classes": [
+    "OPTIMIZATION_REJECTION"
+  ],
+  "final_test_used": false,
+  "real_robot_used": false,
+  "retraining": false,
+  "architecture_changed": false,
+  "hook_captured": true
+}

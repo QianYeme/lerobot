@@ -1,0 +1,20 @@
+{
+  "checkpoint_frozen": true,
+  "episodes_frozen": true,
+  "final_test_used": false,
+  "training_run": false,
+  "real_robot_used": false,
+  "token_variants": [
+    "whole",
+    "local_only",
+    "global_only"
+  ],
+  "pair_counts": {
+    "horizontal": 20,
+    "longitudinal": 20,
+    "same_position": 20,
+    "random_unmatched": 20
+  },
+  "confidence_min": 0.2,
+  "phase_rule": "time_fraction <= 0.75; no phase labels available"
+}

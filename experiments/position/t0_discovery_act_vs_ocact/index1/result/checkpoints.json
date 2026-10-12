@@ -1,0 +1,6 @@
+{
+  "selection_rule": "minimum inference_l1 on the fixed 12-episode Dev split",
+  "B0": {"checkpoint": "results/experiments/T0_POSITION_DISCOVERY_ACT_VS_OCACT/B0_s1/checkpoints/040000/pretrained_model"},
+  "P1": {"checkpoint": "results/experiments/T0_POSITION_DISCOVERY_ACT_VS_OCACT/P1_ocfix2_s1/checkpoints/100000/pretrained_model"},
+  "invalid_experiment_excluded": "P1_s1 first run omitted the OC-ACT module on the remote worker and is not used."
+}

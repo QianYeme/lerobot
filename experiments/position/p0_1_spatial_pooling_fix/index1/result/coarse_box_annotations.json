@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "coordinate_system": "original 640x480 top RGB, xyxy inclusive",
+  "formal_annotation_requires_overlay_review": true,
+  "learned_detector_used": false,
+  "sam_used": false,
+  "annotations": [
+    {
+      "episode_index": 0,
+      "frame_index": 15,
+      "subset": "reference",
+      "stratum": "visual_r0_c0",
+      "image_path": "selected_frames/reference_ep000_frame015.png",
+      "coarse_box_xyxy": [
+        330,
+        300,
+        422,
+        392
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 6,
+      "frame_index": 15,
+      "subset": "reference",
+      "stratum": "visual_r0_c1",
+      "image_path": "selected_frames/reference_ep006_frame015.png",
+      "coarse_box_xyxy": [
+        321,
+        293,
+        417,
+        390
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 10,
+      "frame_index": 15,
+      "subset": "reference",
+      "stratum": "visual_r0_c2",
+      "image_path": "selected_frames/reference_ep010_frame015.png",
+      "coarse_box_xyxy": [
+        296,
+        294,
+        398,
+        396
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 17,
+      "frame_index": 15,
+      "subset": "reference",
+      "stratum": "visual_r0_c3",
+      "image_path": "selected_frames/reference_ep017_frame015.png",
+      "coarse_box_xyxy": [
+        287,
+        288,
+        384,
+        385
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 22,
+      "frame_index": 15,
+      "subset": "reference",
+      "stratum": "visual_r1_c0",
+      "image_path": "selected_frames/reference_ep022_frame015.png",
+      "coarse_box_xyxy": [
+        318,
+        272,
+        420,
+        375
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 35,
+      "frame_index": 15,
+      "subset": "reference",
+      "stratum": "visual_r1_c3",
+      "image_path": "selected_frames/reference_ep035_frame015.png",
+      "coarse_box_xyxy": [
+        281,
+        281,
+        373,
+        373
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 40,
+      "frame_index": 15,
+      "subset": "reference",
+      "stratum": "visual_r2_c0",
+      "image_path": "selected_frames/reference_ep040_frame015.png",
+      "coarse_box_xyxy": [
+        322,
+        271,
+        414,
+        363
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 55,
+      "frame_index": 15,
+      "subset": "reference",
+      "stratum": "visual_r2_c3",
+      "image_path": "selected_frames/reference_ep055_frame015.png",
+      "coarse_box_xyxy": [
+        285,
+        264,
+        388,
+        368
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 2,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r0_c0",
+      "image_path": "selected_frames/calibration_check_ep002_frame015.png",
+      "coarse_box_xyxy": [
+        330,
+        301,
+        422,
+        393
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 7,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r0_c1",
+      "image_path": "selected_frames/calibration_check_ep007_frame015.png",
+      "coarse_box_xyxy": [
+        323,
+        299,
+        415,
+        391
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 13,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r0_c2",
+      "image_path": "selected_frames/calibration_check_ep013_frame015.png",
+      "coarse_box_xyxy": [
+        290,
+        285,
+        390,
+        385
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 18,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r0_c3",
+      "image_path": "selected_frames/calibration_check_ep018_frame015.png",
+      "coarse_box_xyxy": [
+        284,
+        295,
+        377,
+        388
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 23,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r1_c0",
+      "image_path": "selected_frames/calibration_check_ep023_frame015.png",
+      "coarse_box_xyxy": [
+        325,
+        277,
+        420,
+        372
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 25,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r1_c1",
+      "image_path": "selected_frames/calibration_check_ep025_frame015.png",
+      "coarse_box_xyxy": [
+        311,
+        286,
+        403,
+        378
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 30,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r1_c2",
+      "image_path": "selected_frames/calibration_check_ep030_frame015.png",
+      "coarse_box_xyxy": [
+        291,
+        279,
+        384,
+        372
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 36,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r1_c3",
+      "image_path": "selected_frames/calibration_check_ep036_frame015.png",
+      "coarse_box_xyxy": [
+        286,
+        276,
+        382,
+        373
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 42,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r2_c0",
+      "image_path": "selected_frames/calibration_check_ep042_frame015.png",
+      "coarse_box_xyxy": [
+        322,
+        265,
+        419,
+        362
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 45,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r2_c1",
+      "image_path": "selected_frames/calibration_check_ep045_frame015.png",
+      "coarse_box_xyxy": [
+        303,
+        268,
+        395,
+        360
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 50,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r2_c2",
+      "image_path": "selected_frames/calibration_check_ep050_frame015.png",
+      "coarse_box_xyxy": [
+        293,
+        274,
+        385,
+        366
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    },
+    {
+      "episode_index": 56,
+      "frame_index": 15,
+      "subset": "calibration_check",
+      "stratum": "visual_r2_c3",
+      "image_path": "selected_frames/calibration_check_ep056_frame015.png",
+      "coarse_box_xyxy": [
+        276,
+        264,
+        376,
+        364
+      ],
+      "annotation_semantics": "visible cup including rim, water region, wall edges, and base",
+      "draft_method": "OpenCV Hough circle geometry; no learned detector",
+      "review_status": "VISUALLY_REVIEWED_PASS_2026-10-11"
+    }
+  ]
+}

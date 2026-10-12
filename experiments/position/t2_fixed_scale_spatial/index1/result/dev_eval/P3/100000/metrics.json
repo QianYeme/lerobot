@@ -1,0 +1,67 @@
+{
+  "checkpoint": "/root/autodl-tmp/lerobot/results/experiments/T2_FIXED_SCALE_SPATIAL_CONDITIONING/T2_P3_s1/checkpoints/100000/pretrained_model",
+  "model": "P3",
+  "episodes": [
+    3,
+    5,
+    12,
+    15,
+    21,
+    28,
+    33,
+    39,
+    41,
+    47,
+    53,
+    58
+  ],
+  "frames": 5748,
+  "device": "cuda:0",
+  "metrics": {
+    "S0_normal": {
+      "all": 0.09712769227230723,
+      "h0_all": 0.09712769227230723,
+      "arm": 0.10109457369730468,
+      "h0_arm": 0.10109457369730468,
+      "gripper": 0.0772932803824741,
+      "h0_gripper": 0.0772932803824741
+    },
+    "S1_zero": {
+      "all": 0.09999582106370683,
+      "h0_all": 0.09999582106370683,
+      "arm": 0.10329695782451141,
+      "h0_arm": 0.10329695782451141,
+      "gripper": 0.08349012936320915,
+      "h0_gripper": 0.08349012936320915
+    },
+    "S2_shuffle": {
+      "all": 0.0971251966959292,
+      "h0_all": 0.0971251966959292,
+      "arm": 0.1010937175830786,
+      "h0_arm": 0.1010937175830786,
+      "gripper": 0.0772825828652956,
+      "h0_gripper": 0.0772825828652956
+    },
+    "S3_x_only": {
+      "all": 0.09712565259939279,
+      "h0_all": 0.09712565259939279,
+      "arm": 0.10109297644733221,
+      "h0_arm": 0.10109297644733221,
+      "gripper": 0.07728902648981445,
+      "h0_gripper": 0.07728902648981445
+    },
+    "S4_y_only": {
+      "all": 0.09712832915436583,
+      "h0_all": 0.09712832915436583,
+      "arm": 0.10109645221317569,
+      "h0_arm": 0.10109645221317569,
+      "gripper": 0.07728770798073516,
+      "h0_gripper": 0.07728770798073516
+    }
+  },
+  "final_test_used": false,
+  "real_robot_used": false,
+  "experiment": "T2_FIXED_SCALE_SPATIAL_CONDITIONING",
+  "fixed_scale": 0.5,
+  "t1_evaluator_compat": true
+}

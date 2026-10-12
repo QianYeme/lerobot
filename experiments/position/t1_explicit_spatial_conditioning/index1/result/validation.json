@@ -1,0 +1,11 @@
+{
+  "dev_only": true,
+  "final_test_used": false,
+  "real_robot_used": false,
+  "models": [
+    "B1",
+    "P2"
+  ],
+  "checkpoint_selection": "lowest Dev S0 all L1",
+  "status": "FAIL_EXPLICIT_PATH_NOT_USED"
+}

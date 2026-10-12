@@ -1,0 +1,32 @@
+{
+  "checkpoint": "results/experiments/T1_OCACT_EXPLICIT_SPATIAL_CONDITIONING/T1_B1_s1/checkpoints/100000/pretrained_model",
+  "model": "B1",
+  "episodes": [
+    3,
+    5,
+    12,
+    15,
+    21,
+    28,
+    33,
+    39,
+    41,
+    47,
+    53,
+    58
+  ],
+  "frames": 5748,
+  "device": "cuda:0",
+  "metrics": {
+    "S0_normal": {
+      "all": 0.13208907738162065,
+      "h0_all": 0.13208907738162065,
+      "arm": 0.13054075301803061,
+      "h0_arm": 0.13054075301803061,
+      "gripper": 0.13983068619345987,
+      "h0_gripper": 0.13983068619345987
+    }
+  },
+  "final_test_used": false,
+  "real_robot_used": false
+}

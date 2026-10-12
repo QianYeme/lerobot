@@ -1,0 +1,22 @@
+{
+  "experiment": "T1_OCACT_EXPLICIT_SPATIAL_CONDITIONING",
+  "seed": 1,
+  "dataset": "formal4/kind_merged_nomaster",
+  "train_episodes": [0, 2, 4, 6, 7, 9, 10, 13, 14, 17, 18, 19, 22, 23, 24, 25, 26, 29, 30, 32, 34, 35, 36, 38, 40, 42, 43, 45, 48, 49, 50, 51, 54, 55, 56, 57],
+  "dev_episodes": [3, 5, 12, 15, 21, 28, 33, 39, 41, 47, 53, 58],
+  "final_test_episodes": [1, 8, 11, 16, 20, 27, 31, 37, 44, 46, 52, 59],
+  "normalization": "D1 train-only train_normalization_v1.json",
+  "batch_size": 4,
+  "steps": 100000,
+  "checkpoint_every": 10000,
+  "offline_dev_evaluation": "after checkpoints; framework eval_freq has no offline Dev hook",
+  "chunk_size": 100,
+  "n_action_steps": 1,
+  "models": {
+    "B1": "frozen OC-ACT architecture; explicit_spatial_conditioning=false",
+    "P2": "B1 + [x_global,y_global,confidence] -> SpatialMLP(3,128) -> beta state-token residual; beta_init=0.01"
+  },
+  "frozen_components": ["DINOv2-S", "4 prototypes", "tau=0.20", "5 object tokens", "object cross-attention", "object gate", "ACT backbone"],
+  "final_test_used": false,
+  "real_robot_used": false
+}

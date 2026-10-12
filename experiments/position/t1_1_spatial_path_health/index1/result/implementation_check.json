@@ -1,0 +1,9 @@
+{
+  "fusion_hook_captured": true,
+  "formula": "state_proj + beta * SpatialMLP([x,y,confidence])",
+  "pre_object_conditioning_fusion_max_abs_error": 0.0,
+  "dino_frozen": true,
+  "beta_checkpoint": 0.0031806775368750095,
+  "checkpoint": "100000",
+  "post_layernorm_effect": "NOT_DIRECTLY_CAPTURED; ACT encoder layer applies internal pre/post norms"
+}

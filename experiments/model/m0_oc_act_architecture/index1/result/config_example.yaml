@@ -1,0 +1,19 @@
+# Architecture example only. The prototype path is intentionally unresolved until P0 calibration.
+policy:
+  type: act
+  model_type: oc_act
+  object_conditioning_enabled: true
+  object_conditioning_top_camera_key: observation.images.top
+  object_conditioning_dino_model: dinov2_vits14
+  object_conditioning_dino_frozen: true
+  object_conditioning_prototype_path: /ABSOLUTE/P0/train_only_cup_prototypes.pt
+  object_conditioning_num_prototypes: 4
+  object_conditioning_num_object_tokens: 5
+  object_conditioning_adapter_dim: 256
+  object_conditioning_gate_init: 0.0
+  object_conditioning_smoke_mode: false
+
+# Formal4 contracts inherited unchanged from D1:
+# observation.state = 8D NOMASTER
+# action = 6D
+# cameras = observation.images.top + observation.images.gripper

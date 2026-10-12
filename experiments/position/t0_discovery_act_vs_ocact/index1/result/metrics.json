@@ -1,0 +1,19 @@
+{
+  "dataset": "formal4/kind_merged_nomaster",
+  "dev_episodes": [3, 5, 12, 15, 21, 28, 33, 39, 41, 47, 53, 58],
+  "inference_l1": {
+    "B0": {"020000": 0.2622651453, "040000": 0.2413360925, "060000": 0.2644486890, "080000": 0.2683906426, "100000": 0.2585838041},
+    "P1_OCFIX": {"020000": 0.2560756047, "040000": 0.2351768015, "060000": 0.2318943600, "080000": 0.2405155313, "100000": 0.2306870104}
+  },
+  "best_dev": {
+    "B0": {"checkpoint": "040000", "inference_l1": 0.2413360925},
+    "P1_OCFIX": {"checkpoint": "100000", "inference_l1": 0.2306870104}
+  },
+  "p1_relative_improvement_vs_b0": 0.0443,
+  "training_health": {
+    "B0": {"steps": 100000, "exit_code": 0, "nan_inf_oom": false},
+    "P1_OCFIX": {"steps": 100000, "exit_code": 0, "final_loss": 0.076, "nan_inf_oom": false}
+  },
+  "final_test_used": false,
+  "real_robot_used": false
+}

@@ -1,0 +1,33 @@
+{
+  "experiment": "P0_CUP_PROTOTYPE_CALIBRATION",
+  "status": "FAIL",
+  "formal_training_eligible": false,
+  "dataset_scope": "formal4/kind_merged_nomaster",
+  "split_scope": {
+    "reference_episodes": [0, 6, 10, 17, 22, 35, 40, 55],
+    "check_episodes": [2, 7, 13, 18, 23, 25, 30, 36, 42, 45, 50, 56],
+    "dev_used": false,
+    "final_test_used": false
+  },
+  "gates": {
+    "provenance_complete": "PASS",
+    "train_only_scope": "PASS",
+    "frozen_dinov2_and_patch_extraction": "PASS",
+    "peak_in_cup_region": "PASS",
+    "corner_shortcut_proxy": "PASS",
+    "object_token_finite_and_stable": "PASS",
+    "soft_center_follows_cup": "FAIL",
+    "overall": "FAIL"
+  },
+  "evidence": {
+    "selected_prototype_count": 4,
+    "check_count": 12,
+    "peak_in_box_rate": 1.0,
+    "soft_center_error_pixels_median": 78.27748695691793,
+    "soft_center_error_pixels_p90": 97.77171633724959,
+    "inside_outside_mean_ratio_mean": 2.786341778537652,
+    "cup_beats_corner_rate": 1.0,
+    "inside_softmax_mass_mean": 0.05076034336040417
+  },
+  "failure_reason": "Untempered global softmax pooling is diffuse: the similarity peak is spatially correct, but the soft center remains near a fixed image-center location and does not track cup motion."
+}

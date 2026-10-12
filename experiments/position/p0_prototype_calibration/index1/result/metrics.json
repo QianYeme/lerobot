@@ -1,0 +1,1813 @@
+{
+  "device": "cuda",
+  "candidate_patch_count": 48,
+  "candidate_comparison": {
+    "1": {
+      "prototype_count": 1,
+      "medoid_indices": [
+        11
+      ],
+      "reference": {
+        "count": 8,
+        "soft_center_error_pixels_median": 84.82874378326488,
+        "soft_center_error_pixels_p90": 101.36540196669559,
+        "peak_in_box_rate": 1.0,
+        "peak_in_box_or_one_patch_rate": 1.0,
+        "inside_outside_mean_ratio_mean": 4.211223937958858,
+        "inside_softmax_mass_mean": 0.05872157821431756,
+        "cup_beats_corner_rate": 1.0
+      },
+      "calibration_check": {
+        "count": 12,
+        "soft_center_error_pixels_median": 81.28441236349215,
+        "soft_center_error_pixels_p90": 101.09612313094632,
+        "peak_in_box_rate": 1.0,
+        "peak_in_box_or_one_patch_rate": 1.0,
+        "inside_outside_mean_ratio_mean": 4.267626235502888,
+        "inside_softmax_mass_mean": 0.055358122723797955,
+        "cup_beats_corner_rate": 1.0
+      },
+      "per_frame": [
+        {
+          "soft_center_xy_pixels": [
+            326.0570067167282,
+            251.59698486328125
+          ],
+          "target_center_xy_pixels": [
+            376.0,
+            346.0
+          ],
+          "soft_center_error_pixels": 106.79996182113774,
+          "soft_center_error_normalized_diagonal": 0.13349995227642217,
+          "inside_mean_similarity": 0.8020007014274597,
+          "outside_mean_similarity": 0.18656215071678162,
+          "inside_outside_mean_ratio": 4.298839278739716,
+          "inside_softmax_mass": 0.0631064921617508,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.320268452167511,
+          "cup_max_similarity": 0.9458024501800537,
+          "selected_patch_count": 5,
+          "episode_index": 0,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.0530686378479,
+            252.26015031337738
+          ],
+          "target_center_xy_pixels": [
+            368.99999999999994,
+            341.5
+          ],
+          "soft_center_error_pixels": 99.03630488622038,
+          "soft_center_error_normalized_diagonal": 0.12379538110777548,
+          "inside_mean_similarity": 0.8792785406112671,
+          "outside_mean_similarity": 0.21244847774505615,
+          "inside_outside_mean_ratio": 4.138784847714582,
+          "inside_softmax_mass": 0.044272538274526596,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.22513550519943237,
+          "cup_max_similarity": 0.9383127093315125,
+          "selected_patch_count": 6,
+          "episode_index": 6,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.1434302330017,
+            252.5173008441925
+          ],
+          "target_center_xy_pixels": [
+            347.0,
+            345.0
+          ],
+          "soft_center_error_pixels": 95.03030719261756,
+          "soft_center_error_normalized_diagonal": 0.11878788399077195,
+          "inside_mean_similarity": 0.8872590065002441,
+          "outside_mean_similarity": 0.2070983350276947,
+          "inside_outside_mean_ratio": 4.284240172097923,
+          "inside_softmax_mass": 0.06686244904994965,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.29512491822242737,
+          "cup_max_similarity": 1.0,
+          "selected_patch_count": 7,
+          "episode_index": 10,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.4266152381897,
+            251.58955872058868
+          ],
+          "target_center_xy_pixels": [
+            335.5,
+            336.5
+          ],
+          "soft_center_error_pixels": 85.62945105714184,
+          "soft_center_error_normalized_diagonal": 0.1070368138214273,
+          "inside_mean_similarity": 0.8226326107978821,
+          "outside_mean_similarity": 0.19299335777759552,
+          "inside_outside_mean_ratio": 4.262491830137902,
+          "inside_softmax_mass": 0.0637855976819992,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.36631518602371216,
+          "cup_max_similarity": 0.9452080726623535,
+          "selected_patch_count": 6,
+          "episode_index": 17,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.8022972345352,
+            250.8359456062317
+          ],
+          "target_center_xy_pixels": [
+            369.0,
+            323.5
+          ],
+          "soft_center_error_pixels": 84.02803650938795,
+          "soft_center_error_normalized_diagonal": 0.10503504563673494,
+          "inside_mean_similarity": 0.7928497195243835,
+          "outside_mean_similarity": 0.20789358019828796,
+          "inside_outside_mean_ratio": 3.813728729709532,
+          "inside_softmax_mass": 0.08117042481899261,
+          "peak_patch_rc": [
+            9,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.35466820001602173,
+          "cup_max_similarity": 0.9382224678993225,
+          "selected_patch_count": 6,
+          "episode_index": 22,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            323.13467383384705,
+            250.53736209869385
+          ],
+          "target_center_xy_pixels": [
+            327.0,
+            327.0
+          ],
+          "soft_center_error_pixels": 76.5602752163092,
+          "soft_center_error_normalized_diagonal": 0.09570034402038649,
+          "inside_mean_similarity": 0.832185685634613,
+          "outside_mean_similarity": 0.19444559514522552,
+          "inside_outside_mean_ratio": 4.279786770243259,
+          "inside_softmax_mass": 0.043097540736198425,
+          "peak_patch_rc": [
+            10,
+            7
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.2164333462715149,
+          "cup_max_similarity": 0.8911588191986084,
+          "selected_patch_count": 5,
+          "episode_index": 35,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            327.1510899066925,
+            249.30262684822083
+          ],
+          "target_center_xy_pixels": [
+            368.0,
+            317.0
+          ],
+          "soft_center_error_pixels": 79.06685644100409,
+          "soft_center_error_normalized_diagonal": 0.09883357055125512,
+          "inside_mean_similarity": 0.8447154760360718,
+          "outside_mean_similarity": 0.19591234624385834,
+          "inside_outside_mean_ratio": 4.311701085875556,
+          "inside_softmax_mass": 0.04358874261379242,
+          "peak_patch_rc": [
+            9,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.21636758744716644,
+          "cup_max_similarity": 0.913760781288147,
+          "selected_patch_count": 6,
+          "episode_index": 40,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            323.8144779205322,
+            248.32627594470978
+          ],
+          "target_center_xy_pixels": [
+            336.5,
+            316.0
+          ],
+          "soft_center_error_pixels": 68.85241751703589,
+          "soft_center_error_normalized_diagonal": 0.08606552189629486,
+          "inside_mean_similarity": 0.8212849497795105,
+          "outside_mean_similarity": 0.1909867823123932,
+          "inside_outside_mean_ratio": 4.30021878915239,
+          "inside_softmax_mass": 0.06388884037733078,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.24323967099189758,
+          "cup_max_similarity": 0.9276551008224487,
+          "selected_patch_count": 7,
+          "episode_index": 55,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.4295426607132,
+            250.33130049705505
+          ],
+          "target_center_xy_pixels": [
+            376.0,
+            347.0
+          ],
+          "soft_center_error_pixels": 109.09724386571503,
+          "soft_center_error_normalized_diagonal": 0.13637155483214378,
+          "inside_mean_similarity": 0.779972493648529,
+          "outside_mean_similarity": 0.1856537163257599,
+          "inside_outside_mean_ratio": 4.201222087469229,
+          "inside_softmax_mass": 0.06193527206778526,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.37620410323143005,
+          "cup_max_similarity": 0.9208646416664124,
+          "selected_patch_count": 6,
+          "episode_index": 2,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.80502474308014,
+            251.7710030078888
+          ],
+          "target_center_xy_pixels": [
+            369.0,
+            345.0
+          ],
+          "soft_center_error_pixels": 102.33309248277,
+          "soft_center_error_normalized_diagonal": 0.1279163656034625,
+          "inside_mean_similarity": 0.8858764171600342,
+          "outside_mean_similarity": 0.21373902261257172,
+          "inside_outside_mean_ratio": 4.144663928616321,
+          "inside_softmax_mass": 0.04452786222100258,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.2834859788417816,
+          "cup_max_similarity": 0.9509156346321106,
+          "selected_patch_count": 6,
+          "episode_index": 7,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            323.7544584274292,
+            251.6888952255249
+          ],
+          "target_center_xy_pixels": [
+            340.0,
+            334.99999999999994
+          ],
+          "soft_center_error_pixels": 84.88025565306506,
+          "soft_center_error_normalized_diagonal": 0.10610031956633133,
+          "inside_mean_similarity": 0.8160480260848999,
+          "outside_mean_similarity": 0.20957760512828827,
+          "inside_outside_mean_ratio": 3.893774936426887,
+          "inside_softmax_mass": 0.0828891396522522,
+          "peak_patch_rc": [
+            10,
+            7
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.2741971015930176,
+          "cup_max_similarity": 0.9455242156982422,
+          "selected_patch_count": 8,
+          "episode_index": 13,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.98845398426056,
+            251.78010284900665
+          ],
+          "target_center_xy_pixels": [
+            330.5,
+            341.5
+          ],
+          "soft_center_error_pixels": 89.88902649527603,
+          "soft_center_error_normalized_diagonal": 0.11236128311909503,
+          "inside_mean_similarity": 0.8869072794914246,
+          "outside_mean_similarity": 0.2199411690235138,
+          "inside_outside_mean_ratio": 4.032475063350263,
+          "inside_softmax_mass": 0.04427462816238403,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.2678881883621216,
+          "cup_max_similarity": 0.9482848644256592,
+          "selected_patch_count": 6,
+          "episode_index": 18,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.17974877357483,
+            250.29026985168457
+          ],
+          "target_center_xy_pixels": [
+            372.5,
+            324.5
+          ],
+          "soft_center_error_pixels": 87.47942456580826,
+          "soft_center_error_normalized_diagonal": 0.10934928070726033,
+          "inside_mean_similarity": 0.8285520672798157,
+          "outside_mean_similarity": 0.19132329523563385,
+          "inside_outside_mean_ratio": 4.330638703767728,
+          "inside_softmax_mass": 0.06421969085931778,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.3390905261039734,
+          "cup_max_similarity": 0.9061418771743774,
+          "selected_patch_count": 5,
+          "episode_index": 23,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            323.4072023630142,
+            248.54380130767822
+          ],
+          "target_center_xy_pixels": [
+            357.0,
+            332.0
+          ],
+          "soft_center_error_pixels": 89.96339896453317,
+          "soft_center_error_normalized_diagonal": 0.11245424870566646,
+          "inside_mean_similarity": 0.7439085841178894,
+          "outside_mean_similarity": 0.1816347986459732,
+          "inside_outside_mean_ratio": 4.095628093644388,
+          "inside_softmax_mass": 0.04036795347929001,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.204379141330719,
+          "cup_max_similarity": 0.8726591467857361,
+          "selected_patch_count": 4,
+          "episode_index": 25,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.58172738552094,
+            250.21077454090118
+          ],
+          "target_center_xy_pixels": [
+            337.5,
+            325.49999999999994
+          ],
+          "soft_center_error_pixels": 76.38945763371412,
+          "soft_center_error_normalized_diagonal": 0.09548682204214265,
+          "inside_mean_similarity": 0.8250039219856262,
+          "outside_mean_similarity": 0.17487478256225586,
+          "inside_outside_mean_ratio": 4.717683761476145,
+          "inside_softmax_mass": 0.06497002393007278,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.20594573020935059,
+          "cup_max_similarity": 0.8941527009010315,
+          "selected_patch_count": 6,
+          "episode_index": 30,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.0894240140915,
+            250.31238913536072
+          ],
+          "target_center_xy_pixels": [
+            334.0,
+            324.5
+          ],
+          "soft_center_error_pixels": 74.84665070780129,
+          "soft_center_error_normalized_diagonal": 0.09355831338475161,
+          "inside_mean_similarity": 0.8428559899330139,
+          "outside_mean_similarity": 0.19588324427604675,
+          "inside_outside_mean_ratio": 4.302848837571969,
+          "inside_softmax_mass": 0.06473974883556366,
+          "peak_patch_rc": [
+            10,
+            7
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.23781950771808624,
+          "cup_max_similarity": 0.9243156909942627,
+          "selected_patch_count": 6,
+          "episode_index": 36,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.3847553730011,
+            249.55190420150757
+          ],
+          "target_center_xy_pixels": [
+            370.5,
+            313.5
+          ],
+          "soft_center_error_pixels": 77.68856907391924,
+          "soft_center_error_normalized_diagonal": 0.09711071134239906,
+          "inside_mean_similarity": 0.7980011701583862,
+          "outside_mean_similarity": 0.1989651918411255,
+          "inside_outside_mean_ratio": 4.010757674616741,
+          "inside_softmax_mass": 0.041646648198366165,
+          "peak_patch_rc": [
+            9,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.24092203378677368,
+          "cup_max_similarity": 0.8928592801094055,
+          "selected_patch_count": 6,
+          "episode_index": 42,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.1992598772049,
+            249.28876340389252
+          ],
+          "target_center_xy_pixels": [
+            349.0,
+            314.0
+          ],
+          "soft_center_error_pixels": 69.3009440948377,
+          "soft_center_error_normalized_diagonal": 0.08662618011854713,
+          "inside_mean_similarity": 0.837805449962616,
+          "outside_mean_similarity": 0.18819214403629303,
+          "inside_outside_mean_ratio": 4.451861974647807,
+          "inside_softmax_mass": 0.043681517243385315,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.18863296508789062,
+          "cup_max_similarity": 0.907707929611206,
+          "selected_patch_count": 6,
+          "episode_index": 45,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.24975752830505,
+            249.1592001914978
+          ],
+          "target_center_xy_pixels": [
+            339.0,
+            320.0
+          ],
+          "soft_center_error_pixels": 72.36013108391995,
+          "soft_center_error_normalized_diagonal": 0.09045016385489994,
+          "inside_mean_similarity": 0.8482651114463806,
+          "outside_mean_similarity": 0.1825128048658371,
+          "inside_outside_mean_ratio": 4.647701908202714,
+          "inside_softmax_mass": 0.06584249436855316,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.19276338815689087,
+          "cup_max_similarity": 0.9197056889533997,
+          "selected_patch_count": 5,
+          "episode_index": 50,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.03099596500397,
+            249.85492050647736
+          ],
+          "target_center_xy_pixels": [
+            326.0,
+            314.0
+          ],
+          "soft_center_error_pixels": 64.1752927544563,
+          "soft_center_error_normalized_diagonal": 0.08021911594307037,
+          "inside_mean_similarity": 0.8935785293579102,
+          "outside_mean_similarity": 0.20390824973583221,
+          "inside_outside_mean_ratio": 4.38225785624447,
+          "inside_softmax_mass": 0.04520249366760254,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.22722427546977997,
+          "cup_max_similarity": 0.9398260116577148,
+          "selected_patch_count": 6,
+          "episode_index": 56,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        }
+      ]
+    },
+    "4": {
+      "prototype_count": 4,
+      "medoid_indices": [
+        11,
+        40,
+        46,
+        4
+      ],
+      "reference": {
+        "count": 8,
+        "soft_center_error_pixels_median": 81.86516101552115,
+        "soft_center_error_pixels_p90": 98.06606911780634,
+        "peak_in_box_rate": 1.0,
+        "peak_in_box_or_one_patch_rate": 1.0,
+        "inside_outside_mean_ratio_mean": 2.864082281690264,
+        "inside_softmax_mass_mean": 0.054781613405793905,
+        "cup_beats_corner_rate": 1.0
+      },
+      "calibration_check": {
+        "count": 12,
+        "soft_center_error_pixels_median": 78.27748695691793,
+        "soft_center_error_pixels_p90": 97.77171633724959,
+        "peak_in_box_rate": 1.0,
+        "peak_in_box_or_one_patch_rate": 1.0,
+        "inside_outside_mean_ratio_mean": 2.786341778537652,
+        "inside_softmax_mass_mean": 0.05076034336040417,
+        "cup_beats_corner_rate": 1.0
+      },
+      "per_frame": [
+        {
+          "soft_center_xy_pixels": [
+            327.2853881120682,
+            254.88112270832062
+          ],
+          "target_center_xy_pixels": [
+            376.0,
+            346.0
+          ],
+          "soft_center_error_pixels": 103.32358496629874,
+          "soft_center_error_normalized_diagonal": 0.12915448120787343,
+          "inside_mean_similarity": 0.8826150894165039,
+          "outside_mean_similarity": 0.2928374111652374,
+          "inside_outside_mean_ratio": 3.0140106959164332,
+          "inside_softmax_mass": 0.06106878072023392,
+          "peak_patch_rc": [
+            12,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.43227365612983704,
+          "cup_max_similarity": 1.0,
+          "selected_patch_count": 5,
+          "episode_index": 0,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            327.42121040821075,
+            255.17905175685883
+          ],
+          "target_center_xy_pixels": [
+            368.99999999999994,
+            341.5
+          ],
+          "soft_center_error_pixels": 95.81284803988103,
+          "soft_center_error_normalized_diagonal": 0.1197660600498513,
+          "inside_mean_similarity": 0.8929572105407715,
+          "outside_mean_similarity": 0.29838529229164124,
+          "inside_outside_mean_ratio": 2.9926314520489057,
+          "inside_softmax_mass": 0.041135117411613464,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.3523695170879364,
+          "cup_max_similarity": 0.9383126497268677,
+          "selected_patch_count": 6,
+          "episode_index": 6,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.89599549770355,
+            254.7262340784073
+          ],
+          "target_center_xy_pixels": [
+            347.0,
+            345.0
+          ],
+          "soft_center_error_pixels": 92.70777647910374,
+          "soft_center_error_normalized_diagonal": 0.11588472059887968,
+          "inside_mean_similarity": 0.8879923820495605,
+          "outside_mean_similarity": 0.31468456983566284,
+          "inside_outside_mean_ratio": 2.8218491377359087,
+          "inside_softmax_mass": 0.060264453291893005,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.4552902281284332,
+          "cup_max_similarity": 1.0,
+          "selected_patch_count": 7,
+          "episode_index": 10,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.0133949518204,
+            254.45204436779022
+          ],
+          "target_center_xy_pixels": [
+            335.5,
+            336.5
+          ],
+          "soft_center_error_pixels": 82.71539100349808,
+          "soft_center_error_normalized_diagonal": 0.1033942387543726,
+          "inside_mean_similarity": 0.8596686124801636,
+          "outside_mean_similarity": 0.29884058237075806,
+          "inside_outside_mean_ratio": 2.876679618478361,
+          "inside_softmax_mass": 0.05945633724331856,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.49061569571495056,
+          "cup_max_similarity": 0.9452081322669983,
+          "selected_patch_count": 6,
+          "episode_index": 17,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            327.350172996521,
+            254.0110731124878
+          ],
+          "target_center_xy_pixels": [
+            369.0,
+            323.5
+          ],
+          "soft_center_error_pixels": 81.01493102754421,
+          "soft_center_error_normalized_diagonal": 0.10126866378443027,
+          "inside_mean_similarity": 0.8378645777702332,
+          "outside_mean_similarity": 0.30781978368759155,
+          "inside_outside_mean_ratio": 2.7219321894546837,
+          "inside_softmax_mass": 0.07651953399181366,
+          "peak_patch_rc": [
+            9,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.5153430700302124,
+          "cup_max_similarity": 0.9382224678993225,
+          "selected_patch_count": 6,
+          "episode_index": 22,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            323.4980118274689,
+            252.0174390077591
+          ],
+          "target_center_xy_pixels": [
+            327.0,
+            327.0
+          ],
+          "soft_center_error_pixels": 75.06429493517992,
+          "soft_center_error_normalized_diagonal": 0.0938303686689749,
+          "inside_mean_similarity": 0.8321856260299683,
+          "outside_mean_similarity": 0.3045954406261444,
+          "inside_outside_mean_ratio": 2.7321013877268756,
+          "inside_softmax_mass": 0.038667574524879456,
+          "peak_patch_rc": [
+            10,
+            7
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.32489436864852905,
+          "cup_max_similarity": 0.8911588788032532,
+          "selected_patch_count": 5,
+          "episode_index": 35,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            328.8518875837326,
+            251.95730030536652
+          ],
+          "target_center_xy_pixels": [
+            368.0,
+            317.0
+          ],
+          "soft_center_error_pixels": 75.91526519299649,
+          "soft_center_error_normalized_diagonal": 0.0948940814912456,
+          "inside_mean_similarity": 0.9110875129699707,
+          "outside_mean_similarity": 0.30362269282341003,
+          "inside_outside_mean_ratio": 3.000722721011727,
+          "inside_softmax_mass": 0.04166091978549957,
+          "peak_patch_rc": [
+            11,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.3099609315395355,
+          "cup_max_similarity": 1.0000001192092896,
+          "selected_patch_count": 6,
+          "episode_index": 40,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.4235724210739,
+            251.1448699235916
+          ],
+          "target_center_xy_pixels": [
+            336.5,
+            316.0
+          ],
+          "soft_center_error_pixels": 65.96990223046339,
+          "soft_center_error_normalized_diagonal": 0.08246237778807924,
+          "inside_mean_similarity": 0.8811987042427063,
+          "outside_mean_similarity": 0.3201179802417755,
+          "inside_outside_mean_ratio": 2.752731051149215,
+          "inside_softmax_mass": 0.05948019027709961,
+          "peak_patch_rc": [
+            11,
+            7
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.377396821975708,
+          "cup_max_similarity": 1.0,
+          "selected_patch_count": 7,
+          "episode_index": 55,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.6333496570587,
+            253.97291779518127
+          ],
+          "target_center_xy_pixels": [
+            376.0,
+            347.0
+          ],
+          "soft_center_error_pixels": 105.31431141883958,
+          "soft_center_error_normalized_diagonal": 0.13164288927354947,
+          "inside_mean_similarity": 0.8588612675666809,
+          "outside_mean_similarity": 0.29498112201690674,
+          "inside_outside_mean_ratio": 2.9115804485869967,
+          "inside_softmax_mass": 0.0596044696867466,
+          "peak_patch_rc": [
+            12,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.4640865921974182,
+          "cup_max_similarity": 0.9254966974258423,
+          "selected_patch_count": 6,
+          "episode_index": 2,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            327.78031051158905,
+            255.052108168602
+          ],
+          "target_center_xy_pixels": [
+            369.0,
+            345.0
+          ],
+          "soft_center_error_pixels": 98.94284232037148,
+          "soft_center_error_normalized_diagonal": 0.12367855290046435,
+          "inside_mean_similarity": 0.9073594808578491,
+          "outside_mean_similarity": 0.3233315348625183,
+          "inside_outside_mean_ratio": 2.8062820449717703,
+          "inside_softmax_mass": 0.0407295785844326,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.46008285880088806,
+          "cup_max_similarity": 0.9509156346321106,
+          "selected_patch_count": 6,
+          "episode_index": 7,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.8190265893936,
+            254.21965956687927
+          ],
+          "target_center_xy_pixels": [
+            340.0,
+            334.99999999999994
+          ],
+          "soft_center_error_pixels": 82.19443627268458,
+          "soft_center_error_normalized_diagonal": 0.10274304534085572,
+          "inside_mean_similarity": 0.8307030200958252,
+          "outside_mean_similarity": 0.3143232762813568,
+          "inside_outside_mean_ratio": 2.6428301140264487,
+          "inside_softmax_mass": 0.0757746547460556,
+          "peak_patch_rc": [
+            10,
+            7
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.43597692251205444,
+          "cup_max_similarity": 0.9455242156982422,
+          "selected_patch_count": 8,
+          "episode_index": 13,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.4906243085861,
+            254.41237092018127
+          ],
+          "target_center_xy_pixels": [
+            330.5,
+            341.5
+          ],
+          "soft_center_error_pixels": 87.2315824891525,
+          "soft_center_error_normalized_diagonal": 0.10903947811144063,
+          "inside_mean_similarity": 0.8869072198867798,
+          "outside_mean_similarity": 0.3152374029159546,
+          "inside_outside_mean_ratio": 2.813458084868305,
+          "inside_softmax_mass": 0.04030799865722656,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.3921285569667816,
+          "cup_max_similarity": 0.9482848048210144,
+          "selected_patch_count": 6,
+          "episode_index": 18,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.9554400444031,
+            253.48710894584656
+          ],
+          "target_center_xy_pixels": [
+            372.5,
+            324.5
+          ],
+          "soft_center_error_pixels": 84.36312960895908,
+          "soft_center_error_normalized_diagonal": 0.10545391201119886,
+          "inside_mean_similarity": 0.8580229878425598,
+          "outside_mean_similarity": 0.3199827969074249,
+          "inside_outside_mean_ratio": 2.6814659917195383,
+          "inside_softmax_mass": 0.05817447975277901,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.5313044786453247,
+          "cup_max_similarity": 0.9061420559883118,
+          "selected_patch_count": 5,
+          "episode_index": 23,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.02463257312775,
+            252.48049914836884
+          ],
+          "target_center_xy_pixels": [
+            357.0,
+            332.0
+          ],
+          "soft_center_error_pixels": 86.08557296452058,
+          "soft_center_error_normalized_diagonal": 0.10760696620565073,
+          "inside_mean_similarity": 0.8430859446525574,
+          "outside_mean_similarity": 0.307889848947525,
+          "inside_outside_mean_ratio": 2.738271325068103,
+          "inside_softmax_mass": 0.03893999010324478,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.3730494976043701,
+          "cup_max_similarity": 0.8726591467857361,
+          "selected_patch_count": 4,
+          "episode_index": 25,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.2558743953705,
+            252.21577048301697
+          ],
+          "target_center_xy_pixels": [
+            337.5,
+            325.49999999999994
+          ],
+          "soft_center_error_pixels": 74.30004648531374,
+          "soft_center_error_normalized_diagonal": 0.09287505810664218,
+          "inside_mean_similarity": 0.8250039219856262,
+          "outside_mean_similarity": 0.2718444764614105,
+          "inside_outside_mean_ratio": 3.0348379070440266,
+          "inside_softmax_mass": 0.05912454053759575,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.28563812375068665,
+          "cup_max_similarity": 0.8941527009010315,
+          "selected_patch_count": 6,
+          "episode_index": 30,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.9926280975342,
+            252.08008646965027
+          ],
+          "target_center_xy_pixels": [
+            334.0,
+            324.5
+          ],
+          "soft_center_error_pixels": 72.97791874486873,
+          "soft_center_error_normalized_diagonal": 0.09122239843108591,
+          "inside_mean_similarity": 0.8428559899330139,
+          "outside_mean_similarity": 0.2987157702445984,
+          "inside_outside_mean_ratio": 2.821598569244789,
+          "inside_softmax_mass": 0.05858846381306648,
+          "peak_patch_rc": [
+            10,
+            7
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.3244553208351135,
+          "cup_max_similarity": 0.9243156909942627,
+          "selected_patch_count": 6,
+          "episode_index": 36,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            328.0285757780075,
+            252.46175229549408
+          ],
+          "target_center_xy_pixels": [
+            370.5,
+            313.5
+          ],
+          "soft_center_error_pixels": 74.36053764115125,
+          "soft_center_error_normalized_diagonal": 0.09295067205143907,
+          "inside_mean_similarity": 0.8536383509635925,
+          "outside_mean_similarity": 0.3259178400039673,
+          "inside_outside_mean_ratio": 2.6191826472377255,
+          "inside_softmax_mass": 0.038544416427612305,
+          "peak_patch_rc": [
+            9,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.40805333852767944,
+          "cup_max_similarity": 0.8928592801094055,
+          "selected_patch_count": 6,
+          "episode_index": 42,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.2119141817093,
+            252.31910347938538
+          ],
+          "target_center_xy_pixels": [
+            349.0,
+            314.0
+          ],
+          "soft_center_error_pixels": 66.10904644967384,
+          "soft_center_error_normalized_diagonal": 0.0826363080620923,
+          "inside_mean_similarity": 0.878924548625946,
+          "outside_mean_similarity": 0.32341670989990234,
+          "inside_outside_mean_ratio": 2.717622564702899,
+          "inside_softmax_mass": 0.03965052589774132,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.31455203890800476,
+          "cup_max_similarity": 0.9077079892158508,
+          "selected_patch_count": 6,
+          "episode_index": 45,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.9401271343231,
+            251.00331008434296
+          ],
+          "target_center_xy_pixels": [
+            339.0,
+            320.0
+          ],
+          "soft_center_error_pixels": 70.41465219907236,
+          "soft_center_error_normalized_diagonal": 0.08801831524884046,
+          "inside_mean_similarity": 0.8602599501609802,
+          "outside_mean_similarity": 0.30662691593170166,
+          "inside_outside_mean_ratio": 2.8055591517366834,
+          "inside_softmax_mass": 0.059099677950143814,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.32068076729774475,
+          "cup_max_similarity": 0.9197058081626892,
+          "selected_patch_count": 5,
+          "episode_index": 50,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.08884489536285,
+            252.1034860610962
+          ],
+          "target_center_xy_pixels": [
+            326.0,
+            314.0
+          ],
+          "soft_center_error_pixels": 61.90321995997962,
+          "soft_center_error_normalized_diagonal": 0.07737902494997453,
+          "inside_mean_similarity": 0.8946983814239502,
+          "outside_mean_similarity": 0.3146565556526184,
+          "inside_outside_mean_ratio": 2.843412493244537,
+          "inside_softmax_mass": 0.04058532416820526,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.33496782183647156,
+          "cup_max_similarity": 0.9398260116577148,
+          "selected_patch_count": 6,
+          "episode_index": 56,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        }
+      ]
+    },
+    "8": {
+      "prototype_count": 8,
+      "medoid_indices": [
+        11,
+        40,
+        46,
+        4,
+        34,
+        9,
+        30,
+        29
+      ],
+      "reference": {
+        "count": 8,
+        "soft_center_error_pixels_median": 81.91971120434849,
+        "soft_center_error_pixels_p90": 97.66680794725544,
+        "peak_in_box_rate": 1.0,
+        "peak_in_box_or_one_patch_rate": 1.0,
+        "inside_outside_mean_ratio_mean": 2.845819964427106,
+        "inside_softmax_mass_mean": 0.055578361731022596,
+        "cup_beats_corner_rate": 1.0
+      },
+      "calibration_check": {
+        "count": 12,
+        "soft_center_error_pixels_median": 78.2252012084981,
+        "soft_center_error_pixels_p90": 97.78722580567029,
+        "peak_in_box_rate": 1.0,
+        "peak_in_box_or_one_patch_rate": 1.0,
+        "inside_outside_mean_ratio_mean": 2.769147360569773,
+        "inside_softmax_mass_mean": 0.051317056020100914,
+        "cup_beats_corner_rate": 1.0
+      },
+      "per_frame": [
+        {
+          "soft_center_xy_pixels": [
+            327.7006709575653,
+            254.81880962848663
+          ],
+          "target_center_xy_pixels": [
+            376.0,
+            346.0
+          ],
+          "soft_center_error_pixels": 103.1834999576751,
+          "soft_center_error_normalized_diagonal": 0.12897937494709388,
+          "inside_mean_similarity": 0.8914125561714172,
+          "outside_mean_similarity": 0.3023811876773834,
+          "inside_outside_mean_ratio": 2.947976238265468,
+          "inside_softmax_mass": 0.06097782403230667,
+          "peak_patch_rc": [
+            12,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.44533154368400574,
+          "cup_max_similarity": 1.0,
+          "selected_patch_count": 5,
+          "episode_index": 0,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            328.2257616519928,
+            255.3604030609131
+          ],
+          "target_center_xy_pixels": [
+            368.99999999999994,
+            341.5
+          ],
+          "soft_center_error_pixels": 95.30251137136129,
+          "soft_center_error_normalized_diagonal": 0.11912813921420161,
+          "inside_mean_similarity": 0.9259527921676636,
+          "outside_mean_similarity": 0.3350975513458252,
+          "inside_outside_mean_ratio": 2.763233537364968,
+          "inside_softmax_mass": 0.04090988636016846,
+          "peak_patch_rc": [
+            12,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.39949867129325867,
+          "cup_max_similarity": 0.9999999403953552,
+          "selected_patch_count": 6,
+          "episode_index": 6,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.4070212841034,
+            254.99827980995178
+          ],
+          "target_center_xy_pixels": [
+            347.0,
+            345.0
+          ],
+          "soft_center_error_pixels": 92.32757123178916,
+          "soft_center_error_normalized_diagonal": 0.11540946403973645,
+          "inside_mean_similarity": 0.9095314145088196,
+          "outside_mean_similarity": 0.32522615790367126,
+          "inside_outside_mean_ratio": 2.7966121186913067,
+          "inside_softmax_mass": 0.060720279812812805,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.4662603735923767,
+          "cup_max_similarity": 1.0,
+          "selected_patch_count": 7,
+          "episode_index": 10,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.43292462825775,
+            254.07902598381042
+          ],
+          "target_center_xy_pixels": [
+            335.5,
+            336.5
+          ],
+          "soft_center_error_pixels": 83.03350507065046,
+          "soft_center_error_normalized_diagonal": 0.10379188133831307,
+          "inside_mean_similarity": 0.882152795791626,
+          "outside_mean_similarity": 0.30734989047050476,
+          "inside_outside_mean_ratio": 2.870190695175416,
+          "inside_softmax_mass": 0.06019430607557297,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.502106249332428,
+          "cup_max_similarity": 0.9452081322669983,
+          "selected_patch_count": 6,
+          "episode_index": 17,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            327.8398644924164,
+            253.96267533302307
+          ],
+          "target_center_xy_pixels": [
+            369.0,
+            323.5
+          ],
+          "soft_center_error_pixels": 80.8059173380465,
+          "soft_center_error_normalized_diagonal": 0.10100739667255812,
+          "inside_mean_similarity": 0.8746253848075867,
+          "outside_mean_similarity": 0.31739574670791626,
+          "inside_outside_mean_ratio": 2.755630451508418,
+          "inside_softmax_mass": 0.07844620943069458,
+          "peak_patch_rc": [
+            11,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.5153430700302124,
+          "cup_max_similarity": 1.0000001192092896,
+          "selected_patch_count": 6,
+          "episode_index": 22,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.02978897094727,
+            252.03912913799286
+          ],
+          "target_center_xy_pixels": [
+            327.0,
+            327.0
+          ],
+          "soft_center_error_pixels": 75.0196928409309,
+          "soft_center_error_normalized_diagonal": 0.09377461605116362,
+          "inside_mean_similarity": 0.9297458529472351,
+          "outside_mean_similarity": 0.3139941692352295,
+          "inside_outside_mean_ratio": 2.961029038251706,
+          "inside_softmax_mass": 0.04205544292926788,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.32489436864852905,
+          "cup_max_similarity": 1.0000001192092896,
+          "selected_patch_count": 5,
+          "episode_index": 35,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            329.2937898635864,
+            252.16540575027466
+          ],
+          "target_center_xy_pixels": [
+            368.0,
+            317.0
+          ],
+          "soft_center_error_pixels": 75.50957101355247,
+          "soft_center_error_normalized_diagonal": 0.0943869637669406,
+          "inside_mean_similarity": 0.9110875129699707,
+          "outside_mean_similarity": 0.3145042657852173,
+          "inside_outside_mean_ratio": 2.8969003351839264,
+          "inside_softmax_mass": 0.041186440736055374,
+          "peak_patch_rc": [
+            11,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.32521992921829224,
+          "cup_max_similarity": 1.0000001192092896,
+          "selected_patch_count": 6,
+          "episode_index": 40,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.5646381378174,
+            250.99916517734528
+          ],
+          "target_center_xy_pixels": [
+            336.5,
+            316.0
+          ],
+          "soft_center_error_pixels": 66.08752825173057,
+          "soft_center_error_normalized_diagonal": 0.08260941031466322,
+          "inside_mean_similarity": 0.8970824480056763,
+          "outside_mean_similarity": 0.3232744336128235,
+          "inside_outside_mean_ratio": 2.7749873009756354,
+          "inside_softmax_mass": 0.06013650447130203,
+          "peak_patch_rc": [
+            11,
+            7
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.377396821975708,
+          "cup_max_similarity": 1.0,
+          "selected_patch_count": 7,
+          "episode_index": 55,
+          "frame_index": 15,
+          "subset": "reference"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.97320997714996,
+            253.6304533481598
+          ],
+          "target_center_xy_pixels": [
+            376.0,
+            347.0
+          ],
+          "soft_center_error_pixels": 105.45851498060645,
+          "soft_center_error_normalized_diagonal": 0.13182314372575807,
+          "inside_mean_similarity": 0.865561306476593,
+          "outside_mean_similarity": 0.3048618733882904,
+          "inside_outside_mean_ratio": 2.839191719373062,
+          "inside_softmax_mass": 0.05941274017095566,
+          "peak_patch_rc": [
+            12,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.4786117374897003,
+          "cup_max_similarity": 0.9254966974258423,
+          "selected_patch_count": 6,
+          "episode_index": 2,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            328.45372200012207,
+            254.73562359809875
+          ],
+          "target_center_xy_pixels": [
+            369.0,
+            345.0
+          ],
+          "soft_center_error_pixels": 98.95280848398136,
+          "soft_center_error_normalized_diagonal": 0.1236910106049767,
+          "inside_mean_similarity": 0.9270102381706238,
+          "outside_mean_similarity": 0.3354465067386627,
+          "inside_outside_mean_ratio": 2.7635113782622645,
+          "inside_softmax_mass": 0.04097515344619751,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.46116188168525696,
+          "cup_max_similarity": 0.9509156346321106,
+          "selected_patch_count": 6,
+          "episode_index": 7,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.5293405056,
+            254.09189701080322
+          ],
+          "target_center_xy_pixels": [
+            340.0,
+            334.99999999999994
+          ],
+          "soft_center_error_pixels": 82.19197719676376,
+          "soft_center_error_normalized_diagonal": 0.1027399714959547,
+          "inside_mean_similarity": 0.8624110221862793,
+          "outside_mean_similarity": 0.32515421509742737,
+          "inside_outside_mean_ratio": 2.6523138318470556,
+          "inside_softmax_mass": 0.07711134105920792,
+          "peak_patch_rc": [
+            10,
+            7
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.4384479820728302,
+          "cup_max_similarity": 0.9455242156982422,
+          "selected_patch_count": 8,
+          "episode_index": 13,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.43879413604736,
+            254.297536611557
+          ],
+          "target_center_xy_pixels": [
+            330.5,
+            341.5
+          ],
+          "soft_center_error_pixels": 87.29698170087065,
+          "soft_center_error_normalized_diagonal": 0.10912122712608831,
+          "inside_mean_similarity": 0.8996145129203796,
+          "outside_mean_similarity": 0.33964401483535767,
+          "inside_outside_mean_ratio": 2.648698265318962,
+          "inside_softmax_mass": 0.03982354700565338,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.41890427470207214,
+          "cup_max_similarity": 0.9482848048210144,
+          "selected_patch_count": 6,
+          "episode_index": 18,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            327.04659819602966,
+            253.25212061405182
+          ],
+          "target_center_xy_pixels": [
+            372.5,
+            324.5
+          ],
+          "soft_center_error_pixels": 84.51196396101437,
+          "soft_center_error_normalized_diagonal": 0.10563995495126796,
+          "inside_mean_similarity": 0.8706137537956238,
+          "outside_mean_similarity": 0.3226870000362396,
+          "inside_outside_mean_ratio": 2.6980131015437525,
+          "inside_softmax_mass": 0.05869131162762642,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.5313044786453247,
+          "cup_max_similarity": 0.9061420559883118,
+          "selected_patch_count": 5,
+          "episode_index": 23,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            324.36474323272705,
+            251.98784351348877
+          ],
+          "target_center_xy_pixels": [
+            357.0,
+            332.0
+          ],
+          "soft_center_error_pixels": 86.4118346633596,
+          "soft_center_error_normalized_diagonal": 0.1080147933291995,
+          "inside_mean_similarity": 0.8430859446525574,
+          "outside_mean_similarity": 0.3145380914211273,
+          "inside_outside_mean_ratio": 2.680393782652449,
+          "inside_softmax_mass": 0.03869757801294327,
+          "peak_patch_rc": [
+            10,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.37370938062667847,
+          "cup_max_similarity": 0.8726591467857361,
+          "selected_patch_count": 4,
+          "episode_index": 25,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            326.02354764938354,
+            252.57147431373596
+          ],
+          "target_center_xy_pixels": [
+            337.5,
+            325.49999999999994
+          ],
+          "soft_center_error_pixels": 73.82600366624239,
+          "soft_center_error_normalized_diagonal": 0.09228250458280299,
+          "inside_mean_similarity": 0.8657496571540833,
+          "outside_mean_similarity": 0.28470563888549805,
+          "inside_outside_mean_ratio": 3.040858834208997,
+          "inside_softmax_mass": 0.06052558869123459,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.30594179034233093,
+          "cup_max_similarity": 0.8941527009010315,
+          "selected_patch_count": 6,
+          "episode_index": 30,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.3820151090622,
+            252.2545051574707
+          ],
+          "target_center_xy_pixels": [
+            334.0,
+            324.5
+          ],
+          "soft_center_error_pixels": 72.75768817535615,
+          "soft_center_error_normalized_diagonal": 0.09094711021919519,
+          "inside_mean_similarity": 0.8997018933296204,
+          "outside_mean_similarity": 0.3056665360927582,
+          "inside_outside_mean_ratio": 2.9434098505850015,
+          "inside_softmax_mass": 0.06130741909146309,
+          "peak_patch_rc": [
+            11,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.3466901481151581,
+          "cup_max_similarity": 0.9481551647186279,
+          "selected_patch_count": 6,
+          "episode_index": 36,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            328.4192627668381,
+            252.3156452178955
+          ],
+          "target_center_xy_pixels": [
+            370.5,
+            313.5
+          ],
+          "soft_center_error_pixels": 74.25842522023244,
+          "soft_center_error_normalized_diagonal": 0.09282303152529055,
+          "inside_mean_similarity": 0.8678134679794312,
+          "outside_mean_similarity": 0.3311362564563751,
+          "inside_outside_mean_ratio": 2.620714135221129,
+          "inside_softmax_mass": 0.038865379989147186,
+          "peak_patch_rc": [
+            10,
+            9
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.40805333852767944,
+          "cup_max_similarity": 0.8965317606925964,
+          "selected_patch_count": 6,
+          "episode_index": 42,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.2780747413635,
+            252.09353864192963
+          ],
+          "target_center_xy_pixels": [
+            349.0,
+            314.0
+          ],
+          "soft_center_error_pixels": 66.29584976342483,
+          "soft_center_error_normalized_diagonal": 0.08286981220428104,
+          "inside_mean_similarity": 0.8802632093429565,
+          "outside_mean_similarity": 0.3258746564388275,
+          "inside_outside_mean_ratio": 2.7012324890880173,
+          "inside_softmax_mass": 0.03960631787776947,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.31455203890800476,
+          "cup_max_similarity": 0.9077079892158508,
+          "selected_patch_count": 6,
+          "episode_index": 45,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.2511578798294,
+            250.88597238063812
+          ],
+          "target_center_xy_pixels": [
+            339.0,
+            320.0
+          ],
+          "soft_center_error_pixels": 70.46828700497333,
+          "soft_center_error_normalized_diagonal": 0.08808535875621666,
+          "inside_mean_similarity": 0.8924041390419006,
+          "outside_mean_similarity": 0.3118032217025757,
+          "inside_outside_mean_ratio": 2.862074786042946,
+          "inside_softmax_mass": 0.06050652265548706,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.32068076729774475,
+          "cup_max_similarity": 0.9197058081626892,
+          "selected_patch_count": 5,
+          "episode_index": 50,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        },
+        {
+          "soft_center_xy_pixels": [
+            325.27791380882263,
+            252.06672191619873
+          ],
+          "target_center_xy_pixels": [
+            326.0,
+            314.0
+          ],
+          "soft_center_error_pixels": 61.93748737778235,
+          "soft_center_error_normalized_diagonal": 0.07742185922222794,
+          "inside_mean_similarity": 0.8952246904373169,
+          "outside_mean_similarity": 0.32209786772727966,
+          "inside_outside_mean_ratio": 2.77935615269364,
+          "inside_softmax_mass": 0.04028177261352539,
+          "peak_patch_rc": [
+            9,
+            8
+          ],
+          "peak_in_box": true,
+          "peak_in_box_or_one_patch": true,
+          "corner_max_similarity": 0.3360450565814972,
+          "cup_max_similarity": 0.9398260116577148,
+          "selected_patch_count": 6,
+          "episode_index": 56,
+          "frame_index": 15,
+          "subset": "calibration_check"
+        }
+      ]
+    }
+  },
+  "selected_prototype_count": 4,
+  "selected_check_metrics": {
+    "count": 12,
+    "soft_center_error_pixels_median": 78.27748695691793,
+    "soft_center_error_pixels_p90": 97.77171633724959,
+    "peak_in_box_rate": 1.0,
+    "peak_in_box_or_one_patch_rate": 1.0,
+    "inside_outside_mean_ratio_mean": 2.786341778537652,
+    "inside_softmax_mass_mean": 0.05076034336040417,
+    "cup_beats_corner_rate": 1.0
+  },
+  "object_tokens": {
+    "shape": [
+      12,
+      5,
+      387
+    ],
+    "finite": true,
+    "x_range": [
+      -0.5310525298118591,
+      0.5333486795425415
+    ],
+    "y_range": [
+      -0.5231407880783081,
+      0.5316998958587646
+    ],
+    "confidence_range": [
+      0.1992543786764145,
+      0.5632799863815308
+    ],
+    "local_pairwise_cosine_mean": 0.7703622579574585,
+    "fallback_rule": "softmax over every non-empty 8x8 local patch grid; no empty-token branch"
+  }
+}

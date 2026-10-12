@@ -1,0 +1,39 @@
+{
+  "checkpoint": "P1_ocfix2_s1/100000",
+  "dev_episodes": [3, 5, 12, 15, 21, 28, 33, 39, 41, 47, 53, 58],
+  "n_frames": 5748,
+  "gate": -0.0293883401,
+  "intervention_h0_arm_delta": {
+    "D1_zero_all": 0.0383159767,
+    "D2_shuffle_whole": 0.0114144322,
+    "D3_xy_zero": 0.0004353597,
+    "D4_xy_shuffle": 0.0000160209,
+    "D5_lr_swap": 0.0042944778,
+    "D6_ud_swap": 0.0190082682,
+    "D7_local_permutation": 0.0104070460,
+    "D8_global_only": 0.0226420151,
+    "D9_local_only": 0.0276255347
+  },
+  "intervention_all_action_delta": {
+    "D1_zero_all": 0.0745224096,
+    "D2_shuffle_whole": 0.0203637774,
+    "D3_xy_zero": 0.0007762677,
+    "D4_xy_shuffle": 0.0000295998,
+    "D5_lr_swap": 0.0072716431,
+    "D6_ud_swap": 0.0291888577,
+    "D7_local_permutation": 0.0175147449,
+    "D8_global_only": 0.0390031140,
+    "D9_local_only": 0.0524977803
+  },
+  "expert_h0_action_corr": {
+    "x": [-0.27943, -0.14747, 0.23532, 0.12500, 0.03347, 0.05429],
+    "y": [-0.08913, -0.54896, 0.63164, 0.47434, 0.38067, -0.06825]
+  },
+  "predicted_h0_action_corr": {
+    "x": [-0.26654, -0.14076, 0.22405, 0.12211, 0.02645, 0.06361],
+    "y": [-0.09451, -0.54692, 0.63064, 0.46709, 0.37577, -0.06962]
+  },
+  "permutation_seed": 17,
+  "final_test_used": false,
+  "real_robot_used": false
+}

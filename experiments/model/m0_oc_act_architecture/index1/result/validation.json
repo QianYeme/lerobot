@@ -1,0 +1,21 @@
+{
+  "experiment": "M0_OC_ACT_ARCHITECTURE_BUILD",
+  "device": "cuda",
+  "dataset_smoke": "\u6570\u636e\u96c6\\formal4\\kind_merged_nomaster",
+  "formal_training_performed": false,
+  "dev_or_test_read": false,
+  "real_robot_performed": false,
+  "gates": {
+    "M0-G0": true,
+    "M0-G1": true,
+    "M0-G2": true,
+    "M0-G3": true,
+    "M0-G4": true,
+    "M0-G5": true,
+    "M0-G6": true,
+    "M0-G7": true,
+    "M0-G8": true,
+    "M0-G9": true
+  },
+  "architecture_ready": true
+}

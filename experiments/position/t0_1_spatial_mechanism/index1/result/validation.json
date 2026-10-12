@@ -1,0 +1,11 @@
+{
+  "status": "PARTIAL",
+  "q1_object_branch_used": true,
+  "q2_explicit_xy_used": false_or_very_weak,
+  "q3_local_spatial_layout_used": true,
+  "q4_global_vs_local": "both contribute; local-only h0 arm delta is larger than global-only",
+  "q5_token_transplant": "not_run",
+  "final_test_used": false,
+  "real_robot_used": false,
+  "reason": "D1/D2 establish object dependence and D5-D9 establish local-layout dependence, but D3/D4 show negligible direct x/y sensitivity and no directional token-transplant evidence was collected."
+}

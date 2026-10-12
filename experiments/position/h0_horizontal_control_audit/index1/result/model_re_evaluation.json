@@ -1,0 +1,189 @@
+{
+  "experiment": "H0_HORIZONTAL_CONTROL_SIGNAL_AUDIT",
+  "mapping_source": "frozen Train-only Method-B ridge, horizon 1",
+  "model_re_evaluation": {
+    "T0.2_OC_ACT": {
+      "whole": {
+        "n": 20,
+        "n_nonzero": 20,
+        "sign_accuracy": 0.35,
+        "pearson": 0.6676429415685244,
+        "spearman": 0.5864661654135337,
+        "mean_abs_projected": 0.00035342819681085074
+      },
+      "local_only": {
+        "n": 20,
+        "n_nonzero": 20,
+        "sign_accuracy": 0.2,
+        "pearson": 0.6216353683372173,
+        "spearman": 0.6556390977443608,
+        "mean_abs_projected": 0.00013453981770753247
+      },
+      "global_only": {
+        "n": 20,
+        "n_nonzero": 20,
+        "sign_accuracy": 0.4,
+        "pearson": 0.7135800025606234,
+        "spearman": 0.7278195488721804,
+        "mean_abs_projected": 0.00028067387422975776
+      }
+    },
+    "T1_P2": {
+      "whole": {
+        "n": 20,
+        "n_nonzero": 6,
+        "sign_accuracy": 0.5,
+        "pearson": 0.2286555967469092,
+        "spearman": 0.3533834586466165,
+        "mean_abs_projected": 3.5345302281313817e-07
+      },
+      "local_only": {
+        "n": 20,
+        "n_nonzero": 5,
+        "sign_accuracy": 0.4,
+        "pearson": 0.22638225831970762,
+        "spearman": 0.18496240601503755,
+        "mean_abs_projected": 3.511571340856285e-07
+      },
+      "global_only": {
+        "n": 20,
+        "n_nonzero": 2,
+        "sign_accuracy": 1.0,
+        "pearson": 0.22664887238258452,
+        "spearman": -0.21353383458646616,
+        "mean_abs_projected": 2.4398839363220607e-07
+      }
+    },
+    "N0_R1_RELATIONAL": {
+      "whole": {
+        "n": 20,
+        "n_nonzero": 0,
+        "sign_accuracy": 0.0,
+        "pearson": -0.25666846141377314,
+        "spearman": -0.17744360902255638,
+        "mean_abs_projected": 1.8416650267994346e-09
+      },
+      "local_only": {
+        "n": 20,
+        "n_nonzero": 0,
+        "sign_accuracy": 0.0,
+        "pearson": -0.30882417238074256,
+        "spearman": -0.2541353383458646,
+        "mean_abs_projected": 1.5102762749594106e-09
+      },
+      "global_only": {
+        "n": 20,
+        "n_nonzero": 0,
+        "sign_accuracy": 0.0,
+        "pearson": -0.48527149605613634,
+        "spearman": -0.41503759398496237,
+        "mean_abs_projected": 5.306553168691536e-10
+      }
+    },
+    "N0_R2_ACTION_LEVEL": {
+      "whole": {
+        "n": 20,
+        "n_nonzero": 3,
+        "sign_accuracy": 0.3333333333333333,
+        "pearson": 0.19413786373843,
+        "spearman": -0.27368421052631575,
+        "mean_abs_projected": 3.13847102585783e-08
+      },
+      "local_only": {
+        "n": 20,
+        "n_nonzero": 3,
+        "sign_accuracy": 0.3333333333333333,
+        "pearson": 0.169374429199441,
+        "spearman": -0.2827067669172932,
+        "mean_abs_projected": 2.5184636037392316e-08
+      },
+      "global_only": {
+        "n": 20,
+        "n_nonzero": 2,
+        "sign_accuracy": 0.0,
+        "pearson": 0.1689229494106551,
+        "spearman": 0.06466165413533834,
+        "mean_abs_projected": 1.2494854744296933e-08
+      }
+    },
+    "N0_R3_FILM": {
+      "whole": {
+        "n": 20,
+        "n_nonzero": 0,
+        "sign_accuracy": 0.0,
+        "pearson": -0.2720598087116709,
+        "spearman": -0.3142857142857143,
+        "mean_abs_projected": 1.535327608310634e-10
+      },
+      "local_only": {
+        "n": 20,
+        "n_nonzero": 0,
+        "sign_accuracy": 0.0,
+        "pearson": -0.16173778725537713,
+        "spearman": -0.09774436090225563,
+        "mean_abs_projected": 2.267734274701287e-10
+      },
+      "global_only": {
+        "n": 20,
+        "n_nonzero": 0,
+        "sign_accuracy": 0.0,
+        "pearson": 0.2136193495971234,
+        "spearman": 0.09022556390977443,
+        "mean_abs_projected": 2.5245100689900224e-10
+      }
+    },
+    "T2_P3": {
+      "whole": {
+        "n": 20,
+        "n_nonzero": 20,
+        "sign_accuracy": 0.9,
+        "pearson": -0.045290655503268634,
+        "spearman": -0.05263157894736842,
+        "mean_abs_projected": 3.7118977754085886e-05
+      },
+      "local_only": {
+        "n": 20,
+        "n_nonzero": 20,
+        "sign_accuracy": 0.8,
+        "pearson": -0.22392387753859855,
+        "spearman": -0.33233082706766914,
+        "mean_abs_projected": 1.4594188649938475e-06
+      },
+      "global_only": {
+        "n": 20,
+        "n_nonzero": 20,
+        "sign_accuracy": 0.9,
+        "pearson": -0.027942878777114974,
+        "spearman": -0.030075187969924807,
+        "mean_abs_projected": 3.568613231060313e-05
+      }
+    },
+    "T3_P4": {
+      "whole": {
+        "n": 20,
+        "n_nonzero": 0,
+        "sign_accuracy": 0.0,
+        "pearson": -0.14758035416373005,
+        "spearman": -0.30526315789473685,
+        "mean_abs_projected": 1.9448308206681362e-10
+      },
+      "local_only": {
+        "n": 20,
+        "n_nonzero": 0,
+        "sign_accuracy": 0.0,
+        "pearson": -0.17191348258282735,
+        "spearman": -0.1533834586466165,
+        "mean_abs_projected": 2.7196343057933123e-10
+      },
+      "global_only": {
+        "n": 20,
+        "n_nonzero": 0,
+        "sign_accuracy": 0.0,
+        "pearson": -0.19419792572905684,
+        "spearman": -0.17293233082706763,
+        "mean_abs_projected": 1.9204132819149625e-10
+      }
+    }
+  },
+  "interpretation": "Projected horizontal direction is diagnostic only; no checkpoint selection or training was performed."
+}

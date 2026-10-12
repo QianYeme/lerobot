@@ -1,0 +1,50 @@
+{
+  "experiment": "T3_JOINT_STATE_SPATIAL_CONDITIONING",
+  "status": "preflight_passed",
+  "seed": 1,
+  "dataset": "formal4/kind_merged_nomaster",
+  "train_episodes": [0, 2, 4, 6, 7, 9, 10, 13, 14, 17, 18, 19, 22, 23, 24, 25, 26, 29, 30, 32, 34, 35, 36, 38, 40, 42, 43, 45, 48, 49, 50, 51, 54, 55, 56, 57],
+  "dev_episodes": [3, 5, 12, 15, 21, 28, 33, 39, 41, 47, 53, 58],
+  "forbidden_final_test_episodes": [1, 8, 11, 16, 20, 27, 31, 37, 44, 46, 52, 59],
+  "models": {
+    "B3": {
+      "joint_state_spatial_conditioning": false,
+      "state_input_dim": 8,
+      "spatial_input_dim": 0
+    },
+    "P4": {
+      "joint_state_spatial_conditioning": true,
+      "joint_input_dim": 11,
+      "joint_hidden_dim": 128,
+      "spatial_source": ["x_global", "y_global", "confidence_global"]
+    }
+  },
+  "frozen": [
+    "OC-ACT object branch, DINOv2, prototype bank, tau=0.20, 5 object tokens",
+    "train/dev split, normalization, preprocessing, optimizer and ACT settings",
+    "no beta/lambda/residual/spatial auxiliary loss",
+    "no detector, GT coordinates, Final Test or real robot"
+  ],
+  "smoke": {
+    "status": "passed_after_engineering_fix",
+    "b3_steps": 2,
+    "p4_steps": 2,
+    "notes": "P4 checkpoint contains joint_state_spatial_projection weights and contains neither explicit_spatial_beta nor explicit_spatial_scale."
+  },
+  "training": {
+    "steps": 100000,
+    "checkpoint_frequency": 10000,
+    "dev_eval_frequency_requested": 5000,
+    "framework_eval_frequency": 0,
+    "batch_size": 4,
+    "chunk_size": 100,
+    "n_action_steps": 1
+  },
+  "evaluation": {
+    "checkpoint_selection": "lowest Dev primary action metric; ties choose earlier",
+    "counterfactuals": ["J0_normal", "J1_spatial_zero", "J2_xy_shuffle", "J3_x_transplant", "J4_y_transplant", "J5_full_spatial_transplant"],
+    "directional_consistency_threshold": 0.70,
+    "final_test_used": false,
+    "real_robot_used": false
+  }
+}

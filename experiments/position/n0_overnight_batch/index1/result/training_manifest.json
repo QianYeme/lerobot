@@ -1,0 +1,38 @@
+{
+  "experiment_id": "N0_OVERNIGHT_SPATIAL_CONDITIONING_BATCH",
+  "status": "preflight_passed_queued",
+  "mode": "discovery",
+  "seed": 1,
+  "steps": 100000,
+  "checkpoint_every": 10000,
+  "requested_dev_eval_every": 5000,
+  "actual_dev_eval": "eval_freq=0; fixed Dev evaluation is a post-training step",
+  "train_episodes": [0, 2, 4, 6, 7, 9, 10, 13, 14, 17, 18, 19, 22, 23, 24, 25, 26, 29, 30, 32, 34, 35, 36, 38, 40, 42, 43, 45, 48, 49, 50, 51, 54, 55, 56, 57],
+  "dev_episodes": [3, 5, 12, 15, 21, 28, 33, 39, 41, 47, 53, 58],
+  "final_test_episodes": [1, 8, 11, 16, 20, 27, 31, 37, 44, 46, 52, 59],
+  "candidates": {
+    "R2_ACTION_LEVEL": "[x,y,confidence] -> action-level decoder query embedding",
+    "R1_RELATIONAL": "state/target relational representation replacing original state token",
+    "R3_FILM": "[x,y,confidence] -> FiLM modulation of original state token"
+  },
+  "frozen_upstream": {
+    "dataset": "formal4/kind_merged_nomaster",
+    "object_conditioning": "OC-ACT, frozen DINOv2-S, P0.1 pooling, tau=0.20",
+    "robot_state": "8D NOMASTER",
+    "action": "6D",
+    "augmentation": false,
+    "n_action_steps": 1
+  },
+  "preflight": {
+    "R2_ACTION_LEVEL": "2-step smoke passed; finite loss and action_spatial_mlp forward/gradient path",
+    "R1_RELATIONAL": "2-step smoke passed; finite loss and relational projection forward/gradient path",
+    "R3_FILM": "2-step smoke passed; finite loss and FiLM forward/gradient path"
+  },
+  "execution": {
+    "gpu": "single RTX 5090",
+    "order": ["R2_ACTION_LEVEL", "R1_RELATIONAL", "R3_FILM"],
+    "queue_policy": "wait for independently running T3 B3/P4, then run candidates sequentially to avoid GPU contention",
+    "final_test": false,
+    "real_robot": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "checkpoint": "results/experiments/T0_POSITION_DISCOVERY_ACT_VS_OCACT/B0_s1/checkpoints/100000/pretrained_model",
+  "dataset": "formal4/kind_merged_nomaster",
+  "episodes": [
+    3,
+    5,
+    12,
+    15,
+    21,
+    28,
+    33,
+    39,
+    41,
+    47,
+    53,
+    58
+  ],
+  "metrics": {
+    "inference_l1_loss": 0.2585838040774111
+  }
+}

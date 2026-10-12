@@ -1,0 +1,35 @@
+{
+  "ordering_priority": [
+    "horizontal mechanism",
+    "longitudinal preservation",
+    "overall Dev action quality",
+    "mechanism cleanliness",
+    "resource cost"
+  ],
+  "candidates": [
+    {
+      "model": "R2_ACTION_LEVEL",
+      "horizontal": 0.0,
+      "longitudinal": 1.0,
+      "spatial_usage": 0.10912212157568837,
+      "dev_l1": 0.1352053032403782,
+      "status": "transplant_evaluated"
+    },
+    {
+      "model": "R1_RELATIONAL",
+      "horizontal": 0.1,
+      "longitudinal": 1.0,
+      "spatial_usage": 0.0038826259827823284,
+      "dev_l1": 0.143739773471248,
+      "status": "transplant_evaluated"
+    },
+    {
+      "model": "R3_FILM",
+      "horizontal": 0.0,
+      "longitudinal": 0.0,
+      "spatial_usage": 4.231012066618911e-06,
+      "dev_l1": 0.12687844232310624,
+      "status": "transplant_evaluated"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "state_token_norm_mean": 24.48764991760254,
+  "raw_spatial_embedding_norm_mean": 8.552184104919434,
+  "effective_spatial_residual_norm_mean": 0.027201740071177483,
+  "visual_token_norm_mean": 40976.27734375,
+  "effective_spatial_over_state": 0.001110835060232708,
+  "effective_spatial_over_visual": 6.638411743209877e-07,
+  "beta": 0.0031806775368750095
+}

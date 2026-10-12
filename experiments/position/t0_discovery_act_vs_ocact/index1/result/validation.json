@@ -1,0 +1,8 @@
+{
+  "status": "PARTIAL",
+  "reason": "The repaired OC-ACT run is valid and improves Dev L1, but spatial-swap sensitivity is small; position generalization and mechanism evidence do not yet justify a PASS without further confirmation.",
+  "dev_only": true,
+  "final_test_used": false,
+  "real_robot_used": false,
+  "required_followup": "Review position/mechanism diagnostics with the user before any Final Test or real-robot gate."
+}

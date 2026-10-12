@@ -1,0 +1,16 @@
+src/lerobot/policies/act/configuration_act.py
+src/lerobot/policies/act/modeling_act.py
+src/lerobot/policies/act/object_conditioning/__init__.py
+src/lerobot/policies/act/object_conditioning/modeling_object_conditioning.py
+tests/policies/act/test_object_conditioning.py
+scripts/validate_m0_oc_act.py
+experiments/model/m0_oc_act_architecture/index1/result/architecture.md
+experiments/model/m0_oc_act_architecture/index1/result/config_example.yaml
+experiments/model/m0_oc_act_architecture/index1/result/figures/object_similarity_smoke_NOT_FOR_FORMAL_TRAINING.png
+experiments/model/m0_oc_act_architecture/index1/result/figures/object_token_layout.svg
+experiments/model/m0_oc_act_architecture/index1/result/metrics.json
+experiments/model/m0_oc_act_architecture/index1/result/summary.md
+experiments/model/m0_oc_act_architecture/index1/result/validation.json
+experiments/model/m0_oc_act_architecture/index1/result/smoke_prototype_bank_NOT_FOR_FORMAL_TRAINING.pt
+workflow/STATUS.md
+docc/日志/工作日志.md

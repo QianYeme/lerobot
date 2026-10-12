@@ -1,0 +1,39 @@
+{
+  "experiment": "P0_1_CUP_SPATIAL_POOLING_FIX",
+  "status": "PASS",
+  "selected_temperature": 0.2,
+  "formal_training_eligible": false,
+  "scope": {
+    "reference_count": 8,
+    "check_count": 12,
+    "dev_used": false,
+    "final_test_used": false,
+    "real_robot_used": false
+  },
+  "gates": {
+    "spatial_error": "PASS",
+    "position_tracking": "PASS",
+    "object_peak": "PASS",
+    "shortcut": "PASS",
+    "token_stability": "PASS",
+    "scope_integrity": "PASS",
+    "over_concentration": "PASS",
+    "overall": "PASS"
+  },
+  "selected_evidence": {
+    "median_error_px": 24.75365413049363,
+    "p90_error_px": 32.72872984388358,
+    "median_box_diagonal_px": 131.52186130069785,
+    "median_gate_px": 39.45655839020935,
+    "p90_gate_px": 59.18483758531403,
+    "pearson_x": 0.9637963280729226,
+    "pearson_y": 0.9312101498601,
+    "spearman_x": 0.8881118881118882,
+    "spearman_y": 0.8951048951048951,
+    "peak_in_box_rate": 1.0,
+    "cup_beats_corner_rate": 1.0,
+    "effective_patch_count_mean": 120.07982103056027,
+    "top1_weight_mean": 0.04223310357580582
+  },
+  "next_step": "Create a new formal-training decision; do not train automatically from this calibration result."
+}

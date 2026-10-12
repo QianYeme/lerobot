@@ -1,0 +1,32 @@
+{
+  "checkpoint": "results/experiments/T2_FIXED_SCALE_SPATIAL_CONDITIONING/T2_B2_s1/checkpoints/100000/pretrained_model",
+  "model": "B1",
+  "episodes": [
+    3,
+    5,
+    12,
+    15,
+    21,
+    28,
+    33,
+    39,
+    41,
+    47,
+    53,
+    58
+  ],
+  "frames": 5748,
+  "device": "cuda:0",
+  "metrics": {
+    "S0_normal": {
+      "all": 0.08828185818747215,
+      "h0_all": 0.08828185818747215,
+      "arm": 0.09317473343086786,
+      "h0_arm": 0.09317473343086786,
+      "gripper": 0.06381747559965092,
+      "h0_gripper": 0.06381747559965092
+    }
+  },
+  "final_test_used": false,
+  "real_robot_used": false
+}

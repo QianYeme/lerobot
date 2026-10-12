@@ -1,0 +1,49 @@
+{
+  "artifact_status": "FORMAL_P0_CANDIDATE",
+  "dino_identifier": "dinov2_vits14",
+  "feature_dim": 384,
+  "prototype_count": 4,
+  "source_reference_ids": [
+    {
+      "episode_index": 0,
+      "frame_index": 15
+    },
+    {
+      "episode_index": 6,
+      "frame_index": 15
+    },
+    {
+      "episode_index": 10,
+      "frame_index": 15
+    },
+    {
+      "episode_index": 17,
+      "frame_index": 15
+    },
+    {
+      "episode_index": 22,
+      "frame_index": 15
+    },
+    {
+      "episode_index": 35,
+      "frame_index": 15
+    },
+    {
+      "episode_index": 40,
+      "frame_index": 15
+    },
+    {
+      "episode_index": 55,
+      "frame_index": 15
+    }
+  ],
+  "construction_algorithm": "ellipse-filtered coarse-box DINO patches; deterministic farthest-first cosine medoids",
+  "similarity_rule": "max cosine similarity across prototypes",
+  "selection_rule_frozen_before_results": "default 4; promote to 8 only for >=0.15 neighbor-peak-rate gain or >=10px median-center gain without neighbor-peak regression",
+  "selected_count_reason": "4 remained default; 8 did not meet pre-frozen promotion rule",
+  "train_only": true,
+  "dev_used": false,
+  "final_test_used": false,
+  "git_commit": "2abe71e0319451f2ac75340b571ae5173a080863",
+  "sha256": "114de07e6cf6c0a2eba7fbede910212e0be6b0740751ab42855780c63b5fb876"
+}

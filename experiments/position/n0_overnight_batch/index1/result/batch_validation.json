@@ -1,0 +1,16 @@
+{
+  "experiment": "N0_OVERNIGHT_SPATIAL_CONDITIONING_BATCH",
+  "candidates_frozen": [
+    "R2_ACTION_LEVEL",
+    "R1_RELATIONAL",
+    "R3_FILM"
+  ],
+  "models_evaluated": [
+    "R2_ACTION_LEVEL",
+    "R1_RELATIONAL",
+    "R3_FILM"
+  ],
+  "final_test_used": false,
+  "real_robot_used": false,
+  "status": "complete"
+}

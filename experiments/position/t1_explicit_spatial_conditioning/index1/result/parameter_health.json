@@ -1,0 +1,9 @@
+{
+  "P2_checkpoint": "results/experiments/T1_OCACT_EXPLICIT_SPATIAL_CONDITIONING/T1_P2_s1/checkpoints/100000/pretrained_model",
+  "explicit_spatial_beta": 0.0031806775368750095,
+  "beta_finite": true,
+  "beta_nonzero": true,
+  "spatial_mlp_parameters_finite": true,
+  "dino_frozen": true,
+  "source": "remote checkpoint model.safetensors"
+}

@@ -1,0 +1,23 @@
+{
+  "status": "P0_1_PASS",
+  "temperature": 0.2,
+  "similarity_rule": "max cosine similarity across frozen P0 four-prototype bank",
+  "pooling_rule": "softmax(similarity / temperature), global token and each 2x2 local region",
+  "token_layout": "1 global + 2x2 local = 5 tokens; semantic + x + y + confidence",
+  "prototype_artifact": "../p0_prototype_calibration/index1/result/cup_prototype_bank_v1.pt",
+  "selection_rule": "largest frozen candidate temperature satisfying all P0.1 gates",
+  "candidate_temperatures": [1.0, 0.2, 0.1, 0.05, 0.02],
+  "selected_metrics": {
+    "median_error_px": 24.75365413049363,
+    "p90_error_px": 32.72872984388358,
+    "pearson_x": 0.9637963280729226,
+    "pearson_y": 0.9312101498601,
+    "spearman_x": 0.8881118881118882,
+    "spearman_y": 0.8951048951048951,
+    "effective_patch_count_mean": 120.07982103056027,
+    "top1_weight_mean": 0.04223310357580582
+  },
+  "dev_used": false,
+  "final_test_used": false,
+  "real_robot_used": false
+}
