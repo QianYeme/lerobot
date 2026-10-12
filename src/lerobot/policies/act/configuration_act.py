@@ -126,6 +126,40 @@ class ACTConfig(PreTrainedConfig):
     # collapse to its mean (open/close/release are low-duty-cycle events).
     gripper_loss_weight: float = 1.0
 
+    # Optional object-conditioned ACT (OC-ACT). Disabled by default so the baseline architecture and
+    # checkpoints remain unchanged.
+    model_type: str = "act"
+    object_conditioning_enabled: bool = False
+    object_conditioning_top_camera_key: str = "observation.images.top"
+    object_conditioning_dino_model: str = "dinov2_vits14"
+    object_conditioning_dino_frozen: bool = True
+    object_conditioning_prototype_path: str | None = None
+    object_conditioning_num_prototypes: int = 4
+    object_conditioning_num_object_tokens: int = 5
+    object_conditioning_adapter_dim: int = 256
+    object_conditioning_gate_init: float = 0.0
+    # Frozen by P0.1 for formal OC-ACT experiments; 1.0 preserves the M0 baseline behavior.
+    object_conditioning_temperature: float = 1.0
+    object_conditioning_smoke_mode: bool = False
+
+    # T1 explicit spatial conditioning.  The frozen object path remains
+    # unchanged; the global soft center is fused into the ACT state token.
+    explicit_spatial_conditioning: bool = False
+    explicit_spatial_dim: int = 128
+    explicit_spatial_beta_init: float = 0.01
+    explicit_spatial_fixed_scale: float = 0.0
+
+    # T3 joint state-spatial conditioning. Disabled by default so B3 keeps the
+    # OC-ACT state projection unchanged.
+    joint_state_spatial_conditioning: bool = False
+    joint_state_spatial_dim: int = 128
+
+    # N0 pre-registered alternatives. Exactly one candidate may be enabled.
+    action_level_spatial_conditioning: bool = False
+    relational_state_spatial_conditioning: bool = False
+    spatial_film_conditioning: bool = False
+    n0_spatial_dim: int = 128
+
     # Training preset
     optimizer_lr: float = 1e-5
     optimizer_weight_decay: float = 1e-4
@@ -159,6 +193,45 @@ class ACTConfig(PreTrainedConfig):
             raise ValueError(
                 f"Multiple observation steps not handled yet. Got `nobs_steps={self.n_obs_steps}`"
             )
+        if self.model_type not in {"act", "oc_act"}:
+            raise ValueError(f"`model_type` must be 'act' or 'oc_act', got {self.model_type!r}.")
+        if self.model_type == "oc_act" and not self.object_conditioning_enabled:
+            raise ValueError("`model_type='oc_act'` requires `object_conditioning_enabled=True`.")
+        if self.object_conditioning_enabled:
+            if self.model_type != "oc_act":
+                raise ValueError("Object conditioning requires `model_type='oc_act'`.")
+            if not self.object_conditioning_dino_frozen:
+                raise ValueError("M0 requires the DINOv2 encoder to remain frozen.")
+            if self.object_conditioning_num_object_tokens != 5:
+                raise ValueError("M0 freezes object token count to 5 (one global and four local tokens).")
+            if self.object_conditioning_num_prototypes < 1:
+                raise ValueError("`object_conditioning_num_prototypes` must be positive.")
+            if self.object_conditioning_temperature <= 0:
+                raise ValueError("`object_conditioning_temperature` must be positive.")
+            if self.object_conditioning_prototype_path is None and not self.object_conditioning_smoke_mode:
+                raise ValueError(
+                    "OC-ACT needs `object_conditioning_prototype_path`; alternatively enable explicit "
+                    "smoke mode for a NOT_FOR_FORMAL_TRAINING synthetic bank."
+                )
+            if self.explicit_spatial_conditioning:
+                if self.explicit_spatial_dim <= 0:
+                    raise ValueError("`explicit_spatial_dim` must be positive.")
+                if self.explicit_spatial_beta_init == 0:
+                    raise ValueError("`explicit_spatial_beta_init` must be non-zero for T1.")
+                if self.explicit_spatial_fixed_scale < 0:
+                    raise ValueError("`explicit_spatial_fixed_scale` must be non-negative.")
+            if self.joint_state_spatial_conditioning:
+                if self.joint_state_spatial_dim <= 0:
+                    raise ValueError("`joint_state_spatial_dim` must be positive.")
+                if self.explicit_spatial_conditioning:
+                    raise ValueError("T3 joint conditioning cannot be combined with T1 explicit residual conditioning.")
+            n0_flags = sum(bool(v) for v in (self.action_level_spatial_conditioning, self.relational_state_spatial_conditioning, self.spatial_film_conditioning))
+            if n0_flags > 1:
+                raise ValueError("N0 candidate conditioning flags are mutually exclusive.")
+            if n0_flags and (self.explicit_spatial_conditioning or self.joint_state_spatial_conditioning):
+                raise ValueError("N0 candidates cannot be combined with T1/T3 spatial conditioning.")
+            if n0_flags and self.n0_spatial_dim <= 0:
+                raise ValueError("`n0_spatial_dim` must be positive.")
 
     def get_optimizer_preset(self) -> AdamWConfig:
         return AdamWConfig(

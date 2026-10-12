@@ -34,6 +34,7 @@ from torchvision.models._utils import IntermediateLayerGetter
 from torchvision.ops.misc import FrozenBatchNorm2d
 
 from lerobot.policies.act.configuration_act import ACTConfig
+from lerobot.policies.act.object_conditioning import ObjectConditioning
 from lerobot.policies.pretrained import PreTrainedPolicy
 from lerobot.utils.constants import ACTION, OBS_ENV_STATE, OBS_IMAGES, OBS_STATE
 
@@ -347,10 +348,66 @@ class ACT(nn.Module):
 
         # Transformer encoder input projections. The tokens will be structured like
         # [latent, (robot_state), (env_state), (image_feature_map_pixels)].
-        if self.config.robot_state_feature:
+        if self.config.robot_state_feature and not (
+            self.config.joint_state_spatial_conditioning or self.config.relational_state_spatial_conditioning
+        ):
             self.encoder_robot_state_input_proj = nn.Linear(
                 self.config.robot_state_feature.shape[0], config.dim_model
             )
+        if self.config.joint_state_spatial_conditioning:
+            state_dim = self.config.robot_state_feature.shape[0]
+            self.joint_state_spatial_projection = nn.Sequential(
+                nn.Linear(state_dim + 3, self.config.joint_state_spatial_dim),
+                nn.LayerNorm(self.config.joint_state_spatial_dim),
+                nn.GELU(),
+                nn.Linear(self.config.joint_state_spatial_dim, config.dim_model),
+            )
+        if self.config.action_level_spatial_conditioning:
+            self.action_spatial_mlp = nn.Sequential(
+                nn.Linear(3, self.config.n0_spatial_dim),
+                nn.LayerNorm(self.config.n0_spatial_dim),
+                nn.GELU(),
+                nn.Linear(self.config.n0_spatial_dim, config.dim_model),
+            )
+        if self.config.relational_state_spatial_conditioning:
+            state_dim = self.config.robot_state_feature.shape[0]
+            d_rel = self.config.n0_spatial_dim
+            self.relational_state_encoder = nn.Sequential(
+                nn.Linear(state_dim, d_rel), nn.LayerNorm(d_rel), nn.GELU(), nn.Linear(d_rel, d_rel)
+            )
+            self.relational_target_encoder = nn.Sequential(
+                nn.Linear(3, d_rel), nn.LayerNorm(d_rel), nn.GELU(), nn.Linear(d_rel, d_rel)
+            )
+            self.relational_projection = nn.Sequential(
+                nn.Linear(4 * d_rel, config.dim_model), nn.LayerNorm(config.dim_model), nn.GELU()
+            )
+        if self.config.spatial_film_conditioning:
+            self.spatial_film_generator = nn.Sequential(
+                nn.Linear(3, self.config.n0_spatial_dim),
+                nn.LayerNorm(self.config.n0_spatial_dim),
+                nn.GELU(),
+                nn.Linear(self.config.n0_spatial_dim, 2 * config.dim_model),
+            )
+            nn.init.zeros_(self.spatial_film_generator[-1].weight)
+            nn.init.zeros_(self.spatial_film_generator[-1].bias)
+            with torch.no_grad():
+                self.spatial_film_generator[-1].bias[: config.dim_model].fill_(1.0)
+        if self.config.explicit_spatial_conditioning:
+            self.explicit_spatial_mlp = nn.Sequential(
+                nn.Linear(3, self.config.explicit_spatial_dim),
+                nn.LayerNorm(self.config.explicit_spatial_dim),
+                nn.GELU(),
+                nn.Linear(self.config.explicit_spatial_dim, config.dim_model),
+            )
+            if self.config.explicit_spatial_fixed_scale > 0:
+                self.register_buffer(
+                    "explicit_spatial_scale",
+                    torch.tensor(float(self.config.explicit_spatial_fixed_scale)),
+                )
+            else:
+                self.explicit_spatial_beta = nn.Parameter(
+                    torch.tensor(float(self.config.explicit_spatial_beta_init))
+                )
         if self.config.env_state_feature:
             self.encoder_env_state_input_proj = nn.Linear(
                 self.config.env_state_feature.shape[0], config.dim_model
@@ -369,6 +426,18 @@ class ACT(nn.Module):
         self.encoder_1d_feature_pos_embed = nn.Embedding(n_1d_tokens, config.dim_model)
         if self.config.image_features:
             self.encoder_cam_feat_pos_embed = ACTSinusoidalPositionEmbedding2d(config.dim_model // 2)
+
+        if self.config.object_conditioning_enabled:
+            image_keys = list(self.config.image_features)
+            if self.config.object_conditioning_top_camera_key not in image_keys:
+                raise ValueError(
+                    f"Top camera key {self.config.object_conditioning_top_camera_key!r} is not present in "
+                    f"image features {image_keys}."
+                )
+            self.object_conditioning_top_camera_index = image_keys.index(
+                self.config.object_conditioning_top_camera_key
+            )
+            self.object_conditioning = ObjectConditioning(config)
 
         # Transformer decoder.
         # Learnable positional embedding for the transformer's decoder (in the style of DETR object queries).
@@ -465,12 +534,48 @@ class ACT(nn.Module):
                 batch[OBS_STATE].device
             )
 
+        # Prepare transformer encoder inputs.  T1's explicit spatial path uses
+        # the same frozen global token that drives OC-ACT; it does not create a
+        # second detector or alter the object token path.
+        explicit_object_tokens = None
+        explicit_spatial = None
+        if (
+            self.config.explicit_spatial_conditioning
+            or self.config.joint_state_spatial_conditioning
+            or self.config.action_level_spatial_conditioning
+            or self.config.relational_state_spatial_conditioning
+            or self.config.spatial_film_conditioning
+        ):
+            top_image = batch[OBS_IMAGES][self.object_conditioning_top_camera_index]
+            raw_object_tokens, _ = self.object_conditioning.extract_raw_object_tokens(top_image)
+            explicit_object_tokens = self.object_conditioning.adapt_object_tokens(raw_object_tokens)
+            explicit_spatial = self.object_conditioning.global_spatial_features(raw_object_tokens)
+
         # Prepare transformer encoder inputs.
         encoder_in_tokens = [self.encoder_latent_input_proj(latent_sample)]
         encoder_in_pos_embed = list(self.encoder_1d_feature_pos_embed.weight.unsqueeze(1))
         # Robot state token.
         if self.config.robot_state_feature:
-            encoder_in_tokens.append(self.encoder_robot_state_input_proj(batch[OBS_STATE]))
+            if self.config.joint_state_spatial_conditioning:
+                state_token = self.joint_state_spatial_projection(
+                    torch.cat([batch[OBS_STATE], explicit_spatial], dim=-1)
+                )
+            elif self.config.relational_state_spatial_conditioning:
+                state_embed = self.relational_state_encoder(batch[OBS_STATE])
+                target_embed = self.relational_target_encoder(explicit_spatial)
+                relational = torch.cat(
+                    [state_embed, target_embed, state_embed - target_embed, state_embed * target_embed], dim=-1
+                )
+                state_token = self.relational_projection(relational)
+            else:
+                state_token = self.encoder_robot_state_input_proj(batch[OBS_STATE])
+            if explicit_spatial is not None and self.config.explicit_spatial_conditioning:
+                scale = self.explicit_spatial_scale if hasattr(self, "explicit_spatial_scale") else self.explicit_spatial_beta
+                state_token = state_token + scale * self.explicit_spatial_mlp(explicit_spatial)
+            if self.config.spatial_film_conditioning:
+                gamma, film_beta = self.spatial_film_generator(explicit_spatial).chunk(2, dim=-1)
+                state_token = gamma * state_token + film_beta
+            encoder_in_tokens.append(state_token)
         # Environment state token.
         if self.config.env_state_feature:
             encoder_in_tokens.append(self.encoder_env_state_input_proj(batch[OBS_ENV_STATE]))
@@ -497,6 +602,12 @@ class ACT(nn.Module):
         encoder_in_tokens = torch.stack(encoder_in_tokens, axis=0)
         encoder_in_pos_embed = torch.stack(encoder_in_pos_embed, axis=0)
 
+        if self.config.object_conditioning_enabled:
+            top_image = batch[OBS_IMAGES][self.object_conditioning_top_camera_index]
+            encoder_in_tokens = self.object_conditioning(
+                encoder_in_tokens, top_image, object_tokens=explicit_object_tokens
+            )
+
         # Forward pass through the transformer modules.
         encoder_out = self.encoder(encoder_in_tokens, pos_embed=encoder_in_pos_embed)
         # TODO(rcadene, alexander-soare): remove call to `device` ; precompute and use buffer
@@ -505,6 +616,9 @@ class ACT(nn.Module):
             dtype=encoder_in_pos_embed.dtype,
             device=encoder_in_pos_embed.device,
         )
+        if self.config.action_level_spatial_conditioning:
+            action_spatial = self.action_spatial_mlp(explicit_spatial).unsqueeze(0)
+            decoder_in = decoder_in + action_spatial
         decoder_out = self.decoder(
             decoder_in,
             encoder_out,

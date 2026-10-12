@@ -1,0 +1,14 @@
+{
+  "models": [
+    "B3_ACT",
+    "P1_OCACT",
+    "R3_FILM"
+  ],
+  "selection_source": "G0 frozen shortlist",
+  "status": "uploaded_to_huggingface_awaiting_hardware_and_operator_confirmation",
+  "checkpoint_refs": {
+    "B3_ACT": "https://huggingface.co/QYyyyyyyy/G1_B3_ACT_100k",
+    "P1_OCACT": "https://huggingface.co/QYyyyyyyy/G1_P1_OCACT_100k",
+    "R3_FILM": "https://huggingface.co/QYyyyyyyy/G1_R3_FILM_100k"
+  }
+}

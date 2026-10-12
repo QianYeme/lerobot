@@ -1,0 +1,7 @@
+{
+  "status": "no_trials_run",
+  "mean_latency_ms": null,
+  "p95_latency_ms": null,
+  "peak_vram_mb": null,
+  "control_frequency_hz": null
+}

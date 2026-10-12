@@ -1,0 +1,16 @@
+{
+  "experiment": "G1_POSITION_REAL_ROBOT_GENERALIZATION",
+  "status": "BLOCKED_HARDWARE",
+  "real_robot_used": false,
+  "final_test_used": false,
+  "policy_retraining": false,
+  "architecture_change": false,
+  "phase_a_trials_planned": 9,
+  "phase_b_trials_planned": 72,
+  "trials_completed": 0,
+  "blockers": [
+    "no SO101 serial port detected on current workstation",
+    "top/wrist cameras not verified",
+    "frozen B3/P1/R3 checkpoints absent locally"
+  ]
+}

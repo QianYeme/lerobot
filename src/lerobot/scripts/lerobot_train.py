@@ -81,6 +81,11 @@ METRICS_CSV_FIELDS = [
     "box_action_residual_alpha",
     "box_action_residual_abs_mean",
     "box_action_residual_abs_max",
+    "joint_projection_grad_norm",
+    "object_adapter_grad_norm",
+    "object_cross_attention_grad_norm",
+    "object_gate",
+    "dino_grad_norm",
 ]
 
 
@@ -156,6 +161,23 @@ def update_policy(
         grad_norm = torch.nn.utils.clip_grad_norm_(
             policy.parameters(), float("inf"), error_if_nonfinite=False
         )
+
+    # Record component health for the T3 joint-conditioning contract. These
+    # diagnostics are derived after clipping and before optimizer.step().
+    unwrapped = accelerator.unwrap_model(policy, keep_fp32_wrapper=True)
+
+    def component_grad_norm(prefix: str) -> float | None:
+        values = [p.grad.detach().float().norm(2) for n, p in unwrapped.named_parameters() if n.startswith(prefix) and p.grad is not None]
+        if not values:
+            return None
+        return float(torch.linalg.vector_norm(torch.stack(values), ord=2).item())
+
+    output_dict["joint_projection_grad_norm"] = component_grad_norm("model.joint_state_spatial_projection")
+    output_dict["object_adapter_grad_norm"] = component_grad_norm("model.object_conditioning.adapter")
+    output_dict["object_cross_attention_grad_norm"] = component_grad_norm("model.object_conditioning.cross_attention")
+    gate = getattr(getattr(unwrapped, "model", None), "object_conditioning", None)
+    output_dict["object_gate"] = None if gate is None else float(gate.gate.detach().item())
+    output_dict["dino_grad_norm"] = component_grad_norm("model.object_conditioning.dino")
 
     # Optimizer step
     with lock if lock is not None else nullcontext():
