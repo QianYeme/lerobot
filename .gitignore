@@ -182,6 +182,7 @@ outputs/
 数据集/
 数据/
 checkpoints/
+models/
 
 # Local helper scripts
 upload_models.ps1

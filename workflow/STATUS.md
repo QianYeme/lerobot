@@ -1,12 +1,14 @@
 # LeRobot 项目当前状态
 
-## 2026-10-13：G1 真机位置泛化已完成试验准备，但硬件阻塞
+## 2026-10-13：G1 真机位置泛化首次真机测试完成（定性）
 
 - G1 决策已读取；冻结 shortlist 为 `B3_ACT`、`P1_OCACT`、`R3_FILM`，不增加其它模型、不重训、不读取 Final。
 - 已生成 81 次固定试验计划：Phase A 为每模型 3 次 nominal-center safety/function check（9 次，不计主成功率）；Phase B 为 12 strata × 2 repeats × 3 models（72 次）。
-- 当前工作站虽检测到 RTX 4060 Laptop GPU，但未检测到 SO101 串口、top/wrist 相机，且三份冻结 checkpoint 不在本地；因此状态为 `BLOCKED_HARDWARE`，0 次真机 trial 已执行。
-- 已生成 `experiments/position/g1_real_robot_generalization/index1/result/trial_manifest.json`、`preflight.md`、`validation.json`、空结果表和资源占位文件，以及 `scripts/prepare_g1_trial_manifest.py`。
-- 接通真实硬件并完成相机/串口/冻结 checkpoint 校验后，才能由用户现场确认启动 Phase A；本轮未启动真机。
+- 已在本机接通 SO101 串口与 top/wrist 双相机并下载三份冻结 checkpoint，硬件阻塞解除；完成首次真机定性 rollout。
+- 部署修复：修正三份 checkpoint `config.json` 中指向远程 `/root/autodl-tmp/...` 的 `object_conditioning_prototype_path` 为本机路径（prototype 字节一致）；离线缓存 DINOv2-S 权重；生成 8D NOMASTER 元数据 `数据集/formal4_kind_merged_nomaster`（模型 8D、HF formal4 为 9D）；腕部相机 `fourcc: MJPG` 达 30fps。
+- 抖动缓解：开 `--policy.temporal_ensemble_coeff=0.01`，`--robot.max_relative_target` 下调至 2。
+- 定性结果：B3_ACT 与 P1_OCACT 均有成功抓取但保持时间较短，P1_OCACT 表现最佳；R3_FILM 能接近并识别/追踪塑料杯，但拿起与放下动作微弱甚至退化。
+- 81 次正式 trial（Phase A 9 + Phase B 72）尚未完成，`POSITION_REAL_ROBOT_GENERALIZATION_COMPLETE` 未置位。
 
 ## 2026-10-13：G0 位置泛化筛查完成，shortlist 已冻结
 
