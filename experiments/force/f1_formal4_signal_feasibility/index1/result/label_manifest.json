@@ -1,0 +1,96 @@
+{
+  "label_source": "PENDING_INDEPENDENT_RGB_REVIEW",
+  "records": [
+    {
+      "episode": 0,
+      "split": "train",
+      "clip": "evidence_samples\\train_ep000_dual_view.mp4",
+      "frames": 479,
+      "fps": 30,
+      "review_status": "PREPARED_NOT_REVIEWED_FOR_F1",
+      "source_sha256": "4322575e7c6bd7607c877634e152b7f85c64076df7df1d6bccdfe5372eec4696",
+      "copied_sha256": "4322575e7c6bd7607c877634e152b7f85c64076df7df1d6bccdfe5372eec4696",
+      "original_video_offset_frames": [
+        0,
+        0
+      ]
+    },
+    {
+      "episode": 2,
+      "split": "train",
+      "clip": "evidence_samples\\train_ep002_dual_view.mp4",
+      "frames": 479,
+      "fps": 30,
+      "review_status": "PREPARED_NOT_REVIEWED_FOR_F1",
+      "source_sha256": "1a42825d3a3717df33713463407f8b5c95ffe5071dd5c21689c22c8e91e415a1",
+      "copied_sha256": "1a42825d3a3717df33713463407f8b5c95ffe5071dd5c21689c22c8e91e415a1",
+      "original_video_offset_frames": [
+        958,
+        958
+      ]
+    },
+    {
+      "episode": 4,
+      "split": "train",
+      "clip": "evidence_samples\\train_ep004_dual_view.mp4",
+      "frames": 479,
+      "fps": 30,
+      "review_status": "PREPARED_NOT_REVIEWED_FOR_F1",
+      "source_sha256": "3f2236b79c33345f09bf5edb6000cbfc7cea3f807ed1ccd3a602a23b5062e498",
+      "copied_sha256": "3f2236b79c33345f09bf5edb6000cbfc7cea3f807ed1ccd3a602a23b5062e498",
+      "original_video_offset_frames": [
+        1916,
+        1916
+      ]
+    },
+    {
+      "episode": 6,
+      "split": "train",
+      "clip": "evidence_samples\\train_ep006_dual_view.mp4",
+      "frames": 479,
+      "fps": 30,
+      "review_status": "PREPARED_NOT_REVIEWED_FOR_F1",
+      "source_sha256": "989e6b9c6cfa101a6bfc349301a19a8ef65c0f177ceb43375cc3bb44c4ef41d2",
+      "copied_sha256": "989e6b9c6cfa101a6bfc349301a19a8ef65c0f177ceb43375cc3bb44c4ef41d2",
+      "original_video_offset_frames": [
+        2874,
+        2874
+      ]
+    },
+    {
+      "episode": 7,
+      "split": "train",
+      "clip": "evidence_samples\\train_ep007_dual_view.mp4",
+      "frames": 479,
+      "fps": 30,
+      "review_status": "PREPARED_NOT_REVIEWED_FOR_F1",
+      "source_sha256": "0034613738d973dde7e57127f89f58476a53600b43a2fa382e4a3b4f72ead8e2",
+      "copied_sha256": "0034613738d973dde7e57127f89f58476a53600b43a2fa382e4a3b4f72ead8e2",
+      "original_video_offset_frames": [
+        3353,
+        3353
+      ]
+    },
+    {
+      "episode": 9,
+      "split": "train",
+      "clip": "evidence_samples\\train_ep009_dual_view.mp4",
+      "frames": 479,
+      "fps": 30,
+      "review_status": "PREPARED_NOT_REVIEWED_FOR_F1",
+      "source_sha256": "fdedaedbec458eb60b02f888f4d75bf8cf0a76ccfe553bcc382ef21d5b60ea50",
+      "copied_sha256": "fdedaedbec458eb60b02f888f4d75bf8cf0a76ccfe553bcc382ef21d5b60ea50",
+      "original_video_offset_frames": [
+        4311,
+        4311
+      ]
+    }
+  ],
+  "historical_D2_events_are_not_F1_labels": true,
+  "reviewer_must_not_access": [
+    "signal_integrity.json",
+    "figures/",
+    "D:\\lerobot\\lerobot-main\\results\\experiments\\F1_FORMAL4_CONTACT_SIGNAL_FEASIBILITY\\20261015T104330Z"
+  ],
+  "independent_dev_review": "NOT_STARTED_BEFORE_TRAIN_TASK_FREEZE"
+}

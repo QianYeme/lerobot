@@ -1,0 +1,19 @@
+{
+  "DIAGNOSIS_COMPLETE": false,
+  "acceptance_status": "PARTIAL_PASS",
+  "diagnostic_category": "UNRESOLVED",
+  "training": false,
+  "final_test": false,
+  "real_robot": false,
+  "gates": {
+    "G0": "PARTIAL_B3_IDENTITY_CONFLICT",
+    "G1": "PARTIAL_UNITS_AND_DELAY_UNVERIFIED",
+    "G2": "PARTIAL_REPLAY_EQUIVALENCE_UNTESTED",
+    "G3": "NA",
+    "G4": "STATIC_ONLY",
+    "G5": "PARTIAL_P1_FULL_DEV_PHASES_UNKNOWN",
+    "G6": "PARTIAL_RUNTIME_UNVERIFIED",
+    "G7": "NA",
+    "G8": "UNRESOLVED"
+  }
+}

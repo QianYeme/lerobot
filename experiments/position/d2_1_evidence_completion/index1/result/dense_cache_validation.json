@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "episodes": 12,
+  "frames": 5748,
+  "shape_and_finite_and_contiguous_frame_checks": "PASS",
+  "existing_replay_mae_max_abs_difference": 8.508721944799902e-06,
+  "cache_sha256": {
+    "episode_003.npz": "b19fab4ecdb3b599303a57767a311d85eb08c6a33e58327e9fee7e294a5c7c68",
+    "episode_005.npz": "209bdf1218e9535edf5ace1810b2e7b12ff6cfb4a790e512521937bbd708811c",
+    "episode_012.npz": "b18cb99dddeb42b6963b617f5a69b88756c11e0ec710c1fe227bdd01de5744f5",
+    "episode_015.npz": "15073f98fa2523cf42faae2f59a6ec6b20f2e013f15ab210605bf7e367693050",
+    "episode_021.npz": "83c27320607f4233ab5ff499842a238afc615fa0a1f6fd0739d053c2a13161ce",
+    "episode_028.npz": "835f5da91bcff95d83a5c046a3616d5e526969ad197e25da106dcd40ccc04d29",
+    "episode_033.npz": "22683715d34239ff21fe830c27ef2164afd63f2348255c56ddfc10d2de264606",
+    "episode_039.npz": "9b86a1af9d19df41d1dd936461fa00889d5067a96866e61b3b457f79de1e897d",
+    "episode_041.npz": "4cbc3ab415b2a2cdb58d1e8ad1e2e68c9a965f782af393f9bb4bec0bb3ee515d",
+    "episode_047.npz": "ac815e0cf3204763b3ef2ccf1827e9aab22904296c6a7270026282f8a8a671f4",
+    "episode_053.npz": "b9d4130c9e2b655cd8a5eb4887770bb5d7b565bc6cb6a1da5165897ccb6cd785",
+    "episode_058.npz": "2ffd0bd7bd177890859ff07410b0421da26e014bf7707b5c5b0d12a60e3fa8e3"
+  },
+  "temporal_weights": "oldest origin first, exp(-0.01*i); reset every episode",
+  "clamp_state": "recorded expert state, NOT fresh motor state",
+  "normalized_path": "previous replay_equivalence_validation.json retained"
+}

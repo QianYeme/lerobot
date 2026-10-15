@@ -1,0 +1,4549 @@
+{
+  "schema": {
+    "action": {
+      "dtype": "float32",
+      "names": [
+        "shoulder_pan.pos",
+        "shoulder_lift.pos",
+        "elbow_flex.pos",
+        "wrist_flex.pos",
+        "wrist_roll.pos",
+        "gripper.pos"
+      ],
+      "shape": [
+        6
+      ]
+    },
+    "observation.state": {
+      "dtype": "float32",
+      "names": [
+        "shoulder_pan.pos",
+        "shoulder_lift.pos",
+        "elbow_flex.pos",
+        "wrist_flex.pos",
+        "wrist_roll.pos",
+        "gripper.pos",
+        "gripper.load",
+        "gripper.curr"
+      ],
+      "shape": [
+        8
+      ]
+    },
+    "observation.images.gripper": {
+      "dtype": "video",
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "names": [
+        "height",
+        "width",
+        "channels"
+      ],
+      "info": {
+        "video.height": 480,
+        "video.width": 640,
+        "video.codec": "av1",
+        "video.pix_fmt": "yuv420p",
+        "video.is_depth_map": false,
+        "video.fps": 30,
+        "video.channels": 3,
+        "has_audio": false
+      }
+    },
+    "observation.images.top": {
+      "dtype": "video",
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "names": [
+        "height",
+        "width",
+        "channels"
+      ],
+      "info": {
+        "video.height": 480,
+        "video.width": 640,
+        "video.codec": "av1",
+        "video.pix_fmt": "yuv420p",
+        "video.is_depth_map": false,
+        "video.fps": 30,
+        "video.channels": 3,
+        "has_audio": false
+      }
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    },
+    "task_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null
+    }
+  },
+  "fps": 30,
+  "by_split": {
+    "train": {
+      "pos": {
+        "n": 17243,
+        "nonfinite": 0,
+        "min": 1.4462809562683105,
+        "max": 94.21487426757812,
+        "mean": 42.29968164946497,
+        "std": 24.684532587018822,
+        "quantiles_0_1_5_25_50_75_95_99_100": [
+          1.4462809562683105,
+          1.4462809562683105,
+          1.7217631340026855,
+          21.212121963500977,
+          41.9421501159668,
+          64.11845397949219,
+          77.96143341064453,
+          92.05096176147448,
+          94.21487426757812
+        ],
+        "zero_rate": 0.0,
+        "unique_count": 1208,
+        "integer_valued": false,
+        "minimum_observed_quantization_step": 0.06886672973632812,
+        "hardware_saturation_limits": "UNKNOWN",
+        "hardware_saturation_hit_rate": null
+      },
+      "load": {
+        "n": 17243,
+        "nonfinite": 0,
+        "min": -500.0,
+        "max": 388.0,
+        "mean": -4.789421794351331,
+        "std": 119.94285557515427,
+        "quantiles_0_1_5_25_50_75_95_99_100": [
+          -500.0,
+          -492.0,
+          -268.0,
+          -32.0,
+          20.0,
+          56.0,
+          163.59999999999854,
+          284.0,
+          388.0
+        ],
+        "zero_rate": 0.057356608478802994,
+        "unique_count": 211,
+        "integer_valued": true,
+        "minimum_observed_quantization_step": 4.0,
+        "hardware_saturation_limits": "UNKNOWN",
+        "hardware_saturation_hit_rate": null
+      },
+      "current": {
+        "n": 17243,
+        "nonfinite": 0,
+        "min": 0.0,
+        "max": 18.0,
+        "mean": 1.6128283941309516,
+        "std": 1.7903716782680912,
+        "quantiles_0_1_5_25_50_75_95_99_100": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          2.0,
+          5.0,
+          8.579999999998108,
+          18.0
+        ],
+        "zero_rate": 0.27448819810937775,
+        "unique_count": 18,
+        "integer_valued": true,
+        "minimum_observed_quantization_step": 1.0,
+        "hardware_saturation_limits": "UNKNOWN",
+        "hardware_saturation_hit_rate": null
+      }
+    },
+    "dev": {
+      "pos": {
+        "n": 5748,
+        "nonfinite": 0,
+        "min": 1.4462809562683105,
+        "max": 92.90633392333984,
+        "mean": 42.8028021626947,
+        "std": 24.359318197142183,
+        "quantiles_0_1_5_25_50_75_95_99_100": [
+          1.4462809562683105,
+          1.584022045135498,
+          1.7217631340026855,
+          22.865013122558594,
+          41.976585388183594,
+          66.87327575683594,
+          74.88292007446285,
+          90.7796115112304,
+          92.90633392333984
+        ],
+        "zero_rate": 0.0,
+        "unique_count": 831,
+        "integer_valued": false,
+        "minimum_observed_quantization_step": 0.06886672973632812,
+        "hardware_saturation_limits": "UNKNOWN",
+        "hardware_saturation_hit_rate": null
+      },
+      "load": {
+        "n": 5748,
+        "nonfinite": 0,
+        "min": -500.0,
+        "max": 364.0,
+        "mean": -2.1002087682672235,
+        "std": 121.02675322620591,
+        "quantiles_0_1_5_25_50_75_95_99_100": [
+          -500.0,
+          -500.0,
+          -256.0,
+          -28.0,
+          24.0,
+          56.0,
+          164.0,
+          262.119999999999,
+          364.0
+        ],
+        "zero_rate": 0.04697286012526096,
+        "unique_count": 199,
+        "integer_valued": true,
+        "minimum_observed_quantization_step": 4.0,
+        "hardware_saturation_limits": "UNKNOWN",
+        "hardware_saturation_hit_rate": null
+      },
+      "current": {
+        "n": 5748,
+        "nonfinite": 0,
+        "min": 0.0,
+        "max": 16.0,
+        "mean": 1.6494432846207376,
+        "std": 1.825390598829044,
+        "quantiles_0_1_5_25_50_75_95_99_100": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          2.0,
+          5.0,
+          9.0,
+          16.0
+        ],
+        "zero_rate": 0.26252609603340293,
+        "unique_count": 16,
+        "integer_valued": true,
+        "minimum_observed_quantization_step": 1.0,
+        "hardware_saturation_limits": "UNKNOWN",
+        "hardware_saturation_hit_rate": null
+      }
+    }
+  },
+  "per_episode": [
+    {
+      "episode": 0,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 5.716253280639648,
+          "max": 85.12397003173828,
+          "mean": 48.197001866358555,
+          "std": 28.073038482446155,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            5.716253280639648,
+            5.716253280639648,
+            5.716253280639648,
+            26.377410888671875,
+            36.70798873901367,
+            76.92837524414062,
+            83.7465591430664,
+            83.85261978149413,
+            85.12397003173828
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 149,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06886863708496094,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 356.0,
+          "mean": -13.670146137787057,
+          "std": 143.4518088691402,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -349.2,
+            -32.0,
+            -24.0,
+            56.0,
+            208.0,
+            341.75999999999976,
+            356.0
+          ],
+          "zero_rate": 0.0041753653444676405,
+          "unique_count": 105,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 16.0,
+          "mean": 1.9331941544885178,
+          "std": 2.1912057161498435,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            7.0,
+            10.21999999999997,
+            16.0
+          ],
+          "zero_rate": 0.18997912317327767,
+          "unique_count": 14,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 71.21212768554688,
+        "load": -2.9333324432373047,
+        "current": 0.03333336114883423
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 2,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 4.13223123550415,
+          "max": 76.72176361083984,
+          "mean": 49.33501792999299,
+          "std": 24.352734496840693,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            4.13223123550415,
+            4.13223123550415,
+            4.13223123550415,
+            29.683195114135742,
+            54.476585388183594,
+            72.65840148925781,
+            73.49173507690429,
+            76.37741088867188,
+            76.72176361083984
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 119,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 308.0,
+          "mean": 7.482254697286012,
+          "std": 124.6757765869846,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -316.0,
+            24.0,
+            32.0,
+            48.0,
+            140.39999999999986,
+            280.8799999999999,
+            308.0
+          ],
+          "zero_rate": 0.033402922755741124,
+          "unique_count": 87,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 11.0,
+          "mean": 1.4718162839248434,
+          "std": 1.8679639143878248,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            5.0,
+            9.0,
+            11.0
+          ],
+          "zero_rate": 0.29436325678496866,
+          "unique_count": 12,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 68.52617645263672,
+        "load": 12.666666984558105,
+        "current": 0.2666666507720947
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 4,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 3.719008207321167,
+          "max": 86.57025146484375,
+          "mean": 44.71652375233198,
+          "std": 27.399447745502457,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            3.719008207321167,
+            3.719008207321167,
+            3.719008207321167,
+            21.48760414123535,
+            40.8402214050293,
+            68.56060409545898,
+            77.68595123291016,
+            85.91184906005859,
+            86.57025146484375
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 124,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -496.0,
+          "max": 344.0,
+          "mean": -1.4363256784968685,
+          "std": 136.78469899361892,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -496.0,
+            -476.88,
+            -324.0,
+            -36.0,
+            32.0,
+            64.0,
+            180.39999999999986,
+            310.63999999999965,
+            344.0
+          ],
+          "zero_rate": 0.0020876826722338203,
+          "unique_count": 104,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 11.0,
+          "mean": 1.9958246346555324,
+          "std": 1.9037330919333604,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            6.0,
+            9.0,
+            11.0
+          ],
+          "zero_rate": 0.17536534446764093,
+          "unique_count": 12,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 64.84160614013672,
+        "load": -5.466665267944336,
+        "current": 0.03333330154418945
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 6,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.7217631340026855,
+          "max": 73.8292007446289,
+          "mean": 50.22012637950682,
+          "std": 22.618248196097753,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.7217631340026855,
+            1.7217631340026855,
+            11.969696903228765,
+            25.964187622070312,
+            63.91184616088867,
+            73.62258911132812,
+            73.8292007446289,
+            73.8292007446289,
+            73.8292007446289
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 94,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06886672973632812,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 312.0,
+          "mean": -14.663883089770355,
+          "std": 124.33593868046397,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -284.4,
+            -32.0,
+            -20.0,
+            52.0,
+            144.79999999999973,
+            282.63999999999965,
+            312.0
+          ],
+          "zero_rate": 0.008350730688935281,
+          "unique_count": 79,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 1.4634655532359082,
+          "std": 1.9369555385212107,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            5.099999999999966,
+            9.0,
+            13.0
+          ],
+          "zero_rate": 0.31524008350730687,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 57.848934173583984,
+        "load": 111.60000610351562,
+        "current": -3.299999952316284
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 7,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 80.78512573242188,
+          "mean": 48.78247257115199,
+          "std": 22.15442086357358,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            1.7217631340026855,
+            27.617080688476562,
+            55.92286682128906,
+            69.4903564453125,
+            75.96418762207031,
+            80.48622756958007,
+            80.78512573242188
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 134,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 316.0,
+          "mean": -5.294363256784969,
+          "std": 134.03253815199952,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -316.4,
+            -24.0,
+            32.0,
+            52.0,
+            176.0,
+            285.75999999999976,
+            316.0
+          ],
+          "zero_rate": 0.006263048016701462,
+          "unique_count": 105,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 1.592901878914405,
+          "std": 1.9415336610446212,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            6.0,
+            9.0,
+            13.0
+          ],
+          "zero_rate": 0.267223382045929,
+          "unique_count": 12,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 67.2176284790039,
+        "load": 4.666666030883789,
+        "current": -1.2666666507720947
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 9,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 2.2038567066192627,
+          "max": 82.7823715209961,
+          "mean": 46.97516005322928,
+          "std": 26.698223025721227,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            2.2038567066192627,
+            2.2038567066192627,
+            2.2038567066192627,
+            22.727272033691406,
+            54.132232666015625,
+            69.35261535644531,
+            78.09917449951172,
+            81.36501571655272,
+            82.7823715209961
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 114,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 312.0,
+          "mean": -4.267223382045929,
+          "std": 135.01124823940796,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -325.59999999999997,
+            -24.0,
+            28.0,
+            52.0,
+            160.79999999999973,
+            284.8799999999999,
+            312.0
+          ],
+          "zero_rate": 0.029227557411273485,
+          "unique_count": 92,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 17.0,
+          "mean": 1.6409185803757829,
+          "std": 2.0779375895196406,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            6.0,
+            10.21999999999997,
+            17.0
+          ],
+          "zero_rate": 0.2755741127348643,
+          "unique_count": 14,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 67.14876556396484,
+        "load": -30.933334350585938,
+        "current": 0.06666667759418488
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 10,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 77.54821014404297,
+          "mean": 49.778866089211625,
+          "std": 23.865717089565496,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            1.6528925895690918,
+            30.234159469604492,
+            58.815425872802734,
+            68.18181610107422,
+            77.54821014404297,
+            77.54821014404297,
+            77.54821014404297
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 94,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -384.0,
+          "max": 264.0,
+          "mean": -12.993736951983298,
+          "std": 112.1611480596195,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -384.0,
+            -368.0,
+            -316.4,
+            -28.0,
+            -20.0,
+            52.0,
+            112.79999999999973,
+            240.0,
+            264.0
+          ],
+          "zero_rate": 0.05845511482254697,
+          "unique_count": 80,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 1.4029227557411275,
+          "std": 1.6058582134014765,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            5.0,
+            7.21999999999997,
+            8.0
+          ],
+          "zero_rate": 0.31524008350730687,
+          "unique_count": 9,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 75.89070892333984,
+        "load": -58.666664123535156,
+        "current": -0.36666667461395264
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 13,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.7217631340026855,
+          "max": 84.64187622070312,
+          "mean": 48.599584817139736,
+          "std": 27.38791440848382,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.7217631340026855,
+            1.7217631340026855,
+            1.7217631340026855,
+            25.964187622070312,
+            54.75206756591797,
+            68.59503936767578,
+            84.64187622070312,
+            84.64187622070312,
+            84.64187622070312
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 117,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 340.0,
+          "mean": -9.260960334029228,
+          "std": 137.78436436922365,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -304.0,
+            -32.0,
+            0.0,
+            52.0,
+            208.79999999999973,
+            322.63999999999965,
+            340.0
+          ],
+          "zero_rate": 0.0709812108559499,
+          "unique_count": 85,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 18.0,
+          "mean": 1.674321503131524,
+          "std": 2.0357935645211054,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            6.0,
+            9.21999999999997,
+            18.0
+          ],
+          "zero_rate": 0.20668058455114824,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 66.873291015625,
+        "load": -71.06666564941406,
+        "current": -0.2666666507720947
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 14,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 4.545454502105713,
+          "max": 79.95867919921875,
+          "mean": 47.59053802390686,
+          "std": 27.13709456113011,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            4.545454502105713,
+            4.545454502105713,
+            4.889807224273682,
+            23.966941833496094,
+            47.727272033691406,
+            75.0,
+            75.68870544433594,
+            78.20523513793944,
+            79.95867919921875
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 117,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 388.0,
+          "mean": -5.48643006263048,
+          "std": 137.560475687565,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -317.59999999999997,
+            -36.0,
+            28.0,
+            60.0,
+            136.39999999999986,
+            352.0,
+            388.0
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 86,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 14.0,
+          "mean": 1.8538622129436326,
+          "std": 1.9967459722967273,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            7.0,
+            9.21999999999997,
+            14.0
+          ],
+          "zero_rate": 0.16910229645093947,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 70.32598876953125,
+        "load": -3.333332061767578,
+        "current": -0.03333336114883423
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 17,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 2.892561912536621,
+          "max": 93.4572982788086,
+          "mean": 42.89900275162715,
+          "std": 30.174277524292002,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            2.892561912536621,
+            2.892561912536621,
+            2.892561912536621,
+            20.316804885864258,
+            26.928375244140625,
+            71.07437896728516,
+            87.88567123413085,
+            92.33884063720701,
+            93.4572982788086
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 137,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 364.0,
+          "mean": 0.29227557411273486,
+          "std": 145.32703801396192,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -289.59999999999997,
+            -28.0,
+            28.0,
+            60.0,
+            209.1999999999996,
+            344.8799999999999,
+            364.0
+          ],
+          "zero_rate": 0.03966597077244259,
+          "unique_count": 93,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 1.9373695198329854,
+          "std": 2.0413885965384497,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            2.0,
+            6.0,
+            10.0,
+            13.0
+          ],
+          "zero_rate": 0.2254697286012526,
+          "unique_count": 14,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 68.18181610107422,
+        "load": -20.53333282470703,
+        "current": 0.7333332896232605
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 18,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.7217631340026855,
+          "max": 80.37190246582031,
+          "mean": 49.548819600415875,
+          "std": 26.766423124433683,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.7217631340026855,
+            1.7217631340026855,
+            1.7217631340026855,
+            27.685951232910156,
+            44.765838623046875,
+            77.203857421875,
+            80.37190246582031,
+            80.37190246582031,
+            80.37190246582031
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 118,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -488.0,
+          "max": 348.0,
+          "mean": -18.396659707724424,
+          "std": 123.15749065525841,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -488.0,
+            -428.88,
+            -312.0,
+            -36.0,
+            -24.0,
+            44.0,
+            152.0,
+            304.8799999999999,
+            348.0
+          ],
+          "zero_rate": 0.014613778705636743,
+          "unique_count": 98,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 10.0,
+          "mean": 1.501043841336117,
+          "std": 1.781222796710904,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            5.0,
+            9.0,
+            10.0
+          ],
+          "zero_rate": 0.22755741127348644,
+          "unique_count": 11,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 78.60420989990234,
+        "load": -46.0,
+        "current": 0.13333332538604736
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 19,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.584022045135498,
+          "max": 89.0495834350586,
+          "mean": 46.16927415941354,
+          "std": 28.96837746753113,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.584022045135498,
+            1.584022045135498,
+            1.584022045135498,
+            20.247934341430664,
+            46.14324951171875,
+            68.18181610107422,
+            89.0495834350586,
+            89.0495834350586,
+            89.0495834350586
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 141,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 372.0,
+          "mean": 0.7515657620041754,
+          "std": 140.11782572633254,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -484.4,
+            -292.79999999999995,
+            -24.0,
+            28.0,
+            48.0,
+            236.39999999999986,
+            350.63999999999965,
+            372.0
+          ],
+          "zero_rate": 0.022964509394572025,
+          "unique_count": 111,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 12.0,
+          "mean": 1.7411273486430063,
+          "std": 2.004118823141171,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            6.0,
+            9.0,
+            12.0
+          ],
+          "zero_rate": 0.26931106471816285,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 66.5954818725586,
+        "load": 1.5999994277954102,
+        "current": -0.1666666567325592
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 22,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.584022045135498,
+          "max": 81.19834899902344,
+          "mean": 45.52988609092967,
+          "std": 28.617111769709663,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.584022045135498,
+            1.584022045135498,
+            1.584022045135498,
+            21.83195686340332,
+            41.735538482666016,
+            74.17355346679688,
+            77.96143341064453,
+            80.04270126342773,
+            81.19834899902344
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 120,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06886863708496094,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 332.0,
+          "mean": -4.4258872651356995,
+          "std": 137.54174252700582,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -309.2,
+            -32.0,
+            32.0,
+            52.0,
+            192.0,
+            313.75999999999976,
+            332.0
+          ],
+          "zero_rate": 0.029227557411273485,
+          "unique_count": 88,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 1.7181628392484343,
+          "std": 2.0387437202311425,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            6.0,
+            9.0,
+            13.0
+          ],
+          "zero_rate": 0.2567849686847599,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 72.58953857421875,
+        "load": -50.79999923706055,
+        "current": 0.6666666269302368
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 23,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.5151515007019043,
+          "max": 75.13774108886719,
+          "mean": 37.58260076926994,
+          "std": 27.643694119544943,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.5151515007019043,
+            1.5151515007019043,
+            1.5151515007019043,
+            13.292011260986328,
+            25.137741088867188,
+            64.94490051269531,
+            75.13774108886719,
+            75.13774108886719,
+            75.13774108886719
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 108,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 356.0,
+          "mean": -29.96242171189979,
+          "std": 125.64478646795457,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -292.4,
+            -36.0,
+            -24.0,
+            0.0,
+            178.39999999999918,
+            344.8799999999999,
+            356.0
+          ],
+          "zero_rate": 0.33402922755741127,
+          "unique_count": 81,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 1.2421711899791232,
+          "std": 2.2374251445765383,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            7.0,
+            10.21999999999997,
+            13.0
+          ],
+          "zero_rate": 0.5135699373695198,
+          "unique_count": 14,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 73.6225814819336,
+        "load": -56.93333435058594,
+        "current": 0.5666666626930237
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 24,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 2.4793388843536377,
+          "max": 94.21487426757812,
+          "mean": 46.45007714100322,
+          "std": 30.700927004923653,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            2.4793388843536377,
+            2.4793388843536377,
+            2.5482094287872314,
+            20.9366397857666,
+            35.468318939208984,
+            73.48484802246094,
+            88.53994140624998,
+            93.87052154541016,
+            94.21487426757812
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 180,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887030601501465,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 356.0,
+          "mean": 2.3048016701461376,
+          "std": 144.9805364444359,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -336.4,
+            -28.0,
+            40.0,
+            64.0,
+            160.39999999999986,
+            328.0,
+            356.0
+          ],
+          "zero_rate": 0.006263048016701462,
+          "unique_count": 113,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 2.045929018789144,
+          "std": 1.9879541006884245,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            7.0,
+            9.0,
+            13.0
+          ],
+          "zero_rate": 0.17745302713987474,
+          "unique_count": 12,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 70.95958709716797,
+        "load": -0.2666664123535156,
+        "current": 0.2666666805744171
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 25,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 3.8567492961883545,
+          "max": 93.4572982788086,
+          "mean": 48.55860706162104,
+          "std": 31.55925292135435,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            3.8567492961883545,
+            3.8567492961883545,
+            3.8567492961883545,
+            23.55371856689453,
+            30.785123825073242,
+            77.61708068847656,
+            93.4572982788086,
+            93.4572982788086,
+            93.4572982788086
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 124,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 344.0,
+          "mean": -8.100208768267223,
+          "std": 146.5628695069773,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -344.4,
+            -36.0,
+            0.0,
+            64.0,
+            196.0,
+            303.5199999999995,
+            344.0
+          ],
+          "zero_rate": 0.037578288100208766,
+          "unique_count": 93,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 14.0,
+          "mean": 2.0062630480167014,
+          "std": 1.9931936432495716,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            6.0,
+            9.21999999999997,
+            14.0
+          ],
+          "zero_rate": 0.17745302713987474,
+          "unique_count": 12,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 73.78329467773438,
+        "load": -14.80000114440918,
+        "current": 0.30000001192092896
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 26,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 5.23415994644165,
+          "max": 76.51515197753906,
+          "mean": 44.967850716975136,
+          "std": 24.448435681669334,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            5.23415994644165,
+            5.23415994644165,
+            9.084021997451785,
+            20.9366397857666,
+            48.55371856689453,
+            68.04407501220703,
+            76.51515197753906,
+            76.51515197753906,
+            76.51515197753906
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 169,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 292.0,
+          "mean": -12.384133611691023,
+          "std": 125.63838920570194,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -292.4,
+            -36.0,
+            -28.0,
+            60.0,
+            168.39999999999986,
+            261.75999999999976,
+            292.0
+          ],
+          "zero_rate": 0.018789144050104383,
+          "unique_count": 107,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 1.638830897703549,
+          "std": 1.8607683247682343,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            5.0,
+            9.0,
+            13.0
+          ],
+          "zero_rate": 0.26931106471816285,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 60.46831512451172,
+        "load": 85.46665954589844,
+        "current": -2.0999999046325684
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 29,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 92.3553695678711,
+          "mean": 43.954346526888564,
+          "std": 30.870646422534794,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            1.7148760795593263,
+            18.663911819458008,
+            28.51239585876465,
+            71.90082550048828,
+            92.3553695678711,
+            92.3553695678711,
+            92.3553695678711
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 146,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -436.0,
+          "max": 316.0,
+          "mean": -1.1356993736951984,
+          "std": 137.1050994967663,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -436.0,
+            -401.76,
+            -332.79999999999995,
+            -36.0,
+            32.0,
+            68.0,
+            192.39999999999986,
+            284.8799999999999,
+            316.0
+          ],
+          "zero_rate": 0.010438413361169102,
+          "unique_count": 122,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 11.0,
+          "mean": 2.11482254697286,
+          "std": 1.777077871627982,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            5.0,
+            8.21999999999997,
+            11.0
+          ],
+          "zero_rate": 0.16075156576200417,
+          "unique_count": 12,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 69.7979736328125,
+        "load": -3.6000003814697266,
+        "current": -0.7999999523162842
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 30,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.4462809562683105,
+          "max": 58.471073150634766,
+          "mean": 41.85588057603617,
+          "std": 18.02147486130307,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.4462809562683105,
+            1.4462809562683105,
+            1.4462809562683105,
+            27.272727966308594,
+            49.931129455566406,
+            58.471073150634766,
+            58.471073150634766,
+            58.471073150634766,
+            58.471073150634766
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 79,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -384.0,
+          "max": 248.0,
+          "mean": -15.816283924843423,
+          "std": 91.54429929136006,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -384.0,
+            -356.88,
+            -212.79999999999998,
+            -32.0,
+            -28.0,
+            52.0,
+            56.0,
+            191.91999999999894,
+            248.0
+          ],
+          "zero_rate": 0.014613778705636743,
+          "unique_count": 77,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 1.267223382045929,
+          "std": 1.3319546337404413,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            7.0,
+            9.0
+          ],
+          "zero_rate": 0.2588726513569937,
+          "unique_count": 10,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 57.0247917175293,
+        "load": -67.19999694824219,
+        "current": -0.06666666269302368
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 32,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 57.920108795166016,
+          "mean": 38.49445289634713,
+          "std": 18.885082747965054,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            1.6528925895690918,
+            25.20661163330078,
+            50.96418762207031,
+            52.96143341064453,
+            57.920108795166016,
+            57.920108795166016,
+            57.920108795166016
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 82,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -480.0,
+          "max": 256.0,
+          "mean": -1.686847599164927,
+          "std": 105.09950575972846,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -480.0,
+            -438.64,
+            -223.5999999999999,
+            -24.0,
+            0.0,
+            60.0,
+            113.99999999999932,
+            228.87999999999988,
+            256.0
+          ],
+          "zero_rate": 0.11064718162839249,
+          "unique_count": 75,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 10.0,
+          "mean": 1.3862212943632568,
+          "std": 1.672289855946717,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            5.0,
+            8.21999999999997,
+            10.0
+          ],
+          "zero_rate": 0.35073068893528186,
+          "unique_count": 11,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 51.30854034423828,
+        "load": -36.0,
+        "current": -0.7666666507720947
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 34,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 52.89256286621094,
+          "mean": 33.56496259539013,
+          "std": 17.409259886552235,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            1.6528925895690918,
+            22.865013122558594,
+            29.26997184753418,
+            51.377410888671875,
+            52.89256286621094,
+            52.89256286621094,
+            52.89256286621094
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 103,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -364.0,
+          "max": 272.0,
+          "mean": -0.5762004175365344,
+          "std": 92.99095258351694,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -364.0,
+            -335.52,
+            -200.39999999999998,
+            -32.0,
+            0.0,
+            56.0,
+            128.0,
+            228.3999999999994,
+            272.0
+          ],
+          "zero_rate": 0.031315240083507306,
+          "unique_count": 87,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 1.4488517745302714,
+          "std": 1.4190008455744874,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            7.0,
+            9.0
+          ],
+          "zero_rate": 0.2588726513569937,
+          "unique_count": 9,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 49.724525451660156,
+        "load": -64.0,
+        "current": -0.6333333253860474
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 35,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.4462809562683105,
+          "max": 69.4903564453125,
+          "mean": 39.537431122365724,
+          "std": 21.775225961792657,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.4462809562683105,
+            1.4462809562683105,
+            1.4462809562683105,
+            22.382919311523438,
+            37.25895309448242,
+            62.5344352722168,
+            69.4903564453125,
+            69.4903564453125,
+            69.4903564453125
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 126,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -424.0,
+          "max": 284.0,
+          "mean": -6.989561586638831,
+          "std": 111.21472908835459,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -424.0,
+            -381.76,
+            -240.39999999999998,
+            -32.0,
+            -24.0,
+            72.0,
+            136.3999999999985,
+            247.51999999999953,
+            284.0
+          ],
+          "zero_rate": 0.05219206680584551,
+          "unique_count": 91,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 11.0,
+          "mean": 1.7056367432150312,
+          "std": 1.6722559742485161,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            3.0,
+            5.0,
+            7.0,
+            11.0
+          ],
+          "zero_rate": 0.2839248434237996,
+          "unique_count": 11,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 68.04407501220703,
+        "load": -51.333335876464844,
+        "current": 0.2666666805744171
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 36,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.4462809562683105,
+          "max": 50.34435272216797,
+          "mean": 34.82979314113211,
+          "std": 15.428850556822237,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.4462809562683105,
+            1.4462809562683105,
+            1.4462809562683105,
+            22.58953094482422,
+            38.429752349853516,
+            48.622589111328125,
+            50.34435272216797,
+            50.34435272216797,
+            50.34435272216797
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 83,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -416.0,
+          "max": 300.0,
+          "mean": 1.7703549060542798,
+          "std": 97.36918036015119,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -416.0,
+            -375.03999999999996,
+            -204.0,
+            -28.0,
+            0.0,
+            64.0,
+            72.0,
+            269.75999999999976,
+            300.0
+          ],
+          "zero_rate": 0.17536534446764093,
+          "unique_count": 72,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 1.384133611691023,
+          "std": 1.636815110687155,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            7.21999999999997,
+            9.0
+          ],
+          "zero_rate": 0.42171189979123175,
+          "unique_count": 10,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 47.176300048828125,
+        "load": -15.066666603088379,
+        "current": -0.23333333432674408
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 38,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.4462809562683105,
+          "max": 56.47382736206055,
+          "mean": 35.118647067183495,
+          "std": 18.613421380736042,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.4462809562683105,
+            1.4462809562683105,
+            1.4462809562683105,
+            20.454545974731445,
+            32.57575607299805,
+            52.685951232910156,
+            56.47382736206055,
+            56.47382736206055,
+            56.47382736206055
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 114,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -328.0,
+          "max": 304.0,
+          "mean": -11.766179540709812,
+          "std": 88.98637990254367,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -328.0,
+            -292.88,
+            -192.0,
+            -28.0,
+            0.0,
+            28.0,
+            93.59999999999945,
+            264.0,
+            304.0
+          ],
+          "zero_rate": 0.05636743215031315,
+          "unique_count": 83,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 0.9603340292275574,
+          "std": 1.3905784580250882,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            5.0,
+            6.0,
+            8.0
+          ],
+          "zero_rate": 0.47390396659707723,
+          "unique_count": 8,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 55.02755355834961,
+        "load": -41.46666717529297,
+        "current": 0.1666666567325592
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 40,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.584022045135498,
+          "max": 60.88154220581055,
+          "mean": 38.37295881343037,
+          "std": 20.549420085948327,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.584022045135498,
+            1.584022045135498,
+            1.584022045135498,
+            20.17906379699707,
+            40.977962493896484,
+            58.19559097290039,
+            60.88154220581055,
+            60.88154220581055,
+            60.88154220581055
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 108,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -448.0,
+          "max": 320.0,
+          "mean": -5.252609603340292,
+          "std": 111.57405242158465,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -448.0,
+            -391.52,
+            -260.79999999999995,
+            -32.0,
+            -20.0,
+            60.0,
+            152.39999999999986,
+            276.8799999999999,
+            320.0
+          ],
+          "zero_rate": 0.025052192066805846,
+          "unique_count": 91,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 10.0,
+          "mean": 1.6931106471816284,
+          "std": 1.7553302451659523,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            6.0,
+            8.0,
+            10.0
+          ],
+          "zero_rate": 0.2630480167014614,
+          "unique_count": 11,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 56.80210876464844,
+        "load": -56.400001525878906,
+        "current": -0.3333333134651184
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 42,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.5151515007019043,
+          "max": 56.74930953979492,
+          "mean": 36.59037670710888,
+          "std": 17.27088340286599,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.5151515007019043,
+            1.5151515007019043,
+            1.5151515007019043,
+            24.035812377929688,
+            47.520660400390625,
+            49.44903564453125,
+            56.74930953979492,
+            56.74930953979492,
+            56.74930953979492
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 106,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -328.0,
+          "max": 220.0,
+          "mean": -7.941544885177453,
+          "std": 88.2465511252693,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -328.0,
+            -312.0,
+            -240.0,
+            -20.0,
+            0.0,
+            24.0,
+            140.79999999999973,
+            212.0,
+            220.0
+          ],
+          "zero_rate": 0.29436325678496866,
+          "unique_count": 71,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 7.0,
+          "mean": 0.81419624217119,
+          "std": 1.4365229024180863,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            5.0,
+            6.0,
+            7.0
+          ],
+          "zero_rate": 0.605427974947808,
+          "unique_count": 8,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 47.93387222290039,
+        "load": -11.066667556762695,
+        "current": -0.36666664481163025
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 43,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.4462809562683105,
+          "max": 60.2617073059082,
+          "mean": 39.33527710293429,
+          "std": 17.688109977817614,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.4462809562683105,
+            1.4462809562683105,
+            1.4462809562683105,
+            25.826446533203125,
+            44.421485900878906,
+            51.1019287109375,
+            60.2617073059082,
+            60.2617073059082,
+            60.2617073059082
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 105,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -300.0,
+          "max": 224.0,
+          "mean": -8.709812108559499,
+          "std": 88.36400640616299,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -300.0,
+            -276.0,
+            -220.0,
+            -32.0,
+            0.0,
+            56.0,
+            97.19999999999959,
+            204.87999999999988,
+            224.0
+          ],
+          "zero_rate": 0.15031315240083507,
+          "unique_count": 78,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 7.0,
+          "mean": 1.3068893528183716,
+          "std": 1.3382811282215186,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            5.0,
+            7.0
+          ],
+          "zero_rate": 0.348643006263048,
+          "unique_count": 8,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 58.8154296875,
+        "load": -19.733333587646484,
+        "current": 0.6000000238418579
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 45,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.7217631340026855,
+          "max": 65.22038269042969,
+          "mean": 42.74501409585391,
+          "std": 21.78575312778838,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.7217631340026855,
+            1.7217631340026855,
+            1.7217631340026855,
+            20.454545974731445,
+            56.611568450927734,
+            65.22038269042969,
+            65.22038269042969,
+            65.22038269042969,
+            65.22038269042969
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 100,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -436.0,
+          "max": 224.0,
+          "mean": -7.240083507306889,
+          "std": 106.25996591253997,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -436.0,
+            -398.64,
+            -232.79999999999998,
+            -24.0,
+            -20.0,
+            64.0,
+            156.39999999999986,
+            208.0,
+            224.0
+          ],
+          "zero_rate": 0.022964509394572025,
+          "unique_count": 87,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 10.0,
+          "mean": 1.5093945720250521,
+          "std": 1.6723888908210696,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            5.0,
+            7.21999999999997,
+            10.0
+          ],
+          "zero_rate": 0.33611691022964507,
+          "unique_count": 11,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 63.49861145019531,
+        "load": -57.866668701171875,
+        "current": -0.6333333253860474
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 48,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.4462809562683105,
+          "max": 60.468318939208984,
+          "mean": 33.701984385110144,
+          "std": 21.15335024651842,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.4462809562683105,
+            1.4462809562683105,
+            1.4462809562683105,
+            17.699724197387695,
+            18.250688552856445,
+            60.05509567260742,
+            60.468318939208984,
+            60.468318939208984,
+            60.468318939208984
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 115,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -412.0,
+          "max": 264.0,
+          "mean": 3.498956158663883,
+          "std": 109.73560699967356,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -412.0,
+            -387.52,
+            -225.2,
+            -28.0,
+            32.0,
+            60.0,
+            160.0,
+            228.0,
+            264.0
+          ],
+          "zero_rate": 0.04592901878914405,
+          "unique_count": 93,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 1.6805845511482256,
+          "std": 1.5251061336322638,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            2.0,
+            5.0,
+            7.0,
+            9.0
+          ],
+          "zero_rate": 0.21294363256784968,
+          "unique_count": 10,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 59.02202606201172,
+        "load": -60.266666412353516,
+        "current": -0.09999996423721313
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 49,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 67.76859283447266,
+          "mean": 40.467542265302704,
+          "std": 23.706101056783492,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            1.6528925895690918,
+            19.903581619262695,
+            38.429752349853516,
+            64.94490051269531,
+            67.76859283447266,
+            67.76859283447266,
+            67.76859283447266
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 117,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -400.0,
+          "max": 268.0,
+          "mean": -1.837160751565762,
+          "std": 112.39075232333421,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -400.0,
+            -367.52,
+            -248.39999999999998,
+            -28.0,
+            0.0,
+            64.0,
+            164.79999999999973,
+            240.0,
+            268.0
+          ],
+          "zero_rate": 0.025052192066805846,
+          "unique_count": 96,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 1.7912317327766178,
+          "std": 1.6096805095917723,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            5.0,
+            7.0,
+            9.0
+          ],
+          "zero_rate": 0.23799582463465555,
+          "unique_count": 10,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 63.292015075683594,
+        "load": -55.866668701171875,
+        "current": -0.03333336114883423
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 50,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.5151515007019043,
+          "max": 67.76859283447266,
+          "mean": 40.793203586576375,
+          "std": 21.79118087334934,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.5151515007019043,
+            1.5151515007019043,
+            1.5151515007019043,
+            21.969696044921875,
+            40.7713508605957,
+            60.53718948364258,
+            67.76859283447266,
+            67.76859283447266,
+            67.76859283447266
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 124,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -416.0,
+          "max": 268.0,
+          "mean": 9.194154488517745,
+          "std": 106.15973452840328,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -416.0,
+            -365.28,
+            -224.0,
+            0.0,
+            32.0,
+            64.0,
+            156.39999999999986,
+            239.51999999999953,
+            268.0
+          ],
+          "zero_rate": 0.07306889352818371,
+          "unique_count": 96,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 11.0,
+          "mean": 1.6221294363256784,
+          "std": 1.4409790136199074,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            4.0,
+            6.21999999999997,
+            11.0
+          ],
+          "zero_rate": 0.2359081419624217,
+          "unique_count": 11,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 59.02204513549805,
+        "load": 28.933334350585938,
+        "current": 0.23333331942558289
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 51,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 66.32231140136719,
+          "mean": 39.553965771123615,
+          "std": 22.48449407660592,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            1.6528925895690918,
+            20.316804885864258,
+            39.39393997192383,
+            60.123966217041016,
+            66.32231140136719,
+            66.32231140136719,
+            66.32231140136719
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 128,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -372.0,
+          "max": 248.0,
+          "mean": 1.1774530271398747,
+          "std": 105.67456954352932,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -372.0,
+            -344.88,
+            -232.0,
+            -28.0,
+            20.0,
+            60.0,
+            156.0,
+            207.51999999999953,
+            248.0
+          ],
+          "zero_rate": 0.10855949895615867,
+          "unique_count": 99,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 1.5949895615866387,
+          "std": 1.4900000525057844,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            7.0,
+            8.0
+          ],
+          "zero_rate": 0.29227557411273486,
+          "unique_count": 9,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 58.47108459472656,
+        "load": -60.79999923706055,
+        "current": -0.23333334922790527
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 54,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.4462809562683105,
+          "max": 64.25619506835938,
+          "mean": 32.667776324306004,
+          "std": 22.75096981736904,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.4462809562683105,
+            1.4462809562683105,
+            1.4462809562683105,
+            15.358126640319824,
+            20.247934341430664,
+            55.09642028808594,
+            64.25619506835938,
+            64.25619506835938,
+            64.25619506835938
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 135,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -348.0,
+          "max": 312.0,
+          "mean": 12.951983298538622,
+          "std": 109.1851570932123,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -348.0,
+            -298.64,
+            -212.0,
+            -32.0,
+            32.0,
+            76.0,
+            200.79999999999973,
+            278.63999999999965,
+            312.0
+          ],
+          "zero_rate": 0.008350730688935281,
+          "unique_count": 100,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 11.0,
+          "mean": 2.0292275574112737,
+          "std": 1.7044647340550196,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            5.0,
+            8.0,
+            11.0
+          ],
+          "zero_rate": 0.1941544885177453,
+          "unique_count": 12,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 53.650142669677734,
+        "load": 0.0,
+        "current": -0.06666666269302368
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 55,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.7217631340026855,
+          "max": 69.4903564453125,
+          "mean": 38.32335416210469,
+          "std": 23.207439117349434,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.7217631340026855,
+            1.7217631340026855,
+            1.7217631340026855,
+            16.32231330871582,
+            42.630855560302734,
+            58.0578498840332,
+            69.4903564453125,
+            69.4903564453125,
+            69.4903564453125
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 129,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -488.0,
+          "max": 256.0,
+          "mean": -1.2025052192066805,
+          "std": 116.68757563201096,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -488.0,
+            -440.4,
+            -232.0,
+            -36.0,
+            0.0,
+            68.0,
+            172.79999999999973,
+            216.87999999999988,
+            256.0
+          ],
+          "zero_rate": 0.020876826722338204,
+          "unique_count": 101,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 1.931106471816284,
+          "std": 1.716143728724604,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            5.0,
+            7.21999999999997,
+            13.0
+          ],
+          "zero_rate": 0.1544885177453027,
+          "unique_count": 12,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 56.336090087890625,
+        "load": -73.33332824707031,
+        "current": -0.03333330154418945
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 56,
+      "split": "train",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 64.11845397949219,
+          "mean": 38.15786394619992,
+          "std": 21.238264289420524,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            4.207988882064822,
+            18.7327823638916,
+            36.15702438354492,
+            58.19559097290039,
+            64.11845397949219,
+            64.11845397949219,
+            64.11845397949219
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 113,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06886672973632812,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -332.0,
+          "max": 284.0,
+          "mean": 4.1419624217118995,
+          "std": 106.9893790853442,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -332.0,
+            -312.88,
+            -244.0,
+            -28.0,
+            36.0,
+            52.0,
+            179.1999999999989,
+            264.0,
+            284.0
+          ],
+          "zero_rate": 0.033402922755741124,
+          "unique_count": 93,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 1.5052192066805845,
+          "std": 1.4902164951678503,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            5.0,
+            7.0,
+            8.0
+          ],
+          "zero_rate": 0.22755741127348644,
+          "unique_count": 9,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 52.41735076904297,
+        "load": 81.19999694824219,
+        "current": -1.433333158493042
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 57,
+      "split": "train",
+      "frames": 478,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 478,
+          "nonfinite": 0,
+          "min": 1.7217631340026855,
+          "max": 62.39669418334961,
+          "mean": 38.81502366115858,
+          "std": 21.22147656563647,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.7217631340026855,
+            1.7217631340026855,
+            1.7217631340026855,
+            20.110193252563477,
+            38.05096435546875,
+            62.121212005615234,
+            62.39669418334961,
+            62.39669418334961,
+            62.39669418334961
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 135,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 478,
+          "nonfinite": 0,
+          "min": -308.0,
+          "max": 292.0,
+          "mean": -5.489539748953975,
+          "std": 97.55156824976729,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -308.0,
+            -284.0,
+            -200.0,
+            -32.0,
+            0.0,
+            52.0,
+            144.0,
+            240.60000000000036,
+            292.0
+          ],
+          "zero_rate": 0.0899581589958159,
+          "unique_count": 95,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 478,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 6.0,
+          "mean": 1.4560669456066946,
+          "std": 1.340219027451629,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            4.0,
+            6.0,
+            6.0
+          ],
+          "zero_rate": 0.2384937238493724,
+          "unique_count": 7,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 60.387969970703125,
+        "load": -50.93333435058594,
+        "current": -0.13333332538604736
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 3,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 2.134986162185669,
+          "max": 85.74380493164062,
+          "mean": 46.92871985604718,
+          "std": 26.67208808805136,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            2.134986162185669,
+            2.134986162185669,
+            2.134986162185669,
+            27.617080688476562,
+            43.388431549072266,
+            72.38291931152344,
+            75.68870544433594,
+            83.75206878662107,
+            85.74380493164062
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 121,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06886863708496094,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 304.0,
+          "mean": 7.741127348643007,
+          "std": 136.54208478760142,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -324.4,
+            24.0,
+            36.0,
+            52.0,
+            180.0,
+            258.1599999999992,
+            304.0
+          ],
+          "zero_rate": 0.012526096033402923,
+          "unique_count": 85,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 16.0,
+          "mean": 1.7223382045929019,
+          "std": 2.1107493950706067,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            6.099999999999966,
+            10.0,
+            16.0
+          ],
+          "zero_rate": 0.2359081419624217,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 70.24793243408203,
+        "load": 16.666667938232422,
+        "current": 0.23333334922790527
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 5,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.584022045135498,
+          "max": 90.90908813476562,
+          "mean": 47.31131749461738,
+          "std": 25.98813197732706,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.584022045135498,
+            1.584022045135498,
+            1.584022045135498,
+            27.479339599609375,
+            51.79063415527344,
+            67.2864990234375,
+            77.61708068847656,
+            88.60467971801756,
+            90.90908813476562
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 130,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 260.0,
+          "mean": 2.6471816283924845,
+          "std": 135.69968202951964,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -312.4,
+            -20.0,
+            36.0,
+            56.0,
+            164.0,
+            226.63999999999965,
+            260.0
+          ],
+          "zero_rate": 0.0020876826722338203,
+          "unique_count": 86,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 12.0,
+          "mean": 1.745302713987474,
+          "std": 2.0108925360282215,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            6.0,
+            10.0,
+            12.0
+          ],
+          "zero_rate": 0.2567849686847599,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 65.70247650146484,
+        "load": -56.0,
+        "current": -0.3999999761581421
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 12,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.7217631340026855,
+          "max": 92.90633392333984,
+          "mean": 45.42535727780647,
+          "std": 24.589908551990586,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.7217631340026855,
+            1.7217631340026855,
+            1.7217631340026855,
+            30.509641647338867,
+            36.15702438354492,
+            65.0826416015625,
+            73.29889755249023,
+            91.19145736694335,
+            92.90633392333984
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 103,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 340.0,
+          "mean": 0.34237995824634654,
+          "std": 138.09989916600006,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -325.2,
+            -24.0,
+            40.0,
+            44.0,
+            192.79999999999973,
+            306.63999999999965,
+            340.0
+          ],
+          "zero_rate": 0.018789144050104383,
+          "unique_count": 80,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 14.0,
+          "mean": 1.4926931106471817,
+          "std": 2.1380948858486133,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            7.0,
+            9.21999999999997,
+            14.0
+          ],
+          "zero_rate": 0.29436325678496866,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 63.360877990722656,
+        "load": -65.19999694824219,
+        "current": -0.800000011920929
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 15,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 3.3057851791381836,
+          "max": 74.17355346679688,
+          "mean": 44.21616973508624,
+          "std": 26.766104891944263,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            3.3057851791381836,
+            3.3057851791381836,
+            3.3057851791381836,
+            24.44903564453125,
+            30.647382736206055,
+            73.20936584472656,
+            73.48484802246094,
+            73.73691421508788,
+            74.17355346679688
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 89,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 340.0,
+          "mean": -4.534446764091858,
+          "std": 134.1768314243642,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -352.0,
+            -36.0,
+            24.0,
+            56.0,
+            133.99999999999932,
+            328.8799999999999,
+            340.0
+          ],
+          "zero_rate": 0.14613778705636743,
+          "unique_count": 73,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 14.0,
+          "mean": 1.6617954070981211,
+          "std": 2.133934419904908,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            6.0,
+            9.21999999999997,
+            14.0
+          ],
+          "zero_rate": 0.30062630480167013,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 70.17906188964844,
+        "load": -51.33333206176758,
+        "current": 0.6333333253860474
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 21,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.9283746480941772,
+          "max": 71.7630844116211,
+          "mean": 43.28634530641838,
+          "std": 25.352014707588918,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.9283746480941772,
+            1.9283746480941772,
+            1.9283746480941772,
+            22.58953094482422,
+            39.25619888305664,
+            70.38567352294922,
+            71.7630844116211,
+            71.7630844116211,
+            71.7630844116211
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 119,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 312.0,
+          "mean": 4.467640918580376,
+          "std": 125.71784068484389,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -258.4,
+            -32.0,
+            32.0,
+            72.0,
+            149.1999999999996,
+            274.63999999999965,
+            312.0
+          ],
+          "zero_rate": 0.04384133611691023,
+          "unique_count": 95,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 1.9206680584551148,
+          "std": 1.8565380639581452,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            5.0,
+            9.21999999999997,
+            13.0
+          ],
+          "zero_rate": 0.22129436325678498,
+          "unique_count": 14,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 69.82553100585938,
+        "load": -46.0,
+        "current": 0.46666663885116577
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 28,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 3.0303030014038086,
+          "max": 91.1845703125,
+          "mean": 49.474627699384115,
+          "std": 27.451520429543244,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            3.0303030014038086,
+            3.0303030014038086,
+            5.000000095367434,
+            22.865013122558594,
+            52.685951232910156,
+            70.97107315063477,
+            91.1845703125,
+            91.1845703125,
+            91.1845703125
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 159,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -500.0,
+          "max": 364.0,
+          "mean": -13.427974947807932,
+          "std": 131.93051300303367,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -500.0,
+            -500.0,
+            -248.0,
+            -36.0,
+            -24.0,
+            56.0,
+            180.0,
+            340.0,
+            364.0
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 102,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 14.0,
+          "mean": 1.7828810020876826,
+          "std": 1.9176248924152728,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            5.0,
+            9.21999999999997,
+            14.0
+          ],
+          "zero_rate": 0.18997912317327767,
+          "unique_count": 13,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 65.34894561767578,
+        "load": 70.26667022705078,
+        "current": -1.8666667938232422
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 33,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 60.05509567260742,
+          "mean": 38.222277740595985,
+          "std": 18.95724633069811,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            1.6528925895690918,
+            24.44903564453125,
+            43.45730209350586,
+            53.99449157714844,
+            60.05509567260742,
+            60.05509567260742,
+            60.05509567260742
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 105,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -460.0,
+          "max": 264.0,
+          "mean": -11.215031315240083,
+          "std": 100.36651883926942,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -460.0,
+            -416.4,
+            -228.39999999999998,
+            -32.0,
+            -24.0,
+            44.0,
+            128.79999999999973,
+            238.63999999999965,
+            264.0
+          ],
+          "zero_rate": 0.05845511482254697,
+          "unique_count": 80,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 10.0,
+          "mean": 1.1837160751565763,
+          "std": 1.5180424884142545,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            5.0,
+            7.21999999999997,
+            10.0
+          ],
+          "zero_rate": 0.31315240083507306,
+          "unique_count": 11,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 52.33241653442383,
+        "load": -64.26666259765625,
+        "current": -0.36666667461395264
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 39,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.4462809562683105,
+          "max": 61.15702438354492,
+          "mean": 38.621553737584634,
+          "std": 20.027954459729568,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.4462809562683105,
+            1.4462809562683105,
+            1.4462809562683105,
+            23.14049530029297,
+            41.8732795715332,
+            58.33333206176758,
+            61.15702438354492,
+            61.15702438354492,
+            61.15702438354492
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 106,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06886672973632812,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -452.0,
+          "max": 236.0,
+          "mean": 1.5866388308977035,
+          "std": 104.6851742547353,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -452.0,
+            -409.28,
+            -217.99999999999994,
+            -28.0,
+            24.0,
+            64.0,
+            140.0,
+            185.75999999999976,
+            236.0
+          ],
+          "zero_rate": 0.10855949895615867,
+          "unique_count": 93,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 10.0,
+          "mean": 1.5448851774530272,
+          "std": 1.6517119408234564,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            4.0,
+            8.0,
+            10.0
+          ],
+          "zero_rate": 0.3277661795407098,
+          "unique_count": 11,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 59.71073532104492,
+        "load": -56.0,
+        "current": -0.29999998211860657
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 41,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.584022045135498,
+          "max": 62.80991744995117,
+          "mean": 36.325103772706925,
+          "std": 19.422716349681103,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.584022045135498,
+            1.584022045135498,
+            1.584022045135498,
+            21.763086318969727,
+            31.336088180541992,
+            56.06060791015625,
+            62.80991744995117,
+            62.80991744995117,
+            62.80991744995117
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 118,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -432.0,
+          "max": 300.0,
+          "mean": 1.0605427974947808,
+          "std": 106.5675243831349,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -432.0,
+            -385.28,
+            -220.0,
+            -32.0,
+            20.0,
+            60.0,
+            144.0,
+            246.63999999999965,
+            300.0
+          ],
+          "zero_rate": 0.04384133611691023,
+          "unique_count": 91,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 1.730688935281837,
+          "std": 1.639962111082361,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            2.0,
+            5.0,
+            7.21999999999997,
+            9.0
+          ],
+          "zero_rate": 0.22964509394572025,
+          "unique_count": 10,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 54.4765739440918,
+        "load": -44.0,
+        "current": 0.43333330750465393
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 47,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.7217631340026855,
+          "max": 72.93388366699219,
+          "mean": 42.29742777795533,
+          "std": 25.640728766988612,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.7217631340026855,
+            1.7217631340026855,
+            1.7217631340026855,
+            18.250688552856445,
+            45.59228515625,
+            65.28925323486328,
+            72.93388366699219,
+            72.93388366699219,
+            72.93388366699219
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 131,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.0688704252243042,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -364.0,
+          "max": 292.0,
+          "mean": -7.549060542797495,
+          "std": 113.08184813678906,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -364.0,
+            -328.88,
+            -224.39999999999998,
+            -28.0,
+            -24.0,
+            60.0,
+            220.39999999999986,
+            260.0,
+            292.0
+          ],
+          "zero_rate": 0.033402922755741124,
+          "unique_count": 94,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 1.6325678496868476,
+          "std": 1.5463148606668615,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            5.0,
+            7.0,
+            9.0
+          ],
+          "zero_rate": 0.267223382045929,
+          "unique_count": 10,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 63.5675048828125,
+        "load": -60.79999923706055,
+        "current": -0.2666666805744171
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 53,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 1.6528925895690918,
+          "max": 67.14875793457031,
+          "mean": 41.49513638791063,
+          "std": 21.79213525424698,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            1.6528925895690918,
+            1.6528925895690918,
+            1.6528925895690918,
+            22.58953094482422,
+            44.90357971191406,
+            59.2286491394043,
+            67.14875793457031,
+            67.14875793457031,
+            67.14875793457031
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 115,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -400.0,
+          "max": 232.0,
+          "mean": -2.3215031315240084,
+          "std": 104.14581964994547,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -400.0,
+            -351.92,
+            -232.39999999999998,
+            -28.0,
+            0.0,
+            64.0,
+            132.39999999999986,
+            201.75999999999976,
+            232.0
+          ],
+          "zero_rate": 0.0709812108559499,
+          "unique_count": 88,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 10.0,
+          "mean": 1.6409185803757829,
+          "std": 1.5169453400043207,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            3.0,
+            4.0,
+            6.0,
+            10.0
+          ],
+          "zero_rate": 0.27139874739039666,
+          "unique_count": 9,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 65.4958724975586,
+        "load": -63.599998474121094,
+        "current": -0.5666666030883789
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    },
+    {
+      "episode": 58,
+      "split": "dev",
+      "frames": 479,
+      "timestamp_max_error_s": 4.4504801444134046e-07,
+      "signals": {
+        "pos": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 2.4793388843536377,
+          "max": 67.83746337890625,
+          "mean": 40.02958916622313,
+          "std": 23.773923117469256,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            2.4793388843536377,
+            2.4793388843536377,
+            2.4793388843536377,
+            19.352617263793945,
+            38.49862289428711,
+            66.87327575683594,
+            67.83746337890625,
+            67.83746337890625,
+            67.83746337890625
+          ],
+          "zero_rate": 0.0,
+          "unique_count": 139,
+          "integer_valued": false,
+          "minimum_observed_quantization_step": 0.06887054443359375,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "load": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": -388.0,
+          "max": 216.0,
+          "mean": -4.0,
+          "std": 109.36293029139567,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            -388.0,
+            -353.76,
+            -240.0,
+            -36.0,
+            20.0,
+            68.0,
+            164.0,
+            196.87999999999988,
+            216.0
+          ],
+          "zero_rate": 0.025052192066805846,
+          "unique_count": 101,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 4.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        },
+        "current": {
+          "n": 479,
+          "nonfinite": 0,
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 1.7348643006263047,
+          "std": 1.5650993726609959,
+          "quantiles_0_1_5_25_50_75_95_99_100": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            3.0,
+            5.0,
+            7.0,
+            8.0
+          ],
+          "zero_rate": 0.24217118997912318,
+          "unique_count": 9,
+          "integer_valued": true,
+          "minimum_observed_quantization_step": 1.0,
+          "hardware_saturation_limits": "UNKNOWN",
+          "hardware_saturation_hit_rate": null
+        }
+      },
+      "drift_first_last_30_mean_difference": {
+        "pos": 65.35810852050781,
+        "load": -54.400001525878906,
+        "current": 0.46666666865348816
+      },
+      "drift_caveat": "within-episode task change, not proof of sensor drift"
+    }
+  ],
+  "current_constant_on_train": false,
+  "calibration": "NOT_CALIBRATED",
+  "limits": "sample extrema are NOT hardware saturation thresholds"
+}

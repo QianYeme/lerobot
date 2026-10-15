@@ -1,0 +1,15 @@
+{
+  "status": "NOT_FROZEN",
+  "first_six_gate": "CONTINUE_TRAIN36_CONTACT_REVIEW",
+  "reason": "First-six human contact gate evaluated; remaining Train30 review required before Train task/label freeze",
+  "train_first_six_manifest_order": [
+    0,
+    2,
+    4,
+    6,
+    7,
+    9
+  ],
+  "dev_labels_reviewed": false,
+  "label_csv_snapshot_sha256": "d1bdf4a78495ccff2f3d22adf56b482e35b6d6be8f49a8999d4df407f406cf78"
+}

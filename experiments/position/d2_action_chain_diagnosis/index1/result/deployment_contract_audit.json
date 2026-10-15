@@ -1,0 +1,17 @@
+{
+  "evidence": "current repository code inspection",
+  "temporal_weight": "exp(-coeff * index); index 0 is oldest prediction",
+  "positive_coeff_favors": "older predictions",
+  "ensemble_enabled": "predict full chunk each step; bypass action queue",
+  "ensemble_off": "queue consumes n_action_steps before next prediction",
+  "relative_limit": "applied in follower.send_action against fresh Present_Position",
+  "recording_action": "lerobot_record stores sent_action after follower limit",
+  "historical_recording_code_identity": "UNVERIFIED",
+  "reported_runtime_config": {
+    "temporal_ensemble_coeff": 0.01,
+    "max_relative_target": 2
+  },
+  "actual_runtime_config": "UNVERIFIED_NO_LOGS",
+  "four_configuration_replay": "BLOCKED_CHECKPOINTS_AND_TORCH",
+  "real_robot_commands_sent": false
+}

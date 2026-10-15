@@ -1,0 +1,549 @@
+{
+  "seed": 20261015,
+  "replicates": 2000,
+  "unit": "episode",
+  "shared_indices": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1P_CONTACT_SIGNAL_PILOT\\eval_20261015T130640361440Z\\bootstrap_episode_indices.npy",
+  "formal_significance_claim": false,
+  "contrasts": [
+    {
+      "window": 1,
+      "frame_scope": "all_valid",
+      "comparison": "S1-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        0.027124183006535962,
+        -0.004806312769010113,
+        -0.00415447077707487,
+        0.032637004139594805,
+        0.001101203266007711,
+        0.02541721563460697
+      ],
+      "point_estimate": 0.012886470416776744,
+      "bootstrap_mean": 0.012752700502937307,
+      "percentile_95_ci": [
+        0.0008386415145821245,
+        0.02438299004714208
+      ],
+      "positive_episodes": 4,
+      "n_episodes": 6,
+      "positive_fraction": 0.6666666666666666
+    },
+    {
+      "window": 1,
+      "frame_scope": "all_valid",
+      "comparison": "S_current-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.012418300653594838,
+        -0.017718794835007268,
+        0.005570767632895879,
+        0.007881678866134778,
+        -0.015913730124623937,
+        0.008385485287659145
+      ],
+      "point_estimate": -0.004035482304422707,
+      "bootstrap_mean": -0.0039625500776933244,
+      "percentile_95_ci": [
+        -0.01265294127505745,
+        0.004197164810894087
+      ],
+      "positive_episodes": 3,
+      "n_episodes": 6,
+      "positive_fraction": 0.5
+    },
+    {
+      "window": 1,
+      "frame_scope": "all_valid",
+      "comparison": "S2-S1",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.005718954248365993,
+        -0.005451936872309826,
+        0.014729487300538247,
+        0.03395290182854949,
+        -0.004351095831542695,
+        0.0015645586297760028
+      ],
+      "point_estimate": 0.005787493467774203,
+      "bootstrap_mean": 0.005820358660729714,
+      "percentile_95_ci": [
+        -0.0041435503445103605,
+        0.018738966194599454
+      ],
+      "positive_episodes": 3,
+      "n_episodes": 6,
+      "positive_fraction": 0.5
+    },
+    {
+      "window": 1,
+      "frame_scope": "common_across_windows",
+      "comparison": "S1-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        0.030555555555555558,
+        -0.003486554096310157,
+        -0.0027157204345152897,
+        0.03632762850639937,
+        0.0032342657342657732,
+        0.03032742887815343
+      ],
+      "point_estimate": 0.015707100690591447,
+      "bootstrap_mean": 0.015562837828871095,
+      "percentile_95_ci": [
+        0.002572547676564896,
+        0.02788801045605484
+      ],
+      "positive_episodes": 4,
+      "n_episodes": 6,
+      "positive_fraction": 0.6666666666666666
+    },
+    {
+      "window": 1,
+      "frame_scope": "common_across_windows",
+      "comparison": "S_current-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.014529914529914478,
+        -0.020622263914946815,
+        0.0046116007378561585,
+        0.008084301380390735,
+        -0.01828379953379955,
+        0.007648953301127248
+      ],
+      "point_estimate": -0.0055151870932144504,
+      "bootstrap_mean": -0.005439882154884523,
+      "percentile_95_ci": [
+        -0.015011484178449719,
+        0.0035194502641103273
+      ],
+      "positive_episodes": 3,
+      "n_episodes": 6,
+      "positive_fraction": 0.5
+    },
+    {
+      "window": 1,
+      "frame_scope": "common_across_windows",
+      "comparison": "S2-S1",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.005982905982905962,
+        -0.0070356472795497504,
+        0.015448862471817981,
+        0.03557388194259703,
+        -0.005536130536130668,
+        0.0010735373054213682
+      ],
+      "point_estimate": 0.005590266320208333,
+      "bootstrap_mean": 0.0056288053469110595,
+      "percentile_95_ci": [
+        -0.005083283292603454,
+        0.019368066387580114
+      ],
+      "positive_episodes": 3,
+      "n_episodes": 6,
+      "positive_fraction": 0.5
+    },
+    {
+      "window": 9,
+      "frame_scope": "all_valid",
+      "comparison": "S1-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        0.011419753086419737,
+        -0.0011442336645587359,
+        0.021008403361344574,
+        0.08700128700128706,
+        0.009812190733243353,
+        0.02717391304347827
+      ],
+      "point_estimate": 0.025878552260202376,
+      "bootstrap_mean": 0.02575482972307688,
+      "percentile_95_ci": [
+        0.0074955259782441925,
+        0.051346023016199505
+      ],
+      "positive_episodes": 5,
+      "n_episodes": 6,
+      "positive_fraction": 0.8333333333333334
+    },
+    {
+      "window": 9,
+      "frame_scope": "all_valid",
+      "comparison": "S_current-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.010185185185185297,
+        -0.0062180066245106635,
+        -0.004201680672268893,
+        -0.23241813241813247,
+        0.017937471884840184,
+        0.016218081435472653
+      ],
+      "point_estimate": -0.03647790859663075,
+      "bootstrap_mean": -0.03599126352841229,
+      "percentile_95_ci": [
+        -0.11595335286320886,
+        0.00959908064016198
+      ],
+      "positive_episodes": 2,
+      "n_episodes": 6,
+      "positive_fraction": 0.3333333333333333
+    },
+    {
+      "window": 9,
+      "frame_scope": "all_valid",
+      "comparison": "S2-S1",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.02253086419753103,
+        -0.04096657633243006,
+        -0.02352941176470591,
+        -0.22694122694122698,
+        -0.005651147098515552,
+        -0.007807108350586622
+      ],
+      "point_estimate": -0.05457105578083269,
+      "bootstrap_mean": -0.05412546617507121,
+      "percentile_95_ci": [
+        -0.12516180266988874,
+        -0.01235570009088958
+      ],
+      "positive_episodes": 0,
+      "n_episodes": 6,
+      "positive_fraction": 0.0
+    },
+    {
+      "window": 9,
+      "frame_scope": "common_across_windows",
+      "comparison": "S1-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        0.012606837606837562,
+        -0.0009068167604752153,
+        0.022084443533511022,
+        0.09071561585528065,
+        0.010343822843822958,
+        0.028717122920021376
+      ],
+      "point_estimate": 0.02726017099983306,
+      "bootstrap_mean": 0.027131571654431554,
+      "percentile_95_ci": [
+        0.008157888848209375,
+        0.05368098718347325
+      ],
+      "positive_episodes": 5,
+      "n_episodes": 6,
+      "positive_fraction": 0.8333333333333334
+    },
+    {
+      "window": 9,
+      "frame_scope": "common_across_windows",
+      "comparison": "S_current-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.00876068376068373,
+        -0.02390556597873661,
+        -0.019804263168682112,
+        -0.24158316337087282,
+        0.01963869463869472,
+        0.017981749865807695
+      ],
+      "point_estimate": -0.04273887196241214,
+      "bootstrap_mean": -0.04233827849576828,
+      "percentile_95_ci": [
+        -0.12480343743689042,
+        0.00764808813589309
+      ],
+      "positive_episodes": 2,
+      "n_episodes": 6,
+      "positive_fraction": 0.3333333333333333
+    },
+    {
+      "window": 9,
+      "frame_scope": "common_across_windows",
+      "comparison": "S2-S1",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.02264957264957257,
+        -0.04132270168855545,
+        -0.02331420373027271,
+        -0.23162188525317007,
+        -0.005332167832167833,
+        -0.00791733762748259
+      ],
+      "point_estimate": -0.0553596447968702,
+      "bootstrap_mean": -0.05490168972632769,
+      "percentile_95_ci": [
+        -0.12747245483508438,
+        -0.012397221002293457
+      ],
+      "positive_episodes": 0,
+      "n_episodes": 6,
+      "positive_fraction": 0.0
+    },
+    {
+      "window": 15,
+      "frame_scope": "all_valid",
+      "comparison": "S1-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        0.016452991452991395,
+        0.022435897435897467,
+        0.03374154539864738,
+        0.09306553161301756,
+        0.042948717948717796,
+        0.02804616210413302
+      ],
+      "point_estimate": 0.03944847432556744,
+      "bootstrap_mean": 0.03928068794641865,
+      "percentile_95_ci": [
+        0.023260914213426354,
+        0.062454307956746745
+      ],
+      "positive_episodes": 6,
+      "n_episodes": 6,
+      "positive_fraction": 1.0
+    },
+    {
+      "window": 15,
+      "frame_scope": "all_valid",
+      "comparison": "S_current-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        0.008333333333333304,
+        0.00995934959349598,
+        0.029053084648493543,
+        -0.23290768821495078,
+        0.0317599067599067,
+        0.02522812667740193
+      ],
+      "point_estimate": -0.021428981200386554,
+      "bootstrap_mean": -0.020770508597871783,
+      "percentile_95_ci": [
+        -0.10603402398915014,
+        0.026315710823158145
+      ],
+      "positive_episodes": 5,
+      "n_episodes": 6,
+      "positive_fraction": 0.8333333333333334
+    },
+    {
+      "window": 15,
+      "frame_scope": "all_valid",
+      "comparison": "S2-S1",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.01388888888888884,
+        -0.01783927454659162,
+        -0.0004099200655871549,
+        -0.18150512843250266,
+        -0.021008158508158514,
+        0.0006709608158883551
+      ],
+      "point_estimate": -0.038996734937640075,
+      "bootstrap_mean": -0.03846971694940785,
+      "percentile_95_ci": [
+        -0.09663705879335709,
+        -0.0053811604693922615
+      ],
+      "positive_episodes": 1,
+      "n_episodes": 6,
+      "positive_fraction": 0.16666666666666666
+    },
+    {
+      "window": 15,
+      "frame_scope": "common_across_windows",
+      "comparison": "S1-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        0.016452991452991395,
+        0.022435897435897467,
+        0.03374154539864738,
+        0.09306553161301756,
+        0.042948717948717796,
+        0.02804616210413302
+      ],
+      "point_estimate": 0.03944847432556744,
+      "bootstrap_mean": 0.03928068794641865,
+      "percentile_95_ci": [
+        0.023260914213426354,
+        0.062454307956746745
+      ],
+      "positive_episodes": 6,
+      "n_episodes": 6,
+      "positive_fraction": 1.0
+    },
+    {
+      "window": 15,
+      "frame_scope": "common_across_windows",
+      "comparison": "S_current-S0",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        0.008333333333333304,
+        0.00995934959349598,
+        0.029053084648493543,
+        -0.23290768821495078,
+        0.0317599067599067,
+        0.02522812667740193
+      ],
+      "point_estimate": -0.021428981200386554,
+      "bootstrap_mean": -0.020770508597871783,
+      "percentile_95_ci": [
+        -0.10603402398915014,
+        0.026315710823158145
+      ],
+      "positive_episodes": 5,
+      "n_episodes": 6,
+      "positive_fraction": 0.8333333333333334
+    },
+    {
+      "window": 15,
+      "frame_scope": "common_across_windows",
+      "comparison": "S2-S1",
+      "episode_ids": [
+        10,
+        19,
+        29,
+        38,
+        49,
+        57
+      ],
+      "per_episode_delta": [
+        -0.01388888888888884,
+        -0.01783927454659162,
+        -0.0004099200655871549,
+        -0.18150512843250266,
+        -0.021008158508158514,
+        0.0006709608158883551
+      ],
+      "point_estimate": -0.038996734937640075,
+      "bootstrap_mean": -0.03846971694940785,
+      "percentile_95_ci": [
+        -0.09663705879335709,
+        -0.0053811604693922615
+      ],
+      "positive_episodes": 1,
+      "n_episodes": 6,
+      "positive_fraction": 0.16666666666666666
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "acceptance_status": "PARTIAL_PASS",
+  "DIAGNOSIS_COMPLETE": false,
+  "cache_validation": "dense_cache_validation.json",
+  "clip_frame_count_fps_resolution": "PASS",
+  "checked_clips": 96,
+  "fixed_split_no_final": "PASS",
+  "B3_identity": "OCACT_VERIFIED",
+  "physical_lift_hold_boundaries": "UNRESOLVED",
+  "continuous_playback_not_performed": true,
+  "no_training_deployment_change_or_robot": true
+}

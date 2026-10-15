@@ -1,0 +1,117 @@
+{
+  "timestamp_utc": "2026-10-15T12:09:11.344983+00:00",
+  "csv_sha256": "d1bdf4a78495ccff2f3d22adf56b482e35b6d6be8f49a8999d4df407f406cf78",
+  "source": "HUMAN_REVIEWED",
+  "basis": "User confirmed annotation complete; saved reviewer and RGB evidence descriptions",
+  "codex_independent_continuous_video_review": false,
+  "first_six": [
+    {
+      "episode": 0,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 186,
+        "CONTACT_SUPPORTED": 189,
+        "CLOSING": 43,
+        "POST_CLOSE": 153,
+        "RELEASE": 30
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 2,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 138,
+        "CONTACT_SUPPORTED": 180,
+        "CLOSING": 37,
+        "POST_CLOSE": 146,
+        "RELEASE": 9
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 4,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 163,
+        "CONTACT_SUPPORTED": 215,
+        "CLOSING": 40,
+        "POST_CLOSE": 148,
+        "RELEASE": 27
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 6,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 164,
+        "CONTACT_SUPPORTED": 164,
+        "CLOSING": 34,
+        "POST_CLOSE": 131,
+        "RELEASE": 21
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 7,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 161,
+        "CONTACT_SUPPORTED": 168,
+        "CLOSING": 32,
+        "POST_CLOSE": 136,
+        "RELEASE": 17
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 9,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 145,
+        "CONTACT_SUPPORTED": 184,
+        "CLOSING": 45,
+        "POST_CLOSE": 137,
+        "RELEASE": 25
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    }
+  ],
+  "qualifying_contact_episodes": 6,
+  "threshold": 4,
+  "decision": "CONTINUE_TRAIN36_CONTACT_REVIEW",
+  "task_frozen": false,
+  "train_total": 36,
+  "train_reviewed": 6,
+  "train_remaining": 30,
+  "dev_label_review_authorized_now": false,
+  "probe_fit_authorized_now": false,
+  "policy_training_authorized": false,
+  "limitation": "Contact-supported does not establish calibrated force, stable hold or exact lift-off; no F1 scores computed",
+  "raw_evidence": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1_FORMAL4_CONTACT_SIGNAL_FEASIBILITY\\label_gate_20261015T120911345293Z"
+}

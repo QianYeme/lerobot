@@ -1,0 +1,93 @@
+{
+  "experiment_id": "F1P_CONTACT_SIGNAL_PILOT",
+  "records": [
+    {
+      "episode": 10,
+      "split": "train",
+      "pilot_role": "pilot_eval",
+      "frames": 479,
+      "fps": 30,
+      "clip": "evidence_samples\\pilot_eval_train_ep010_dual_view.mp4",
+      "source_sha256": "d71fe83eaab9c206d50e7dc364eb2e4cb802f38c438f876063b69eceda5c5121",
+      "copied_sha256": "d71fe83eaab9c206d50e7dc364eb2e4cb802f38c438f876063b69eceda5c5121",
+      "review_status": "HUMAN_REVIEWED_USER_CONFIRMED_COMPLETE"
+    },
+    {
+      "episode": 19,
+      "split": "train",
+      "pilot_role": "pilot_eval",
+      "frames": 479,
+      "fps": 30,
+      "clip": "evidence_samples\\pilot_eval_train_ep019_dual_view.mp4",
+      "source_sha256": "7b509cd311cc54b587adf7c96c97ca17ad1529380bd820ebdab502144f9d5fbb",
+      "copied_sha256": "7b509cd311cc54b587adf7c96c97ca17ad1529380bd820ebdab502144f9d5fbb",
+      "review_status": "HUMAN_REVIEWED_USER_CONFIRMED_COMPLETE"
+    },
+    {
+      "episode": 29,
+      "split": "train",
+      "pilot_role": "pilot_eval",
+      "frames": 479,
+      "fps": 30,
+      "clip": "evidence_samples\\pilot_eval_train_ep029_dual_view.mp4",
+      "source_sha256": "e2b80f93ab1a6cbac8813e8b81c9a57174f5411a3c47970de8090a4be16738ef",
+      "copied_sha256": "e2b80f93ab1a6cbac8813e8b81c9a57174f5411a3c47970de8090a4be16738ef",
+      "review_status": "HUMAN_REVIEWED_USER_CONFIRMED_COMPLETE"
+    },
+    {
+      "episode": 38,
+      "split": "train",
+      "pilot_role": "pilot_eval",
+      "frames": 479,
+      "fps": 30,
+      "clip": "evidence_samples\\pilot_eval_train_ep038_dual_view.mp4",
+      "source_sha256": "032b97fdc9bc8bfedc8c393ec80a3dd8c0fcac1489e9bfc07d2675cc7f287bb2",
+      "copied_sha256": "032b97fdc9bc8bfedc8c393ec80a3dd8c0fcac1489e9bfc07d2675cc7f287bb2",
+      "review_status": "HUMAN_REVIEWED_USER_CONFIRMED_COMPLETE"
+    },
+    {
+      "episode": 49,
+      "split": "train",
+      "pilot_role": "pilot_eval",
+      "frames": 479,
+      "fps": 30,
+      "clip": "evidence_samples\\pilot_eval_train_ep049_dual_view.mp4",
+      "source_sha256": "a710df3f8835d0ea6e078e97987b8a7d9192df7257a05cb3053f16b54b9de561",
+      "copied_sha256": "a710df3f8835d0ea6e078e97987b8a7d9192df7257a05cb3053f16b54b9de561",
+      "review_status": "HUMAN_REVIEWED_USER_CONFIRMED_COMPLETE"
+    },
+    {
+      "episode": 57,
+      "split": "train",
+      "pilot_role": "pilot_eval",
+      "frames": 478,
+      "fps": 30,
+      "clip": "evidence_samples\\pilot_eval_train_ep057_dual_view.mp4",
+      "source_sha256": "40e9193dfd278d5ef39fefd9d03be558f3979e40208f983c9236018340c21f5e",
+      "copied_sha256": "40e9193dfd278d5ef39fefd9d03be558f3979e40208f983c9236018340c21f5e",
+      "review_status": "HUMAN_REVIEWED_USER_CONFIRMED_COMPLETE"
+    }
+  ],
+  "pilot_fit_labels": "evidence_samples/pilot_fit_labels_snapshot.csv",
+  "fit_label_sha256": "d1bdf4a78495ccff2f3d22adf56b482e35b6d6be8f49a8999d4df407f406cf78",
+  "fit_source": "HUMAN_REVIEWED_BY_lyj",
+  "new_labels": "HUMAN_REVIEWED_BY_lyj",
+  "codex_independent_continuous_playback": false,
+  "label_freeze": {
+    "frozen_before_fitting": true,
+    "timestamp_utc": "2026-10-15T12:55:02.049931+00:00",
+    "fit_csv_sha256": "d1bdf4a78495ccff2f3d22adf56b482e35b6d6be8f49a8999d4df407f406cf78",
+    "eval_csv_sha256": "1f4a1872fa829db1e8b8a8dcaf020ae6ede16fa95f302e06a99ab52f0e7dff4e",
+    "subset_sha256": "1ee6af77f63b99b4c291fca0a9b90fb1a746981e533e5bc20a06d4850b209e49",
+    "class_order": [
+      "PRECONTACT",
+      "CONTACT_SUPPORTED"
+    ],
+    "raw": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1P_CONTACT_SIGNAL_PILOT\\eval_20261015T130640361440Z",
+    "review_source": "HUMAN_REVIEWED_BY_lyj; user confirmed complete",
+    "auto_interpolated_labels": false,
+    "report_assembled_at_utc": "2026-10-15T13:06:41.001763+00:00",
+    "first_freeze_evidence": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1P_CONTACT_SIGNAL_PILOT\\eval_20261015T125501267308Z\\job.json",
+    "metadata_correction": "Restore original pre-fit freeze timestamp; all label/subset hashes unchanged"
+  }
+}

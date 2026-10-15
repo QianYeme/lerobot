@@ -1,0 +1,5 @@
+# B3 候选身份更正
+
+原G1/G0报告中的B3_ACT名称为历史标签，不代表实际架构。当前冻结checkpoint具有model_type=oc_act、object_conditioning_enabled=true，object模块参数存在且在forward hook中被执行。因此身份OCACT_VERIFIED。
+
+撤回“标准ACT无DINO/object tokens”的描述；当前B3与P1为既有OC-ACT训练候选比较，完整训练差异需依据train_config及manifest核验。没有纯ACT baseline，本轮不自行替换。模块被调用不等于分支产生了有效因果贡献，也不证明训练中每一步正确使用。

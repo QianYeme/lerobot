@@ -1,0 +1,65 @@
+{
+  "scientific_outcome": "UNRESOLVED_MATCHING_COVERAGE",
+  "scope": "EXPLORATORY_ONLY",
+  "matched_pairs_total": {
+    "fit": 29,
+    "eval": 68
+  },
+  "valid_fit_episodes": 0,
+  "valid_eval_episodes": 0,
+  "probe_fits": 0,
+  "primary_mean_episode_delta": null,
+  "reason": "Frozen >=20 pairs per episode and >=4 episodes per group not satisfied",
+  "all_eval_matched_balance_descriptive_only": [
+    {
+      "role": "eval",
+      "episode": "POOLED_all",
+      "stage": "after",
+      "variable": "gripper.pos",
+      "pre_mean": "40.26191032634062",
+      "contact_mean": "38.39025287067189",
+      "pre_std": "14.207896716201363",
+      "contact_std": "12.607263933093387",
+      "SMD": "-0.13934892685395092",
+      "balance_pass": "True"
+    },
+    {
+      "role": "eval",
+      "episode": "POOLED_all",
+      "stage": "after",
+      "variable": "delta_gripper.pos",
+      "pre_mean": "1.1130692257600672",
+      "contact_mean": "1.0755955752204447",
+      "pre_std": "1.6143067808835971",
+      "contact_std": "1.5768340741620517",
+      "SMD": "-0.02348443322050908",
+      "balance_pass": "True"
+    },
+    {
+      "role": "eval",
+      "episode": "POOLED_all",
+      "stage": "after",
+      "variable": "command_t_minus_1",
+      "pre_mean": "43.03399708691765",
+      "contact_mean": "41.16305073569803",
+      "pre_std": "12.77561945599838",
+      "contact_std": "12.00104244011882",
+      "SMD": "-0.15095114569029414",
+      "balance_pass": "True"
+    },
+    {
+      "role": "eval",
+      "episode": "POOLED_all",
+      "stage": "after",
+      "variable": "delta_command_t_minus_1",
+      "pre_mean": "0.9852382996503044",
+      "contact_mean": "1.1350927072412826",
+      "pre_std": "1.521050561894567",
+      "contact_std": "1.5780273771745357",
+      "SMD": "0.09669268776489381",
+      "balance_pass": "True"
+    }
+  ],
+  "F1Q_COMPLETE": false,
+  "completion_interpretation": "Section13 explicitly requires probes on valid matched data; not satisfiable at frozen coverage. All authorized matching/audit/stop work delivered, no unauthorized rescue."
+}

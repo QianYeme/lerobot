@@ -1,0 +1,35 @@
+{
+  "remote_raw": "/root/autodl-tmp/lerobot/results/experiments/D2_P1_ACTION_CHAIN_DIAGNOSIS",
+  "commands": [
+    "scripts/run_d2_p1.sh",
+    "scripts/run_d2_r3.sh",
+    "scripts/verify_d2_replay.py",
+    "python scripts/report_d2_partial.py"
+  ],
+  "failed_attempt": "remote p1_failed_open_files.log; descriptor limit1024 fixed65535",
+  "missing": [
+    "B3 valid contract identity",
+    "48 episode visual event review",
+    "runtime logs",
+    "prototype asset hash",
+    "normalized ensemble equivalence"
+  ],
+  "result_sha256": {
+    "demonstration_audit.json": "dda5ffd78c18c908c4ecd1d0fe71dd06080aad37c211c7159909a81a74460c1e",
+    "demonstration_events.csv": "d14e0d93ec92b84f3508d2f2018351f1f5b5dcdb988f7bfdb9a22d0d89daca5e",
+    "deployment_contract_audit.json": "b0ab7354eb0ecda3effc6300f242b0313f9b6aae2bc8686a90852d56ba9fc7c7",
+    "metrics.json": "9c01931bf63839adf41367677b8138f3a6a6322ab3fccdb7371bba2caf272315",
+    "p1_unphased_metrics.json": "688f86975e4c39ad9167bb1f2e9b6cda27a582104b873ce598fc5a572ab8ae15",
+    "per_episode_phase_metrics.csv": "90c2cd3432846195137200bca1834407a9938708444b8721f11043423b55fc0d",
+    "postprocess_replay.json": "ce52eab3f60fbc1838aad5c02e64e098498d809a8e909ca21f065015a2e6370e",
+    "prediction_diagnosis.json": "5e9d4fca6818283dae3870afbdaf5c9efd8b5f2dd4d176a17b996e66dcff497b",
+    "proposal.md": "f224b650ad6ba330beb3f88c86d678c126ae613ae9c5c28ee97e971272df7953",
+    "provenance.json": "4dcc81b60499ffd7cea054415d47c4f6167ad3cadccc17ed6d37fe941f3bd864",
+    "r3_unphased_metrics.json": "d6b2c9547a64b17e22a41e8db4716f9ccd946fb10f5131f2925ce3a7db2b708c",
+    "replay_validation.json": "476ce7a990a8f8a7a9d5c3b93b20ee7d70c18bdf64e4e723bc75ad215799af83",
+    "schema_audit.json": "60cfb7b8e6c1a0adf68e43abf8f145d99a8b8c9c3d31b195c3d5acc02c18396e",
+    "summary.md": "6c631e66701a505399532b437e6c755ac929bc9a906bdfea822e40d379019492",
+    "validation.json": "bd0c86a08bd8a593a195caacdfb3361a6165bbeb73fcc47c817f7c02fd9be81e",
+    "figures\\p1_replay_mae.png": "b321b179d18bf9ca379ce166d59ee912972db6b2e54e9775175e8d41d729d4b5"
+  }
+}

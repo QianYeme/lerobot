@@ -1,0 +1,25 @@
+{
+  "host": "connect.westb.seetacloud.com",
+  "port": 27435,
+  "connection": "PASS",
+  "workspace": "/root/autodl-tmp/lerobot",
+  "dataset_directory_exists": true,
+  "dataset_contents_or_hashes_verified": false,
+  "remote_head": "2abe71e0319451f2ac75340b571ae5173a080863",
+  "local_head": "1a4ef8452e7e92160a62e6cb4195f984a933ee8b",
+  "code_synchronized": false,
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "gpu_memory_mib": 32607,
+  "gpu_used_mib_at_check": 0,
+  "data_disk_available": "30G",
+  "python": "3.12.3",
+  "torch": "2.8.0+cu128",
+  "scikit_learn": "NOT_INSTALLED_IN_CHECKED_BASE_ENVIRONMENT",
+  "remote_operations": "READ_ONLY_DIAGNOSTIC_COMMANDS",
+  "training_started": false,
+  "failures": [
+    "Initial strict host-key check: endpoint not yet in known_hosts; native OpenSSH accept-new recorded new ED25519 key before password retry",
+    "BatchMode connection cannot authenticate with password",
+    "One command failed local argparse due to PowerShell nested quoting; simplified diagnostic command succeeded"
+  ]
+}

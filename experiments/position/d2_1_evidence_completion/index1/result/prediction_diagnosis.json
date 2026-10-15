@@ -1,0 +1,8 @@
+{
+  "category": "UNRESOLVED",
+  "teacher_forced": true,
+  "physical_hold_evaluated": false,
+  "available": "full task and conservative released-retreat core",
+  "candidate_posture_window": "auxiliary only; NOT airborne hold",
+  "metrics": "dense_phase_metrics.json"
+}

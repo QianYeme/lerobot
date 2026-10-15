@@ -1,0 +1,53 @@
+{
+  "subset_frozen_before_new_labels_and_any_score": true,
+  "new_source_data_episodes": [
+    0,
+    2,
+    4,
+    6,
+    7,
+    9,
+    10,
+    19,
+    29,
+    38,
+    49,
+    57
+  ],
+  "official_dev_or_final_read": false,
+  "scaler_fit": true,
+  "features": "reuse audited causal template; obs<=t, commands<=t-1",
+  "absolute_time_frame_episode_inputs": false,
+  "blind_UI": "RGB and interval annotations only",
+  "historical_collection_code_firmware_identity": "UNVERIFIED; inherited limitation retained",
+  "scaler_fit_episode_ids": [
+    0,
+    2,
+    4,
+    6,
+    7,
+    9
+  ],
+  "eval_never_fit_scaler_or_model": true,
+  "label_freeze": {
+    "frozen_before_fitting": true,
+    "timestamp_utc": "2026-10-15T12:55:02.049931+00:00",
+    "fit_csv_sha256": "d1bdf4a78495ccff2f3d22adf56b482e35b6d6be8f49a8999d4df407f406cf78",
+    "eval_csv_sha256": "1f4a1872fa829db1e8b8a8dcaf020ae6ede16fa95f302e06a99ab52f0e7dff4e",
+    "subset_sha256": "1ee6af77f63b99b4c291fca0a9b90fb1a746981e533e5bc20a06d4850b209e49",
+    "class_order": [
+      "PRECONTACT",
+      "CONTACT_SUPPORTED"
+    ],
+    "raw": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1P_CONTACT_SIGNAL_PILOT\\eval_20261015T130640361440Z",
+    "review_source": "HUMAN_REVIEWED_BY_lyj; user confirmed complete",
+    "auto_interpolated_labels": false,
+    "report_assembled_at_utc": "2026-10-15T13:06:41.001763+00:00",
+    "first_freeze_evidence": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1P_CONTACT_SIGNAL_PILOT\\eval_20261015T125501267308Z\\job.json",
+    "metadata_correction": "Restore original pre-fit freeze timestamp; all label/subset hashes unchanged"
+  },
+  "bootstrap_unit": "episode",
+  "same_samples_all_probes": true,
+  "common_window_sensitivity_reported": true,
+  "new_dev_final_read": false
+}

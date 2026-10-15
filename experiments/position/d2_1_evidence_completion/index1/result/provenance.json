@@ -1,0 +1,45 @@
+{
+  "remote_commit": "2abe71e0319451f2ac75340b571ae5173a080863",
+  "torch": "2.8.0+cu128",
+  "assets": {
+    "B3": {
+      "files": {
+        "config.json": "df98b7e1bce5c842a188fd2f5bd787cbd472e2c69a20b1fead081c257b2d3375",
+        "model.safetensors": "ba8f9db8d81001cf0d3d2811be3ce6955bc6db2c3938ba9a46d8f8495a8a53cc",
+        "policy_postprocessor.json": "648b415125a183dfd6cbc47c1dc04ab3f2d912654ef22a12ca5e8b93d7d85cdd",
+        "policy_postprocessor_step_0_unnormalizer_processor.safetensors": "3d89c189456afeeaaf1d7763c2c049485aec9caf2fbb068b09f5cfa232f0fee2",
+        "policy_preprocessor.json": "8d8d414c21a2d568852a556853936fb523331f057e1de58fd74aaa30e3ec33c9",
+        "policy_preprocessor_step_3_normalizer_processor.safetensors": "3d89c189456afeeaaf1d7763c2c049485aec9caf2fbb068b09f5cfa232f0fee2",
+        "train_config.json": "292c89d17f86a3080c2749d1ef042204b6607c5fb19bb81637f7ea06dd95206f"
+      },
+      "prototype_path": "/root/autodl-tmp/lerobot/experiments/position/p0_1_spatial_pooling_fix/index1/result/cup_prototype_bank_v1.pt",
+      "prototype_sha256": "114de07e6cf6c0a2eba7fbede910212e0be6b0740751ab42855780c63b5fb876"
+    },
+    "P1": {
+      "files": {
+        "config.json": "57b99c9bc18257c6795f724f19d81cf60e0e529f19acca956ab69b2b3d6a6e6b",
+        "model.safetensors": "0b0270f6a0c0d37a23f2a8f5a50be3cddd39f923f9159f4576ad39761c805594",
+        "policy_postprocessor.json": "648b415125a183dfd6cbc47c1dc04ab3f2d912654ef22a12ca5e8b93d7d85cdd",
+        "policy_postprocessor_step_0_unnormalizer_processor.safetensors": "3d89c189456afeeaaf1d7763c2c049485aec9caf2fbb068b09f5cfa232f0fee2",
+        "policy_preprocessor.json": "8d8d414c21a2d568852a556853936fb523331f057e1de58fd74aaa30e3ec33c9",
+        "policy_preprocessor_step_3_normalizer_processor.safetensors": "3d89c189456afeeaaf1d7763c2c049485aec9caf2fbb068b09f5cfa232f0fee2",
+        "train_config.json": "2776f442321c16b2f9fdf8f0673588d436b9bf05a9adc51752f872d71a9206c1"
+      },
+      "prototype_path": "experiments/position/p0_prototype_calibration/index1/result/cup_prototype_bank_v1.pt",
+      "prototype_sha256": "114de07e6cf6c0a2eba7fbede910212e0be6b0740751ab42855780c63b5fb876"
+    },
+    "R3": {
+      "files": {
+        "config.json": "10cbeabcb6827974aa74efb358fd619633b3f6eb970625e262c7db6f471ffce8",
+        "model.safetensors": "45cb52399b10b8e961617e58671b9f2e172379bcf2bb96458620d17ecffd491f",
+        "policy_postprocessor.json": "648b415125a183dfd6cbc47c1dc04ab3f2d912654ef22a12ca5e8b93d7d85cdd",
+        "policy_postprocessor_step_0_unnormalizer_processor.safetensors": "3d89c189456afeeaaf1d7763c2c049485aec9caf2fbb068b09f5cfa232f0fee2",
+        "policy_preprocessor.json": "8d8d414c21a2d568852a556853936fb523331f057e1de58fd74aaa30e3ec33c9",
+        "policy_preprocessor_step_3_normalizer_processor.safetensors": "3d89c189456afeeaaf1d7763c2c049485aec9caf2fbb068b09f5cfa232f0fee2",
+        "train_config.json": "d9b07711e8c2cef3e28ce3e93856bc513abfffc1af898311f6615dd35669e6aa"
+      },
+      "prototype_path": "/root/autodl-tmp/lerobot/experiments/position/p0_1_spatial_pooling_fix/index1/result/cup_prototype_bank_v1.pt",
+      "prototype_sha256": "114de07e6cf6c0a2eba7fbede910212e0be6b0740751ab42855780c63b5fb876"
+    }
+  }
+}

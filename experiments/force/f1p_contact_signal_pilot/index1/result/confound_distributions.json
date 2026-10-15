@@ -1,0 +1,92 @@
+{
+  "descriptive_not_causal": true,
+  "distributions": [
+    {
+      "channel": "pos[t]",
+      "class": "PRECONTACT",
+      "n": 982,
+      "min": 1.4462809562683105,
+      "max": 92.3553695678711,
+      "median": 62.39669418334961
+    },
+    {
+      "channel": "pos[t]",
+      "class": "CONTACT_SUPPORTED",
+      "n": 1227,
+      "min": 18.663911819458008,
+      "max": 64.94490051269531,
+      "median": 20.316804885864258
+    },
+    {
+      "channel": "delta pos[t]",
+      "class": "PRECONTACT",
+      "n": 982,
+      "min": -2.8925628662109375,
+      "max": 3.9256210327148438,
+      "median": 0.0
+    },
+    {
+      "channel": "delta pos[t]",
+      "class": "CONTACT_SUPPORTED",
+      "n": 1227,
+      "min": -2.5482101440429688,
+      "max": 3.030303955078125,
+      "median": 0.0
+    },
+    {
+      "channel": "command[t-1]",
+      "class": "PRECONTACT",
+      "n": 982,
+      "min": 1.216729998588562,
+      "max": 92.77566528320312,
+      "median": 62.4334602355957
+    },
+    {
+      "channel": "command[t-1]",
+      "class": "CONTACT_SUPPORTED",
+      "n": 1227,
+      "min": 17.718631744384766,
+      "max": 60.98859405517578,
+      "median": 19.695817947387695
+    },
+    {
+      "channel": "delta command[t-1]",
+      "class": "PRECONTACT",
+      "n": 982,
+      "min": -3.1178741455078125,
+      "max": 4.334600448608398,
+      "median": 0.0
+    },
+    {
+      "channel": "delta command[t-1]",
+      "class": "CONTACT_SUPPORTED",
+      "n": 1227,
+      "min": -2.5095062255859375,
+      "max": 3.4220542907714844,
+      "median": 0.0
+    }
+  ],
+  "S0_error_cases_first_in_episode_order": [
+    {
+      "episode": 10,
+      "frame": 16,
+      "true": "PRECONTACT",
+      "predicted": "CONTACT_SUPPORTED",
+      "image": "evidence_samples\\error_S0_train10_frame16.jpg"
+    },
+    {
+      "episode": 19,
+      "frame": 16,
+      "true": "PRECONTACT",
+      "predicted": "CONTACT_SUPPORTED",
+      "image": "evidence_samples\\error_S0_train19_frame16.jpg"
+    },
+    {
+      "episode": 29,
+      "frame": 16,
+      "true": "PRECONTACT",
+      "predicted": "CONTACT_SUPPORTED",
+      "image": "evidence_samples\\error_S0_train29_frame16.jpg"
+    }
+  ]
+}

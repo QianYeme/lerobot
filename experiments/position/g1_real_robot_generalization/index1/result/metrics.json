@@ -1,0 +1,22 @@
+{
+  "evidence_level": "qualitative",
+  "video_files_by_model": {
+    "B3_ACT": 5,
+    "P1_OCACT": 5,
+    "R3_FILM": 5
+  },
+  "video_count_is_trial_count": false,
+  "observation_source": "operator clarification 2026-10-14",
+  "observations": {
+    "P1_OCACT": "stable grasp-lift-place chain; low lift and short hold",
+    "B3_ACT": "lift-place occurs but chain unstable",
+    "R3_FILM": "adjusts gripper to cup position; weaker action chain"
+  },
+  "success_rate": null,
+  "lift_height_mm": null,
+  "hold_duration_s": null,
+  "tracking_error_mm": null,
+  "grasp_force": null,
+  "verified_formal_trials": null,
+  "new_diagnostic_executed": false
+}

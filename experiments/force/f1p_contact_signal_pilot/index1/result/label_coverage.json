@@ -1,0 +1,441 @@
+{
+  "episodes": [
+    {
+      "episode": 0,
+      "role": "fit",
+      "windows": {
+        "1": {
+          "class_counts": [
+            200,
+            189
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 88
+        },
+        "9": {
+          "class_counts": [
+            192,
+            189
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 88
+        },
+        "15": {
+          "class_counts": [
+            186,
+            189
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 88
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 88,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 2,
+      "role": "fit",
+      "windows": {
+        "1": {
+          "class_counts": [
+            152,
+            180
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 145
+        },
+        "9": {
+          "class_counts": [
+            144,
+            180
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 145
+        },
+        "15": {
+          "class_counts": [
+            138,
+            180
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 145
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 145,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 4,
+      "role": "fit",
+      "windows": {
+        "1": {
+          "class_counts": [
+            177,
+            215
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 85
+        },
+        "9": {
+          "class_counts": [
+            169,
+            215
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 85
+        },
+        "15": {
+          "class_counts": [
+            163,
+            215
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 85
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 85,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 6,
+      "role": "fit",
+      "windows": {
+        "1": {
+          "class_counts": [
+            178,
+            164
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 135
+        },
+        "9": {
+          "class_counts": [
+            170,
+            164
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 135
+        },
+        "15": {
+          "class_counts": [
+            164,
+            164
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 135
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 135,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 7,
+      "role": "fit",
+      "windows": {
+        "1": {
+          "class_counts": [
+            175,
+            168
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 134
+        },
+        "9": {
+          "class_counts": [
+            167,
+            168
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 134
+        },
+        "15": {
+          "class_counts": [
+            161,
+            168
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 134
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 134,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 9,
+      "role": "fit",
+      "windows": {
+        "1": {
+          "class_counts": [
+            159,
+            184
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 134
+        },
+        "9": {
+          "class_counts": [
+            151,
+            184
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 134
+        },
+        "15": {
+          "class_counts": [
+            145,
+            184
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 134
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 134,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 10,
+      "role": "eval",
+      "windows": {
+        "1": {
+          "class_counts": [
+            170,
+            180
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 127
+        },
+        "9": {
+          "class_counts": [
+            162,
+            180
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 127
+        },
+        "15": {
+          "class_counts": [
+            156,
+            180
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 127
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 127,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 19,
+      "role": "eval",
+      "windows": {
+        "1": {
+          "class_counts": [
+            170,
+            205
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 102
+        },
+        "9": {
+          "class_counts": [
+            162,
+            205
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 102
+        },
+        "15": {
+          "class_counts": [
+            156,
+            205
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 102
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 102,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 29,
+      "role": "eval",
+      "windows": {
+        "1": {
+          "class_counts": [
+            178,
+            238
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 61
+        },
+        "9": {
+          "class_counts": [
+            170,
+            238
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 61
+        },
+        "15": {
+          "class_counts": [
+            164,
+            238
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 61
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 61,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 38,
+      "role": "eval",
+      "windows": {
+        "1": {
+          "class_counts": [
+            193,
+            189
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 95
+        },
+        "9": {
+          "class_counts": [
+            185,
+            189
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 95
+        },
+        "15": {
+          "class_counts": [
+            179,
+            189
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 95
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 95,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 49,
+      "role": "eval",
+      "windows": {
+        "1": {
+          "class_counts": [
+            179,
+            208
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 90
+        },
+        "9": {
+          "class_counts": [
+            171,
+            208
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 90
+        },
+        "15": {
+          "class_counts": [
+            165,
+            208
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 90
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 90,
+      "evaluable_W15": true
+    },
+    {
+      "episode": 57,
+      "role": "eval",
+      "windows": {
+        "1": {
+          "class_counts": [
+            176,
+            207
+          ],
+          "history_insufficient": 2,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 93
+        },
+        "9": {
+          "class_counts": [
+            168,
+            207
+          ],
+          "history_insufficient": 10,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 93
+        },
+        "15": {
+          "class_counts": [
+            162,
+            207
+          ],
+          "history_insufficient": 16,
+          "nonfinite_windows_excluded": 0,
+          "unknown_or_unlabeled_targets_excluded": 93
+        }
+      },
+      "unknown_frames": 0,
+      "unlabeled_frames": 93,
+      "evaluable_W15": true
+    }
+  ],
+  "qualifying": {
+    "fit": 6,
+    "eval": 6
+  },
+  "minimum_per_group": 4
+}

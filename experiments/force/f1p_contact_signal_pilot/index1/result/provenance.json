@@ -1,0 +1,28 @@
+{
+  "run_id": "20261015T122333559034Z",
+  "raw": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1P_CONTACT_SIGNAL_PILOT\\20261015T122333559034Z",
+  "python": "3.12.4",
+  "versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "pyarrow": "14.0.2",
+    "scikit-learn": "1.4.2",
+    "opencv-python": "4.10.0.84"
+  },
+  "head": "1a4ef8452e7e92160a62e6cb4195f984a933ee8b",
+  "branch": "det",
+  "status": " M \"docc/\\346\\227\\245\\345\\277\\227/\\345\\267\\245\\344\\275\\234\\346\\227\\245\\345\\277\\227.md\"\n M experiments/position/g1_real_robot_generalization/index1/result/summary.md\n M workflow/STATUS.md\n?? .codex_tmp_step12_3b645f09.bundle\n?? .drawio-tmp/single_episode_collection/\n?? _tmp_n0_results/\n?? _tmp_verify/\n?? dino_cache.tar.gz\n?? episode_020_frame_000538_raw(1).png\n?? episode_020_frame_000538_raw.png\n?? experiments/force/f0_legacy_calibration/index1/result.zip\n?? experiments/force/f1_formal4_signal_feasibility/\n?? experiments/force/f1p_contact_signal_pilot/\n?? experiments/model/m0_oc_act_architecture/index1/result.zip\n?? experiments/position/d2_1_evidence_completion/\n?? experiments/position/d2_action_chain_diagnosis/\n?? experiments/position/g0_generalization_screening/index1/result.zip\n?? experiments/position/g1_real_robot_generalization/index1/G1_web_review_20261014.zip\n?? experiments/position/g1_real_robot_generalization/index1/result/REAL_ROBOT_REVIEW_20261014.md\n?? experiments/position/g1_real_robot_generalization/index1/result/metrics.json\n?? experiments/position/g1_real_robot_generalization/index1/result/proposal.md\n?? experiments/position/g1_real_robot_generalization/index1/result/validation_review_20261014.json\n?? experiments/position/n0_overnight_batch/index1/result.zip\n?? experiments/position/p0_1_spatial_pooling_fix/index1/result.zip\n?? experiments/position/p0_prototype_calibration/index1/result.zip\n?? experiments/position/t0_discovery_act_vs_ocact/index1/result.zip\n?? experiments/position/t1_1_spatial_path_health/index1/result.zip\n?? experiments/position/t3_joint_state_spatial/index1/result.zip\n?? formal4_nomaster.tar\n?? media/formal1/\n?? p0_1_results.tar.gz\n?? p0_remote_inputs.tar.gz\n?? p0_results_remote.tar.gz\n?? p0_scripts.tar.gz\n?? results/experiments/D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION/\n?? results/experiments/D2_P1_ACTION_CHAIN_DIAGNOSIS/\n?? results/experiments/F1P_CONTACT_SIGNAL_PILOT/\n?? results/experiments/F1_FORMAL4_CONTACT_SIGNAL_FEASIBILITY/\n?? scripts/analyze_d2_1_dense.py\n?? scripts/audit_d2_1_remote.py\n?? scripts/audit_f1_signals.py\n?? scripts/check_f1_first_six_labels.py\n?? scripts/d2_remote.py\n?? scripts/eval_d2_action_chain.py\n?? scripts/prepare_d2_1_dense_review.py\n?? scripts/prepare_d2_1_manual_evidence.py\n?? scripts/prepare_d2_1_visual_review.py\n?? scripts/prepare_d2_local_audit.py\n?? scripts/prepare_f1p_pilot.py\n?? scripts/report_d2_1_dense_completion.py\n?? scripts/report_d2_1_review.py\n?? scripts/report_d2_partial.py\n?? scripts/run_d2_p1.sh\n?? scripts/run_d2_r3.sh\n?? scripts/run_f1_review_ui.py\n?? scripts/smoke_f1_review_browser.py\n?? scripts/verify_d2_replay.py\n?? t0_inputs.tar\n?? tests/scripts/test_f1_review_ui.py\n?? tests/test_f1_causal_features.py\n?? tools/f1_review_ui/\n",
+  "source_sha256": {
+    "scripts\\prepare_f1p_pilot.py": "810e0138e8f59b650b89809313f465af2d31ba92e8907a89febd479acbfbd8a0",
+    "scripts\\run_f1_review_ui.py": "3903e56d92d76c556ac007cdb37ee29152943c28a6fa18037833ad96662da1fb",
+    "scripts\\audit_f1_signals.py": "9490f5907acceaa9552e32c7ad6a409a793f1d1a91ff522af09142fc52f121d7",
+    "src\\lerobot\\scripts\\lerobot_record.py": "805a7127077f2f47b3ed95d62684f1c4e95329ade06332a1de3cbdce5a4c9dd7",
+    "src\\lerobot\\robots\\so_follower\\so_follower.py": "bd355b356e7cf9dd37315deda3e07a8e0e4c4616a6062282fe9044dda0f5c3c5"
+  },
+  "reused_audits": [
+    "experiments/force/f1_formal4_signal_feasibility/index1/result/signal_timing_audit.md",
+    "tests/test_f1_causal_features.py"
+  ],
+  "old_audits_recomputed": false,
+  "cli": "python scripts/prepare_f1p_pilot.py"
+}

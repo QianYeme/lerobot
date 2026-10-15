@@ -1,0 +1,107 @@
+{
+  "status": "FIRST_SIX_GATE_EVALUATED_TRAIN36_PENDING",
+  "train_reviewed": 6,
+  "train_remaining": 30,
+  "dev_reviewed": 0,
+  "first_six_counts": [
+    {
+      "episode": 0,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 186,
+        "CONTACT_SUPPORTED": 189,
+        "CLOSING": 43,
+        "POST_CLOSE": 153,
+        "RELEASE": 30
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 2,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 138,
+        "CONTACT_SUPPORTED": 180,
+        "CLOSING": 37,
+        "POST_CLOSE": 146,
+        "RELEASE": 9
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 4,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 163,
+        "CONTACT_SUPPORTED": 215,
+        "CLOSING": 40,
+        "POST_CLOSE": 148,
+        "RELEASE": 27
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 6,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 164,
+        "CONTACT_SUPPORTED": 164,
+        "CLOSING": 34,
+        "POST_CLOSE": 131,
+        "RELEASE": 21
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 7,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 161,
+        "CONTACT_SUPPORTED": 168,
+        "CLOSING": 32,
+        "POST_CLOSE": 136,
+        "RELEASE": 17
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    },
+    {
+      "episode": 9,
+      "reviewers": [
+        "lyj"
+      ],
+      "rows": 5,
+      "unique_target_frames_W15": {
+        "PRECONTACT": 145,
+        "CONTACT_SUPPORTED": 184,
+        "CLOSING": 45,
+        "POST_CLOSE": 137,
+        "RELEASE": 25
+      },
+      "unknown_frames_excluded": 0,
+      "contact_both_classes_at_least_5": true
+    }
+  ],
+  "contact_gate": true,
+  "full_train_task_threshold": "at least 24/36 episodes, both classes >=5 reliable targets at W15",
+  "raw_evidence": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1_FORMAL4_CONTACT_SIGNAL_FEASIBILITY\\label_gate_20261015T120911345293Z"
+}

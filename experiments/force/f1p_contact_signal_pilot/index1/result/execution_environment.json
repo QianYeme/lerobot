@@ -1,0 +1,31 @@
+{
+  "probe_fitting": "remote isolated CPU venv",
+  "remote_versions_and_fit_ids": {
+    "fits": 12,
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "sklearn": "1.4.2",
+    "threadpoolctl": "3.6.0",
+    "fit_episodes": [
+      0,
+      2,
+      4,
+      6,
+      7,
+      9
+    ],
+    "eval_episodes": [
+      10,
+      19,
+      29,
+      38,
+      49,
+      57
+    ],
+    "policy_training": false
+  },
+  "local_stage": "feature/input verification, scoring, bootstrap and reports only",
+  "local_failure": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1P_CONTACT_SIGNAL_PILOT\\eval_20261015T125501267308Z\\local_failure.json",
+  "local_fits": 0
+}

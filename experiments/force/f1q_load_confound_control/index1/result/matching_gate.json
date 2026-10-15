@@ -1,0 +1,12 @@
+{
+  "coverage_pass": false,
+  "qualifying": {
+    "fit": [],
+    "eval": []
+  },
+  "pooled_eval_balance_pass": false,
+  "outcome_before_any_probe_performance": "UNRESOLVED_MATCHING_COVERAGE",
+  "new_probe_performance_read": false,
+  "probe_fits": 0,
+  "raw": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1Q_LOAD_CONFOUND_CONTROL\\20261015T135749254735Z"
+}

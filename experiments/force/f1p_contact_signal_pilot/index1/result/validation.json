@@ -1,0 +1,22 @@
+{
+  "OVERALL_STATUS": "PASS",
+  "PILOT_COMPLETE": true,
+  "PILOT_OUTCOME": "PROMISING_LOAD",
+  "EVIDENCE_SCOPE": "EXPLORATORY_ONLY",
+  "ORIGINAL_F1_COMPLETE": false,
+  "NEXT_POLICY_TRAINING_AUTHORIZED": false,
+  "label_coverage": {
+    "fit": 6,
+    "eval": 6
+  },
+  "all_fixed_probes_converged_finite": true,
+  "probe_fits": 12,
+  "same_samples_per_probe": true,
+  "fit_only_scaler": true,
+  "episode_bootstrap_shared_indices": true,
+  "labels_unchanged_by_analysis": true,
+  "official_dev_final_read": false,
+  "raw": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1P_CONTACT_SIGNAL_PILOT\\eval_20261015T130640361440Z",
+  "final_evidence_consistency_audit": "PASS",
+  "engineering_failures_retained": true
+}

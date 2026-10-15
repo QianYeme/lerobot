@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-15",
+  "scope": "F1 blind-review UI engineering, not signal feasibility evidence",
+  "backend_and_previous_ui_regression_tests": {"passed": 18, "failed": 0},
+  "javascript_syntax_check": "PASS",
+  "python_syntax_check": "PASS",
+  "git_diff_check": "PASS",
+  "browser": "Microsoft Edge headless",
+  "real_video_playback": "PASS",
+  "seek_to_frame_250_and_step_to_251": "PASS",
+  "capture_current_frame_button": "PASS",
+  "save_readback_and_reload": "PASS_ON_TEMPORARY_CSV",
+  "episode_switch": "PASS",
+  "narrow_viewport_horizontal_overflow": false,
+  "browser_page_errors": [],
+  "official_csv_unchanged_during_smoke": true,
+  "blindness": "Only allowlisted UI, first-six Train RGB videos, original-frame endpoint and CSV review API served",
+  "labels_created_for_research": false,
+  "task_frozen_or_probe_fitted": false,
+  "initial_test_failure": "Global tests/conftest.py requires absent serial; isolated CPU tests with --confcutdir=tests/scripts passed",
+  "runtime_url": "http://127.0.0.1:8766",
+  "guide": "tools/f1_review_ui/README.md"
+}

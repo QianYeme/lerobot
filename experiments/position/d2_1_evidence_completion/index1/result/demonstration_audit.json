@@ -1,0 +1,9 @@
+{
+  "dev_dense_window_reviews": 12,
+  "train_dense_window_reviews": 36,
+  "full_episode_continuous_playback_reviews": 0,
+  "released_state_observations": 48,
+  "reliable_physical_lift_hold_intervals": 0,
+  "review_method": "ordered every-frame grids, not 1 fps",
+  "limitations": "Most Train review starts at frame 200; Dev starts at 120. No complete video playback claim."
+}

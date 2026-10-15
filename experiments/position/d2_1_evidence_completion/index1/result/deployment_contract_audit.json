@@ -1,0 +1,8 @@
+{
+  "n_action_steps_off": 1,
+  "ensemble_on": "full chunk every step",
+  "queue_difference": "No multiple-step queued execution with n_action_steps=1",
+  "episode_reset": true,
+  "runtime_parameters": "UNVERIFIED_NO_RUNTIME_LOGS",
+  "D2_static_audit_stale_blocker": "CHECKPOINTS_AND_TORCH resolved on server; local torch still absent"
+}

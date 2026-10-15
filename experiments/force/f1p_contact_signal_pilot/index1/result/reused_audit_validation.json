@@ -1,0 +1,16 @@
+{
+  "prior_audit": "experiments/force/f1_formal4_signal_feasibility/index1/result/provenance.json",
+  "checked_at": "2026-10-15",
+  "current_sha256_equals_prior_for": [
+    "src/lerobot/scripts/lerobot_record.py",
+    "src/lerobot/robots/so_follower/so_follower.py",
+    "src/lerobot/motors/feetech/feetech.py",
+    "src/lerobot/motors/feetech/tables.py",
+    "src/lerobot/motors/motors_bus.py"
+  ],
+  "status": "PASS_FOR_CURRENT_SOURCE_VERSION_REUSE",
+  "historical_collection_source_firmware_verified": false,
+  "signal_distributions_recomputed_from_old_dev": false,
+  "causal_feature_tests_rerun": "3 PASS",
+  "scaler_reused": false
+}

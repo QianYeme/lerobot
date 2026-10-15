@@ -1,0 +1,37 @@
+{
+  "scope": "metadata_only",
+  "state": {
+    "dtype": "float32",
+    "names": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos",
+      "gripper.load",
+      "gripper.curr"
+    ],
+    "shape": [
+      8
+    ]
+  },
+  "action": {
+    "dtype": "float32",
+    "names": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "shape": [
+      6
+    ]
+  },
+  "fps_declared": 30,
+  "metadata_dimensions_match": true,
+  "units_alignment_actual_feedback_and_reachability": "UNVERIFIED",
+  "full_schema_gate": "INCOMPLETE"
+}

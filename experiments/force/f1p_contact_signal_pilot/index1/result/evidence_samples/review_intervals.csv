@@ -1,0 +1,13 @@
+﻿episode,label,first_reliable_frame,last_reliable_frame,uncertain_start,uncertain_end,reviewer,evidence,reason
+10,PRECONTACT,0,171,,,lyj,pilot_eval_train_ep010_dual_view.mp4#frames=0-171,机械臂伸出后到达塑料杯位置，开始闭合夹爪直到接触塑料杯前
+10,CONTACT_SUPPORTED,172,351,,,lyj,pilot_eval_train_ep010_dual_view.mp4#frames=172-351,闭合夹爪碰到塑料杯 稳定后拿起塑料杯 直到放下 后松开夹爪 到触碰塑料杯的最后一帧
+19,PRECONTACT,0,171,,,lyj,pilot_eval_train_ep019_dual_view.mp4#frames=0-171,机械臂伸出后到达塑料杯位置，开始闭合夹爪直到接触塑料杯前
+19,CONTACT_SUPPORTED,172,376,,,lyj,pilot_eval_train_ep019_dual_view.mp4#frames=172-376,闭合夹爪碰到塑料杯 稳定后拿起塑料杯 直到放下 后松开夹爪 到触碰塑料杯的最后一帧
+29,PRECONTACT,0,179,,,lyj,pilot_eval_train_ep029_dual_view.mp4#frames=0-179,机械臂伸出后到达塑料杯位置，开始闭合夹爪直到接触塑料杯前
+29,CONTACT_SUPPORTED,180,417,,,lyj,pilot_eval_train_ep029_dual_view.mp4#frames=180-417,闭合夹爪碰到塑料杯 稳定后拿起塑料杯 直到放下 后松开夹爪 到触碰塑料杯的最后一帧
+38,PRECONTACT,0,194,,,lyj,pilot_eval_train_ep038_dual_view.mp4#frames=0-194,机械臂伸出后到达塑料杯位置，开始闭合夹爪直到接触塑料杯前
+38,CONTACT_SUPPORTED,195,383,,,lyj,pilot_eval_train_ep038_dual_view.mp4#frames=195-383,闭合夹爪碰到塑料杯 稳定后拿起塑料杯 直到放下 后松开夹爪 到触碰塑料杯的最后一帧
+49,PRECONTACT,0,180,,,lyj,pilot_eval_train_ep049_dual_view.mp4#frames=0-180,机械臂伸出后到达塑料杯位置，开始闭合夹爪直到接触塑料杯前
+49,CONTACT_SUPPORTED,181,388,,,lyj,pilot_eval_train_ep049_dual_view.mp4#frames=181-388,闭合夹爪碰到塑料杯 稳定后拿起塑料杯 直到放下 后松开夹爪 到触碰塑料杯的最后一帧
+57,PRECONTACT,0,177,,,lyj,pilot_eval_train_ep057_dual_view.mp4#frames=0-177,机械臂伸出后到达塑料杯位置，开始闭合夹爪直到接触塑料杯前
+57,CONTACT_SUPPORTED,178,384,,,lyj,pilot_eval_train_ep057_dual_view.mp4#frames=178-384,闭合夹爪碰到塑料杯 稳定后拿起塑料杯 直到放下 后松开夹爪 到触碰塑料杯的最后一帧

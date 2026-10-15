@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>F1 · RGB 独立盲审</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<header><div><span class="eyebrow" id="contextLabel">FORMAL4 / TRAIN · FIRST SIX</span><h1 id="pageTitle">F1 · RGB 独立盲审</h1></div><span class="badge">仅 RGB · 无执行器信号 · 不开放 Dev</span></header>
+<main>
+<section class="viewer"><nav id="episodes" aria-label="训练片段"></nav>
+<div class="camera-label"><span>左：顶部相机</span><span>右：腕部相机</span></div>
+<div class="screen"><video id="video" preload="metadata" playsinline></video><img id="still" alt="当前原始帧的双视角图像" hidden></div>
+<div class="transport"><button id="play">播放 / 暂停</button><button data-step="-10">−10 帧</button><button data-step="-1">−1 帧</button><button data-step="1">+1 帧</button><button data-step="10">+10 帧</button><label>速度 <select id="speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option selected value="1">1×</option><option value="2">2×</option></select></label></div>
+<input id="timeline" type="range" min="0" value="0" step="1" aria-label="原始帧进度条">
+<div class="framebar"><strong id="frameText">加载中</strong><label>跳转帧 <input id="jump" type="number" min="0"><button id="go">跳转</button></label></div>
+<p class="muted">空格播放/暂停；← → 单帧，Shift + ← → 十帧。暂停时显示从原视频直接解码的指定帧。所有区间起止均包含该帧。</p>
+<details open><summary>标注说明：接触 ≠ 闭爪 ≠ 离桌</summary><dl>
+<dt>PRECONTACT · 尚未接触</dt><dd>看得见夹爪与杯子之间仍有间隙；接触前的闭爪也可以属于此类。</dd>
+<dt>CONTACT_SUPPORTED · 接触有支持</dt><dd>可见接触，或随后杯子随夹爪共同运动支持接触。不要求证明离桌；不能仅凭夹爪闭合判断。</dd>
+<dt data-phase-help>CLOSING / POST_CLOSE / RELEASE</dt><dd data-phase-help>分别是闭爪过程、闭爪结束到释放前、张爪释放过程。它们是动作阶段，不是抓稳或落桌真值。</dd>
+<dt>UNKNOWN / OCCLUDED</dt><dd>已看过但不能判定 / 被遮挡。填写不确定起止帧和原因，可靠帧留空。</dd>
+</dl><p id="axisHelp">接触标签与阶段标签是两条轴，可以重叠；同轴不同可靠类别不能重叠。不确定边界不得放进可靠区间。可为同一标签添加多段。</p></details>
+</section>
+<section class="editor"><div class="editor-head"><h2 id="episodeTitle">可靠区间标注</h2><label>审核者 <input id="reviewer" placeholder="姓名或缩写" autocomplete="off"></label></div>
+<p class="muted">先连续播放，再逐帧核对。每段选择标签、填写帧号与可见证据；不确定的边界可另加一段 UNKNOWN。</p>
+<div id="intervals"></div><button id="add" class="add">＋ 添加一段区间</button>
+<div class="savebox"><div id="saveStatus" role="status" aria-live="polite">正在连接本地服务…</div><div class="actions"><button id="save" class="primary">保存到 CSV</button><button id="download">下载草稿 JSON</button><button id="recover">恢复本集草稿</button></div><p id="csvPath" class="path"></p><p class="muted">保存覆盖该集的行，其他集保留；写入前备份，成功后回读确认。保存不等于整集审核完成，不自动冻结任务。</p></div>
+</section>
+</main><script src="/app.js"></script></body></html>

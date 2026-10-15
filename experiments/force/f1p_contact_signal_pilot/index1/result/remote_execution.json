@@ -1,0 +1,13 @@
+{
+  "remote_dir": "/root/autodl-tmp/F1P_CONTACT_SIGNAL_PILOT_eval_20261015T125501267308Z",
+  "host": "connect.westb.seetacloud.com",
+  "port": 27435,
+  "screen": "f1p_probe_20261015",
+  "bundle_sha256": "b3de8d483f819c1d2b2adb847c9070a07386797dbcc356f126f7a9b017fc9c83",
+  "bytes_uploaded": 531159,
+  "max_fits": 12,
+  "local_fits_completed_before_remote": 0,
+  "reason": "Local threadpoolctl 2.2.0 crashes before any fit; remote isolated 3.6.0",
+  "local_failed_evidence": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1P_CONTACT_SIGNAL_PILOT\\eval_20261015T125501267308Z",
+  "credentials_written": false
+}

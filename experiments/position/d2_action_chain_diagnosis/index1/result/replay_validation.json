@@ -1,0 +1,182 @@
+{
+  "episode_003": {
+    "temporal_max_abs_error": 5.8024294304459545e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      1.2380335795143846,
+      5.446469214797991,
+      2.446943339124686,
+      6.6604125528923985,
+      1.6577373855466477,
+      4.442251033938389
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_005": {
+    "temporal_max_abs_error": 6.753152317173772e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      2.0090842744163364,
+      5.491572454161639,
+      3.2192276771909563,
+      4.414083182142833,
+      2.222916336503656,
+      4.723778191101287
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_012": {
+    "temporal_max_abs_error": 5.747395729827076e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      1.6815810826604662,
+      9.092742424843891,
+      4.261436233342874,
+      6.841628891008974,
+      2.3785633416669887,
+      6.765246779249766
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_015": {
+    "temporal_max_abs_error": 5.730590743269204e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      2.463568282832367,
+      7.954006788056166,
+      6.063007345499343,
+      6.584870359445201,
+      2.9585984399016163,
+      5.8968658033821715
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_021": {
+    "temporal_max_abs_error": 6.15804146946175e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      1.552959317883457,
+      5.711222316577632,
+      2.891595824111743,
+      6.923894048475415,
+      1.806548900137958,
+      5.322544859862855
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_028": {
+    "temporal_max_abs_error": 6.104837274278907e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      1.7119364602574092,
+      4.823940762529828,
+      3.018233172557684,
+      6.122782132167616,
+      2.6722621796045094,
+      4.810222553923744
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_033": {
+    "temporal_max_abs_error": 6.174428773420004e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      2.0021289587187407,
+      9.097438273968324,
+      5.281064070323016,
+      7.758903478371528,
+      2.703088943605789,
+      6.902409478788187
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_039": {
+    "temporal_max_abs_error": 5.7268600144766424e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      0.8445086805368053,
+      5.100404386531488,
+      3.0635255602657865,
+      5.5128347741017105,
+      1.795693847158874,
+      4.393494307459164
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_041": {
+    "temporal_max_abs_error": 6.237816185716838e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      1.6653496835506558,
+      10.950545227447128,
+      5.605683162986747,
+      7.4553448871794625,
+      2.0190183067099734,
+      4.643143113816853
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_047": {
+    "temporal_max_abs_error": 6.56985151721301e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      1.6518149333283287,
+      7.269236566878864,
+      4.361416390255805,
+      6.046086163415342,
+      2.559309442273674,
+      7.408297137659004
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_053": {
+    "temporal_max_abs_error": 5.868039906431477e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      1.6011486978497578,
+      7.593996885176726,
+      3.939556637587453,
+      6.676802298709039,
+      2.5600570932728033,
+      5.811988867203487
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  },
+  "episode_058": {
+    "temporal_max_abs_error": 6.74315993194341e-05,
+    "clamp_max_abs_error": 0.0,
+    "full_chunk_valid_targets": 42950,
+    "full_chunk_per_joint_mae": [
+      1.2250574616864063,
+      8.33334269650185,
+      4.16229443053844,
+      7.776206143504666,
+      2.4908552664955503,
+      6.5032372754666525
+    ],
+    "tail_mask": "future index < episode length",
+    "phase": "unknown"
+  }
+}

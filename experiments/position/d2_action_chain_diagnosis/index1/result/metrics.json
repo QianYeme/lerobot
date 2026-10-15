@@ -1,0 +1,15 @@
+{
+  "P1_dev_episodes": 12,
+  "P1_frames": 5748,
+  "demonstration_signal_episodes": 48,
+  "visual_events_unknown": 240,
+  "stage_coverage": 0,
+  "B3_coverage": null,
+  "R3_dev_episodes": 12,
+  "gpu_seconds_successful_P1": 138.2553672157228,
+  "gpu_seconds_successful_R3": 117.30197209492326,
+  "gpu_seconds_failed_attempt": null,
+  "training": false,
+  "final_test": false,
+  "real_robot": false
+}

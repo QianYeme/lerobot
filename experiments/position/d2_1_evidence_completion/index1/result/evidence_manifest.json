@@ -1,0 +1,579 @@
+{
+  "files": [
+    {
+      "path": "B3_config.json",
+      "sha256": "df98b7e1bce5c842a188fd2f5bd787cbd472e2c69a20b1fead081c257b2d3375"
+    },
+    {
+      "path": "b3_identity_audit.json",
+      "sha256": "efc6e0ec7b01721bb935f1d832c77e44b7daf74f78c999847457b0bb39535155"
+    },
+    {
+      "path": "B3_train_config.json",
+      "sha256": "292c89d17f86a3080c2749d1ef042204b6607c5fb19bb81637f7ea06dd95206f"
+    },
+    {
+      "path": "candidate_identity_correction.md",
+      "sha256": "b047d1719697a970a67c77a14e74e0afebaef6c7bb1ab3d058b6399af7919c0f"
+    },
+    {
+      "path": "demonstration_audit.json",
+      "sha256": "abd4b81a9cfe24ca5d388618593932ea67531e7876ff4555157a69676398f2ca"
+    },
+    {
+      "path": "demonstration_events.csv",
+      "sha256": "8b465ca8fbf5fb2f5fb681b44c8e7002fddeb64492d1ea3c93f84bafa65cd70b"
+    },
+    {
+      "path": "dense_cache_validation.json",
+      "sha256": "5c8362070a668a887f5065bafe82f1b7a8bffa0787afce8b4f6c158e9a94fe9d"
+    },
+    {
+      "path": "dense_phase_metrics.json",
+      "sha256": "8785773ae0e2680005c4a523d9746bb6f2104b87b7ceb78c6c66bd1b06ab9437"
+    },
+    {
+      "path": "deployment_contract_audit.json",
+      "sha256": "a7daebb999ebeebb07676958d3710f15c4cc18ceee65180b8f6bcf1fd474d6c3"
+    },
+    {
+      "path": "horizon_metrics.json",
+      "sha256": "5738111cfa2295638c635657ae24aedc033673cc38cf971b561ef368d85b0291"
+    },
+    {
+      "path": "manual_evidence_manifest.json",
+      "sha256": "dd6678a28fce8b5b7f8dde10f96d35063b835e876057db189d8e8c3e849600f4"
+    },
+    {
+      "path": "manual_review.md",
+      "sha256": "94a4e9ac1f60796dbbf3b9ce6a00e9fda1a4f627f01349d120e63f3f6959f266"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "6d2a7b1b465a94d86cfced4894214024d6169d0d57b0be711591a26b95e0d295"
+    },
+    {
+      "path": "per_episode_phase_metrics.csv",
+      "sha256": "2dc401a3ec4c5382d3d1e50818e09b238105efd112f73fda41e67153c4b18981"
+    },
+    {
+      "path": "postprocess_replay.json",
+      "sha256": "93ca0bb3ba16ddda1c8254dce441eccc75031f7438de27e8ba76a3cc9e9b959c"
+    },
+    {
+      "path": "prediction_diagnosis.json",
+      "sha256": "f10164fe0f58895d2aedd38c4562ca60c482e001d6b07b499fcf12606317fd8b"
+    },
+    {
+      "path": "proposal.md",
+      "sha256": "0ad5fd6be04bcf64a9910c92b898b6ffe9a5b0fb7709c46bd5933554982a8083"
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "09f7824a82b3501b890364aba7537cd883b56a41b10e9210d5d6120a91cbc232"
+    },
+    {
+      "path": "replay_equivalence_validation.json",
+      "sha256": "2e8ddfb67e8445227ac964b605dea172c206df8b14a387ba27f60b92d6b6d318"
+    },
+    {
+      "path": "report_consistency_audit.json",
+      "sha256": "d85f19273dce59b4eb3a6b5426a6ed26131572ad8b2900deff75418c4d8cf049"
+    },
+    {
+      "path": "summary.md",
+      "sha256": "1a47adb4ca78f3a95f34c845d9a3401d835618a40ebf3713dc07f05220c2ee9d"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "8a0e64eec2609773dbedaf7e7f02d4477edeb94698e4631a29714015bda16cf5"
+    },
+    {
+      "path": "visual_review_manifest.json",
+      "sha256": "d58be0f228d375c2b5924bcb698e8108e5a6bc9af3db9ded7229748ebbb0bdbd"
+    }
+  ],
+  "raw_frames": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\manifest.json",
+  "manual_clips": [
+    {
+      "episode": 3,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep003\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 3,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep003\\contact_release.mp4"
+    },
+    {
+      "episode": 5,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep005\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 5,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep005\\contact_release.mp4"
+    },
+    {
+      "episode": 12,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep012\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 12,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep012\\contact_release.mp4"
+    },
+    {
+      "episode": 15,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep015\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 15,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep015\\contact_release.mp4"
+    },
+    {
+      "episode": 21,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep021\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 21,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep021\\contact_release.mp4"
+    },
+    {
+      "episode": 28,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep028\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 28,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep028\\contact_release.mp4"
+    },
+    {
+      "episode": 33,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep033\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 33,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep033\\contact_release.mp4"
+    },
+    {
+      "episode": 39,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep039\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 39,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep039\\contact_release.mp4"
+    },
+    {
+      "episode": 41,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep041\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 41,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep041\\contact_release.mp4"
+    },
+    {
+      "episode": 47,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep047\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 47,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep047\\contact_release.mp4"
+    },
+    {
+      "episode": 53,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep053\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 53,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep053\\contact_release.mp4"
+    },
+    {
+      "episode": 58,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep058\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 58,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep058\\contact_release.mp4"
+    },
+    {
+      "episode": 0,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep000\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 0,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep000\\contact_release.mp4"
+    },
+    {
+      "episode": 2,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep002\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 2,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep002\\contact_release.mp4"
+    },
+    {
+      "episode": 4,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep004\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 4,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep004\\contact_release.mp4"
+    },
+    {
+      "episode": 6,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep006\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 6,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep006\\contact_release.mp4"
+    },
+    {
+      "episode": 7,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep007\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 7,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep007\\contact_release.mp4"
+    },
+    {
+      "episode": 9,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep009\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 9,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep009\\contact_release.mp4"
+    },
+    {
+      "episode": 10,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep010\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 10,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep010\\contact_release.mp4"
+    },
+    {
+      "episode": 13,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep013\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 13,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep013\\contact_release.mp4"
+    },
+    {
+      "episode": 14,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep014\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 14,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep014\\contact_release.mp4"
+    },
+    {
+      "episode": 17,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep017\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 17,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep017\\contact_release.mp4"
+    },
+    {
+      "episode": 18,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep018\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 18,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep018\\contact_release.mp4"
+    },
+    {
+      "episode": 19,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep019\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 19,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep019\\contact_release.mp4"
+    },
+    {
+      "episode": 22,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep022\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 22,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep022\\contact_release.mp4"
+    },
+    {
+      "episode": 23,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep023\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 23,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep023\\contact_release.mp4"
+    },
+    {
+      "episode": 24,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep024\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 24,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep024\\contact_release.mp4"
+    },
+    {
+      "episode": 25,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep025\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 25,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep025\\contact_release.mp4"
+    },
+    {
+      "episode": 26,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep026\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 26,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep026\\contact_release.mp4"
+    },
+    {
+      "episode": 29,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep029\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 29,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep029\\contact_release.mp4"
+    },
+    {
+      "episode": 30,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep030\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 30,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep030\\contact_release.mp4"
+    },
+    {
+      "episode": 32,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep032\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 32,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep032\\contact_release.mp4"
+    },
+    {
+      "episode": 34,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep034\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 34,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep034\\contact_release.mp4"
+    },
+    {
+      "episode": 35,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep035\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 35,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep035\\contact_release.mp4"
+    },
+    {
+      "episode": 36,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep036\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 36,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep036\\contact_release.mp4"
+    },
+    {
+      "episode": 38,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep038\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 38,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep038\\contact_release.mp4"
+    },
+    {
+      "episode": 40,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep040\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 40,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep040\\contact_release.mp4"
+    },
+    {
+      "episode": 42,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep042\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 42,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep042\\contact_release.mp4"
+    },
+    {
+      "episode": 43,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep043\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 43,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep043\\contact_release.mp4"
+    },
+    {
+      "episode": 45,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep045\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 45,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep045\\contact_release.mp4"
+    },
+    {
+      "episode": 48,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep048\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 48,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep048\\contact_release.mp4"
+    },
+    {
+      "episode": 49,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep049\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 49,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep049\\contact_release.mp4"
+    },
+    {
+      "episode": 50,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep050\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 50,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep050\\contact_release.mp4"
+    },
+    {
+      "episode": 51,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep051\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 51,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep051\\contact_release.mp4"
+    },
+    {
+      "episode": 54,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep054\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 54,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep054\\contact_release.mp4"
+    },
+    {
+      "episode": 55,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep055\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 55,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep055\\contact_release.mp4"
+    },
+    {
+      "episode": 56,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep056\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 56,
+      "frames": 149,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep056\\contact_release.mp4"
+    },
+    {
+      "episode": 57,
+      "frames": 240,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep057\\clamp_lift_hold_return.mp4"
+    },
+    {
+      "episode": 57,
+      "frames": 148,
+      "path": "D:\\lerobot\\lerobot-main\\experiments\\position\\d2_1_evidence_completion\\index1\\result\\manual_review\\ep057\\contact_release.mp4"
+    }
+  ]
+}

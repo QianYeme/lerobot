@@ -1,0 +1,8728 @@
+{
+  "scope": "EXPLORATORY_ONLY",
+  "pilot_outcome": "PROMISING_LOAD",
+  "primary": {
+    "window": 15,
+    "frame_scope": "all_valid",
+    "comparison": "S1-S0",
+    "episode_ids": [
+      10,
+      19,
+      29,
+      38,
+      49,
+      57
+    ],
+    "per_episode_delta": [
+      0.016452991452991395,
+      0.022435897435897467,
+      0.03374154539864738,
+      0.09306553161301756,
+      0.042948717948717796,
+      0.02804616210413302
+    ],
+    "point_estimate": 0.03944847432556744,
+    "bootstrap_mean": 0.03928068794641865,
+    "percentile_95_ci": [
+      0.023260914213426354,
+      0.062454307956746745
+    ],
+    "positive_episodes": 6,
+    "n_episodes": 6,
+    "positive_fraction": 1.0
+  },
+  "aggregate_eval_episode_equal_weight": [
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8387404847600419,
+      "macro_F1": 0.8396013611560722,
+      "per_class_recall": [
+        0.7581463204235672,
+        0.9193346490965166
+      ],
+      "n_episodes": 6,
+      "n_windows": 2293
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8713245900693942,
+      "macro_F1": 0.8721719511870759,
+      "per_class_recall": [
+        0.8233145310422717,
+        0.9193346490965166
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8516269551768186,
+      "macro_F1": 0.8514154476355721,
+      "per_class_recall": [
+        0.8363644904507853,
+        0.8668894199028522
+      ],
+      "n_episodes": 6,
+      "n_windows": 2293
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8870316907599857,
+      "macro_F1": 0.8836385720946036,
+      "per_class_recall": [
+        0.9071739616171192,
+        0.8668894199028522
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8347050024556192,
+      "macro_F1": 0.836565986745441,
+      "per_class_recall": [
+        0.7244852128939643,
+        0.9449247920172742
+      ],
+      "n_episodes": 6,
+      "n_windows": 2293
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8658094029761797,
+      "macro_F1": 0.8692802080991369,
+      "per_class_recall": [
+        0.7866940139350853,
+        0.9449247920172742
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8574144486445929,
+      "macro_F1": 0.8578022045828985,
+      "per_class_recall": [
+        0.8326697641075543,
+        0.8821591331816312
+      ],
+      "n_episodes": 6,
+      "n_windows": 2293
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.892621957080194,
+      "macro_F1": 0.8903263307015431,
+      "per_class_recall": [
+        0.9030847809787569,
+        0.8821591331816312
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8581075861425435,
+      "macro_F1": 0.8608552777263426,
+      "per_class_recall": [
+        0.7832329915792248,
+        0.9329821807058618
+      ],
+      "n_episodes": 6,
+      "n_windows": 2245
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8725357642175471,
+      "macro_F1": 0.8752317953672414,
+      "per_class_recall": [
+        0.812089347729232,
+        0.9329821807058618
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8839861384027458,
+      "macro_F1": 0.8851996181964,
+      "per_class_recall": [
+        0.8610817123330023,
+        0.906890564472489
+      ],
+      "n_episodes": 6,
+      "n_windows": 2245
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8997959352173801,
+      "macro_F1": 0.8998478624097271,
+      "per_class_recall": [
+        0.8927013059622709,
+        0.906890564472489
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8216296775459125,
+      "macro_F1": 0.8030764561979092,
+      "per_class_recall": [
+        0.9126782656409419,
+        0.7305810894508834
+      ],
+      "n_episodes": 6,
+      "n_windows": 2245
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.829796892255135,
+      "macro_F1": 0.8092862057603115,
+      "per_class_recall": [
+        0.9290126950593862,
+        0.7305810894508834
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8294150826219132,
+      "macro_F1": 0.8228899419213169,
+      "per_class_recall": [
+        0.8698681924344118,
+        0.7889619728094143
+      ],
+      "n_episodes": 6,
+      "n_windows": 2245
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8444362904205098,
+      "macro_F1": 0.8357392652046817,
+      "per_class_recall": [
+        0.8999106080316054,
+        0.7889619728094143
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8617399658069275,
+      "macro_F1": 0.8647603212311893,
+      "per_class_recall": [
+        0.7936601318734064,
+        0.9298197997404483
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8617399658069275,
+      "macro_F1": 0.8647603212311893,
+      "per_class_recall": [
+        0.7936601318734064,
+        0.9298197997404483
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9011884401324948,
+      "macro_F1": 0.9026491854450297,
+      "per_class_recall": [
+        0.8774938080955401,
+        0.9248830721694495
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9011884401324948,
+      "macro_F1": 0.9026491854450297,
+      "per_class_recall": [
+        0.8774938080955401,
+        0.9248830721694495
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8403109846065409,
+      "macro_F1": 0.8194097214190386,
+      "per_class_recall": [
+        0.9318393100179144,
+        0.7487826591951672
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8403109846065409,
+      "macro_F1": 0.8194097214190386,
+      "per_class_recall": [
+        0.9318393100179144,
+        0.7487826591951672
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8621917051948548,
+      "macro_F1": 0.8584813015601442,
+      "per_class_recall": [
+        0.8890470711472664,
+        0.835336339242443
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    },
+    {
+      "task": "PRECONTACT_vs_CONTACT_SUPPORTED",
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8621917051948548,
+      "macro_F1": 0.8584813015601442,
+      "per_class_recall": [
+        0.8890470711472664,
+        0.835336339242443
+      ],
+      "n_episodes": 6,
+      "n_windows": 2209
+    }
+  ],
+  "current_evaluable": true,
+  "frame_weighting_not_used_for_episode_summary": true,
+  "per_episode": [
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8388359788359788,
+      "macro_F1": 0.8339735381988904,
+      "per_class_recall": [
+        0.72,
+        0.9576719576719577
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          56
+        ],
+        [
+          8,
+          181
+        ]
+      ],
+      "class_counts": [
+        200,
+        189
+      ],
+      "n_windows": 389,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8659327530295272,
+      "macro_F1": 0.8653558913080945,
+      "per_class_recall": [
+        0.7741935483870968,
+        0.9576719576719577
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          42
+        ],
+        [
+          8,
+          181
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8032163742690059,
+      "macro_F1": 0.8065049821394998,
+      "per_class_recall": [
+        0.6842105263157895,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          104,
+          48
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        152,
+        180
+      ],
+      "n_windows": 332,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8379227053140097,
+      "macro_F1": 0.8430921052631579,
+      "per_class_recall": [
+        0.7536231884057971,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          104,
+          34
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.760084088818815,
+      "macro_F1": 0.7614246778333466,
+      "per_class_recall": [
+        0.7062146892655368,
+        0.813953488372093
+      ],
+      "confusion_matrix": [
+        [
+          125,
+          52
+        ],
+        [
+          40,
+          175
+        ]
+      ],
+      "class_counts": [
+        177,
+        215
+      ],
+      "n_windows": 392,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.7904123270081325,
+      "macro_F1": 0.789976065648507,
+      "per_class_recall": [
+        0.7668711656441718,
+        0.813953488372093
+      ],
+      "confusion_matrix": [
+        [
+          125,
+          38
+        ],
+        [
+          40,
+          175
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.9049054535489175,
+      "macro_F1": 0.9035079469575849,
+      "per_class_recall": [
+        0.8707865168539326,
+        0.9390243902439024
+      ],
+      "confusion_matrix": [
+        [
+          155,
+          23
+        ],
+        [
+          10,
+          154
+        ]
+      ],
+      "class_counts": [
+        178,
+        164
+      ],
+      "n_windows": 342,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9420731707317073,
+      "macro_F1": 0.9420726322932061,
+      "per_class_recall": [
+        0.9451219512195121,
+        0.9390243902439024
+      ],
+      "confusion_matrix": [
+        [
+          155,
+          9
+        ],
+        [
+          10,
+          154
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8813095238095239,
+      "macro_F1": 0.8804014117446953,
+      "per_class_recall": [
+        0.84,
+        0.9226190476190477
+      ],
+      "confusion_matrix": [
+        [
+          147,
+          28
+        ],
+        [
+          13,
+          155
+        ]
+      ],
+      "class_counts": [
+        175,
+        168
+      ],
+      "n_windows": 343,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9178312629399585,
+      "macro_F1": 0.9178845780526359,
+      "per_class_recall": [
+        0.9130434782608695,
+        0.9226190476190477
+      ],
+      "confusion_matrix": [
+        [
+          147,
+          14
+        ],
+        [
+          13,
+          155
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8127221766475252,
+      "macro_F1": 0.8151554133926708,
+      "per_class_recall": [
+        0.7232704402515723,
+        0.9021739130434783
+      ],
+      "confusion_matrix": [
+        [
+          115,
+          44
+        ],
+        [
+          18,
+          166
+        ]
+      ],
+      "class_counts": [
+        159,
+        184
+      ],
+      "n_windows": 343,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8476386806596702,
+      "macro_F1": 0.8505111700113593,
+      "per_class_recall": [
+        0.7931034482758621,
+        0.9021739130434783
+      ],
+      "confusion_matrix": [
+        [
+          115,
+          30
+        ],
+        [
+          18,
+          166
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8434640522875817,
+      "macro_F1": 0.8440645523250058,
+      "per_class_recall": [
+        0.7647058823529411,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          40
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        170,
+        180
+      ],
+      "n_windows": 350,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8777777777777778,
+      "macro_F1": 0.8795698924731183,
+      "per_class_recall": [
+        0.8333333333333334,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          26
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8639167862266859,
+      "macro_F1": 0.8667715576308177,
+      "per_class_recall": [
+        0.8058823529411765,
+        0.9219512195121952
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          33
+        ],
+        [
+          16,
+          189
+        ]
+      ],
+      "class_counts": [
+        170,
+        205
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9000781738586616,
+      "macro_F1": 0.9009928144369481,
+      "per_class_recall": [
+        0.8782051282051282,
+        0.9219512195121952
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          19
+        ],
+        [
+          16,
+          189
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8596921914833349,
+      "macro_F1": 0.8616889902156359,
+      "per_class_recall": [
+        0.8202247191011236,
+        0.8991596638655462
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          32
+        ],
+        [
+          24,
+          214
+        ]
+      ],
+      "class_counts": [
+        178,
+        238
+      ],
+      "n_windows": 416,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8947017831522853,
+      "macro_F1": 0.8924448974391642,
+      "per_class_recall": [
+        0.8902439024390244,
+        0.8991596638655462
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          18
+        ],
+        [
+          24,
+          214
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.7869068179949009,
+      "macro_F1": 0.7809633027522935,
+      "per_class_recall": [
+        0.6373056994818653,
+        0.9365079365079365
+      ],
+      "confusion_matrix": [
+        [
+          123,
+          70
+        ],
+        [
+          12,
+          177
+        ]
+      ],
+      "class_counts": [
+        193,
+        189
+      ],
+      "n_windows": 382,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8118293872483817,
+      "macro_F1": 0.811151024843783,
+      "per_class_recall": [
+        0.6871508379888268,
+        0.9365079365079365
+      ],
+      "confusion_matrix": [
+        [
+          123,
+          56
+        ],
+        [
+          12,
+          177
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8477922217447357,
+      "macro_F1": 0.8502128757579668,
+      "per_class_recall": [
+        0.7821229050279329,
+        0.9134615384615384
+      ],
+      "confusion_matrix": [
+        [
+          140,
+          39
+        ],
+        [
+          18,
+          190
+        ]
+      ],
+      "class_counts": [
+        179,
+        208
+      ],
+      "n_windows": 387,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8809731934731935,
+      "macro_F1": 0.8826091093398912,
+      "per_class_recall": [
+        0.8484848484848485,
+        0.9134615384615384
+      ],
+      "confusion_matrix": [
+        [
+          140,
+          25
+        ],
+        [
+          18,
+          190
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8306708388230127,
+      "macro_F1": 0.8339068882547143,
+      "per_class_recall": [
+        0.7386363636363636,
+        0.9227053140096618
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          46
+        ],
+        [
+          16,
+          191
+        ]
+      ],
+      "class_counts": [
+        176,
+        207
+      ],
+      "n_windows": 383,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 1,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8625872249060655,
+      "macro_F1": 0.8662639685895499,
+      "per_class_recall": [
+        0.8024691358024691,
+        0.9227053140096618
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          32
+        ],
+        [
+          16,
+          191
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.947526455026455,
+      "macro_F1": 0.9483728831554918,
+      "per_class_recall": [
+        0.985,
+        0.91005291005291
+      ],
+      "confusion_matrix": [
+        [
+          197,
+          3
+        ],
+        [
+          17,
+          172
+        ]
+      ],
+      "class_counts": [
+        200,
+        189
+      ],
+      "n_windows": 389,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9469619388974228,
+      "macro_F1": 0.9466207367761772,
+      "per_class_recall": [
+        0.9838709677419355,
+        0.91005291005291
+      ],
+      "confusion_matrix": [
+        [
+          183,
+          3
+        ],
+        [
+          17,
+          172
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8396929824561403,
+      "macro_F1": 0.8412943555800698,
+      "per_class_recall": [
+        0.7960526315789473,
+        0.8833333333333333
+      ],
+      "confusion_matrix": [
+        [
+          121,
+          31
+        ],
+        [
+          21,
+          159
+        ]
+      ],
+      "class_counts": [
+        152,
+        180
+      ],
+      "n_windows": 332,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8800724637681159,
+      "macro_F1": 0.8787720706260032,
+      "per_class_recall": [
+        0.8768115942028986,
+        0.8833333333333333
+      ],
+      "confusion_matrix": [
+        [
+          121,
+          17
+        ],
+        [
+          21,
+          159
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.889699119695178,
+      "macro_F1": 0.880082531128164,
+      "per_class_recall": [
+        0.9887005649717514,
+        0.7906976744186046
+      ],
+      "confusion_matrix": [
+        [
+          175,
+          2
+        ],
+        [
+          45,
+          170
+        ]
+      ],
+      "class_counts": [
+        177,
+        215
+      ],
+      "n_windows": 392,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8892138678841489,
+      "macro_F1": 0.8755908489317451,
+      "per_class_recall": [
+        0.9877300613496932,
+        0.7906976744186046
+      ],
+      "confusion_matrix": [
+        [
+          161,
+          2
+        ],
+        [
+          45,
+          170
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8744176486708688,
+      "macro_F1": 0.8741388016398073,
+      "per_class_recall": [
+        0.8707865168539326,
+        0.8780487804878049
+      ],
+      "confusion_matrix": [
+        [
+          155,
+          23
+        ],
+        [
+          20,
+          144
+        ]
+      ],
+      "class_counts": [
+        178,
+        164
+      ],
+      "n_windows": 342,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9085365853658536,
+      "macro_F1": 0.9084514904543932,
+      "per_class_recall": [
+        0.9390243902439024,
+        0.8780487804878049
+      ],
+      "confusion_matrix": [
+        [
+          154,
+          10
+        ],
+        [
+          20,
+          144
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8717857142857143,
+      "macro_F1": 0.8716928517989526,
+      "per_class_recall": [
+        0.8685714285714285,
+        0.875
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          23
+        ],
+        [
+          21,
+          147
+        ]
+      ],
+      "class_counts": [
+        175,
+        168
+      ],
+      "n_windows": 343,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9095496894409938,
+      "macro_F1": 0.9087935240629852,
+      "per_class_recall": [
+        0.9440993788819876,
+        0.875
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          9
+        ],
+        [
+          21,
+          147
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8184304074377906,
+      "macro_F1": 0.8199475065616798,
+      "per_class_recall": [
+        0.7672955974842768,
+        0.8695652173913043
+      ],
+      "confusion_matrix": [
+        [
+          122,
+          37
+        ],
+        [
+          24,
+          160
+        ]
+      ],
+      "class_counts": [
+        159,
+        184
+      ],
+      "n_windows": 343,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.852023988005997,
+      "macro_F1": 0.852023988005997,
+      "per_class_recall": [
+        0.8344827586206897,
+        0.8695652173913043
+      ],
+      "confusion_matrix": [
+        [
+          121,
+          24
+        ],
+        [
+          24,
+          160
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8705882352941177,
+      "macro_F1": 0.8710485594281925,
+      "per_class_recall": [
+        0.8411764705882353,
+        0.9
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          27
+        ],
+        [
+          18,
+          162
+        ]
+      ],
+      "class_counts": [
+        170,
+        180
+      ],
+      "n_windows": 350,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9083333333333333,
+      "macro_F1": 0.9074421291153864,
+      "per_class_recall": [
+        0.9166666666666666,
+        0.9
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          13
+        ],
+        [
+          18,
+          162
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8591104734576758,
+      "macro_F1": 0.8598171152518979,
+      "per_class_recall": [
+        0.8352941176470589,
+        0.8829268292682927
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          28
+        ],
+        [
+          24,
+          181
+        ]
+      ],
+      "class_counts": [
+        170,
+        205
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8965916197623515,
+      "macro_F1": 0.8934937888198757,
+      "per_class_recall": [
+        0.9102564102564102,
+        0.8829268292682927
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          14
+        ],
+        [
+          24,
+          181
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.85553772070626,
+      "macro_F1": 0.8534798534798536,
+      "per_class_recall": [
+        0.8539325842696629,
+        0.8571428571428571
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          26
+        ],
+        [
+          34,
+          204
+        ]
+      ],
+      "class_counts": [
+        178,
+        238
+      ],
+      "n_windows": 416,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.89198606271777,
+      "macro_F1": 0.8836249213341725,
+      "per_class_recall": [
+        0.926829268292683,
+        0.8571428571428571
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          12
+        ],
+        [
+          34,
+          204
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8195438221344957,
+      "macro_F1": 0.8193605866429086,
+      "per_class_recall": [
+        0.8031088082901554,
+        0.8359788359788359
+      ],
+      "confusion_matrix": [
+        [
+          155,
+          38
+        ],
+        [
+          31,
+          158
+        ]
+      ],
+      "class_counts": [
+        193,
+        189
+      ],
+      "n_windows": 382,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8481570157547811,
+      "macro_F1": 0.847808105872622,
+      "per_class_recall": [
+        0.8603351955307262,
+        0.8359788359788359
+      ],
+      "confusion_matrix": [
+        [
+          154,
+          25
+        ],
+        [
+          31,
+          158
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8488934250107434,
+      "macro_F1": 0.8491613354120746,
+      "per_class_recall": [
+        0.8324022346368715,
+        0.8653846153846154
+      ],
+      "confusion_matrix": [
+        [
+          149,
+          30
+        ],
+        [
+          28,
+          180
+        ]
+      ],
+      "class_counts": [
+        179,
+        208
+      ],
+      "n_windows": 387,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8842074592074592,
+      "macro_F1": 0.8812170690753286,
+      "per_class_recall": [
+        0.9030303030303031,
+        0.8653846153846154
+      ],
+      "confusion_matrix": [
+        [
+          149,
+          16
+        ],
+        [
+          28,
+          180
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8560880544576197,
+      "macro_F1": 0.8556252355985059,
+      "per_class_recall": [
+        0.8522727272727273,
+        0.8599033816425121
+      ],
+      "confusion_matrix": [
+        [
+          150,
+          26
+        ],
+        [
+          29,
+          178
+        ]
+      ],
+      "class_counts": [
+        176,
+        207
+      ],
+      "n_windows": 383,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 1,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.892914653784219,
+      "macro_F1": 0.8882454183502367,
+      "per_class_recall": [
+        0.9259259259259259,
+        0.8599033816425121
+      ],
+      "confusion_matrix": [
+        [
+          150,
+          12
+        ],
+        [
+          29,
+          178
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8091269841269841,
+      "macro_F1": 0.8009319112260289,
+      "per_class_recall": [
+        0.65,
+        0.9682539682539683
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          70
+        ],
+        [
+          6,
+          183
+        ]
+      ],
+      "class_counts": [
+        200,
+        189
+      ],
+      "n_windows": 389,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.833589349718382,
+      "macro_F1": 0.8312968015324781,
+      "per_class_recall": [
+        0.6989247311827957,
+        0.9682539682539683
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          56
+        ],
+        [
+          6,
+          183
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.7847222222222222,
+      "macro_F1": 0.7873402231378885,
+      "per_class_recall": [
+        0.625,
+        0.9444444444444444
+      ],
+      "confusion_matrix": [
+        [
+          95,
+          57
+        ],
+        [
+          10,
+          170
+        ]
+      ],
+      "class_counts": [
+        152,
+        180
+      ],
+      "n_windows": 332,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8164251207729468,
+      "macro_F1": 0.8235164766123205,
+      "per_class_recall": [
+        0.6884057971014492,
+        0.9444444444444444
+      ],
+      "confusion_matrix": [
+        [
+          95,
+          43
+        ],
+        [
+          10,
+          170
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.7457889896202865,
+      "macro_F1": 0.7479572427465373,
+      "per_class_recall": [
+        0.6497175141242938,
+        0.8418604651162791
+      ],
+      "confusion_matrix": [
+        [
+          115,
+          62
+        ],
+        [
+          34,
+          181
+        ]
+      ],
+      "class_counts": [
+        177,
+        215
+      ],
+      "n_windows": 392,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.7736909687544586,
+      "macro_F1": 0.7762474012474012,
+      "per_class_recall": [
+        0.7055214723926381,
+        0.8418604651162791
+      ],
+      "confusion_matrix": [
+        [
+          115,
+          48
+        ],
+        [
+          34,
+          181
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.879624554672513,
+      "macro_F1": 0.877125748502994,
+      "per_class_recall": [
+        0.8202247191011236,
+        0.9390243902439024
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          32
+        ],
+        [
+          10,
+          154
+        ]
+      ],
+      "class_counts": [
+        178,
+        164
+      ],
+      "n_windows": 342,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9146341463414633,
+      "macro_F1": 0.9145833333333333,
+      "per_class_recall": [
+        0.8902439024390244,
+        0.9390243902439024
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          18
+        ],
+        [
+          10,
+          154
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8614285714285714,
+      "macro_F1": 0.8597137014314928,
+      "per_class_recall": [
+        0.7942857142857143,
+        0.9285714285714286
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          36
+        ],
+        [
+          12,
+          156
+        ]
+      ],
+      "class_counts": [
+        175,
+        168
+      ],
+      "n_windows": 343,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8959627329192547,
+      "macro_F1": 0.896379872535942,
+      "per_class_recall": [
+        0.8633540372670807,
+        0.9285714285714286
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          22
+        ],
+        [
+          12,
+          156
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.7952898550724637,
+      "macro_F1": 0.7976187331026041,
+      "per_class_recall": [
+        0.6666666666666666,
+        0.9239130434782609
+      ],
+      "confusion_matrix": [
+        [
+          106,
+          53
+        ],
+        [
+          14,
+          170
+        ]
+      ],
+      "class_counts": [
+        159,
+        184
+      ],
+      "n_windows": 343,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8274737631184408,
+      "macro_F1": 0.8325699745547074,
+      "per_class_recall": [
+        0.7310344827586207,
+        0.9239130434782609
+      ],
+      "confusion_matrix": [
+        [
+          106,
+          39
+        ],
+        [
+          14,
+          170
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8310457516339869,
+      "macro_F1": 0.8311091883257347,
+      "per_class_recall": [
+        0.7176470588235294,
+        0.9444444444444444
+      ],
+      "confusion_matrix": [
+        [
+          122,
+          48
+        ],
+        [
+          10,
+          170
+        ]
+      ],
+      "class_counts": [
+        170,
+        180
+      ],
+      "n_windows": 350,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8632478632478633,
+      "macro_F1": 0.8663194444444444,
+      "per_class_recall": [
+        0.782051282051282,
+        0.9444444444444444
+      ],
+      "confusion_matrix": [
+        [
+          122,
+          34
+        ],
+        [
+          10,
+          170
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8461979913916786,
+      "macro_F1": 0.8509538950715421,
+      "per_class_recall": [
+        0.7411764705882353,
+        0.9512195121951219
+      ],
+      "confusion_matrix": [
+        [
+          126,
+          44
+        ],
+        [
+          10,
+          195
+        ]
+      ],
+      "class_counts": [
+        170,
+        205
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8794559099437148,
+      "macro_F1": 0.8849952214080917,
+      "per_class_recall": [
+        0.8076923076923077,
+        0.9512195121951219
+      ],
+      "confusion_matrix": [
+        [
+          126,
+          30
+        ],
+        [
+          10,
+          195
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8652629591162307,
+      "macro_F1": 0.8701996927803379,
+      "per_class_recall": [
+        0.797752808988764,
+        0.9327731092436975
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          36
+        ],
+        [
+          16,
+          222
+        ]
+      ],
+      "class_counts": [
+        178,
+        238
+      ],
+      "n_windows": 416,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8993133838901415,
+      "macro_F1": 0.9015747016829463,
+      "per_class_recall": [
+        0.8658536585365854,
+        0.9327731092436975
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          22
+        ],
+        [
+          16,
+          222
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.7947884968610357,
+      "macro_F1": 0.7888158769480542,
+      "per_class_recall": [
+        0.6424870466321243,
+        0.9470899470899471
+      ],
+      "confusion_matrix": [
+        [
+          124,
+          69
+        ],
+        [
+          10,
+          179
+        ]
+      ],
+      "class_counts": [
+        193,
+        189
+      ],
+      "n_windows": 382,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8199136886287725,
+      "macro_F1": 0.8193339828850671,
+      "per_class_recall": [
+        0.6927374301675978,
+        0.9470899470899471
+      ],
+      "confusion_matrix": [
+        [
+          124,
+          55
+        ],
+        [
+          10,
+          179
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8318784916201117,
+      "macro_F1": 0.8351426372780739,
+      "per_class_recall": [
+        0.7262569832402235,
+        0.9375
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          49
+        ],
+        [
+          13,
+          195
+        ]
+      ],
+      "class_counts": [
+        179,
+        208
+      ],
+      "n_windows": 387,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8626893939393939,
+      "macro_F1": 0.8672834015299768,
+      "per_class_recall": [
+        0.7878787878787878,
+        0.9375
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          35
+        ],
+        [
+          13,
+          195
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8390563241106719,
+      "macro_F1": 0.8431746300689031,
+      "per_class_recall": [
+        0.7215909090909091,
+        0.9565217391304348
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          49
+        ],
+        [
+          9,
+          198
+        ]
+      ],
+      "class_counts": [
+        176,
+        207
+      ],
+      "n_windows": 383,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 1,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8702361782071928,
+      "macro_F1": 0.8761744966442953,
+      "per_class_recall": [
+        0.7839506172839507,
+        0.9565217391304348
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          35
+        ],
+        [
+          9,
+          198
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9325264550264549,
+      "macro_F1": 0.9330021197668257,
+      "per_class_recall": [
+        0.955,
+        0.91005291005291
+      ],
+      "confusion_matrix": [
+        [
+          191,
+          9
+        ],
+        [
+          17,
+          172
+        ]
+      ],
+      "class_counts": [
+        200,
+        189
+      ],
+      "n_windows": 389,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9308329066393582,
+      "macro_F1": 0.9306543385490754,
+      "per_class_recall": [
+        0.9516129032258065,
+        0.91005291005291
+      ],
+      "confusion_matrix": [
+        [
+          177,
+          9
+        ],
+        [
+          17,
+          172
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8376461988304094,
+      "macro_F1": 0.8403078403078403,
+      "per_class_recall": [
+        0.7697368421052632,
+        0.9055555555555556
+      ],
+      "confusion_matrix": [
+        [
+          117,
+          35
+        ],
+        [
+          17,
+          163
+        ]
+      ],
+      "class_counts": [
+        152,
+        180
+      ],
+      "n_windows": 332,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8766908212560387,
+      "macro_F1": 0.8779492566257272,
+      "per_class_recall": [
+        0.8478260869565217,
+        0.9055555555555556
+      ],
+      "confusion_matrix": [
+        [
+          117,
+          21
+        ],
+        [
+          17,
+          163
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8732492445145185,
+      "macro_F1": 0.8647950384933263,
+      "per_class_recall": [
+        0.96045197740113,
+        0.786046511627907
+      ],
+      "confusion_matrix": [
+        [
+          170,
+          7
+        ],
+        [
+          46,
+          169
+        ]
+      ],
+      "class_counts": [
+        177,
+        215
+      ],
+      "n_windows": 392,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8715508631759167,
+      "macro_F1": 0.8596223242125915,
+      "per_class_recall": [
+        0.9570552147239264,
+        0.786046511627907
+      ],
+      "confusion_matrix": [
+        [
+          156,
+          7
+        ],
+        [
+          46,
+          169
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8751370238421485,
+      "macro_F1": 0.8742421262367559,
+      "per_class_recall": [
+        0.8539325842696629,
+        0.8963414634146342
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          26
+        ],
+        [
+          17,
+          147
+        ]
+      ],
+      "class_counts": [
+        178,
+        164
+      ],
+      "n_windows": 342,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9085365853658537,
+      "macro_F1": 0.9085229808121374,
+      "per_class_recall": [
+        0.9207317073170732,
+        0.8963414634146342
+      ],
+      "confusion_matrix": [
+        [
+          151,
+          13
+        ],
+        [
+          17,
+          147
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8723809523809524,
+      "macro_F1": 0.8716928517989526,
+      "per_class_recall": [
+        0.84,
+        0.9047619047619048
+      ],
+      "confusion_matrix": [
+        [
+          147,
+          28
+        ],
+        [
+          16,
+          152
+        ]
+      ],
+      "class_counts": [
+        175,
+        168
+      ],
+      "n_windows": 343,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9089026915113871,
+      "macro_F1": 0.9087935240629852,
+      "per_class_recall": [
+        0.9130434782608695,
+        0.9047619047619048
+      ],
+      "confusion_matrix": [
+        [
+          147,
+          14
+        ],
+        [
+          16,
+          152
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8180031446540881,
+      "macro_F1": 0.8197054692414412,
+      "per_class_recall": [
+        0.7610062893081762,
+        0.875
+      ],
+      "confusion_matrix": [
+        [
+          121,
+          38
+        ],
+        [
+          23,
+          161
+        ]
+      ],
+      "class_counts": [
+        159,
+        184
+      ],
+      "n_windows": 343,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8512931034482758,
+      "macro_F1": 0.8518018018018019,
+      "per_class_recall": [
+        0.8275862068965517,
+        0.875
+      ],
+      "confusion_matrix": [
+        [
+          120,
+          25
+        ],
+        [
+          23,
+          161
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8648692810457517,
+      "macro_F1": 0.8653173842916677,
+      "per_class_recall": [
+        0.8352941176470589,
+        0.8944444444444445
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          28
+        ],
+        [
+          19,
+          161
+        ]
+      ],
+      "class_counts": [
+        170,
+        180
+      ],
+      "n_windows": 350,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9023504273504274,
+      "macro_F1": 0.9014706535744434,
+      "per_class_recall": [
+        0.9102564102564102,
+        0.8944444444444445
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          14
+        ],
+        [
+          19,
+          161
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.853658536585366,
+      "macro_F1": 0.8561085972850678,
+      "per_class_recall": [
+        0.8,
+        0.9073170731707317
+      ],
+      "confusion_matrix": [
+        [
+          136,
+          34
+        ],
+        [
+          19,
+          186
+        ]
+      ],
+      "class_counts": [
+        170,
+        205
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8895559724828017,
+      "macro_F1": 0.8898537798953223,
+      "per_class_recall": [
+        0.8717948717948718,
+        0.9073170731707317
+      ],
+      "confusion_matrix": [
+        [
+          136,
+          20
+        ],
+        [
+          19,
+          186
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8702672080067982,
+      "macro_F1": 0.8681318681318682,
+      "per_class_recall": [
+        0.8707865168539326,
+        0.8697478991596639
+      ],
+      "confusion_matrix": [
+        [
+          155,
+          23
+        ],
+        [
+          31,
+          207
+        ]
+      ],
+      "class_counts": [
+        178,
+        238
+      ],
+      "n_windows": 416,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.907434925189588,
+      "macro_F1": 0.8988042794210195,
+      "per_class_recall": [
+        0.9451219512195121,
+        0.8697478991596639
+      ],
+      "confusion_matrix": [
+        [
+          155,
+          9
+        ],
+        [
+          31,
+          207
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8534967239630452,
+      "macro_F1": 0.8534031413612565,
+      "per_class_recall": [
+        0.844559585492228,
+        0.8624338624338624
+      ],
+      "confusion_matrix": [
+        [
+          163,
+          30
+        ],
+        [
+          26,
+          163
+        ]
+      ],
+      "class_counts": [
+        193,
+        189
+      ],
+      "n_windows": 382,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8837308976973781,
+      "macro_F1": 0.8831513110771435,
+      "per_class_recall": [
+        0.9050279329608939,
+        0.8624338624338624
+      ],
+      "confusion_matrix": [
+        [
+          162,
+          17
+        ],
+        [
+          26,
+          163
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8445423291792007,
+      "macro_F1": 0.8458989397242338,
+      "per_class_recall": [
+        0.8044692737430168,
+        0.8846153846153846
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          35
+        ],
+        [
+          24,
+          184
+        ]
+      ],
+      "class_counts": [
+        179,
+        208
+      ],
+      "n_windows": 387,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8786713286713286,
+      "macro_F1": 0.8779530135462339,
+      "per_class_recall": [
+        0.8727272727272727,
+        0.8846153846153846
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          21
+        ],
+        [
+          24,
+          184
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8576526130873957,
+      "macro_F1": 0.8579532967032968,
+      "per_class_recall": [
+        0.8409090909090909,
+        0.8743961352657005
+      ],
+      "confusion_matrix": [
+        [
+          148,
+          28
+        ],
+        [
+          26,
+          181
+        ]
+      ],
+      "class_counts": [
+        176,
+        207
+      ],
+      "n_windows": 383,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 1,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8939881910896403,
+      "macro_F1": 0.8907249466950959,
+      "per_class_recall": [
+        0.9135802469135802,
+        0.8743961352657005
+      ],
+      "confusion_matrix": [
+        [
+          148,
+          14
+        ],
+        [
+          26,
+          181
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8433779761904762,
+      "macro_F1": 0.8408521303258145,
+      "per_class_recall": [
+        0.734375,
+        0.9523809523809523
+      ],
+      "confusion_matrix": [
+        [
+          141,
+          51
+        ],
+        [
+          9,
+          180
+        ]
+      ],
+      "class_counts": [
+        192,
+        189
+      ],
+      "n_windows": 381,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8552227342549923,
+      "macro_F1": 0.8544254658385093,
+      "per_class_recall": [
+        0.7580645161290323,
+        0.9523809523809523
+      ],
+      "confusion_matrix": [
+        [
+          141,
+          45
+        ],
+        [
+          9,
+          180
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8222222222222222,
+      "macro_F1": 0.8269983783569987,
+      "per_class_recall": [
+        0.7222222222222222,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          104,
+          40
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        144,
+        180
+      ],
+      "n_windows": 324,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8379227053140097,
+      "macro_F1": 0.8430921052631579,
+      "per_class_recall": [
+        0.7536231884057971,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          104,
+          34
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.792018714737856,
+      "macro_F1": 0.793080579197524,
+      "per_class_recall": [
+        0.7514792899408284,
+        0.8325581395348837
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          42
+        ],
+        [
+          36,
+          179
+        ]
+      ],
+      "class_counts": [
+        169,
+        215
+      ],
+      "n_windows": 384,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8058496219146811,
+      "macro_F1": 0.8058496219146811,
+      "per_class_recall": [
+        0.7791411042944786,
+        0.8325581395348837
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          36
+        ],
+        [
+          36,
+          179
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.934325681492109,
+      "macro_F1": 0.9341293746414228,
+      "per_class_recall": [
+        0.9235294117647059,
+        0.9451219512195121
+      ],
+      "confusion_matrix": [
+        [
+          157,
+          13
+        ],
+        [
+          9,
+          155
+        ]
+      ],
+      "class_counts": [
+        170,
+        164
+      ],
+      "n_windows": 334,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9512195121951219,
+      "macro_F1": 0.9512176984569622,
+      "per_class_recall": [
+        0.9573170731707317,
+        0.9451219512195121
+      ],
+      "confusion_matrix": [
+        [
+          157,
+          7
+        ],
+        [
+          9,
+          155
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8864414029084688,
+      "macro_F1": 0.8863392857142858,
+      "per_class_recall": [
+        0.844311377245509,
+        0.9285714285714286
+      ],
+      "confusion_matrix": [
+        [
+          141,
+          26
+        ],
+        [
+          12,
+          156
+        ]
+      ],
+      "class_counts": [
+        167,
+        168
+      ],
+      "n_windows": 335,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9021739130434783,
+      "macro_F1": 0.9025329580802843,
+      "per_class_recall": [
+        0.8757763975155279,
+        0.9285714285714286
+      ],
+      "confusion_matrix": [
+        [
+          141,
+          20
+        ],
+        [
+          12,
+          156
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8493737402821768,
+      "macro_F1": 0.8530379469181838,
+      "per_class_recall": [
+        0.7748344370860927,
+        0.9239130434782609
+      ],
+      "confusion_matrix": [
+        [
+          117,
+          34
+        ],
+        [
+          14,
+          170
+        ]
+      ],
+      "class_counts": [
+        151,
+        184
+      ],
+      "n_windows": 335,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8654047976011994,
+      "macro_F1": 0.8689392214887321,
+      "per_class_recall": [
+        0.8068965517241379,
+        0.9239130434782609
+      ],
+      "confusion_matrix": [
+        [
+          117,
+          28
+        ],
+        [
+          14,
+          170
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8586419753086421,
+      "macro_F1": 0.8605692079491338,
+      "per_class_recall": [
+        0.7839506172839507,
+        0.9333333333333333
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          35
+        ],
+        [
+          12,
+          168
+        ]
+      ],
+      "class_counts": [
+        162,
+        180
+      ],
+      "n_windows": 342,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8737179487179487,
+      "macro_F1": 0.8761318167513374,
+      "per_class_recall": [
+        0.8141025641025641,
+        0.9333333333333333
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          29
+        ],
+        [
+          12,
+          168
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8935712134899126,
+      "macro_F1": 0.8967792448670877,
+      "per_class_recall": [
+        0.845679012345679,
+        0.9414634146341463
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          25
+        ],
+        [
+          12,
+          193
+        ]
+      ],
+      "class_counts": [
+        162,
+        205
+      ],
+      "n_windows": 367,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9098342714196372,
+      "macro_F1": 0.9120100640798836,
+      "per_class_recall": [
+        0.8782051282051282,
+        0.9414634146341463
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          19
+        ],
+        [
+          12,
+          193
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8886554621848739,
+      "macro_F1": 0.8947229302369489,
+      "per_class_recall": [
+        0.8235294117647058,
+        0.9537815126050421
+      ],
+      "confusion_matrix": [
+        [
+          140,
+          30
+        ],
+        [
+          11,
+          227
+        ]
+      ],
+      "class_counts": [
+        170,
+        238
+      ],
+      "n_windows": 408,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.903720024595204,
+      "macro_F1": 0.9086571233810498,
+      "per_class_recall": [
+        0.8536585365853658,
+        0.9537815126050421
+      ],
+      "confusion_matrix": [
+        [
+          140,
+          24
+        ],
+        [
+          11,
+          227
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.7794651794651795,
+      "macro_F1": 0.7770767307300904,
+      "per_class_recall": [
+        0.6594594594594595,
+        0.8994708994708994
+      ],
+      "confusion_matrix": [
+        [
+          122,
+          63
+        ],
+        [
+          19,
+          170
+        ]
+      ],
+      "class_counts": [
+        185,
+        189
+      ],
+      "n_windows": 374,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.7905175726404776,
+      "macro_F1": 0.7899038461538461,
+      "per_class_recall": [
+        0.6815642458100558,
+        0.8994708994708994
+      ],
+      "confusion_matrix": [
+        [
+          122,
+          57
+        ],
+        [
+          19,
+          170
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8746626180836707,
+      "macro_F1": 0.8784191278684317,
+      "per_class_recall": [
+        0.8070175438596491,
+        0.9423076923076923
+      ],
+      "confusion_matrix": [
+        [
+          138,
+          33
+        ],
+        [
+          12,
+          196
+        ]
+      ],
+      "class_counts": [
+        171,
+        208
+      ],
+      "n_windows": 379,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8893356643356642,
+      "macro_F1": 0.892851618605679,
+      "per_class_recall": [
+        0.8363636363636363,
+        0.9423076923076923
+      ],
+      "confusion_matrix": [
+        [
+          138,
+          27
+        ],
+        [
+          12,
+          196
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8536490683229814,
+      "macro_F1": 0.8575644247063636,
+      "per_class_recall": [
+        0.7797619047619048,
+        0.927536231884058
+      ],
+      "confusion_matrix": [
+        [
+          131,
+          37
+        ],
+        [
+          15,
+          192
+        ]
+      ],
+      "class_counts": [
+        168,
+        207
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 9,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.86808910359635,
+      "macro_F1": 0.8718363032316521,
+      "per_class_recall": [
+        0.808641975308642,
+        0.927536231884058
+      ],
+      "confusion_matrix": [
+        [
+          131,
+          31
+        ],
+        [
+          15,
+          192
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9475446428571428,
+      "macro_F1": 0.9475062000551115,
+      "per_class_recall": [
+        0.9427083333333334,
+        0.9523809523809523
+      ],
+      "confusion_matrix": [
+        [
+          181,
+          11
+        ],
+        [
+          9,
+          180
+        ]
+      ],
+      "class_counts": [
+        192,
+        189
+      ],
+      "n_windows": 381,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9466205837173579,
+      "macro_F1": 0.9466571834992887,
+      "per_class_recall": [
+        0.9408602150537635,
+        0.9523809523809523
+      ],
+      "confusion_matrix": [
+        [
+          175,
+          11
+        ],
+        [
+          9,
+          180
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9055555555555556,
+      "macro_F1": 0.9061159834640498,
+      "per_class_recall": [
+        0.8888888888888888,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          128,
+          16
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        144,
+        180
+      ],
+      "n_windows": 324,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9248792270531401,
+      "macro_F1": 0.9234349919743178,
+      "per_class_recall": [
+        0.927536231884058,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          128,
+          10
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9173386541901748,
+      "macro_F1": 0.9087148766224504,
+      "per_class_recall": [
+        0.9881656804733728,
+        0.8465116279069768
+      ],
+      "confusion_matrix": [
+        [
+          167,
+          2
+        ],
+        [
+          33,
+          182
+        ]
+      ],
+      "class_counts": [
+        169,
+        215
+      ],
+      "n_windows": 384,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.917120844628335,
+      "macro_F1": 0.9071207430340558,
+      "per_class_recall": [
+        0.9877300613496932,
+        0.8465116279069768
+      ],
+      "confusion_matrix": [
+        [
+          161,
+          2
+        ],
+        [
+          33,
+          182
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9341104734576757,
+      "macro_F1": 0.9341104734576757,
+      "per_class_recall": [
+        0.9352941176470588,
+        0.9329268292682927
+      ],
+      "confusion_matrix": [
+        [
+          159,
+          11
+        ],
+        [
+          11,
+          153
+        ]
+      ],
+      "class_counts": [
+        170,
+        164
+      ],
+      "n_windows": 334,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9512195121951219,
+      "macro_F1": 0.9512031836947223,
+      "per_class_recall": [
+        0.9695121951219512,
+        0.9329268292682927
+      ],
+      "confusion_matrix": [
+        [
+          159,
+          5
+        ],
+        [
+          11,
+          153
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8745188195038494,
+      "macro_F1": 0.8744377811094453,
+      "per_class_recall": [
+        0.8383233532934131,
+        0.9107142857142857
+      ],
+      "confusion_matrix": [
+        [
+          140,
+          27
+        ],
+        [
+          15,
+          153
+        ]
+      ],
+      "class_counts": [
+        167,
+        168
+      ],
+      "n_windows": 335,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.890139751552795,
+      "macro_F1": 0.8904063957361759,
+      "per_class_recall": [
+        0.8695652173913043,
+        0.9107142857142857
+      ],
+      "confusion_matrix": [
+        [
+          140,
+          21
+        ],
+        [
+          15,
+          153
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.922221422401382,
+      "macro_F1": 0.921717716422203,
+      "per_class_recall": [
+        0.9205298013245033,
+        0.9239130434782609
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          12
+        ],
+        [
+          14,
+          170
+        ]
+      ],
+      "class_counts": [
+        151,
+        184
+      ],
+      "n_windows": 335,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9412668665667167,
+      "macro_F1": 0.9386651752423565,
+      "per_class_recall": [
+        0.9586206896551724,
+        0.9239130434782609
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          6
+        ],
+        [
+          14,
+          170
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8700617283950618,
+      "macro_F1": 0.8707083204454067,
+      "per_class_recall": [
+        0.845679012345679,
+        0.8944444444444445
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          25
+        ],
+        [
+          19,
+          161
+        ]
+      ],
+      "class_counts": [
+        162,
+        180
+      ],
+      "n_windows": 342,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8863247863247863,
+      "macro_F1": 0.8863247863247863,
+      "per_class_recall": [
+        0.8782051282051282,
+        0.8944444444444445
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          19
+        ],
+        [
+          19,
+          161
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8924269798253539,
+      "macro_F1": 0.8944188722669735,
+      "per_class_recall": [
+        0.8580246913580247,
+        0.926829268292683
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          23
+        ],
+        [
+          15,
+          190
+        ]
+      ],
+      "class_counts": [
+        162,
+        205
+      ],
+      "n_windows": 367,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.908927454659162,
+      "macro_F1": 0.9095521453178829,
+      "per_class_recall": [
+        0.8910256410256411,
+        0.926829268292683
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          17
+        ],
+        [
+          15,
+          190
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9096638655462185,
+      "macro_F1": 0.9113786576473144,
+      "per_class_recall": [
+        0.8823529411764706,
+        0.9369747899159664
+      ],
+      "confusion_matrix": [
+        [
+          150,
+          20
+        ],
+        [
+          15,
+          223
+        ]
+      ],
+      "class_counts": [
+        170,
+        238
+      ],
+      "n_windows": 408,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.925804468128715,
+      "macro_F1": 0.9254007358822589,
+      "per_class_recall": [
+        0.9146341463414634,
+        0.9369747899159664
+      ],
+      "confusion_matrix": [
+        [
+          150,
+          14
+        ],
+        [
+          15,
+          223
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8664664664664665,
+      "macro_F1": 0.8663063372226035,
+      "per_class_recall": [
+        0.8810810810810811,
+        0.8518518518518519
+      ],
+      "confusion_matrix": [
+        [
+          163,
+          22
+        ],
+        [
+          28,
+          161
+        ]
+      ],
+      "class_counts": [
+        185,
+        189
+      ],
+      "n_windows": 374,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8812331884957583,
+      "macro_F1": 0.8804312509230542,
+      "per_class_recall": [
+        0.9106145251396648,
+        0.8518518518518519
+      ],
+      "confusion_matrix": [
+        [
+          163,
+          16
+        ],
+        [
+          28,
+          161
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8844748088169141,
+      "macro_F1": 0.8871384004537719,
+      "per_class_recall": [
+        0.8362573099415205,
+        0.9326923076923077
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          28
+        ],
+        [
+          14,
+          194
+        ]
+      ],
+      "class_counts": [
+        171,
+        208
+      ],
+      "n_windows": 379,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8996794871794872,
+      "macro_F1": 0.9016465486933083,
+      "per_class_recall": [
+        0.8666666666666667,
+        0.9326923076923077
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          22
+        ],
+        [
+          14,
+          194
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8808229813664596,
+      "macro_F1": 0.8812471211423307,
+      "per_class_recall": [
+        0.8630952380952381,
+        0.8985507246376812
+      ],
+      "confusion_matrix": [
+        [
+          145,
+          23
+        ],
+        [
+          21,
+          186
+        ]
+      ],
+      "class_counts": [
+        168,
+        207
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 9,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8968062265163714,
+      "macro_F1": 0.8957317073170732,
+      "per_class_recall": [
+        0.8950617283950617,
+        0.8985507246376812
+      ],
+      "confusion_matrix": [
+        [
+          145,
+          17
+        ],
+        [
+          21,
+          186
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8693783068783069,
+      "macro_F1": 0.8681040212695248,
+      "per_class_recall": [
+        0.7916666666666666,
+        0.9470899470899471
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          40
+        ],
+        [
+          10,
+          179
+        ]
+      ],
+      "class_counts": [
+        192,
+        189
+      ],
+      "n_windows": 381,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.871394435910565,
+      "macro_F1": 0.871119257646924,
+      "per_class_recall": [
+        0.7956989247311828,
+        0.9470899470899471
+      ],
+      "confusion_matrix": [
+        [
+          148,
+          38
+        ],
+        [
+          10,
+          179
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8416666666666667,
+      "macro_F1": 0.8332761578044596,
+      "per_class_recall": [
+        0.9166666666666666,
+        0.7666666666666667
+      ],
+      "confusion_matrix": [
+        [
+          132,
+          12
+        ],
+        [
+          42,
+          138
+        ]
+      ],
+      "class_counts": [
+        144,
+        180
+      ],
+      "n_windows": 324,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8398550724637681,
+      "macro_F1": 0.829946524064171,
+      "per_class_recall": [
+        0.9130434782608695,
+        0.7666666666666667
+      ],
+      "confusion_matrix": [
+        [
+          126,
+          12
+        ],
+        [
+          42,
+          138
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8429475712123298,
+      "macro_F1": 0.8399639262948615,
+      "per_class_recall": [
+        0.8579881656804734,
+        0.827906976744186
+      ],
+      "confusion_matrix": [
+        [
+          145,
+          24
+        ],
+        [
+          37,
+          178
+        ]
+      ],
+      "class_counts": [
+        169,
+        215
+      ],
+      "n_windows": 384,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8495363104579825,
+      "macro_F1": 0.8451563691838291,
+      "per_class_recall": [
+        0.8711656441717791,
+        0.827906976744186
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          21
+        ],
+        [
+          37,
+          178
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.9127690100430417,
+      "macro_F1": 0.9130419169202869,
+      "per_class_recall": [
+        0.9352941176470588,
+        0.8902439024390244
+      ],
+      "confusion_matrix": [
+        [
+          159,
+          11
+        ],
+        [
+          18,
+          146
+        ]
+      ],
+      "class_counts": [
+        170,
+        164
+      ],
+      "n_windows": 334,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9298780487804879,
+      "macro_F1": 0.9297677233161104,
+      "per_class_recall": [
+        0.9695121951219512,
+        0.8902439024390244
+      ],
+      "confusion_matrix": [
+        [
+          159,
+          5
+        ],
+        [
+          18,
+          146
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8866196179070431,
+      "macro_F1": 0.8865418894830659,
+      "per_class_recall": [
+        0.9041916167664671,
+        0.8690476190476191
+      ],
+      "confusion_matrix": [
+        [
+          151,
+          16
+        ],
+        [
+          22,
+          146
+        ]
+      ],
+      "class_counts": [
+        167,
+        168
+      ],
+      "n_windows": 335,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9034679089026916,
+      "macro_F1": 0.9027130923338509,
+      "per_class_recall": [
+        0.937888198757764,
+        0.8690476190476191
+      ],
+      "confusion_matrix": [
+        [
+          151,
+          10
+        ],
+        [
+          22,
+          146
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.917038583357328,
+      "macro_F1": 0.9131821878267397,
+      "per_class_recall": [
+        0.9536423841059603,
+        0.8804347826086957
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          7
+        ],
+        [
+          22,
+          162
+        ]
+      ],
+      "class_counts": [
+        151,
+        184
+      ],
+      "n_windows": 335,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.922976011994003,
+      "macro_F1": 0.9175645201703834,
+      "per_class_recall": [
+        0.9655172413793104,
+        0.8804347826086957
+      ],
+      "confusion_matrix": [
+        [
+          140,
+          5
+        ],
+        [
+          22,
+          162
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8484567901234568,
+      "macro_F1": 0.8477657935285055,
+      "per_class_recall": [
+        0.8580246913580247,
+        0.8388888888888889
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          23
+        ],
+        [
+          29,
+          151
+        ]
+      ],
+      "class_counts": [
+        162,
+        180
+      ],
+      "n_windows": 342,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.864957264957265,
+      "macro_F1": 0.8629203916560239,
+      "per_class_recall": [
+        0.8910256410256411,
+        0.8388888888888889
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          17
+        ],
+        [
+          29,
+          151
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.887353206865402,
+      "macro_F1": 0.8823305719803449,
+      "per_class_recall": [
+        0.9259259259259259,
+        0.848780487804878
+      ],
+      "confusion_matrix": [
+        [
+          150,
+          12
+        ],
+        [
+          31,
+          174
+        ]
+      ],
+      "class_counts": [
+        162,
+        205
+      ],
+      "n_windows": 367,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8859287054409006,
+      "macro_F1": 0.880058104944329,
+      "per_class_recall": [
+        0.9230769230769231,
+        0.848780487804878
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          12
+        ],
+        [
+          31,
+          174
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.884453781512605,
+      "macro_F1": 0.8696084756902779,
+      "per_class_recall": [
+        0.9705882352941176,
+        0.7983193277310925
+      ],
+      "confusion_matrix": [
+        [
+          165,
+          5
+        ],
+        [
+          48,
+          190
+        ]
+      ],
+      "class_counts": [
+        170,
+        238
+      ],
+      "n_windows": 408,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8839157614265218,
+      "macro_F1": 0.8673705047838997,
+      "per_class_recall": [
+        0.9695121951219512,
+        0.7983193277310925
+      ],
+      "confusion_matrix": [
+        [
+          159,
+          5
+        ],
+        [
+          48,
+          190
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.547047047047047,
+      "macro_F1": 0.45924053201653886,
+      "per_class_recall": [
+        0.9459459459459459,
+        0.14814814814814814
+      ],
+      "confusion_matrix": [
+        [
+          175,
+          10
+        ],
+        [
+          161,
+          28
+        ]
+      ],
+      "class_counts": [
+        185,
+        189
+      ],
+      "n_windows": 374,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.5489344092696048,
+      "macro_F1": 0.45722713864306785,
+      "per_class_recall": [
+        0.9497206703910615,
+        0.14814814814814814
+      ],
+      "confusion_matrix": [
+        [
+          170,
+          9
+        ],
+        [
+          161,
+          28
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8926000899685109,
+      "macro_F1": 0.8911384955969204,
+      "per_class_recall": [
+        0.9005847953216374,
+        0.8846153846153846
+      ],
+      "confusion_matrix": [
+        [
+          154,
+          17
+        ],
+        [
+          24,
+          184
+        ]
+      ],
+      "class_counts": [
+        171,
+        208
+      ],
+      "n_windows": 379,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.908974358974359,
+      "macro_F1": 0.9055552742188686,
+      "per_class_recall": [
+        0.9333333333333333,
+        0.8846153846153846
+      ],
+      "confusion_matrix": [
+        [
+          154,
+          11
+        ],
+        [
+          24,
+          184
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.869867149758454,
+      "macro_F1": 0.8683748683748683,
+      "per_class_recall": [
+        0.875,
+        0.8647342995169082
+      ],
+      "confusion_matrix": [
+        [
+          147,
+          21
+        ],
+        [
+          28,
+          179
+        ]
+      ],
+      "class_counts": [
+        168,
+        207
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 9,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8860708534621577,
+      "macro_F1": 0.8825858203156797,
+      "per_class_recall": [
+        0.9074074074074074,
+        0.8647342995169082
+      ],
+      "confusion_matrix": [
+        [
+          147,
+          15
+        ],
+        [
+          28,
+          179
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9346064814814814,
+      "macro_F1": 0.9343542595642915,
+      "per_class_recall": [
+        0.90625,
+        0.9629629629629629
+      ],
+      "confusion_matrix": [
+        [
+          174,
+          18
+        ],
+        [
+          7,
+          182
+        ]
+      ],
+      "class_counts": [
+        192,
+        189
+      ],
+      "n_windows": 381,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9330943847072879,
+      "macro_F1": 0.9332402851262915,
+      "per_class_recall": [
+        0.9032258064516129,
+        0.9629629629629629
+      ],
+      "confusion_matrix": [
+        [
+          168,
+          18
+        ],
+        [
+          7,
+          182
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8631944444444444,
+      "macro_F1": 0.860279249839484,
+      "per_class_recall": [
+        0.8819444444444444,
+        0.8444444444444444
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          17
+        ],
+        [
+          28,
+          152
+        ]
+      ],
+      "class_counts": [
+        144,
+        180
+      ],
+      "n_windows": 324,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8823671497584541,
+      "macro_F1": 0.8765957870227565,
+      "per_class_recall": [
+        0.9202898550724637,
+        0.8444444444444444
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          11
+        ],
+        [
+          28,
+          152
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9008531718728499,
+      "macro_F1": 0.8930194948595813,
+      "per_class_recall": [
+        0.9644970414201184,
+        0.8372093023255814
+      ],
+      "confusion_matrix": [
+        [
+          163,
+          6
+        ],
+        [
+          35,
+          180
+        ]
+      ],
+      "class_counts": [
+        169,
+        215
+      ],
+      "n_windows": 384,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9001997431873305,
+      "macro_F1": 0.891131326613045,
+      "per_class_recall": [
+        0.9631901840490797,
+        0.8372093023255814
+      ],
+      "confusion_matrix": [
+        [
+          157,
+          6
+        ],
+        [
+          35,
+          180
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9251793400286945,
+      "macro_F1": 0.9251329226851728,
+      "per_class_recall": [
+        0.9235294117647059,
+        0.926829268292683
+      ],
+      "confusion_matrix": [
+        [
+          157,
+          13
+        ],
+        [
+          12,
+          152
+        ]
+      ],
+      "class_counts": [
+        170,
+        164
+      ],
+      "n_windows": 334,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9420731707317074,
+      "macro_F1": 0.9420597067655891,
+      "per_class_recall": [
+        0.9573170731707317,
+        0.926829268292683
+      ],
+      "confusion_matrix": [
+        [
+          157,
+          7
+        ],
+        [
+          12,
+          152
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8745722840034218,
+      "macro_F1": 0.8745721009841677,
+      "per_class_recall": [
+        0.8562874251497006,
+        0.8928571428571429
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          24
+        ],
+        [
+          18,
+          150
+        ]
+      ],
+      "class_counts": [
+        167,
+        168
+      ],
+      "n_windows": 335,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.890527950310559,
+      "macro_F1": 0.890527950310559,
+      "per_class_recall": [
+        0.8881987577639752,
+        0.8928571428571429
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          18
+        ],
+        [
+          18,
+          150
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9294378059314714,
+      "macro_F1": 0.9278897897682428,
+      "per_class_recall": [
+        0.9403973509933775,
+        0.9184782608695652
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          9
+        ],
+        [
+          15,
+          169
+        ]
+      ],
+      "class_counts": [
+        151,
+        184
+      ],
+      "n_windows": 335,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9488943028485757,
+      "macro_F1": 0.9449177766202843,
+      "per_class_recall": [
+        0.9793103448275862,
+        0.9184782608695652
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          3
+        ],
+        [
+          15,
+          169
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8475308641975308,
+      "macro_F1": 0.8475308641975308,
+      "per_class_recall": [
+        0.8395061728395061,
+        0.8555555555555555
+      ],
+      "confusion_matrix": [
+        [
+          136,
+          26
+        ],
+        [
+          26,
+          154
+        ]
+      ],
+      "class_counts": [
+        162,
+        180
+      ],
+      "n_windows": 342,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8636752136752137,
+      "macro_F1": 0.8627012045624134,
+      "per_class_recall": [
+        0.8717948717948718,
+        0.8555555555555555
+      ],
+      "confusion_matrix": [
+        [
+          136,
+          20
+        ],
+        [
+          26,
+          154
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8514604034929238,
+      "macro_F1": 0.8510014435221942,
+      "per_class_recall": [
+        0.8395061728395061,
+        0.8634146341463415
+      ],
+      "confusion_matrix": [
+        [
+          136,
+          26
+        ],
+        [
+          28,
+          177
+        ]
+      ],
+      "class_counts": [
+        162,
+        205
+      ],
+      "n_windows": 367,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8676047529706066,
+      "macro_F1": 0.8652985074626866,
+      "per_class_recall": [
+        0.8717948717948718,
+        0.8634146341463415
+      ],
+      "confusion_matrix": [
+        [
+          136,
+          20
+        ],
+        [
+          28,
+          177
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8861344537815126,
+      "macro_F1": 0.8825107986398308,
+      "per_class_recall": [
+        0.8941176470588236,
+        0.8781512605042017
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          18
+        ],
+        [
+          29,
+          209
+        ]
+      ],
+      "class_counts": [
+        170,
+        238
+      ],
+      "n_windows": 408,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9024902643984423,
+      "macro_F1": 0.8959174007767359,
+      "per_class_recall": [
+        0.926829268292683,
+        0.8781512605042017
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          12
+        ],
+        [
+          29,
+          209
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.6395252395252395,
+      "macro_F1": 0.6032820640813652,
+      "per_class_recall": [
+        0.9351351351351351,
+        0.3439153439153439
+      ],
+      "confusion_matrix": [
+        [
+          173,
+          12
+        ],
+        [
+          124,
+          65
+        ]
+      ],
+      "class_counts": [
+        185,
+        189
+      ],
+      "n_windows": 374,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.6496113032425882,
+      "macro_F1": 0.6088510967243211,
+      "per_class_recall": [
+        0.9553072625698324,
+        0.3439153439153439
+      ],
+      "confusion_matrix": [
+        [
+          171,
+          8
+        ],
+        [
+          124,
+          65
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8788236617183985,
+      "macro_F1": 0.8797902408424199,
+      "per_class_recall": [
+        0.8538011695906432,
+        0.9038461538461539
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          25
+        ],
+        [
+          20,
+          188
+        ]
+      ],
+      "class_counts": [
+        171,
+        208
+      ],
+      "n_windows": 379,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8943473193473194,
+      "macro_F1": 0.8940996614858224,
+      "per_class_recall": [
+        0.8848484848484849,
+        0.9038461538461539
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          19
+        ],
+        [
+          20,
+          188
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.873015873015873,
+      "macro_F1": 0.8732242402445602,
+      "per_class_recall": [
+        0.8571428571428571,
+        0.8888888888888888
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          24
+        ],
+        [
+          23,
+          184
+        ]
+      ],
+      "class_counts": [
+        168,
+        207
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 9,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8888888888888888,
+      "macro_F1": 0.8875677202161102,
+      "per_class_recall": [
+        0.8888888888888888,
+        0.8888888888888888
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          18
+        ],
+        [
+          23,
+          184
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.860641747738522,
+      "macro_F1": 0.8601147776183644,
+      "per_class_recall": [
+        0.7741935483870968,
+        0.9470899470899471
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          42
+        ],
+        [
+          10,
+          179
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.860641747738522,
+      "macro_F1": 0.8601147776183644,
+      "per_class_recall": [
+        0.7741935483870968,
+        0.9470899470899471
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          42
+        ],
+        [
+          10,
+          179
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8342995169082126,
+      "macro_F1": 0.8396171066851938,
+      "per_class_recall": [
+        0.7463768115942029,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          103,
+          35
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8342995169082126,
+      "macro_F1": 0.8396171066851938,
+      "per_class_recall": [
+        0.7463768115942029,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          103,
+          35
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8042659437865601,
+      "macro_F1": 0.8035776570830635,
+      "per_class_recall": [
+        0.7852760736196319,
+        0.8232558139534883
+      ],
+      "confusion_matrix": [
+        [
+          128,
+          35
+        ],
+        [
+          38,
+          177
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8042659437865601,
+      "macro_F1": 0.8035776570830635,
+      "per_class_recall": [
+        0.7852760736196319,
+        0.8232558139534883
+      ],
+      "confusion_matrix": [
+        [
+          128,
+          35
+        ],
+        [
+          38,
+          177
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.9451219512195121,
+      "macro_F1": 0.9451035816565627,
+      "per_class_recall": [
+        0.9634146341463414,
+        0.926829268292683
+      ],
+      "confusion_matrix": [
+        [
+          158,
+          6
+        ],
+        [
+          12,
+          152
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9451219512195121,
+      "macro_F1": 0.9451035816565627,
+      "per_class_recall": [
+        0.9634146341463414,
+        0.926829268292683
+      ],
+      "confusion_matrix": [
+        [
+          158,
+          6
+        ],
+        [
+          12,
+          152
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8900103519668736,
+      "macro_F1": 0.89034957784032,
+      "per_class_recall": [
+        0.8633540372670807,
+        0.9166666666666666
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          22
+        ],
+        [
+          14,
+          154
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8900103519668736,
+      "macro_F1": 0.89034957784032,
+      "per_class_recall": [
+        0.8633540372670807,
+        0.9166666666666666
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          22
+        ],
+        [
+          14,
+          154
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8572526236881559,
+      "macro_F1": 0.8599880840922631,
+      "per_class_recall": [
+        0.8068965517241379,
+        0.907608695652174
+      ],
+      "confusion_matrix": [
+        [
+          117,
+          28
+        ],
+        [
+          17,
+          167
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8572526236881559,
+      "macro_F1": 0.8599880840922631,
+      "per_class_recall": [
+        0.8068965517241379,
+        0.907608695652174
+      ],
+      "confusion_matrix": [
+        [
+          117,
+          28
+        ],
+        [
+          17,
+          167
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8617521367521368,
+      "macro_F1": 0.8640471159465899,
+      "per_class_recall": [
+        0.8012820512820513,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          125,
+          31
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8617521367521368,
+      "macro_F1": 0.8640471159465899,
+      "per_class_recall": [
+        0.8012820512820513,
+        0.9222222222222223
+      ],
+      "confusion_matrix": [
+        [
+          125,
+          31
+        ],
+        [
+          14,
+          166
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8936679174484052,
+      "macro_F1": 0.8951611004277698,
+      "per_class_recall": [
+        0.8653846153846154,
+        0.9219512195121952
+      ],
+      "confusion_matrix": [
+        [
+          135,
+          21
+        ],
+        [
+          16,
+          189
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8936679174484052,
+      "macro_F1": 0.8951611004277698,
+      "per_class_recall": [
+        0.8653846153846154,
+        0.9219512195121952
+      ],
+      "confusion_matrix": [
+        [
+          135,
+          21
+        ],
+        [
+          16,
+          189
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8861703217872514,
+      "macro_F1": 0.8905115169122224,
+      "per_class_recall": [
+        0.8353658536585366,
+        0.9369747899159664
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          27
+        ],
+        [
+          15,
+          223
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8861703217872514,
+      "macro_F1": 0.8905115169122224,
+      "per_class_recall": [
+        0.8353658536585366,
+        0.9369747899159664
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          27
+        ],
+        [
+          15,
+          223
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.7850787739055896,
+      "macro_F1": 0.784375,
+      "per_class_recall": [
+        0.6759776536312849,
+        0.8941798941798942
+      ],
+      "confusion_matrix": [
+        [
+          121,
+          58
+        ],
+        [
+          20,
+          169
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.7850787739055896,
+      "macro_F1": 0.784375,
+      "per_class_recall": [
+        0.6759776536312849,
+        0.8941798941798942
+      ],
+      "confusion_matrix": [
+        [
+          121,
+          58
+        ],
+        [
+          20,
+          169
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8783653846153847,
+      "macro_F1": 0.8836452762923351,
+      "per_class_recall": [
+        0.8,
+        0.9567307692307693
+      ],
+      "confusion_matrix": [
+        [
+          132,
+          33
+        ],
+        [
+          9,
+          199
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8783653846153847,
+      "macro_F1": 0.8836452762923351,
+      "per_class_recall": [
+        0.8,
+        0.9567307692307693
+      ],
+      "confusion_matrix": [
+        [
+          132,
+          33
+        ],
+        [
+          9,
+          199
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "all_valid",
+      "BA": 0.8654052603327966,
+      "macro_F1": 0.8708219178082192,
+      "per_class_recall": [
+        0.7839506172839507,
+        0.9468599033816425
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          35
+        ],
+        [
+          11,
+          196
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 15,
+      "probe": "S0",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8654052603327966,
+      "macro_F1": 0.8708219178082192,
+      "per_class_recall": [
+        0.7839506172839507,
+        0.9468599033816425
+      ],
+      "confusion_matrix": [
+        [
+          127,
+          35
+        ],
+        [
+          11,
+          196
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9627496159754224,
+      "macro_F1": 0.9626664011832973,
+      "per_class_recall": [
+        0.9731182795698925,
+        0.9523809523809523
+      ],
+      "confusion_matrix": [
+        [
+          181,
+          5
+        ],
+        [
+          9,
+          180
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9627496159754224,
+      "macro_F1": 0.9626664011832973,
+      "per_class_recall": [
+        0.9731182795698925,
+        0.9523809523809523
+      ],
+      "confusion_matrix": [
+        [
+          181,
+          5
+        ],
+        [
+          9,
+          180
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9059178743961354,
+      "macro_F1": 0.9069415433051797,
+      "per_class_recall": [
+        0.8840579710144928,
+        0.9277777777777778
+      ],
+      "confusion_matrix": [
+        [
+          122,
+          16
+        ],
+        [
+          13,
+          167
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9059178743961354,
+      "macro_F1": 0.9069415433051797,
+      "per_class_recall": [
+        0.8840579710144928,
+        0.9277777777777778
+      ],
+      "confusion_matrix": [
+        [
+          122,
+          16
+        ],
+        [
+          13,
+          167
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9341418176630047,
+      "macro_F1": 0.925573807380738,
+      "per_class_recall": [
+        0.9938650306748467,
+        0.8744186046511628
+      ],
+      "confusion_matrix": [
+        [
+          162,
+          1
+        ],
+        [
+          27,
+          188
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9341418176630047,
+      "macro_F1": 0.925573807380738,
+      "per_class_recall": [
+        0.9938650306748467,
+        0.8744186046511628
+      ],
+      "confusion_matrix": [
+        [
+          162,
+          1
+        ],
+        [
+          27,
+          188
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9573170731707317,
+      "macro_F1": 0.9573027857328821,
+      "per_class_recall": [
+        0.9390243902439024,
+        0.975609756097561
+      ],
+      "confusion_matrix": [
+        [
+          154,
+          10
+        ],
+        [
+          4,
+          160
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9573170731707317,
+      "macro_F1": 0.9573027857328821,
+      "per_class_recall": [
+        0.9390243902439024,
+        0.975609756097561
+      ],
+      "confusion_matrix": [
+        [
+          154,
+          10
+        ],
+        [
+          4,
+          160
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8929865424430642,
+      "macro_F1": 0.8933648191878502,
+      "per_class_recall": [
+        0.8633540372670807,
+        0.9226190476190477
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          22
+        ],
+        [
+          13,
+          155
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8929865424430642,
+      "macro_F1": 0.8933648191878502,
+      "per_class_recall": [
+        0.8633540372670807,
+        0.9226190476190477
+      ],
+      "confusion_matrix": [
+        [
+          139,
+          22
+        ],
+        [
+          13,
+          155
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.934164167916042,
+      "macro_F1": 0.9351127473538887,
+      "per_class_recall": [
+        0.9172413793103448,
+        0.9510869565217391
+      ],
+      "confusion_matrix": [
+        [
+          133,
+          12
+        ],
+        [
+          9,
+          175
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.934164167916042,
+      "macro_F1": 0.9351127473538887,
+      "per_class_recall": [
+        0.9172413793103448,
+        0.9510869565217391
+      ],
+      "confusion_matrix": [
+        [
+          133,
+          12
+        ],
+        [
+          9,
+          175
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8782051282051282,
+      "macro_F1": 0.879720780383032,
+      "per_class_recall": [
+        0.8397435897435898,
+        0.9166666666666666
+      ],
+      "confusion_matrix": [
+        [
+          131,
+          25
+        ],
+        [
+          15,
+          165
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8782051282051282,
+      "macro_F1": 0.879720780383032,
+      "per_class_recall": [
+        0.8397435897435898,
+        0.9166666666666666
+      ],
+      "confusion_matrix": [
+        [
+          131,
+          25
+        ],
+        [
+          15,
+          165
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9161038148843027,
+      "macro_F1": 0.9154645934807044,
+      "per_class_recall": [
+        0.9102564102564102,
+        0.9219512195121952
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          14
+        ],
+        [
+          16,
+          189
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9161038148843027,
+      "macro_F1": 0.9154645934807044,
+      "per_class_recall": [
+        0.9102564102564102,
+        0.9219512195121952
+      ],
+      "confusion_matrix": [
+        [
+          142,
+          14
+        ],
+        [
+          16,
+          189
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9199118671858988,
+      "macro_F1": 0.9222958171181155,
+      "per_class_recall": [
+        0.8902439024390244,
+        0.9495798319327731
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          18
+        ],
+        [
+          12,
+          226
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9199118671858988,
+      "macro_F1": 0.9222958171181155,
+      "per_class_recall": [
+        0.8902439024390244,
+        0.9495798319327731
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          18
+        ],
+        [
+          12,
+          226
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8781443055186071,
+      "macro_F1": 0.8777092641140198,
+      "per_class_recall": [
+        0.8938547486033519,
+        0.8624338624338624
+      ],
+      "confusion_matrix": [
+        [
+          160,
+          19
+        ],
+        [
+          26,
+          163
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8781443055186071,
+      "macro_F1": 0.8777092641140198,
+      "per_class_recall": [
+        0.8938547486033519,
+        0.8624338624338624
+      ],
+      "confusion_matrix": [
+        [
+          160,
+          19
+        ],
+        [
+          26,
+          163
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.9213141025641025,
+      "macro_F1": 0.9256911804853574,
+      "per_class_recall": [
+        0.8666666666666667,
+        0.9759615384615384
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          22
+        ],
+        [
+          5,
+          203
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9213141025641025,
+      "macro_F1": 0.9256911804853574,
+      "per_class_recall": [
+        0.8666666666666667,
+        0.9759615384615384
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          22
+        ],
+        [
+          5,
+          203
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "all_valid",
+      "BA": 0.8934514224369297,
+      "macro_F1": 0.8950134770889489,
+      "per_class_recall": [
+        0.8641975308641975,
+        0.9227053140096618
+      ],
+      "confusion_matrix": [
+        [
+          140,
+          22
+        ],
+        [
+          16,
+          191
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 15,
+      "probe": "S1",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8934514224369297,
+      "macro_F1": 0.8950134770889489,
+      "per_class_recall": [
+        0.8641975308641975,
+        0.9227053140096618
+      ],
+      "confusion_matrix": [
+        [
+          140,
+          22
+        ],
+        [
+          16,
+          191
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.868663594470046,
+      "macro_F1": 0.8682502921796241,
+      "per_class_recall": [
+        0.7849462365591398,
+        0.9523809523809523
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          40
+        ],
+        [
+          9,
+          180
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.868663594470046,
+      "macro_F1": 0.8682502921796241,
+      "per_class_recall": [
+        0.7849462365591398,
+        0.9523809523809523
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          40
+        ],
+        [
+          9,
+          180
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8682367149758454,
+      "macro_F1": 0.8582536773810113,
+      "per_class_recall": [
+        0.9420289855072463,
+        0.7944444444444444
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          8
+        ],
+        [
+          37,
+          143
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8682367149758454,
+      "macro_F1": 0.8582536773810113,
+      "per_class_recall": [
+        0.9420289855072463,
+        0.7944444444444444
+      ],
+      "confusion_matrix": [
+        [
+          130,
+          8
+        ],
+        [
+          37,
+          143
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8703666714224568,
+      "macro_F1": 0.8663744343891402,
+      "per_class_recall": [
+        0.8895705521472392,
+        0.8511627906976744
+      ],
+      "confusion_matrix": [
+        [
+          145,
+          18
+        ],
+        [
+          32,
+          183
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8703666714224568,
+      "macro_F1": 0.8663744343891402,
+      "per_class_recall": [
+        0.8895705521472392,
+        0.8511627906976744
+      ],
+      "confusion_matrix": [
+        [
+          145,
+          18
+        ],
+        [
+          32,
+          183
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.9481707317073171,
+      "macro_F1": 0.9481316800461383,
+      "per_class_recall": [
+        0.975609756097561,
+        0.9207317073170732
+      ],
+      "confusion_matrix": [
+        [
+          160,
+          4
+        ],
+        [
+          13,
+          151
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9481707317073171,
+      "macro_F1": 0.9481316800461383,
+      "per_class_recall": [
+        0.975609756097561,
+        0.9207317073170732
+      ],
+      "confusion_matrix": [
+        [
+          160,
+          4
+        ],
+        [
+          13,
+          151
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.9246894409937889,
+      "macro_F1": 0.924000924000924,
+      "per_class_recall": [
+        0.9565217391304348,
+        0.8928571428571429
+      ],
+      "confusion_matrix": [
+        [
+          154,
+          7
+        ],
+        [
+          18,
+          150
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9246894409937889,
+      "macro_F1": 0.924000924000924,
+      "per_class_recall": [
+        0.9565217391304348,
+        0.8928571428571429
+      ],
+      "confusion_matrix": [
+        [
+          154,
+          7
+        ],
+        [
+          18,
+          150
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.9538043478260869,
+      "macro_F1": 0.9480961793665377,
+      "per_class_recall": [
+        1.0,
+        0.907608695652174
+      ],
+      "confusion_matrix": [
+        [
+          145,
+          0
+        ],
+        [
+          17,
+          167
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9538043478260869,
+      "macro_F1": 0.9480961793665377,
+      "per_class_recall": [
+        1.0,
+        0.907608695652174
+      ],
+      "confusion_matrix": [
+        [
+          145,
+          0
+        ],
+        [
+          17,
+          167
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8700854700854701,
+      "macro_F1": 0.86875,
+      "per_class_recall": [
+        0.8846153846153846,
+        0.8555555555555555
+      ],
+      "confusion_matrix": [
+        [
+          138,
+          18
+        ],
+        [
+          26,
+          154
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8700854700854701,
+      "macro_F1": 0.86875,
+      "per_class_recall": [
+        0.8846153846153846,
+        0.8555555555555555
+      ],
+      "confusion_matrix": [
+        [
+          138,
+          18
+        ],
+        [
+          26,
+          154
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.9036272670419012,
+      "macro_F1": 0.8968866038274779,
+      "per_class_recall": [
+        0.9487179487179487,
+        0.8585365853658536
+      ],
+      "confusion_matrix": [
+        [
+          148,
+          8
+        ],
+        [
+          29,
+          176
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9036272670419012,
+      "macro_F1": 0.8968866038274779,
+      "per_class_recall": [
+        0.9487179487179487,
+        0.8585365853658536
+      ],
+      "confusion_matrix": [
+        [
+          148,
+          8
+        ],
+        [
+          29,
+          176
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.915223406435745,
+      "macro_F1": 0.9019653208106402,
+      "per_class_recall": [
+        0.9817073170731707,
+        0.8487394957983193
+      ],
+      "confusion_matrix": [
+        [
+          161,
+          3
+        ],
+        [
+          36,
+          202
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.915223406435745,
+      "macro_F1": 0.9019653208106402,
+      "per_class_recall": [
+        0.9817073170731707,
+        0.8487394957983193
+      ],
+      "confusion_matrix": [
+        [
+          161,
+          3
+        ],
+        [
+          36,
+          202
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.5521710856906388,
+      "macro_F1": 0.4507123111028678,
+      "per_class_recall": [
+        0.9720670391061452,
+        0.13227513227513227
+      ],
+      "confusion_matrix": [
+        [
+          174,
+          5
+        ],
+        [
+          164,
+          25
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.5521710856906388,
+      "macro_F1": 0.4507123111028678,
+      "per_class_recall": [
+        0.9720670391061452,
+        0.13227513227513227
+      ],
+      "confusion_matrix": [
+        [
+          174,
+          5
+        ],
+        [
+          164,
+          25
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.9101252913752914,
+      "macro_F1": 0.9080374753451677,
+      "per_class_recall": [
+        0.9212121212121213,
+        0.8990384615384616
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          13
+        ],
+        [
+          21,
+          187
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9101252913752914,
+      "macro_F1": 0.9080374753451677,
+      "per_class_recall": [
+        0.9212121212121213,
+        0.8990384615384616
+      ],
+      "confusion_matrix": [
+        [
+          152,
+          13
+        ],
+        [
+          21,
+          187
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "all_valid",
+      "BA": 0.8906333870101986,
+      "macro_F1": 0.890106617428078,
+      "per_class_recall": [
+        0.8827160493827161,
+        0.8985507246376812
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          19
+        ],
+        [
+          21,
+          186
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 15,
+      "probe": "S_current",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8906333870101986,
+      "macro_F1": 0.890106617428078,
+      "per_class_recall": [
+        0.8827160493827161,
+        0.8985507246376812
+      ],
+      "confusion_matrix": [
+        [
+          143,
+          19
+        ],
+        [
+          21,
+          186
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9545570916538659,
+      "macro_F1": 0.95464602556897,
+      "per_class_recall": [
+        0.9408602150537635,
+        0.9682539682539683
+      ],
+      "confusion_matrix": [
+        [
+          175,
+          11
+        ],
+        [
+          6,
+          183
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 0,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9545570916538659,
+      "macro_F1": 0.95464602556897,
+      "per_class_recall": [
+        0.9408602150537635,
+        0.9682539682539683
+      ],
+      "confusion_matrix": [
+        [
+          175,
+          11
+        ],
+        [
+          6,
+          183
+        ]
+      ],
+      "class_counts": [
+        186,
+        189
+      ],
+      "n_windows": 375,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9026570048309179,
+      "macro_F1": 0.8984674329501916,
+      "per_class_recall": [
+        0.927536231884058,
+        0.8777777777777778
+      ],
+      "confusion_matrix": [
+        [
+          128,
+          10
+        ],
+        [
+          22,
+          158
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 2,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9026570048309179,
+      "macro_F1": 0.8984674329501916,
+      "per_class_recall": [
+        0.927536231884058,
+        0.8777777777777778
+      ],
+      "confusion_matrix": [
+        [
+          128,
+          10
+        ],
+        [
+          22,
+          158
+        ]
+      ],
+      "class_counts": [
+        138,
+        180
+      ],
+      "n_windows": 318,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9287487516050792,
+      "macro_F1": 0.9202576507650766,
+      "per_class_recall": [
+        0.9877300613496932,
+        0.8697674418604651
+      ],
+      "confusion_matrix": [
+        [
+          161,
+          2
+        ],
+        [
+          28,
+          187
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 4,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9287487516050792,
+      "macro_F1": 0.9202576507650766,
+      "per_class_recall": [
+        0.9877300613496932,
+        0.8697674418604651
+      ],
+      "confusion_matrix": [
+        [
+          161,
+          2
+        ],
+        [
+          28,
+          187
+        ]
+      ],
+      "class_counts": [
+        163,
+        215
+      ],
+      "n_windows": 378,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9542682926829268,
+      "macro_F1": 0.9542678675998997,
+      "per_class_recall": [
+        0.9512195121951219,
+        0.9573170731707317
+      ],
+      "confusion_matrix": [
+        [
+          156,
+          8
+        ],
+        [
+          7,
+          157
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 6,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9542682926829268,
+      "macro_F1": 0.9542678675998997,
+      "per_class_recall": [
+        0.9512195121951219,
+        0.9573170731707317
+      ],
+      "confusion_matrix": [
+        [
+          156,
+          8
+        ],
+        [
+          7,
+          157
+        ]
+      ],
+      "class_counts": [
+        164,
+        164
+      ],
+      "n_windows": 328,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.933100414078675,
+      "macro_F1": 0.933100414078675,
+      "per_class_recall": [
+        0.9316770186335404,
+        0.9345238095238095
+      ],
+      "confusion_matrix": [
+        [
+          150,
+          11
+        ],
+        [
+          11,
+          157
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 7,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.933100414078675,
+      "macro_F1": 0.933100414078675,
+      "per_class_recall": [
+        0.9316770186335404,
+        0.9345238095238095
+      ],
+      "confusion_matrix": [
+        [
+          150,
+          11
+        ],
+        [
+          11,
+          157
+        ]
+      ],
+      "class_counts": [
+        161,
+        168
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9425224887556222,
+      "macro_F1": 0.9415493945485998,
+      "per_class_recall": [
+        0.9448275862068966,
+        0.9402173913043478
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          8
+        ],
+        [
+          11,
+          173
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "fit",
+      "episode": 9,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9425224887556222,
+      "macro_F1": 0.9415493945485998,
+      "per_class_recall": [
+        0.9448275862068966,
+        0.9402173913043478
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          8
+        ],
+        [
+          11,
+          173
+        ]
+      ],
+      "class_counts": [
+        145,
+        184
+      ],
+      "n_windows": 329,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8643162393162394,
+      "macro_F1": 0.8650662621034313,
+      "per_class_recall": [
+        0.8397435897435898,
+        0.8888888888888888
+      ],
+      "confusion_matrix": [
+        [
+          131,
+          25
+        ],
+        [
+          20,
+          160
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 10,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8643162393162394,
+      "macro_F1": 0.8650662621034313,
+      "per_class_recall": [
+        0.8397435897435898,
+        0.8888888888888888
+      ],
+      "confusion_matrix": [
+        [
+          131,
+          25
+        ],
+        [
+          20,
+          160
+        ]
+      ],
+      "class_counts": [
+        156,
+        180
+      ],
+      "n_windows": 336,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.8982645403377111,
+      "macro_F1": 0.8961005623964466,
+      "per_class_recall": [
+        0.9038461538461539,
+        0.8926829268292683
+      ],
+      "confusion_matrix": [
+        [
+          141,
+          15
+        ],
+        [
+          22,
+          183
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 19,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.8982645403377111,
+      "macro_F1": 0.8961005623964466,
+      "per_class_recall": [
+        0.9038461538461539,
+        0.8926829268292683
+      ],
+      "confusion_matrix": [
+        [
+          141,
+          15
+        ],
+        [
+          22,
+          183
+        ]
+      ],
+      "class_counts": [
+        156,
+        205
+      ],
+      "n_windows": 361,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.9195019471203116,
+      "macro_F1": 0.9179089238309168,
+      "per_class_recall": [
+        0.9146341463414634,
+        0.9243697478991597
+      ],
+      "confusion_matrix": [
+        [
+          150,
+          14
+        ],
+        [
+          18,
+          220
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 29,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.9195019471203116,
+      "macro_F1": 0.9179089238309168,
+      "per_class_recall": [
+        0.9146341463414634,
+        0.9243697478991597
+      ],
+      "confusion_matrix": [
+        [
+          150,
+          14
+        ],
+        [
+          18,
+          220
+        ]
+      ],
+      "class_counts": [
+        164,
+        238
+      ],
+      "n_windows": 402,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.6966391770861045,
+      "macro_F1": 0.6748511904761905,
+      "per_class_recall": [
+        0.9329608938547486,
+        0.4603174603174603
+      ],
+      "confusion_matrix": [
+        [
+          167,
+          12
+        ],
+        [
+          102,
+          87
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 38,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.6966391770861045,
+      "macro_F1": 0.6748511904761905,
+      "per_class_recall": [
+        0.9329608938547486,
+        0.4603174603174603
+      ],
+      "confusion_matrix": [
+        [
+          167,
+          12
+        ],
+        [
+          102,
+          87
+        ]
+      ],
+      "class_counts": [
+        179,
+        189
+      ],
+      "n_windows": 368,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.900305944055944,
+      "macro_F1": 0.9017904160084255,
+      "per_class_recall": [
+        0.8727272727272727,
+        0.9278846153846154
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          21
+        ],
+        [
+          15,
+          193
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 49,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.900305944055944,
+      "macro_F1": 0.9017904160084255,
+      "per_class_recall": [
+        0.8727272727272727,
+        0.9278846153846154
+      ],
+      "confusion_matrix": [
+        [
+          144,
+          21
+        ],
+        [
+          15,
+          193
+        ]
+      ],
+      "class_counts": [
+        165,
+        208
+      ],
+      "n_windows": 373,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "all_valid",
+      "BA": 0.894122383252818,
+      "macro_F1": 0.8951704545454545,
+      "per_class_recall": [
+        0.8703703703703703,
+        0.9178743961352657
+      ],
+      "confusion_matrix": [
+        [
+          141,
+          21
+        ],
+        [
+          17,
+          190
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    },
+    {
+      "role": "eval",
+      "episode": 57,
+      "window": 15,
+      "probe": "S2",
+      "frame_scope": "common_across_windows",
+      "BA": 0.894122383252818,
+      "macro_F1": 0.8951704545454545,
+      "per_class_recall": [
+        0.8703703703703703,
+        0.9178743961352657
+      ],
+      "confusion_matrix": [
+        [
+          141,
+          21
+        ],
+        [
+          17,
+          190
+        ]
+      ],
+      "class_counts": [
+        162,
+        207
+      ],
+      "n_windows": 369,
+      "evaluable": true
+    }
+  ]
+}

@@ -1,5 +1,94 @@
 # LeRobot 项目当前状态
 
+## 2026-10-15：F1R 受控真机反馈实验准备，等待设备与安全信息
+
+- 用户要求参考旧采集指南并推送项目：已将F1R从臂连接填为so101_follower、/dev/ttyACM0、id=nn，历史leader=/dev/ttyACM1/id=nn仅参考、不参与正式试验。来源为docc/指南/lerobot_annotation_implementation_guide.md；设备实时校验和安全闭合参数仍未完成，不因此解锁运动。
+
+- 读取新F1R合同：固定臂/腕姿态，同一冻结安全闭合程序，5次FREE_CLOSE+5次CUP_CONTACT；不训练policy，不改部署，不按load自动收紧，不用旧数据替代采集。
+- 已交付result/PREPARATION_GUIDE.md、未冻结且不可执行的protocol.json及summary。当前采集电脑/串口、标定方向、安全范围、视频同步和急停/退出行为待确认；有效试验0，F1R_COMPLETE=false、科学UNRESOLVED。
+- 未打开串口、未动电机或扭矩；先由用户确认现场设备环境，才能实现适配采集工具并做短工程设置。旧F1/F1P/F1Q结果和限制均保留。
+
+## 2026-10-15：F1Q 停止于匹配覆盖门（UNRESOLVED_MATCHING_COVERAGE）
+
+- 按新F1Q合同只复用冻结F1P 12集W15可靠目标，距离输入为pos/dpos/command[t−1]/dcommand[t−1]四列；标准化仅fit，逐集1:1无放回、欧氏距离≤0.75；配置在覆盖/新probe成绩前保存，无新标签、原Dev/Final或阈值搜索。
+- 每集匹配对数fit[2,5,15,3,2,2]、eval[10,7,9,15,13,14]；各组均0/6达到≥20对，未满足各至少4/6门。总fit29/eval68对不能替代逐集覆盖；未拟合任何新probe。
+- 所有小量eval匹配池描述性SMD约[-0.1393,-0.0235,-0.1510,+0.0967]，但有效eval集合为空，不能据此升级为混杂已排除或报告匹配后load收益。
+- 已交付result/summary.md、覆盖/平衡/配对清单、泄漏审计及F1Q_result_20261015.zip；3项定向匹配测试、语法/diff和逐对无重复/距离/类别数量复核PASS。
+- 科学UNRESOLVED_MATCHING_COVERAGE；依第13节要求有效匹配probe完成，保守F1Q_COMPLETE=false，授权内停止证据已交付。无放宽距离、加标注/数据、probe/policy训练、部署/真机/推送，不进入F2；下一步交规划方验收数据可比性及完成条款。原F1/F1P历史不改。
+
+## 2026-10-15：F1P 小规模诊断完成，PROMISING_LOAD（仅探索）
+
+- 新增六集人工接触标注完成，fit/eval均6/6满足W15两类≥5帧门；子集与标签哈希未变。旧F1仍PARTIAL_PASS/UNRESOLVED/complete=false，全量标注扩展继续暂停。
+- westb:27435独立目录/venv、screen后台完成12次固定线性probe（4路CPU并行、BLAS每路1），全部收敛。未训练policy或使用原Dev/Final。本地旧threadpoolctl拟合前失败0次，失败保留；远程结果下载后仅做核对和汇总，无重复拟合。
+- W15 episode等权BA：S0=86.17%、S1(load)=90.12%；主delta=+3.94pp，探索episode bootstrap95%CI=[+2.33,+6.25]pp，6/6集正向，合同分类PROMISING_LOAD。current单独−2.14pp，在load外再加current−3.90pp，不自动合并推广。
+- 增益主要为未接触召回提高，接触后召回略降；开口/运动分布明显混杂，初始闭爪误报有图像证据。不能声称物理力控/抓稳/P1已利用信号，不能直接训练Force模块。
+- F1P OVERALL_STATUS=PASS、PILOT_COMPLETE=true、EVIDENCE_SCOPE=EXPLORATORY_ONLY。result/summary.md及F1P_result_20261015.zip交付；下一步仅验收并讨论混杂补证新合同，不进入F2或扩大预算。D2/D2.1与G1未闭环、B3实际OC-ACT事实保留。
+
+## 2026-10-15：F1P 独立小规模探索启动，等待新增六集审核
+
+- 按新decision_F1P_CONTACT_SIGNAL_PILOT.md执行；**暂停原F1全量Train36标注扩展**，旧F1仍PARTIAL_PASS/UNRESOLVED/complete=false，不追认完成或改旧指标。
+- 新F1P pilot-fit=原Train[0,2,4,6,7,9]；pilot-eval按原manifest剩余30集索引[0,5,11,17,23,29]固定为[10,19,29,38,49,57]。子集和旧标签哈希已在新增审核/任何成绩前冻结，原Dev/Final不读。
+- 六集接触专用页面已在http://127.0.0.1:8767启动（旧F1为8766）。只标PRECONTACT/CONTACT_SUPPORTED及不确定区间，完整条目自动保存/备份/回读；不重复旧六集，不要求三个动作阶段，最多新增6集。
+- F1P新result/summary.md及subset_manifest已交付；19项页面回归、3项因果特征测试、Edge隔离CSV自动保存/播放/逐帧/回读检查PASS，正式CSV未被测试改动。现在拟合0次，PARTIAL_PASS、UNRESOLVED、PILOT_COMPLETE=false、EXPLORATORY_ONLY。
+- 新六集人工标签达覆盖门后才允许最多12次固定probe拟合，scaler仅pilot-fit、seed=20261015；无policy训练/架构/部署/真机/新采/推送权限，不进入F2。
+
+## 2026-10-15：F1 前六集人工标注保存核验通过
+
+- 用户确认完成标注；CSV实际保存30条区间，审核者lyj。格式、帧界、可靠/不确定区间及同轴冲突校验通过，原CSV未修改；快照及SHA256保存于F1 raw独立label_gate run。
+- W15合法历史后，6/6集两种接触标签均≥5帧，通过合同≥4/6门槛；分支固定为继续全部Train36接触审核，不降级阶段任务。主任务尚未冻结：已审6、剩余30；Dev标签未开放、未拟合probe。
+- 各集可靠PRECONTACT/CONTACT_SUPPORTED计数：0=186/189、2=138/180、4=163/215、6=164/164、7=161/168、9=145/184。人工接触标签不等于力值标定、稳定保持或离桌真值。
+- 更新first_six_label_gate.json、label_coverage.json、task_freeze.json及summary；F1仍PARTIAL_PASS/UNRESOLVED、complete=false。旧六集UI仍可用，尚未扩展到其余Train。未训练、读Final、操作真机或push。
+
+## 2026-10-15：F1 r1 信号预检完成，独立标签门待完成
+
+- 新增本地盲审页面：`python scripts/run_f1_review_ui.py`，http://127.0.0.1:8766 。支持播放/逐帧/原帧取值、多段可靠与不确定区间、直接覆盖审核CSV、逐次备份/回读/版本冲突保护。限定六Train，不展示信号或开放Dev；保存不自动判整集通过或冻结任务。用法见tools/f1_review_ui/README.md。
+
+- 新westb:27435服务器只读连接通过：RTX5090约32GB空闲、数据盘约30GB可用；项目及nomaster目录存在。远程HEAD=2abe71e、本地=1a4ef84，尚未同步或核验数据字节；远程base环境缺scikit-learn，未安装依赖或启动任务。详见F1 result/server_preflight_20261015.json。
+
+- 按F1_FORMAL4_CONTACT_SIGNAL_FEASIBILITY r1执行，只授权信号诊断及固定逻辑回归probe，不授权policy训练、Force head、部署/真机/Final/push。
+- Train36/Dev12共17,243/5,748帧字段、连续索引、时间戳及原生信号审计完成；load/current均非训练集常量。当前源码同一行action晚于观测，仅使用t−1及更早命令；W=1/9/15固定因果特征已缓存，3项定向测试PASS。
+- 前六Train0/2/4/6/7/9完整双视角盲审素材已准备。当前工具无法原生连续视频观看，尚未完成r1明确要求的连续播放审核；任务未冻结，未看Dev标签、未拟合probe，不将联系表/全unknown表冒充精审。
+- result见experiments/force/f1_formal4_signal_feasibility/index1/result/summary.md；PARTIAL_PASS、UNRESOLVED、F1_SIGNAL_FEASIBILITY_COMPLETE=false。下一步仅按evidence_samples/REVIEW_FIRST_SIX.md补六集独立RGB盲审，然后执行原合同覆盖分支。
+- D2/D2.1仍未闭环，G1正式真机评价未完成，B3身份为OC-ACT而非纯ACT；本轮不修改这些事实。
+
+## 2026-10-14：D2.1 密集窗口补证与阶段缓存分析已交付
+
+- Dev12第120帧至结尾、Train36第200帧至结尾双视角有序逐帧联系表复核完成；Train0/2/4/6另复核120–199。不是完整视频连续播放或每帧全分辨率精审，该合同缺口明确保留。
+- 48集都有可追溯释放后分离观察；P1可靠释放后退回core共606帧，原始h0及四配置阶段/辅助指标已生成。离桌、触桌及物理顶部保持仍不可可靠判定，未报告保持时长或毫米高度。
+- 12Dev/5748帧缓存有限性/维度/连续帧及旧D2回放复现PASS（最大MAE差8.509e-6）；96段双视角片段帧数、30FPS、1280×480核验PASS。B3身份与归一化等价核验保留。
+- 更新result/summary.md、事件表、指标及manual_review.md；下一步仅Dev3/28/58现成视频最小人工可见性复核。PARTIAL_PASS/UNRESOLVED、DIAGNOSIS_COMPLETE=FALSE；无训练、部署修改、Final、真机或push。
+
+## 2026-10-14：D2.1 补证进行中
+
+- B3配置、参数键、模块及实际forward核验为OCACT_VERIFIED，撤回纯ACT描述；不改模型。
+- P1 normalized/physical时间集成等价校验通过（max误差9.918e-5），补1/5/10/30/100合法horizon误差。48集双视角1秒抽帧初审完成、35集候选释放区间；尚未全帧精审，离桌/保持阶段边界不可靠，阶段指标未完成。
+- D2.1当前PARTIAL_PASS/UNRESOLVED，DIAGNOSIS_COMPLETE=FALSE；需继续密集事件复核。无Final、训练、真机。结果见d2_1_evidence_completion/index1/result。
+
+## 2026-10-14：D2 部分结果交付（UNRESOLVED / PARTIAL_PASS）
+
+- P1/R3各12Dev、5748帧推理及四配置回放完成；48Train/Dev信号审计完成，P1实际时间权重/限幅函数和同episode未来mask核验通过。
+- 实际G1 B3 checkpoint为oc_act且object_conditioning_enabled=true，与D2标准ACT定义冲突，暂停该对照；没有替换模型。48集视觉事件审查尚未完成，事件UNKNOWN，阶段指标不报告。
+- DIAGNOSIS_COMPLETE=FALSE，分类UNRESOLVED；完整合同尚未履行，不能直接训练优化。交付见D2 result/summary.md。G1正式评价未完成、用户暂停真机；本轮无Final、训练或真机动作。
+
+## 2026-10-14：D2 动作链诊断本地预检完成，等待服务器
+
+- P1 重跑已成功完成：12 Dev episodes、5748帧，12份NPZ、四配置回放指标和p1.done均存在；指标已下载为result/p1_unphased_metrics.json。阶段为unknown，D2完整诊断仍未完成。
+
+- 重启修复：首轮因文件句柄 soft limit=1024 出现 Too many open files，无有效输出。保留失败日志后在启动脚本设置 ulimit -n 65535，P1 已通过连续 300 batch 真实 Dev 推理（约30秒），全量与回放仍待完成检查。
+
+- 后续更新：已连接用户提供的新端点 westd:52291（RTX 5090 32GB）；原训练工作区、冻结 P1 checkpoint 和 DINO 缓存可用。后台 `screen d2_p1` 已启动固定 Dev 推理与无硬件 2×2 后处理回放，模型成功加载并进入 GPU 推理。阶段事件审查未完成，当前输出阶段为 unknown，不报告阶段误差或根因。
+
+- 按 D2 r1 零训练合同执行元数据/split 和部署代码静态审计；36 Train / 12 Dev、8D/6D、30 FPS 声明已核验，单位与对齐尚未核验；未读 Final 内容。
+- 本地缺冻结 P1/B3/R3 checkpoint、默认 Python 缺 torch，服务器已由用户关闭。完整事件审计、全 Dev 推理、四配置后处理回放尚未执行；DIAGNOSIS_COMPLETE=FALSE，UNRESOLVED / BLOCKED。
+- 证据见 `experiments/position/d2_action_chain_diagnosis/index1/result/`；没有训练、参数修改或真机动作。下一步需开启原训练服务器，以 P1 全 Dev 优先完成诊断，GPU 累计预算 4 小时。
+
+## 2026-10-14：G1 定性复盘交付，等待网页 GPT 决策
+
+- 用户澄清：P1 抓取—拿起—放下链稳定；B3 动作链不稳定；R3 能随杯位调整夹爪。三个模型共同存在抬升低、停留短，均为定性观察。
+- 小范围杯位可能被张开夹爪覆盖，成功抓取不能直接证明定位泛化。用户希望暂停追加真机转入优化；尚未开始新诊断或训练。
+- 用户确认没有可用真机运行日志；15 段视频不是正式 trial 数量。完整 G1 未完成，成功率未知。
+- 网页 GPT 交付：`experiments/position/g1_real_robot_generalization/index1/result/REAL_ROBOT_REVIEW_20261014.md`、metrics、validation_review_20261014、proposal；先验收和讨论，再冻结新 decision。
+
 ## 2026-10-13：G1 真机位置泛化首次真机测试完成（定性）
 
 - G1 决策已读取；冻结 shortlist 为 `B3_ACT`、`P1_OCACT`、`R3_FILM`，不增加其它模型、不重训、不读取 Final。

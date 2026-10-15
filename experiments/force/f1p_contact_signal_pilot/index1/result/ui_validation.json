@@ -1,0 +1,16 @@
+{
+  "scope": "EXPLORATORY pilot review-tool engineering, not scientific signal validation",
+  "backend_and_previous_ui_regression_tests_passed": 19,
+  "causal_feature_tests_rerun_passed": 3,
+  "syntax_and_diff_checks": "PASS",
+  "real_browser": "Microsoft Edge headless",
+  "playback_and_exact_frame_seek_and_capture": "PASS",
+  "pilot_contact_only_label_options": "PASS",
+  "automatic_csv_save_readback_reload": "PASS_ON_TEMPORARY_CSV",
+  "episode_switch_and_narrow_viewport": "PASS",
+  "page_errors": [],
+  "official_pilot_csv_unchanged_by_test": true,
+  "live_bootstrap_http_status": 200,
+  "url": "http://127.0.0.1:8767",
+  "scientific_labels_generated_by_smoke_test": false
+}

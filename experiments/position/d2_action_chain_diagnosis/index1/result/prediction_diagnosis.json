@@ -1,0 +1,26 @@
+{
+  "category": "UNRESOLVED",
+  "P1_dev_episodes": [
+    "3",
+    "5",
+    "12",
+    "15",
+    "21",
+    "28",
+    "33",
+    "39",
+    "41",
+    "47",
+    "53",
+    "58"
+  ],
+  "frames": 5748,
+  "normalized_phase_mae": null,
+  "physical_phase_mae": null,
+  "full_chunk_targets_reconstructed": true,
+  "phase_unknown_fraction": 1,
+  "postprocess_sensitivity_observed": true,
+  "closed_loop": "UNRESOLVED",
+  "B3_identity_conflict": "D2 says plain ACT; T3 manifest says frozen OC-ACT object branch",
+  "R3_evaluation": "COMPLETE_UNPHASED"
+}

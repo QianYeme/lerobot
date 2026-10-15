@@ -1,0 +1,1 @@
+Actual pilot-eval window/probe comparisons, paired episode bootstrap CI/deltas, eval position/motion distributions and fit-only precontact-closing vs contact comparison. All exploratory, not causal or real-robot evidence.

@@ -1,0 +1,10 @@
+{
+  "status": "PASS_WITH_EXPLICIT_GAPS",
+  "diagnosis_complete": false,
+  "B3_plain_ACT_claim": false,
+  "hold_duration_claim": false,
+  "full_chunk_ground_truth_evaluated": true,
+  "primary_phase": "released_retreat_core",
+  "release_window_is_not_onset_bracket": true,
+  "historical_sampled_reports": "prior_sampled_report/; superseded, not current coverage"
+}

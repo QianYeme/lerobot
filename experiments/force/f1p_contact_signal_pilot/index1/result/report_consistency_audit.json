@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "bootstrap_recomputed_from_saved_shared_episode_indices": true,
+  "equal_episode_weighting_verified": true,
+  "same_class_counts_across_probes": true,
+  "remote_models_verified_by_sha256": 12,
+  "remote_predictions_verified_by_sha256": 144,
+  "labels_subset_hashes_unchanged_after_fitting": true,
+  "original_label_freeze_timestamp_restored_from_pre_fit_job": "2026-10-15T12:55:02.049931+00:00",
+  "fit_only_scaler_means_checked_against_frozen_fit_features": true,
+  "local_actual_classifier_fits": 0,
+  "remote_actual_classifier_fits": 12,
+  "engineering_failures": [
+    "Local threadpoolctl2.2.0 failed before any fitting; isolated remote3.6.0 succeeded",
+    "Local reporting np.bool_ JSON serialization failed after predictions copied; cast to native bool, recomputed reports without any refit",
+    "Report assembly timestamp initially replaced original freeze timestamp; corrected from pre-fit job manifest, hashes unchanged"
+  ],
+  "evidence_scope": "EXPLORATORY_ONLY",
+  "new_policy_training_authorized": false
+}

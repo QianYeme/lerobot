@@ -1,0 +1,2354 @@
+[
+  {
+    "episode": 3,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      1437,
+      1437
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep003\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep003\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep003\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep003\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep003\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep003\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 410,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 5,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      2395,
+      2395
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep005\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep005\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep005\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep005\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep005\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep005\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 392,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 12,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      5748,
+      5748
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep012\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep012\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep012\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep012\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep012\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep012\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 426,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 15,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      7185,
+      7185
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep015\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep015\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep015\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep015\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep015\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep015\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 422,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 21,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      10059,
+      10059
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep021\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep021\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep021\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep021\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep021\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep021\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 440,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 28,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      13412,
+      13412
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep028\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep028\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep028\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep028\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep028\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep028\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 33,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      15807,
+      1437
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep033\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep033\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep033\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep033\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep033\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep033\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 39,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      18681,
+      4311
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep039\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep039\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep039\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep039\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep039\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep039\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 41,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      19639,
+      5269
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep041\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep041\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep041\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep041\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep041\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep041\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 440,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 47,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      22513,
+      8143
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep047\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep047\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep047\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep047\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep047\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep047\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 396,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 53,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      25387,
+      11017
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep053\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep053\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep053\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep053\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep053\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep053\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 414,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 58,
+    "split": "dev",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      27781,
+      13411
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep058\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep058\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep058\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep058\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep058\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep058\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 440,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 0,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      0,
+      0
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep000\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep000\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep000\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep000\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep000\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep000\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 2,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      958,
+      958
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep002\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep002\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep002\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep002\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep002\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep002\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 4,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      1916,
+      1916
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep004\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep004\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep004\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep004\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep004\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep004\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 6,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      2874,
+      2874
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep006\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep006\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep006\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep006\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep006\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep006\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      120,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 7,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      3353,
+      3353
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep007\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep007\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep007\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep007\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep007\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep007\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 9,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      4311,
+      4311
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep009\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep009\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep009\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep009\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep009\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep009\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 10,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      4790,
+      4790
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep010\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep010\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep010\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep010\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep010\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep010\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 13,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      6227,
+      6227
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep013\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep013\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep013\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep013\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep013\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep013\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 14,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      6706,
+      6706
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep014\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep014\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep014\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep014\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep014\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep014\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 17,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      8143,
+      8143
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep017\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep017\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep017\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep017\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep017\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep017\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 18,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      8622,
+      8622
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep018\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep018\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep018\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep018\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep018\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep018\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 19,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      9101,
+      9101
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep019\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep019\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep019\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep019\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep019\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep019\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 22,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      10538,
+      10538
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep022\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep022\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep022\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep022\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep022\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep022\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 23,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      11017,
+      11017
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep023\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep023\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep023\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep023\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep023\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep023\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 24,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      11496,
+      11496
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep024\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep024\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep024\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep024\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep024\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep024\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 25,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      11975,
+      11975
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep025\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep025\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep025\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep025\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep025\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep025\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 26,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      12454,
+      12454
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep026\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep026\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep026\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep026\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep026\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep026\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 29,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      13891,
+      13891
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep029\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep029\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep029\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep029\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep029\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep029\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 30,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      14370,
+      0
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep030\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep030\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep030\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep030\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep030\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep030\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 32,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      15328,
+      958
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep032\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep032\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep032\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep032\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep032\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep032\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 34,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      16286,
+      1916
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep034\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep034\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep034\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep034\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep034\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep034\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 35,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      16765,
+      2395
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep035\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep035\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep035\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep035\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep035\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep035\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 36,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      17244,
+      2874
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep036\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep036\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep036\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep036\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep036\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep036\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 38,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      18202,
+      3832
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep038\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep038\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep038\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep038\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep038\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep038\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 40,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      19160,
+      4790
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep040\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep040\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep040\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep040\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep040\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep040\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 42,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      20118,
+      5748
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep042\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep042\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep042\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep042\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep042\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep042\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 43,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      20597,
+      6227
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep043\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep043\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep043\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep043\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep043\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep043\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 45,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      21555,
+      7185
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep045\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep045\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep045\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep045\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep045\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep045\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 48,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      22992,
+      8622
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep048\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep048\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep048\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep048\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep048\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep048\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 49,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      23471,
+      9101
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep049\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep049\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep049\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep049\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep049\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep049\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 50,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      23950,
+      9580
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep050\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep050\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep050\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep050\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep050\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep050\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 51,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      24429,
+      10059
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep051\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep051\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep051\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep051\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep051\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep051\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 54,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      25866,
+      11496
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep054\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep054\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep054\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep054\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep054\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep054\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 55,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      26345,
+      11975
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep055\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep055\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep055\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep055\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep055\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep055\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 56,
+    "split": "train",
+    "decoded_frames_per_camera": 479,
+    "offset_frame": [
+      26824,
+      12454
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep056\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep056\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep056\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep056\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep056\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 478,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep056\\frames_440_478.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      478
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  },
+  {
+    "episode": 57,
+    "split": "train",
+    "decoded_frames_per_camera": 478,
+    "offset_frame": [
+      27303,
+      12933
+    ],
+    "clip": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep057\\dual_view.mp4",
+    "pages": [
+      {
+        "from": 120,
+        "to": 199,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep057\\frames_120_199.jpg"
+      },
+      {
+        "from": 200,
+        "to": 279,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep057\\frames_200_279.jpg"
+      },
+      {
+        "from": 280,
+        "to": 359,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep057\\frames_280_359.jpg"
+      },
+      {
+        "from": 360,
+        "to": 439,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep057\\frames_360_439.jpg"
+      },
+      {
+        "from": 440,
+        "to": 477,
+        "path": "D:\\lerobot\\lerobot-main\\results\\experiments\\D2_1_ACTION_CHAIN_EVIDENCE_COMPLETION\\dense_review\\ep057\\frames_440_477.jpg"
+      }
+    ],
+    "review_status": "DECODED_NOT_REVIEWED",
+    "reviewed_window": [
+      200,
+      477
+    ],
+    "status": "DENSE_ORDERED_FRAME_SHEETS_REVIEWED_BY_CODEX",
+    "continuous_video_playback_by_codex": false,
+    "individual_full_resolution_every_frame_review": false,
+    "human_reviewed": false,
+    "released_by_frame": 450,
+    "physical_lift_hold": "UNKNOWN",
+    "reason": "Top view does not expose cup-bottom/table gap; wrist view moves with arm. Transparent cup and occluded contact plane prevent reliable physical lift-off/contact/hold boundaries. Ordered frame sheets show pose change and return, not calibrated vertical height."
+  }
+]
