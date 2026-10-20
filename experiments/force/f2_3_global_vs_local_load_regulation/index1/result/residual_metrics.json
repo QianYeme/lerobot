@@ -1,0 +1,22 @@
+{
+  "C1-no-load": {
+    "correlation_with_bounded_target": 0.8628033433506914,
+    "mean_abs": 1.8427557945251465,
+    "median_abs": 1.4824802875518799,
+    "max_abs": 4.83260440826416,
+    "near_bound_fraction": 0.060890744606819765,
+    "positive_fraction": 0.4507654836464857,
+    "negative_fraction": 0.5492345163535143,
+    "zero_fraction": 0.0
+  },
+  "C1-load": {
+    "correlation_with_bounded_target": 0.9939404266204467,
+    "mean_abs": 2.4261417388916016,
+    "median_abs": 2.3260059356689453,
+    "max_abs": 4.832698822021484,
+    "near_bound_fraction": 0.1266527487821851,
+    "positive_fraction": 0.47529575504523314,
+    "negative_fraction": 0.5247042449547669,
+    "zero_fraction": 0.0
+  }
+}

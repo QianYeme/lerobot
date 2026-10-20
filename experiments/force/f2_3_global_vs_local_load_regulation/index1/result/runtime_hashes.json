@@ -1,0 +1,11 @@
+{
+  "inputs/residual_config.json": "f7fd7b24256a03b8b9a8b13403463202a844db0bcde0b2b192e468f87ca10d02",
+  "inputs/baseline_identity.json": "2a0ced662cf1a0c548e80fb491badadd6552cfebc4a2aa83bad6ad15d9f0c104",
+  "inputs/decision.md": "47d87cbbde1940b0671191840a061895710c36d43b82f969beb72e117de2d22d",
+  "inputs/normalization.json": "579b169ff12af6322f982abd72bf0274fb8906c2449fb6e15728585b51141519",
+  "inputs/split_manifest.json": "c71cdc5fae281649bd00975da96d37018a9944468500157b8bbec832c626e1ef",
+  "source/scripts/run_f2_3.py": "97ca24dff1111554bdbf7a9dbb5ab58c613bbd58eea771fdb90ce374c0efdf40",
+  "source/scripts/report_f2_3.py": "36169e5007a4b33494ae2524a2b114cb80c55f9090499ac697b1a111638bc14b",
+  "source/src/lerobot/policies/act/configuration_act.py": "cef3634b5cc114f98cb303a76d8bad3a48e98b1fbb5f5630255adc45a4e7b6dc",
+  "source/src/lerobot/policies/act/modeling_act.py": "162ac5da7b8865f1146d64867f14c5d6861a2c7465cd09091897a98bdb358725"
+}

@@ -1,0 +1,92 @@
+{
+  "OVERALL_STATUS": "PASS",
+  "F1RM_COMPLETE": true,
+  "SCIENTIFIC_OUTCOME": "UNRESOLVED_RESIDUAL_CONFOUND",
+  "EVIDENCE_SCOPE": "EXPLORATORY_ONLY",
+  "passes": {
+    "primary": {
+      "threshold": 0.75,
+      "pairs": 136,
+      "eligible_contact": 283,
+      "free_pool": 321,
+      "per_trial_counts": [
+        61,
+        0,
+        35,
+        19,
+        21
+      ],
+      "qualifying_trials": 4,
+      "coverage_pass": true,
+      "balance_pass": false,
+      "load": {
+        "n": 136,
+        "mean": 14.617647058823529,
+        "median": 20.0,
+        "std": 21.2630992561812,
+        "iqr": 32.0,
+        "positive_fraction": 0.6985294117647058
+      },
+      "current_secondary": {
+        "n": 136,
+        "mean": 1.3529411764705883,
+        "median": 1.0,
+        "std": 1.050780392637395,
+        "iqr": 1.0,
+        "positive_fraction": 0.8088235294117647
+      }
+    },
+    "sensitivity": {
+      "status": "NOT_RUN_PRIMARY_COVERAGE_PASSED"
+    }
+  },
+  "primary_leave_one_cup_trial_out_means": {
+    "formal5_kind2_ep000": 14.4,
+    "formal5_kind2_ep001": 14.617647058823529,
+    "formal5_kind2_ep002": 13.425742574257425,
+    "formal5_kind2_ep003": 14.7008547008547,
+    "formal5_kind2_ep004": 15.721739130434782
+  },
+  "primary_signed_residual_sums_by_trial": {
+    "formal5_kind2_ep000": 908.0,
+    "formal5_kind2_ep001": 0.0,
+    "formal5_kind2_ep002": 632.0,
+    "formal5_kind2_ep003": 268.0,
+    "formal5_kind2_ep004": 180.0
+  },
+  "contact_onset": [
+    {
+      "trial_id": "formal5_kind2_ep000",
+      "status": "ANNOTATED_BOUNDARY_DIAGNOSTIC",
+      "onset": 89,
+      "post_minus_pre": -30.133331298828125
+    },
+    {
+      "trial_id": "formal5_kind2_ep001",
+      "status": "NO_RELIABLE_CONTACT",
+      "onset": null,
+      "post_minus_pre": null
+    },
+    {
+      "trial_id": "formal5_kind2_ep002",
+      "status": "ANNOTATED_BOUNDARY_DIAGNOSTIC",
+      "onset": 93,
+      "post_minus_pre": 35.73332977294922
+    },
+    {
+      "trial_id": "formal5_kind2_ep003",
+      "status": "ANNOTATED_BOUNDARY_DIAGNOSTIC",
+      "onset": 63,
+      "post_minus_pre": 26.666671752929688
+    },
+    {
+      "trial_id": "formal5_kind2_ep004",
+      "status": "ANNOTATED_BOUNDARY_DIAGNOSTIC",
+      "onset": 72,
+      "post_minus_pre": 28.266677856445312
+    }
+  ],
+  "label_sha256": "8a9075958e2e11c11a4e7ee5c2ad1601904b6a10b42efbd19d3f636771cdbcb1",
+  "raw": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1RM_TELEOP_LOAD_RETROSPECTIVE_MATCH\\20261018T154217604706Z",
+  "scientific_positive_claim_authorized": false
+}

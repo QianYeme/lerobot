@@ -1,0 +1,29 @@
+{
+  "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB, 9830 MiB, 100 %",
+  "parameters": {
+    "A0": {
+      "total": 74938375,
+      "trainable": 52881799,
+      "extra_vs_A0": 0,
+      "percent_increase": 0.0,
+      "smoke_peak_vram_bytes": 3423184896
+    },
+    "A1": {
+      "total": 74955847,
+      "trainable": 52899271,
+      "extra_vs_A0": 17472,
+      "percent_increase": 0.02331515728757129,
+      "smoke_peak_vram_bytes": 2047266816
+    },
+    "A2": {
+      "total": 74956295,
+      "trainable": 52899719,
+      "extra_vs_A0": 17920,
+      "percent_increase": 0.023912981833406448,
+      "smoke_peak_vram_bytes": 2047268864
+    }
+  },
+  "A2_extra_vs_A1": 448,
+  "latency": "PENDING_SELECTED_CHECKPOINT_BENCHMARK; smoke wall time is not inference latency",
+  "RTX4060_deployability": "NOT_MEASURED; no real-robot claim"
+}

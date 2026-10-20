@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checks": [
+    "video decode/seek",
+    "frame capture/step",
+    "10 trial options",
+    "incomplete export rejected",
+    "synthetic CSV roundtrip",
+    "trial switch draft retained",
+    "overlap rejected",
+    "no JS errors",
+    "official CSV hash unchanged"
+  ]
+}

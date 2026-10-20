@@ -1,0 +1,350 @@
+{
+  "revision": "r1",
+  "OVERALL_STATUS": "PASS",
+  "F2_1_COMPLETE": true,
+  "SCIENTIFIC_OUTCOME": "SINGLE_FRAME_LOAD_SUFFICIENT",
+  "EVIDENCE_SCOPE": "SINGLE_SEED_EXPLORATORY",
+  "primary_metric": "Dev12 normalized h0 gripper L1, frame weighted; lower better",
+  "models": {
+    "A0": {
+      "selected_step": 80000,
+      "primary": 0.1503186063577208,
+      "physical_gripper_mae": 3.7440058187691045,
+      "physical_arm_mae": 3.484138892578556,
+      "normalized_all_l1": 0.14065214075947216,
+      "per_episode": {
+        "3": {
+          "primary": 0.16288970893011712,
+          "frames": 479
+        },
+        "5": {
+          "primary": 0.12588899041329646,
+          "frames": 479
+        },
+        "12": {
+          "primary": 0.1859583677821219,
+          "frames": 479
+        },
+        "15": {
+          "primary": 0.18466064284141476,
+          "frames": 479
+        },
+        "21": {
+          "primary": 0.16891020125785303,
+          "frames": 479
+        },
+        "28": {
+          "primary": 0.2740282408255376,
+          "frames": 479
+        },
+        "33": {
+          "primary": 0.1439683970242801,
+          "frames": 479
+        },
+        "39": {
+          "primary": 0.11627418947618043,
+          "frames": 479
+        },
+        "41": {
+          "primary": 0.1332429034483769,
+          "frames": 479
+        },
+        "47": {
+          "primary": 0.1452091415889079,
+          "frames": 479
+        },
+        "53": {
+          "primary": 0.07728109563971114,
+          "frames": 479
+        },
+        "58": {
+          "primary": 0.08551139706485207,
+          "frames": 479
+        }
+      },
+      "checkpoint": "/root/autodl-tmp/F2_1_r1_20261019/results_A0_retry1/A0/checkpoints/080000/pretrained_model",
+      "training_seconds": 7300.1842449605465,
+      "final_logged_loss": 0.21604865789413452,
+      "training_rows": 1001,
+      "mechanisms": {},
+      "legal_horizons": {
+        "1": {
+          "normalized_gripper_l1": 0.15031860617398385,
+          "normalized_arm_l1": 0.13871884277672425,
+          "valid_targets": 5748
+        },
+        "5": {
+          "normalized_gripper_l1": 0.15687180958495617,
+          "normalized_arm_l1": 0.1416577587937409,
+          "valid_targets": 28620
+        },
+        "10": {
+          "normalized_gripper_l1": 0.16707370296869103,
+          "normalized_arm_l1": 0.14571275123010655,
+          "valid_targets": 56940
+        },
+        "30": {
+          "normalized_gripper_l1": 0.2141802346427651,
+          "normalized_arm_l1": 0.16315258051844078,
+          "valid_targets": 167220
+        },
+        "100": {
+          "normalized_gripper_l1": 0.2593549188596822,
+          "normalized_arm_l1": 0.18687138170542808,
+          "valid_targets": 515400
+        }
+      }
+    },
+    "A1": {
+      "selected_step": 60000,
+      "primary": 0.12639014509042482,
+      "physical_gripper_mae": 3.1480164089401836,
+      "physical_arm_mae": 2.965748206519819,
+      "normalized_all_l1": 0.1203391170433788,
+      "per_episode": {
+        "3": {
+          "primary": 0.09898287653417515,
+          "frames": 479
+        },
+        "5": {
+          "primary": 0.12123434826545028,
+          "frames": 479
+        },
+        "12": {
+          "primary": 0.170153223600293,
+          "frames": 479
+        },
+        "15": {
+          "primary": 0.15286633658508667,
+          "frames": 479
+        },
+        "21": {
+          "primary": 0.09092947363169059,
+          "frames": 479
+        },
+        "28": {
+          "primary": 0.1939521400658472,
+          "frames": 479
+        },
+        "33": {
+          "primary": 0.11152632571834611,
+          "frames": 479
+        },
+        "39": {
+          "primary": 0.09553328546887897,
+          "frames": 479
+        },
+        "41": {
+          "primary": 0.1154897879801364,
+          "frames": 479
+        },
+        "47": {
+          "primary": 0.12981881635236342,
+          "frames": 479
+        },
+        "53": {
+          "primary": 0.13304593255801714,
+          "frames": 479
+        },
+        "58": {
+          "primary": 0.10314919432481295,
+          "frames": 479
+        }
+      },
+      "checkpoint": "/root/autodl-tmp/F2_1_r1_20261019/results/A1/checkpoints/060000/pretrained_model",
+      "training_seconds": 9609.766788410023,
+      "final_logged_loss": 0.13447679579257965,
+      "training_rows": 1001,
+      "mechanisms": {
+        "zero": {
+          "variant": "A1",
+          "mode": "zero",
+          "frames": 5748,
+          "normalized_gripper_change": 0.07508279033207445,
+          "normalized_arm_change": 0.022463727510767462
+        },
+        "plus_0.1std": {
+          "variant": "A1",
+          "mode": "plus_0.1std",
+          "frames": 5748,
+          "normalized_gripper_change": 0.003897815114165875,
+          "normalized_arm_change": 0.004022315947306878
+        },
+        "minus_0.1std": {
+          "variant": "A1",
+          "mode": "minus_0.1std",
+          "frames": 5748,
+          "normalized_gripper_change": 0.0054530603691245955,
+          "normalized_arm_change": 0.004717156118253369
+        }
+      },
+      "legal_horizons": {
+        "1": {
+          "normalized_gripper_l1": 0.12639014503906273,
+          "normalized_arm_l1": 0.11912890720902505,
+          "valid_targets": 5748
+        },
+        "5": {
+          "normalized_gripper_l1": 0.13081147276505484,
+          "normalized_arm_l1": 0.12234562279543286,
+          "valid_targets": 28620
+        },
+        "10": {
+          "normalized_gripper_l1": 0.13853250427814714,
+          "normalized_arm_l1": 0.12772827235279813,
+          "valid_targets": 56940
+        },
+        "30": {
+          "normalized_gripper_l1": 0.17947546032331674,
+          "normalized_arm_l1": 0.14938842844811942,
+          "valid_targets": 167220
+        },
+        "100": {
+          "normalized_gripper_l1": 0.24257946921148918,
+          "normalized_arm_l1": 0.17483424480460066,
+          "valid_targets": 515400
+        }
+      }
+    },
+    "A2": {
+      "selected_step": 40000,
+      "primary": 0.130600747303835,
+      "physical_gripper_mae": 3.2528904466982307,
+      "physical_arm_mae": 3.9991517273829724,
+      "normalized_all_l1": 0.1494868158974614,
+      "per_episode": {
+        "3": {
+          "primary": 0.1285042256459065,
+          "frames": 479
+        },
+        "5": {
+          "primary": 0.15382002668925765,
+          "frames": 479
+        },
+        "12": {
+          "primary": 0.24672340309259042,
+          "frames": 479
+        },
+        "15": {
+          "primary": 0.12732994107681178,
+          "frames": 479
+        },
+        "21": {
+          "primary": 0.12072791966428836,
+          "frames": 479
+        },
+        "28": {
+          "primary": 0.14920915725460132,
+          "frames": 479
+        },
+        "33": {
+          "primary": 0.1488218229022927,
+          "frames": 479
+        },
+        "39": {
+          "primary": 0.10105411611917373,
+          "frames": 479
+        },
+        "41": {
+          "primary": 0.07297186437014311,
+          "frames": 479
+        },
+        "47": {
+          "primary": 0.13485264082853382,
+          "frames": 479
+        },
+        "53": {
+          "primary": 0.09159356501878925,
+          "frames": 479
+        },
+        "58": {
+          "primary": 0.09160028498363146,
+          "frames": 479
+        }
+      },
+      "checkpoint": "/root/autodl-tmp/F2_1_r1_20261019/results/A2/checkpoints/040000/pretrained_model",
+      "training_seconds": 9588.534629613161,
+      "final_logged_loss": 0.10568191856145859,
+      "training_rows": 1001,
+      "mechanisms": {
+        "zero": {
+          "variant": "A2",
+          "mode": "zero",
+          "frames": 5748,
+          "normalized_gripper_change": 0.06011096212919607,
+          "normalized_arm_change": 0.017286658658451293
+        },
+        "plus_0.1std": {
+          "variant": "A2",
+          "mode": "plus_0.1std",
+          "frames": 5748,
+          "normalized_gripper_change": 0.004585559325968029,
+          "normalized_arm_change": 0.003962160608076911
+        },
+        "minus_0.1std": {
+          "variant": "A2",
+          "mode": "minus_0.1std",
+          "frames": 5748,
+          "normalized_gripper_change": 0.003992303217862971,
+          "normalized_arm_change": 0.003836716884887421
+        }
+      },
+      "legal_horizons": {
+        "1": {
+          "normalized_gripper_l1": 0.1306007475376378,
+          "normalized_arm_l1": 0.15326402433003994,
+          "valid_targets": 5748
+        },
+        "5": {
+          "normalized_gripper_l1": 0.1302743559904985,
+          "normalized_arm_l1": 0.15436784041919216,
+          "valid_targets": 28620
+        },
+        "10": {
+          "normalized_gripper_l1": 0.13725885176579075,
+          "normalized_arm_l1": 0.15741526475738216,
+          "valid_targets": 56940
+        },
+        "30": {
+          "normalized_gripper_l1": 0.17020192701713047,
+          "normalized_arm_l1": 0.17568099305641421,
+          "valid_targets": 167220
+        },
+        "100": {
+          "normalized_gripper_l1": 0.23215487182741718,
+          "normalized_arm_l1": 0.19294033935100569,
+          "valid_targets": 515400
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "A2_vs_A1": {
+      "primary_delta": 0.004210602213410186,
+      "percent_change": 3.3314323758373288,
+      "episodes_better": 5,
+      "episodes_total": 12,
+      "physical_arm_percent_change": 34.844614205324234
+    },
+    "A1_vs_A0": {
+      "primary_delta": -0.023928461267295975,
+      "percent_change": -15.91849595142747,
+      "episodes_better": 10,
+      "episodes_total": 12,
+      "physical_arm_percent_change": -14.878588427199135
+    },
+    "A2_vs_A0": {
+      "primary_delta": -0.01971785905388579,
+      "percent_change": -13.117377503462347,
+      "episodes_better": 7,
+      "episodes_total": 12,
+      "physical_arm_percent_change": 14.78163904146954
+    }
+  },
+  "Final12_read": false,
+  "completed_formal_runs": 3,
+  "failed_previous_A0_attempt": true,
+  "diagnostic_model_used": false,
+  "real_robot_effectiveness": "NOT_TESTED",
+  "planner_builder_redteam_acceptance": "PENDING_EXTERNAL_REVIEW"
+}

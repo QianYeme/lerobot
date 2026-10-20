@@ -1,0 +1,8 @@
+{
+  "meaningful_episode_consistency_min": 8,
+  "predominantly_nonsaturated_near_bound_max": 0.2,
+  "saturation_dominates_fraction": 0.5,
+  "diagnostic_nonzero_floor": 1e-06,
+  "acceptable_latency_ratio_max": 1.2,
+  "note": "Conservative descriptive categories frozen before local training; no change to metric or checkpoint selection"
+}

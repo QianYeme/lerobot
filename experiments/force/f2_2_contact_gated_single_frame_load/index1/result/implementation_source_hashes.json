@@ -1,0 +1,10 @@
+{
+  "src/lerobot/policies/act/configuration_act.py": "06fe4231413a9d91c153d6fbe03a9872822461961e84b577f7c12fdeaa4a78a3",
+  "src/lerobot/policies/act/modeling_act.py": "591b11963e3c386ffafbf7dc9696262f372b1db90174ab522e3235028f3851b7",
+  "scripts/run_f2_1.py": "b88a8684cf366a4460d8d6d29820302d078d4dc7b41e161d8fffb8d52e1ea420",
+  "scripts/run_f2_2.py": "c2984f7f21b6cc3c2eef5672432a5b1d1d6e4e59577f8abdfb51de59f2591388",
+  "scripts/evaluate_f2_2_selected.py": "013f2d5e094c012f2c5faef77343eeb3b306d23cf55b1275e70cd7364d9ad131",
+  "scripts/report_f2_2.py": "43cd877da3e21c2536c109461a6cb4189f251880bde9bf9ad9d6d61b6d6482a0",
+  "scripts/autofinish_f2_2.py": "6b72c0883d09812d231e9530006d9590d52de810a0c9347159fc627ef46ac6ec",
+  "scripts/train_f2_2_one.sh": "175608937eab983381ab0b9f3939c1d379274c89917e3e8071de9e0c3993c7fb"
+}

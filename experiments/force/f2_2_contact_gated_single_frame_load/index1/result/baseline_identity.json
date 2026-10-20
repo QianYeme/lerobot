@@ -1,0 +1,243 @@
+{
+  "parent": "F2.1 A1 architecture, fresh common initialization",
+  "variants": {
+    "B0": {
+      "checkpoint": "/root/autodl-tmp/F2_2_r0_20261019/results/B0/checkpoints/100000/pretrained_model",
+      "step": 100000,
+      "model_sha256": "ed0e22ad4212c893254e57861c64c0698b843929a78f024313ad5bcd7372b876",
+      "config": {
+        "type": "act",
+        "n_obs_steps": 1,
+        "input_features": {
+          "observation.state": {
+            "type": "STATE",
+            "shape": [
+              6
+            ]
+          },
+          "observation.images.gripper": {
+            "type": "VISUAL",
+            "shape": [
+              3,
+              480,
+              640
+            ]
+          },
+          "observation.images.top": {
+            "type": "VISUAL",
+            "shape": [
+              3,
+              480,
+              640
+            ]
+          }
+        },
+        "output_features": {
+          "action": {
+            "type": "ACTION",
+            "shape": [
+              6
+            ]
+          }
+        },
+        "device": "cuda",
+        "use_amp": false,
+        "use_peft": false,
+        "push_to_hub": false,
+        "repo_id": null,
+        "private": null,
+        "tags": null,
+        "license": null,
+        "pretrained_path": null,
+        "chunk_size": 100,
+        "n_action_steps": 1,
+        "normalization_mapping": {
+          "VISUAL": "MEAN_STD",
+          "STATE": "MEAN_STD",
+          "ACTION": "MEAN_STD"
+        },
+        "vision_backbone": "resnet18",
+        "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1",
+        "replace_final_stride_with_dilation": false,
+        "pre_norm": false,
+        "dim_model": 512,
+        "n_heads": 8,
+        "dim_feedforward": 3200,
+        "feedforward_activation": "relu",
+        "n_encoder_layers": 4,
+        "n_decoder_layers": 1,
+        "use_vae": true,
+        "latent_dim": 32,
+        "n_vae_encoder_layers": 4,
+        "temporal_ensemble_coeff": null,
+        "dropout": 0.1,
+        "kl_weight": 10.0,
+        "gripper_loss_weight": 3.0,
+        "load_history_steps": 1,
+        "load_feature_gating": false,
+        "model_type": "oc_act",
+        "object_conditioning_enabled": true,
+        "object_conditioning_top_camera_key": "observation.images.top",
+        "object_conditioning_dino_model": "dinov2_vits14",
+        "object_conditioning_dino_frozen": true,
+        "object_conditioning_prototype_path": "/root/autodl-tmp/F2_2_r0_20261019/inputs/cup_prototype_bank_v1.pt",
+        "object_conditioning_num_prototypes": 4,
+        "object_conditioning_num_object_tokens": 5,
+        "object_conditioning_adapter_dim": 256,
+        "object_conditioning_gate_init": 0.0,
+        "object_conditioning_temperature": 0.2,
+        "object_conditioning_smoke_mode": false,
+        "explicit_spatial_conditioning": false,
+        "explicit_spatial_dim": 128,
+        "explicit_spatial_beta_init": 0.01,
+        "explicit_spatial_fixed_scale": 0.0,
+        "joint_state_spatial_conditioning": false,
+        "joint_state_spatial_dim": 128,
+        "action_level_spatial_conditioning": false,
+        "relational_state_spatial_conditioning": false,
+        "spatial_film_conditioning": false,
+        "n0_spatial_dim": 128,
+        "optimizer_lr": 1e-05,
+        "optimizer_weight_decay": 0.0001,
+        "optimizer_lr_backbone": 0.0001
+      }
+    },
+    "B1": {
+      "checkpoint": "/root/autodl-tmp/F2_2_r0_20261019/results/B1/checkpoints/040000/pretrained_model",
+      "step": 40000,
+      "model_sha256": "476e88b1f1ee200edb1051d4641838e03ad13c678f3c6e85cb31a86ac602601a",
+      "config": {
+        "type": "act",
+        "n_obs_steps": 1,
+        "input_features": {
+          "observation.state": {
+            "type": "STATE",
+            "shape": [
+              6
+            ]
+          },
+          "observation.images.gripper": {
+            "type": "VISUAL",
+            "shape": [
+              3,
+              480,
+              640
+            ]
+          },
+          "observation.images.top": {
+            "type": "VISUAL",
+            "shape": [
+              3,
+              480,
+              640
+            ]
+          }
+        },
+        "output_features": {
+          "action": {
+            "type": "ACTION",
+            "shape": [
+              6
+            ]
+          }
+        },
+        "device": "cuda",
+        "use_amp": false,
+        "use_peft": false,
+        "push_to_hub": false,
+        "repo_id": null,
+        "private": null,
+        "tags": null,
+        "license": null,
+        "pretrained_path": null,
+        "chunk_size": 100,
+        "n_action_steps": 1,
+        "normalization_mapping": {
+          "VISUAL": "MEAN_STD",
+          "STATE": "MEAN_STD",
+          "ACTION": "MEAN_STD"
+        },
+        "vision_backbone": "resnet18",
+        "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1",
+        "replace_final_stride_with_dilation": false,
+        "pre_norm": false,
+        "dim_model": 512,
+        "n_heads": 8,
+        "dim_feedforward": 3200,
+        "feedforward_activation": "relu",
+        "n_encoder_layers": 4,
+        "n_decoder_layers": 1,
+        "use_vae": true,
+        "latent_dim": 32,
+        "n_vae_encoder_layers": 4,
+        "temporal_ensemble_coeff": null,
+        "dropout": 0.1,
+        "kl_weight": 10.0,
+        "gripper_loss_weight": 3.0,
+        "load_history_steps": 1,
+        "load_feature_gating": true,
+        "model_type": "oc_act",
+        "object_conditioning_enabled": true,
+        "object_conditioning_top_camera_key": "observation.images.top",
+        "object_conditioning_dino_model": "dinov2_vits14",
+        "object_conditioning_dino_frozen": true,
+        "object_conditioning_prototype_path": "/root/autodl-tmp/F2_2_r0_20261019/inputs/cup_prototype_bank_v1.pt",
+        "object_conditioning_num_prototypes": 4,
+        "object_conditioning_num_object_tokens": 5,
+        "object_conditioning_adapter_dim": 256,
+        "object_conditioning_gate_init": 0.0,
+        "object_conditioning_temperature": 0.2,
+        "object_conditioning_smoke_mode": false,
+        "explicit_spatial_conditioning": false,
+        "explicit_spatial_dim": 128,
+        "explicit_spatial_beta_init": 0.01,
+        "explicit_spatial_fixed_scale": 0.0,
+        "joint_state_spatial_conditioning": false,
+        "joint_state_spatial_dim": 128,
+        "action_level_spatial_conditioning": false,
+        "relational_state_spatial_conditioning": false,
+        "spatial_film_conditioning": false,
+        "n0_spatial_dim": 128,
+        "optimizer_lr": 1e-05,
+        "optimizer_weight_decay": 0.0001,
+        "optimizer_lr_backbone": 0.0001
+      }
+    }
+  },
+  "config_differences": {
+    "load_feature_gating": [
+      false,
+      true
+    ]
+  },
+  "smoke": {
+    "status": "PASS",
+    "variants": {
+      "B0": {
+        "loss": 86.88114166259766,
+        "grad_norm": 1282.13818359375,
+        "parameters": 74955847,
+        "initial_hash": "194b55eed3e2b946de2362a787ad9a538ccd22fa5f2d3792cd511fd3b41b9a83",
+        "strict_reload": true,
+        "shape": [
+          4,
+          100,
+          6
+        ]
+      },
+      "B1": {
+        "loss": 86.88114166259766,
+        "grad_norm": 1282.13818359375,
+        "parameters": 74955847,
+        "initial_hash": "194b55eed3e2b946de2362a787ad9a538ccd22fa5f2d3792cd511fd3b41b9a83",
+        "strict_reload": true,
+        "shape": [
+          4,
+          100,
+          6
+        ]
+      }
+    },
+    "full_initialization_equal": true
+  }
+}

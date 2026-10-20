@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "Train_frames": 17243,
+  "Dev_frames": 5748,
+  "Final_reads": 0,
+  "metric_reproduction_tolerance": 0.0001,
+  "all_global_parameters_frozen": true
+}

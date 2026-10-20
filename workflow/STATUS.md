@@ -1,5 +1,132 @@
 # LeRobot 项目当前状态
 
+## 2026-10-20：F3 仅模型迁移发布，实机阶段按用户要求暂不做
+
+- HF私有仓库QYyyyyyyy/F3_C1_LOAD_SO101已发布并核验，revision4bab110b3149003239c330b096cd7d1883c32a78；exact A0 retry1 80k + C1-load10k，±4.83269946不变。约426MiB含完整权重、归一化、原型、DINO/ResNet构造缓存、源码与验证器，不需要完整训练数据集。
+- 官方HF固定revision manifest和global/local/prototype哈希已核验。服务器CUDA offline smoke通过，局部16条Dev夹具误差3.58e-7；新适配器支持disabled/shadow/regulated纯函数，不含机器人I/O。当前control_act_det.py仍未接入局部MLP，不能直接实机regulated运行。
+- F3_COMPLETE=false / TRANSFER_READY / REAL_ROBOT_NOT_RUN。新系统Stage0、控制循环/遥测接线和shadow→baseline→regulated均待用户现场执行，Final封存。指南在f3.../index1/TRANSFER_GUIDE.md，发布记录和离线校验在result。
+- GitHub本轮发布范围为force实验代码/报告与迁移文件，模型/缓存/临时包不纳入Git；F1R两项无关既有修改保留本地，不混入当前提交。凭证只用进程环境/SSH stdin，不入文件。
+
+## 2026-10-20：F2.3 完成，局部load夹爪残差离线PROMISING
+
+- F2_3_COMPLETE=true，服务器READY_STOPPED，两个C1各10000步且均选10k；C0及C1 global仅复用已验证模型，未重训或微调。Train17243/Dev5748完整回放、身份SHA/主指标复现、冻结全局、Train残差裁剪统计及局部真实数据梯度/加载门通过。
+- Dev normalized h0 gripper L1：C0=0.12639093、C1-no-load=0.08885255、C1-load=0.05769288。C1-load比C0低54.35%、比no-load低35.07%，两对照均12/12集改善；分类LOCAL_LOAD_REGULATION_PROMISING，单seed探索性离线证据。
+- 重要限制：C1两组臂输出完全相同且与A0 nominal逐元素一致，但臂MAE3.48415仍高于C0的2.96569（约17.48%）；overall normalized L1 C1-load=0.12521仍高于C0=0.12034。只支持局部夹爪修正，不能说全任务模型全面胜出或真机力控成功。
+- ±4.83269946限幅未变；Train目标裁剪10.03%，C1-load预测接近边界12.67%，平均|delta|2.4261，非多数饱和。load置Train均值导致平均残差改变0.8521原生单位；残差目标相关0.99394。仍可能学习执行器状态/跟踪误差的关联修正，F1RM混杂未排除，不是接触/物理力因果证明。
+- C1 local仅1185/1217参数，5090 global+local中位推理约9.845/9.858ms，C0约9.612ms；全局训练与局部训练预算不对等已披露。全部小checkpoint/cache/log留服务器，无Final/真机/下一轮。
+- 原始F2_3_result.zip已SHA256/CRC验证下载，本地result完整，旧预检pretraining_archive保留；独立NPZ复算主指标/限幅/符号/臂保持通过，逐集图及残差散点图已查看。报告与ZIP交规划方Builder/Red-Team；不自动部署/高频化。
+
+## 2026-10-20：F2.3 冻结全局模型的局部残差实验开始
+
+- 用户交付F2_3_GLOBAL_VS_LOCAL_LOAD_REGULATION r0，原合同只读。C0复用F2.1 A1 60k（global single-load）；C1-no-load/C1-load共用F2.1 A0 retry1 80k纯6D全局模型，权重SHA验证、requires_grad全关，不重训/微调全局，不新增门控/历史/current。
+- Train36动作范围1.06463873–97.71862793，固定delta_max=4.83269946原生夹爪位置单位（严格5%），非牛顿。局部分别2/3输入，32–32 GELU MLP、tanh限幅；同seed1/Adam1e-3/batch256/10000步/每1000步Dev选点，目标为clip(demo-native_nominal)/delta_max的MSE。输入均值/方差只拟合Train，load沿用冻结归一化。
+- 新隔离目录/root/autodl-tmp/F2_3_r0_20261020，F23_CACHE screen正完整Train/Dev h0回放（不shuffle、不drop_last），检查两旧checkpoint主指标复现及唯一帧覆盖；已见train.npz。F23_FINISH screen等待PASS后执行两组局部训练、Dev机制/成本/8图/完整ZIP，失败留traceback/proposal停止，不自行改科研变量或重跑预算。
+- 当前RUNNING/F2_3_COMPLETE=false；需先补齐回放与Train裁剪比例，不能预报local有效。两项本地目标符号/裁剪/零残差测试及语法检查通过，真实GPU回放进行中。目标与零残差/冻结梯度/保存重载由后续真实数据门验证。Final仍封存，无真机、自动高频控制、push/HF或下一轮。
+
+## 2026-10-20：F2.2 已完成，GATING_HURTS，等待外部验收
+
+- 服务器2026-10-20 00:41（UTC+8）完成全部合同内收尾，READY_STOPPED；B0/B1各100k、exit0、各5个固定checkpoint评估完整，训练/机制/gate/成本/8图/result均DONE，无后台训练继续。
+- 按冻结主指标选择B0=100k/B1=40k；所选模型完整Dev重算normalized h0 gripper L1=0.13219491/0.18290253，B1高38.36%，12/12集均更差。物理夹爪MAE=3.292596/4.555578，臂MAE=3.194060/4.064688（B1约高27.26%）。本轮固定位置阈值门控不保留，不泛化成所有门控无效。
+- Dev门控激活50.92%，非恒开/恒关；B1关门/全开反事实主误差约0.445554/0.267505，均差于正常门控，说明模型依赖门控模式但不证明真接触/力控。5090 batch1纯policy中位延迟B0=9.565ms/B1=10.061ms，参数均74955847。
+- 结果ZIP已重新下载并SHA256/CRC校验、安全提取到本轮result，旧预检保留在pretraining_delivery_archive；逐集图已查看。全部10个checkpoint及原始日志/中间证据仍在服务器。result/summary.md与index1/F2_2_result.zip可交规划方；独立Builder/Red-Team待进行，Final仍封存，无额外seed/训练、真机或F2.3。
+
+## 2026-10-19：F2.2 合同内无人值守收尾已部署
+
+- 用户明确授权F2.2训练→Dev12→机制→成本→审计/图表/result全链路无人值守，严格不改科研变量。原B0/B1 screen继续，未重启、未改配置；22:56快照约15500/15100步，loss/grad日志有限。
+- 新增独立F22_AUTOFINISH screen，在/root/autodl-tmp/F2_2_r0_20261019等待两组exit0及100k完成；源码/合同/gate/normalization/split/prototype均hash核验，已运行模型不动。缺失且从未开始的正式variant才允许补启动；已有失败训练不自动重跑或延长预算。
+- 自动收尾：复核5个固定checkpoint及主指标选点；严格加载所选B0/B1，Dev5748帧逐episode主/物理夹爪/臂误差、gate-off/on、编码特征零与归一化输入零分开保存；gate活动/时间线/位置-命令分桶；空闲GPU成本；health/config-diff/leakage/8图/CRC结果包。原始日志/全部checkpoint/中间证据留存。
+- 后处理真实GPU smoke通过（仅smoke权重，不作科学结果）；6项本地测试含合成临时数据全流程报告/8图/ZIP测试通过。最终图仍需外部视觉审阅，不将测试fixture或训练并发时smoke延迟当正式结果。报告解释rubric于选中模型结果前记录，不修改冻结训练/选点/主指标。
+- 服务器状态：autofinish_state.json；最终READY.json与F2_2_result.zip，delivery/为完整result。失败写独立错误日志及proposal，停止而不自行改gate/预算等。完成后READY_STOPPED，等待用户/规划方Builder及Red-Team，不进入F2.3。
+- 本地隐藏接收进程已启动（24h窗口，45s重连，凭证仅继承环境不入文件）：自动下载校验ZIP并提取到本轮result，旧预检归档到index1/pretraining_delivery_archive；本地断网/关机不影响服务器。接收状态见result/AUTO_DELIVERY_STATE.json和outputs/f2_2_receiver.log。当前仍RUNNING，不能提前报告DONE/READY。
+
+## 2026-10-19：F2.2 单帧load接触相关门控对照已启动
+
+- 按新decision只做B0 always-on/B1 encoded-load-feature gate，两组保留P1 OC-ACT视觉/原型结构、6D位置；不加入current/W15/残差控制。G1规则由Train36位置q10/q90中点冻结：gripper.pos[t]≤44.14600563激活，无load/命令/未来输入；仅抓持范围启发式，不是真接触检测。
+- Train激活51.10%、Dev50.92%，逐集均未退化（≤5%或≥95%）；先冻结后Dev活动审计，不看Dev策略表现调阈值。两组全权重初始hash一致、参数74955847；真实GPU开门等价/关门load不变性、梯度、更新与strict reload通过，本地2项测试通过。
+- westE:53289 RTX5090，独立/root/autodl-tmp/F2_2_r0_20261019，22:40启动F22_B0/F22_B1 screen；同seed1 fresh初始化，各100k/batch4/每20k保存及自动Dev评估，沿用F2.1主指标选点。原F2.1不覆盖，无自动重试。
+- RUNNING/F2_2_COMPLETE=false/UNRESOLVED；result/summary.md及gate_config/protocol/gpu_smoke/活动审计已写。训练完成后补指标/机制/成本/完整result并交外部审查；Final仍封存，不改部署/真机，不push或自动进入F2.3。
+
+## 2026-10-19：F2.1 r1三组完成，单帧load更合适
+
+- A0重试/A1/A2各100000步，退出码均0，每组五个固定checkpoint的Dev评估完整。按既定主指标选择A0=80k/A1=60k/A2=40k；归一化h0夹爪L1为0.150319/0.126390/0.130601。
+- A1比A0主误差低15.92%，10/12 episode改善，臂MAE低14.88%；A2比A1主误差高3.33%，仅5/12改善，臂MAE高34.84%。本轮SINGLE_FRAME_LOAD_SUFFICIENT，SINGLE_SEED_EXPLORATORY；不是力控或真机成功证明，不自动进入F2.2。
+- 所选checkpoint严格加载、normalization一致及有限输出通过；5090 batch1纯模型中位延迟约9.8–9.9ms，稳态分配显存约0.35GiB，首模型warmup含约2.44GiB autotune峰值，4060/端到端未测。M1/M2已覆盖5748 Dev帧，说明load分支影响动作，不证明历史顺序/真实接触因果。
+- 工程PASS/F2_1_COMPLETE=true；Builder自检与Red-Team输入已写，规划方独立验收仍待。报告result/summary.md，紧凑包F2_1_r1_result_20261019.zip。15份评估逐episode加权/选点复算、3003条日志有限值、4项pytest/语法/diff/ZIP CRC通过；图表已检查。
+- A0原始非有限梯度故障未定因，同seed一次用户授权重试成功，原失败和诊断证据保留并披露。模型仍在远程，未上传HF/下载权重或push；数据Final12仍封存，无机器人/部署改动、新采或下一轮启动。下一步先验收并优先保留A1，不后验更换窗口/指标救A2。
+
+## 2026-10-19：用户要求A0恢复并行，同配置从0重试一次
+
+- 有界诊断完成15000步/1315秒，NOT_REPRODUCED_WITHIN_FIXED_BUDGET，原故障根因仍未确定，不能说已修复。诊断模型不进入正式对照。
+- 用户要求A0与A1/A2一起训练；19:45启动F21_A0_RETRY1，从0重训100k，seed1、LR/clip/数据/保存/选择规则均不变。公共初始化hash再次核验相同，未关闭error_if_nonfinite。新目录/root/autodl-tmp/F2_1_r1_20261019/results_A0_retry1/A0，原results/A0失败目录保留，active_runs.json明确映射。
+- 实际快照A0重试100步、A1=42000/A2=42100，三screen正常、GPU100%/9830MiB，无当前退出码。仅增加故障捕获，不改变训练数学；若再次失败保存batch/权重/optimizer/RNG并停止，不自动反复重启。当前RUNNING/F2_1_COMPLETE=false/科学UNRESOLVED，失败/重试历史公开记录，不从多次尝试中挑最佳。
+
+## 2026-10-19：A0有界诊断重放已启动，原训练不重启
+
+- 用户同意先诊断。独立screen F21_DIAG_A0最多15000步/1800秒，仅复现并捕获故障，不进科学模型比较；原坏权重未保存，不能声称精确还原原失败步。初始公共hash相同，观测3000步未失败。
+- 合成GPU算子测试确认“梯度元素有限但FP32范数溢出”可报同类错误，仅作为区分探针，不定因A0。待区分FP32归约、CVAE、attention/backward与输入异常。skill diagnose流程作为方法参考，通用issue配置未建立，本轮不改AGENTS/外部issue。
+- F21_DIAG_ANALYZE在故障捕获后自动做3次同权重/batch/RNG重放，写远程diagnosis_A0_summary.json；预算内不复现就明确未复现。详细见result/diagnosis_A0_progress.md。正式A0不重启/改参，A1/A2继续；无Final/新采/机器人/push。
+
+## 2026-10-19：远程清理完成；发现A0非有限梯度退出
+
+- 按用户授权清理历史中间training_state及已明确作废的T0/P1_s1权重，98个唯一目标约37.58GiB；数据盘df可用由约28G升至65G（实际约64.17GiB）。保留所有有效模型权重、100k恢复状态、P_hist、数据、代码、报告和当前F2.1所有文件。另pip cache purge移除285项缓存，系统盘约458MiB；Torch/DINO缓存保留。
+- 清单/实际删除报告在outputs/server_cleanup_20261019及远程/root/autodl-tmp/cleanup_20261019。直接删除、无回收站；中间优化器状态无外部备份不可原样恢复。首次计划last别名被安全断言阻止（未删）；第二次清理末尾无效模型别名重复报错，之后核验全部唯一目标均已删除，不扩大范围。
+- 清理前发现A0在19:05因non-finite gradient退出，最后日志14200步，精确失败步未知；并非磁盘不足。故障log已复制，未重启/改参。清理后A1/A2仍正常screen，快照21600/21700步，GPU99%。当前PARTIAL_TRAINING_FAILURE、F2_1_COMPLETE=false、UNRESOLVED；详细见result/training_failure_A0.md，下一步应先诊断A0，不据两组早期loss作科学结论。
+
+## 2026-10-19：F2.1 r1三组正式screen并行训练中
+
+- 新服务器connect.weste.seetacloud.com:53289，RTX5090/32607MiB；独立目录/root/autodl-tmp/F2_1_r1_20261019，不覆盖远程旧dirty工作区。源数据parquet SHA256与本地一致、prototype哈希符合历史冻结；运行源代码及输入哈希已记录runtime_snapshot.json。
+- A0/A1/A2真实batch4/chunk100 forward/backward、非零load梯度、optimizer更新、6D VAE、current额外键不影响输出、strict reload及Dev metrics/horizon/M1/M2入口通过；三组公共初始化哈希完全一致，无P_hist warmstart。历史P_hist完整Dev5748帧主指标0.05930956003复现原0.05930798156（差1.58e-6<1e-4）。
+- 18:43（服务器显示，UTC+8）启动F21_A0/F21_A1/F21_A2，均100k/batch4/seed1/每20k保存并自动Dev评估、按主指标选择。启动快照各300步，loss有限，无退出码，GPU99%/显存9822MiB。纯训练观测约2.8h，加评估暂估3–4h；非保证时长。
+- 实现仅ACTConfig新增默认关闭load_history_steps与小MLP/token（共27行源码新增），新runner显式干净6D+独立load输入。参数A0=74938375/A1=74955847/A2=74956295，A2比A1多448；正式延迟/4060显存验收待完成，smoke耗时不是延迟。
+- result/summary.md、training_manifest.csv、gpu_smoke.json、historical_metric_reproduction.json及runtime_snapshot.json已交；RUNNING/F2_1_COMPLETE=false/科学UNRESOLVED。r0/r1准备旧报告保留。无Final样本、新采、机器人/部署参数改动或push；训练/评估后台不依赖Codex触发，不自动进入F2.2。
+
+## 2026-10-19：F2.1 r1数据/配置准备通过，等待可用GPU服务器
+
+- r1明确纯6D三组，r0预检原件归档result/r0_preflight；历史8D P1仅P_hist，禁止warmstart。Train36/Dev12=17243/5748帧已过滤准备独立缓存，真实6D位置、独立load_t/W15、无current/master；统计仅Train，首帧左填充不跨集。
+- 4项定向pytest通过；G0既有P_hist归一化h0夹爪L1缓存聚合复现0.05930798156，完整模型forward门仍待GPU。variant_configs固定三组100k/batch4/seed1/20k保存，同主指标选checkpoint，小MLP单token融合规格已记录，尚无模型实现/训练。
+- 最后已知westb:27435连接被拒绝，GPU状态未知。当前PARTIAL_PASS、F2_1_COMPLETE=false、UNRESOLVED，阻点REMOTE_GPU_UNAVAILABLE；请提供当前SSH，之后完成模型/共享初始化与真实batch GPU smoke再并行screen训练。未读Final样本、未操作机器人/部署或push。
+
+## 2026-10-19：F2.1 预检发现原P1已包含load/current，暂停待澄清
+
+- 新合同F2_1_LOAD_TEMPORAL_ENCODING_ABLATION r0已读取；固定HF P1 revision 33a605feb8c29dab284c3aa38740df11d2ae7835并取得config/train_config/preprocessor/postprocessor。Formal4 nomaster及P1 state为8D，末两列gripper.load/gripper.curr，归一化器不屏蔽，ACT状态与VAE投影接受整个state。
+- “A0保持原P1”与“无load/单帧/W15且current排除”的语义待明确：保留8D会使A0已有load/current；移除或屏蔽则改变基线，不能静默执行。当前BLOCKED_INPUT_SEMANTICS、F2_1_COMPLETE=false、UNRESOLVED，未改模型或启动训练。
+- result见experiments/force/f2_1_load_temporal_encoding_ablation/index1/result/summary.md及proposal.md；建议修订为6D位置共用输入的干净三组（A0需匹配训练），或明确接受8D基线上额外分支的问题。完整权重strict reload尚未验证，既有G0/D2夹爪scalar指标可复用但须先固定协议。Final只查split元数据，不读样本。
+
+## 2026-10-18：F1RM 已完成，残余混杂未排除
+
+- 用户交回f1rm_teleop_load_retrospective_match/contact_annotations.csv，15区间/10试次审核人kg；原样保存并冻结SHA256。带杯ep001后59帧UNKNOWN保留，未凑CONTACT；reason均为“1”，视觉依据文字不足如实列为限制。
+- 主0.75全局1:1无放回匹配136对，接触池283帧，逐带杯试次对数[61,0,35,19,21]，4试次各≥10对且总≥40，覆盖PASS；因此按配置不运行1.00敏感性。
+- 匹配后SMD=[+0.461,+0.228,+0.470,+0.097]，3/4超0.20，平衡FAIL。load差描述均值+14.62、4簇bootstrap95%CI[+11.20,+16.89]，不覆盖残余混杂；接触起点前后3/4正向、ep000反向，不能升级为接触因果证据。
+- 工程OVERALL_STATUS=PASS、F1RM_COMPLETE=true；科学UNRESOLVED_RESIDUAL_CONFOUND、EXPLORATORY_ONLY。完整报告见experiments/force/f1rm_teleop_load_retrospective_match/index1/result/summary.md，紧凑包F1RM_result_20261018.zip。
+- 7项pytest、独立原始数据复算全部136对/标准化/四个SMD、语法、diff及ZIP CRC通过。下一步交规划方Builder/Red-Team验收，讨论小型受控确认的新合同；本轮不再改阈值/标签，不直接训练Force或调节器。无新采、机器人/部署、原Dev/Final或push。
+
+## 2026-10-18：F1RM 离线标注包已复制
+
+- 独立文件夹：outputs/F1RM_标注包_20261018，约20.18MiB；含离线review.html、10段双视角视频、结果CSV表头、片段清单及简短README。复制文件逐项SHA256一致，独立目录下9项实际浏览器检查通过，未改原始标签。
+- 双击review.html即可标注，无需安装/联网；浏览器草稿不等于磁盘保存，完成后须导出contact_annotations.csv并交回。当前仍等待独立RGB标注，不改变F1RM科研结论。
+
+## 2026-10-16：F1RM 回顾性匹配已启动，等待独立 RGB 区间审核
+
+- 按 decision_F1RM_TELEOP_LOAD_RETROSPECTIVE_MATCH.md r0 新建 result，不覆盖 F1R。重新核验 Formal5 空夹/带杯各5段、1500帧原始信号；两相机3000帧解码，10段双视角审核视频各150帧/30FPS验证通过。
+- matching_config.json 已固定四变量、历史命令、全局1:1无放回遍历顺序、0.75主阈值及覆盖不足才运行的1.00敏感性；尚未拟合scaler或查看load/current效应。
+- 独立接触边界尚缺，旧F1R占位表不可复用。审核入口 experiments/force/f1rm_teleop_load_retrospective_match/index1/result/review.html；每段5秒，标空夹闭合及带杯PRECONTACT/CONTACT，不确定排除。草稿在浏览器，需导出CSV放回该result；不自动覆盖磁盘。
+- 当前PARTIAL_PASS、F1RM_COMPLETE=false、UNRESOLVED_PENDING_INDEPENDENT_CONTACT_LABELS。仅交阶段进度，不冒充完整匹配结果；没有训练、重采、部署/机器人操作、原Dev/Final内容读取或push。
+
+## 2026-10-16：F1R手动预实验result已交付，正式协议未满足
+
+- 用户已明确此次闭合由主臂手动控制。kind1空夹、kind2带杯，各5段×150帧的原始数据保留为手动预实验，不冒充同一冻结程序的正式重复。
+- 实际命令起始/速度/终点不一；正式固定程序门未建立。F1R result已补summary/validation/protocol观察附注、trial_validity、contact_annotations、metrics及per_trial_metrics、raw位置和证据清单；未测效应/接触边界记NOT_EVALUATED，不填0或伪造合格结论。
+- OVERALL_STATUS=PARTIAL_PASS、F1R_COMPLETE=false、SCIENTIFIC_OUTCOME=UNRESOLVED。结果包F1R_result_20261016.zip约0.65MB，含命令对比及局部RGB预览，不含重复完整视频/数组；原始HF snapshot与canonical raw不删。
+- 本次只按用户要求输出result，无新动作脚本、重采、机器人指令、训练或push。下一步先验收，受控采集程序与安全范围待另行确认。
+
+## 2026-10-16：F1R Formal5数据已接收，程序等价性待核实
+
+- 后续用户明确映射kind1=FREE_CLOSE、kind2=CUP_CONTACT，已写condition_mapping及trial_manifest；两组ep0各4帧双视角预览与有/无杯一致，非全视频精审。映射问题已解决，当前只待闭合控制方式/采集脚本与协议等价性核实，不重复询问映射。
+
+- 用户提供HF formal5_kind1/kind2，已固定revision并下载到数据集/formal5，各5集×150帧，合计1500帧、nominal30FPS；9D原始state/6D action、双RGB、pos/load/curr存在，原始数据未合并/删列。
+- 命令预检发现十条夹爪目标曲线在起始时刻/形状/终点上不同；kind1终点约11.79–18.33，kind2约16.12–23.27，不能直接宣称同一冻结程序。图见F1R result/figures/recorded_command_equivalence.png。
+- 等待用户明确kind1/kind2空夹/带杯映射及采集命令/脚本（主臂手动或自动固定程序）。尚未分析load效应、独立视频接触标签或正式判trial有效；F1R_COMPLETE=false、UNRESOLVED。不得事后冻结协议、拉伸时间冒充受控程序，也不自动要求重采或发送运动。
+
 ## 2026-10-15：F1R 受控真机反馈实验准备，等待设备与安全信息
 
 - 用户要求参考旧采集指南并推送项目：已将F1R从臂连接填为so101_follower、/dev/ttyACM0、id=nn，历史leader=/dev/ttyACM1/id=nn仅参考、不参与正式试验。来源为docc/指南/lerobot_annotation_implementation_guide.md；设备实时校验和安全闭合参数仍未完成，不因此解锁运动。

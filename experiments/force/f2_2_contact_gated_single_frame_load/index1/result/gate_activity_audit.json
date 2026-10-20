@@ -1,0 +1,17 @@
+{
+  "gate_sha256": "a5fc86787970af3f9e8587bdb7178a9e2db3f81a722c7db39047e4bd8270a0a9",
+  "frozen_before_dev_audit": true,
+  "final_samples_read": 0,
+  "activity": {
+    "train": {
+      "fraction": 0.5110479614916198,
+      "global_degenerate": false,
+      "degenerate_episodes": []
+    },
+    "dev": {
+      "fraction": 0.5092205984690327,
+      "global_degenerate": false,
+      "degenerate_episodes": []
+    }
+  }
+}

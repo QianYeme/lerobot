@@ -1,0 +1,344 @@
+{
+  "C0": {
+    "parent": "F2.1-r1 A1",
+    "step": 60000,
+    "primary": 0.12639014509042482,
+    "checkpoint": "/root/autodl-tmp/F2_1_r1_20261019/results/A1/checkpoints/060000/pretrained_model",
+    "model_sha256": "27c90813d3e2bba4c9aeba0bd21f41525893eb823e5011f6ced368dd1a7c7a89",
+    "config": {
+      "type": "act",
+      "n_obs_steps": 1,
+      "input_features": {
+        "observation.state": {
+          "type": "STATE",
+          "shape": [
+            6
+          ]
+        },
+        "observation.images.gripper": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        },
+        "observation.images.top": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        }
+      },
+      "output_features": {
+        "action": {
+          "type": "ACTION",
+          "shape": [
+            6
+          ]
+        }
+      },
+      "device": "cuda",
+      "use_amp": false,
+      "use_peft": false,
+      "push_to_hub": false,
+      "repo_id": null,
+      "private": null,
+      "tags": null,
+      "license": null,
+      "pretrained_path": null,
+      "chunk_size": 100,
+      "n_action_steps": 1,
+      "normalization_mapping": {
+        "VISUAL": "MEAN_STD",
+        "STATE": "MEAN_STD",
+        "ACTION": "MEAN_STD"
+      },
+      "vision_backbone": "resnet18",
+      "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1",
+      "replace_final_stride_with_dilation": false,
+      "pre_norm": false,
+      "dim_model": 512,
+      "n_heads": 8,
+      "dim_feedforward": 3200,
+      "feedforward_activation": "relu",
+      "n_encoder_layers": 4,
+      "n_decoder_layers": 1,
+      "use_vae": true,
+      "latent_dim": 32,
+      "n_vae_encoder_layers": 4,
+      "temporal_ensemble_coeff": null,
+      "dropout": 0.1,
+      "kl_weight": 10.0,
+      "gripper_loss_weight": 3.0,
+      "load_history_steps": 1,
+      "model_type": "oc_act",
+      "object_conditioning_enabled": true,
+      "object_conditioning_top_camera_key": "observation.images.top",
+      "object_conditioning_dino_model": "dinov2_vits14",
+      "object_conditioning_dino_frozen": true,
+      "object_conditioning_prototype_path": "/root/autodl-tmp/F2_1_r1_20261019/inputs/cup_prototype_bank_v1.pt",
+      "object_conditioning_num_prototypes": 4,
+      "object_conditioning_num_object_tokens": 5,
+      "object_conditioning_adapter_dim": 256,
+      "object_conditioning_gate_init": 0.0,
+      "object_conditioning_temperature": 0.2,
+      "object_conditioning_smoke_mode": false,
+      "explicit_spatial_conditioning": false,
+      "explicit_spatial_dim": 128,
+      "explicit_spatial_beta_init": 0.01,
+      "explicit_spatial_fixed_scale": 0.0,
+      "joint_state_spatial_conditioning": false,
+      "joint_state_spatial_dim": 128,
+      "action_level_spatial_conditioning": false,
+      "relational_state_spatial_conditioning": false,
+      "spatial_film_conditioning": false,
+      "n0_spatial_dim": 128,
+      "optimizer_lr": 1e-05,
+      "optimizer_weight_decay": 0.0001,
+      "optimizer_lr_backbone": 0.0001
+    },
+    "training_config": {
+      "steps": 100000,
+      "seed": 1,
+      "batch_size": 4,
+      "checkpoint_every": 20000,
+      "origin": "F2.1-r1; A0 once authorized retry disclosed",
+      "split": {
+        "train": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          13,
+          14,
+          17,
+          18,
+          19,
+          22,
+          23,
+          24,
+          25,
+          26,
+          29,
+          30,
+          32,
+          34,
+          35,
+          36,
+          38,
+          40,
+          42,
+          43,
+          45,
+          48,
+          49,
+          50,
+          51,
+          54,
+          55,
+          56,
+          57
+        ],
+        "dev": [
+          3,
+          5,
+          12,
+          15,
+          21,
+          28,
+          33,
+          39,
+          41,
+          47,
+          53,
+          58
+        ],
+        "final_count": 12,
+        "final_sealed": true,
+        "source": "experiments\\data\\d1_training_readiness\\index1\\result\\split_manifest_v1.json",
+        "sha256": "bc1ae31b7acba2beb28d0a070f4bfcb3fec9881225ad04bdc09695f1b6119f58"
+      }
+    },
+    "parameters": 74955847,
+    "reproduced_primary": 0.12639093399047852
+  },
+  "C1_global": {
+    "parent": "F2.1-r1 A0 retry1",
+    "step": 80000,
+    "primary": 0.1503186063577208,
+    "checkpoint": "/root/autodl-tmp/F2_1_r1_20261019/results_A0_retry1/A0/checkpoints/080000/pretrained_model",
+    "model_sha256": "65be80d1a70c178cffd29b8efed8ab08d923a79013eb56bdaa3475e69679fdcf",
+    "historical_caveat": "original A0 numerical failure and one authorized retry disclosed in F2.1",
+    "config": {
+      "type": "act",
+      "n_obs_steps": 1,
+      "input_features": {
+        "observation.state": {
+          "type": "STATE",
+          "shape": [
+            6
+          ]
+        },
+        "observation.images.gripper": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        },
+        "observation.images.top": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        }
+      },
+      "output_features": {
+        "action": {
+          "type": "ACTION",
+          "shape": [
+            6
+          ]
+        }
+      },
+      "device": "cuda",
+      "use_amp": false,
+      "use_peft": false,
+      "push_to_hub": false,
+      "repo_id": null,
+      "private": null,
+      "tags": null,
+      "license": null,
+      "pretrained_path": null,
+      "chunk_size": 100,
+      "n_action_steps": 1,
+      "normalization_mapping": {
+        "VISUAL": "MEAN_STD",
+        "STATE": "MEAN_STD",
+        "ACTION": "MEAN_STD"
+      },
+      "vision_backbone": "resnet18",
+      "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1",
+      "replace_final_stride_with_dilation": false,
+      "pre_norm": false,
+      "dim_model": 512,
+      "n_heads": 8,
+      "dim_feedforward": 3200,
+      "feedforward_activation": "relu",
+      "n_encoder_layers": 4,
+      "n_decoder_layers": 1,
+      "use_vae": true,
+      "latent_dim": 32,
+      "n_vae_encoder_layers": 4,
+      "temporal_ensemble_coeff": null,
+      "dropout": 0.1,
+      "kl_weight": 10.0,
+      "gripper_loss_weight": 3.0,
+      "load_history_steps": 0,
+      "model_type": "oc_act",
+      "object_conditioning_enabled": true,
+      "object_conditioning_top_camera_key": "observation.images.top",
+      "object_conditioning_dino_model": "dinov2_vits14",
+      "object_conditioning_dino_frozen": true,
+      "object_conditioning_prototype_path": "/root/autodl-tmp/F2_1_r1_20261019/inputs/cup_prototype_bank_v1.pt",
+      "object_conditioning_num_prototypes": 4,
+      "object_conditioning_num_object_tokens": 5,
+      "object_conditioning_adapter_dim": 256,
+      "object_conditioning_gate_init": 0.0,
+      "object_conditioning_temperature": 0.2,
+      "object_conditioning_smoke_mode": false,
+      "explicit_spatial_conditioning": false,
+      "explicit_spatial_dim": 128,
+      "explicit_spatial_beta_init": 0.01,
+      "explicit_spatial_fixed_scale": 0.0,
+      "joint_state_spatial_conditioning": false,
+      "joint_state_spatial_dim": 128,
+      "action_level_spatial_conditioning": false,
+      "relational_state_spatial_conditioning": false,
+      "spatial_film_conditioning": false,
+      "n0_spatial_dim": 128,
+      "optimizer_lr": 1e-05,
+      "optimizer_weight_decay": 0.0001,
+      "optimizer_lr_backbone": 0.0001
+    },
+    "training_config": {
+      "steps": 100000,
+      "seed": 1,
+      "batch_size": 4,
+      "checkpoint_every": 20000,
+      "origin": "F2.1-r1; A0 once authorized retry disclosed",
+      "split": {
+        "train": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          13,
+          14,
+          17,
+          18,
+          19,
+          22,
+          23,
+          24,
+          25,
+          26,
+          29,
+          30,
+          32,
+          34,
+          35,
+          36,
+          38,
+          40,
+          42,
+          43,
+          45,
+          48,
+          49,
+          50,
+          51,
+          54,
+          55,
+          56,
+          57
+        ],
+        "dev": [
+          3,
+          5,
+          12,
+          15,
+          21,
+          28,
+          33,
+          39,
+          41,
+          47,
+          53,
+          58
+        ],
+        "final_count": 12,
+        "final_sealed": true,
+        "source": "experiments\\data\\d1_training_readiness\\index1\\result\\split_manifest_v1.json",
+        "sha256": "bc1ae31b7acba2beb28d0a070f4bfcb3fec9881225ad04bdc09695f1b6119f58"
+      }
+    },
+    "parameters": 74938375,
+    "reproduced_primary": 0.15031994879245758
+  },
+  "git_HEAD": "a023f783ae752aee740e7beada6d4290a56033d3",
+  "C0_retraining": false,
+  "C1_global_frozen": true
+}

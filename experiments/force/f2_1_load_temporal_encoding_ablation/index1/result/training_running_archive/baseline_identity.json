@@ -1,0 +1,397 @@
+{
+  "active_revision": "r1",
+  "record_role": "P_hist contextual reference ONLY, not A0",
+  "r1_A0_identity": {
+    "config": "variant_configs/A0.json",
+    "shared_hash": "a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5",
+    "parameters": 74938375,
+    "strict_reload": "PASS_REAL_BATCH_GPU",
+    "initialized_without_P_hist": true,
+    "checkpoint": "training not finished"
+  },
+  "hf_repo": "QYyyyyyyy/G1_P1_OCACT_100k",
+  "hf_revision": "33a605feb8c29dab284c3aa38740df11d2ae7835",
+  "metadata_files": {
+    "config.json": {
+      "url": "https://huggingface.co/QYyyyyyyy/G1_P1_OCACT_100k/resolve/33a605feb8c29dab284c3aa38740df11d2ae7835/config.json",
+      "sha256": "57b99c9bc18257c6795f724f19d81cf60e0e529f19acca956ab69b2b3d6a6e6b"
+    },
+    "train_config.json": {
+      "url": "https://huggingface.co/QYyyyyyyy/G1_P1_OCACT_100k/resolve/33a605feb8c29dab284c3aa38740df11d2ae7835/train_config.json",
+      "sha256": "2776f442321c16b2f9fdf8f0673588d436b9bf05a9adc51752f872d71a9206c1"
+    },
+    "policy_preprocessor.json": {
+      "url": "https://huggingface.co/QYyyyyyyy/G1_P1_OCACT_100k/resolve/33a605feb8c29dab284c3aa38740df11d2ae7835/policy_preprocessor.json",
+      "sha256": "8d8d414c21a2d568852a556853936fb523331f057e1de58fd74aaa30e3ec33c9"
+    },
+    "policy_postprocessor.json": {
+      "url": "https://huggingface.co/QYyyyyyyy/G1_P1_OCACT_100k/resolve/33a605feb8c29dab284c3aa38740df11d2ae7835/policy_postprocessor.json",
+      "sha256": "648b415125a183dfd6cbc47c1dc04ab3f2d912654ef22a12ca5e8b93d7d85cdd"
+    }
+  },
+  "fetch_errors": {},
+  "local_git_head": "a023f783ae752aee740e7beada6d4290a56033d3",
+  "checkpoint_reference": "results/experiments/T0_POSITION_DISCOVERY_ACT_VS_OCACT/P1_ocfix2_s1/checkpoints/100000/pretrained_model",
+  "dataset_state_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos",
+    "gripper.load",
+    "gripper.curr"
+  ],
+  "dataset_metadata_sha256": "10377052a27d1d5e6547d95c043ab6c71924895cd564d421130f11ecb38003e6",
+  "split_sha256": "bc1ae31b7acba2beb28d0a070f4bfcb3fec9881225ad04bdc09695f1b6119f58",
+  "split_counts": {
+    "train": 36,
+    "dev": 12,
+    "final_test": 12
+  },
+  "final_sample_contents_read": false,
+  "checkpoint_config": {
+    "type": "act",
+    "n_obs_steps": 1,
+    "input_features": {
+      "observation.state": {
+        "type": "STATE",
+        "shape": [
+          8
+        ]
+      },
+      "observation.images.gripper": {
+        "type": "VISUAL",
+        "shape": [
+          3,
+          480,
+          640
+        ]
+      },
+      "observation.images.top": {
+        "type": "VISUAL",
+        "shape": [
+          3,
+          480,
+          640
+        ]
+      }
+    },
+    "output_features": {
+      "action": {
+        "type": "ACTION",
+        "shape": [
+          6
+        ]
+      }
+    },
+    "device": "cuda",
+    "use_amp": false,
+    "use_peft": false,
+    "push_to_hub": false,
+    "repo_id": null,
+    "private": null,
+    "tags": null,
+    "license": null,
+    "pretrained_path": null,
+    "chunk_size": 100,
+    "n_action_steps": 1,
+    "normalization_mapping": {
+      "VISUAL": "MEAN_STD",
+      "STATE": "MEAN_STD",
+      "ACTION": "MEAN_STD"
+    },
+    "vision_backbone": "resnet18",
+    "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1",
+    "replace_final_stride_with_dilation": false,
+    "pre_norm": false,
+    "dim_model": 512,
+    "n_heads": 8,
+    "dim_feedforward": 3200,
+    "feedforward_activation": "relu",
+    "n_encoder_layers": 4,
+    "n_decoder_layers": 1,
+    "use_vae": true,
+    "latent_dim": 32,
+    "n_vae_encoder_layers": 4,
+    "temporal_ensemble_coeff": null,
+    "dropout": 0.1,
+    "kl_weight": 10.0,
+    "gripper_loss_weight": 3.0,
+    "model_type": "oc_act",
+    "object_conditioning_enabled": true,
+    "object_conditioning_top_camera_key": "observation.images.top",
+    "object_conditioning_dino_model": "dinov2_vits14",
+    "object_conditioning_dino_frozen": true,
+    "object_conditioning_prototype_path": "experiments/position/p0_prototype_calibration/index1/result/cup_prototype_bank_v1.pt",
+    "object_conditioning_num_prototypes": 4,
+    "object_conditioning_num_object_tokens": 5,
+    "object_conditioning_adapter_dim": 256,
+    "object_conditioning_gate_init": 0.0,
+    "object_conditioning_temperature": 0.2,
+    "object_conditioning_smoke_mode": false,
+    "optimizer_lr": 1e-05,
+    "optimizer_weight_decay": 0.0001,
+    "optimizer_lr_backbone": 0.0001
+  },
+  "baseline_training_config": {
+    "dataset": {
+      "repo_id": "formal4/kind_merged_nomaster",
+      "root": "formal4_data/kind_merged_nomaster",
+      "episodes": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        9,
+        10,
+        13,
+        14,
+        17,
+        18,
+        19,
+        22,
+        23,
+        24,
+        25,
+        26,
+        29,
+        30,
+        32,
+        34,
+        35,
+        36,
+        38,
+        40,
+        42,
+        43,
+        45,
+        48,
+        49,
+        50,
+        51,
+        54,
+        55,
+        56,
+        57
+      ],
+      "image_transforms": {
+        "enable": false,
+        "max_num_transforms": 3,
+        "random_order": false,
+        "tfs": {
+          "brightness": {
+            "weight": 1.0,
+            "type": "ColorJitter",
+            "kwargs": {
+              "brightness": [
+                0.8,
+                1.2
+              ]
+            }
+          },
+          "contrast": {
+            "weight": 1.0,
+            "type": "ColorJitter",
+            "kwargs": {
+              "contrast": [
+                0.8,
+                1.2
+              ]
+            }
+          },
+          "saturation": {
+            "weight": 1.0,
+            "type": "ColorJitter",
+            "kwargs": {
+              "saturation": [
+                0.5,
+                1.5
+              ]
+            }
+          },
+          "hue": {
+            "weight": 1.0,
+            "type": "ColorJitter",
+            "kwargs": {
+              "hue": [
+                -0.05,
+                0.05
+              ]
+            }
+          },
+          "sharpness": {
+            "weight": 1.0,
+            "type": "SharpnessJitter",
+            "kwargs": {
+              "sharpness": [
+                0.5,
+                1.5
+              ]
+            }
+          },
+          "affine": {
+            "weight": 1.0,
+            "type": "RandomAffine",
+            "kwargs": {
+              "degrees": [
+                -5.0,
+                5.0
+              ],
+              "translate": [
+                0.05,
+                0.05
+              ]
+            }
+          }
+        }
+      },
+      "revision": null,
+      "use_imagenet_stats": true,
+      "video_backend": "pyav",
+      "streaming": false
+    },
+    "env": null,
+    "policy": {
+      "type": "act",
+      "n_obs_steps": 1,
+      "input_features": {
+        "observation.state": {
+          "type": "STATE",
+          "shape": [
+            8
+          ]
+        },
+        "observation.images.gripper": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        },
+        "observation.images.top": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            480,
+            640
+          ]
+        }
+      },
+      "output_features": {
+        "action": {
+          "type": "ACTION",
+          "shape": [
+            6
+          ]
+        }
+      },
+      "device": "cuda",
+      "use_amp": false,
+      "use_peft": false,
+      "push_to_hub": false,
+      "repo_id": null,
+      "private": null,
+      "tags": null,
+      "license": null,
+      "pretrained_path": null,
+      "chunk_size": 100,
+      "n_action_steps": 1,
+      "normalization_mapping": {
+        "VISUAL": "MEAN_STD",
+        "STATE": "MEAN_STD",
+        "ACTION": "MEAN_STD"
+      },
+      "vision_backbone": "resnet18",
+      "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1",
+      "replace_final_stride_with_dilation": false,
+      "pre_norm": false,
+      "dim_model": 512,
+      "n_heads": 8,
+      "dim_feedforward": 3200,
+      "feedforward_activation": "relu",
+      "n_encoder_layers": 4,
+      "n_decoder_layers": 1,
+      "use_vae": true,
+      "latent_dim": 32,
+      "n_vae_encoder_layers": 4,
+      "temporal_ensemble_coeff": null,
+      "dropout": 0.1,
+      "kl_weight": 10.0,
+      "gripper_loss_weight": 3.0,
+      "model_type": "oc_act",
+      "object_conditioning_enabled": true,
+      "object_conditioning_top_camera_key": "observation.images.top",
+      "object_conditioning_dino_model": "dinov2_vits14",
+      "object_conditioning_dino_frozen": true,
+      "object_conditioning_prototype_path": "experiments/position/p0_prototype_calibration/index1/result/cup_prototype_bank_v1.pt",
+      "object_conditioning_num_prototypes": 4,
+      "object_conditioning_num_object_tokens": 5,
+      "object_conditioning_adapter_dim": 256,
+      "object_conditioning_gate_init": 0.0,
+      "object_conditioning_temperature": 0.2,
+      "object_conditioning_smoke_mode": false,
+      "optimizer_lr": 1e-05,
+      "optimizer_weight_decay": 0.0001,
+      "optimizer_lr_backbone": 0.0001
+    },
+    "output_dir": "results/experiments/T0_POSITION_DISCOVERY_ACT_VS_OCACT/P1_ocfix2_s1",
+    "job_name": "act",
+    "resume": false,
+    "seed": 1,
+    "cudnn_deterministic": false,
+    "num_workers": 4,
+    "batch_size": 4,
+    "steps": 100000,
+    "eval_freq": 0,
+    "log_freq": 100,
+    "tolerance_s": 0.0001,
+    "save_checkpoint": true,
+    "save_freq": 20000,
+    "use_policy_training_preset": true,
+    "optimizer": {
+      "type": "adamw",
+      "lr": 1e-05,
+      "weight_decay": 0.0001,
+      "grad_clip_norm": 10.0,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08
+    },
+    "scheduler": null,
+    "eval": {
+      "n_episodes": 50,
+      "batch_size": 50,
+      "use_async_envs": false
+    },
+    "wandb": {
+      "enable": false,
+      "disable_artifact": false,
+      "project": "lerobot",
+      "entity": null,
+      "notes": null,
+      "run_id": null,
+      "mode": null,
+      "add_tags": true
+    },
+    "peft": null,
+    "use_rabc": false,
+    "rabc_progress_path": null,
+    "rabc_kappa": 0.01,
+    "rabc_epsilon": 1e-06,
+    "rabc_head_mode": "sparse",
+    "rename_map": {},
+    "checkpoint_path": null
+  },
+  "verified_scope": "pinned published configuration + original dataset metadata + source paths; NOT strict weight reload",
+  "strict_weights_forward_verified": false,
+  "policy_code_modified": false,
+  "source_paths": [
+    "src/lerobot/policies/act/modeling_act.py",
+    "src/lerobot/policies/act/processor_act.py"
+  ]
+}

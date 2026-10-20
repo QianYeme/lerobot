@@ -1,0 +1,2 @@
+variant,normalized_load,frames,mean_abs_native_residual_change,mean_abs_native_final_gripper_change,normalized_final_gripper_change,neutral_means
+C1-load,0.0,5748,0.8520908951759338,0.8520908951759338,0.03421071598759633,"Train load mean, not physical zero"

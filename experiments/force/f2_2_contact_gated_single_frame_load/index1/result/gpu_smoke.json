@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "variants": {
+    "B0": {
+      "loss": 86.88114166259766,
+      "grad_norm": 1282.13818359375,
+      "parameters": 74955847,
+      "initial_hash": "194b55eed3e2b946de2362a787ad9a538ccd22fa5f2d3792cd511fd3b41b9a83",
+      "strict_reload": true,
+      "shape": [
+        4,
+        100,
+        6
+      ]
+    },
+    "B1": {
+      "loss": 86.88114166259766,
+      "grad_norm": 1282.13818359375,
+      "parameters": 74955847,
+      "initial_hash": "194b55eed3e2b946de2362a787ad9a538ccd22fa5f2d3792cd511fd3b41b9a83",
+      "strict_reload": true,
+      "shape": [
+        4,
+        100,
+        6
+      ]
+    }
+  },
+  "full_initialization_equal": true
+}

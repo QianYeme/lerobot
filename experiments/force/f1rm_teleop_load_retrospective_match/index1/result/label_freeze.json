@@ -1,0 +1,11 @@
+{
+  "source": "D:\\lerobot\\lerobot-main\\experiments\\force\\f1rm_teleop_load_retrospective_match\\contact_annotations.csv",
+  "sha256": "8a9075958e2e11c11a4e7ee5c2ad1601904b6a10b42efbd19d3f636771cdbcb1",
+  "rows": 15,
+  "reviewer": "kg",
+  "provenance": "USER_SUBMITTED_RGB_REVIEW",
+  "raw": "D:\\lerobot\\lerobot-main\\results\\experiments\\F1RM_TELEOP_LOAD_RETROSPECTIVE_MATCH\\20261018T154217604706Z",
+  "warning": "All reasons are literal 1; substantive per-interval visual rationale not supplied",
+  "unknown_ep001_preserved": true,
+  "config_sha256": "5f7cc16415b19628d4a94c9eb7b1c83c8133cfab471f708446cadf3a5363921a"
+}

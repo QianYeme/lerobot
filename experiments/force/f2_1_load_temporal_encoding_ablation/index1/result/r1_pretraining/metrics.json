@@ -1,0 +1,11 @@
+{
+  "OVERALL_STATUS": "PARTIAL_PASS",
+  "F2_1_COMPLETE": false,
+  "SCIENTIFIC_OUTCOME": "UNRESOLVED",
+  "revision": "r1",
+  "input_semantics_resolved": true,
+  "training_runs": 0,
+  "blocker": "REMOTE_GPU_UNAVAILABLE",
+  "model_smoke": "NOT_RUN",
+  "primary_metric_full_forward": "NOT_RUN"
+}

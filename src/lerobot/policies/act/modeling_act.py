@@ -448,6 +448,17 @@ class ACT(nn.Module):
 
         self._reset_parameters()
 
+        # Initialize after every common tensor, without advancing its RNG stream.
+        if config.load_history_steps:
+            with torch.random.fork_rng(devices=[]):
+                torch.manual_seed(1)
+                self.load_encoder = nn.Sequential(
+                    nn.Linear(config.load_history_steps, 32),
+                    nn.GELU(),
+                    nn.Linear(32, config.dim_model),
+                )
+            self.load_pos_embed = nn.Parameter(torch.zeros(config.dim_model))
+
     def _reset_parameters(self):
         """Xavier-uniform initialization of the transformer parameters as in the original code."""
         for p in chain(self.encoder.parameters(), self.decoder.parameters()):
@@ -576,6 +587,20 @@ class ACT(nn.Module):
                 gamma, film_beta = self.spatial_film_generator(explicit_spatial).chunk(2, dim=-1)
                 state_token = gamma * state_token + film_beta
             encoder_in_tokens.append(state_token)
+        if self.config.load_history_steps:
+            load = batch["observation.load"]
+            if load.shape != (batch_size, self.config.load_history_steps):
+                raise ValueError("Unexpected causal load input shape.")
+            load_feature = self.load_encoder(load)
+            if self.config.load_feature_gating:
+                gate = batch["observation.load_gate"]
+                if gate.shape != (batch_size, 1):
+                    raise ValueError("Load gate must have shape (batch_size, 1).")
+                if not torch.isfinite(gate).all() or not ((gate >= 0) & (gate <= 1)).all():
+                    raise ValueError("Load gate must be finite and within [0, 1].")
+                load_feature = gate * load_feature
+            encoder_in_tokens.append(load_feature)
+            encoder_in_pos_embed.insert(2, self.load_pos_embed.unsqueeze(0))
         # Environment state token.
         if self.config.env_state_feature:
             encoder_in_tokens.append(self.encoder_env_state_input_proj(batch[OBS_ENV_STATE]))

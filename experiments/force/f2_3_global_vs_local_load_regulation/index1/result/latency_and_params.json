@@ -1,0 +1,48 @@
+{
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "variants": {
+    "C0": {
+      "total_parameters": 74955847,
+      "global_parameters": 74955847,
+      "local_parameters": 0,
+      "training_trainable_parameters": 74955847,
+      "batch_size": 1,
+      "warmup": 10,
+      "repeats": 50,
+      "wall_ms_median": 9.611708112061024,
+      "wall_ms_p95": 9.676957596093416,
+      "steady_peak_bytes": 377792000,
+      "warmup_peak_bytes": 2616694784,
+      "scope": "global forward + local feature construction + local forward; excludes camera and global input preprocessing"
+    },
+    "C1-no-load": {
+      "total_parameters": 74939560,
+      "global_parameters": 74938375,
+      "local_parameters": 1185,
+      "training_trainable_parameters": 1185,
+      "batch_size": 1,
+      "warmup": 10,
+      "repeats": 50,
+      "wall_ms_median": 9.845138527452946,
+      "wall_ms_p95": 9.903465304523706,
+      "steady_peak_bytes": 378210304,
+      "warmup_peak_bytes": 378210304,
+      "scope": "global forward + local feature construction + local forward; excludes camera and global input preprocessing"
+    },
+    "C1-load": {
+      "total_parameters": 74939592,
+      "global_parameters": 74938375,
+      "local_parameters": 1217,
+      "training_trainable_parameters": 1217,
+      "batch_size": 1,
+      "warmup": 10,
+      "repeats": 50,
+      "wall_ms_median": 9.85807366669178,
+      "wall_ms_p95": 9.906188026070595,
+      "steady_peak_bytes": 378208256,
+      "warmup_peak_bytes": 378210304,
+      "scope": "global forward + local feature construction + local forward; excludes camera and global input preprocessing"
+    }
+  },
+  "asymmetry": "C0 reused globally trained load model; C1 frozen distinct no-load model, local-only trainable. Not equal end-to-end budgets."
+}

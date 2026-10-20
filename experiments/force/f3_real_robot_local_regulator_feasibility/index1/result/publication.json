@@ -1,0 +1,10 @@
+{
+  "repo_id": "QYyyyyyyy/F3_C1_LOAD_SO101",
+  "revision": "4bab110b3149003239c330b096cd7d1883c32a78",
+  "url": "https://huggingface.co/QYyyyyyyy/F3_C1_LOAD_SO101",
+  "private": true,
+  "manifest_sha256": "3ca3abbaa9264a898f90ee6613164fb5f428a36302c4c95a5f1399718e1b67f5",
+  "critical_model_hashes_verified": true,
+  "hardware_validation": "NOT_RUN",
+  "robot_trials": "NOT_RUN"
+}

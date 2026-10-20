@@ -1,0 +1,9 @@
+{
+  "consistent_episodes_min": 8,
+  "latency_ratio_max": 1.2,
+  "nonzero_diagnostic_floor": 1e-06,
+  "arm_promising_rule": "no arm MAE degradation (ratio <=1); conservative descriptive interpretation, not significance test",
+  "context": "Reporting interpretation only; does not change frozen primary metric, selection or training",
+  "frozen_before_selected_evaluation": true,
+  "frozen_utc": "2026-10-19T14:55:31.132072+00:00"
+}

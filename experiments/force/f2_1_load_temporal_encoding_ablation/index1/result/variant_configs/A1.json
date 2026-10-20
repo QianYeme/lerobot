@@ -1,0 +1,48 @@
+{
+  "variant": "A1",
+  "revision": "r1",
+  "state_fields": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+  ],
+  "load_representation": {
+    "input_width": 1,
+    "mlp": [
+      1,
+      32,
+      512
+    ],
+    "activation": "GELU",
+    "parameters": 16960,
+    "extra_token_position": "after robot state token, before image tokens",
+    "layer_norm": false,
+    "dropout": false,
+    "contact_gate": false
+  },
+  "chunk_size": 100,
+  "n_action_steps": 1,
+  "temporal_ensemble_coeff": null,
+  "action_dim": 6,
+  "gripper_loss_weight": 3.0,
+  "optimizer": "AdamW",
+  "lr": 1e-05,
+  "lr_backbone": 0.0001,
+  "weight_decay": 0.0001,
+  "grad_clip_norm": 10.0,
+  "scheduler": null,
+  "steps": 100000,
+  "batch_size": 4,
+  "seed": 1,
+  "save_freq": 20000,
+  "checkpoint_selection": "minimum Dev12 normalized h0 gripper L1 at 20k/40k/60k/80k/100k; tie earlier",
+  "initialization": "same ResNet18 ImageNet and frozen DINO/prototype; ACT random seed1; no P_hist warmstart; load layers initialized AFTER common backbone with separate fixed seed1",
+  "common_shared_tensor_equality": "MUST verify exact hashes before first optimizer step",
+  "current": false,
+  "master": false,
+  "parameter_status": "formula only, actual model instantiation pending",
+  "evidence_scope": "SINGLE_SEED_EXPLORATORY"
+}

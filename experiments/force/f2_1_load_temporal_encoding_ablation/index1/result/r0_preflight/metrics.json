@@ -1,0 +1,16 @@
+{
+  "OVERALL_STATUS": "BLOCKED",
+  "F2_1_COMPLETE": false,
+  "SCIENTIFIC_OUTCOME": "UNRESOLVED",
+  "blocker": "BLOCKED_INPUT_SEMANTICS",
+  "reasons": [
+    "Existing P1 uses 8D state including both gripper.load and gripper.curr",
+    "Preserving P1 exactly does not yield a load-free/current-free baseline",
+    "Removing/masking those inputs changes baseline semantics and is not silently authorized"
+  ],
+  "baseline_identity_gate": "CONFIG_VERIFIED_WEIGHTS_FORWARD_NOT_VERIFIED",
+  "secondary_primary_metric_note": "Existing G0 normalized h0 gripper L1 and D2 physical h0 gripper MAE exist; choose and freeze exact existing protocol after semantics clarification",
+  "training_started": false,
+  "variants_implemented": false,
+  "final_test_read": false
+}

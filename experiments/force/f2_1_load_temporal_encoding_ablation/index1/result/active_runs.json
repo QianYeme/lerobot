@@ -1,0 +1,14 @@
+{
+  "A0": {
+    "output_dir": "/root/autodl-tmp/F2_1_r1_20261019/results_A0_retry1/A0",
+    "exit_file": "A0_retry1.exit",
+    "screen": "F21_A0_RETRY1",
+    "attempt": 2,
+    "previous_attempt": {
+      "output_dir": "/root/autodl-tmp/F2_1_r1_20261019/results/A0",
+      "exit_code": 1,
+      "last_logged_step": 14200,
+      "reason": "non-finite gradient norm; root cause not confirmed"
+    }
+  }
+}

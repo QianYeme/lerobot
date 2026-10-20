@@ -1,0 +1,3 @@
+variant,seed,steps,batch_size,selected_step,selected_checkpoint,log,training_csv,exit_code
+B0,1,100000,4,100000,/root/autodl-tmp/F2_2_r0_20261019/results/B0/checkpoints/100000/pretrained_model,/root/autodl-tmp/F2_2_r0_20261019/B0.log,/root/autodl-tmp/F2_2_r0_20261019/results/B0/training.csv,0
+B1,1,100000,4,40000,/root/autodl-tmp/F2_2_r0_20261019/results/B1/checkpoints/040000/pretrained_model,/root/autodl-tmp/F2_2_r0_20261019/B1.log,/root/autodl-tmp/F2_2_r0_20261019/results/B1/training.csv,0

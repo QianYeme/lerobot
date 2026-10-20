@@ -1,0 +1,52 @@
+[
+  {
+    "step": 1000,
+    "primary": 0.05869214981794357,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/001000.pt"
+  },
+  {
+    "step": 2000,
+    "primary": 0.0589250884950161,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/002000.pt"
+  },
+  {
+    "step": 3000,
+    "primary": 0.058733001351356506,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/003000.pt"
+  },
+  {
+    "step": 4000,
+    "primary": 0.0599033422768116,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/004000.pt"
+  },
+  {
+    "step": 5000,
+    "primary": 0.058552756905555725,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/005000.pt"
+  },
+  {
+    "step": 6000,
+    "primary": 0.058627430349588394,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/006000.pt"
+  },
+  {
+    "step": 7000,
+    "primary": 0.0582444928586483,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/007000.pt"
+  },
+  {
+    "step": 8000,
+    "primary": 0.05780531466007233,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/008000.pt"
+  },
+  {
+    "step": 9000,
+    "primary": 0.05818931385874748,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/009000.pt"
+  },
+  {
+    "step": 10000,
+    "primary": 0.05769287794828415,
+    "path": "/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/010000.pt"
+  }
+]

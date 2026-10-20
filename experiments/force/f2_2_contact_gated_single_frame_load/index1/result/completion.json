@@ -1,0 +1,14 @@
+{
+  "B0_training": "DONE",
+  "B1_training": "DONE",
+  "Dev12_evaluation": "DONE",
+  "Mechanism_diagnostics": "DONE",
+  "Gate_audit": "DONE",
+  "Latency_params": "DONE",
+  "Figures": "DONE",
+  "Result_package": "READY",
+  "F2_2_COMPLETE": true,
+  "outcome": "GATING_HURTS",
+  "independent_review": "PENDING",
+  "completed_utc": "2026-10-19T16:41:36.935693+00:00"
+}

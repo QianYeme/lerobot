@@ -1,0 +1,325 @@
+{
+  "variants": {
+    "C0": {
+      "primary": 0.12639093399047852,
+      "physical_gripper_mae": 3.148035908032627,
+      "physical_arm_mae": 2.965693893646326,
+      "normalized_all_l1": 0.12033772468566895,
+      "frames": 5748,
+      "per_episode": {
+        "3": {
+          "primary": 0.09898767620325089,
+          "physical_gripper_mae": 2.465499280251674,
+          "physical_arm_mae": 2.8408065243213128,
+          "normalized_all_l1": 0.11258693784475327,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "5": {
+          "primary": 0.12123052030801773,
+          "physical_gripper_mae": 3.019504761196403,
+          "physical_arm_mae": 3.5650168110283094,
+          "normalized_all_l1": 0.1371547281742096,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "12": {
+          "primary": 0.17016130685806274,
+          "physical_gripper_mae": 4.238230350506029,
+          "physical_arm_mae": 3.155263363351242,
+          "normalized_all_l1": 0.13707506656646729,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "15": {
+          "primary": 0.15286146104335785,
+          "physical_gripper_mae": 3.8073409991697686,
+          "physical_arm_mae": 2.924449851948884,
+          "normalized_all_l1": 0.12195838242769241,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "21": {
+          "primary": 0.09093247354030609,
+          "physical_gripper_mae": 2.2648673283183824,
+          "physical_arm_mae": 3.3759121773148735,
+          "normalized_all_l1": 0.12817977368831635,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "28": {
+          "primary": 0.19395282864570618,
+          "physical_gripper_mae": 4.830809214671355,
+          "physical_arm_mae": 2.6652113529556805,
+          "normalized_all_l1": 0.13047972321510315,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "33": {
+          "primary": 0.11152485013008118,
+          "physical_gripper_mae": 2.7777642919685785,
+          "physical_arm_mae": 3.0723529114207007,
+          "normalized_all_l1": 0.11555740237236023,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "39": {
+          "primary": 0.09553816169500351,
+          "physical_gripper_mae": 2.3795817805322423,
+          "physical_arm_mae": 2.40804898234643,
+          "normalized_all_l1": 0.0907304510474205,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "41": {
+          "primary": 0.11548817902803421,
+          "physical_gripper_mae": 2.8764794548867956,
+          "physical_arm_mae": 3.1342643827229826,
+          "normalized_all_l1": 0.12994900345802307,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "47": {
+          "primary": 0.1298139989376068,
+          "physical_gripper_mae": 3.233294493733443,
+          "physical_arm_mae": 3.0203446384202244,
+          "normalized_all_l1": 0.11755883693695068,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "53": {
+          "primary": 0.13304775953292847,
+          "physical_gripper_mae": 3.3138380965999326,
+          "physical_arm_mae": 2.3718122743932826,
+          "normalized_all_l1": 0.10331054031848907,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "58": {
+          "primary": 0.10315199196338654,
+          "physical_gripper_mae": 2.5692208445569156,
+          "physical_arm_mae": 3.054843453531991,
+          "normalized_all_l1": 0.11951197683811188,
+          "frames": 479,
+          "per_episode": {}
+        }
+      }
+    },
+    "C1-no-load": {
+      "primary": 0.08885254710912704,
+      "physical_gripper_mae": 2.213062210350048,
+      "physical_arm_mae": 3.484145663755488,
+      "normalized_all_l1": 0.13040538132190704,
+      "frames": 5748,
+      "per_episode": {
+        "3": {
+          "primary": 0.09787140786647797,
+          "physical_gripper_mae": 2.437696440912417,
+          "physical_arm_mae": 3.2716580041616585,
+          "normalized_all_l1": 0.13870589435100555,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "5": {
+          "primary": 0.07406480610370636,
+          "physical_gripper_mae": 1.8447421692146917,
+          "physical_arm_mae": 3.8527108573571898,
+          "normalized_all_l1": 0.13762550055980682,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "12": {
+          "primary": 0.10848404467105865,
+          "physical_gripper_mae": 2.7020263810708336,
+          "physical_arm_mae": 3.8616465802377182,
+          "normalized_all_l1": 0.1400454193353653,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "15": {
+          "primary": 0.109856016933918,
+          "physical_gripper_mae": 2.7361983980922115,
+          "physical_arm_mae": 3.837209448954273,
+          "normalized_all_l1": 0.1413189321756363,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "21": {
+          "primary": 0.09258341044187546,
+          "physical_gripper_mae": 2.305987307288282,
+          "physical_arm_mae": 3.4693951401059135,
+          "normalized_all_l1": 0.14324133098125458,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "28": {
+          "primary": 0.17759886384010315,
+          "physical_gripper_mae": 4.423478209061488,
+          "physical_arm_mae": 3.5225469694079,
+          "normalized_all_l1": 0.1600133180618286,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "33": {
+          "primary": 0.07264362275600433,
+          "physical_gripper_mae": 1.8093443272744674,
+          "physical_arm_mae": 3.749851210014476,
+          "normalized_all_l1": 0.11789737641811371,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "39": {
+          "primary": 0.0666685402393341,
+          "physical_gripper_mae": 1.6605223673791432,
+          "physical_arm_mae": 2.858607273972206,
+          "normalized_all_l1": 0.10037838667631149,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "41": {
+          "primary": 0.07635995000600815,
+          "physical_gripper_mae": 1.9019076893711633,
+          "physical_arm_mae": 5.123341471760596,
+          "normalized_all_l1": 0.17788222432136536,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "47": {
+          "primary": 0.09031663089990616,
+          "physical_gripper_mae": 2.2495283057915962,
+          "physical_arm_mae": 2.62584390746029,
+          "normalized_all_l1": 0.10535239428281784,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "53": {
+          "primary": 0.04386190325021744,
+          "physical_gripper_mae": 1.0924743356221363,
+          "physical_arm_mae": 2.563069420863042,
+          "normalized_all_l1": 0.09088677167892456,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "58": {
+          "primary": 0.05592135712504387,
+          "physical_gripper_mae": 1.3928405931221433,
+          "physical_arm_mae": 3.073867680770595,
+          "normalized_all_l1": 0.11151700466871262,
+          "frames": 479,
+          "per_episode": {}
+        }
+      }
+    },
+    "C1-load": {
+      "primary": 0.05769287794828415,
+      "physical_gripper_mae": 1.4369640758956177,
+      "physical_arm_mae": 3.484145663755488,
+      "normalized_all_l1": 0.12521210312843323,
+      "frames": 5748,
+      "per_episode": {
+        "3": {
+          "primary": 0.06393416970968246,
+          "physical_gripper_mae": 1.5924168572904647,
+          "physical_arm_mae": 3.2716580041616585,
+          "normalized_all_l1": 0.13304969668388367,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "5": {
+          "primary": 0.04143234342336655,
+          "physical_gripper_mae": 1.0319609657543836,
+          "physical_arm_mae": 3.8527108573571898,
+          "normalized_all_l1": 0.13218675553798676,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "12": {
+          "primary": 0.07182658463716507,
+          "physical_gripper_mae": 1.78899434428907,
+          "physical_arm_mae": 3.8616465802377182,
+          "normalized_all_l1": 0.1339358240365982,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "15": {
+          "primary": 0.08563565462827682,
+          "physical_gripper_mae": 2.1329385265058582,
+          "physical_arm_mae": 3.837209448954273,
+          "normalized_all_l1": 0.13728220760822296,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "21": {
+          "primary": 0.0747566744685173,
+          "physical_gripper_mae": 1.8619745123346965,
+          "physical_arm_mae": 3.4693951401059135,
+          "normalized_all_l1": 0.14027021825313568,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "28": {
+          "primary": 0.1504218578338623,
+          "physical_gripper_mae": 3.746577672728827,
+          "physical_arm_mae": 3.5225469694079,
+          "normalized_all_l1": 0.15548384189605713,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "33": {
+          "primary": 0.0298679918050766,
+          "physical_gripper_mae": 0.7439260630271735,
+          "physical_arm_mae": 3.749851210014476,
+          "normalized_all_l1": 0.11076811701059341,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "39": {
+          "primary": 0.029951974749565125,
+          "physical_gripper_mae": 0.7460178724144346,
+          "physical_arm_mae": 2.858607273972206,
+          "normalized_all_l1": 0.09425895661115646,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "41": {
+          "primary": 0.04842261224985123,
+          "physical_gripper_mae": 1.2060684159093158,
+          "physical_arm_mae": 5.123341471760596,
+          "normalized_all_l1": 0.1732260137796402,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "47": {
+          "primary": 0.05493136867880821,
+          "physical_gripper_mae": 1.3681828930685054,
+          "physical_arm_mae": 2.62584390746029,
+          "normalized_all_l1": 0.0994548574090004,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "53": {
+          "primary": 0.015112197957932949,
+          "physical_gripper_mae": 0.3764015442755818,
+          "physical_arm_mae": 2.563069420863042,
+          "normalized_all_l1": 0.0860951617360115,
+          "frames": 479,
+          "per_episode": {}
+        },
+        "58": {
+          "primary": 0.02602102793753147,
+          "physical_gripper_mae": 0.6481092431491031,
+          "physical_arm_mae": 3.073867680770595,
+          "normalized_all_l1": 0.10653361678123474,
+          "frames": 479,
+          "per_episode": {}
+        }
+      }
+    }
+  },
+  "outcome": "LOCAL_LOAD_REGULATION_PROMISING",
+  "episodes_improved": {
+    "C0": 12,
+    "C1-no-load": 12
+  },
+  "evidence": "SINGLE_SEED_EXPLORATORY"
+}

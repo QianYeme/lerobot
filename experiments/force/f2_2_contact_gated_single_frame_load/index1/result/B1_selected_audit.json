@@ -1,0 +1,126 @@
+{
+  "selection": {
+    "step": 40000,
+    "primary": 0.18289358308052717,
+    "checkpoint": "/root/autodl-tmp/F2_2_r0_20261019/results/B1/checkpoints/040000/pretrained_model"
+  },
+  "metrics": {
+    "primary": 0.182902529835701,
+    "physical_gripper_mae": 4.5555782750877105,
+    "physical_arm_mae": 4.064688440524184,
+    "normalized_all_l1": 0.1575968861579895,
+    "frames": 5748,
+    "per_episode": {
+      "3": {
+        "primary": 0.17938394844532013,
+        "physical_gripper_mae": 4.4679399399002815,
+        "physical_arm_mae": 3.574194160433195,
+        "frames": 479
+      },
+      "5": {
+        "primary": 0.16050051152706146,
+        "physical_gripper_mae": 3.997607628311296,
+        "physical_arm_mae": 4.6126824886893765,
+        "frames": 479
+      },
+      "12": {
+        "primary": 0.27631306648254395,
+        "physical_gripper_mae": 6.882166178202366,
+        "physical_arm_mae": 4.44228098993817,
+        "frames": 479
+      },
+      "15": {
+        "primary": 0.18749059736728668,
+        "physical_gripper_mae": 4.669853463694567,
+        "physical_arm_mae": 4.278962209441465,
+        "frames": 479
+      },
+      "21": {
+        "primary": 0.1666884869337082,
+        "physical_gripper_mae": 4.1517327701269835,
+        "physical_arm_mae": 3.90871137207496,
+        "frames": 479
+      },
+      "28": {
+        "primary": 0.2420613169670105,
+        "physical_gripper_mae": 6.02905427860578,
+        "physical_arm_mae": 3.5820053395597515,
+        "frames": 479
+      },
+      "33": {
+        "primary": 0.17447640001773834,
+        "physical_gripper_mae": 4.345707111561404,
+        "physical_arm_mae": 4.24991226584872,
+        "frames": 479
+      },
+      "39": {
+        "primary": 0.18410322070121765,
+        "physical_gripper_mae": 4.585483500226237,
+        "physical_arm_mae": 3.789997181198137,
+        "frames": 479
+      },
+      "41": {
+        "primary": 0.13217875361442566,
+        "physical_gripper_mae": 3.2921940753128998,
+        "physical_arm_mae": 5.060160365704828,
+        "frames": 479
+      },
+      "47": {
+        "primary": 0.14481060206890106,
+        "physical_gripper_mae": 3.6068171116595016,
+        "physical_arm_mae": 3.230024887677453,
+        "frames": 479
+      },
+      "53": {
+        "primary": 0.1634977012872696,
+        "physical_gripper_mae": 4.072259324797986,
+        "physical_arm_mae": 3.134927306101143,
+        "frames": 479
+      },
+      "58": {
+        "primary": 0.18332594633102417,
+        "physical_gripper_mae": 4.566123918653228,
+        "physical_arm_mae": 4.912402719623011,
+        "frames": 479
+      }
+    }
+  },
+  "counterfactuals": {
+    "feature_zero": {
+      "normalized_gripper_delta": 0.36741483211517334,
+      "normalized_arm_delta": 0.08272216469049454,
+      "physical_gripper_delta": 9.151251056381966,
+      "physical_arm_delta": 1.9948486739991393,
+      "counterfactual_primary": 0.4455539584159851,
+      "frames": 5748
+    },
+    "input_zero": {
+      "normalized_gripper_delta": 0.04309533163905144,
+      "normalized_arm_delta": 0.011840368621051311,
+      "physical_gripper_delta": 1.0733811758815321,
+      "physical_arm_delta": 0.2893184419325787,
+      "counterfactual_primary": 0.19718416035175323,
+      "frames": 5748
+    },
+    "gate_on": {
+      "normalized_gripper_delta": 0.1599048525094986,
+      "normalized_arm_delta": 0.04015488177537918,
+      "physical_gripper_delta": 3.9827716357952876,
+      "physical_arm_delta": 1.1294510318732338,
+      "counterfactual_primary": 0.26750531792640686,
+      "frames": 5748,
+      "active_region_max_abs_delta": 0.0
+    },
+    "gate_off": {
+      "normalized_gripper_delta": 0.36741483211517334,
+      "normalized_arm_delta": 0.08272216469049454,
+      "physical_gripper_delta": 9.151251056381966,
+      "physical_arm_delta": 1.9948486739991393,
+      "counterfactual_primary": 0.4455539584159851,
+      "frames": 5748,
+      "alias": "identical intervention to encoded feature zero",
+      "inactive_region_max_abs_delta": 0.0
+    }
+  },
+  "selected_metric_reproduction_abs_diff": 8.94675517382204e-06
+}

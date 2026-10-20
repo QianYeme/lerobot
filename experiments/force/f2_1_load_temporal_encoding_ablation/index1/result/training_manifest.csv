@@ -1,0 +1,4 @@
+﻿variant,status,optimizer_steps,seed,batch_size,save_freq,selected_step,primary,training_seconds,attempt,checkpoint
+A0,COMPLETED,100000,1,4,20000,80000,0.1503186063577208,7300.1842449605465,2,/root/autodl-tmp/F2_1_r1_20261019/results_A0_retry1/A0/checkpoints/080000/pretrained_model
+A1,COMPLETED,100000,1,4,20000,60000,0.12639014509042482,9609.766788410023,1,/root/autodl-tmp/F2_1_r1_20261019/results/A1/checkpoints/060000/pretrained_model
+A2,COMPLETED,100000,1,4,20000,40000,0.130600747303835,9588.534629613161,1,/root/autodl-tmp/F2_1_r1_20261019/results/A2/checkpoints/040000/pretrained_model

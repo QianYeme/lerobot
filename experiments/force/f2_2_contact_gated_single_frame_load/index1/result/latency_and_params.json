@@ -1,0 +1,36 @@
+{
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "variants": {
+    "B0": {
+      "parameters": 74955847,
+      "wall_ms_median": 9.5650814473629,
+      "wall_ms_p95": 9.65535119175911,
+      "gpu_ms_median": 9.543535709381104,
+      "steady_peak_bytes": 377027072,
+      "warmup_peak_bytes": 2615929856,
+      "batch_size": 1,
+      "warmup": 10,
+      "repeats": 50,
+      "step": 100000,
+      "checkpoint": "/root/autodl-tmp/F2_2_r0_20261019/results/B0/checkpoints/100000/pretrained_model",
+      "strict_reload": true,
+      "model_sha256": "ed0e22ad4212c893254e57861c64c0698b843929a78f024313ad5bcd7372b876"
+    },
+    "B1": {
+      "parameters": 74955847,
+      "wall_ms_median": 10.061364620923996,
+      "wall_ms_p95": 10.397825576364992,
+      "gpu_ms_median": 10.039631843566895,
+      "steady_peak_bytes": 377693184,
+      "warmup_peak_bytes": 377690624,
+      "batch_size": 1,
+      "warmup": 10,
+      "repeats": 50,
+      "step": 40000,
+      "checkpoint": "/root/autodl-tmp/F2_2_r0_20261019/results/B1/checkpoints/040000/pretrained_model",
+      "strict_reload": true,
+      "model_sha256": "476e88b1f1ee200edb1051d4641838e03ad13c678f3c6e85cb31a86ac602601a"
+    }
+  },
+  "scope": "pure policy batch1; excludes camera/decode/preprocessing; RTX4060 unmeasured; warmup peak includes autotune"
+}

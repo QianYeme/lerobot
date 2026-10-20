@@ -1,0 +1,3 @@
+# Validation
+
+Identity hashes and 6D/no-load global validated; frozen model gradients disabled. Train17243/Dev5748 unique frames, no shuffle/drop_last on replay, same causal h0 zero-latent global semantics. Train-only bound/normalization and clipped target. Both local10000/batch256/Adam1e-3/seed1; all101 logged rows finite and10 checkpoint evaluations; selected reload primary reproduced within1e-6. Exact C1 arm preservation and zero-residual identity; diagnostic correlation/magnitude/saturation/load-zero delivered. Eight nonblank PNGs verified, external visual review pending. Checkpoint source and normalization preserved.

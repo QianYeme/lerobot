@@ -1,0 +1,18 @@
+{
+  "trials": 10,
+  "frames": 1500,
+  "frames_per_trial": 150,
+  "schema_finite_contiguous_timestamp_checks": "PASS",
+  "original_file_sha256": {
+    "数据集\\formal5\\formal5_kind1\\data\\chunk-000\\file-000.parquet": "14ca09a16149bc310df34c183a14b61b60cef8876c611592f786110a749609e6",
+    "数据集\\formal5\\formal5_kind1\\videos\\observation.images.top\\chunk-000\\file-000.mp4": "915369363cb8032f5dddbd98a51ef0b6ec0e7fde80c5a6de74d7081c50273df6",
+    "数据集\\formal5\\formal5_kind1\\videos\\observation.images.gripper\\chunk-000\\file-000.mp4": "913c533ac9f40ec63cf528af7a374b53ee9408a5e09177ad9837fd4b31c248aa",
+    "数据集\\formal5\\formal5_kind2\\data\\chunk-000\\file-000.parquet": "cb1c5aca957d01f33fb579aefad1fa12036c05d9f679659d32d3573c288a3b16",
+    "数据集\\formal5\\formal5_kind2\\videos\\observation.images.top\\chunk-000\\file-000.mp4": "be8a16746c44b36ab067e0d4e41b5aebd91f1c2ef9a844bdc1defb193f8be321",
+    "数据集\\formal5\\formal5_kind2\\videos\\observation.images.gripper\\chunk-000\\file-000.mp4": "b2cd8cabc1af00882cf63097cdbbf4ce6fb8f4b37e5597f2e2bed157f971b6f9"
+  },
+  "RGB_frames_decoded": 3000,
+  "clips": "10 clips, 150 frames each, 30FPS, 1280x480",
+  "contact_labels": "PENDING_INDEPENDENT_RGB_REVIEW",
+  "force_effects_inspected": false
+}

@@ -1,0 +1,20 @@
+{
+  "steps": 100000,
+  "batch_size": 4,
+  "seed": 1,
+  "save_eval_every": 20000,
+  "selection": "lowest frame-weighted Dev12 normalized h0 gripper L1; earlier step breaks ties",
+  "initialization": "fresh matched seed1; no trained A1 warmstart",
+  "optimizer": "AdamW",
+  "lr": 1e-05,
+  "backbone_lr": 0.0001,
+  "weight_decay": 0.0001,
+  "gradient_clip": 10,
+  "nonfinite": "fail and preserve evidence; no automatic retry",
+  "amp": false,
+  "chunk_size": 100,
+  "final_sealed": true,
+  "parent": "F2.1-r1 A1 architecture, not historical 8D P1",
+  "contract_sha256": "d559697664d963ab647c47e633b34b8d922ef04d6dffc6d44b5d318a1914c456",
+  "gate_sha256": "a5fc86787970af3f9e8587bdb7178a9e2db3f81a722c7db39047e4bd8270a0a9"
+}

@@ -1,0 +1,5 @@
+﻿pass_name,variable,before_smd,after_smd,balance_pass
+primary,pos,-1.2389500037161119,0.46056073730258684,False
+primary,delta_pos,1.591339521423244,0.22829607409328215,False
+primary,previous_command,-1.2016399991467626,0.46997791336332495,False
+primary,delta_previous_command,1.51796318244391,0.09692623343294741,True

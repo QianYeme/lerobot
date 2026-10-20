@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "label_sha256": "8a9075958e2e11c11a4e7ee5c2ad1601904b6a10b42efbd19d3f636771cdbcb1",
+  "paired_frames_verified": 136,
+  "unique_free_frames": 136,
+  "unique_contact_frames": 136,
+  "checks": [
+    "source CSV byte-identical",
+    "all scaler frames noncontact",
+    "scaler means/SD recomputed",
+    "all pairs label-valid",
+    "no replacement",
+    "all distances recomputed and <=0.75",
+    "load/current differences recomputed",
+    "pooled mean recomputed",
+    "all four SMD recomputed"
+  ]
+}

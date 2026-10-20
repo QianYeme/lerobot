@@ -1,0 +1,25 @@
+# Training health
+
+Both variants completed100000 steps with exit0; 1001 finite logged rows each; all five Dev evaluations audited.
+
+{
+  "B0": {
+    "rows": 1001,
+    "last_step": 100000,
+    "exit_code": 0,
+    "max_logged_grad_norm": 1282.1378173828125,
+    "finite_logged_values": true,
+    "checkpoints": 5,
+    "caveat": "100-step logs do not expose every batch; runner rejects nonfinite loss/norm every step"
+  },
+  "B1": {
+    "rows": 1001,
+    "last_step": 100000,
+    "exit_code": 0,
+    "max_logged_grad_norm": 2600.4150390625,
+    "finite_logged_values": true,
+    "checkpoints": 5,
+    "caveat": "100-step logs do not expose every batch; runner rejects nonfinite loss/norm every step"
+  }
+}
+No automatic restart, skipped bad batch, budget extension or checkpoint deletion.

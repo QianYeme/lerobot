@@ -1,0 +1,9 @@
+{
+  "gate_config.json": "a5fc86787970af3f9e8587bdb7178a9e2db3f81a722c7db39047e4bd8270a0a9",
+  "protocol.json": "5c93e1a2edc69cd8a6a2035e423edecc397a667eb89c1ef61490acacb0276fb0",
+  "decision.md": "d559697664d963ab647c47e633b34b8d922ef04d6dffc6d44b5d318a1914c456",
+  "normalization.json": "579b169ff12af6322f982abd72bf0274fb8906c2449fb6e15728585b51141519",
+  "split_manifest.json": "c71cdc5fae281649bd00975da96d37018a9944468500157b8bbec832c626e1ef",
+  "historical_config.json": "57b99c9bc18257c6795f724f19d81cf60e0e529f19acca956ab69b2b3d6a6e6b",
+  "cup_prototype_bank_v1.pt": "114de07e6cf6c0a2eba7fbede910212e0be6b0740751ab42855780c63b5fb876"
+}

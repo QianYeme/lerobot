@@ -1,0 +1,107 @@
+{
+  "selection": {
+    "step": 100000,
+    "primary": 0.1321949041736939,
+    "checkpoint": "/root/autodl-tmp/F2_2_r0_20261019/results/B0/checkpoints/100000/pretrained_model"
+  },
+  "metrics": {
+    "primary": 0.1321949064731598,
+    "physical_gripper_mae": 3.292596222654326,
+    "physical_arm_mae": 3.1940603515832486,
+    "normalized_all_l1": 0.132582426071167,
+    "frames": 5748,
+    "per_episode": {
+      "3": {
+        "primary": 0.08420524001121521,
+        "physical_gripper_mae": 2.0973111429167406,
+        "physical_arm_mae": 3.23711769351287,
+        "frames": 479
+      },
+      "5": {
+        "primary": 0.0912100076675415,
+        "physical_gripper_mae": 2.271779862363412,
+        "physical_arm_mae": 3.1223594710215727,
+        "frames": 479
+      },
+      "12": {
+        "primary": 0.21830567717552185,
+        "physical_gripper_mae": 5.437368727284611,
+        "physical_arm_mae": 3.2355173999672098,
+        "frames": 479
+      },
+      "15": {
+        "primary": 0.15271465480327606,
+        "physical_gripper_mae": 3.8036846135879054,
+        "physical_arm_mae": 3.4656765717245004,
+        "frames": 479
+      },
+      "21": {
+        "primary": 0.13405495882034302,
+        "physical_gripper_mae": 3.338924904550843,
+        "physical_arm_mae": 3.379712704697084,
+        "frames": 479
+      },
+      "28": {
+        "primary": 0.23529969155788422,
+        "physical_gripper_mae": 5.860640555776276,
+        "physical_arm_mae": 2.9240804030843934,
+        "frames": 479
+      },
+      "33": {
+        "primary": 0.1493767350912094,
+        "physical_gripper_mae": 3.720546288759071,
+        "physical_arm_mae": 3.416145390257241,
+        "frames": 479
+      },
+      "39": {
+        "primary": 0.11992105096578598,
+        "physical_gripper_mae": 2.986889944294184,
+        "physical_arm_mae": 2.5498397252210343,
+        "frames": 479
+      },
+      "41": {
+        "primary": 0.10219467431306839,
+        "physical_gripper_mae": 2.5453764492077524,
+        "physical_arm_mae": 4.1154240355118095,
+        "frames": 479
+      },
+      "47": {
+        "primary": 0.1253196746110916,
+        "physical_gripper_mae": 3.121353684922615,
+        "physical_arm_mae": 3.2374442677344337,
+        "frames": 479
+      },
+      "53": {
+        "primary": 0.1037454828619957,
+        "physical_gripper_mae": 2.5840025262845727,
+        "physical_arm_mae": 2.453283634434578,
+        "frames": 479
+      },
+      "58": {
+        "primary": 0.06999102979898453,
+        "physical_gripper_mae": 1.743275971903929,
+        "physical_arm_mae": 3.1921229218322553,
+        "frames": 479
+      }
+    }
+  },
+  "counterfactuals": {
+    "feature_zero": {
+      "normalized_gripper_delta": 0.05487850680947304,
+      "normalized_arm_delta": 0.016898415982723236,
+      "physical_gripper_delta": 1.3668663144098554,
+      "physical_arm_delta": 0.4221325223165384,
+      "counterfactual_primary": 0.1489700973033905,
+      "frames": 5748
+    },
+    "input_zero": {
+      "normalized_gripper_delta": 0.046699974685907364,
+      "normalized_arm_delta": 0.012281489558517933,
+      "physical_gripper_delta": 1.163162565277044,
+      "physical_arm_delta": 0.2806478885032675,
+      "counterfactual_primary": 0.1477593630552292,
+      "frames": 5748
+    }
+  },
+  "selected_metric_reproduction_abs_diff": 2.2994658954722524e-09
+}

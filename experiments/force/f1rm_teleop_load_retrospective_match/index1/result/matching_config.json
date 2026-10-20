@@ -1,0 +1,27 @@
+{
+  "experiment_id": "F1RM_TELEOP_LOAD_RETROSPECTIVE_MATCH",
+  "revision": "r0",
+  "primary_distance": 0.75,
+  "sensitivity_distance": 1.0,
+  "sensitivity_only_if_primary_coverage_fails": true,
+  "features": [
+    "pos[t]",
+    "pos[t]-pos[t-1]",
+    "command[t-1]",
+    "command[t-1]-command[t-2]"
+  ],
+  "first_eligible_frame": 2,
+  "scaler": "population mean/std (ddof=0), zero SD -> scale 1",
+  "scaler_fit": "all annotated FREE_CLOSE closing + CUP_CONTACT PRECONTACT, excluding frame<2",
+  "target_order": "trial_id ascending, then frame ascending; fixed before any matching",
+  "source_tie_order": "trial_id ascending, then frame ascending",
+  "matching": "global FREE_CLOSE pool, Euclidean, greedy 1:1 without replacement per pass",
+  "SMD": "(mean_contact-mean_free)/sqrt((var_contact+var_free)/2), sample variance ddof=1",
+  "zero_variance_SMD": "0 for equal means; signed infinity otherwise; undefined if n<2",
+  "bootstrap": {
+    "unit": "CUP_CONTACT trial",
+    "resamples": 2000,
+    "seed": 20261016
+  },
+  "implementation_choices": "Frozen before labels/matching/load effects; no optional features"
+}

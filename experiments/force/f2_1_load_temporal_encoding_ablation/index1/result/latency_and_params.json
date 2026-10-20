@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "scope": "policy inference only, excludes camera/video decode and normalization; RTX4060 unmeasured",
+  "variants": {
+    "A0": {
+      "step": 80000,
+      "checkpoint": "/root/autodl-tmp/F2_1_r1_20261019/results_A0_retry1/A0/checkpoints/080000/pretrained_model",
+      "parameters": 74938375,
+      "model_sha256": "65be80d1a70c178cffd29b8efed8ab08d923a79013eb56bdaa3475e69679fdcf",
+      "batch_size": 1,
+      "warmup": 10,
+      "repeats": 50,
+      "cpu_wall_ms_median": 9.835935197770596,
+      "cpu_wall_ms_p95": 10.209129005670547,
+      "gpu_ms_median": 9.810767650604248,
+      "peak_allocated_bytes": 376953856,
+      "strict_load": true,
+      "finite_output": true,
+      "warmup_peak_bytes": 2615856640,
+      "memory_scope": "steady peak after warmup; first-process cuDNN autotune may inflate warmup peak"
+    },
+    "A1": {
+      "step": 60000,
+      "checkpoint": "/root/autodl-tmp/F2_1_r1_20261019/results/A1/checkpoints/060000/pretrained_model",
+      "parameters": 74955847,
+      "model_sha256": "27c90813d3e2bba4c9aeba0bd21f41525893eb823e5011f6ced368dd1a7c7a89",
+      "batch_size": 1,
+      "warmup": 10,
+      "repeats": 50,
+      "cpu_wall_ms_median": 9.909458458423615,
+      "cpu_wall_ms_p95": 10.226420499384403,
+      "gpu_ms_median": 9.88484811782837,
+      "peak_allocated_bytes": 377682432,
+      "strict_load": true,
+      "finite_output": true,
+      "warmup_peak_bytes": 377679872,
+      "memory_scope": "steady peak after warmup; first-process cuDNN autotune may inflate warmup peak"
+    },
+    "A2": {
+      "step": 40000,
+      "checkpoint": "/root/autodl-tmp/F2_1_r1_20261019/results/A2/checkpoints/040000/pretrained_model",
+      "parameters": 74956295,
+      "model_sha256": "6074456700261454eb8edcc1f4928805f28de83ae101ae2dbf36e02bb6a53aec",
+      "batch_size": 1,
+      "warmup": 10,
+      "repeats": 50,
+      "cpu_wall_ms_median": 9.835807606577873,
+      "cpu_wall_ms_p95": 10.217268206179142,
+      "gpu_ms_median": 9.812032222747803,
+      "peak_allocated_bytes": 377683968,
+      "strict_load": true,
+      "finite_output": true,
+      "warmup_peak_bytes": 377681408,
+      "memory_scope": "steady peak after warmup; first-process cuDNN autotune may inflate warmup peak"
+    }
+  },
+  "parameter_increase": {
+    "A0": {
+      "extra": 0,
+      "percent": 0.0
+    },
+    "A1": {
+      "extra": 17472,
+      "percent": 0.02331515728757129
+    },
+    "A2": {
+      "extra": 17920,
+      "percent": 0.023912981833406448
+    }
+  },
+  "memory_note": "steady-state after warmup; sequential same-process warmup peaks are not comparable; RTX4060 not measured"
+}

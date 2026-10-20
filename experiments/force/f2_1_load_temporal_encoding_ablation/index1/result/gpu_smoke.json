@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "variants": {
+    "A0": {
+      "shared_hash": "a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5",
+      "loss": 86.879638671875,
+      "parameters": 74938375,
+      "trainable_parameters": 52881799,
+      "peak_vram_bytes": 3423184896,
+      "gradient_norm": 1282.064453125,
+      "seconds": 2.0009074434638023,
+      "checks": "real batch train/backward/optimizer update; 6D VAE; unused-current invariance; strict reload; Dev metrics/horizons/mechanisms"
+    },
+    "A1": {
+      "shared_hash": "a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5",
+      "loss": 86.88115692138672,
+      "parameters": 74955847,
+      "trainable_parameters": 52899271,
+      "peak_vram_bytes": 2047266816,
+      "gradient_norm": 1282.137939453125,
+      "seconds": 1.2867395505309105,
+      "checks": "real batch train/backward/optimizer update; 6D VAE; unused-current invariance; strict reload; Dev metrics/horizons/mechanisms"
+    },
+    "A2": {
+      "shared_hash": "a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5",
+      "loss": 86.88139343261719,
+      "parameters": 74956295,
+      "trainable_parameters": 52899719,
+      "peak_vram_bytes": 2047268864,
+      "gradient_norm": 1282.134765625,
+      "seconds": 1.2862399760633707,
+      "checks": "real batch train/backward/optimizer update; 6D VAE; unused-current invariance; strict reload; Dev metrics/horizons/mechanisms"
+    }
+  },
+  "shared_initialization_equal": true
+}

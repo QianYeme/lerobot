@@ -1,0 +1,9 @@
+# r1 已执行验证
+
+本地4项数据/因果窗口/h0指标pytest通过。GPU实际证据见gpu_smoke.json：三组真实batch训练、backward/非零反馈梯度、有限梯度裁剪、optimizer更新、6D VAE、额外current键不影响输出、strict reload，以及Dev指标/horizons/M1/M2 batch入口通过。公共初始化hash完全一致。
+
+历史P_hist完整Dev5748帧重跑通过，score0.059309560033，对比原0.059307981561，容差1e-4。配置加载最初使用ACTConfig.from_pretrained遇type字段解析错误；改为既有PreTrainedConfig入口后成功，失败日志留在远程gates_attempt1.log，没有改变checkpoint。后续补optimizer及评估入口smoke均保留之前快照，不把首次失败写成通过。
+
+远程pytest包未安装，所以没有声称在远程运行pytest通过；模型级验证是独立runner断言，数据单元测试在本地实际运行。旧源码混合行尾在打包时归一化，恢复本地原混合行尾后仅27行新增；实际远程源码哈希和本地归一化行尾哈希核验一致，无无关格式重排。remote parquet和prototype哈希一致。
+
+三组screen启动后各有实际训练CSV记录、有限loss和grad_norm，无退出码。不能把screen创建本身或smoke当训练完成。未完成的正式评估、延迟/显存成本及科学验收不标PASS。

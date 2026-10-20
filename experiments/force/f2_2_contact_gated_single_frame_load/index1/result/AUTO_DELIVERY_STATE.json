@@ -1,0 +1,20 @@
+{
+  "stage": "READY_STOPPED",
+  "review": "WAIT_USER_AND_PLANNER",
+  "ready": {
+    "B0_training": "DONE",
+    "B1_training": "DONE",
+    "Dev12_evaluation": "DONE",
+    "Mechanism_diagnostics": "DONE",
+    "Gate_audit": "DONE",
+    "Latency_params": "DONE",
+    "Figures": "DONE",
+    "Result_package": "READY",
+    "F2_2_COMPLETE": true,
+    "outcome": "GATING_HURTS",
+    "independent_review": "PENDING",
+    "completed_utc": "2026-10-19T16:41:36.935693+00:00",
+    "package": "/root/autodl-tmp/F2_2_r0_20261019/F2_2_result.zip",
+    "package_sha256": "0ce6d642a32c94d8763a64f0c1ccebeea2831f8ef94e5b0ecc487f32d05456b0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "CACHED_METRIC_REDUCTION_PASS",
+  "frames": 5748,
+  "normalized_h0_gripper_l1": 0.05930798156050837,
+  "existing_group_weighted_reference": 0.05930798156050837,
+  "formula": "mean_over_all_Dev_frames(abs(pred_normalized[:,0,5]-target_normalized[:,5]))",
+  "existing_paths": [
+    "scripts/eval_g0_generalization.py:main",
+    "scripts/complete_g0_report.py:main"
+  ],
+  "ensemble": null,
+  "relative_clipping": null,
+  "direction": "lower is better",
+  "source_sha256": "d2e76e0a3abe20035d6f477ccddc85133abb4c35b36aac2f19dc50f470279c7a",
+  "full_model_forward_reproduction": "PENDING_GPU_ENVIRONMENT; cached reduction is not a forward test"
+}

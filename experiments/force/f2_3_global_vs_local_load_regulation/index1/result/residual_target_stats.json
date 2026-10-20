@@ -1,0 +1,10 @@
+{
+  "frames": 17243,
+  "positive_clipped_fraction": 0.03740648379052369,
+  "negative_clipped_fraction": 0.06292408513599722,
+  "total_saturation_fraction": 0.10033056892652091,
+  "raw_mean": -0.652811586856842,
+  "raw_abs_mean": 2.1469552516937256,
+  "delta_max": 4.832699459791184,
+  "scope": "Train36 before local training"
+}

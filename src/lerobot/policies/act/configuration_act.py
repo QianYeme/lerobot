@@ -126,6 +126,10 @@ class ACTConfig(PreTrainedConfig):
     # collapse to its mean (open/close/release are low-duty-cycle events).
     gripper_loss_weight: float = 1.0
 
+    # F2.1: separate, always-on load token; zero keeps historical ACT unchanged.
+    load_history_steps: int = 0
+    load_feature_gating: bool = False
+
     # Optional object-conditioned ACT (OC-ACT). Disabled by default so the baseline architecture and
     # checkpoints remain unchanged.
     model_type: str = "act"
@@ -173,6 +177,15 @@ class ACTConfig(PreTrainedConfig):
 
     def __post_init__(self):
         super().__post_init__()
+
+        if self.load_history_steps not in (0, 1, 15):
+            raise ValueError("load_history_steps must be 0, 1, or 15.")
+        if self.load_feature_gating and self.load_history_steps != 1:
+            raise ValueError("Load feature gating requires single-frame load.")
+        if self.load_history_steps and (
+            self.robot_state_feature is None or self.robot_state_feature.shape[0] != 6
+        ):
+            raise ValueError("The F2.1 load token requires a clean 6D robot state.")
 
         """Input validation (not exhaustive)."""
         if not self.vision_backbone.startswith("resnet"):

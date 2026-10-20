@@ -1,0 +1,6 @@
+﻿pass_name,trial_id,eligible_contact,matched_pairs,matched_free_frames,coverage,qualifying,distance_mean,distance_p95
+primary,formal5_kind2_ep000,61,61,61,1.0,True,0.331862779792215,0.5362376570701599
+primary,formal5_kind2_ep001,0,0,0,,False,,
+primary,formal5_kind2_ep002,57,35,35,0.6140350877192983,True,0.42321970643741746,0.701490294933319
+primary,formal5_kind2_ep003,87,19,19,0.21839080459770116,True,0.4204961837906587,0.6088510870933532
+primary,formal5_kind2_ep004,78,21,21,0.2692307692307692,True,0.32737163205941516,0.4941377341747284

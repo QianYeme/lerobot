@@ -1,0 +1,104 @@
+{
+  "timestamp_utc": "2026-10-19T10:44:01.057862+00:00",
+  "base": "/root/autodl-tmp/F2_1_r1_20261019",
+  "variants": {
+    "A0": {
+      "logged_steps": 300,
+      "last_log": {
+        "step": "300",
+        "loss": "2.960677146911621",
+        "l1_loss": "0.6927964091300964",
+        "kld_loss": "0.22678807377815247",
+        "grad_norm": "97.48043823242188",
+        "elapsed_s": "29.203988628461957"
+      },
+      "exit_code": null,
+      "complete": false,
+      "screen": "F21_A0"
+    },
+    "A1": {
+      "logged_steps": 300,
+      "last_log": {
+        "step": "300",
+        "loss": "3.000976085662842",
+        "l1_loss": "0.7246565222740173",
+        "kld_loss": "0.22763194143772125",
+        "grad_norm": "100.86425018310547",
+        "elapsed_s": "28.752738123759627"
+      },
+      "exit_code": null,
+      "complete": false,
+      "screen": "F21_A1"
+    },
+    "A2": {
+      "logged_steps": 300,
+      "last_log": {
+        "step": "300",
+        "loss": "2.8194568157196045",
+        "l1_loss": "0.5449016094207764",
+        "kld_loss": "0.2274555265903473",
+        "grad_norm": "96.13665771484375",
+        "elapsed_s": "29.16651019640267"
+      },
+      "exit_code": null,
+      "complete": false,
+      "screen": "F21_A2"
+    }
+  },
+  "disk_free_bytes": 29994913792,
+  "source_sha256": {
+    "source/src/lerobot/policies/act/modeling_act.py": "162ac5da7b8865f1146d64867f14c5d6861a2c7465cd09091897a98bdb358725",
+    "source/src/lerobot/policies/act/configuration_act.py": "cef3634b5cc114f98cb303a76d8bad3a48e98b1fbb5f5630255adc45a4e7b6dc",
+    "source/scripts/run_f2_1.py": "b88a8684cf366a4460d8d6d29820302d078d4dc7b41e161d8fffb8d52e1ea420",
+    "inputs/normalization.json": "579b169ff12af6322f982abd72bf0274fb8906c2449fb6e15728585b51141519",
+    "inputs/split_manifest.json": "c71cdc5fae281649bd00975da96d37018a9944468500157b8bbec832c626e1ef",
+    "inputs/cup_prototype_bank_v1.pt": "114de07e6cf6c0a2eba7fbede910212e0be6b0740751ab42855780c63b5fb876"
+  },
+  "dataset_parquet_sha256": "ea90727b1e63350cc27f939a75c597957f7849d0c2239902276bac3c02c59933",
+  "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB, 9822 MiB, 99 %",
+  "screens": "There are screens on:\n\t479723.F21_A0\t(10/19/26 18:43:24)\t(Detached)\n\t479726.F21_A1\t(10/19/26 18:43:24)\t(Detached)\n\t479729.F21_A2\t(10/19/26 18:43:24)\t(Detached)\n3 Sockets in /run/screen/S-root.\n",
+  "torch_version": "2.8.0+cu128",
+  "baseline_forward": {
+    "status": "PASS",
+    "frames": 5748,
+    "score": 0.059309560033021576,
+    "reference": 0.05930798156050837,
+    "tolerance": 0.0001
+  },
+  "smoke": {
+    "status": "PASS",
+    "variants": {
+      "A0": {
+        "shared_hash": "a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5",
+        "loss": 86.879638671875,
+        "parameters": 74938375,
+        "trainable_parameters": 52881799,
+        "peak_vram_bytes": 3423184896,
+        "gradient_norm": 1282.064453125,
+        "seconds": 2.0009074434638023,
+        "checks": "real batch train/backward/optimizer update; 6D VAE; unused-current invariance; strict reload; Dev metrics/horizons/mechanisms"
+      },
+      "A1": {
+        "shared_hash": "a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5",
+        "loss": 86.88115692138672,
+        "parameters": 74955847,
+        "trainable_parameters": 52899271,
+        "peak_vram_bytes": 2047266816,
+        "gradient_norm": 1282.137939453125,
+        "seconds": 1.2867395505309105,
+        "checks": "real batch train/backward/optimizer update; 6D VAE; unused-current invariance; strict reload; Dev metrics/horizons/mechanisms"
+      },
+      "A2": {
+        "shared_hash": "a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5",
+        "loss": 86.88139343261719,
+        "parameters": 74956295,
+        "trainable_parameters": 52899719,
+        "peak_vram_bytes": 2047268864,
+        "gradient_norm": 1282.134765625,
+        "seconds": 1.2862399760633707,
+        "checks": "real batch train/backward/optimizer update; 6D VAE; unused-current invariance; strict reload; Dev metrics/horizons/mechanisms"
+      }
+    },
+    "shared_initialization_equal": true
+  }
+}

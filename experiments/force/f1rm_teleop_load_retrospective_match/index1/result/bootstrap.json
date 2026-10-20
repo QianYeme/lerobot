@@ -1,0 +1,28 @@
+{
+  "primary": {
+    "load": {
+      "status": "EXPLORATORY_CONDITIONAL_ON_FIXED_MATCHES",
+      "clusters": 4,
+      "resamples": 2000,
+      "seed": 20261016,
+      "ci95": [
+        11.2,
+        16.89156626506024
+      ],
+      "method": "resample CUP trials with replacement; keep all pairs in each sampled cluster",
+      "limitation": "conditions on observed FREE pool; not two-way-cluster or rematching uncertainty"
+    },
+    "current": {
+      "status": "EXPLORATORY_CONDITIONAL_ON_FIXED_MATCHES",
+      "clusters": 4,
+      "resamples": 2000,
+      "seed": 20261016,
+      "ci95": [
+        1.1875,
+        1.5892857142857142
+      ],
+      "method": "resample CUP trials with replacement; keep all pairs in each sampled cluster",
+      "limitation": "conditions on observed FREE pool; not two-way-cluster or rematching uncertainty"
+    }
+  }
+}

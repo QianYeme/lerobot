@@ -1,0 +1,15 @@
+{
+  "C1-no-load": {
+    "primary": 0.08885254710912704,
+    "arm_identical_to_nominal": true,
+    "residual_sign_and_bound": true
+  },
+  "C1-load": {
+    "primary": 0.05769287794828415,
+    "arm_identical_to_nominal": true,
+    "residual_sign_and_bound": true
+  },
+  "primary_improvement_vs_C0": 0.54353626382229,
+  "primary_improvement_vs_local_no_load": 0.3506896557796274,
+  "arm_error_ratio_vs_C0": 1.174816346090164
+}

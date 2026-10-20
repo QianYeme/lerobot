@@ -1,0 +1,86 @@
+{
+  "config": {
+    "delta_max": 4.832699459791184,
+    "train_action_min": 1.0646387338638306,
+    "train_action_max": 97.7186279296875,
+    "bound_formula": ".05 * (Train36 demo gripper.max - demo gripper.min)",
+    "bound_units": "native demonstrated gripper position units, not Newtons",
+    "local_inputs": {
+      "C1-no-load": [
+        "gripper.pos[t]",
+        "frozen_global_nominal_gripper[t]"
+      ],
+      "C1-load": [
+        "normalized_load[t]",
+        "gripper.pos[t]",
+        "frozen_global_nominal_gripper[t]"
+      ]
+    },
+    "mlp_hidden": [
+      32,
+      32
+    ],
+    "activation": "GELU",
+    "output": "delta_max*tanh(last_linear)",
+    "pos_nominal_normalization": "Train36 mean/std ddof0, std floor1e-8",
+    "load_normalization": "reuse frozen F2.1 Train-only mean/std",
+    "target": "clip(demo-native_nominal,-delta_max,+delta_max)/delta_max; MSE in bound-normalized units",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "steps": 10000,
+    "seed": 1,
+    "checkpoint_every": 1000,
+    "selection": "lowest Dev12 frame-weighted normalized h0 gripper L1; tie earlier",
+    "initialization": "seed1 input projection; seed2 common hidden; zero final layer; independent fresh models",
+    "sampling": "same seeded torch.randint Train index sequence, with replacement",
+    "local_rate": "same per-observation rate as global replay; no high-frequency control",
+    "near_bound_definition": "abs(predicted_delta) >= .95*delta_max",
+    "frozen_utc": "2026-10-20T00:17:30.559680+00:00",
+    "contract_sha256": "47d87cbbde1940b0671191840a061895710c36d43b82f969beb72e117de2d22d",
+    "final_sealed": true,
+    "train_episodes": [
+      0,
+      2,
+      4,
+      6,
+      7,
+      9,
+      10,
+      13,
+      14,
+      17,
+      18,
+      19,
+      22,
+      23,
+      24,
+      25,
+      26,
+      29,
+      30,
+      32,
+      34,
+      35,
+      36,
+      38,
+      40,
+      42,
+      43,
+      45,
+      48,
+      49,
+      50,
+      51,
+      54,
+      55,
+      56,
+      57
+    ]
+  },
+  "inputs": [
+    "normalized_load[t]",
+    "gripper.pos[t]",
+    "frozen_global_nominal_gripper[t]"
+  ]
+}

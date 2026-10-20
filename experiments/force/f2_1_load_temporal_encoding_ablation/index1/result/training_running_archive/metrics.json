@@ -1,0 +1,70 @@
+{
+  "revision": "r1",
+  "OVERALL_STATUS": "RUNNING",
+  "F2_1_COMPLETE": false,
+  "SCIENTIFIC_OUTCOME": "UNRESOLVED",
+  "training_runs": 3,
+  "completed_runs": 0,
+  "EVIDENCE_SCOPE": "SINGLE_SEED_EXPLORATORY",
+  "snapshot_utc": "2026-10-19T11:45:34.510940+00:00",
+  "variants": {
+    "A0": {
+      "logged_steps": 100,
+      "last_log": {
+        "step": "100",
+        "loss": "5.308899402618408",
+        "l1_loss": "0.7912172079086304",
+        "kld_loss": "0.4517681896686554",
+        "grad_norm": "179.10736083984375",
+        "elapsed_s": "11.931949412450194"
+      },
+      "exit_code": null,
+      "complete": false,
+      "screen": "F21_A0_RETRY1",
+      "output_dir": "/root/autodl-tmp/F2_1_r1_20261019/results_A0_retry1/A0",
+      "attempt": 2,
+      "previous_attempt": {
+        "output_dir": "/root/autodl-tmp/F2_1_r1_20261019/results/A0",
+        "exit_code": 1,
+        "last_logged_step": 14200,
+        "reason": "non-finite gradient norm; root cause not confirmed"
+      }
+    },
+    "A1": {
+      "logged_steps": 42000,
+      "last_log": {
+        "step": "42000",
+        "loss": "0.07051869481801987",
+        "l1_loss": "0.0633644238114357",
+        "kld_loss": "0.0007154271006584167",
+        "grad_norm": "8.175970077514648",
+        "elapsed_s": "3724.246579926461"
+      },
+      "exit_code": null,
+      "complete": false,
+      "screen": "F21_A1",
+      "output_dir": "/root/autodl-tmp/F2_1_r1_20261019/results/A1",
+      "attempt": 1,
+      "previous_attempt": null
+    },
+    "A2": {
+      "logged_steps": 42100,
+      "last_log": {
+        "step": "42100",
+        "loss": "0.0830695852637291",
+        "l1_loss": "0.0763084813952446",
+        "kld_loss": "0.0006761103868484497",
+        "grad_norm": "6.7869343757629395",
+        "elapsed_s": "3721.9943198636174"
+      },
+      "exit_code": null,
+      "complete": false,
+      "screen": "F21_A2",
+      "output_dir": "/root/autodl-tmp/F2_1_r1_20261019/results/A2",
+      "attempt": 1,
+      "previous_attempt": null
+    }
+  },
+  "formal_Dev_comparison": "PENDING_FIXED_CHECKPOINTS",
+  "Final12_read": false
+}

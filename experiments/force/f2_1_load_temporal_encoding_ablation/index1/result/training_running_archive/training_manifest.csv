@@ -1,0 +1,4 @@
+﻿variant,status,screen,observed_step,target_steps,seed,batch_size,save_freq,initialization_hash,snapshot_utc,output_dir
+A0,RUNNING,F21_A0_RETRY1,100,100000,1,4,20000,a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5,2026-10-19T11:45:34.510940+00:00,/root/autodl-tmp/F2_1_r1_20261019/results_A0_retry1/A0
+A1,RUNNING,F21_A1,42000,100000,1,4,20000,a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5,2026-10-19T11:45:34.510940+00:00,/root/autodl-tmp/F2_1_r1_20261019/results/A1
+A2,RUNNING,F21_A2,42100,100000,1,4,20000,a7105e4b47051dc74e2afe5247a4a20c127f4147a159e82a0cc86b18e163baf5,2026-10-19T11:45:34.510940+00:00,/root/autodl-tmp/F2_1_r1_20261019/results/A2

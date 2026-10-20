@@ -1,0 +1,3 @@
+variant,seed,steps,batch_size,optimizer,learning_rate,global_frozen,selected_step,checkpoint
+C1-no-load,1,10000,256,Adam,0.001,True,10000,/root/autodl-tmp/F2_3_r0_20261020/result/C1-no-load/010000.pt
+C1-load,1,10000,256,Adam,0.001,True,10000,/root/autodl-tmp/F2_3_r0_20261020/result/C1-load/010000.pt
