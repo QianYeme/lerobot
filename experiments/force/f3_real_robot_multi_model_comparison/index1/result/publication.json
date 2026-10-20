@@ -1,0 +1,15 @@
+{
+  "repo_id": "QYyyyyyyy/F3_R1_MULTI_MODEL_SO101",
+  "revision": "e903b0a1489815077f7a0ef881bec4ca007b6b18",
+  "private": true,
+  "models": [
+    "M0",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "all_model_hashes_verified": true,
+  "robot_trials": "NOT_RUN",
+  "common_deployment": "PENDING",
+  "F3_R1_COMPLETE": false
+}

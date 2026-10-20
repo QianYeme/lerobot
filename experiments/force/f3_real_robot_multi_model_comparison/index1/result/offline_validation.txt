@@ -1,0 +1,10 @@
+/root/autodl-tmp/F3_r1_transfer_20261020/bundle/torch_cache/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/root/autodl-tmp/F3_r1_transfer_20261020/bundle/torch_cache/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/root/autodl-tmp/F3_r1_transfer_20261020/bundle/torch_cache/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Loading weights from local directory
+Loading weights from local directory
+Loading weights from local directory
+{"status": "OFFLINE_SMOKE_PASS", "variants": {"M0": {"state_dimension": 8, "strict_load": true, "finite_synthetic_forward": true}, "M1": {"state_dimension": 6, "strict_load": true, "finite_synthetic_forward": true}, "M2": {"state_dimension": 6, "strict_load": true, "finite_synthetic_forward": true}}, "M3_same_global_as_M1": true, "M3_local_checks": "separate verify_f3_bundle.py", "robot_trials": "NOT_RUN", "common_deployment": "PENDING"}

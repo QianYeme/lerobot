@@ -1,5 +1,12 @@
 # LeRobot 项目当前状态
 
+## 2026-10-20：F3 r1 四模型迁移包已发布，真机仍暂不执行
+
+- 新执行合同F3_REAL_ROBOT_MULTI_MODEL_COMPARISON r1替代旧r0实机执行计划；r0目录/原HF仓库保留，合同副本decision_r0.md已归档。用户本轮仍只要求刚才的模型/文件上传和GitHub更新，不开始任何真机阶段。
+- 新私有HF仓库QYyyyyyyy/F3_R1_MULTI_MODEL_SO101，revision e903b0a1489815077f7a0ef881bec4ca007b6b18。仅四组：M0历史8D P1_ocfix2_s1 100k、M1 A0 retry1 80k、M2 A1 60k global-load、M3同M1＋C1-load10k。M0不是纯ACT；C1-no-load/W15/gate等不加入。
+- M0权重/config与历史HF固定revision逐字节/sha核验；三global及local上传后远端hash与manifest通过。服务器CUDA四组离线身份/维度/strict-load/有限输出、M3共享global及disabled/shadow/arm保持/限幅检查通过；12项回归通过。不将offline smoke当现场Stage0或实机有效证据。
+- 新指南TRANSFER_GUIDE.md及model_identity/deployment_config/发布记录已写；统一控制循环接线/日志视频、机器人相机与共同频率/ensemble/clip/smoothing仍PENDING。计划M3 shadow3次→固定轮转M0/M1/M2/M3各3次，但全部NOT_RUN，F3_R1_COMPLETE=false。未训练、未读Final、未改bound/部署参数。
+
 ## 2026-10-20：F3 仅模型迁移发布，实机阶段按用户要求暂不做
 
 - HF私有仓库QYyyyyyyy/F3_C1_LOAD_SO101已发布并核验，revision4bab110b3149003239c330b096cd7d1883c32a78；exact A0 retry1 80k + C1-load10k，±4.83269946不变。约426MiB含完整权重、归一化、原型、DINO/ResNet构造缓存、源码与验证器，不需要完整训练数据集。

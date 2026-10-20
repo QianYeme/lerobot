@@ -1,0 +1,30 @@
+{
+  "status": "PENDING_ON_NEW_SYSTEM",
+  "robot": "PENDING",
+  "cameras": "PENDING",
+  "control_frequency": "PENDING",
+  "temporal_ensembling": "PENDING_COMMON_FOR_ALL_MODELS",
+  "action_clipping": "PENDING_COMMON",
+  "smoothing": "PENDING_COMMON",
+  "task": "familiar existing cup task; no expansion",
+  "default_local_mode": "disabled",
+  "M3_shadow_required": 3,
+  "formal_trials_per_model": 3,
+  "trial_order": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M0",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "M3_delta_max": 4.832699459791184,
+  "robot_trials": "NOT_RUN",
+  "F3_R1_COMPLETE": false
+}
