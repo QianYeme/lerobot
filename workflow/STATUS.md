@@ -33,6 +33,13 @@
 - 四组checkpoint temporal_ensemble_coeff均null，最近G1命令未覆盖，故不静默沿用更早指南的0.01。这里只给共同配置候选/来源，不改deployment_config.json里的PENDING或实机参数。
 - 指南覆盖固定revision下载、离线校验、设备/标定、主从预检、M3三shadow安全门、四组固定轮转12正式试次、reset/日志视频/判定/危险停止。明确旧CSV/tee不足、Ctrl+C非急停且finally不保证reset，禁止照搬G1位置泛化范围/81次预算/0.5秒Lift阈值。
 - 统一入口的M2load、M3local、逐模型预处理和完整遥测尚缺，未编造模型CLI，也未实现/运行硬件控制。本轮仅文档，不训练、不实机、不读取Final、不自动Git/HF再发布；F3_R1_COMPLETE仍false。
+下述远端记录保留为历史，其“权重错配”定论已由上方数值审计更正；当前指南以index1/REAL_ROBOT_TEST_GUIDE.md为准。
+## 2026-10-20：F3 r1 本机下载/离线校验 + 真机测试指南已写；M3 局部 fixture 不一致待解决
+
+- 按用户要求清理无用模型/文件/缓存：删 vscode-cpptools(5.2G)、pip(20M)、HF 数据集缓存 formal3(1.5G)/formal4(555M)/formal1_C50(221M)、旧 F3_P4 deploy/formal3(1.7G)，共释放约9G；保留 G1 模型、formal5、DINO/ResNet 缓存、数据集。
+- 从镜像下载 QYyyyyyyy/F3_R1_MULTI_MODEL_SO101 到 outputs/deploy/F3_R1（gitignore 内，约1.0G/1513文件），token 仅内联不入文件。包内 639 个非 .pyc 文件与 manifest 一致；114 个 __pycache__/*.pyc 因 Python 字节码含源 mtime 跨机不可复现而不一致（打包缺陷，非损坏）。
+- 本机复跑离线校验：verify_f3_multimodel_bundle.py PASS（M0=8D/M1=6D/M2=6D+load，M3 同 M1 global，前向有限）。verify_f3_bundle.py 的 M3 局部适配器 fixture 检查 FAIL：local/010000.pt 前向与 validation/local_fixture.npz 的 expected_delta 差 0.0177（fp64/fp32 一致、输入顺序排列已排除计算/顺序问题），local.pt 自身 sha256 与 manifest/identity 一致，判定为打包时 fixture 与 checkpoint 不匹配；M3 regulated/shadow 需先解决此不一致。
+- 已写 result/REAL_ROBOT_TEST_GUIDE.md（沿用 G1 指南参数），明确四模型 state 维度差异、原型路径修正、DINO 缓存、M3 局部接线与统一入口仍 PENDING、M3 shadow×3→blocked rotation M0→M1→M2→M3×3、安全门与结果分类。未启动真机、未训练、未改 bound/部署参数、未提交。
 
 ## 2026-10-20：F3 r1 四模型迁移包已发布，真机仍暂不执行
 
