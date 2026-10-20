@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "variants": {
+    "M0": {
+      "feature_max_errors": {
+        "observation.state": 0.0,
+        "observation.images.top": 0.0,
+        "observation.images.gripper": 0.0
+      },
+      "reference_action_max_error": 0.0,
+      "finite": true
+    },
+    "M1": {
+      "feature_max_errors": {
+        "observation.state": 0.0,
+        "observation.images.top": 0.0,
+        "observation.images.gripper": 0.0
+      },
+      "reference_action_max_error": 0.0,
+      "finite": true
+    },
+    "M2": {
+      "feature_max_errors": {
+        "observation.state": 0.0,
+        "observation.images.top": 0.0,
+        "observation.images.gripper": 0.0,
+        "observation.load": 0.0
+      },
+      "reference_action_max_error": 0.0,
+      "finite": true
+    },
+    "M3": {
+      "feature_max_errors": {
+        "observation.state": 0.0,
+        "observation.images.top": 0.0,
+        "observation.images.gripper": 0.0
+      },
+      "reference_action_max_error": 0.0,
+      "finite": true
+    }
+  },
+  "real_data": "first Dev12 observation only; Final not read",
+  "hardware": "NOT_CONNECTED"
+}

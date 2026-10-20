@@ -1,5 +1,39 @@
 # LeRobot 项目当前状态
 
+## 2026-10-20：F3服务器离线工程验收完成，现场阶段未执行
+
+- westC:30824完成CPU/CUDA四模式及batch1对照：新适配器与原F2.3局部实现误差全0。TF32 batch1相对batch16差0.01770389，不能用批量夹具直接判在线batch1；未改原参考/权重/阈值。
+- 最新统一入口真实Dev首观测四模型预处理与原生动作误差全0；disabled/shadow/arm保持/限幅检查通过。fake robot日志/视频/异常清理及M3停止标记通过；服务器12项回归PASS。无真实串口/相机连接，无训练/Final。
+- 代码与指南已准备；验收报告result/OFFLINE_ACCEPTANCE.md，小型JSON证据入项目，大文件与完整日志留服务器F3_control_validation。HF旧包不含新统一入口，须用更新Git代码。
+- 仅离线工程完成；新系统本地干运行、现场标定/安全门、shadow与正式真机试次仍NOT_RUN，F3_R1_COMPLETE=false。不得把工程验收称为力控/抓取成功。
+
+## 2026-10-20：后续执行位置与交付约定
+
+- 用户要求：真机以外的计算、测试与验证在当前服务器westC:30824执行；需要的大文件传到服务器，不纳入Git。模型包、checkpoint、数据和原始中间证据优先留服务器，保留身份及路径记录。
+- 本地用于编辑与接收小型报告/证据索引；项目代码和文档完成验证后再统一更新GitHub，本轮先更新日志，不立即提交或推送。凭证不写入项目文件。
+- 下一步服务器任务：M3实际batch=1与原批量参考的数值对照、原F2.3实现独立对照，以及统一入口离线验收。不得通过重生成参考或放宽容差取得PASS。现场参数/精度仍需明确冻结，原夹具通过不等于部署或真机通过。
+- 本次仅记录执行约定；未启动新的测试、训练或硬件控制。真机任务仍须用户现场授权和安全门，不由云服务器直接操作。
+
+## 2026-10-20：F3 M3 夹具误差已定位为数值模式依赖
+
+- 新服务器westC:30824可连接，原F3包在盘；RTX5090/PyTorch2.8.0+cu128。相同权重/16条原输入/归一化下CPU FP32/FP64和CUDA TF32关误差约0.0177，CUDA TF32开误差3.576e-7通过原1e-4阈值；每模式三次一致。
+- 不支持远端新日志“另一权重生成夹具”的定论；本轮未更换模型/参考或放宽阈值。证据见本轮result/precision_audit_20261020.json及NUMERICAL_REPRO_AUDIT.md，新增只读scripts/audit_f3_precision.py。
+- 仅完成原batch夹具数值复现，跨硬件/实际batch1、原训练实现独立对照及完整部署门仍待验证；不自动更改部署精度，不解锁真机。未训练、未Final、未发布。
+
+## 2026-10-20：F3 M3 数值复现审计受服务器连接阻塞
+
+- 已读取远端det最新2da7c63b；本地STATUS/日志未提交修改导致ff-only合并中止，未覆盖任何本地内容。
+- 最新记录的0.0177误差不能单凭CPU fp32/fp64一致判定为夹具/权重错配：既有deployment_validation.md记录过默认设置同量级误差、原CUDA/TF32设置下3.58e-7。根因仍UNRESOLVED，不修改夹具/权重/容差，M3继续BLOCKED。
+- 最近服务器weste:53289拒绝连接；本地无F3包且项目Python无torch。本轮CPU/CUDA精度矩阵NOT_RUN，需可访问的原模型环境。核查报告：experiments/force/f3_real_robot_multi_model_comparison/index1/result/NUMERICAL_REPRO_AUDIT.md。
+- G1实际指令clip=5且未覆盖ensemble；不能将clip=2/ensemble=0.01称为直接继承该指令。共同部署参数仍待现场冻结，不静默更改。无训练、真机、Final读取或发布。
+
+## 2026-10-20：F3 r1 现场真机指南已编写，尚不具备统一实机启动入口
+
+- 新文档f3_real_robot_multi_model_comparison/index1/REAL_ROBOT_TEST_GUIDE.md，参照最近G1真机指南及旧采集指南，明确继承参数来源和现场待核验项：follower ACM0/id nn、leader ACM1/id nn、top4/gripper2、640×480/30、n_action_steps1/max_relative_target5、60秒上限/约30秒人工复位参考。
+- 四组checkpoint temporal_ensemble_coeff均null，最近G1命令未覆盖，故不静默沿用更早指南的0.01。这里只给共同配置候选/来源，不改deployment_config.json里的PENDING或实机参数。
+- 指南覆盖固定revision下载、离线校验、设备/标定、主从预检、M3三shadow安全门、四组固定轮转12正式试次、reset/日志视频/判定/危险停止。明确旧CSV/tee不足、Ctrl+C非急停且finally不保证reset，禁止照搬G1位置泛化范围/81次预算/0.5秒Lift阈值。
+- 统一入口的M2load、M3local、逐模型预处理和完整遥测尚缺，未编造模型CLI，也未实现/运行硬件控制。本轮仅文档，不训练、不实机、不读取Final、不自动Git/HF再发布；F3_R1_COMPLETE仍false。
+
 ## 2026-10-20：F3 r1 四模型迁移包已发布，真机仍暂不执行
 
 - 新执行合同F3_REAL_ROBOT_MULTI_MODEL_COMPARISON r1替代旧r0实机执行计划；r0目录/原HF仓库保留，合同副本decision_r0.md已归档。用户本轮仍只要求刚才的模型/文件上传和GitHub更新，不开始任何真机阶段。

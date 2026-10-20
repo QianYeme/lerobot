@@ -1,5 +1,9 @@
 # F3 r1 四模型迁移指南（暂不执行真机）
 
+现场完整操作、安全门、历史参数及最后的四模型测试命令见同目录
+[REAL_ROBOT_TEST_GUIDE.md](REAL_ROBOT_TEST_GUIDE.md)。统一入口为GitHub新增
+`control_f3.py`，先阅读该指南第5节并完成现场审核，不要仅替换旧脚本模型路径。
+
 私有HF仓库：`QYyyyyyyy/F3_R1_MULTI_MODEL_SO101`。原r0仓库
 `QYyyyyyyy/F3_C1_LOAD_SO101`保留，仅对应本轮M1/M3，不包含全部四组。
 
@@ -40,9 +44,10 @@ normalization.json与local_normalization.json的冻结Train统计。M1/M2
 
 ## 接线与共同参数仍待部署系统确认
 
-当前control_act_det.py尚不具备这四组统一的模型选择/局部残差接线与完整
-遥测路径。本包提供模型、纯函数适配器及离线校验，不虚构可直接运行的
-真机指令。新系统须先完成统一入口、日志视频、重置及停止机制。
+冻结的HF包源码快照不含后续新增的统一入口。请从更新后的GitHub获取
+`control_f3.py`及`f3_runtime.py`，其逐模型预处理、局部修正、逐步日志/两路
+录像与审核门已有离线/假机器人验证；现场硬件和安全门仍须核验。
+不要继续用旧control_act_det.py只换权重路径来运行四组。
 
 全部模型要冻结同一控制频率、相机、硬件、temporal ensembling、限幅和平滑。
 model_identity记录原checkpoint配置，但不等于现场公共参数已经冻结。

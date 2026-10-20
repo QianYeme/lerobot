@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "fake_robot_only": true,
+  "trials": {
+    "R01_M0": {
+      "status": "TIME_LIMIT",
+      "error": null,
+      "rows": 1,
+      "model": "M0",
+      "mode": "disabled",
+      "deployment_fingerprint": "mock_fingerprint",
+      "video_clock": "nominal-FPS playback; use CSV step and t_s for real timing"
+    },
+    "R01_M3": {
+      "status": "ERROR",
+      "error": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/F3_control_validation/source/src/lerobot/scripts/control_f3.py\", line 159, in run_trial\n    action,nominal,telemetry = runtime.step(obs,args.mode)\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/F3_control_validation/source/scripts/smoke_f3_control_mock.py\", line 38, in step\n    if self.fail:raise ValueError('injected inference failure')\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: injected inference failure\n",
+      "rows": 0,
+      "model": "M3",
+      "mode": "regulated",
+      "deployment_fingerprint": "mock_fingerprint",
+      "video_clock": "nominal-FPS playback; use CSV step and t_s for real timing"
+    }
+  }
+}
