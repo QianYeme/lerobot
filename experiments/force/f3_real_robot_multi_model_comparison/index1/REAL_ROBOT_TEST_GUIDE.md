@@ -481,3 +481,116 @@ summary的TIME_LIMIT/OPERATOR_END只表示程序结束方式，不自动代表�
 Ctrl+C/出错后disconnect可能卸力，夹持中的杯子及机械臂需由现场安全措施保护。
 停止/断电的现场方法优先于所有软件按键。
 完成后停止，交Builder/Red-Team审核；不自动扩次数、读取Final或声明统计显著。
+
+## 12. 四模型独立复制版正式测试命令
+
+以下每个代码块均包含完整参数和环境设置，不依赖第11节的F3_COMMON、
+SESSION或ROUND变量。**必须先按第11.2节完成相同会话的准备、离线检查与人工Stage0审核；M3还必须完成三次shadow并通过人工审核。**
+直接复制不等于跳过安全门；缺少审核时程序会拒绝启动。
+
+默认项目目录为`~/lerobot/lerobot-main`，模型包为`models/f3_r1`，
+会话为`outputs/f3_r1/session_01`，与第11节一致。如果实际安装位置不同，
+先统一修正准备步骤与下面四块的路径，不要使用另一会话来绕过检查。
+相机索引4/2、从臂ACM0/id nn须现场确认；主臂ACM1仅用于手动预检/复位，
+策略运行时不同时开启teleoperate。
+
+参数参照此前G1指令：n_action_steps=1、安全限幅5、640×480/30FPS、
+每次1段且最多60秒、人工复位参考30秒；不额外覆盖ensemble，维持共同null设置。
+新入口从模型包读取归一化，不需要旧指令的dataset.repo_id/root。
+不会自动回Home，输入试次ID和START后才可能发送动作。
+
+下面是**第1轮**，按M0→M1→M2→M3顺序，每块一次。第2轮仅将
+trial-id和tee文件名中的R01统一改为R02，第3轮改为R03；
+不要重复第1轮或删除已有记录。每轮间、每模型间均安全停止并人工复位。
+不要在云服务器执行这些硬件命令，应在直连机械臂和相机的Linux主机上运行。
+
+### M0：历史8D P1
+
+```bash
+cd ~/lerobot/lerobot-main || exit 1
+export PYTHONPATH="$PWD/src"
+export TORCH_HOME="$PWD/models/f3_r1/torch_cache"
+mkdir -p outputs/f3_r1/session_01
+set -o pipefail
+python src/lerobot/scripts/control_f3.py \
+  --bundle="$PWD/models/f3_r1" \
+  --session-dir="$PWD/outputs/f3_r1/session_01" \
+  --execute --model M0 --mode disabled --trial-id R01_M0 \
+  --stage0-report="$PWD/outputs/f3_r1/session_01/stage0_review.json" \
+  --policy.device=cuda --policy.n_action_steps=1 \
+  --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=nn \
+  --robot.max_relative_target=5 \
+  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+  --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
+  --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30 \
+  2>&1 | tee outputs/f3_r1/session_01/R01_M0_terminal.log
+```
+
+### M1：干净6D，无反馈
+
+```bash
+cd ~/lerobot/lerobot-main || exit 1
+export PYTHONPATH="$PWD/src"
+export TORCH_HOME="$PWD/models/f3_r1/torch_cache"
+mkdir -p outputs/f3_r1/session_01
+set -o pipefail
+python src/lerobot/scripts/control_f3.py \
+  --bundle="$PWD/models/f3_r1" \
+  --session-dir="$PWD/outputs/f3_r1/session_01" \
+  --execute --model M1 --mode disabled --trial-id R01_M1 \
+  --stage0-report="$PWD/outputs/f3_r1/session_01/stage0_review.json" \
+  --policy.device=cuda --policy.n_action_steps=1 \
+  --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=nn \
+  --robot.max_relative_target=5 \
+  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+  --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
+  --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30 \
+  2>&1 | tee outputs/f3_r1/session_01/R01_M1_terminal.log
+```
+
+### M2：全局单帧load
+
+```bash
+cd ~/lerobot/lerobot-main || exit 1
+export PYTHONPATH="$PWD/src"
+export TORCH_HOME="$PWD/models/f3_r1/torch_cache"
+mkdir -p outputs/f3_r1/session_01
+set -o pipefail
+python src/lerobot/scripts/control_f3.py \
+  --bundle="$PWD/models/f3_r1" \
+  --session-dir="$PWD/outputs/f3_r1/session_01" \
+  --execute --model M2 --mode disabled --trial-id R01_M2 \
+  --stage0-report="$PWD/outputs/f3_r1/session_01/stage0_review.json" \
+  --policy.device=cuda --policy.n_action_steps=1 \
+  --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=nn \
+  --robot.max_relative_target=5 \
+  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+  --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
+  --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30 \
+  2>&1 | tee outputs/f3_r1/session_01/R01_M2_terminal.log
+```
+
+### M3：局部load残差，必须先通过shadow
+
+```bash
+cd ~/lerobot/lerobot-main || exit 1
+export PYTHONPATH="$PWD/src"
+export TORCH_HOME="$PWD/models/f3_r1/torch_cache"
+mkdir -p outputs/f3_r1/session_01
+set -o pipefail
+python src/lerobot/scripts/control_f3.py \
+  --bundle="$PWD/models/f3_r1" \
+  --session-dir="$PWD/outputs/f3_r1/session_01" \
+  --execute --model M3 --mode regulated --trial-id R01_M3 \
+  --stage0-report="$PWD/outputs/f3_r1/session_01/stage0_review.json" \
+  --shadow-review="$PWD/outputs/f3_r1/session_01/shadow_review.json" \
+  --policy.device=cuda --policy.n_action_steps=1 \
+  --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=nn \
+  --robot.max_relative_target=5 \
+  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+  --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
+  --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30 \
+  2>&1 | tee outputs/f3_r1/session_01/R01_M3_terminal.log
+```
+
+M3审核未通过则跳过M3，保留原因；不调参重试。软件退出不等于物理急停，安全处理以现场方案为准。
