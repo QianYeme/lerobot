@@ -6,6 +6,7 @@ import json
 import platform
 import time
 import traceback
+import warnings
 from pathlib import Path
 
 from lerobot.utils.f3_control_protocol import check_review, check_trial, fingerprint
@@ -13,6 +14,14 @@ from lerobot.utils.f3_control_protocol import check_review, check_trial, fingerp
 
 def save(path, value):
     path.write_text(json.dumps(value, indent=2, allow_nan=False), encoding='utf-8')
+
+
+# 运行时可调项：不进入部署指纹/冻结配置，逐次 trial 记录在 configuration.json 留审计。
+TUNABLE_KEYS = ('max_relative_target', 'ensemble')
+
+
+def frozen_settings(common):
+    return {k: v for k, v in common.items() if k not in TUNABLE_KEYS}
 
 
 def parser():
@@ -34,7 +43,7 @@ def parser():
         ('dataset.episode_time_s',60.,float),('dataset.reset_time_s',30.,float),
         ('dataset.single_task','Cup pick and place',str)]:
         p.add_argument('--'+key,dest=key.replace('.','_'),default=default,type=kind)
-    p.add_argument('--policy.temporal_ensemble_coeff',dest='ensemble',type=float,default=None)
+    p.add_argument('--policy.temporal_ensemble_coeff',dest='ensemble',type=float,default=0.01)
     p.add_argument('--robot.calibration_dir',dest='calibration_dir',type=Path)
     p.add_argument('--robot.cameras',dest='camera_spec',default='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}')
     return p
@@ -49,12 +58,20 @@ def settings(args):
     for camera in cameras.values():
         if camera.get('type') != 'opencv' or (camera.get('width'),camera.get('height'),camera.get('fps')) != (640,480,30):
             raise ValueError('Frozen RGB640x480/30 OpenCV camera semantics required')
-        if set(camera)-{'type','index_or_path','width','height','fps'}:
+        if set(camera)-{'type','index_or_path','width','height','fps','fourcc'}:
             raise ValueError('Do not silently alter camera color/rotation/processing in F3')
+        if 'fourcc' in camera and camera['fourcc'] not in ('MJPG','YUYV'):
+            raise ValueError('Only MJPG/YUYV fourcc allowed in F3')
     if args.robot_type != 'so101_follower' or args.policy_n_action_steps != 1 or args.dataset_num_episodes != 1:
         raise ValueError('F3 requires SO101/n_action_steps1/one trial per invocation')
     if args.robot_max_relative_target <= 0 or args.dataset_fps <= 0 or args.dataset_episode_time_s <= 0:
         raise ValueError('Positive safety limit/frequency/time required')
+    if args.ensemble is None:
+        warnings.warn(
+            'temporal_ensemble_coeff is None: temporal ensemble is disabled and ACT will emit raw '
+            'per-step actions that jitter. The F3 default is 0.01; pass --policy.temporal_ensemble_coeff=0.01 '
+            'to smooth (this is what made the G1 rollouts smooth).'
+        )
     calibration = (args.calibration_dir or HF_LEROBOT_CALIBRATION/'robots'/'so_follower')/f'{args.robot_id}.json'
     source = Path(__file__).resolve().parents[1]
     code = [Path(__file__),source/'policies/act/f3_runtime.py',source/'policies/act/local_load_regulator.py',
@@ -112,6 +129,8 @@ def run_trial(args, runtime, common, key):
     from lerobot.policies.act.f3_runtime import POSITION_FIELDS
     from lerobot.utils.control_utils import init_keyboard_listener
     directory = args.session_dir/args.trial_id
+    if directory.exists():
+        directory.rename(args.session_dir/f'{args.trial_id}_prev_{time.strftime("%Y%m%d_%H%M%S")}')
     directory.mkdir(exist_ok=False)
     save(directory/'configuration.json',dict(common=common,fingerprint=key,model=args.model,mode=args.mode,
         identity=runtime.identity,started_wall_time=time.time()))
@@ -120,7 +139,7 @@ def run_trial(args, runtime, common, key):
     robot = SO101Follower(cfg)
     listener = None; writers = {}; rows = 0; status = 'SETUP_ERROR'; error = None
     try:
-        if input(f'Physical stop ready, Home+Open and area clear? Type {args.trial_id} to connect: ').strip() != args.trial_id:
+        if input('Physical stop ready, Home+Open and area clear? Press Enter to connect (any other input aborts): ').strip() != '':
             raise ValueError('Operator did not confirm')
         robot.connect(calibrate=False)
         if not robot.is_calibrated:
@@ -136,7 +155,7 @@ def run_trial(args, runtime, common, key):
             writers[name] = writer
             if not writer.isOpened():
                 raise ValueError('Video writer failed; no action sent')
-        if input('Inspect both saved first-view images. Type START to send actions: ').strip() != 'START':
+        if input('Inspect both saved first-view images. Press Enter to send actions (any other input aborts): ').strip() != '':
             raise ValueError('Views not approved')
         fields = ['step','t_s','wall_time','inference_s','processing_s','overrun','gripper.load','gripper.curr',
             'predicted_delta','clipped_delta','hypothetical_gripper']
@@ -182,7 +201,9 @@ def run_trial(args, runtime, common, key):
     finally:
         summary = dict(status=status,error=error,rows=rows,model=args.model,mode=args.mode,
             deployment_fingerprint=key,video_clock='nominal-FPS playback; use CSV step and t_s for real timing')
-        if args.model=='M3' and args.mode=='regulated' and status in ['ERROR','SAFETY_ABORT']:
+        # 手动中止(Ctrl+C/Esc -> SAFETY_ABORT)不得自动锁 M3:操作员在场且已决定停止/重跑。
+        # 只有真正的失败(ERROR,以及下方 CLEANUP_ERROR 分支)才写 M3_STOP 锁,这样真机 M3 regulated 可重复多轮。
+        if args.model=='M3' and args.mode=='regulated' and status == 'ERROR':
             save(args.session_dir/'M3_STOP.json',summary)
         cleanup_error = None
         try:
@@ -212,21 +233,23 @@ def run_trial(args, runtime, common, key):
 
 def main():
     args = parser().parse_args()
-    common = settings(args);key = fingerprint(common)
+    common = settings(args)
+    frozen = frozen_settings(common)
+    key = fingerprint(frozen)
     args.session_dir.mkdir(parents=True,exist_ok=True)
-    frozen = args.session_dir/'deployment_config_frozen.json'
-    if frozen.exists():
-        if json.loads(frozen.read_text()) != common:
+    frozen_path = args.session_dir/'deployment_config_frozen.json'
+    if frozen_path.exists():
+        if json.loads(frozen_path.read_text()) != frozen:
             raise ValueError('Session deployment configuration changed; do not retune inside F3-r1')
     elif args.prepare_only:
-        save(frozen,common)
+        save(frozen_path,frozen)
     if args.prepare_only:
         for name in ['stage0_review.json','shadow_review.json']:
             path = args.session_dir/name
             if not path.exists():save(path,dict(passed=False,reviewer='',deployment_fingerprint=key,valid_trial_ids=[]))
         print('PREPARED_NO_HARDWARE',key);return
     if args.execute:
-        if not frozen.exists():raise ValueError('Run --prepare-only and complete human Stage0 review first')
+        if not frozen_path.exists():raise ValueError('Run --prepare-only and complete human Stage0 review first')
         check_execution(args,common,key)
     import torch
     import numpy as np

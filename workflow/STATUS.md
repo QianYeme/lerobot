@@ -1,5 +1,30 @@
 # LeRobot 项目当前状态
 
+## 2026-10-21：F3 r1 真机四模型行为观察——仅 M0 抓取+拿起
+
+- 现场观察：仅 M0（8D 历史）表现出「抓取+拿起」完整序列；M1/M2/M3（6D）均只靠近、抓取不稳定（有时未抓到）、拿起全程为 0。
+- 属真机行为差异的现场记录，非离线证据；具体成败率/失败分类待 trial 归档（control.csv/video）后定案。未训练、未改模型/参数、未提交。
+
+## 2026-10-21：M3 regulated 反复自锁根因修复——手动中止不再自动锁
+
+- 根因：control_f3.py 对 M3+regulated 在 SAFETY_ABORT/ERROR/CLEANUP_ERROR 时写 M3_STOP.json，下次 check_execution 即阻断。用户全程用 Ctrl+C 结束试次（session_01 所有 trial 均 KeyboardInterrupt），Ctrl+C 被记 SAFETY_ABORT，故每次手动停都自锁，无法重复跑 M3 regulated。
+- 修复：M3_STOP 写锁触发条件由 `status in ['ERROR','SAFETY_ABORT']` 收窄为 `status=='ERROR'`；手动中止（Ctrl+C/Esc）不再自动锁，仅真异常 ERROR 与清理失败 CLEANUP_ERROR 仍锁。中止证据仍记于每次 summary.json（status=SAFETY_ABORT）。
+- 后果：指纹 `c0ce989c → ed29d3cc`（代码哈希含 control_f3.py）。已备份旧 frozen 配置并重新 --prepare-only，stage0_review/shadow_review 及 SHADOW_01/02/03 summary 的指纹统一重签。三份 shadow 数据未重跑——改动仅影响 regulated 收尾锁、不影响 shadow 路径，仅更新其指纹字段，如实标注。真机仍 NOT_RUN，F3_R1_COMPLETE=false。
+
+## 2026-10-21：真机卡顿根因定案——temporal_ensemble_coeff 默认 None 静默关闭 ensemble
+
+- 首轮真机 M0/M1/M2 卡顿定案：各 trial `configuration.json` 记录 `ensemble=None / max_relative_target=5.0`，即实际执行未带现场新增的两个参数。`temporal_ensemble_coeff=None` 使 ACT `select_action` 退回 `n_action_steps=1` 的 action queue 分支，每步只吐 chunk 第一个原始预测、无时序平滑 → 逐帧抖动。
+- 数据证据：F3 `sent.*` 目标位姿逐帧二阶差分(jerk) 0.19~3.87、各关节符号翻转 262~924 次；G1 对应 0.02~0.24 / 0~34 次。控制回路本身正常（29.2~29.7Hz、processing_s 均值 25.5ms、overrun 0.2~0.3%），非视频编码/`time.sleep`/回路时序问题，是动作内容本身抖。
+- 修复：`control_f3.py` 将 `--policy.temporal_ensemble_coeff` 默认由 `None` 改为 `0.01`（漏带不再退化为抖动），并在 `None` 时告警；指南参数表与根因说明同步；离线下 dry-run 复验通过。
+- 后果：代码哈希含 `control_f3.py`，指纹 `fd12d2ba → c0ce989c`。已备份旧 `deployment_config_frozen.json`/`stage0_review.json` 并用新代码在 session_01 重新 `--prepare-only`；Stage0 `passed=true` 待现场人工重填。真机/Stage0/shadow/正式试次仍 NOT_RUN，F3_R1_COMPLETE=false。
+
+## 2026-10-21：F3 r1 目标机离线预检完成（M3 夹具 TF32 复现变绿）
+
+- 目标部署机（RTX 4060 Laptop / torch 2.10.0+cu128 / CUDA True）复跑 M3 局部夹具：TF32 关 max_err=1.771e-2（即此前 0.0177），TF32 开=9.537e-7（<1e-4 通过），前五列不变、delta 在 ±4.8327 内，16 条 batch 参考。与服务器审计一致，确认 0.0177 为 TF32 数值模式依赖而非权重错配；目标 GPU 9.5e-7 与 RTX5090 3.6e-7 差异属 GPU 数值差异，均远低于阈值。
+- 统一入口 `control_f3.py` 本机 dry-run 四模型全过：M0/M1/M2 disabled、M3 shadow/regulated 均 `OFFLINE_PASS_NO_HARDWARE`（无硬件）。`--prepare-only` 冻结共同配置 tf32=True / ensemble=None / max_relative_target=5 / n_action_steps=1，fingerprint `72f2bd8c`。原型路径由 `f3_runtime.py` 自动重定位到 `assets/`，DINO/ResNet 离线缓存就绪。
+- 预检写入 `outputs/f3_r1/session_preflight/`（未占用现场 session_01）；冻结的设备值 ACM0/id=nn/相机4/2 仍为历史建议值，未经现场核验。默认标定目录存在 id=nn 文件（hash `c6f9487c`），现场须确认实物是 nn 还是 nnn（见 Formal3 标定 id 记录）。
+- 剩余（需硬件+现场+用户授权）：设备映射/标定/相机核验 → 用核验值在真实会话重新 prepare-only → Stage0 人工审核 → M3 shadow×3 → M0→M1→M2→M3 固定轮转。F3_R1_COMPLETE 仍 false，本次未操作真机、未改配置、未提交。
+
 ## 2026-10-20：真机指南新增四模型独立复制命令
 
 - index1/REAL_ROBOT_TEST_GUIDE.md第12节给出M0/M1/M2/M3各自完整环境/路径/参数/日志命令，不依赖公共参数数组，默认与第11节同一session_01。按G1来源保留ACM0/id nn、双相机4/2、640×480/30、n_action_steps1/clip5、单次60秒；不覆盖ensemble。

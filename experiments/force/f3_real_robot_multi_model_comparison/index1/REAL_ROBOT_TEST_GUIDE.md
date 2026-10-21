@@ -46,19 +46,22 @@ M0不是纯ACT，不能将M0 vs M1的变化全部归因于load。
 | 控制目标频率 | 30 Hz | 记录实际循环Hz、延迟和漏帧 |
 | `n_action_steps` | 1 | 四组当前checkpoint均为1 |
 | `chunk_size` | 100 | 四组当前checkpoint均为100，不修改 |
-| `temporal_ensemble_coeff` | `null`，即不启用ensemble | 四组checkpoint均为null；最近G1命令未另行覆盖 |
-| `max_relative_target` | 5 | 历史安全限制示例，现场验证后统一冻结 |
+| `temporal_ensemble_coeff` | `0.01`，现场启用ensemble | 四组checkpoint均为null；**入口默认已改为0.01**，漏带不再退化为抖动原始动作，真机卡顿现场仍显式传0.01 |
+| `max_relative_target` | 2 | 真机卡顿，现场统一收紧为2 |
 | 单次时间上限 | 60秒 | 不是必须等满60秒；危险立即停 |
 | 人工复位预留时间 | 约30秒 | 安全复位/检查未完成不得自动续跑 |
 | task文本 | `Cup pick and place`（沿用旧示例） | 实际任务须与熟悉任务一致，不改场景目标 |
 | M3残差上限 | ±4.832699459791184 | 原生夹爪位置单位，不能放大 |
 
-更早指南出现过`temporal_ensemble_coeff=0.01`；它不等于最近G1的默认设置。
-**本指南不授权把某组单独改成0.01/0.1，也不推荐现场凭感觉逐组调参。**
-若现场要采用不同共同设置，必须在任何试次前完成必要审核、记录并冻结，
-不能看到shadow/正式结果后再改设置继续本轮。
+真机首测观察到动作卡顿，**现场统一**将`temporal_ensemble_coeff`设为`0.01`、
+`max_relative_target`收紧为`2`，四模型一致，对比仍公平；已重新冻结并过Stage0审核。
+这两项不是某组单独调参，也不能看到结果后再继续改。
 
-`max_relative_target=5`不是5厘米、速度上限或防碰撞保证；不能因动作卡顿
+卡顿根因是入口旧默认`temporal_ensemble_coeff=None`会静默关闭ensemble，
+每步只吐chunk第一个原始预测（`n_action_steps=1`），逐帧抖动；G1流畅正是因为
+同一参数被真正开启。现已把入口默认改为`0.01`，并在`None`时打警告。
+
+`max_relative_target=2`不是厘米、速度上限或防碰撞保证；不能因动作卡顿
 就删除限幅。M3的±4.8327是**额外夹爪残差上限**，不能替代机器人安全限幅。
 
 ## 3. 下载模型与环境准备（无硬件动作）
@@ -336,10 +339,10 @@ M3一旦出现调节器相关严重危险事件，停止其后所有regulated试
 `SESSION`是本次唯一会话目录，不得每换模型就换会话以绕过配置一致性检查。
 
 ```bash
-cd ~/lerobot/lerobot-main
-# 激活实际的部署环境后执行。
+cd ~/lerobot
+conda activate lerobotnn
 export PROJECT_ROOT="$PWD"
-export F3_BUNDLE="$PROJECT_ROOT/models/f3_r1"
+export F3_BUNDLE="$PROJECT_ROOT/outputs/deploy/F3_R1"
 export TORCH_HOME="$F3_BUNDLE/torch_cache"
 # 这里必须使用GitHub项目新入口，不能仍指向HF包的旧源码快照。
 export PYTHONPATH="$PROJECT_ROOT/src"
@@ -353,10 +356,11 @@ F3_COMMON=(
   --robot.type=so101_follower
   --robot.port=/dev/ttyACM0
   --robot.id=nn
-  --robot.max_relative_target=5
-  --robot.cameras="{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}"
+  --robot.max_relative_target=2
+  --robot.cameras="{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30, fourcc: MJPG}}"
   --policy.device=cuda
   --policy.n_action_steps=1
+  --policy.temporal_ensemble_coeff=0.01
   --dataset.single_task="Cup pick and place"
   --dataset.num_episodes=1
   --dataset.episode_time_s=60
@@ -371,7 +375,7 @@ python src/lerobot/scripts/control_f3.py --help
 不自动重新标定。30秒reset参数仅记录人工复位参考；单次调用不会自动回Home。
 无需`--dataset.root`、`--dataset.repo_id`：新入口不借用旧训练数据metadata，
 直接使用冻结包内processor/normalization；也不重新生成或上传数据集。
-不额外指定ensemble系数，继承前述共同null设置。
+现场统一指定`temporal_ensemble_coeff=0.01`，继承前述共同设置。
 
 ### 11.2 先完成离线/现场审核，不能跳过
 
@@ -397,8 +401,8 @@ prepare会生成`deployment_config_frozen.json`、默认`passed:false`的
 
 ### 11.3 M3 shadow：3次，残差不执行
 
-每条之间都先停止、复位、恢复杯位和水量。输入试次ID及`START`的两次
-确认分别用于连接前安全确认与首帧相机人工确认；准备不充分不要确认。
+每条之间都先停止、复位、恢复杯位和水量。两次回车确认分别用于
+连接前安全确认与首帧相机人工确认（输入非空内容即中止）；准备不充分不要确认。
 
 ```bash
 python src/lerobot/scripts/control_f3.py "${F3_COMMON[@]}" \
@@ -488,39 +492,94 @@ Ctrl+C/出错后disconnect可能卸力，夹持中的杯子及机械臂需由现
 SESSION或ROUND变量。**必须先按第11.2节完成相同会话的准备、离线检查与人工Stage0审核；M3还必须完成三次shadow并通过人工审核。**
 直接复制不等于跳过安全门；缺少审核时程序会拒绝启动。
 
-默认项目目录为`~/lerobot/lerobot-main`，模型包为`models/f3_r1`，
+默认项目目录为`~/lerobot`，模型包为`outputs/deploy/F3_R1`，
 会话为`outputs/f3_r1/session_01`，与第11节一致。如果实际安装位置不同，
 先统一修正准备步骤与下面四块的路径，不要使用另一会话来绕过检查。
 相机索引4/2、从臂ACM0/id nn须现场确认；主臂ACM1仅用于手动预检/复位，
 策略运行时不同时开启teleoperate。
 
-参数参照此前G1指令：n_action_steps=1、安全限幅5、640×480/30FPS、
-每次1段且最多60秒、人工复位参考30秒；不额外覆盖ensemble，维持共同null设置。
+参数参照此前G1指令：n_action_steps=1、640×480/30FPS、每次1段且最多60秒、
+人工复位参考30秒；真机卡顿故现场统一`temporal_ensemble_coeff=0.01`、`max_relative_target=2`。
 新入口从模型包读取归一化，不需要旧指令的dataset.repo_id/root。
-不会自动回Home，输入试次ID和START后才可能发送动作。
+不会自动回Home，两次回车确认后才可能发送动作（输入非空内容即中止）。
 
 下面是**第1轮**，按M0→M1→M2→M3顺序，每块一次。第2轮仅将
 trial-id和tee文件名中的R01统一改为R02，第3轮改为R03；
 不要重复第1轮或删除已有记录。每轮间、每模型间均安全停止并人工复位。
 不要在云服务器执行这些硬件命令，应在直连机械臂和相机的Linux主机上运行。
 
+### 准备：先冻结配置 + 四模型离线干运行（无硬件；不过不能上真机）
+
+① 冻结本次会话共同配置，② 对四模型各做一次离线前向，全部打印 `OFFLINE_PASS_NO_HARDWARE` 才算过。两步都不连接机械臂/相机、不发送动作；不先跑 ① 的话，下面 `--execute` 会直接拒绝启动。
+
+```bash
+cd ~/lerobot || exit 1
+conda activate lerobotnn
+export PYTHONPATH="$PWD/src"
+export TORCH_HOME="$PWD/outputs/deploy/F3_R1/torch_cache"
+BUNDLE="$PWD/outputs/deploy/F3_R1"
+SESSION="$PWD/outputs/f3_r1/session_01"
+mkdir -p "$SESSION"
+set -o pipefail
+
+COMMON=(--bundle "$BUNDLE" --session-dir "$SESSION" --policy.device=cuda --policy.n_action_steps=1 \
+  --policy.temporal_ensemble_coeff=0.01 \
+  --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=nn --robot.max_relative_target=2 \
+  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30, fourcc: MJPG}}' \
+  --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
+  --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30)
+
+# ① 冻结本次会话共同配置（绑定 2/0.01/相机/标定 id/代码哈希；之后任何一项改动都会被 --execute 拒绝）
+python src/lerobot/scripts/control_f3.py "${COMMON[@]}" --prepare-only
+
+# ② 四模型离线干运行，全部应打印 OFFLINE_PASS_NO_HARDWARE
+python src/lerobot/scripts/control_f3.py "${COMMON[@]}" --dry-run --model M0
+python src/lerobot/scripts/control_f3.py "${COMMON[@]}" --dry-run --model M1
+python src/lerobot/scripts/control_f3.py "${COMMON[@]}" --dry-run --model M2
+python src/lerobot/scripts/control_f3.py "${COMMON[@]}" --dry-run --model M3 --mode shadow
+python src/lerobot/scripts/control_f3.py "${COMMON[@]}" --dry-run --model M3 --mode regulated
+
+```
+
+③ 人工 Stage0 安全审核：这是**安全门，只能现场操作者做，不能跳过**。逐项确认全部满足后，才把 `passed` 改 `true`：
+
+- 杯中约半杯水、桌面干燥；机械臂在 **Home + Open**；夹爪/底座/相机/线缆无碰撞风险，臂运动范围内无人无杂物；
+- 你手能随时够到急停；两路相机画面：top=桌面全局、gripper=腕部视角（不黑屏/不过曝/不错位）；
+- **先停掉 teleoperate**、确认串口释放（策略与主臂不能同时写从臂）。
+
+```bash
+# 现场确认上述安全门全部满足后执行：把 reviewer 改成你的名字，passed 改 true
+python - <<'EOF'
+import json
+p='outputs/f3_r1/session_01/stage0_review.json'
+r=json.load(open(p))
+r['reviewer']='lyj'
+r['passed']=True
+json.dump(r,open(p,'w'),indent=2,ensure_ascii=False)
+print('fingerprint 未变 =', r['deployment_fingerprint'])
+EOF
+```
+
+`--execute` 会校验这个文件：`passed` 必须为 true、`reviewer` 非空、`deployment_fingerprint` 与冻结配置一致，否则拒绝启动。指纹变了就说明冻结配置被改过，须回退重审。
+
 ### M0：历史8D P1
 
 ```bash
-cd ~/lerobot/lerobot-main || exit 1
+cd ~/lerobot || exit 1
 export PYTHONPATH="$PWD/src"
-export TORCH_HOME="$PWD/models/f3_r1/torch_cache"
+export TORCH_HOME="$PWD/outputs/deploy/F3_R1/torch_cache"
 mkdir -p outputs/f3_r1/session_01
 set -o pipefail
 python src/lerobot/scripts/control_f3.py \
-  --bundle="$PWD/models/f3_r1" \
+  --bundle="$PWD/outputs/deploy/F3_R1" \
   --session-dir="$PWD/outputs/f3_r1/session_01" \
   --execute --model M0 --mode disabled --trial-id R01_M0 \
   --stage0-report="$PWD/outputs/f3_r1/session_01/stage0_review.json" \
   --policy.device=cuda --policy.n_action_steps=1 \
+  --policy.temporal_ensemble_coeff=0.01 \
+  --robot.max_relative_target=2 \
   --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=nn \
-  --robot.max_relative_target=5 \
-  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30, fourcc: MJPG}}' \
   --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
   --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30 \
   2>&1 | tee outputs/f3_r1/session_01/R01_M0_terminal.log
@@ -529,20 +588,21 @@ python src/lerobot/scripts/control_f3.py \
 ### M1：干净6D，无反馈
 
 ```bash
-cd ~/lerobot/lerobot-main || exit 1
+cd ~/lerobot || exit 1
 export PYTHONPATH="$PWD/src"
-export TORCH_HOME="$PWD/models/f3_r1/torch_cache"
+export TORCH_HOME="$PWD/outputs/deploy/F3_R1/torch_cache"
 mkdir -p outputs/f3_r1/session_01
 set -o pipefail
 python src/lerobot/scripts/control_f3.py \
-  --bundle="$PWD/models/f3_r1" \
+  --bundle="$PWD/outputs/deploy/F3_R1" \
   --session-dir="$PWD/outputs/f3_r1/session_01" \
   --execute --model M1 --mode disabled --trial-id R01_M1 \
   --stage0-report="$PWD/outputs/f3_r1/session_01/stage0_review.json" \
   --policy.device=cuda --policy.n_action_steps=1 \
+  --policy.temporal_ensemble_coeff=0.01 \
   --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=nn \
-  --robot.max_relative_target=5 \
-  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+  --robot.max_relative_target=2 \
+  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30, fourcc: MJPG}}' \
   --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
   --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30 \
   2>&1 | tee outputs/f3_r1/session_01/R01_M1_terminal.log
@@ -551,20 +611,21 @@ python src/lerobot/scripts/control_f3.py \
 ### M2：全局单帧load
 
 ```bash
-cd ~/lerobot/lerobot-main || exit 1
+cd ~/lerobot || exit 1
 export PYTHONPATH="$PWD/src"
-export TORCH_HOME="$PWD/models/f3_r1/torch_cache"
+export TORCH_HOME="$PWD/outputs/deploy/F3_R1/torch_cache"
 mkdir -p outputs/f3_r1/session_01
 set -o pipefail
 python src/lerobot/scripts/control_f3.py \
-  --bundle="$PWD/models/f3_r1" \
+  --bundle="$PWD/outputs/deploy/F3_R1" \
   --session-dir="$PWD/outputs/f3_r1/session_01" \
   --execute --model M2 --mode disabled --trial-id R01_M2 \
   --stage0-report="$PWD/outputs/f3_r1/session_01/stage0_review.json" \
   --policy.device=cuda --policy.n_action_steps=1 \
+  --policy.temporal_ensemble_coeff=0.01 \
   --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=nn \
-  --robot.max_relative_target=5 \
-  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+  --robot.max_relative_target=2 \
+  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30, fourcc: MJPG}}' \
   --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
   --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30 \
   2>&1 | tee outputs/f3_r1/session_01/R01_M2_terminal.log
@@ -573,21 +634,22 @@ python src/lerobot/scripts/control_f3.py \
 ### M3：局部load残差，必须先通过shadow
 
 ```bash
-cd ~/lerobot/lerobot-main || exit 1
+cd ~/lerobot || exit 1
 export PYTHONPATH="$PWD/src"
-export TORCH_HOME="$PWD/models/f3_r1/torch_cache"
+export TORCH_HOME="$PWD/outputs/deploy/F3_R1/torch_cache"
 mkdir -p outputs/f3_r1/session_01
 set -o pipefail
 python src/lerobot/scripts/control_f3.py \
-  --bundle="$PWD/models/f3_r1" \
+  --bundle="$PWD/outputs/deploy/F3_R1" \
   --session-dir="$PWD/outputs/f3_r1/session_01" \
   --execute --model M3 --mode regulated --trial-id R01_M3 \
   --stage0-report="$PWD/outputs/f3_r1/session_01/stage0_review.json" \
   --shadow-review="$PWD/outputs/f3_r1/session_01/shadow_review.json" \
   --policy.device=cuda --policy.n_action_steps=1 \
+  --policy.temporal_ensemble_coeff=0.01 \
   --robot.type=so101_follower --robot.port=/dev/ttyACM0 --robot.id=nn \
-  --robot.max_relative_target=5 \
-  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}' \
+  --robot.max_relative_target=2 \
+  --robot.cameras='{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30, fourcc: MJPG}}' \
   --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
   --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30 \
   2>&1 | tee outputs/f3_r1/session_01/R01_M3_terminal.log
