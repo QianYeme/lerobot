@@ -20,6 +20,9 @@ def summarize(session):
     if (session/'trial_manifest.csv').exists():
         with (session/'trial_manifest.csv').open(newline='',encoding='utf-8') as f:manifest=list(csv.DictReader(f))
     for path in sorted(session.glob('F5_*/summary.json')):
+        # Superseded attempts are renamed <TRIAL_ID>_prev_<stamp>; only the live
+        # attempt counts toward the 12-trial table.
+        if '_prev_' in path.parent.name:continue
         runtime=json.loads(path.read_text());review=json.loads((path.parent/'stage_review.json').read_text())
         identity={k:runtime[k] for k in ['MODEL_ID','TRIAL_ID','POSITION']}
         if identity!={k:review[k] for k in identity}:raise ValueError('Review/trial identity mismatch')

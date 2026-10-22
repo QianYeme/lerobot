@@ -1,4 +1,5 @@
 """F5 CLI/metadata and mock-I/O regressions. No physical robot connection."""
+import csv
 import importlib.util
 import json
 import re
@@ -101,7 +102,17 @@ def test_mock_trial_assistance_or_ctrl_c_cleanup_no_stop_lock(tmp_path,monkeypat
     assert summary['full_autonomous_success']=='FAIL' and summary['assisted_recovery_used']
     assert observed['cfg'].max_relative_target==2 and observed['disconnect'] and runtime.resets==2
     assert not list(a.session_dir.rglob('*STOP*'))
-    with pytest.raises(FileExistsError):control.run_trial(a,runtime,control.settings(a))
+    # Re-running the same trial must go through: the old attempt is moved to _prev_.
+    commands=iter(['end']);monkeypatch.setattr(control,'command',lambda:next(commands))
+    control.run_trial(a,runtime,control.settings(a))
+    assert not list(a.session_dir.rglob('*STOP*'))
+    archived=list(a.session_dir.glob(f'{path.name}_prev_*'))
+    assert len(archived)==1 and (archived[0]/'summary.json').is_file()
+    assert json.loads((path/'summary.json').read_text())['status']=='OPERATOR_END'
+    assert json.loads((archived[0]/'summary.json').read_text())['status']==summary['status']
+    with (a.session_dir/'trial_manifest.csv').open(newline='',encoding='utf-8') as f:
+        rows=[r for r in csv.DictReader(f) if r['TRIAL_ID']==path.name]
+    assert len(rows)==1 and rows[0]['status']=='OPERATOR_END'
 
 
 def test_residual_metrics_and_payload_paths(tmp_path):
@@ -127,3 +138,19 @@ def test_summary_preserves_incomplete_attempt_and_allows_downstream_recovery(tmp
     control.save(folder/'stage_review.json',review)
     control.save(folder/'summary.json',dict(**record,assisted_recovery_used=True))
     assert summarize.summarize(tmp_path)['status']=='REVIEW_REQUIRED'
+
+
+def test_summary_ignores_superseded_prev_attempts(tmp_path):
+    spec=importlib.util.spec_from_file_location('summarize_f5',ROOT/'scripts/summarize_f5.py')
+    summarize=importlib.util.module_from_spec(spec);spec.loader.exec_module(summarize)
+    a=args(tmp_path);identifier=protocol.trial_id(a.model,'A')
+    stages={f'S{i}':'UNKNOWN' for i in range(7)}
+    review=dict(MODEL_ID=a.model,TRIAL_ID=identifier,POSITION='A',A=dict(**stages,full_autonomous_success='UNKNOWN'),
+        B=dict(**stages,full_chain_after_assistance='UNKNOWN'),validity='UNREVIEWED',visible_slip='UNKNOWN',
+        premature_release='UNKNOWN',visible_over_closure='UNKNOWN',cup_deformation='UNKNOWN',operator_emergency_stop=False,
+        approximate_lift_height_cm=None,approximate_hold_duration_s=None,first_autonomous_failure_stage='',assistance_type='')
+    for name in [identifier,identifier+'_prev_20261022_120000']:
+        folder=tmp_path/name;folder.mkdir()
+        control.save(folder/'stage_review.json',review)
+        control.save(folder/'summary.json',dict(MODEL_ID=a.model,TRIAL_ID=identifier,POSITION='A',assisted_recovery_used=False))
+    assert summarize.summarize(tmp_path)['attempted_trials']==1

@@ -1,5 +1,25 @@
 # LeRobot 项目当前状态
 
+## 2026-10-22：F5 真机 A 轮结束，控制CSV归档；阶段性结果未判定
+
+- 用户确认本轮真机测试结束。`outputs/f5/session_01/` 共4个模型（A点位）20份控制CSV，已复制归档到[real_robot_control_csv](../experiments/force/f5_unified_real_robot_validation/index1/result/real_robot_control_csv/README.md)并附`manifest.json`；视频/首帧/summary/stage_review仍留在本地`outputs/`（gitignore）。
+- 事实记录：20次尝试状态全为`SAFETY_ABORT`（操作员中止）或`ERROR`，无一次自然跑满60秒；另有3次启动即失败（相机/连接）未生成CSV。每个模型最新一次步数：P1-Hist 580、Strong-G 811、L-Load 287、New-GL 507。
+- 所有`stage_review.json`仍为`UNREVIEWED`，**没有任何成功/失败判定**；B/C轮未执行，12次正式预算未完成，`F5_COMPLETE=false`。不得把本批数据写成模型优劣或抓取成功率结论。
+- 同时把"结果不得覆盖、必须可重复"写入指南第6节；重复试次沿用`_prev_`归档、汇总跳过旧尝试的机制（21项回归）。本轮更新提交GitHub det分支，不纳入无关未提交修改。
+
+## 2026-10-22：F5 重复试次不再被同名目录阻塞
+
+- 用户现场重跑同一试次时报 `FileExistsError`。`control_f5.py` 改为：同名目录存在时自动改名为 `<TRIAL_ID>_prev_<时间戳>`（证据保留、不删除），新试次照常写入原目录；`summarize_f5.py` 跳过 `_prev_` 目录，避免旧尝试重复计入12次表。指南第6节与[真机经验参考](../docc/指南/真机测试经验与代码指令参考.md)同步更新。
+- 回归21项通过（新增重跑归档、manifest 单行、汇总排除 `_prev_` 三项断言）。未改模型、权重、归一化、相机语义或部署参数。
+- 现场状态：`session_01` 已有 P1-Hist A（522步后人工中止，`SAFETY_ABORT`）与 Strong-G A 的一次 `ERROR`（相机4读帧超时，0步）；两路索引事后探测均可出帧，判为进程退出后设备未及时释放。**两试次均未做 stage_review，不构成成功/失败结论**；正式12次未完成，F5_COMPLETE=false。
+
+## 2026-10-22：F5真机前本机预检完成，硬件未连接
+
+- 按[F5指南](../experiments/force/f5_unified_real_robot_validation/index1/REAL_ROBOT_TEST_GUIDE.md)完成真机前步骤：`huggingface.co`直连TLS被重置，改用`hf-mirror.com`下载；镜像revision `4d680b2552c0257f3a9989bde45e54bedb98aa5c`与发布回执一致。模型包962473497字节、SHA256 `9187d7e8…cca9`校验通过；代码包5个文件与当前det逐字节相同，未覆盖仓库；解包至`outputs/deploy/F5/`。
+- `verify_bundle()`四模型身份/manifest哈希全部通过；F5/F3回归20项通过（`lerobotnn`原缺pytest，本轮为跑回归安装）；四模型`--dry-run`均exit 0、动作有限，L-Load/New-GL局部修正−4.8288/−4.8290落在±4.832699界内。合成零观测只证明接线与限界，不是行为或闭环证据。
+- **未连接真机**：本机无`/dev/ttyACM*`；仅`video0/video1`且属同一UVC摄像头，指南top=4/gripper=2无法核验。正式试次0/12，F5_COMPLETE=false，未把离线预检当现场证据。
+- 待现场决定：`nn.json`与`nnn.json`两套标定关节语义不同（homing相差约2000 counts、gripper量程不同），代码按`--robot.id`静默加载；指南已标注，未擅自修改部署参数。记录见[preflight_local_2026-10-22.md](../experiments/force/f5_unified_real_robot_validation/index1/result/preflight_local_2026-10-22.md)。
+
 ## 2026-10-22：F5真机文件与四模型已发布Hugging Face
 
 - 已从服务器上传并核验[QYyyyyyyy/F5_UNIFIED_SO101](https://huggingface.co/QYyyyyyyy/F5_UNIFIED_SO101)，revision `4d680b2552c0257f3a9989bde45e54bedb98aa5c`。含P1-Hist/Strong-G/L-Load/New-GL精确模型、normalizer、prototype、离线视觉缓存，以及配套F5代码包、指南、身份与离线验证证据。

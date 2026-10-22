@@ -82,7 +82,14 @@ def run_trial(a,runtime,common):
     from lerobot.robots.so_follower import SO101Follower,SO101FollowerConfig
     from lerobot.utils.control_utils import init_keyboard_listener
     identifier=trial_id(a.model,a.position);directory=a.session_dir/identifier
-    # Protect one formal trial's evidence; never rename/delete an old attempt.
+    # Re-running a trial must not be blocked by the previous attempt. Move the old
+    # directory aside (evidence kept, never deleted) and write the new attempt fresh.
+    if directory.exists():
+        stamp=time.strftime('%Y%m%d_%H%M%S');archived=a.session_dir/f'{identifier}_prev_{stamp}';suffix=1
+        while archived.exists():
+            archived=a.session_dir/f'{identifier}_prev_{stamp}_{suffix}';suffix+=1
+        directory.rename(archived)
+        print(f'Previous {identifier} moved to {archived.name}; starting a new attempt.',flush=True)
     directory.mkdir(exist_ok=False)
     record=dict(MODEL_ID=a.model,TRIAL_ID=identifier,POSITION=a.position,planned_slot=slot(a.model,a.position),
         status='STARTED',rows=0,assisted_recovery_used=False,control_csv=str(directory/f'{identifier}.csv'),

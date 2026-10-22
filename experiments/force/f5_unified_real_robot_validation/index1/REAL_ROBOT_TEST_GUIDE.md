@@ -33,6 +33,15 @@ tar -xzf outputs/deploy/F5_project_files.tar.gz -C .
 tar -xzf outputs/deploy/F5_deploy_bundle.tar.gz -C outputs/deploy
 ```
 
+`huggingface.co` 直连被重置时，用镜像重跑同一命令即可（仓库公开，无需登录）：
+
+```bash
+export HF_ENDPOINT=https://hf-mirror.com
+hf download QYyyyyyyy/F5_UNIFIED_SO101 F5_deploy_bundle.tar.gz F5_project_files.tar.gz --local-dir outputs/deploy
+```
+
+镜像返回的 revision 应仍是 `4d680b2552c0257f3a9989bde45e54bedb98aa5c`；下载后必须照第2节末尾核对字节数与 SHA256，再解包。
+
 若Hugging Face暂不可达，也可从项目根目录使用服务器备用路径（SSH密码交互输入，文档不保存密码）：
 
 ```bash
@@ -62,9 +71,11 @@ python src/lerobot/scripts/control_f5.py --help
 ## 3. 一次完成基本检查，不做额外shadow试次
 
 - 从臂：`/dev/ttyACM0`、`so101_follower`、`robot.id=nn`；必须使用与训练设备一致的机械臂标定/关节语义。
+  **现场先确认标定 id**：本机同时存在 `nn.json`（homing≈−1900、gripper range `[1526,2978]`）与 `nnn.json`（homing≈0–100、gripper range `[2043,3493]`），两者关节语义不同。代码在文件存在时会静默按 `--robot.id` 加载，不会报错；formal3 采数用 `nnn`，F3 r1 真机冻结配置用 `nn`。以本次实物当前标定为准，开工前统一改四条指令。
 - 主臂只用于试次间手动复位：`so101_leader`、`/dev/ttyACM1`、`teleop.id=nn`。策略推理不需要主臂输入，也不连接主臂串口。
 - top相机index4，gripper相机index2，均RGB640×480/30fps；腕部MJPG。用实际画面确认二者没有接反，视角保持和数据采集一致。
 - 若相机索引/串口在本机不同，在**正式测试前**统一修改四条指令；不能看到某个模型失败后换视角。
+- 启动时报 `TimeoutError: Timed out waiting for frame from camera OpenCVCamera(4/2)`：多半是上一次进程刚退出、摄像头还没释放或刚被重新枚举。等 2–3 秒直接重跑（同一试次会自动把旧目录移到 `_prev_`）；连续失败时先用 `python -c "import cv2;c=cv2.VideoCapture(4);print(c.isOpened(),c.read()[0]);c.release()"` 逐个确认索引能出帧，再查 USB 连接。
 - 已有标定文件必须存在；脚本 `calibrate=False`，不会自动进入校准或运动归零。
 - 通过以前能正常使用的主从臂手动控制，确认Home+Open和开闭方向。不要在方向不明时让策略试探。
 - 策略输出的是既有原生动作坐标；local的正负是该坐标内的修正，不是力值。不能凭load推断牛顿。
@@ -135,7 +146,9 @@ Home+Open复位方式：……
 
 终端加tee仍支持 `assist`/`end` + Enter；桌面环境可用箭头/Esc，SSH/无桌面时箭头监听可能不可用，但Ctrl+C和上述行命令仍可用。
 程序每次启动/结束均reset策略及适用的pre/postprocessor；A→B不reset。SIGKILL/断电无法保证Python finally执行，届时保留残缺证据，不擅自当作没做过试次。
-同名trial目录再次运行会报已存在，目的是不覆盖证据，不是STOP解锁门。不要删目录或改ID规避12次正式预算；硬件中断是否补测应另请规划方决定。
+重复运行同一试次**不会被阻止**：上一次的目录会自动改名为 `<TRIAL_ID>_prev_<时间戳>`，新一次写入原来的 `<TRIAL_ID>`。旧录像/CSV/summary 都保留在 `_prev_` 目录里，但不会计入汇总表；不需要为了重测手动删除文件。不要改动TRIAL_ID来规避12次正式预算；硬件中断是否补测应另请规划方决定。
+
+**结果不得覆盖，必须可重复**：每次试次的 CSV、视频、summary、stage_review 都是独立证据，只允许归档到 `_prev_`，不允许删除、覆盖或用“最好的一次”替换先前记录。可重复性是本轮的硬要求——同一模型/点位按计划重复执行，每次单独判定；报告只能基于全部已尝试试次，不能只保留成功的那一次。
 
 ## 7. 每次保存什么，如何人工判定
 
