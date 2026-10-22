@@ -1,0 +1,8 @@
+{
+  "scope": "PREPARATION_NOT_ROBOT_OUTCOME",
+  "planned_models": 4,
+  "planned_trials": 12,
+  "attempted_robot_trials": 0,
+  "autonomous_success_rate": null,
+  "F5_COMPLETE": false
+}

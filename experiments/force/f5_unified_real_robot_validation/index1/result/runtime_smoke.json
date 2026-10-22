@@ -1,0 +1,52 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "models": {
+    "P1-Hist": {
+      "status": "PASS_REAL_DEV_FIRST_FRAME",
+      "state_width": 8,
+      "global_load": false,
+      "local": false,
+      "first_step_nominal_matches_raw_h0": true,
+      "residual_applied_once": true,
+      "reset_reproduces_first_step": true,
+      "nonhistorical_current_invariance": "HISTORICAL_CURRENT_INPUT_RETAINED"
+    },
+    "Strong-G": {
+      "status": "PASS_REAL_DEV_FIRST_FRAME",
+      "state_width": 6,
+      "global_load": true,
+      "local": false,
+      "first_step_nominal_matches_raw_h0": true,
+      "residual_applied_once": true,
+      "reset_reproduces_first_step": true,
+      "nonhistorical_current_invariance": "PASS"
+    },
+    "L-Load": {
+      "status": "PASS_REAL_DEV_FIRST_FRAME",
+      "state_width": 6,
+      "global_load": false,
+      "local": true,
+      "first_step_nominal_matches_raw_h0": true,
+      "residual_applied_once": true,
+      "reset_reproduces_first_step": true,
+      "nonhistorical_current_invariance": "PASS"
+    },
+    "New-GL": {
+      "status": "PASS_REAL_DEV_FIRST_FRAME",
+      "state_width": 6,
+      "global_load": true,
+      "local": true,
+      "first_step_nominal_matches_raw_h0": true,
+      "residual_applied_once": true,
+      "reset_reproduces_first_step": true,
+      "nonhistorical_current_invariance": "PASS"
+    }
+  },
+  "device": "RTX5090 server GPU",
+  "hardware": "NOT_CONNECTED",
+  "final12_reads": 0,
+  "robot_trials": 0,
+  "note": "Temporal ensemble first/reset step verified; not a robot safety or closed-loop validation",
+  "current_vs_training_ACT_ast_equal": false,
+  "ACT_source": "/root/autodl-tmp/F5_20261022/source/src/lerobot/policies/act/modeling_act.py"
+}

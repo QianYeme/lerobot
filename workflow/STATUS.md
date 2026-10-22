@@ -1,5 +1,124 @@
 # LeRobot 项目当前状态
 
+## 2026-10-22：F5真机文件与四模型已发布Hugging Face
+
+- 已从服务器上传并核验[QYyyyyyyy/F5_UNIFIED_SO101](https://huggingface.co/QYyyyyyyy/F5_UNIFIED_SO101)，revision `4d680b2552c0257f3a9989bde45e54bedb98aa5c`。含P1-Hist/Strong-G/L-Load/New-GL精确模型、normalizer、prototype、离线视觉缓存，以及配套F5代码包、指南、身份与离线验证证据。
+- 模型包962473497字节，SHA256 `9187d7e8db452fa468c3d6930558fb1e6ba9d313bdd52a0a454cf3c6c6f0cca9`；代码包16076字节，SHA256 `8489f180f69f9695df8bd5ff9154f0a08bfc9671a564969b1692c03f3190a74d`。8个远端文件逐项大小及LFS SHA256/Git blob SHA1核验通过；[发布凭证](../experiments/force/f5_unified_real_robot_validation/index1/result/hf_publish_receipt.json)。使用AutoDL network_turbo解决直连超时，令牌仅stdin传递，无磁盘凭据文件。
+- [指南](../experiments/force/f5_unified_real_robot_validation/index1/REAL_ROBOT_TEST_GUIDE.md)已增加HF下载与解包指令，不再依赖云服务器持续开机；四条真机指令保留CLI可调ensemble/relative限制。本轮更新GitHub det分支的F5代码、指南和项目日志，不纳入无关实验修改、模型权重或数据集。
+- F5_COMPLETE=false，真机0/12、Final12未读取；发布文件不等于完成真机验证。下一步是在接臂Linux系统统一冻结设置、杯位与初态，按指南执行12次正式试次。
+
+## 2026-10-22：F5部署准备，控制参数支持命令行修改
+
+- 新增F5统一入口 `src/lerobot/scripts/control_f5.py`；`--policy.temporal_ensemble_coeff`与`--robot.max_relative_target`从CLI传入实际策略/机械臂配置，默认0.01/5，不强制固定值；实际参数写入每试次configuration.json。正式四模型比较前统一设置，不按中途结果单独调参。
+- [真机指南](../experiments/force/f5_unified_real_robot_validation/index1/REAL_ROBOT_TEST_GUIDE.md)末尾有四模型独立指令；本地20项F5/F3相关回归及git diff --check通过。命令解析、实际参数转发使用模拟I/O验证，非真机验证。
+- 服务器已准备四模型部署包并通过真实Dev首帧GPU冒烟；检查范围是首步/reset、局部分支隔离及有限输出，不证明闭环效果。F5_COMPLETE=false，真机试次0；未Git/HF发布。ACT相对早期训练源码新增可选load gate分支，源码并非逐字/AST相同，不据此声称源码完全一致。
+
+## 2026-10-22：F4.2完成，New-GL成为首选离线双路候选
+
+- 按F4_2 r0用精确Strong-G global seed3/80k重新回放Train36/Dev12，重新拟合Train-only nominal统计，从头并行训练New local seed1/2/3各10k；同MLP/输入/Adam/.001/batch256/1k保存/bound4.83269946，无global微调。三十checkpoint全部保留，global和Old组件前后SHA不变。
+- 主结论STRONG_GLOBAL_GL_LOAD_SUPPORTED，F4_2_COMPLETE=true为执行方合同交付完成，Preferred-GL=New-GL：global seed3/80k + New local seed3/7k，local SHA695d6fa89f3e823f6236dca38c8e684c461009d5b9c357cfd1cb9f0d8dffea81。保留Old-GL、Strong-G、最佳L-Load及P1-Hist历史引用，未把旧local接新global。
+- 同批fresh Dev5748帧：Old-GL primary0.03306074/native arm2.96571882；Strong-G 0.07200311/2.28577658；最佳New-GL 0.01472233/2.28577658，native gripper0.366691。New较Old夹爪误差下降55.47%、arm下降22.93%，12/12段夹爪均更低，较Strong夹爪下降79.55%，无需事后“允许退化”阈值。全部三个New local arm逐元素继承Strong，不是真机动作/成功率证明。
+- New D0/D1全局中和/D2局部中和/D3双中和primary=.014722/.045578/.054687/.077793，两路都有使用；global h0 arm变化.034786个归一化单位。New mean|delta|1.551723、近界0.47%、Dev目标裁剪6.47%、Train裁剪1.08%、0越界（Old mean|delta|2.443081、近界6.30%、Dev裁剪18.46%），更强global减少局部修正负担。New模型级中位12.08ms/74,957,064参数，非端到端时延。
+- 独立验证5模型主指标/60条逐episode、4预测hash、30候选扫选、3种子arm隔离；服务器复核所有1437 raw批/100 horizons、Train17243帧归一化及5%界限、组件SHA和30权重保留；48回归、六图视觉、diff/ZIP CRC和成员SHA通过。原始数据和日志不删除。
+- [summary](../experiments/force/f4_2_strong_global_gl_load_rebuild/index1/result/summary.md)；[ZIP](../experiments/force/f4_2_strong_global_gl_load_rebuild/index1/F4_2_result_delivery_20261022T030808646422Z.zip)（407793字节，SHA1737a9f81f875fa445add7f677582d84d8dba9ad2cd66b686cc6ef395579e0f0）。本地canonical results/experiments/F4_2_STRONG_GLOBAL_GL_LOAD_REBUILD/20261022T030808646422Z（67文件）；服务器/root/autodl-tmp/F4_2_20261022保留30权重/新Train-Dev缓存/1437 raw批/日志，审阅版另置delivery_reviewed/不覆盖原自动报告。
+- 独立Builder/Red-Team PENDING；建议验收后停止继续离线追Dev，下一decision冻结统一真机模型池/部署与安全/同步日志协议。本轮未Final12、真机、实际部署参数改动、Git/HF发布或自动进入下一科研轮次。
+
+## 2026-10-22：F4.2强骨干GL重建已启动
+
+- 合同：experiments/force/f4_2_strong_global_gl_load_rebuild/index1/decision_F4_2_STRONG_GLOBAL_GL_LOAD_REBUILD.md，r0，只读。服务器/root/autodl-tmp/F4_2_20261022，nohup主PID27163、报告follower PID521038，SSH断开可继续。
+- 固定Strong-G=G global seed3/80k、Old-GL=旧G seed1/60k+local seed4/7k，启动时精确SHA和共同配置核验通过。正在新鲜回放Strong Train36与同批Dev12正常/中和/Old；不用旧名义动作训练New。
+- 回放后真实4帧2更新烟测，再独立初始化并行New local seed1/2/3各10k，Adam/.001/batch256/每1k保存，同3-32-32-1与bound4.83269946。新nominal归一化只Train拟合，global不进优化器。
+- 自动链包含十候选扫选、Old/Strong/New fresh指标、arm bitwise隔离、global/local/dual反事实、100 horizons raw1437批、模型级时延/参数及计算报告。最终权衡分类/Preferred-GL、图检查和独立复算之后交付，不新增宽容阈值。
+- 启动盘45.6GiB，预计新增不足1GiB且保留15GiB；无唯一模型/证据删除、无新global训练/seed4/current/W15/gate/FiLM/Final12/真机/部署改动或Git/HF发布。入口[RUNNING](../experiments/force/f4_2_strong_global_gl_load_rebuild/index1/RUNNING.md)，当前F4_2尚未完成。
+
+## 2026-10-22：F4.1-r1完成，global种子敏感、固定骨干local稳定
+
+- 后台用时8.759小时，11/11新增训练成功、无失败/重启：G-Load global2/3/4、B0-6D global2/3各100k；GL/L local2/3/4各10k。25个新增global与60个新增local checkpoint共85个全部保留。可选B0 seed4/P1-Hist为时间预留未运行，无外存中断；GPU已空闲，数据盘仍约45.6GiB可用。
+- Dev12 fresh主指标均值±样本std：B0（三global种子）0.124266±0.034707，G（四global）0.111000±0.043287，L（固定旧B0上四local）0.057677±0.000147，GL（固定旧G上四local）0.033358±0.000275。GL所有local种子低于所有L；局部均值优势42.16%，不等于GL跨global种子已稳。
+- 定性主结论GLOBAL_SEED_SENSITIVE，F4_1_R1_COMPLETE=true仅指合同执行与执行方解释完成。G范围0.072003–0.165142约2.29倍，seed1排3/4，较弱但非唯一最差/统计离群点；共享global seed1/2/3只赢B0的2/3，不能说global load稳定优胜或已证明历史真机根因。
+- 已冻结：G global seed3/80k（primary0.072003、native arm2.285784）；L local seed4/9k（primary0.057476、旧F4 B0）；GL local seed4/7k（primary0.033060、仍旧F4 G seed1/60k，不接新G）。最佳GL相对原local seed1仅约0.415%增益，仍不是直接真机部署许可。推荐新decision下在新G骨干重新训练local，不擅自组合或开新训练。
+- 核验：37个global fresh评估、15候选/180逐episode指标独立重算，51 NPZ SHA、15候选权重及85 checkpoint预算/保留核实通过；8个local arm bitwise不变。最佳GL/G A/B完整Dev重复输出差0；selection-vs-repeat并非bitwise一致，最大预测差0.001292825/0.000716329，主指标差8.01e-7/6.03e-7，明确保留。41项回归、六图视觉检查、diff/ZIP CRC和成员SHA通过。
+- 最终[summary](../experiments/force/f4_1_unattended_global_local_robustness/index1/result/summary.md)；[审阅版ZIP](../experiments/force/f4_1_unattended_global_local_robustness/index1/F4_1_r1_reviewed_delivery_20261022T014830280678Z.zip)（417806字节，SHA44c73dc8184d6a91868f92ce84fbb0723d3e37ebaeeff3cd9e6c9d70688762f8）。本地canonical raw为results/experiments/F4_1_UNATTENDED_GLOBAL_LOCAL_ROBUSTNESS/20261022T014830280678Z，144文件；原后台包和51预测/14日志保留。服务器原证据/root/autodl-tmp/F4_1_20261022，最终审阅版在delivery_reviewed/，原result/作为自动生成历史版本不覆盖。
+- 独立Builder/Red-Team PENDING，等待规划方验收。Final12未读取、无新真机/部署改动、无Git/HF发布；旧启动条目仅作历史。
+
+## 2026-10-22：F4.1-r1已启动后台多种子队列
+
+- 当前合同：experiments/force/f4_1_unattended_global_local_robustness/index1/decision_F4_1_UNATTENDED_GLOBAL_LOCAL_ROBUSTNESS_r1.md，只读；目录没有旧r0需要归档。服务器westd:47382，工作目录/root/autodl-tmp/F4_1_20261022；nohup supervisor PID809477，G-Load seed2/3各100k已并行启动（PID809478/809479），原20k保存频率不变。
+- 清理采取逐SHA核验后合并7份相同model.safetensors为同盘硬链接，实际释放2,100,760,576字节（1.96GiB），所有原路径/内容保留，未删除独有模型、数据集、日志或失败现场。清理后可用55.16GiB，烟测后约54.6GiB；本轮新增按24GiB保守预估，保留15GiB，预计完成仍约30GiB。每20秒检查空间，准入为活动global预留空间，保存前再查；不自动删除实验checkpoint。
+- Train36/Dev12（17243/5748）、固定F4 G/B0和local seed1权重SHA、父源码一致性、真实反传/可丢弃optimizer更新/严格reload、local seed1初始化等价均PASS。36项本地回归通过，包含真实F4配对预测重算及F4.1队列/磁盘/重试/合成选模打包；合成测试不作为科研结果。
+- 排队：先G-Load2/3并行，G4按余时；再GL-Load local2/3/4并行，再L-Load local2/3/4并行；始终冻结F4对应global，不拼新global+local。B0额外global按余时；最终全部正常checkpoint统一fresh Dev扫选、各候选延迟/参数、最佳GL/G重复新鲜推理、统计/图/ZIP。预留1.5小时评估打包，不为占GPU追加实验。SSH断开不影响推进。
+- 仅普通CUDA/I-O/中断类工程失败允许一次exact-config重启，新attempt目录保留现场；非有限梯度不作为工程重启救场。后台生成包先标compute/report完成；合同“稳定/强变异”无数值定义，不自造阈值，定性outcome和F4_1_R1_COMPLETE待证据解释与审查；外部Builder/Red-Team及图像视觉审查PENDING。
+- 本地入口：[RUNNING.md](../experiments/force/f4_1_unattended_global_local_robustness/index1/RUNNING.md)。服务器result/queue_state.json、job_status.csv及logs/为运行事实；queue.exit=0只表示后台计算/报告链完成，非科研验收。当前训练尚未完成，未Git/HF发布、未真机、未Final12；后续检查时下载最终服务器result/ZIP并完成定性结论与本地交付。
+
+## 2026-10-22：F4双路load离线消融完成，等待独立审查
+
+- 严格按F4 r0执行H0无load/H1全局/H2局部/H3双路四组；复用核验后的H0/H1/H2，仅新增H3的1217参数local，冻结exact H1 global。H2/H3同Adam/.001、batch256、seed1、10k步、1k保存、十候选Dev选择，都选10k；H3正式训练27.99秒。
+- Train36=17243帧，Dev12=5748帧；主指标normalized h0 gripper L1依次0.150313/0.126392/0.057691/0.033199。H3比H1降低73.73%（12/12段），比H2降低42.45%（11/12段）；ep53退化、ep58微弱增益明细保留。
+- H3 D0正常/D1全局中和/D2局部中和/D3双中和主指标0.033199/0.058142/0.061682/0.085461；两路均有贡献。全局load中和改变100 horizons，64个arm均值超过0.05描述刻度；局部arm逐元素不变、delta0精确恢复nominal。bound固定4.83269946，H3 Dev近界6.30%、目标裁剪18.44%，无越界。
+- 结论DUAL_ROLE_LOAD_SUPPORTED，F4_COMPLETE=true仅指合同执行完成。单seed、teacher-forced Dev选模兼评估，非独立泛化/真机成功率/力闭环证明；外部Builder/Red-Team PENDING，不自动进入下一阶段。
+- 保留重要失败：旧缓存逐元素复现FAILED，原门槛未放宽；H0最大差0.036568，不能全部归因TF32。统一fresh H0/H1回放给四组，并对原十候选同规则重选，无重训或加预算；父Train缓存与fresh Dev执行路径差异须外审。execution_note、numerical_migration、原错误及探针日志齐全。
+- RTX5090模型级batch1中位H3=12.05ms、H1=11.73ms；不含相机/解码/预处理/串口。31项回归通过、六图视觉检查、14日志hash、ZIP CRC/成员SHA通过。未current/W15/gate/FiLM/Final12/真机/部署改动/Git或HF发布。
+- result：[summary](../experiments/force/f4_dual_role_load_architecture_ablation/index1/result/summary.md)；[交付ZIP](../experiments/force/f4_dual_role_load_architecture_ablation/index1/F4_result_delivery_20261021T161026104865Z.zip)（1,086,063字节，SHA256=00c6c47a1106981f36b61cfa546acbc32340604cc5143c5a627c3be6a143add5）。本地append-only canonical为results/experiments/F4_DUAL_ROLE_LOAD_ARCHITECTURE_ABLATION/20261021T161026104865Z（81文件）；服务器/root/autodl-tmp/F4_20261021保留1437 raw批、全部10个H3 checkpoint和失败现场，closed manifest含1501文件及344源码hash。
+
+## 2026-10-21：F3.4完成，load参与M0全局动作chunk，等待新decision
+
+- 新服务器westd:47382（RTX5090，Python3.12.3/torch2.8.0+cu128）已连通。固定F3_R1包M0=历史P1 100k、M1=A0 retry1 80k实际权重hash核验，M0推理后hash不变；不据此补称历史CSV部署身份已确认。
+- A保留6份M0/3份M1日志，126条全长/前8秒逐关节统计；B按冻结15步窗口/MAD规则检测30个load、23个current事件，仅相关性。数值动作链代理M0=5/6、M1=2/3，不是真机成功率。
+- C服务器后台完成固定Dev12全5748观测的CF0/CF1(load中和)/CF2(current中和)/CF3(同时中和)，100 raw horizons。保存normalizer核实后仅将normalized通道6/7置0，对应raw均值load=-4.78942/current=1.61283；不是raw置零。FP32/TF32关闭/batch4，真实4帧smoke通过，CF0重复误差0。
+- 主结论GLOBAL_PHASE_CONTEXT_SUPPORTED，次标签LOAD_DOMINANT，F3_4_COMPLETE=true。CF1/2/3 arm整段平均变化分别0.11011/0.01211/0.10641动作std；CF3 gripper为0.19496，h0夹爪native变化2.578。CF3总体100/100 horizon均值>0.05描述刻度，12episode arm均值0.07009–0.15061。不能据此断言真实phase识别、力测量、动作更好或H1重训差异被排除。
+- 25项回归PASS、6图检查、原chunk首/中/末样本hash与独立复算通过。完整1437批raw、job.log、源码/原日志输入及交付ZIP在/root/autodl-tmp/F3_4_20261021。result见experiments/force/f3_4_m0_m1_action_sequence_divergence/index1/result/summary.md；ZIP为F3_4_result_delivery_20261021T152609824813Z.zip（3200157字节，SHA17ab80a4546b4d556d0f930b043058f35588552c1e8f2972f663c5370161dfb2）。本地canonical raw时间戳20261021T152609824813Z，59文件/9原日志copy hash核验。
+- 已停止合同内执行，外部Builder/Red-Team待审。建议下轮仅受控比较global load context，再独立考虑local residual互补；未实现新架构/训练/真机/部署改动，未碰Final12，未Git/HF发布。
+
+## 2026-10-21：F3.3有界身份恢复已交付，当前材料无法可靠配对
+
+- 严格按decision F3_3_SESSION_IDENTITY_RECOVERY r0，仅检索已有材料，不再分析策略优劣。A/B/C/D检索、7份归档成员、F3 canonical配置文件名及本地Git相关路径历史均已检查；72件相关材料建表，22运行、9视频、198候选全部保留。
+- CONFIRMED/PROBABLE均0；49个同模型弱候选仍AMBIGUOUS，其余149个模型标签冲突UNMATCHED。M3日志数值模式确认3次REGULATED/5次SHADOW，但两段M3视频模式UNKNOWN。不得据此恢复F3.2命令级因果对齐。
+- 时间冲突：9手机文件mtime在2026-10-20 21:17–21:18 UTC，日志最早2026-10-21 03:07:54 UTC，相差至少约5小时49分；可能为复制/导出、源时钟或不同批次，不能自行平移配对。原双系统Ubuntu分区未挂载、WSL对应session不存在、westc:30824拒绝连接；未冒充已检索原机全部内容。
+- 结论IDENTITY_NOT_RECOVERABLE仅限当前可访问证据。F3_3_COMPLETE=true表示有界恢复合同交付，非恢复成功；F3_2_COMPLETE=false。旧F3保留为historically informative but incompletely auditable，停止重复无新证据检索。只有将来新增可信原session资料才重开。
+- result：experiments/force/f3_3_session_identity_recovery/index1/result/summary.md；交付包F3_3_result_delivery_20261021T062817255956Z.zip（48295字节，CRC/成员SHA通过），canonical raw：results/experiments/F3_3_SESSION_IDENTITY_RECOVERY/20261021T062817255956Z，49文件，22原CSV副本hash一致。本地保存，18项回归PASS。
+- proposal仅建议下一次授权测试将RUN_ID/MODEL_ID/TRIAL_ID/MODE/TIMESTAMP同步写入视频/CSV/stdout/manifest，不新增多层shadow或安全锁。本轮未实现/部署、未真机/训练/Final12、未Git发布；外部Builder/Red-Team待审。
+
+## 2026-10-21：F3.2取得22份原始控制CSV，日志审计已交付，同步仍待补证
+
+- 已ff-only拉取det至20df5be8，保留本地所有未提交变更；原“完全缺控制日志”阻塞解除。归档README记录22次运行（含_prev和shadow），共19970行；全部行数/大小/hash、时间/step/必需字段检查通过。9视频hash复核，ffprobe未取得共享creation_time。
+- M3三次regulated数值上仅加一次夹爪残差，五维arm未改；另五次shadow未执行残差。残差均在±4.83269946内，regulated全部为负；物理开闭含义/接触效果尚不据此断言。requested到sent有安全限幅差异；电机归一化层还可能截断，sent不等于寄存器实际值或实物执行。
+- 交付10份CSV、3张图、三层控制路径及缺口/建议；13项F3.2+F3.1回归PASS，git diff --check通过。M1最终同名运行也有37.121刻度名义目标下降，不能笼统说所有失败都没有闭爪意图；但尚未对齐抓取/辅助时机。M0/M1/M2/M3记录不构成公平成功率排名。
+- result：experiments/force/f3_2_video_control_log_alignment/index1/result/summary.md；交付包F3_2_result_delivery_20261021T060221871441Z.zip（3499221字节，CRC/成员SHA通过）；canonical raw：results/experiments/F3_2_VIDEO_CONTROL_LOG_ALIGNMENT/20261021T060221871441Z，22原CSV副本hash一致。归档当前在本地，未称上传服务器。
+- 唯一主结论MIXED_OR_UNRESOLVED，F3_2_COMPLETE=false。剩余：session各trial的configuration.json/summary.json、原top/gripper视频或手机片段到trial对应；不凭文件名/时长强行匹配。未追加真机/训练/部署变更，未读Final12；独立Builder/Red-Team待审，未提交/推送新成果。
+
+## 2026-10-21：F3.2日志对齐已开始，原Ubuntu会话尚不可访问
+
+- 已读新冻结decision，仅授权已有日志发现/对齐/控制路径重建，不新增真机/训练/采集。F3_2_COMPLETE=false，PARTIAL_INPUT_ACCESS_REQUIRED。
+- 扩展只读检索D:/lerobot隐藏/忽略目录、output、4个F3 tar成员名及Downloads相关候选，未取到原始会话。历史日志明确原真机在双系统Ubuntu /home/lyj/lerobot；当前WSL为banana，/home/lyj不存在。磁盘0分区6为未挂载100GB Linux分区，只读PhysicalDrive探针ACCESS_DENIED，未提权/挂载/改分区。
+- 本轮result/search_report.json记录范围与例外；command_path.md完成当前源码预审（nominal非raw、sent非回读、state动作前、名义视频时间非真实时钟），不冒充部署已核验。missing_evidence.md列已有session/_prev文件和原Ubuntu只读定位命令；待用户提供原件继续，不编造同步/命令表。
+
+## 2026-10-21：F3.1工作流result交付包READY
+
+- 补齐工作流§17要求的metrics.json与canonical raw证据归档。紧凑包：experiments/force/f3_1_failure_localization_assisted_recovery/index1/F3_1_result_delivery_20261021T004330362501Z.zip，1769433字节/29项；ZIP CRC及成员SHA256全通过，外部SHA464e6e8c05685f995231aaa5bc28309e6e05266630402e1940b4c472b84224c1。
+- 原始证据新副本：results/experiments/F3_1_FAILURE_LOCALIZATION_ASSISTED_RECOVERY/20261021T004330362501Z，91文件，9视频副本逐个校验一致；原件未移动/删除，含完整54页证据、来源和result快照。大证据不重复塞进紧凑ZIP，RAW_MANIFEST登记路径/hash；归档当前在本地项目，不声称已上传服务器。
+- 包内README给规划方阅读顺序，PACKAGE_MANIFEST支持逐项校验，交付回执在result/delivery_receipt.json。主结论仍MIXED_OR_UNRESOLVED；日志缺失明确保留，独立Builder/Red-Team外审PENDING。无新实验/真机/训练/Final或Git发布，交付后等待验收。
+
+## 2026-10-21：F3.1现有真机失败定位与辅助恢复分析交付
+
+- 按新冻结decision完成现有9段视频的A自主/B辅助分解、S0–S8阶段表、首败未决区间及模型总结；4段确认辅助、1段片末接触不明。M2/8在1.6–1.8秒早介入，未将其当已建立的自主失败。新增局部0.1秒证据27页（仍非全帧人工精审）。
+- 结果experiments/force/f3_1_failure_localization_assisted_recovery/index1/result/summary.md，7个CSV/4图/全部证据、validation及Builder/Red-Team自查齐全。6项回归PASS，9视频hash与冻结decision校验一致。执行方自查不等同独立外审，外审PENDING。
+- 主结论MIXED_OR_UNRESOLVED：多数6D片在S1几何到S3实际充分闭合之间未决；人工辅助后的松手窗口未证明完整下游链恢复，但恢复姿态/窗口不充分，不能断言链丢失。无对应control.csv，闭爪/抬升命令及M3残差UNKNOWN，不归因8D/current或调节器失效。
+- F3_1_COMPLETE=true仅表示现有材料诊断合同交付完成，允许明确未决；F3-r1正式比较仍不完整。下一步只建议补已有控制主机日志关联，proposal未授权新实验。本轮本地视频审阅沿用用户明确许可，无训练/新真机/采集/Final/部署改变或推送。
+
+## 2026-10-21：F3九段真机视频描述性result已交付
+
+- 用户允许本次本地查看，完成9段视频顺序解码（3869帧/128.97秒/30FPS）及全部27页0.5秒联系表视觉审阅；这是密集抽帧，不是连续播放/逐帧人工标注。原MP4未改，hash/帧数及6页证据随result保留。
+- 当前报告index1/result/VIDEO_RESULT.md：M0夹持相关后续动作链较完整；M1/M2/M3多停在杯旁，未见明确持续自主带杯抬升。多段人手移杯，不能计自主成功；单视角不精确定量离桌高度/保持时长。不能归因8D/current或直接判load无效。
+- 下一步建议仅查现有日志的配置关联、有效包夹几何、闭爪目标/实际、抬升目标/实际；不先加力/扩bound/训练。描述性结果READY，正式F3科研对比UNRESOLVED，F3_R1_COMPLETE=false；无新硬件/训练/Final或推送。
+- result/summary.md和旧阶段视频报告新增当前入口，保留历史NOT_RUN/连接阻塞文字作为历史，不再误称当前没有实机活动。
+
+## 2026-10-21：F3视频材料已收到，阶段result待服务器视频复核
+
+- 用户指定后续真机指南以docc/指南/真机测试经验与代码指令参考.md为主要编写依据，采用独立完整命令与简化操作；不等于此次删除控制器安全门或启动新真机。
+- video目录9段：M0=2/M1=2/M2=3/M3=2。已有现场真机活动记录，旧NOT_RUN只可视为历史阶段状态；目前正式试次配置/有效性/完成情况未审计，F3_R1_COMPLETE=false。
+- 日志描述仅M0出现抓取拿起，其他组未拿起；本轮未直接观看视频，不能写成视频确认。阶段result见index1/result/REAL_ROBOT_VIDEO_REVIEW.md，状态PARTIAL/VIDEO_REVIEW_BLOCKED。
+- 服务器westC:30824拒绝连接，遵守非真机计算在服务器执行约定，未在本地解码。待恢复SSH或用户允许本地审阅，再补逐视频时间轴/证据图/参数关联；无新训练、真机或Final读取。
+
 ## 2026-10-21：F3 r1 真机四模型行为观察——仅 M0 抓取+拿起
 
 - 现场观察：仅 M0（8D 历史）表现出「抓取+拿起」完整序列；M1/M2/M3（6D）均只靠近、抓取不稳定（有时未抓到）、拿起全程为 0。

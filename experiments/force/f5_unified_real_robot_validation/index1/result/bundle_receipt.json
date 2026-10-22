@@ -1,0 +1,15 @@
+{
+  "status": "BUNDLE_PREPARED_NOT_PUBLISHED",
+  "bundle": "/root/autodl-tmp/F5_20261022/bundle",
+  "archive": "/root/autodl-tmp/F5_20261022/F5_deploy_bundle.tar.gz",
+  "bytes": 962473497,
+  "sha256": "9187d7e8db452fa468c3d6930558fb1e6ba9d313bdd52a0a454cf3c6c6f0cca9",
+  "models": [
+    "P1-Hist",
+    "Strong-G",
+    "L-Load",
+    "New-GL"
+  ],
+  "hardware": "NOT_CONNECTED",
+  "final12_reads": 0
+}

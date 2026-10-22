@@ -1,0 +1,42 @@
+{
+  "status": "PUBLISHED_VERIFIED",
+  "repo": "QYyyyyyyy/F5_UNIFIED_SO101",
+  "revision": "4d680b2552c0257f3a9989bde45e54bedb98aa5c",
+  "files": {
+    "README.md": {
+      "bytes": 2444,
+      "sha256": "761155d9d009f11f768c0adb814a28a71823c558a0ae34695062ceb312c0f841"
+    },
+    "REAL_ROBOT_TEST_GUIDE.md": {
+      "bytes": 15957,
+      "sha256": "5c208cf4140fda3abff336e70f71d156b99a45cad9c7eef00d6fa4f6ac79e3ff"
+    },
+    "F5_deploy_bundle.tar.gz": {
+      "bytes": 962473497,
+      "sha256": "9187d7e8db452fa468c3d6930558fb1e6ba9d313bdd52a0a454cf3c6c6f0cca9"
+    },
+    "F5_project_files.tar.gz": {
+      "bytes": 16076,
+      "sha256": "8489f180f69f9695df8bd5ff9154f0a08bfc9671a564969b1692c03f3190a74d"
+    },
+    "model_identity.json": {
+      "bytes": 1867,
+      "sha256": "cecc114840d3a78a362d90ba4220da2fcc4a33070fe97e8493a70cf8fd5f9534"
+    },
+    "manifest.json": {
+      "bytes": 34125,
+      "sha256": "296e3c23fff66e58cc3d9b9bd773b77eab9eb9dedb043ab3cffd37a007f0d793"
+    },
+    "bundle_receipt.json": {
+      "bytes": 399,
+      "sha256": "a5de0d6479db6a491f8e09e45439d7f1d5f1734e06976663259f75f7dfbaa99a"
+    },
+    "runtime_smoke.json": {
+      "bytes": 1714,
+      "sha256": "c70b642008ff3bb78e517b91d0d7b6a65653efd77c70dc032e15df42dfd704fc"
+    }
+  },
+  "verification": "Remote byte sizes and LFS SHA256 / Git blob SHA1",
+  "robot_trials": 0,
+  "F5_COMPLETE": false
+}

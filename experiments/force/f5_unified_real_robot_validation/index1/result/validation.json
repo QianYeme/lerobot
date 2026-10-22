@@ -1,0 +1,22 @@
+{
+  "scope": "F5_DEPLOYMENT_PREPARATION_ONLY",
+  "F5_COMPLETE": false,
+  "robot_trials": 0,
+  "final12_reads": 0,
+  "local_regressions": {
+    "passed": 20,
+    "files": [
+      "tests/scripts/test_f5_control.py",
+      "tests/scripts/test_f3_control_cli.py",
+      "tests/scripts/test_f3_control_protocol.py"
+    ],
+    "hardware": "MOCK_ONLY"
+  },
+  "gpu_smoke_evidence": "runtime_smoke.json",
+  "publication_evidence": "hf_publish_receipt.json",
+  "limitations": [
+    "No actual robot tests",
+    "First/reset-step GPU smoke is not full closed-loop evidence",
+    "Early training ACT source and current source are not AST-identical"
+  ]
+}
