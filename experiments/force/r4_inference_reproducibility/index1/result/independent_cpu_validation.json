@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "method": "Fresh CPU raw-array verification, no new model inference",
+  "repeated_full_chunks": [
+    {
+      "seed": 3,
+      "batches": 7185,
+      "samples": 28739,
+      "max_native": 0.0,
+      "full_chunk_array_equal": true,
+      "cached_h0_matches_chunks": true,
+      "all_inputs_equal": true
+    },
+    {
+      "seed": 1,
+      "batches": 7185,
+      "samples": 28739,
+      "max_native": 0.0,
+      "full_chunk_array_equal": true,
+      "cached_h0_matches_chunks": true,
+      "all_inputs_equal": true
+    }
+  ],
+  "fresh_global_h0_metrics_verified": 5,
+  "global_and_local_identity_cross_checks": 7,
+  "checkpoint_files_rehashed": 12,
+  "limitations": "No video re-decode or external review; local-output metrics not independently re-inferred"
+}

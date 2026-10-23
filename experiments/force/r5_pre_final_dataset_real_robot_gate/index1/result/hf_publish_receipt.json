@@ -1,0 +1,54 @@
+{
+  "status": "PUBLISHED_VERIFIED",
+  "repo": "QYyyyyyyy/R5_PRE_FINAL_DATASET_SO101",
+  "revision": "6990fb2e82c39a571671fd22f7f45979f9d9ade6",
+  "files": {
+    "README.md": {
+      "bytes": 2357,
+      "sha256": "7b1405f3f6f2d63e354cddc5e06ddcd7219be223e2e9aaca960cb2b13948095e"
+    },
+    "REAL_ROBOT_TEST_GUIDE.md": {
+      "bytes": 13755,
+      "sha256": "7fe7432b17e0448f1e006537aedf6e39d264fd9f9f2c945ad9e245589aaeb816"
+    },
+    "R5_deploy_bundle.tar.gz": {
+      "bytes": 962550207,
+      "sha256": "33b083a403098b46abb61f60045e38569d2fc25f4826539873d63552b67d9ba5"
+    },
+    "R5_project_files.tar.gz": {
+      "bytes": 929487,
+      "sha256": "ac0d1dbb9df1dd370fa8c097fabc3c7a78b727eb52dbbda1a97b17efc815a90f"
+    },
+    "model_identity.json": {
+      "bytes": 2795,
+      "sha256": "ec5910e9f38338ba32672ce6705271f4032309ead3567cecd5224609c1eb426f"
+    },
+    "manifest.json": {
+      "bytes": 33791,
+      "sha256": "eaf5139ddbd0ecb7f53a78601fdd4d16b7fefe4cbb32aff55054fbd5a1e60a46"
+    },
+    "runtime_smoke.json": {
+      "bytes": 2953,
+      "sha256": "c1c18d30cbff8b8fa4036e56c3cb1897c85d20b4dac230062bbcdcc488d2ed3d"
+    },
+    "bundle_receipt.json": {
+      "bytes": 3233,
+      "sha256": "c4610b9beca522a9aba9c02d529933a38dfa96ab6609a147d437284e5e8da7c3"
+    },
+    "decision_R5.md": {
+      "bytes": 11877,
+      "sha256": "2b211773a86c2fd1b1a28bcc21d571dcd66aaf37181fff5e57250e99530de680"
+    },
+    "bad_seed_selection.md": {
+      "bytes": 1051,
+      "sha256": "7073677c2567a3ee36acd9e17eee9124808809448da9f7c4788f954f1b406073"
+    },
+    "checksums.json": {
+      "bytes": 1326,
+      "sha256": "609c48c3051d14da6e4facab7104af22ab32dc9aa16b0a823a9b0d718aec25b7"
+    }
+  },
+  "verification": "Remote sizes and LFS SHA256/Git blob SHA1; pinned upload commit",
+  "robot_trials": 0,
+  "R5_COMPLETE": false
+}

@@ -1,0 +1,97 @@
+{
+  "M1": {
+    "model_label": "Strong-G-36-S3",
+    "global_path": "models/G36-S3",
+    "global_sha256": "e122e0e6574cf9e3f1a655b90bdf0de210b769e05dce0663ac451b20aefbd098",
+    "normalization_path": "normalization/train36.json",
+    "state_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "global_load": true,
+    "global_step": 80000,
+    "global_seed": 3
+  },
+  "M2": {
+    "model_label": "Strong-G-60-S3",
+    "global_path": "models/G60-S3",
+    "global_sha256": "998026c8072aa236cf9dd1c28991c29def968246759fa73c31bdc7415e480c58",
+    "normalization_path": "normalization/full60.json",
+    "state_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "global_load": true,
+    "global_step": 80000,
+    "global_seed": 3
+  },
+  "M3": {
+    "model_label": "New-GL-36",
+    "global_path": "models/G36-S3",
+    "global_sha256": "e122e0e6574cf9e3f1a655b90bdf0de210b769e05dce0663ac451b20aefbd098",
+    "normalization_path": "normalization/train36.json",
+    "state_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "global_load": true,
+    "global_step": 80000,
+    "global_seed": 3,
+    "local_path": "local/New-GL-36.pt",
+    "local_sha256": "695d6fa89f3e823f6236dca38c8e684c461009d5b9c357cfd1cb9f0d8dffea81",
+    "bound": 4.832699459791184,
+    "local_step": 7000,
+    "local_seed": 3
+  },
+  "M4": {
+    "model_label": "New-GL-60",
+    "global_path": "models/G60-S3",
+    "global_sha256": "998026c8072aa236cf9dd1c28991c29def968246759fa73c31bdc7415e480c58",
+    "normalization_path": "normalization/full60.json",
+    "state_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "global_load": true,
+    "global_step": 80000,
+    "global_seed": 3,
+    "local_path": "local/New-GL-60.pt",
+    "local_sha256": "a71541b5d8d04fd22b8aa1958cd347dd2dced74afd3bd944f6e422d7112d8326",
+    "bound": 4.832699459791184,
+    "local_step": 7000,
+    "local_seed": 3
+  },
+  "M5": {
+    "model_label": "G60-BadSeed-S4",
+    "global_path": "models/G60-S4",
+    "global_sha256": "1277d98f221a69df2dcfd04361c34828f27799cf4794c25c75a6a83a3a396c8d",
+    "normalization_path": "normalization/full60.json",
+    "state_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "global_load": true,
+    "global_step": 80000,
+    "global_seed": 4
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "path": "experiments\\force\\r4_inference_reproducibility\\index1\\R4_REVIEWED_result_20261023.zip",
+  "bytes": 151054,
+  "sha256": "0e558d56c793c88a171d3dda5530ed7e91f6798de26faca16c25896be67ae585",
+  "members": 75,
+  "crc": "PASS",
+  "member_sha256": "PASS",
+  "status": "READY_AWAIT_EXTERNAL_REVIEW"
+}

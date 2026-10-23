@@ -1,0 +1,7 @@
+{
+  "evaluation_mode": "benchmark_off",
+  "training_changes": false,
+  "original_report_script_sha256": "0d131b6ab6c10a01f221506f6e69400f01a87a2635c721fcd25d43692ff5d42a",
+  "original_analysis_sha256": "c988efd21e94c9e3bc403ca6fa7295f57b564f2000d8269b860f09be6ae70219",
+  "note": "Fresh globals plus frozen local weights; no pre-fix predictions reused; analysis view symlinks read-only model/data sources"
+}

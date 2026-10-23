@@ -1,0 +1,11 @@
+# R4规划交付包
+
+先读summary.md、validation.md和proposal.md，再对照完整decision与CSV。根目录metrics明确区分：R4_EXECUTION_COMPLETE=true、R4_REPRODUCIBILITY_PASS=true、R4_COMPLETE=false（独立外部审阅待完成）。
+
+server_original/result是完整服务器自动交付副本，原文不改；postfix_f5_1内含fresh指标、空间/seed/逐episode表和身份。根目录部分必需CSV/配置为原文件逐字节副本。independent_cpu_validation为本轮追加CPU raw复核。
+
+source收录本轮审计/队列/验算/打包脚本供检查，不是独立可部署环境。delivery_validation与delivery_manifest记录核验及SHA；ZIP同名receipt提供最终大小/SHA/CRC。
+
+完整模型、raw chunks、保存输入张量及manifest、日志保留服务器/root/autodl-tmp/R4_20261023；轻量包不含权重与全部大数组，不能仅靠ZIP独立重推模型或重算所有raw。
+
+原下载ZIP：103,360字节，SHA256=dd13edd1e2f05904b83ea7b356be637269737556aac5572a43b3dcb9ef2513e3。canonical本地保存于results/experiments/R4_INFERENCE_REPRODUCIBILITY_AND_FINAL_DATASET_GATE/20261023_delivery。原RUNNING材料保存在progress_archive，历史阶段证据在evidence，不混称最终状态。

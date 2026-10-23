@@ -1,0 +1,29 @@
+{
+  "R4_REPRODUCIBILITY_PASS": true,
+  "mode": "benchmark_off",
+  "results": [
+    {
+      "seed": 3,
+      "frames": 28739,
+      "batches": 7185,
+      "inputs_bitwise_equal": true,
+      "max_native": 0.0,
+      "h0_max_native": 0.0,
+      "max_joint_mean_absolute_error_difference": 0.0,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "frames": 28739,
+      "batches": 7185,
+      "inputs_bitwise_equal": true,
+      "max_native": 0.0,
+      "h0_max_native": 0.0,
+      "max_joint_mean_absolute_error_difference": 0.0,
+      "passed": true
+    }
+  ],
+  "action_limit_exclusive": 0.001,
+  "training_changed": false,
+  "robot_authorized": false
+}

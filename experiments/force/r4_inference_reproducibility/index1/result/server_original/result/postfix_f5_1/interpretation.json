@@ -1,0 +1,16 @@
+{
+  "outcome": "FULL60_SEED_VARIANCE_DOMINATES",
+  "global_robustness": "UNRESOLVED",
+  "global_robustness_reason": "Historical seed spread is not a same-Full60 matched multi-seed baseline; new seed spread descriptive only",
+  "candidate": "G60-S3/80k + L60-S3/7k",
+  "core_improved": true,
+  "improved_required_seeds": 2,
+  "matched_pairs": 4054,
+  "local_stability_rule_passed": true,
+  "seed_spread": 0.1022690873595475,
+  "paired_effect": 0.04074568686227692,
+  "best_training_replay_global": "G60-S3",
+  "representative_global": "G60-S1",
+  "robot_conclusion": "NONE",
+  "scope": "TRAIN-SET / COMMON-DIAGNOSTIC ONLY; NOT HELD-OUT GENERALIZATION"
+}

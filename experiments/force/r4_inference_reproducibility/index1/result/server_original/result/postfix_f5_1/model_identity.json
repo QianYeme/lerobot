@@ -1,0 +1,64 @@
+{
+  "G36-S3": {
+    "checkpoint": "/root/autodl-tmp/F4_1_20261022/runs/G-Load/seed3/attempt1/checkpoints/080000/pretrained_model",
+    "sha256": "e122e0e6574cf9e3f1a655b90bdf0de210b769e05dce0663ac451b20aefbd098",
+    "step": 80000,
+    "kind": "global"
+  },
+  "G60-S3": {
+    "checkpoint": "/root/autodl-tmp/R4_20261023/postfix_view/runs/G60-S3/checkpoints/080000/pretrained_model",
+    "sha256": "998026c8072aa236cf9dd1c28991c29def968246759fa73c31bdc7415e480c58",
+    "step": 80000,
+    "kind": "global"
+  },
+  "G60-S1": {
+    "checkpoint": "/root/autodl-tmp/R4_20261023/postfix_view/runs/G60-S1/checkpoints/080000/pretrained_model",
+    "sha256": "4468c5619434d339dee87f61119476d8e4b63e062a5d8f09ec57019c8eaa0c84",
+    "step": 80000,
+    "kind": "global"
+  },
+  "G60-S2": {
+    "checkpoint": "/root/autodl-tmp/R4_20261023/postfix_view/runs/G60-S2/checkpoints/080000/pretrained_model",
+    "sha256": "2305ef663d4d32929400c6c6c0222f8f38291a9806ae5019eed8e7041f1d8d8b",
+    "step": 80000,
+    "kind": "global"
+  },
+  "G60-S4": {
+    "checkpoint": "/root/autodl-tmp/R4_20261023/postfix_view/runs/G60-S4/checkpoints/080000/pretrained_model",
+    "sha256": "1277d98f221a69df2dcfd04361c34828f27799cf4794c25c75a6a83a3a396c8d",
+    "step": 80000,
+    "kind": "global"
+  },
+  "New-GL-36": {
+    "local_checkpoint": "/root/autodl-tmp/F4_2_20261022/result/New-GL/seed3/007000.pt",
+    "local_sha256": "695d6fa89f3e823f6236dca38c8e684c461009d5b9c357cfd1cb9f0d8dffea81",
+    "step": 7000,
+    "global_model": "G36-S3",
+    "bound": 4.832699459791184,
+    "kind": "global+local"
+  },
+  "NewGL60-L3": {
+    "local_checkpoint": "/root/autodl-tmp/F5_1_r3_20261022/runs/L60-S3/attempt1/007000.pt",
+    "local_sha256": "a71541b5d8d04fd22b8aa1958cd347dd2dced74afd3bd944f6e422d7112d8326",
+    "step": 7000,
+    "global_model": "G60-S3",
+    "bound": 4.832699459791184,
+    "kind": "global+local"
+  },
+  "NewGL60-L1": {
+    "local_checkpoint": "/root/autodl-tmp/F5_1_r3_20261022/runs/L60-S1/attempt1/007000.pt",
+    "local_sha256": "8455c4ec30a729aa3304c7e065473189463c0d50ba96ab2b33a1b01592fe0ce5",
+    "step": 7000,
+    "global_model": "G60-S3",
+    "bound": 4.832699459791184,
+    "kind": "global+local"
+  },
+  "NewGL60-L2": {
+    "local_checkpoint": "/root/autodl-tmp/F5_1_r3_20261022/runs/L60-S2/attempt1/007000.pt",
+    "local_sha256": "df6179f279cc77ecb65ec2e4f0c24143ae1a995215a86464ec7e37652f766f54",
+    "step": 7000,
+    "global_model": "G60-S3",
+    "bound": 4.832699459791184,
+    "kind": "global+local"
+  }
+}

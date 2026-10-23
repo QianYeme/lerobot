@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "original_zip_sha256": "dd13edd1e2f05904b83ea7b356be637269737556aac5572a43b3dcb9ef2513e3",
+  "original_zip_crc": "PASS",
+  "original_manifest_members_verified": 44,
+  "original_reports_byte_identical": true,
+  "contract_sha_verified": "59d1ca4c2367f760b3f08838bb2515624e80923b90dc0396fb1695ddb2b0cf91",
+  "frozen_worker_scripts_verified": 3,
+  "required_contract_files": 15,
+  "audited_seeds": [
+    1,
+    3
+  ],
+  "frames_each": 28739,
+  "horizons": 100,
+  "actions": 6,
+  "recomputed_model_rows": 9,
+  "identity_matches_historical_models": 9,
+  "only_intended_runtime_flag_changed": true,
+  "server_cpu_validation": {
+    "status": "PASS",
+    "method": "Fresh CPU raw-array verification, no new model inference",
+    "repeated_full_chunks": [
+      {
+        "seed": 3,
+        "batches": 7185,
+        "samples": 28739,
+        "max_native": 0.0,
+        "full_chunk_array_equal": true,
+        "cached_h0_matches_chunks": true,
+        "all_inputs_equal": true
+      },
+      {
+        "seed": 1,
+        "batches": 7185,
+        "samples": 28739,
+        "max_native": 0.0,
+        "full_chunk_array_equal": true,
+        "cached_h0_matches_chunks": true,
+        "all_inputs_equal": true
+      }
+    ],
+    "fresh_global_h0_metrics_verified": 5,
+    "global_and_local_identity_cross_checks": 7,
+    "checkpoint_files_rehashed": 12,
+    "limitations": "No video re-decode or external review; local-output metrics not independently re-inferred"
+  },
+  "external_reviews": "PENDING",
+  "R4_COMPLETE": false,
+  "R4_REPRODUCIBILITY_PASS": true
+}

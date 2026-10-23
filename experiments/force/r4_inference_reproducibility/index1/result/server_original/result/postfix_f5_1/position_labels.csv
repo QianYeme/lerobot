@@ -1,0 +1,10 @@
+model,label,matched_action_distance,edge_contrast_gap,edge_direction_cosine,note
+G36-S3,REFERENCE,0.39487135594369827,0.4202496379881013,0.8462093532594456,"Descriptive multi-criterion direction; conflicting diagnostics UNRESOLVED, not statistical significance"
+G60-S3,POSITION_SEPARATION_IMPROVED,0.4356170428059752,0.1646665030159315,0.9162298921056009,"Descriptive multi-criterion direction; conflicting diagnostics UNRESOLVED, not statistical significance"
+G60-S1,UNRESOLVED,0.29888128253217666,0.3241178693139023,0.6078703992363469,"Descriptive multi-criterion direction; conflicting diagnostics UNRESOLVED, not statistical significance"
+G60-S2,POSITION_SEPARATION_IMPROVED,0.5490260779494716,0.40332051358076765,0.8586141202626538,"Descriptive multi-criterion direction; conflicting diagnostics UNRESOLVED, not statistical significance"
+G60-S4,UNRESOLVED,0.4822894376693819,0.4691037872652293,0.8059362792505181,"Descriptive multi-criterion direction; conflicting diagnostics UNRESOLVED, not statistical significance"
+New-GL-36,REFERENCE,0.39487135594369827,0.4202496379881013,0.8462093532594456,"Descriptive multi-criterion direction; conflicting diagnostics UNRESOLVED, not statistical significance"
+NewGL60-L3,POSITION_SEPARATION_IMPROVED,0.4356170428059752,0.1646665030159315,0.9162298921056009,"Descriptive multi-criterion direction; conflicting diagnostics UNRESOLVED, not statistical significance"
+NewGL60-L1,POSITION_SEPARATION_IMPROVED,0.4356170428059752,0.1646665030159315,0.9162298921056009,"Descriptive multi-criterion direction; conflicting diagnostics UNRESOLVED, not statistical significance"
+NewGL60-L2,POSITION_SEPARATION_IMPROVED,0.4356170428059752,0.1646665030159315,0.9162298921056009,"Descriptive multi-criterion direction; conflicting diagnostics UNRESOLVED, not statistical significance"

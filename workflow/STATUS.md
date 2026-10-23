@@ -1,5 +1,77 @@
 # LeRobot 项目当前状态
 
+## 2026-10-23：R5五模型已发布，直接真机指南与代码就绪，现场未运行
+
+- 当前为[R5 r0](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/decision_R5_PRE_FINAL_DATASET_REAL_ROBOT_GATE.md)，在最终数据采集前做真实定位gate；不是直接进入120–150段采集。冻结M1旧G36-S3、M2新G60-S3、M3旧New-GL、M4新New-GL、M5弱seed4；M5依据R4综合误差/空间诊断预先选择，不看真机换seed。
+- 模型与配套文件从服务器发布到[HF R5_PRE_FINAL_DATASET_SO101](https://huggingface.co/QYyyyyyyy/R5_PRE_FINAL_DATASET_SO101)，revision6990fb2e82c39a571671fd22f7f45979f9d9ade6；11文件远端size/LFS SHA/Git blob核验通过。模型包962550207字节、代码包929487字节；含3global/2local、各自normalizer、prototype和离线视觉缓存，无需完整formal4视频。[发布回执](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/result/hf_publish_receipt.json)。
+- [真机指南](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/REAL_ROBOT_TEST_GUIDE.md)末尾五个独立可复制命令，沿用ACM0/id=nn、相机4/2、CLI ensemble0.01/relative5；固定A/B/C分块轮换共15次，不做失败救援重复。新control_r5继承既有直接运行循环，无新增shadow/审批/STOP锁，保留物理限制。
+- 保持benchmark=False和TF32=True；旧在线float64-rounded load与R4 float32缓存差3.725e-9在真实样本引起0.004738动作差，R5适配器已对齐float32。相同输入的独立模型差0、参数相等；未改权重/统计量/门槛。五路径真实RGB batch1 nominal差0、local参考/arm隔离/界限/reset通过；15本地回归通过，不冒充闭环真机。
+- R5_COMPLETE=false，现场0/15。下一步用户在连接设备的Linux系统按指南执行，再交视频/CSV/P0–P6/辅助记录；不采新训练数据、不重训、不自动操作机械臂。用户已授权本轮相关项目代码/指南更新GitHub det，凭据不入文件，大模型不入Git。
+
+## 2026-10-23：R4全量复现通过，修复后结论稳定，result已交付待外审
+
+- [复核result](../experiments/force/r4_inference_reproducibility/index1/result/summary.md)、[交付ZIP](../experiments/force/r4_inference_reproducibility/index1/R4_REVIEWED_result_20261023.zip)、[下一步proposal](../experiments/force/r4_inference_reproducibility/index1/result/proposal.md)已准备。REPRODUCIBILITY_FIXED_RUNTIME；R4_EXECUTION_COMPLETE=true、R4_REPRODUCIBILITY_PASS=true，R4_COMPLETE=false仅因独立外部Builder/Red-Team待验收，不代表技术门未通过。
+- 最终仅cudnn.benchmark True→False，matmul/cuDNN TF32仍True。S3和S1各两次Full60/28739帧/7185批的100 horizons×6动作逐元素相等，input manifest一致，max=0，保持原<0.001门槛。首个观测到不同的hook为backbone，未捕捉具体kernel ID，不泛化保证其它机器或真机ensemble。
+- Fresh G36/S1/2/3/4及冻结local1/2/3关键指标已重算；global seed差异和Full60收益混合结论未翻转，自动描述标签仍FULL60_SEED_VARIANCE_DOMINATES；local固定global误差范围0.304030–0.318368。全部仍是Full60训练/共同诊断，不是held-out或真机。
+- 本轮另在服务器CPU重新读取两seed全部D0/D1 raw chunk，核对h0缓存/输入/IDs，复算5global误差，重hash12 checkpoint文件并交叉核对7global/local身份，PASS。原下载103360字节ZIP及manifest、复核75成员ZIP的CRC/SHA通过，原证据保留。GPU空闲、盘约36GiB。
+- 下一步先交网页GPT独立审阅，再制定FINAL_DATASET_V1采集/QC/split-freeze合同（约120–150段、位置抖动、明确0.8–1.0秒hold）；本轮不实际采集、不追加旧60训练/SWA/SAM/真机，不改实际部署参数，无Git/HF发布。
+
+## 2026-10-23：R4已复现跨进程异常，benchmark单变量对照通过，后台全量审计中
+
+- 当前合同为[R4 r0](../experiments/force/r4_inference_reproducibility/index1/decision_R4_INFERENCE_REPRODUCIBILITY_AND_FINAL_DATASET_GATE.md)：不训练/新结构/采集/真机；按A同张量同进程→B跨进程→C预处理→D全量回放逐层准入，保持<0.001。服务器weste:20143，目录/root/autodl-tmp/R4_20261023。
+- 历史cache原差0.117225647重现（ep3/frame77）。A三个固定批次重复差0；B相同input hash却复现完整chunk最大0.327590942、h0最大0.130935669，最早观测不同hook为model.backbone。仅关闭cudnn.benchmark、TF32保持True后A/B/C差均0，支持runtime算法选择相关原因，未捕捉具体kernel ID，仍需全量验证。
+- S3第一次D全60/28739帧已完成，D1后台进行；随后seed1 A–D、fresh G36/S2/S4及固定local重组，沿用冻结位置/匹配/分类规则重算关键指标。nohup队列与result follower独立于SSH；失败停止、保留原证据，15GiB磁盘余量门；为隔离运行时影响审计串行，不启动训练或其它模型实验。
+- [运行入口](../experiments/force/r4_inference_reproducibility/index1/RUNNING.md)、[阶段summary](../experiments/force/r4_inference_reproducibility/index1/result/summary.md)。部分原始CSV/配置/fixture manifest已下载evidence；本地8项CPU门槛/配置/既有分析回归及diff检查通过，不冒充GPU全量通过。
+- R4_COMPLETE=false，R4_REPRODUCIBILITY_PASS尚未建立；两seed D通过且重算结束后后台自动整理执行方result，外部Builder/Red-Team仍待审阅。不自动进入120–150段数据采集、SWA/SAM、训练/真机或发布，不改旧F5/实际部署参数。
+
+## 2026-10-23：F5.1-r3规划result交付，等待外部审阅
+
+- 已整理[复核summary](../experiments/force/f5_1_full60_data_utilization/index1/result/summary.md)、[下一步proposal](../experiments/force/f5_1_full60_data_utilization/index1/result/proposal.md)与[交付ZIP](../experiments/force/f5_1_full60_data_utilization/index1/F5_1_r3_REVIEWED_result_20261023.zip)，可直接交网页GPT做Builder/Red-Team及下一decision；外部审阅尚未进行，不等于合同通过。
+- 明确披露矛盾：S3位置匹配距离+10.31%、边缘幅度偏差降低60.82%，但G60-S3整体夹爪/arm回放误差较G36分别增加13.55%/2.35%；NewGL60-L3较历史New-GL-36夹爪误差增加24.67%。三local相对同global稳定改善；全部是Full60训练/共同诊断，不是held-out泛化或真机效果。
+- 重复性门槛失败保持原判定（0.117225647 > 预设0.001），另发现合同§20另一seed扩展repeat审计缺证。下一步优先冻结权重核对身份/输入/预处理/forward差异并补证；不能凭推测归因TF32/并行、放宽门槛或直接追加训练。
+- 原服务器62文件逐字节副本保留；61成员SHA、原ZIP/交付ZIP CRC及SHA核验、CSV交叉复算和五张实际图检查完成。启动时summary/metrics/validation另存r3_start历史。计算结束、交付READY、验收false分别记录。本轮无新GPU实验、真机、阈值/部署修改或Git/HF发布。
+
+## 2026-10-23：F5.1-r3计算链结束，重复性门槛未通过
+
+- weste:20143后台约03:14结束（约4h47m），queue.exit=0、RESULT_READY_AWAIT_EXTERNAL_REVIEW；19已启动任务全exit0，无重试。G60-S1/2/3/4各80k、固定G60-S3的local1/2/3各7k、可选B0 seed3 100k均完成，P1可选未做。S1/S2确实并行。
+- fresh回放/空间/seed/机制/重现/runtime/执行方报告均已运行；不能宣称全验收通过：metrics的F5_1_R3_EXECUTOR_COMPLETE=false，重复fresh最大native差0.11722564697（global和New相同）超预设1e-3门槛。原因未定位，不改门槛、不归因并行、不自动重训。arm/方程/界限及机制检查通过。
+- 自动描述性outcome FULL60_SEED_VARIANCE_DOMINATES：seed3空间响应改善但seed差异较大，仍属Full60训练/共同诊断，不是真机结论。外部独立审阅PENDING。
+- 10:04检查GPU0%/2MiB，盘可用约36.67GiB。下载完整ZIP到results/experiments/F5_1_FULL60_MULTI_SEED_OPTIMAL/20261023T020523Z，2793822字节，SHA4d0403dc4e7173a4e346e8d64c7c90aa3904e972aadbc2c81511c1e60e48717b；CRC/61成员SHA通过。[检查记录](../experiments/force/f5_1_full60_data_utilization/index1/SERVER_CHECK_20261023.md)。下一步建议先定位重复推理差异；本轮只检查，不重训/改代码/新增评估/真机或Git/HF发布。
+
+## 2026-10-22：F5.1-r3已清理并在新服务器后台启动
+
+- 已连通weste:20143，RTX5090/32GB。核验完整解压内容及HF已发布SHA后仅删除962473497字节F5临时传输包，释放约918MiB至45.58GiB；唯一模型/数据/日志/预测0删除，必要视觉缓存保留，归档可从HF同revision恢复。准备后可用约45.29GiB，按20GiB新增+15GiB余量准入，预计仍25.29GiB。
+- 服务器数据哈希/60段meta、旧组件SHA、配方一致性、真实GPU batch4前后向/更新/保存重载通过，正式从头初始化；冻结历史源/recipe379hash及分析规则，30本地回归通过。报告合成检查通过，不是科研证据；缺scipy改用等价NumPy最近邻，训练依赖与科研语义不变。
+- 工作目录/root/autodl-tmp/F5_1_r3_20261022，nohup队列PID3185、初始worker3189，G60-S3已实际到step300且loss有限，GPU瞬时约3276MiB/62%。先核心seed3+local3+paired，再预算准入G1/G2并行及local1/2；重复回放/runtime优先，余时G4/B0。9h最大窗口、1h报告预留、20秒空间检查，SSH断开继续。
+- [运行入口](../experiments/force/f5_1_full60_data_utilization/index1/RUNNING_R3.md)；[当前result](../experiments/force/f5_1_full60_data_utilization/index1/result/summary.md)。结束自动统一fresh诊断/执行方审查/ZIP，外部独立审阅待交付；不自动真机或进入新decision，未Git/HF发布。
+
+## 2026-10-22：F5.1切换r3多seed合同，新服务器等待认证
+
+- 当前合同为[Full60 multi-seed r3](../experiments/force/f5_1_full60_data_utilization/index1/decision_F5_1_FULL60_MULTI_SEED_OPTIMAL_r3.md)，取代r1执行计划：优先G60-S3/80k+固定global上的L60-S3/7k及paired诊断，再G60-S1/S2与L60-S1/S2；S4/B0按余时准入，候选不按训练误差挑seed，不真机。
+- 用户新服务器weste:20143可达，但已有项目SSH key被拒绝，未提供当前实例密码；未能登录，尚未清理/查看GPU或磁盘/启动训练。需密码或公钥授权。旧r1本地数据审计保留，不把其单seed预备protocol作为r3启动配置。
+- 用户授权训练前清理无用文件；获得连接后先盘点活动进程、精确清理路径、重复模型身份与峰值磁盘预算，保留唯一模型/原始数据/日志与必要视觉缓存，不因结果差删除证据。[准备记录](../experiments/force/f5_1_full60_data_utilization/index1/PREPARATION_R3.md)。当前REMOTE_AUTH_REQUIRED，无文件删除、训练、真机或Git/HF发布。
+
+## 2026-10-22：F5.1-r1 Full60本地审计通过，服务器连接受阻
+
+- 当前合同为[decision F5.1-r1](../experiments/force/f5_1_full60_data_utilization/index1/decision_F5_1_FULL60_DATA_UTILIZATION_TEST_r1.md)：同Strong-G架构seed3训练Full60 global80k，再冻结global训练local7k，自动完成离线回放/空间诊断/机制/重现/就绪与打包，不真机。固定80k/7k，不回放选模，不增seed。
+- 本地Full60审计通过：60段/28739帧，D1冻结12个位置组×5段，state8/action6/单帧load有效，4个视频全量解码57478帧无错。生成Full60归一化与60份输入数组（outputs/f5_1_preparation_20261022/），未修改旧split/统计；历史训练ensemble=null，不将真机0.01混入重训。
+- **本r1明确授权Full60读取历史Dev12/Final12**，准备阶段已读取这24段；新模型的Full60回放只能称TRAIN-SET REPLAY / NOT HELD-OUT，不称泛化。旧实验历史证据不改。
+- 旧westd:47382拒绝连接，已请求用户启动实例/提供新SSH；GPU烟测、远端资源/recipe核验、后台队列和训练均NOT_STARTED。准备脚本4项回归通过；[当前result](../experiments/force/f5_1_full60_data_utilization/index1/result/summary.md)记录实际准备状态，不冒充完成。F5_1_R1_COMPLETE=false，未Git/HF发布、未真机。
+
+## 2026-10-22：F5定性选型result已整理，建议New-GL主线
+
+- 用户澄清当前不是成功率评测，而是观察当前效果、选择后续主模型并交网页GPT规划；不再把补齐12次正式试验设为本次选型前提。原F5_COMPLETE=false仅保留正式合同事实，不否认本次选型交付完成。
+- [result/summary](../experiments/force/f5_unified_real_robot_validation/index1/result/summary.md)建议New-GL作为开发主线、Strong-G核心对照、P1-Hist历史参考、L-Load退出优先投入；这是可撤销的工程推荐，尚未证明New真机胜过Strong。New/Strong/P1抓取可用，New初始位置泛化是重点短板；P1保持问题不无证据推广到所有模型。
+- result含summary/proposal/metrics/validation、13视频审阅图与20原CSV；旧部署准备summary/metrics/validation另存deployment_preparation_*，不再以历史“0次真机”混淆当前阶段。网页GPT优先规划共享global的空间对准诊断，再调查动作链与local阶段作用，不直接追加架构/重训。
+- 本轮只整理结果与建议，无新测试/训练/真机/部署改动/Final12/Git或HF推送；待用户与网页GPT确认下一decision。
+
+## 2026-10-22：F5视频/CSV阶段复核，人工结束不等于抓取失败
+
+- 已从GitHub det快进到c9e77fab，保留无关未提交修改。13段手机视频全部7348帧可解码；20份CSV含_prev_全部复算，与manifest行数/字节一致。检查为每视频20帧概览+6个2秒10fps窗口，并非全帧人工精审；视频与CSV无可靠attempt配对，不做伪同步。
+- 用户现场观察：P1可抓但抬起无保持/下降才停；Strong初始定位偏而抓取不错；L缺可靠抓取；New抓取不错但换杯位易丢目标。视频有相符的动作链和人工送杯/取杯证据，New15辅助恢复尤其明确；不以人工结束判失败、不把干预后的抓持算自主定位成功。全部CSV phase=A不代表全段自主。
+- 有效采样约28.85–29.62Hz，无持续低帧率证据；local确实输出且界内，final=nominal+delta误差<3.82e-6、arm隔离。L最新nominal夹爪52.707→43.156，对照其余最新闭合低点约20–22，提示global闭合链不足；L最长旧尝试曾到18.084，不能说所有L都不闭合。控制限幅介入不是原因证明，未取消安全参数。
+- [复核报告及建议](../experiments/force/f5_unified_real_robot_validation/index1/result/real_robot_review/VIDEO_CSV_REVIEW.md)。优先补现场配置/视频配对，再分开诊断空间对准与抬升保持链；保留New/Strong对照、P1历史参考，L先查global不盲目扩local bound。正式A/B/C未完成、无成功率/泛化排名，F5_COMPLETE=false。无训练/部署改动/新真机/Final12/Git或HF推送。
+
 ## 2026-10-22：F5 真机 A 轮结束，控制CSV归档；阶段性结果未判定
 
 - 用户确认本轮真机测试结束。`outputs/f5/session_01/` 共4个模型（A点位）20份控制CSV，已复制归档到[real_robot_control_csv](../experiments/force/f5_unified_real_robot_validation/index1/result/real_robot_control_csv/README.md)并附`manifest.json`；视频/首帧/summary/stage_review仍留在本地`outputs/`（gitignore）。

@@ -20,3 +20,11 @@
 *.sh text eol=lf
 tests/artifacts/cameras/*.png filter=lfs diff=lfs merge=lfs -text
 *.bag filter=lfs diff=lfs merge=lfs -text
+
+# Keep archived R4/R5 evidence byte-identical to its SHA manifests across hosts.
+experiments/force/r4_inference_reproducibility/index1/result/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+experiments/force/r5_pre_final_dataset_real_robot_gate/index1/result/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+experiments/force/r4_inference_reproducibility/index1/decision*.md -text
+experiments/force/r5_pre_final_dataset_real_robot_gate/index1/decision*.md -text
+experiments/force/r5_pre_final_dataset_real_robot_gate/index1/REAL_ROBOT_TEST_GUIDE.md text eol=lf
+scripts/*r4*.py text eol=lf

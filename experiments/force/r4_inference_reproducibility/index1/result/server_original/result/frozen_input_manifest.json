@@ -1,0 +1,102 @@
+[
+  {
+    "name": "first",
+    "indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ids": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "sha256": "ab456a134560f3285673dab75fa1acff020d5558d637a78500f2d032c0b1602d",
+    "tensors": {
+      "/observation.state": "b26358f2c32195bf1b8c121698c0b13765cc931df93336140b0b1dd473a4596a",
+      "/observation.images.gripper": "0647581d63d45b4a6d0757ecd93debd5f7541314b219265106c6c73a83f1ce98",
+      "/observation.images.top": "8f5ddc0e9f6b4e652acbe95cd8c162586e45cfd4de266cea3014ff3800f985cb",
+      "/observation.load": "a419d1e99986d851dcaece36b5ad485d25e8b9c2a5bca2f11fffb699e40e57d2",
+      "/action_is_pad": "8f20fff2a5af407fa6e80d4fa50b9c8091e7f6d539b8c82dc8ca2a59f19bc5a4"
+    }
+  },
+  {
+    "name": "historical_worst",
+    "indices": [
+      1512,
+      1513,
+      1514,
+      1515
+    ],
+    "ids": [
+      [
+        3,
+        75
+      ],
+      [
+        3,
+        76
+      ],
+      [
+        3,
+        77
+      ],
+      [
+        3,
+        78
+      ]
+    ],
+    "sha256": "1e09192512108cc348fd87fd3317bc1b41d0e03da25d20128bfc815359c34ab0",
+    "tensors": {
+      "/observation.state": "87346c671b5ed0acb6c13af9e6182b31c2a3eb744f19db7dc2098c05618c0c97",
+      "/observation.images.gripper": "4d740a32fed3da8ccd3ef6cfc2804b9852f3d622d6c5e5cd7a9c4b18987c6c4d",
+      "/observation.images.top": "f22aaca28cb592085041983bf5b4c51e82158138cab999daaed05526411e4bc6",
+      "/observation.load": "3604fa5bd7329b1683d41967d69c5f73551af4e7ec9551be8d20ca4ecbbc1888",
+      "/action_is_pad": "8f20fff2a5af407fa6e80d4fa50b9c8091e7f6d539b8c82dc8ca2a59f19bc5a4"
+    }
+  },
+  {
+    "name": "tail",
+    "indices": [
+      28736,
+      28737,
+      28738
+    ],
+    "ids": [
+      [
+        59,
+        476
+      ],
+      [
+        59,
+        477
+      ],
+      [
+        59,
+        478
+      ]
+    ],
+    "sha256": "293a18a3cb4d3bec4a3ff6a268ed7b6bef67451d4341ecfe917354b60b36e7ad",
+    "tensors": {
+      "/observation.state": "201911437531a5febeb69fa75e9f6d7e793606c8609be2c9347759eb7ff14cef",
+      "/observation.images.gripper": "df2dd5aaa4d53b25447b4c936bcadb7eb7b0740aa69231d1585d44a7ee003137",
+      "/observation.images.top": "0133b4e75083b4f56e05b653b63ee9118aeb0b5639c275afc5a80789a5fcaa3e",
+      "/observation.load": "64722b4a099403ab23c0164489375b3fa076950cf377f5cc3ecf6b230484e924",
+      "/action_is_pad": "3e167ceab5895f39b860cd1cffa40a5bc6d7442cf06d00960a1501733771c0b8"
+    }
+  }
+]

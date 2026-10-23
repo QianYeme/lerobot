@@ -15,10 +15,10 @@ from lerobot.utils.f5_protocol import MODELS, POSITION_FIELDS, SCHEDULE, BOUND, 
 def save(path,value):path.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n',encoding='utf-8')
 
 
-def parser():
+def parser(models=MODELS):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--bundle',type=Path,required=True);p.add_argument('--session-dir',type=Path,required=True)
-    p.add_argument('--model',choices=MODELS,required=True);p.add_argument('--position',choices=['A','B','C'],required=True)
+    p.add_argument('--model',choices=models,required=True);p.add_argument('--position',choices=['A','B','C'],required=True)
     mode=p.add_mutually_exclusive_group(required=True);mode.add_argument('--execute',action='store_true');mode.add_argument('--dry-run',action='store_true')
     for key,value,kind in [('robot.type','so101_follower',str),('robot.port','/dev/ttyACM0',str),('robot.id','nn',str),
         ('robot.max_relative_target',5.,float),('policy.device','cuda',str),('policy.n_action_steps',1,int),
@@ -75,13 +75,17 @@ def command():
     return ''
 
 
-def run_trial(a,runtime,common):
+def run_trial(a,runtime,common,protocol=None):
     import cv2
     import numpy as np
     from lerobot.cameras.opencv.configuration_opencv import OpenCVCameraConfig
     from lerobot.robots.so_follower import SO101Follower,SO101FollowerConfig
     from lerobot.utils.control_utils import init_keyboard_listener
-    identifier=trial_id(a.model,a.position);directory=a.session_dir/identifier
+    get_id=protocol.trial_id if protocol else trial_id
+    get_slot=protocol.slot if protocol else slot
+    total_slots=len(protocol.SCHEDULE) if protocol else len(SCHEDULE)
+    stage_prefix=protocol.STAGE_PREFIX if protocol else 'S'
+    identifier=get_id(a.model,a.position);directory=a.session_dir/identifier
     # Re-running a trial must not be blocked by the previous attempt. Move the old
     # directory aside (evidence kept, never deleted) and write the new attempt fresh.
     if directory.exists():
@@ -91,7 +95,7 @@ def run_trial(a,runtime,common):
         directory.rename(archived)
         print(f'Previous {identifier} moved to {archived.name}; starting a new attempt.',flush=True)
     directory.mkdir(exist_ok=False)
-    record=dict(MODEL_ID=a.model,TRIAL_ID=identifier,POSITION=a.position,planned_slot=slot(a.model,a.position),
+    record=dict(MODEL_ID=a.model,TRIAL_ID=identifier,POSITION=a.position,planned_slot=get_slot(a.model,a.position),
         status='STARTED',rows=0,assisted_recovery_used=False,control_csv=str(directory/f'{identifier}.csv'),
         top_video=str(directory/f'{identifier}_top.mp4'),gripper_video=str(directory/f'{identifier}_gripper.mp4'))
     update_manifest(a.session_dir,record)
@@ -101,7 +105,7 @@ def run_trial(a,runtime,common):
     cfg=SO101FollowerConfig(port=a.robot_port,id=a.robot_id,max_relative_target=a.robot_max_relative_target,calibration_dir=a.calibration_dir,
         cameras={name:OpenCVCameraConfig(**{k:v for k,v in c.items() if k!='type'}) for name,c in common['cameras'].items()})
     robot=SO101Follower(cfg);listener=None;writers={};rows=0;phase='A';assistance_t=None;error=None;status='SETUP_ERROR';deltas=[];phase_deltas={'A':[],'B':[]};cleanup=[]
-    print(f'{identifier} MODEL_ID={a.model} POSITION={a.position} planned_slot={slot(a.model,a.position)}/12',flush=True)
+    print(f'{identifier} MODEL_ID={a.model} POSITION={a.position} planned_slot={get_slot(a.model,a.position)}/{total_slots}',flush=True)
     print('Home+Open、杯位与水量已固定；物理急停可用。Ctrl+C/Esc停止，右箭头正常结束。',flush=True)
     print('只有确认自主失败后，输入 assist 并回车，才能标记进入辅助B；输入 end 并回车结束。',flush=True)
     try:
@@ -172,7 +176,7 @@ def run_trial(a,runtime,common):
             termination_is_not_behavioral_success=True,video_clock='nominal30FPS, identity-level link only; no subsecond alignment claim'))
         if runtime.local is not None:save(directory/'local_regulator_metrics.json',dict(MODEL_ID=a.model,TRIAL_ID=identifier,POSITION=a.position,**residual_metrics(deltas),by_phase={k:residual_metrics(v) for k,v in phase_deltas.items()}))
         if not (directory/'stage_review.json').exists():
-            template={f'S{i}':'UNKNOWN' for i in range(7)}
+            template={f'{stage_prefix}{i}':'UNKNOWN' for i in range(7)}
             save(directory/'stage_review.json',dict(MODEL_ID=a.model,TRIAL_ID=identifier,POSITION=a.position,
                 A=dict(**template,full_autonomous_success='FAIL' if assistance_t is not None else 'UNKNOWN'),
                 B=dict(**template,phase_used=assistance_t is not None,full_chain_after_assistance='UNKNOWN'),

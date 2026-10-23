@@ -1,0 +1,19 @@
+seed,mode,fixture,comparison,max_native,mean_native,p95_native,h0_max_native,per_joint_max,passed
+3,historical,first,A0_vs_A1,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,historical,first,A0_vs_A2,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,historical,historical_worst,A0_vs_A1,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,historical,historical_worst,A0_vs_A2,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,historical,tail,A0_vs_A1,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,historical,tail,A0_vs_A2,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,benchmark_off,first,A0_vs_A1,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,benchmark_off,first,A0_vs_A2,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,benchmark_off,historical_worst,A0_vs_A1,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,benchmark_off,historical_worst,A0_vs_A2,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,benchmark_off,tail,A0_vs_A1,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+3,benchmark_off,tail,A0_vs_A2,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+1,benchmark_off,first,A0_vs_A1,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+1,benchmark_off,first,A0_vs_A2,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+1,benchmark_off,historical_worst,A0_vs_A1,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+1,benchmark_off,historical_worst,A0_vs_A2,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+1,benchmark_off,tail,A0_vs_A1,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True
+1,benchmark_off,tail,A0_vs_A2,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",True

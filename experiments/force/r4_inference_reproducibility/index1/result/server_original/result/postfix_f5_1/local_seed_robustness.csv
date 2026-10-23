@@ -1,0 +1,2 @@
+n,mean,std,minimum,maximum,range,label,rule
+3,0.31192732850710553,0.005943081248568552,0.3040303885936737,0.318367600440979,0.014337211847305298,LOCAL_ROBUSTNESS_CONFIRMED,Three valid locals all improve same global; seed error spread smaller than smallest improvement; not held-out robustness

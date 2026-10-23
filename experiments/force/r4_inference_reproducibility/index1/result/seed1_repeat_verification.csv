@@ -1,0 +1,2 @@
+seed,frames,batches,inputs_bitwise_equal,max_native,h0_max_native,max_joint_mean_absolute_error_difference,passed
+1,28739,7185,True,0.0,0.0,0.0,True

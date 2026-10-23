@@ -1,0 +1,72 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "models": {
+    "M1": {
+      "status": "PASS_REAL_RGB_BATCH1",
+      "normalization_path": "normalization/train36.json",
+      "image_state_bitwise_matches_reference": true,
+      "load_normalization_max_difference": 3.725290298461914e-09,
+      "load_precision_reason": "R5 uses exact R4 float32 arithmetic; difference here records rejected legacy float64-rounded route",
+      "nominal_max_native_difference": 0.0,
+      "arm_preserved": true,
+      "local_reference_checked": false,
+      "reset_difference": 0,
+      "current_ignored": true
+    },
+    "M2": {
+      "status": "PASS_REAL_RGB_BATCH1",
+      "normalization_path": "normalization/full60.json",
+      "image_state_bitwise_matches_reference": true,
+      "load_normalization_max_difference": 0.0,
+      "load_precision_reason": "R5 uses exact R4 float32 arithmetic; difference here records rejected legacy float64-rounded route",
+      "nominal_max_native_difference": 0.0,
+      "arm_preserved": true,
+      "local_reference_checked": false,
+      "reset_difference": 0,
+      "current_ignored": true
+    },
+    "M3": {
+      "status": "PASS_REAL_RGB_BATCH1",
+      "normalization_path": "normalization/train36.json",
+      "image_state_bitwise_matches_reference": true,
+      "load_normalization_max_difference": 3.725290298461914e-09,
+      "load_precision_reason": "R5 uses exact R4 float32 arithmetic; difference here records rejected legacy float64-rounded route",
+      "nominal_max_native_difference": 0.0,
+      "arm_preserved": true,
+      "local_reference_checked": true,
+      "reset_difference": 0,
+      "current_ignored": true
+    },
+    "M4": {
+      "status": "PASS_REAL_RGB_BATCH1",
+      "normalization_path": "normalization/full60.json",
+      "image_state_bitwise_matches_reference": true,
+      "load_normalization_max_difference": 0.0,
+      "load_precision_reason": "R5 uses exact R4 float32 arithmetic; difference here records rejected legacy float64-rounded route",
+      "nominal_max_native_difference": 0.0,
+      "arm_preserved": true,
+      "local_reference_checked": true,
+      "reset_difference": 0,
+      "current_ignored": true
+    },
+    "M5": {
+      "status": "PASS_REAL_RGB_BATCH1",
+      "normalization_path": "normalization/full60.json",
+      "image_state_bitwise_matches_reference": true,
+      "load_normalization_max_difference": 0.0,
+      "load_precision_reason": "R5 uses exact R4 float32 arithmetic; difference here records rejected legacy float64-rounded route",
+      "nominal_max_native_difference": 0.0,
+      "arm_preserved": true,
+      "local_reference_checked": false,
+      "reset_difference": 0,
+      "current_ignored": true
+    }
+  },
+  "cudnn_benchmark": false,
+  "matmul_tf32": true,
+  "cudnn_tf32": true,
+  "n_action_steps": 1,
+  "temporal_ensemble_coeff": 0.01,
+  "robot_trials": 0,
+  "scope": "Real RGB batch1 first/reset step and local composition; not closed-loop robot evidence"
+}

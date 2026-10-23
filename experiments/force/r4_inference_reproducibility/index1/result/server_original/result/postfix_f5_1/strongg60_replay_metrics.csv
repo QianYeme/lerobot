@@ -1,0 +1,2 @@
+model,scope,frames,gripper_mae_native,arm_mae_native,gripper_l1_reference36_normalized,arm_l1_reference36_normalized
+G60-S3,TRAIN-SET / COMMON-DIAGNOSTIC ONLY; NOT HELD-OUT GENERALIZATION,28739,1.3995808362960815,1.8317255973815918,0.05619196756903401,0.07303836709856389
