@@ -1,12 +1,14 @@
 # LeRobot 项目当前状态
 
-## 2026-10-23：R5五模型已发布，直接真机指南与代码就绪，现场未运行
+## 2026-10-23：R5五模型已发布，直接真机指南与代码就绪，A轮已跑、发现full60不抓取
 
 - 当前为[R5 r0](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/decision_R5_PRE_FINAL_DATASET_REAL_ROBOT_GATE.md)，在最终数据采集前做真实定位gate；不是直接进入120–150段采集。冻结M1旧G36-S3、M2新G60-S3、M3旧New-GL、M4新New-GL、M5弱seed4；M5依据R4综合误差/空间诊断预先选择，不看真机换seed。
 - 模型与配套文件从服务器发布到[HF R5_PRE_FINAL_DATASET_SO101](https://huggingface.co/QYyyyyyyy/R5_PRE_FINAL_DATASET_SO101)，revision6990fb2e82c39a571671fd22f7f45979f9d9ade6；11文件远端size/LFS SHA/Git blob核验通过。模型包962550207字节、代码包929487字节；含3global/2local、各自normalizer、prototype和离线视觉缓存，无需完整formal4视频。[发布回执](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/result/hf_publish_receipt.json)。
 - [真机指南](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/REAL_ROBOT_TEST_GUIDE.md)末尾五个独立可复制命令，沿用ACM0/id=nn、相机4/2、CLI ensemble0.01/relative5；固定A/B/C分块轮换共15次，不做失败救援重复。新control_r5继承既有直接运行循环，无新增shadow/审批/STOP锁，保留物理限制。
 - 保持benchmark=False和TF32=True；旧在线float64-rounded load与R4 float32缓存差3.725e-9在真实样本引起0.004738动作差，R5适配器已对齐float32。相同输入的独立模型差0、参数相等；未改权重/统计量/门槛。五路径真实RGB batch1 nominal差0、local参考/arm隔离/界限/reset通过；15本地回归通过，不冒充闭环真机。
 - R5_COMPLETE=false，现场0/15。下一步用户在连接设备的Linux系统按指南执行，再交视频/CSV/P0–P6/辅助记录；不采新训练数据、不重训、不自动操作机械臂。用户已授权本轮相关项目代码/指南更新GitHub det，凭据不入文件，大模型不入Git。
+- 本机离线预检完成（[记录](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/result/preflight_local_2026-10-23.md)）：`huggingface.co`被RST、`hf-mirror.com`的LFS不可用，改由`aifasthub.com`取回同一revision；两档SHA256与receipt一致，解包`outputs/deploy/R5`。代码包与det逐字节相同（其余差异仅CRLF）。`verify_bundle`五模型全过；五个`--dry-run`在CPU与CUDA下都exit 0、动作有限；M3/M4相对M1/M2臂维度差精确0、仅夹爪差−4.829/−4.822，在±4.8327内。**GPU已修复**：内核7.0.0-38缺`linux-modules-nvidia-580-open-7.0.0-38-generic`，apt补上后`nvidia-smi`正常、CUDA dry-run通过；无`/dev/ttyACM*`，相机仍是笔记本自带UVC，全部真机项仍未验证。
+- A轮真实试次已跑（position=A，共21次尝试、17个非空CSV），发现三件事，详见[发现总结](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/result/REAL_ROBOT_FINDINGS_A_round_2026-10-23.md)与[CSV归档](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/result/real_robot_control_csv/)：①**full60三模型（M2/M4/M5）共同不抓取**、到不了杯位、向前试探后回撤；train36（M1/M3）可达可抓。M2有一次跑满60s且推理稳定~24ms仍不抓，证明这是策略行为而非供电假象，属待查的模型级问题。②推理停顿：`inference_s`呈双峰（正常~24ms vs 卡顿54–72ms、尖峰1.5s、overrun50–95%），由未插电+混合模式GPU降频导致，解释"停一段再动"，但不解释不抓取。③设备交接错误（相机`read thread not running`/电机`no status packet`）致多次`ERROR rows=0`。阶段P0–P6仍未人工审核（UNREVIEWED），R5_COMPLETE仍false；B/C轮与剩余试次未跑。下一步：插电+独显直连重跑取证，并查full60不抓取根因。
 
 ## 2026-10-23：R4全量复现通过，修复后结论稳定，result已交付待外审
 
