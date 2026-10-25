@@ -1,5 +1,14 @@
 # LeRobot 项目当前状态
 
+## 2026-10-25：R5.10 按用户授权移除强制Home/容差检查
+
+- 用户明确每次手动复位，无需Home JSON或数值容差；此要求覆盖原decision起姿核验条款，原合同与发布回执不改，新增MANUAL_RESET_OVERRIDE.md记录授权。
+- control_r5_10直接启动，保留初始关节/夹爪/load/相机首帧记录；valid=null，不声称软件验证物理起姿。汇总按人工validity判定，仍保留传感器非有限值错误、急停和CLI动作限幅。
+- 指南按《真机测试经验与代码指令参考》保留四模型独立指令、ensemble=0.01和relative_target=5的CLI参数，无Stage0/shadow/指纹/持久锁。模型/预处理/归一化/预算均未变，未操作真机。
+- GitHub代码为本轮新版；HF原发布commit仍为旧源码/旧指南，下载时仅取模型及推理资产，不解包旧源码覆盖GitHub代码。
+
+- 本轮验证：20项R5/F5/R5.10协议与模拟I/O回归通过，包含无需Home仍能执行、初始证据留存、中断清理和重复测试归档；未连接真机。
+
 ## 2026-10-23：R5五模型已发布，直接真机指南与代码就绪，A轮已跑、发现full60不抓取
 
 - 当前为[R5 r0](../experiments/force/r5_pre_final_dataset_real_robot_gate/index1/decision_R5_PRE_FINAL_DATASET_REAL_ROBOT_GATE.md)，在最终数据采集前做真实定位gate；不是直接进入120–150段采集。冻结M1旧G36-S3、M2新G60-S3、M3旧New-GL、M4新New-GL、M5弱seed4；M5依据R4综合误差/空间诊断预先选择，不看真机换seed。

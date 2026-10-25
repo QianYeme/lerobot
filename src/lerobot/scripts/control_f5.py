@@ -85,7 +85,8 @@ def run_trial(a,runtime,common,protocol=None):
     get_slot=protocol.slot if protocol else slot
     total_slots=len(protocol.SCHEDULE) if protocol else len(SCHEDULE)
     stage_prefix=protocol.STAGE_PREFIX if protocol else 'S'
-    identifier=get_id(a.model,a.position);directory=a.session_dir/identifier
+    identifier=getattr(a,'trial_id_override',None) or get_id(a.model,a.position);directory=a.session_dir/identifier
+    if Path(identifier).name!=identifier or identifier in ['.','..']:raise ValueError('trial-id must be a plain directory name')
     # Re-running a trial must not be blocked by the previous attempt. Move the old
     # directory aside (evidence kept, never deleted) and write the new attempt fresh.
     if directory.exists():
@@ -98,10 +99,12 @@ def run_trial(a,runtime,common,protocol=None):
     record=dict(MODEL_ID=a.model,TRIAL_ID=identifier,POSITION=a.position,planned_slot=get_slot(a.model,a.position),
         status='STARTED',rows=0,assisted_recovery_used=False,control_csv=str(directory/f'{identifier}.csv'),
         top_video=str(directory/f'{identifier}_top.mp4'),gripper_video=str(directory/f'{identifier}_gripper.mp4'))
+    if protocol is not None and hasattr(protocol,'audit_initial'):record['valid_initial_state']=None
     update_manifest(a.session_dir,record)
     save(directory/'configuration.json',dict(common=common,identity=runtime.identity,**record,started_wall_time=time.time(),
         state_order=POSITION_FIELDS+(['gripper.load','gripper.curr'] if a.model=='P1-Hist' else []),
-        local_application='Once after temporal ensemble+global denormalization, before robot relative target limit'))
+        local_application='Once after temporal ensemble+global denormalization, before robot relative target limit',
+        stage_names=getattr(protocol,'STAGE_NAMES',None)))
     cfg=SO101FollowerConfig(port=a.robot_port,id=a.robot_id,max_relative_target=a.robot_max_relative_target,calibration_dir=a.calibration_dir,
         cameras={name:OpenCVCameraConfig(**{k:v for k,v in c.items() if k!='type'}) for name,c in common['cameras'].items()})
     robot=SO101Follower(cfg);listener=None;writers={};rows=0;phase='A';assistance_t=None;error=None;status='SETUP_ERROR';deltas=[];phase_deltas={'A':[],'B':[]};cleanup=[]
@@ -119,6 +122,9 @@ def run_trial(a,runtime,common,protocol=None):
             writer=cv2.VideoWriter(str(directory/f'{identifier}_{camera}.mp4'),cv2.VideoWriter_fourcc(*'mp4v'),30,(640,480))
             writers[camera]=writer
             if not writer.isOpened():raise ValueError('Video writer failed before first action')
+        if protocol is not None and hasattr(protocol,'audit_initial'):
+            initial=protocol.audit_initial(first,a,common);save(directory/'initial_state.json',initial)
+            record['valid_initial_state']=initial['valid']
         fields=['MODEL_ID','TRIAL_ID','POSITION','phase','step','t_s','wall_time','inference_s','processing_s','overrun',
             'gripper.load','gripper.curr','nominal_gripper','delta_gripper','final_gripper']
         fields += [prefix+'.'+field for prefix in ['state','nominal','requested','sent'] for field in POSITION_FIELDS]
