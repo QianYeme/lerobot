@@ -102,7 +102,7 @@ def run_trial(a,runtime,common,protocol=None):
     if protocol is not None and hasattr(protocol,'audit_initial'):record['valid_initial_state']=None
     update_manifest(a.session_dir,record)
     save(directory/'configuration.json',dict(common=common,identity=runtime.identity,**record,started_wall_time=time.time(),
-        state_order=POSITION_FIELDS+(['gripper.load','gripper.curr'] if a.model=='P1-Hist' else []),
+        state_order=runtime.identity.get('state_fields',POSITION_FIELDS+(['gripper.load','gripper.curr'] if a.model=='P1-Hist' else [])),
         local_application='Once after temporal ensemble+global denormalization, before robot relative target limit',
         stage_names=getattr(protocol,'STAGE_NAMES',None)))
     cfg=SO101FollowerConfig(port=a.robot_port,id=a.robot_id,max_relative_target=a.robot_max_relative_target,calibration_dir=a.calibration_dir,

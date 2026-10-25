@@ -1,0 +1,46 @@
+{
+  "status": "PASS_SYNTHETIC_ONLY",
+  "routes": [
+    {
+      "model": "R0",
+      "global_sha256": "0b0270f6a0c0d37a23f2a8f5a50be3cddd39f923f9159f4576ad39761c805594",
+      "local_sha256": null,
+      "state_dimension": 8,
+      "global_load": false,
+      "bundle": "/root/autodl-tmp/F5_20261022/bundle",
+      "normalization_path": "normalization.json",
+      "scope": "SYNTHETIC_CODE_SMOKE_ONLY"
+    },
+    {
+      "model": "R1",
+      "global_sha256": "e122e0e6574cf9e3f1a655b90bdf0de210b769e05dce0663ac451b20aefbd098",
+      "local_sha256": "695d6fa89f3e823f6236dca38c8e684c461009d5b9c357cfd1cb9f0d8dffea81",
+      "state_dimension": 6,
+      "global_load": true,
+      "bundle": "/root/autodl-tmp/F5_20261022/bundle",
+      "normalization_path": "normalization.json",
+      "scope": "SYNTHETIC_CODE_SMOKE_ONLY"
+    },
+    {
+      "model": "R2",
+      "global_sha256": "4f9e6a0574969fe8356aa91de967334367424bdc00a890f5da6d3f7c3b93d384",
+      "local_sha256": null,
+      "state_dimension": 6,
+      "global_load": true,
+      "bundle": "/root/autodl-tmp/R5_10_20261025/bundle",
+      "normalization_path": "normalization/full60.json",
+      "scope": "SYNTHETIC_CODE_SMOKE_ONLY"
+    },
+    {
+      "model": "R3",
+      "global_sha256": "d094de659f58df3e55cd6284a83729cfd8658fb1d4b19f73d6a8cb634a61fc0f",
+      "local_sha256": null,
+      "state_dimension": 6,
+      "global_load": true,
+      "bundle": "/root/autodl-tmp/R5_11_20261025/bundle",
+      "normalization_path": "normalization/full60.json",
+      "scope": "SYNTHETIC_CODE_SMOKE_ONLY"
+    }
+  ],
+  "robot_trials": 0
+}

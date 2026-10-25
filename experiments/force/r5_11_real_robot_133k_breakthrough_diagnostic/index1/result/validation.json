@@ -1,0 +1,15 @@
+{
+  "PREPARATION_COMPLETE": true,
+  "R5_11_COMPLETE": false,
+  "robot_trials": 0,
+  "policy_weights_uploaded": 1,
+  "exact_historical_artifact": true,
+  "real_input_samples": 36,
+  "maximum_prediction_difference": 0,
+  "synthetic_routes": 4,
+  "local_regression_tests": 24,
+  "hf_revision": "7a4c47a6331538426fc315d52d049acb810f200c",
+  "published_files_verified": 243,
+  "Builder_Review": "PENDING",
+  "Red_Team_Review": "PENDING"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "samples": 36,
+  "normalized_chunk_max_difference": 0.0,
+  "first_step_native_max_difference": 0.0,
+  "input_bitwise_equal": true,
+  "reset_repeat_difference": 0,
+  "original_checkpoint_identity": {
+    "model": "G60-S3-133k",
+    "checkpoint": "/root/autodl-tmp/R5_3_20261024/runs/G60-S3-133k/attempt1/checkpoints/133000/pretrained_model",
+    "sha256": "d094de659f58df3e55cd6284a83729cfd8658fb1d4b19f73d6a8cb634a61fc0f",
+    "normalizer_sha256": "32f8ebea2aee156b8eabad78f67389278bae0c8e556f6f9370271070d9a780ab",
+    "weights_unchanged": true,
+    "formal": true
+  },
+  "robot_trials": 0,
+  "R5_11_COMPLETE": false,
+  "scope": "Training-input parity only; no held-out or real-robot claim"
+}

@@ -1,5 +1,14 @@
 # LeRobot 项目当前状态
 
+## 2026-10-25：R5.11 原133k已单独发布，真机指南已准备
+
+- [HF模型与配套文件](https://huggingface.co/QYyyyyyyy/R5_11_FULL60_133K_SO101/tree/7a4c47a6331538426fc315d52d049acb810f200c)，仅原R5.3 Full60/S3/133k权重，未上传其它参考模型；原checkpoint/hash已核验。
+- 36真实训练输入部署预测差0；四路CUDA合成dry-run通过；本地24项回归与diff检查通过。发布243文件按精确commit大小/hash核验。初次缓存读键错误修复并保留日志，没有改科研变量。
+- [完整指南](../experiments/force/r5_11_real_robot_133k_breakthrough_diagnostic/index1/REAL_ROBOT_TEST_GUIDE.md)，最后R0/R1/R2/R3各一条命令；源代码匹配包在HF；本轮另按用户要求同步GitHub det。P1保持8D、New-GL保持原Train36 global/local。每次人工复位，无Home数值门；Stage B仍需A位确认改善，不能自动跑满预算。
+- [准备交付](../experiments/force/r5_11_real_robot_133k_breakthrough_diagnostic/index1/result/summary.md)。真机0次，R5_11_COMPLETE=false、双审PENDING；模型可下载，不宣称真机改善或held-out验证。
+
+- 用户现明确要求GitHub同步；本提交仅R5.11代码、指南及发布证据，模型大文件保留HF，不纳入其他阶段的未提交更改。
+
 ## 2026-10-25：R5.10 A轮真机已跑，仅M1完成完整动作、clip5三模型未完成
 
 - 现场 position=A 共 40 次尝试（M1 26、M2 6、M3 4、M4 4；39 个 CSV，M4 一次标定失败无 CSV）。**操作员现场观察：仅 M1 完成过"抓取→拿起→放下"，M2/M3/M4 全程未完成；且 M1 本身不稳定，很大概率只到杯位、不进后续抓取/拿起/放下。** [发现总结](../experiments/force/r5_10_real_robot_transfer_validation/index1/result/REAL_ROBOT_FINDINGS_2026-10-25.md)、[CSV归档](../experiments/force/r5_10_real_robot_transfer_validation/index1/result/real_robot_control_csv/README.md)。
