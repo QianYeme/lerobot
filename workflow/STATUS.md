@@ -1,5 +1,21 @@
 # LeRobot 项目当前状态
 
+## 2026-10-25：R5.10 A轮真机已跑，仅M1完成完整动作、clip5三模型未完成
+
+- 现场 position=A 共 40 次尝试（M1 26、M2 6、M3 4、M4 4；39 个 CSV，M4 一次标定失败无 CSV）。**操作员现场观察：仅 M1 完成过"抓取→拿起→放下"，M2/M3/M4 全程未完成；且 M1 本身不稳定，很大概率只到杯位、不进后续抓取/拿起/放下。** [发现总结](../experiments/force/r5_10_real_robot_transfer_validation/index1/result/REAL_ROBOT_FINDINGS_2026-10-25.md)、[CSV归档](../experiments/force/r5_10_real_robot_transfer_validation/index1/result/real_robot_control_csv/README.md)。
+- 程序事实：绝大多数 `SAFETY_ABORT`（操作员手动中止），M1 有 1 次 `TIME_LIMIT`（1782行≈59s）；少数 `ERROR` 为相机/标定设备交接。阶段 P0–P6 全部 `UNREVIEWED`、`valid_initial=null`，无一试次被程序记为自然完成，故**不报告成功率**。M1 重试 26 次 vs 其它 3–6 次，本身印证"M1 唯一偶发成功且不稳定"。
+- 运行时遥测健康：四模型推理 ~17–19ms、overrun <0.4%，**R5 A轮未插电的"停一段再动"未再现**（推理稳定、无尖峰），本轮失败不是供电/时序假象。
+- 配方对比：本轮四模型全用 Full60 归一化，M1=`clip10/seed3/80k`、M2/M3/M4=`clip5`（seed2/seed2 SWA/seed3 SWA）；观察是 clip5 三模型全部未完成、clip10 偶发完成，但只有 3–4 次/模型且 M1 多试有选择偏倚，不下"clip10 优于 clip5"结论。与 R5 A轮 full60 不抓取同族，根因待查（[[actdet-grasp-diagnosis]]、[[r5-full60-grasp-failure]]）。
+- 正式 9 次主比较（A/B/C）预算未按计划填表：仅 A 位多轮重试，B/C 位未跑。下一步建议先对现有视频做 stage_review 把失败落到具体阶段，再做受控 clip10 vs clip5 对比；不自动重训/加数据。本轮记录已提交 GitHub det 分支。
+
+## 2026-10-25：R5.10 真机文件下载与离线核验完成
+
+- 按[真机指南](../experiments/force/r5_10_real_robot_transfer_validation/index1/REAL_ROBOT_TEST_GUIDE.md)第2节从HF取回 `QYyyyyyyy/R5_10_TRANSFER_SO101`。`huggingface.co`仍被TLS重置、`hf download`走aifasthub会因LFS大小元数据错报（误报100MB）而一致性校验失败，故按递归树清单直接`curl -L`到`aifasthub.com/.../resolve/main/<path>`逐个下载；250个文件、1.3GB、字节数逐一核对250/250一致。
+- `checksums.json`全量核对：覆盖258项，249项字节数与SHA256全一致、0不一致；9项"缺失"是文档/代码归档（decision/README/指南/tar.gz/planned_trials等），按指南应使用GitHub det代码、不下HF旧源码，符合预期。
+- `verify_bundle()` 四模型M1–M4全过：clip/seed/source_steps、global-only无local、Full60 normalizer、manifest哈希、normalizer与checkpoint逐字节一致。M1=clip10/seed3/80k、M2=clip5/seed2/80k、M3=clip5/seed2/60k+80k SWA、M4=clip5/seed3/60k+80k SWA；均6D关节位置state+独立单帧load、6D位置动作。
+- 四模型CUDA dry-run（`cudnn.benchmark=False`、`cudnn.deterministic=True`、TF32保持）全部exit 0、动作有限且两两不同。这是合成零观测smoke，不是行为证据。GPU已就绪（RTX 4060 Laptop 580.178.04，CUDA True）。
+- **全部真机项仍未验证**：无`/dev/ttyACM*`、top=4/gripper=2、robot.id=nn标定、夹爪方向、人工复位方式均未核验。正式试次0/9（+可选M4、定向确认≤3），R5_10_COMPLETE=false。[预检记录](../experiments/force/r5_10_real_robot_transfer_validation/index1/result/preflight_local_2026-10-25.md)。未连接真机、未commit/push本轮记录。
+
 ## 2026-10-25：R5.10 按用户授权移除强制Home/容差检查
 
 - 用户明确每次手动复位，无需Home JSON或数值容差；此要求覆盖原decision起姿核验条款，原合同与发布回执不改，新增MANUAL_RESET_OVERRIDE.md记录授权。
