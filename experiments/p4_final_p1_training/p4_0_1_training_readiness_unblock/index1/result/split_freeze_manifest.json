@@ -1,0 +1,11 @@
+{
+  "source_revision": "83a829af6df245ed53596dbc22b18c19f8bd3315",
+  "seed": 20261028,
+  "status": "FROZEN",
+  "review": "No demonstrated duplicate operation; candidate retained, similar location alone not leakage",
+  "episode_file_sha256": {
+    "train90_episode_ids.json": "2deb0f118fbabb1866fe8a78d8074563bca8f66c4dd2634d8a82114524221479",
+    "dev15_episode_ids.json": "b9ab92dd5677d6b6727e54f1dc52dd9020af8fa6d47b93083d64d73d6e255538",
+    "final15_episode_ids.json": "6ecffbfce2bf02949c6b9701f3454b904b95136bf47e2cb3180983e131da5f9f"
+  }
+}

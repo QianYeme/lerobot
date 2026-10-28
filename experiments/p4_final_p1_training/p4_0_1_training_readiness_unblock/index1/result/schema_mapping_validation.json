@@ -1,0 +1,21 @@
+{
+  "raw_shape": [
+    93391,
+    9
+  ],
+  "mapped_shape": [
+    93391,
+    8
+  ],
+  "action_shape": [
+    93391,
+    6
+  ],
+  "named_permutation_check": true,
+  "finite": true,
+  "master_excluded": true,
+  "optimizer_steps": 0,
+  "production_loader_integrated": false,
+  "schema_gate": "BLOCKED",
+  "reason": "Array mapping validated; production P1 loader/processor construction not executed; no torch in local environment"
+}

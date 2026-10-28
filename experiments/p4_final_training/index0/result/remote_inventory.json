@@ -1,0 +1,98 @@
+{
+  "repo": "QYyyyyyyy/formal6_merged",
+  "revision": "83a829af6df245ed53596dbc22b18c19f8bd3315",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 2504
+    },
+    {
+      "path": "README.md",
+      "bytes": 4323
+    },
+    {
+      "path": "data/chunk-000/file-000.parquet",
+      "bytes": 2923414
+    },
+    {
+      "path": "meta/episodes/chunk-000/file-000.parquet",
+      "bytes": 253502
+    },
+    {
+      "path": "meta/info.json",
+      "bytes": 3331
+    },
+    {
+      "path": "meta/stats.json",
+      "bytes": 13823
+    },
+    {
+      "path": "meta/tasks.parquet",
+      "bytes": 2352
+    },
+    {
+      "path": "videos/observation.images.gripper/chunk-000/file-000.mp4",
+      "bytes": 135934923
+    },
+    {
+      "path": "videos/observation.images.gripper/chunk-000/file-001.mp4",
+      "bytes": 119226074
+    },
+    {
+      "path": "videos/observation.images.gripper/chunk-000/file-002.mp4",
+      "bytes": 204005334
+    },
+    {
+      "path": "videos/observation.images.gripper/chunk-000/file-003.mp4",
+      "bytes": 52164303
+    },
+    {
+      "path": "videos/observation.images.gripper/chunk-000/file-004.mp4",
+      "bytes": 205793246
+    },
+    {
+      "path": "videos/observation.images.gripper/chunk-000/file-005.mp4",
+      "bytes": 39236855
+    },
+    {
+      "path": "videos/observation.images.gripper/chunk-000/file-006.mp4",
+      "bytes": 204257840
+    },
+    {
+      "path": "videos/observation.images.gripper/chunk-000/file-007.mp4",
+      "bytes": 41690114
+    },
+    {
+      "path": "videos/observation.images.top/chunk-000/file-000.mp4",
+      "bytes": 121425838
+    },
+    {
+      "path": "videos/observation.images.top/chunk-000/file-001.mp4",
+      "bytes": 108485714
+    },
+    {
+      "path": "videos/observation.images.top/chunk-000/file-002.mp4",
+      "bytes": 205333540
+    },
+    {
+      "path": "videos/observation.images.top/chunk-000/file-003.mp4",
+      "bytes": 22283785
+    },
+    {
+      "path": "videos/observation.images.top/chunk-000/file-004.mp4",
+      "bytes": 207634410
+    },
+    {
+      "path": "videos/observation.images.top/chunk-000/file-005.mp4",
+      "bytes": 22419123
+    },
+    {
+      "path": "videos/observation.images.top/chunk-000/file-006.mp4",
+      "bytes": 209311334
+    },
+    {
+      "path": "videos/observation.images.top/chunk-000/file-007.mp4",
+      "bytes": 14996059
+    }
+  ]
+}

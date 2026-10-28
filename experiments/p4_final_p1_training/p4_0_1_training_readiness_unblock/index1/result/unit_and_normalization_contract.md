@@ -1,0 +1,6 @@
+# 单位合同
+
+UNIT_CONTRACT_BLOCKED。config_so_follower.py默认use_degrees=True；so_follower.py依据配置选择DEGREES或RANGE_M100_100，gripper另有独立范围语义。这不证明formal6实际采集配置。未找到与该revision绑定的采集命令、use_degrees字段或标定文件。
+load/curr为遥测量，不是已校准牛顿力。没有施加角度换算。
+ACT configuration_act.py声明STATE/ACTION/VISUAL MEAN_STD，processor_act.py含归一化和反归一化。新数据只允许使用Train统计，不能复用旧checkpoint normalizer；实际生产路径重复归一化审查尚未运行。
+不宣称FRESH_TRAIN_LIMITED：未来部署同一实际follower及配置尚无证据，无法闭环验证。

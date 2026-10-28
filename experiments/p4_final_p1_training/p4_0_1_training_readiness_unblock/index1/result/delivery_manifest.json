@@ -1,0 +1,22 @@
+{
+  "builder_review.md": "93c9636a9ee12aed8650024a275a915695f6e878891db1add2b9f3c6cb488d71",
+  "calibration_evidence_manifest.csv": "e6f3cb8d7f99241a29824d095a7290d33b1685f674c3191ae4f917bc2c9120fc",
+  "dev15_episode_ids.json": "b9ab92dd5677d6b6727e54f1dc52dd9020af8fa6d47b93083d64d73d6e255538",
+  "evidence_manifest.md": "700361968d9b1f6387989cbfdebe47a061078ea3a5aa11193d88615d1b3d45c6",
+  "final15_episode_ids.json": "6ecffbfce2bf02949c6b9701f3454b904b95136bf47e2cb3180983e131da5f9f",
+  "preflight_smoke_test.json": "e7290a8720ca584aee436a0a738b0130bbde4f19bcc44057f97f1d77f1373f56",
+  "PROPOSAL.md": "aecd2963d72cfda9d22f183a9dbfac5ddc0998ed94b7c1fdffcb1e44fb28cb84",
+  "prototype_source_plan_frozen.md": "b925587214e068afb826bfe04265ee6b804bafa857a9b6cada582594ae5be4e7",
+  "red_team_review.md": "5483b426b18dd3356e9b483662b4d6a200ce8ed25c47d372bf7c6f9e4709268c",
+  "reproducibility_manifest.md": "2724411ce79e368de7cacae93f267dca2e04e527e525ae86648774a2e929346b",
+  "schema_mapping_contract.md": "ac9b280f26605fe4f79a35719853329828522c6c69c5b97a6781417e423ab1fc",
+  "schema_mapping_validation.json": "e7290a8720ca584aee436a0a738b0130bbde4f19bcc44057f97f1d77f1373f56",
+  "split_freeze_manifest.json": "6150ceda675621ae552debafaf9118f872beaa58b2ef64dc267c1e1101dfffed",
+  "split_review.md": "f6f84a6eb5d9b42af0e71a3f8a4c4d5b5639edfdcc87bff09997e18cff7ce58a",
+  "summary.md": "d67efbf01deff10fd8d94f4e66c3c10fccc9337602c9f430c90c8a47b0fa49eb",
+  "train90_episode_ids.json": "2deb0f118fbabb1866fe8a78d8074563bca8f66c4dd2634d8a82114524221479",
+  "training_input_contract.yaml": "de9112e3278b42590b5d1769b2ddf13e8e0880eadebb264343c5bc305b18114c",
+  "transform_roundtrip_checks.json": "ef93541dc7e854aec7e8ebac5496fc0a9cca7601fdc637ee12e672df267f76bf",
+  "unit_and_normalization_contract.md": "64931bbdcc724d415620cf0c3a274e5d5e7c3a34b5d90ea07e6cb7e9902b249c",
+  "validation.md": "933048c01780042a3800bef658c4995bbf1519ae2473a97d5f44bb1e011af1d8"
+}

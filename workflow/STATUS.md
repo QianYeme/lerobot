@@ -1,5 +1,21 @@
 # LeRobot 项目当前状态
 
+## P4.0.1 阻断证据交付（2026-10-28）
+
+- [summary](../experiments/p4_final_p1_training/p4_0_1_training_readiness_unblock/index1/result/summary.md)：命名映射真实93391行校验通过，Train统计NumPy往返误差3.05e-5；生产P1加载/processor未验证，SCHEMA仍BLOCKED，不把数组smoke当全链路通过。
+- 原候选90/15/15按decision授权冻结（ep113 Dev），ID零交集/hash已记录。未发现需改候选的实质复制证据，不保证未知场次风险消失。
+- 采集use_degrees/标定及未来同follower部署单位闭环无证据，UNIT_CONTRACT_BLOCKED；不凭代码默认degrees猜测。RESULT_READY=true，P4_0_1_COMPLETE=false，独立双审PENDING。未训练/真机/原数据改写/原型构建，不进入P4.1。
+
+## P4.0 审计交付：原始接口/划分待解阻（2026-10-28）
+
+- [最终summary](../experiments/p4_final_training/index0/result/summary.md)：RESULT_READY=true，执行方审计完成；DATASET_BLOCKED（9D原始输入/单位合同待确认），候选划分未冻结，独立双审PENDING。120集宽松概览粗链条通过，113手入镜优先Dev；无训练/数据改写。
+
+- 用户现场澄清：相机视角反向，机械臂左抓右放；抓取区约10.5×13.5 cm、放置区约6.5×6.5 cm。[场景说明](../experiments/p4_final_training/index0/result/USER_CONFIRMED_SCENE_GEOMETRY.md)。近似尺寸非图像标定，不改原图。
+
+- 固定revision `83a829af6df245ed53596dbc22b18c19f8bd3315`；120集93391帧，state9D/action6D；有限值、逐集帧连续和时间戳单调检查通过。视频下载与P1映射审查进行中。
+- 用户批准取消强制R01–R15标签，改按实际覆盖/场次/重复轨迹提出90/15/15方案。具体算法与ID尚未冻结。
+- [授权记录](../experiments/p4_final_training/index0/result/USER_APPROVED_REGION_REQUIREMENT_OVERRIDE.md)。无训练、真机、原数据改写或发布。
+
 ## 2026-10-25：R5.11 原133k已单独发布，真机指南已准备
 
 - [HF模型与配套文件](https://huggingface.co/QYyyyyyyy/R5_11_FULL60_133K_SO101/tree/7a4c47a6331538426fc315d52d049acb810f200c)，仅原R5.3 Full60/S3/133k权重，未上传其它参考模型；原checkpoint/hash已核验。

@@ -1,0 +1,7 @@
+{
+  "scope": "NumPy prospective mean/std, not production processor",
+  "train_only_statistics": true,
+  "max_abs_roundtrip_error": 3.0517578125e-05,
+  "unit_conversion_applied": false,
+  "production_roundtrip": "NOT_RUN"
+}

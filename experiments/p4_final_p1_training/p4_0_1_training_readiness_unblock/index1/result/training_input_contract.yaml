@@ -1,0 +1,9 @@
+status: BLOCKED
+dataset_revision: 83a829af6df245ed53596dbc22b18c19f8bd3315
+state_dim: 8
+action_dim: 6
+model: P1_OCACT
+training_allowed: false
+prototype_build_allowed: false
+unit_contract: BLOCKED
+production_loader_validation: NOT_RUN

@@ -1,0 +1,114 @@
+[
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.top\\chunk-000\\file-000.mp4",
+    "decoded_frames": 12455,
+    "required_frames": 12455,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "979e93fe62ed93c5158bb325cb9dd9bcce03dd7e71c36d5af4358b26acd324bc"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.top\\chunk-000\\file-001.mp4",
+    "decoded_frames": 10899,
+    "required_frames": 10899,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "3deab33e358e190126d05fb2dd6c532cae4f6d10f8d9f11a106d2572f80365cd"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.top\\chunk-000\\file-002.mp4",
+    "decoded_frames": 21012,
+    "required_frames": 21012,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "5fd5de6c770cfa49ed04e242eef711ff06bf661860052466a0a794ba6b7b4b46"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.top\\chunk-000\\file-003.mp4",
+    "decoded_frames": 2334,
+    "required_frames": 2334,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "aa18ba816afc79c66d214599dd201a1b3646d233beb09a201b430c6f6f60dfcc"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.top\\chunk-000\\file-004.mp4",
+    "decoded_frames": 21011,
+    "required_frames": 21011,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "401f0d0a8c78e09a0de7bcbc8b1fde3cdcfae828923feb0ddd625325696db53a"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.top\\chunk-000\\file-005.mp4",
+    "decoded_frames": 2334,
+    "required_frames": 2334,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "d6edf96ceff831ecb241339e148dda3f1118df228a925e800c759100bcb32aea"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.top\\chunk-000\\file-006.mp4",
+    "decoded_frames": 21790,
+    "required_frames": 21790,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "5d31a50efc0f3e8cf9e9309d7a597aae5561b5a6aea406dec519958c1cbb0a32"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.top\\chunk-000\\file-007.mp4",
+    "decoded_frames": 1556,
+    "required_frames": 1556,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "f2670279a8eb3c6841f77cfcf61e55d98bfa9d73325d540bfde65104e49884a3"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.gripper\\chunk-000\\file-000.mp4",
+    "decoded_frames": 12455,
+    "required_frames": 12455,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "1db1bf31937ce7a4ff8093c142301a9e85c0ff7d37f646da9814992d8096fde7"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.gripper\\chunk-000\\file-001.mp4",
+    "decoded_frames": 10899,
+    "required_frames": 10899,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "e60a286d71f52a3a4487ebe5f6ea0ebf0fe876f1493cb43d53e67e31ececdf13"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.gripper\\chunk-000\\file-002.mp4",
+    "decoded_frames": 18678,
+    "required_frames": 18678,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "8c87aab007159dc67abf9e89ebd46bbc9a420875fcfb30634a8462c52fdd1eeb"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.gripper\\chunk-000\\file-003.mp4",
+    "decoded_frames": 4668,
+    "required_frames": 4668,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "a828f0902eb3e0923795900e7b93ae489267435a2a25464bc554f408913c10b7"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.gripper\\chunk-000\\file-004.mp4",
+    "decoded_frames": 19455,
+    "required_frames": 19455,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "768fbb362b0923e29145c1c91a1654064520fabe02b0424162a6d460297fdb3f"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.gripper\\chunk-000\\file-005.mp4",
+    "decoded_frames": 3890,
+    "required_frames": 3890,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "3b9f6b4caf93fc851dce56e289bc22b458827d0ada391cb1ae96c7da38bcf66b"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.gripper\\chunk-000\\file-006.mp4",
+    "decoded_frames": 19456,
+    "required_frames": 19456,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "39ca6cb990374a6e8ecc19e378087cf9c0c8fcb8def2bde6520bcb05069ab819"
+  },
+  {
+    "path": "outputs\\p4_0\\formal6_merged\\videos\\observation.images.gripper\\chunk-000\\file-007.mp4",
+    "decoded_frames": 3890,
+    "required_frames": 3890,
+    "fps": 30.0,
+    "sampled_pixel_sha256": "437aa719bc41744ff3de1921012b4d84e2d27f9dc9f5e71700be657a248f5cf0"
+  }
+]

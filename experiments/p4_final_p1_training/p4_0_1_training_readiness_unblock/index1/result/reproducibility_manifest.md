@@ -1,0 +1,4 @@
+# 可复现性
+
+源revision83a829af6df245ed53596dbc22b18c19f8bd3315。Git HEAD 3c68ade27bddec4cacc505710bf41afd04e2b679，工作树脏，HEAD不代表完整源码；证据清单记录关键文件hash。只读数据校验，无checkpoint/optimizer lineage（从头训练，禁止作为旧P1续训）。后续P4.1需固定实际训练源码快照、seed、输出目录和预算。
+历史train_r5_5_deterministic.py注入Python/NumPy/Torch seed、cudnn deterministic，但torch.use_deterministic_algorithms(False)，不可称严格确定性；且该脚本不是本轮P1冻结入口。此次未重用其科研配置。
