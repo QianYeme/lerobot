@@ -9,6 +9,8 @@
 - HF 四模型部署包已上传：[P4_3_FORMAL6_SO101](https://huggingface.co/QYyyyyyyy/P4_3_FORMAL6_SO101)，commit `a0e55ec840709cf0cacb59ccb26a3e36dffd11ec`；226 个交付文件的远端大小及 LFS SHA 核验通过。通过临时 SSH 网络中转从服务器完成大文件上传，中转已关闭。
 - 本轮为部署交付，不执行真机；New-GL B 轨道未启动，整个双轨合同不能标为全部完成。
 - 用户随后授权更新 GitHub `det`：同步本轮部署代码、指南与证据；大权重保留 Hugging Face，未夹带其他未提交改动。
+- 本机离线预检完成（[记录](../outputs/p43_offline_eval/README.md)）：经 `hf-mirror.com` 下载部署包至 `outputs/deploy/P4_3`（227 文件、1247.5 MB），四模型 `model.safetensors`/`config.json`/`train90_statistics.pt`/`formal6_train90_prototypes.pt` SHA256 与 manifest 全部一致；四模型 `control_p43 --dry-run` 均 exit 0、有限 6D 动作、归一化/step 标签与指南一致。本机 RTX 4060 延迟（GPU wrapper chunk，仅推理）：L1 21.74 / F3 20.61 / A1 14.74 / L1_160K 21.36 ms（对照服务器 RTX5090 ACT 13.36、P1 18.44–18.65）。`runtime_source.zip` 关键运行文件与仓库逐字节一致。仅离线合成零观测证据，未接机器人、未读 Final15。
+- 用户授权解除试次时长硬限制：`control_f5.py` 的 `settings()` 不再强制 `episode_time_s=60`/`reset_time_s=30`（改为有限正数/非负 sanity 校验），试次循环由写死 60s 改为读 `common['episode_time_s']`。默认仍 60/30，可经 `--dataset.episode_time_s`/`--dataset.reset_time_s` 灵活调整；共享 F5 入口同样放开。四模型公平对比需保持一致时长并在配置中记录改动。
 
 
 ## P4.0.1 阻断证据交付（2026-10-28）
@@ -26,6 +28,27 @@
 - 固定revision `83a829af6df245ed53596dbc22b18c19f8bd3315`；120集93391帧，state9D/action6D；有限值、逐集帧连续和时间戳单调检查通过。视频下载与P1映射审查进行中。
 - 用户批准取消强制R01–R15标签，改按实际覆盖/场次/重复轨迹提出90/15/15方案。具体算法与ID尚未冻结。
 - [授权记录](../experiments/p4_final_training/index0/result/USER_APPROVED_REGION_REQUIREMENT_OVERRIDE.md)。无训练、真机、原数据改写或发布。
+## 2026-10-27：formal6 五段合并为 120 集完整数据集 formal6_merged
+
+- 用户采集 formal6/kind1–5 共五段，要求合并为 120 集完整数据集。经逐项核对，kind1 实际为 16 集完整 episode（录制第 17 集不完整，遥操作工具 finalize 时已自动丢弃该半成品，数据/视频/元数据均无第 17 集），故无需删除；各段集数 16+14+30+30+30=120。
+- 用 `lerobot-edit-dataset --operation.type merge`（aggregate，视频流拷贝不重编码）合并到 `~/.cache/huggingface/lerobot/formal6_merged`（repo_id `formal6_merged`），原 kind1–5 保留作备份。
+- 核验通过：episode_index 连续 0–119、总帧 93391（=12455+10899+23346+23345+23346）、每集帧数分布 777×1/778×87/779×32 与来源逐项一致、top/gripper 视频各 93391 帧、任意帧解码为 (3,480,640) float32、split `{"train":"0:120"}`、单任务一致。
+- 磁盘：合并前可用 17G，合并后 16G，峰值仅 +1.8G，空间充足，未删除任何缓存或模型文件。
+
+## 2026-10-26：formal5/kind3 数据集已发布（抓取-拿起-放下）
+
+- **[QYyyyyyyy/formal5_kind3](https://huggingface.co/datasets/QYyyyyyyy/formal5_kind3)**（public，9 文件，tag `v3.0`）：LeRobot v3.0、`so_follower`（SO-101 follower + leader 遥操作）、5 episode × 360 帧 = 1800 帧、30fps、`top`/`gripper` 双相机 640×480、6D action、9D state（含 `gripper.load`/`curr`/`master_gripper.pos`），单任务 "Pick up the half-filled transparent plastic cup steadily without spilling"。
+- 数据集内容、split、元数据未改动；本地与远端 9 个文件字节数逐一一致，卡片 tags 标注 `pick-and-place / grasping / grasp-lift-place / so101 / LeRobot`，Dataset Description 写明"抓取-拿起-放下半杯透明水杯"。
+- 网络：`huggingface.co` 仍 TLS 重置，改用 `HF_ENDPOINT=https://hf-mirror.com`；本机 Python TLS1.3 握手被丢弃（curl/TLS1.2 正常），故注入自定义 `httpx.Client`（`maximum_version=TLSv1_2`）到 `huggingface_hub`。`RepoCard.validate()` 硬编码 `huggingface.co/api/validate-yaml` 不可达，改为直接 `upload_file` 上传 README。
+- 上传通路用私有临时库 `_push_probe_tmp` 验证（小文件 + 13.6MB LFS）后已删除；未改动任何模型或真机参数。
+
+## 2026-10-25：R5.11 R3 模型下载与离线核验完成
+
+- 按[真机指南](../experiments/force/r5_11_real_robot_133k_breakthrough_diagnostic/index1/REAL_ROBOT_TEST_GUIDE.md)第2节从HF取回 R3。`huggingface.co`仍被TLS重置，改由 `curl -L` 到 `aifasthub.com/.../resolve/7a4c47a6331538426fc315d52d049acb810f200c/<path>` 按精确 revision 逐个下载；238 文件/439.5MB，字节数 238/238 一致。
+- `checksums.json`（242 项）核对：237 个下载文件字节数+SHA256 全一致、0 不一致；5 项未下载正是文档/源码归档/报告（`R5_11_project_files.tar.gz`、README、指南、decision、runtime_smoke），按指南应走 GitHub det、不下旧源码。
+- `verify_bundle(R5_11,'R3')` PASS：global_sha256 `d094de659f58…`、source_step 133000、seed3、Full60 normalizer（与 checkpoint 逐字节一致）、6D 关节位置 state、global-only 无 local。
+- R3 CUDA dry-run（`cudnn.benchmark=False`+`deterministic=True`）exit 0、6D 动作有限、identity sha 一致、DINO 从本地 torch_cache 加载；`xFormers is not available` 为良性回退。合成零观测 smoke，非行为证据。
+- **真机项未验证**：无`/dev/ttyACM*`、top=4/gripper=2、robot.id=nn 均未核验；正式试次 0，R5_11_COMPLETE=false。[预检记录](../experiments/force/r5_11_real_robot_133k_breakthrough_diagnostic/index1/result/preflight_local_2026-10-25.md)。未连接真机、未commit/push本轮记录。
 
 ## 2026-10-25：R5.11 原133k已单独发布，真机指南已准备
 
@@ -870,3 +893,5 @@
 - G1 真机测试指南已生成：`experiments/position/g1_real_robot_generalization/index1/result/REAL_ROBOT_TEST_GUIDE.md`。内容包含硬件预检、安全门、Phase A/B、现场记录规范及 B3_ACT/P1_OCACT/R3_FILM 三条推理命令；checkpoint 路径、串口和相机索引必须现场核验，当前仍未启动真机。
 - 已补充 `lerobot-teleoperate` 主臂/从臂预检命令（`/dev/ttyACM1` leader、`/dev/ttyACM0` follower）；该命令仅用于手动复位和通信检查，策略推理时不与 `control_act_det.py` 同时运行。当前本地仅有 C50 三个 checkpoint，G1 冻结的 B3/P1/R3 不在本地，尚未上传错误模型。
 - 已从远程服务器 `connect.westd.seetacloud.com:23089` 核验并上传 G1 三个冻结 100k checkpoint：`QYyyyyyyy/G1_B3_ACT_100k`、`QYyyyyyyy/G1_P1_OCACT_100k`、`QYyyyyyyy/G1_R3_FILM_100k`；每个仓库包含 7 个模型/配置/前后处理器文件。服务器上传前启用 `/etc/network_turbo`；真机前仍须下载并核对文件。
+
+- 2026-10-28：formal6_merged（120 集、93391 帧、21 数据文件、约 1.9GB）已上传 HF 公开库 `QYyyyyyyy/formal6_merged`（经 hf-mirror.com）；远端 23 文件（含 README/.gitattributes）校验齐全。上传用 TLS1.2 + `HF_HUB_DISABLE_XET=1`，并 patch `fix_hf_endpoint_in_url` 把镜像返回的 `hf-mirror.org`（无 DNS 记录）改写为 `hf-mirror.com`；单线程约 0.5MB/s，改 `upload_folder` 5 路并发后聚合约 0.9MB/s。

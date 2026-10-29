@@ -64,7 +64,7 @@ python -m lerobot.scripts.control_p43 \
   --robot.use_degrees=true --robot.max_relative_target=5 \
   --robot.cameras="{top: {type: opencv, index_or_path: 4, width: 640, height: 480, fps: 30}, gripper: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30, fourcc: MJPG}}" \
   --dataset.single_task="Cup pick and place" --dataset.num_episodes=1 \
-  --dataset.episode_time_s=60 --dataset.reset_time_s=30 --dataset.fps=30 \
+  --dataset.episode_time_s=160 --dataset.reset_time_s=30 --dataset.fps=30 \
   2>&1 | tee "$SESSION/L1_$(date +%Y%m%d_%H%M%S).log"
 ```
 

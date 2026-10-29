@@ -42,7 +42,8 @@ def settings(a):
         'so101_follower',1,30,1):raise ValueError('F5 requires SO101/action_steps1/fps30/one trial settings')
     if not math.isfinite(a.robot_max_relative_target) or a.robot_max_relative_target<=0:raise ValueError('max_relative_target must be finite and positive')
     if not math.isfinite(a.policy_temporal_ensemble_coeff):raise ValueError('temporal_ensemble_coeff must be finite')
-    if (a.dataset_episode_time_s,a.dataset_reset_time_s)!=(60.,30.):raise ValueError('F5 fixed60s trial /30s manual reset allowance')
+    if not (math.isfinite(a.dataset_episode_time_s) and a.dataset_episode_time_s>0):raise ValueError('episode_time_s must be finite and positive')
+    if not (math.isfinite(a.dataset_reset_time_s) and a.dataset_reset_time_s>=0):raise ValueError('reset_time_s must be finite and non-negative')
     return dict(cameras=cameras,robot_type=a.robot_type,robot_port=a.robot_port,robot_id=a.robot_id,
         max_relative_target=a.robot_max_relative_target,n_action_steps=a.policy_n_action_steps,
         temporal_ensemble_coeff=a.policy_temporal_ensemble_coeff,fps=a.dataset_fps,
@@ -131,7 +132,7 @@ def run_trial(a,runtime,common,protocol=None):
         fields += [prefix+'.'+field for prefix in ['state','nominal','requested','sent'] for field in POSITION_FIELDS]
         with (directory/f'{identifier}.csv').open('w',newline='',encoding='utf-8') as f:
             writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();start=time.perf_counter();status='TIME_LIMIT'
-            while time.perf_counter()-start<60.:
+            while time.perf_counter()-start<common['episode_time_s']:
                 if events['stop_recording']:status='SAFETY_ABORT';break
                 if events['exit_early']:status='OPERATOR_END';break
                 text=command()
