@@ -1,0 +1,15 @@
+{
+  "repo": "QYyyyyyyy/P4_3_FORMAL6_SO101",
+  "url": "https://huggingface.co/QYyyyyyyy/P4_3_FORMAL6_SO101",
+  "commit": "a0e55ec840709cf0cacb59ccb26a3e36dffd11ec",
+  "weights_commit": "f34b36d0f40694e7bd536c4ead31984e20d3d554",
+  "files": 226,
+  "remote_sizes_verified": true,
+  "remote_lfs_hashes_verified": true,
+  "models": [
+    "L1",
+    "F3",
+    "A1",
+    "L1_160K"
+  ]
+}

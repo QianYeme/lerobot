@@ -1,0 +1,5 @@
+model,dev_samples,max_abs_normalized,tolerance,reset_max_abs_native,status
+L1,90,0.0,1e-05,0.0,PASS
+F3,90,0.0,1e-05,0.0,PASS
+A1,90,0.0,1e-05,0.0,PASS
+L1_160K,90,0.0,1e-05,0.0,PASS

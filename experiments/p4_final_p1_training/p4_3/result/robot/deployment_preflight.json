@@ -1,0 +1,29 @@
+{
+  "status": "OFFLINE_PASS_HARDWARE_PENDING",
+  "dev_episodes": [
+    5,
+    31,
+    41,
+    50,
+    51,
+    62,
+    72,
+    77,
+    89,
+    102,
+    106,
+    110,
+    111,
+    112,
+    113
+  ],
+  "models": [
+    "L1",
+    "F3",
+    "A1",
+    "L1_160K"
+  ],
+  "final15_accessed": false,
+  "robot_operated": false,
+  "scope": "90 fixed progress samples per model; teacher-forced observations, not robot success"
+}

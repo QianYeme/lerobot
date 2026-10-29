@@ -1,0 +1,5 @@
+model,samples,mean_ms,p95_ms,scope
+L1,90,18.652749703162247,21.484113857150074,GPU wrapper chunk only; no camera/serial
+F3,90,18.439659248623585,19.694461207836866,GPU wrapper chunk only; no camera/serial
+A1,90,13.359486642811033,14.886647555977106,GPU wrapper chunk only; no camera/serial
+L1_160K,90,18.478775665991837,19.91832908242941,GPU wrapper chunk only; no camera/serial

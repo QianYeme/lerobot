@@ -1,0 +1,134 @@
+{
+  "L1": {
+    "model": "L1",
+    "step": 80000,
+    "seed": 1,
+    "source_path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_1_unattended_p1_pilot/index3/result/checkpoints/pilot/080000/resume.pt",
+    "source_resume_sha256": "eafd64af5cd4bfd0cb5a331bd90667d38491b605a7625a02a8eb85e1c6c3276a",
+    "pretrained_path": "models/L1/pretrained_model",
+    "model_sha256": "b2c440d5cb517dcfb1662f0fd28d506f26d411a001b0be541e559861afbb5119",
+    "config_sha256": "edc656eaad62a7833fd6a8583d3a11cd80d7e5dcd72385e9c27ad2149b6f099a",
+    "state_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos",
+      "gripper.load",
+      "gripper.curr"
+    ],
+    "action_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "normalization": "LEGACY_DOUBLE_NORM",
+    "export_roundtrip_bitwise_equal": true,
+    "comparison_block": "original_36",
+    "statistics_sha256": "60303d64e5b7fed9059c91af5d62f153fe03d7ca5fbf6448f880e6602b672e84",
+    "prototype_sha256": "787a7084f1a387c71caaae635618458ec620b750d258df5df52578b1e7bc272f"
+  },
+  "F3": {
+    "model": "F3",
+    "step": 80000,
+    "seed": 3,
+    "source_path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_2_1_dino_repair_parallel/index1/result/workers/F3/runs/F3/checkpoints/formal/080000/resume.pt",
+    "source_resume_sha256": "92b421820d759b939e04536541d1833eae47d237c1762667eae505a16e75f3f5",
+    "pretrained_path": "models/F3/pretrained_model",
+    "model_sha256": "027a3185f32f8c71721e0671806088c634eea64e0934048ea34b7ff0c04c7696",
+    "config_sha256": "29e4d627d19c234ecaedd4136d22c8aa507dfeb92f192682333c67757e67ac8b",
+    "state_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos",
+      "gripper.load",
+      "gripper.curr"
+    ],
+    "action_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "normalization": "FIXED_SINGLE_NORM",
+    "export_roundtrip_bitwise_equal": true,
+    "comparison_block": "original_36",
+    "statistics_sha256": "60303d64e5b7fed9059c91af5d62f153fe03d7ca5fbf6448f880e6602b672e84",
+    "prototype_sha256": "787a7084f1a387c71caaae635618458ec620b750d258df5df52578b1e7bc272f"
+  },
+  "A1": {
+    "model": "A1",
+    "step": 80000,
+    "seed": 1,
+    "source_path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_2_unattended_multi_model/index1/result/retry1/ACT_S1_retry1/runs/ACT_S1_retry1/checkpoints/formal/080000/resume.pt",
+    "source_resume_sha256": "60b40d74274af31899969d27fcf9da99bf29bd004ea59b46719f3294e54688f5",
+    "pretrained_path": "models/A1/pretrained_model",
+    "model_sha256": "fa289b80fc9a0bd96017350983b75356a6f94c980b175cbfff4a02ec59aaffb2",
+    "config_sha256": "55ae6265788874089e8c43b46345f683ca8836803da5cc9a8a2c8986c794f4d5",
+    "state_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos",
+      "gripper.load",
+      "gripper.curr"
+    ],
+    "action_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "normalization": "NO_DINO",
+    "export_roundtrip_bitwise_equal": true,
+    "comparison_block": "original_36",
+    "statistics_sha256": "60303d64e5b7fed9059c91af5d62f153fe03d7ca5fbf6448f880e6602b672e84",
+    "prototype_sha256": "787a7084f1a387c71caaae635618458ec620b750d258df5df52578b1e7bc272f"
+  },
+  "L1_160K": {
+    "model": "L1_160K",
+    "step": 160000,
+    "seed": 1,
+    "source_path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_2_unattended_multi_model/index1/result/runs/P0_P1_S1_160k/checkpoints/formal/160000/resume.pt",
+    "source_resume_sha256": "71d4eb197b0e1162d9097affa3be191ad7b0f84ae1f7833ac91345e6042190e7",
+    "pretrained_path": "models/L1_160K/pretrained_model",
+    "model_sha256": "2509f0a89068f4c01340d8d123d3d5d9ab4d4fc131e6d70a082350f9e1651132",
+    "config_sha256": "1b5e3828bfacc5b518744ed722ba8bc56b38c28d5b885bdd01e9bacc52151187",
+    "state_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos",
+      "gripper.load",
+      "gripper.curr"
+    ],
+    "action_fields": [
+      "shoulder_pan.pos",
+      "shoulder_lift.pos",
+      "elbow_flex.pos",
+      "wrist_flex.pos",
+      "wrist_roll.pos",
+      "gripper.pos"
+    ],
+    "normalization": "LEGACY_DOUBLE_NORM",
+    "export_roundtrip_bitwise_equal": true,
+    "comparison_block": "supplement_160k",
+    "statistics_sha256": "60303d64e5b7fed9059c91af5d62f153fe03d7ca5fbf6448f880e6602b672e84",
+    "prototype_sha256": "787a7084f1a387c71caaae635618458ec620b750d258df5df52578b1e7bc272f"
+  }
+}

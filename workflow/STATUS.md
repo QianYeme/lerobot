@@ -1,5 +1,16 @@
 # LeRobot 项目当前状态
 
+## 2026-10-29 P4.3 四候选部署准备（160k 用户追加）
+
+- 候选：L1 Legacy P1-S1 80k、F3 Fixed P1-S3 80k、A1 ACT-S1 80k、L1_160K Legacy P1-S1 160k 完整续训。F3 源 checkpoint SHA 与 decision 一致；四模型导出权重逐 tensor 无损回读。
+- 冻结 Dev15 每模型 90 个采样点的部署 wrapper 与原 checkpoint 参考代码最大预测差异均 0；reset 差异均 0。仅离线证据，未接机器人、未读 Final15。
+- 用户明确追加 160k；原三模型 36 次计划保留，独立补充 12 次，共 48 次。原 decision 不改写。
+- [真机指南](../experiments/p4_final_p1_training/p4_3/REAL_ROBOT_TEST_GUIDE.md)：末尾四模型独立直接运行命令；nn、ACM0、Top4/Wrist2、640×480/30fps；时序集成 .01、限幅 5 均可在 CLI 调整。
+- HF 四模型部署包已上传：[P4_3_FORMAL6_SO101](https://huggingface.co/QYyyyyyyy/P4_3_FORMAL6_SO101)，commit `a0e55ec840709cf0cacb59ccb26a3e36dffd11ec`；226 个交付文件的远端大小及 LFS SHA 核验通过。通过临时 SSH 网络中转从服务器完成大文件上传，中转已关闭。
+- 本轮为部署交付，不执行真机；New-GL B 轨道未启动，整个双轨合同不能标为全部完成。
+- 用户随后授权更新 GitHub `det`：同步本轮部署代码、指南与证据；大权重保留 Hugging Face，未夹带其他未提交改动。
+
+
 ## P4.0.1 阻断证据交付（2026-10-28）
 
 - [summary](../experiments/p4_final_p1_training/p4_0_1_training_readiness_unblock/index1/result/summary.md)：命名映射真实93391行校验通过，Train统计NumPy往返误差3.05e-5；生产P1加载/processor未验证，SCHEMA仍BLOCKED，不把数组smoke当全链路通过。

@@ -1,0 +1,112 @@
+[
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/REAL_ROBOT_TEST_GUIDE.md",
+    "sha256": "f7bc4954821ca02b3a4db4e1cd8451c7193d01dc8126e07d1fb499db26b4176c",
+    "bytes": 7897
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/decision_P4_3_r2_SINGLE_CODEX_SSH_DUAL_TRACK.md",
+    "sha256": "9b0ae8cceaa46f450dd1c488fcb4f0436aafcf7a68bfc3f6e52a0cc4d38ea7bc",
+    "bytes": 25279
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/decision_trace.md",
+    "sha256": "cdb065b5f24dc9965eff865c742a4273fb14370a50c9d31989fcdf93b97df2bb",
+    "bytes": 537
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/dual_track_status.md",
+    "sha256": "8bdcd34bf0e244e569cfe12fb1b5d180da04b42e7bbd526e65a668b4e1f61f0d",
+    "bytes": 606
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/builder_review.md",
+    "sha256": "f310145919b5ce39471430e2d2503538c3bb69c5d745c46f425fae1a93c13798",
+    "bytes": 603
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/deployed_runtime_dev15.csv",
+    "sha256": "713ffdacaaad1884fd37951ec991dc0a4df913b215e87c0b5e2fbdccf5ab1ba7",
+    "bytes": 33823
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/deployment_preflight.json",
+    "sha256": "3a8b513d576f0eede3603f3caa1bb15b61f36d4075f8e6d813ef970d166cda15",
+    "bytes": 414
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/hf_bundle_manifest.json",
+    "sha256": "636085f973e700a49e3c37564636729e0b91a9838c6e93ca2e018e119495c118",
+    "bytes": 46421
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/huggingface_upload_receipt.json",
+    "sha256": "403683f22f84cd194e9b42fb9ff943983c975f6cb9d2d51de5f710d81bd8a997",
+    "bytes": 394
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/model_identity_manifest.json",
+    "sha256": "33ae186d20e2d1fad38fae7481e9bdf2bbafe3a4a393ec7bbeade13108220559",
+    "bytes": 5125
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/red_team_review.md",
+    "sha256": "2c2dc4c318eb9bf9ec74c4e03eadf8683073d1a37640cf74ab667f719be56bb3",
+    "bytes": 829
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/runtime_invariance.csv",
+    "sha256": "ca8261fa1da5a22ee37c09ff74654a14419b38d2868bcaa584270ff7c544f468",
+    "bytes": 185
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/runtime_latency.csv",
+    "sha256": "3568f9637150386a85f1c6f76302e37fd55263ddd9cf34a5dd6ff3a0040bdbfc",
+    "bytes": 384
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/summary.md",
+    "sha256": "b245b6ea9118e6f191f9e49ad4a366442ed56218d685ea9ec65c0701c1438b10",
+    "bytes": 1358
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/trial_plan_frozen.csv",
+    "sha256": "7d1c94e8ee4343572b13fea1d1a61da5ed8f9766110d32930eeae81af1337fb7",
+    "bytes": 1333
+  },
+  {
+    "path": "experiments/p4_final_p1_training/p4_3/result/robot/validation.md",
+    "sha256": "03bfc927ae157e0652afd0cfa53c83abe45cd55451061d42079c1a385831e24b",
+    "bytes": 1000
+  },
+  {
+    "path": "scripts/p43_export_robot_bundle.py",
+    "sha256": "14ba5bf51d67406a9cba4229b9bf1af6dfc86437e6745dea966a192d9532f76a",
+    "bytes": 4805
+  },
+  {
+    "path": "scripts/p43_publish_robot_bundle.py",
+    "sha256": "4854d09089d6d9d4e54eab63f6e67caaa5f57de87f48094a23ea8ae6a480119b",
+    "bytes": 3396
+  },
+  {
+    "path": "scripts/p43_validate_robot_bundle.py",
+    "sha256": "fce89353a886b4aa9a2e9b535e27240a55dece3fb1b24430c0c46dae69ae497c",
+    "bytes": 4908
+  },
+  {
+    "path": "src/lerobot/policies/act/p43_runtime.py",
+    "sha256": "e6a05bbef3cd3510c2de96da97ed2c000025546bcd122b458d86edc0d8d8016e",
+    "bytes": 4554
+  },
+  {
+    "path": "src/lerobot/scripts/control_p43.py",
+    "sha256": "a36133b8c5a7c21e9d4e9d74f1886698d47ade18240f7b04f9e42c84dd2f833e",
+    "bytes": 2617
+  },
+  {
+    "path": "src/lerobot/scripts/control_f5.py",
+    "sha256": "9659f309ac44430ceda9fc86a12b193ada48cf68613c13e780e3f506d0ff8abe",
+    "bytes": 15887
+  }
+]

@@ -106,6 +106,7 @@ def run_trial(a,runtime,common,protocol=None):
         local_application='Once after temporal ensemble+global denormalization, before robot relative target limit',
         stage_names=getattr(protocol,'STAGE_NAMES',None)))
     cfg=SO101FollowerConfig(port=a.robot_port,id=a.robot_id,max_relative_target=a.robot_max_relative_target,calibration_dir=a.calibration_dir,
+        use_degrees=getattr(a,'robot_use_degrees',True),
         cameras={name:OpenCVCameraConfig(**{k:v for k,v in c.items() if k!='type'}) for name,c in common['cameras'].items()})
     robot=SO101Follower(cfg);listener=None;writers={};rows=0;phase='A';assistance_t=None;error=None;status='SETUP_ERROR';deltas=[];phase_deltas={'A':[],'B':[]};cleanup=[]
     print(f'{identifier} MODEL_ID={a.model} POSITION={a.position} planned_slot={get_slot(a.model,a.position)}/{total_slots}',flush=True)
