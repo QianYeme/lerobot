@@ -1,0 +1,110 @@
+# P4.9-r1 result
+
+{
+  "status": "RESULT_READY",
+  "counts": {
+    "checkpoints": 16,
+    "formal6_train": 16000,
+    "formal6_dev": 720,
+    "libero_train": 2000,
+    "libero_dev": 13910,
+    "rollout_rows": 100
+  },
+  "jobs": {
+    "F6_LEGACY_GATEPLUS_S1": {
+      "status": "DONE",
+      "target": 80000,
+      "pid": 144244,
+      "job": "F6_LEGACY_GATEPLUS_S1",
+      "step": 80000,
+      "elapsed_s": 7484.135618448257,
+      "identity": {
+        "job": "F6_LEGACY_GATEPLUS_S1",
+        "domain": "f6",
+        "kind": "legacy",
+        "seed": 1,
+        "target": 80000,
+        "gate_initial_value": 0.0010000000474974513,
+        "initial_non_gate_sha256": "a3b022c9e93bc419062575223e55727ff3e25fc8b4b9eadbd1ad21b6b6a0dee0",
+        "baseline_path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_1_unattended_p1_pilot/index3/result/checkpoints/pilot/080000/resume.pt",
+        "baseline_sha256": "eafd64af5cd4bfd0cb5a331bd90667d38491b605a7625a02a8eb85e1c6c3276a",
+        "formal6_pairing": "RECIPE_MATCHED_NOT_BYTE_MATCHED",
+        "stats_sha256": "60303d64e5b7fed9059c91af5d62f153fe03d7ca5fbf6448f880e6602b672e84",
+        "bank_sha256": "787a7084f1a387c71caaae635618458ec620b750d258df5df52578b1e7bc272f"
+      }
+    },
+    "F6_FIXED_GATEPLUS_S3": {
+      "status": "DONE",
+      "target": 80000,
+      "pid": 144245,
+      "job": "F6_FIXED_GATEPLUS_S3",
+      "step": 80000,
+      "elapsed_s": 7691.962995052338,
+      "identity": {
+        "job": "F6_FIXED_GATEPLUS_S3",
+        "domain": "f6",
+        "kind": "fixed",
+        "seed": 3,
+        "target": 80000,
+        "gate_initial_value": 0.0010000000474974513,
+        "initial_non_gate_sha256": "78514fd3ac3b427390bcfbd24da677c9318a50d17622059f0130c9afc3631400",
+        "baseline_path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_2_1_dino_repair_parallel/index1/result/workers/F3/runs/F3/checkpoints/formal/080000/resume.pt",
+        "baseline_sha256": "92b421820d759b939e04536541d1833eae47d237c1762667eae505a16e75f3f5",
+        "formal6_pairing": "RECIPE_MATCHED_NOT_BYTE_MATCHED",
+        "stats_sha256": "60303d64e5b7fed9059c91af5d62f153fe03d7ca5fbf6448f880e6602b672e84",
+        "bank_sha256": "787a7084f1a387c71caaae635618458ec620b750d258df5df52578b1e7bc272f"
+      }
+    },
+    "LB_LEGACY_GATEPLUS": {
+      "status": "DONE",
+      "target": 10000,
+      "pid": 144246,
+      "job": "LB_LEGACY_GATEPLUS",
+      "step": 10000,
+      "elapsed_s": 1433.260137796402,
+      "identity": {
+        "job": "LB_LEGACY_GATEPLUS",
+        "domain": "lb",
+        "kind": "legacy",
+        "seed": 1,
+        "target": 10000,
+        "gate_initial_value": 0.0010000000474974513,
+        "initial_non_gate_sha256": "d68cc3dbbcaa3141a6103d5c404f6bda75ead1e36b9c05165f1f950f782753d1",
+        "baseline_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/checkpoints/010000/resume.pt",
+        "baseline_sha256": "b8126d91542fd5a7898f3120e6e9fd9b6a1fb85b9e47c315a133992edebdfa5f",
+        "formal6_pairing": "BYTE_MATCHED_INIT",
+        "stats_sha256": "c01c7256ba2fb30047abf5038ffffab148d5a378d3fbc4a7ed61374be474608d",
+        "bank_sha256": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4"
+      }
+    },
+    "LB_FIXED_GATEPLUS": {
+      "status": "DONE",
+      "target": 10000,
+      "pid": 144247,
+      "job": "LB_FIXED_GATEPLUS",
+      "step": 10000,
+      "elapsed_s": 1433.1771326065063,
+      "identity": {
+        "job": "LB_FIXED_GATEPLUS",
+        "domain": "lb",
+        "kind": "fixed",
+        "seed": 1,
+        "target": 10000,
+        "gate_initial_value": 0.0010000000474974513,
+        "initial_non_gate_sha256": "d68cc3dbbcaa3141a6103d5c404f6bda75ead1e36b9c05165f1f950f782753d1",
+        "baseline_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/checkpoints/010000/resume.pt",
+        "baseline_sha256": "7852aac589649a67a69d22bb4b473bfd6e6e9f3d1f10ead3363132690720b727",
+        "formal6_pairing": "BYTE_MATCHED_INIT",
+        "stats_sha256": "c01c7256ba2fb30047abf5038ffffab148d5a378d3fbc4a7ed61374be474608d",
+        "bank_sha256": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4"
+      }
+    }
+  },
+  "independent_builder_review": "PENDING",
+  "independent_redteam_review": "PENDING",
+  "real_robot": "NOT_RUN",
+  "final_data": "NOT_EVALUATED",
+  "published": false
+}
+
+Read measured CSVs and per-job raw logs. Four jobs and all evaluation dependencies must finish before RESULT_READY. No success, causal superiority or deployment readiness is inferred from training completion.

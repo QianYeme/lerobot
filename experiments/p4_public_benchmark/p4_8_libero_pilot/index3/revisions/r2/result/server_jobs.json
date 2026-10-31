@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-30T22:27:37+08:00",
+  "status": "G2_PROTOTYPE_PROVENANCE_BLOCKED",
+  "jobs": [
+    {
+      "model": "ACT-LIBERO",
+      "state": "BLOCKED_G2",
+      "pid": null,
+      "steps": 0,
+      "checkpoint": null
+    },
+    {
+      "model": "P1-LIBERO-LEGACY",
+      "state": "BLOCKED_G2",
+      "pid": null,
+      "steps": 0,
+      "checkpoint": null
+    },
+    {
+      "model": "P1-LIBERO-FIXED",
+      "state": "BLOCKED_G2",
+      "pid": null,
+      "steps": 0,
+      "checkpoint": null
+    }
+  ],
+  "active_campaign_processes": [],
+  "scheduler_started": false,
+  "act_optional_engineering_smoke": "NOT_RUN; not required to establish provenance stop",
+  "policy_rollouts": 0
+}

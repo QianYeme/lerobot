@@ -1,0 +1,9 @@
+{
+  "status": "R3_ADOPTED_TASK0_QUEUE_PREPARED",
+  "adopted_running": "r2 fixed-alpha evaluation",
+  "adopted_pending": "r2 seed2 matched5k smoke/benchmark/train",
+  "r3_task0": "all50 evaluation queued after seed2 weights",
+  "B": "two tasks frozen, prototype legality still requires review",
+  "C": "NOT_STARTED",
+  "final80k": "NOT_AUTHORIZED"
+}

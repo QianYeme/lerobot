@@ -1,0 +1,14 @@
+{
+  "status": "DISPOSABLE_BENCH_DONE",
+  "kind": "act",
+  "updates": 100,
+  "timed_updates": 80,
+  "timed_wall_seconds": 5.483368873596191,
+  "updates_per_second": 14.589571091089685,
+  "total_wall_seconds": 6.976112127304077,
+  "initial_common_sha256": "5524afe798d2915c08010708965ac69347452d6dfda7bc2c102b8aaabf7bfe1d",
+  "initial_model_sha256": "5524afe798d2915c08010708965ac69347452d6dfda7bc2c102b8aaabf7bfe1d",
+  "final_model_sha256": "d34207587b727ee1562c935e30657aee9577c917eb03c3737ea5a383e8dcac73",
+  "peak_memory_bytes": 1490120704,
+  "discarded_updates": true
+}

@@ -1,0 +1,5 @@
+# Executor Red-Team self-check; independent review PENDING
+
+Sim smoke is infrastructure evidence, not ACT/P1 success rate. No trained policy exists; empty model metrics/checkpoint tables represent0 executed model experiments. Native20Hz vs dataset10fps is explicitly audited; no numerical comparability to published results or physical-time equality is claimed. Camera180° rotation and8D EE state are documented; identical dimensionality to SO101 is not semantic compatibility.
+
+No eval-init/Dev pixels or simulator privileged segmentation built prototypes. Proposed unsupervised interaction tracks may select robot instead of target and require review. Manual ROI alternative adds supervision and requires explicit approval. No arbitrary clustering,detector or cup bank substitution. Parallelism changes scheduling only after throughput measurement,not trials/seeds/budgets. All package/network/GL failures retained; no poor-outcome deletion. P4.7 private release/weights were not changed by benchmark setup.

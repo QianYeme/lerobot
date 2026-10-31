@@ -1,0 +1,19 @@
+{
+  "status": "DIAGNOSTIC_ONLY_NOT_APPROVED_FOR_TRAINING",
+  "bank": {
+    "shape": [
+      4,
+      384
+    ],
+    "dtype": "torch.float32",
+    "finite": true,
+    "sha256": "1d78709651259d73edc5f1d00a687f30ce0c251b3e79b5045d73478673953d66",
+    "selected_sources_in_train": true
+  },
+  "repeat_sha256": [
+    "1d78709651259d73edc5f1d00a687f30ce0c251b3e79b5045d73478673953d66",
+    "1d78709651259d73edc5f1d00a687f30ce0c251b3e79b5045d73478673953d66"
+  ],
+  "target_semantics": "NOT_VERIFIED; post-selection qualitative evidence suggests background/robot contamination",
+  "must_not_be_consumed_by_training_queue": true
+}

@@ -1,0 +1,7 @@
+{
+  "kind": "fixed",
+  "step": 100,
+  "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/fixed/checkpoints/000100/resume.pt",
+  "sha256": "06a25e502333da077bb7300363dc301f861b23086e210d7545bceb0c1d305dd0",
+  "complete_resume": true
+}

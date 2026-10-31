@@ -1,0 +1,5 @@
+assets: /root/autodl-tmp/p48_data/libero_assets
+bddl_files: /root/autodl-tmp/p48_isolated_env/lib/python3.12/site-packages/libero/libero/bddl_files
+benchmark_root: /root/autodl-tmp/p48_isolated_env/lib/python3.12/site-packages/libero/libero
+datasets: /root/autodl-tmp/p48_data/lerobot_libero
+init_states: /root/autodl-tmp/p48_isolated_env/lib/python3.12/site-packages/libero/libero/init_files

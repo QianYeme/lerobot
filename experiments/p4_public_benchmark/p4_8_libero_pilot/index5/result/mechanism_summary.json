@@ -1,0 +1,56 @@
+{
+  "scope": "27 fixed Dev9 first/middle/last anchors per P1, not all rollout states",
+  "values": {
+    "legacy": {
+      "samples": 27,
+      "gate": -6.751543423888506e-06,
+      "h0_arm_raw_mean_absolute_on_off": 7.464862117745741e-08,
+      "h0_gripper_raw_mean_absolute_on_off": 2.3870600390157256e-07,
+      "residual_query_norm_ratio_mean": 1.5674963159889793e-06
+    },
+    "fixed": {
+      "samples": 27,
+      "gate": -4.1456203803136304e-07,
+      "h0_arm_raw_mean_absolute_on_off": 1.9030737438593854e-08,
+      "h0_gripper_raw_mean_absolute_on_off": 8.360210222867357e-08,
+      "residual_query_norm_ratio_mean": 8.41063336178262e-08
+    }
+  },
+  "gate_optimizer_audit": {
+    "status": "GATE_REGISTERED_AND_ADAM_STATE_UPDATED",
+    "rows": [
+      {
+        "kind": "legacy",
+        "gate_requires_grad": true,
+        "optimizer_group_count": 1,
+        "optimizer_lr": 1e-05,
+        "optimizer_weight_decay": 0.0001,
+        "optimizer_step": 10000.0,
+        "exp_avg": 0.0001485493266955018,
+        "exp_avg_sq": 1.3562090543928207e-06,
+        "gate_at_5000": -3.0105735277174972e-05,
+        "gate_at_10000": -6.751543423888506e-06,
+        "new_optimizer_updates": 0,
+        "model_weights_modified": false
+      },
+      {
+        "kind": "fixed",
+        "gate_requires_grad": true,
+        "optimizer_group_count": 1,
+        "optimizer_lr": 1e-05,
+        "optimizer_weight_decay": 0.0001,
+        "optimizer_step": 10000.0,
+        "exp_avg": 0.00032210929202847183,
+        "exp_avg_sq": 1.0430834436192526e-06,
+        "gate_at_5000": 8.576095751777757e-06,
+        "gate_at_10000": -4.1456203803136304e-07,
+        "new_optimizer_updates": 0,
+        "model_weights_modified": false
+      }
+    ],
+    "interpretation": "Rules out missing optimizer registration. Moments are historical clipped-gradient statistics, not a fresh gradient measurement.",
+    "scope": "CPU read-only; no new training, seed, data or policy evaluation"
+  },
+  "training_trajectory_claim": "Only5000/10000 gate values audited; no claim about every intervening step.",
+  "interpretation": "Very small final sensitivity to object residual; not proof of equal normalization quality or a causal explanation of all failures."
+}

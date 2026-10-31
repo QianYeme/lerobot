@@ -1,0 +1,7 @@
+{
+  "time": 1793377214.9563522,
+  "gpu": "NVIDIA GeForce RTX 5090, 702 MiB, 0 %",
+  "disk_free_bytes": 19840565248,
+  "queue_complete": true,
+  "training_active": false
+}

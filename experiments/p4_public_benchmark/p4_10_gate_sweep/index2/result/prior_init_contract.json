@@ -1,0 +1,31 @@
+{
+  "reused": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "new": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "seed": 1,
+  "legal_init_state_count": 50,
+  "new_list_frozen_before_new_policy_training": true,
+  "classification": "10 reused exploratory + 10 previously unused paired starts; single-task pilot",
+  "source_r5_timing_sha256": "702c6acb3bf4e144d3f9147693fd4e3dc3afb310040670071479b9571c21d3ae"
+}

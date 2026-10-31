@@ -1,0 +1,10 @@
+{
+  "controller_pid": 132229,
+  "status": "RESULT_READY",
+  "started": 1793375894.8811808,
+  "pilot_only": true,
+  "schedule": "triple",
+  "finished": 1793377215.1200573,
+  "training": "G3_TRAINING_PASS",
+  "closed_loop": "G4_CLOSED_LOOP_PASS"
+}

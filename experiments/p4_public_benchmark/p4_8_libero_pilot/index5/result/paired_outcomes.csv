@@ -1,0 +1,11 @@
+init_id,seed,act_success,act_steps,legacy_success,legacy_steps,fixed_success,fixed_steps,max_initial_state_difference
+10,1,True,131,True,133,True,133,0.0
+11,1,True,131,True,129,True,131,0.0
+12,1,True,144,True,147,True,146,0.0
+13,1,True,147,True,146,True,146,0.0
+14,1,False,280,False,280,False,280,0.0
+15,1,False,280,False,280,False,280,0.0
+16,1,False,280,False,280,False,280,0.0
+17,1,False,280,False,280,False,280,0.0
+18,1,False,280,False,280,False,280,0.0
+19,1,False,280,False,280,False,280,0.0

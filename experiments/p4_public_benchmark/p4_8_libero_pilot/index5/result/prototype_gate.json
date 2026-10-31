@@ -1,0 +1,43 @@
+{
+  "status": "G2_PROTOTYPE_PASS",
+  "bank_sha256": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+  "visual_review_executed": true,
+  "reviewer": "Codex, not independent human reviewer",
+  "review_materials": [
+    "prototype_contact_sheet.png",
+    "prototype_frames/*_display3x.png",
+    "prototype_roi_contact_sheet.png"
+  ],
+  "selection": "four fixed Train35 quartile episodes, frame floor(length*.25), target blue-side alphabet-soup can",
+  "coordinates": [
+    [
+      813,
+      38,
+      192,
+      120
+    ],
+    [
+      908,
+      48,
+      192,
+      120
+    ],
+    [
+      1074,
+      37,
+      192,
+      120
+    ],
+    [
+      1166,
+      37,
+      192,
+      120
+    ]
+  ],
+  "selected_patch_centers": "two centers per frame at native (184,120),(200,120), on visible can sidewall",
+  "limits": "Coarse16x16 DINO patches include some surrounding context; this is target-interior point guidance, not segmentation GT or precise mask. Yellow ellipse is a sampling rule; only hit patch centers contribute.",
+  "no_dev_or_simulator_target_truth_used": true,
+  "independent_review": "PENDING",
+  "automatic_r3_bank_reused": false
+}

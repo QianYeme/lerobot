@@ -1,0 +1,44 @@
+{
+  "status": "TEN_PAIRED_ROLLOUTS_COMPLETE",
+  "kind": "fixed",
+  "checkpoint": {
+    "kind": "fixed",
+    "step": 10000,
+    "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/checkpoints/010000/resume.pt",
+    "sha256": "7852aac589649a67a69d22bb4b473bfd6e6e9f3d1f10ead3363132690720b727",
+    "complete_resume": true
+  },
+  "episodes": 10,
+  "successes": 4,
+  "success_rate": 0.4,
+  "control_freq": 20,
+  "action_repeat": 1,
+  "pilot_only": true,
+  "n_action_steps": 100,
+  "temporal_ensemble_coeff": null,
+  "init_ids": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "episode_seeds": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "offline_local_files": true
+}

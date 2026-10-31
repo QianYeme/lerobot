@@ -1,0 +1,32 @@
+{
+  "status": "FULL_DEV9_H0_COMPLETE",
+  "kind": "fixed",
+  "episodes": 9,
+  "samples": 1391,
+  "checkpoint": {
+    "kind": "fixed",
+    "step": 10000,
+    "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/checkpoints/010000/resume.pt",
+    "sha256": "7852aac589649a67a69d22bb4b473bfd6e6e9f3d1f10ead3363132690720b727",
+    "complete_resume": true
+  },
+  "episode_equal_metrics": {
+    "h0_arm_normalized_mae": 0.5403415262699127,
+    "h0_gripper_normalized_mae": 0.21778012149863774,
+    "h0_arm_raw_mae": 0.07867101331551869,
+    "h0_gripper_raw_mae": 0.21703785161177316,
+    "h0_dim0_raw_mae": 0.1390401472647985,
+    "h0_dim1_raw_mae": 0.10053273207611507,
+    "h0_dim2_raw_mae": 0.15327171815766227,
+    "h0_dim3_raw_mae": 0.013407396463056406,
+    "h0_dim4_raw_mae": 0.03781123335162798,
+    "h0_dim5_raw_mae": 0.02796284192138248,
+    "h0_dim6_raw_mae": 0.21703785161177316
+  },
+  "elapsed_s": 5.09235405921936,
+  "object_on_off_samples": 27,
+  "metric_units": "normalized Train35 z-score / raw OSC controller input, not joint degrees",
+  "teacher_forced": true,
+  "not_a_closed_loop_success_rate": true,
+  "offline_local_files": true
+}

@@ -1,0 +1,168 @@
+{
+  "status": "DONE",
+  "time": 1793361156.362273,
+  "files": [
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/L1/model.safetensors",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/L1/model.safetensors",
+      "bytes": 300103036,
+      "sha256": "b2c440d5cb517dcfb1662f0fd28d506f26d411a001b0be541e559861afbb5119",
+      "private_repo": "QYyyyyyyy/lerobot-p4-l1-legacy-p1",
+      "revision": "fa5eb1d861c649f296e854da2fb16642f434329f"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/L1/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/L1/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "bytes": 46830571,
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "private_repo": "QYyyyyyyy/lerobot-p4-l1-legacy-p1",
+      "revision": "fa5eb1d861c649f296e854da2fb16642f434329f"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/L1/torch_cache/hub/checkpoints/dinov2_vits14_pretrain.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/L1/torch_cache/hub/checkpoints/dinov2_vits14_pretrain.pth",
+      "bytes": 88283115,
+      "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+      "private_repo": "QYyyyyyyy/lerobot-p4-l1-legacy-p1",
+      "revision": "fa5eb1d861c649f296e854da2fb16642f434329f"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/F3/model.safetensors",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/F3/model.safetensors",
+      "bytes": 300103036,
+      "sha256": "027a3185f32f8c71721e0671806088c634eea64e0934048ea34b7ff0c04c7696",
+      "private_repo": "QYyyyyyyy/lerobot-p4-f3-fixed-p1",
+      "revision": "d768d3e0d0ae497e758fe11555d66ead34d57526"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/F3/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/F3/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "bytes": 46830571,
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "private_repo": "QYyyyyyyy/lerobot-p4-f3-fixed-p1",
+      "revision": "d768d3e0d0ae497e758fe11555d66ead34d57526"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/F3/torch_cache/hub/checkpoints/dinov2_vits14_pretrain.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/F3/torch_cache/hub/checkpoints/dinov2_vits14_pretrain.pth",
+      "bytes": 88283115,
+      "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+      "private_repo": "QYyyyyyyy/lerobot-p4-f3-fixed-p1",
+      "revision": "d768d3e0d0ae497e758fe11555d66ead34d57526"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/A1/model.safetensors",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/A1/model.safetensors",
+      "bytes": 206707928,
+      "sha256": "fa289b80fc9a0bd96017350983b75356a6f94c980b175cbfff4a02ec59aaffb2",
+      "private_repo": "QYyyyyyyy/lerobot-p4-a1-act-matched",
+      "revision": "d1f89fc240fa6436d7a5ea4a0ddca1ece763f6c1"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/A1/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/A1/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "bytes": 46830571,
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "private_repo": "QYyyyyyyy/lerobot-p4-a1-act-matched",
+      "revision": "d1f89fc240fa6436d7a5ea4a0ddca1ece763f6c1"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/VACT-S1/model.safetensors",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/VACT-S1/model.safetensors",
+      "bytes": 206699736,
+      "sha256": "91be43a6116cb8fde66c47a06c3eb5dc20b238c0b1b0b697e52d5b27eec30be9",
+      "private_repo": "QYyyyyyyy/lerobot-p45-vanilla-act-s1",
+      "revision": "8203d2acfb03edfc1a76afce6990cb0942d14649"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/VACT-S1/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/VACT-S1/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "bytes": 46830571,
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "private_repo": "QYyyyyyyy/lerobot-p45-vanilla-act-s1",
+      "revision": "8203d2acfb03edfc1a76afce6990cb0942d14649"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/VDP-S1/model.safetensors",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/VDP-S1/model.safetensors",
+      "bytes": 1066518712,
+      "sha256": "4199b3a874bddb3502f3f794ae4c1753c3f2d3a32e723346c4ab99c6d1421233",
+      "private_repo": "QYyyyyyyy/lerobot-p45-vanilla-diffusion-s1",
+      "revision": "3f9102dd1c58ec6004a07b44784e730bf9b1716e"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/VDP-S1/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/VDP-S1/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "bytes": 46830571,
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "private_repo": "QYyyyyyyy/lerobot-p45-vanilla-diffusion-s1",
+      "revision": "3f9102dd1c58ec6004a07b44784e730bf9b1716e"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/NG-L-GL/model.safetensors",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/NG-L-GL/model.safetensors",
+      "bytes": 300165204,
+      "sha256": "837e49c027b5f6a100edb3f91e5356a6f7c012e7f0428f69218b02ba280feb2f",
+      "private_repo": "QYyyyyyyy/lerobot-p45-newgl-legacy-gl",
+      "revision": "a7c0deeaca4a700023f75db3317cd230a758bd3b"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/NG-L-GL/local.safetensors",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/NG-L-GL/local.safetensors",
+      "bytes": 5308,
+      "sha256": "4875a73a3b161cf936f62fdce44df671e17e2125dd50347ab32633b768da7060",
+      "private_repo": "QYyyyyyyy/lerobot-p45-newgl-legacy-gl",
+      "revision": "a7c0deeaca4a700023f75db3317cd230a758bd3b"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/NG-L-GL/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/NG-L-GL/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "bytes": 46830571,
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "private_repo": "QYyyyyyyy/lerobot-p45-newgl-legacy-gl",
+      "revision": "a7c0deeaca4a700023f75db3317cd230a758bd3b"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/NG-L-GL/torch_cache/hub/checkpoints/dinov2_vits14_pretrain.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/NG-L-GL/torch_cache/hub/checkpoints/dinov2_vits14_pretrain.pth",
+      "bytes": 88283115,
+      "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+      "private_repo": "QYyyyyyyy/lerobot-p45-newgl-legacy-gl",
+      "revision": "a7c0deeaca4a700023f75db3317cd230a758bd3b"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/NG-F-GL/model.safetensors",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/NG-F-GL/model.safetensors",
+      "bytes": 300165204,
+      "sha256": "34e4fadf5145c6498d6041bc9c473bcb1cb1fa06920e474be43864f9778b2188",
+      "private_repo": "QYyyyyyyy/lerobot-p45-newgl-fixed-gl",
+      "revision": "dcf3af3239a0c1fa65bcab4d3d2eaa7c42bad286"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/NG-F-GL/local.safetensors",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/NG-F-GL/local.safetensors",
+      "bytes": 5308,
+      "sha256": "4f69ab9f4be68a310f1cd8992eba6de58779d019e9c3b39ca26070519bcb51e0",
+      "private_repo": "QYyyyyyyy/lerobot-p45-newgl-fixed-gl",
+      "revision": "dcf3af3239a0c1fa65bcab4d3d2eaa7c42bad286"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/NG-F-GL/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/NG-F-GL/torch_cache/hub/checkpoints/resnet18-f37072fd.pth",
+      "bytes": 46830571,
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "private_repo": "QYyyyyyyy/lerobot-p45-newgl-fixed-gl",
+      "revision": "dcf3af3239a0c1fa65bcab4d3d2eaa7c42bad286"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/staging/NG-F-GL/torch_cache/hub/checkpoints/dinov2_vits14_pretrain.pth",
+      "verified_remaining_copy": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_7/index1/download_verify/NG-F-GL/torch_cache/hub/checkpoints/dinov2_vits14_pretrain.pth",
+      "bytes": 88283115,
+      "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+      "private_repo": "QYyyyyyyy/lerobot-p45-newgl-fixed-gl",
+      "revision": "dcf3af3239a0c1fa65bcab4d3d2eaa7c42bad286"
+    }
+  ],
+  "freed_bytes": 3361419929,
+  "free_after": 32060456960
+}

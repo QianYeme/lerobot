@@ -1,0 +1,9 @@
+{
+  "evidence_sources": [
+    "r0_execution_manifest.json",
+    "prior_init_contract.json"
+  ],
+  "new_training": false,
+  "selection": "DEFERRED",
+  "scope": "read-only blocker audit and actual video retrieval"
+}

@@ -1,0 +1,13 @@
+{
+  "result_ready": true,
+  "disposition": "PROTOTYPE_SEMANTICS_BLOCKED",
+  "G0": "PASS_ISOLATED",
+  "G1": "ENGINEERING_PASS_TIMING_RECIPE_REVIEW_PENDING",
+  "G2": "STOP_NO_REGION_PROVENANCE",
+  "G3": "NOT_RUN",
+  "model_training_steps": 0,
+  "sim_smoke_rollouts": 3,
+  "robot": false,
+  "final15": false,
+  "independent_reviews": "PENDING"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "path": "videos/observation.images.image/chunk-000/file-018.mp4",
+    "bytes": 25386171,
+    "sha256": "93e2a4797578f3eb38ecf587dccc90df5a7f8629835fc156dc122443ec5e9d2a",
+    "status": "DOWNLOADED_VERIFIED"
+  },
+  {
+    "path": "videos/observation.images.image/chunk-000/file-023.mp4",
+    "bytes": 31592491,
+    "sha256": "3bccddd2277760e6567046a9344c94feee903218ec2459825d54021a733e0203",
+    "status": "DOWNLOADED_VERIFIED"
+  },
+  {
+    "path": "videos/observation.images.image/chunk-000/file-027.mp4",
+    "bytes": 27124032,
+    "sha256": "0577ca3a9c6bf32939d2b1e74394fcced609419abb671f9d398c6bf145a9746f",
+    "status": "DOWNLOADED_VERIFIED"
+  },
+  {
+    "path": "videos/observation.images.image2/chunk-000/file-018.mp4",
+    "bytes": 23377327,
+    "sha256": "33ef89f00fa89d7a87778ee0ba1c50b5ee6c729b039fab9f3ec7990c8f1c8733",
+    "status": "DOWNLOADED_VERIFIED"
+  },
+  {
+    "path": "videos/observation.images.image2/chunk-000/file-023.mp4",
+    "bytes": 28683692,
+    "sha256": "0004c05f5583a1639b77a7ec5120a254fd36d6a53176907bc679dbc521ac64e0",
+    "status": "DOWNLOADED_VERIFIED"
+  },
+  {
+    "path": "videos/observation.images.image2/chunk-000/file-027.mp4",
+    "bytes": 26196410,
+    "sha256": "1c77000de301901563fba32ce6692a5e204dbabd8b149e10d9c56815ebc9e10a",
+    "status": "DOWNLOADED_VERIFIED"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "status": "D0_D4_PROBES_DONE",
+  "kind": "fixed",
+  "weights_saved": false,
+  "new_optimizer_updates": 0,
+  "read_only_state_checks": [
+    {
+      "model": "fixed",
+      "checkpoint_step": 5000,
+      "state_before_after_identical": true,
+      "checkpoint_sha256": "d63b762e7b4d9ed93f5c6bb175b3a793db2c3ea368099c26b3c1c0541552bfb1"
+    },
+    {
+      "model": "fixed",
+      "checkpoint_step": 10000,
+      "state_before_after_identical": true,
+      "checkpoint_sha256": "7852aac589649a67a69d22bb4b473bfd6e6e9f3d1f10ead3363132690720b727"
+    }
+  ],
+  "initial_hash_verified": true,
+  "input_lock_sha256": "33d384d893d39706323a9e978722c3760172bd125f649f7cdab4f31d27c87830"
+}

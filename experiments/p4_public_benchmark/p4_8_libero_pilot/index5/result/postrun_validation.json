@@ -1,0 +1,25 @@
+{
+  "status": "EXECUTOR_POSTRUN_CHECKS_PASS",
+  "original_auto_zip_crc_and_packaged_sha": "PASS",
+  "original_server_manifest_all256_sha": "PASS",
+  "paired_initial_public_states_max_diff": 0.0,
+  "actual_csv_rows": {
+    "rollouts": 30,
+    "dev_episode_rows": 27,
+    "object_on_off": 54
+  },
+  "scripts_compile": "PASS",
+  "json_parse": "PASS",
+  "git_diff_check": {
+    "full_worktree": {
+      "exit_code": 2,
+      "status": "FAIL_PREEXISTING_UNRELATED_GUIDE_WHITESPACE"
+    },
+    "changed_context_files": {
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  },
+  "added_training_steps": 0,
+  "independent_reviews": "PENDING"
+}

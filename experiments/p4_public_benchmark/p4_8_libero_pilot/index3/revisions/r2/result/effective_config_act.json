@@ -1,0 +1,33 @@
+{
+  "model": "ACT-LIBERO",
+  "status": "BLOCKED_NOT_INSTANTIATED",
+  "effective_runtime_config": null,
+  "checkpoint": null,
+  "updates_executed": 0,
+  "reason": "r2 G2-B provenance stop; formal ACT is also deferred by section6.1",
+  "contract_targets_not_executed": {
+    "seed": 1,
+    "updates": 10000,
+    "split_manifest_sha256": "e7211e41bdfd3b0a2594c597db47742e199edd4bca6221fde31c3d9bb873736e",
+    "state_dim": 8,
+    "action_dim": 7,
+    "camera_keys": [
+      "observation.images.image",
+      "observation.images.image2"
+    ],
+    "object_conditioning": false,
+    "online_dino_normalizations": null,
+    "prototype_side_normalizations": null,
+    "prototype_bank_sha256": null,
+    "raw_token_dim": null,
+    "adapter_dim": null,
+    "dim_model": 512,
+    "num_prototypes": null,
+    "num_object_tokens": null,
+    "temperature": null,
+    "gate_init": null,
+    "gripper_action_index": 6,
+    "special_gripper_weighting": false,
+    "optimizer_batch_initialization_sampler_runtime_verification": "NOT_RUN"
+  }
+}

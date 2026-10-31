@@ -1,0 +1,11 @@
+{
+  "status": "REAL_VIDEO_STATE_ACTION_PADDING_PASS",
+  "samples": 9,
+  "episode_ids": [
+    813,
+    1035,
+    1245
+  ],
+  "uses_global_normalizers": false,
+  "policy_training": false
+}

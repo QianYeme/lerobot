@@ -1,0 +1,16 @@
+{
+  "decision_sha256": "97dcdd19f982582e4340648fa335633db0d919f73fded17ba255746c2fa6d300",
+  "local_git_head": "9ee61afdc5a083f6a8f604a46854eb8864902299",
+  "working_tree": "dirty; unrelated user files preserved",
+  "source_hashes": {
+    "p48_r6_complete_chunk_metrics.py": "ad8a236d0c7c87f001bc0f16d362983d4a941e7d80ceb8121191e02a4a23c871",
+    "p48_r6_parameter_deltas.py": "11a9e154ac221e7730091d9f13d46f2cfb0bf50c6cdb88f86cd4661bba964580",
+    "p48_r6_prepare.py": "254df9eb5d3a0616a7af26efcb71566aa5ce7104318d9b9793098c27e185b98f",
+    "p48_r6_probe.py": "6d53160e070db98702a97b95ca6e1dee7c9a213a2791e587a2d7dc9fba8cbd91",
+    "p48_r6_queue.py": "eb73f7029fefb8790b7a766d012c6e52de419be91f2b7c86ba1213140db2047e",
+    "p48_r6_render_summary.py": "682be1626591259ff87e003436e928861f300f111aca3cfd1e7f72a4c9fd79ac"
+  },
+  "executed_server_sources_match": true,
+  "upstream_manifest_sha256": "2bd99c47f4b7147ff2195f510b435a58418c2088381678e73189470f2caf3dbe",
+  "input_lock_sha256": "33d384d893d39706323a9e978722c3760172bd125f649f7cdab4f31d27c87830"
+}

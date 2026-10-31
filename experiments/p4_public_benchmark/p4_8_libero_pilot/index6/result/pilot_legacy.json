@@ -1,0 +1,7 @@
+{
+  "model": "legacy",
+  "forwards": 20,
+  "wall_seconds": 0.8330785576254129,
+  "forwards_per_second": 24.007339784386623,
+  "peak_gpu_bytes": 387637248
+}

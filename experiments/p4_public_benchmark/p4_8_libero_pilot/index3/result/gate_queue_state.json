@@ -1,0 +1,24 @@
+{
+  "controller_pid": 119950,
+  "started": 1793371772.4669306,
+  "status": "G2_DIAGNOSTICS_COMPLETE_NOT_TRAINING_AUTHORIZATION",
+  "stages": [
+    {
+      "stage": "train_video_fetch",
+      "started": 1793371772.4671576,
+      "script_sha256": "6716dcc6c7c67df29d5c01c475528a5eae6f5012ba98a8a8619a1e73672f321d",
+      "pid": 119951,
+      "exit_code": 0,
+      "finished": 1793371955.884361
+    },
+    {
+      "stage": "automatic_prototypes",
+      "started": 1793371955.884777,
+      "script_sha256": "1cc5ab120bc02c1392f6013988a5df987dc4b032196bc9101edaa7b52b35118b",
+      "pid": 120223,
+      "exit_code": 0,
+      "finished": 1793372027.7412255
+    }
+  ],
+  "finished": 1793372027.7416444
+}

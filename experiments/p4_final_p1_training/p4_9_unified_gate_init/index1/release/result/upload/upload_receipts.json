@@ -1,0 +1,26 @@
+[
+  {
+    "role": "L1",
+    "repo_id": "QYyyyyyyy/lerobot-p49-legacy-s1-gateplus-80k",
+    "revision": "33a6b23ec1c0e577758c67d5f8a8325e7dddee83",
+    "private": true,
+    "files": 613,
+    "sizes_lfs_sha_verified": true,
+    "all_download_sha_verified": true,
+    "download_runtime_validation": "PASS",
+    "download_location": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_9_unified_gate_init/index1/release/download_verify/L1",
+    "local_control_host_validation": "PENDING_OPERATOR_MACHINE"
+  },
+  {
+    "role": "F3",
+    "repo_id": "QYyyyyyyy/lerobot-p49-fixed-s3-gateplus-80k",
+    "revision": "77c64897b0c2abfca306b9cc00253e2edbfd70e4",
+    "private": true,
+    "files": 613,
+    "sizes_lfs_sha_verified": true,
+    "all_download_sha_verified": true,
+    "download_runtime_validation": "PASS",
+    "download_location": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_9_unified_gate_init/index1/release/download_verify/F3",
+    "local_control_host_validation": "PENDING_OPERATOR_MACHINE"
+  }
+]

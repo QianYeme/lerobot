@@ -1,0 +1,102 @@
+{
+  "algorithm_sha256": "87ed78cc594cdbcc9246da5733442ea8cbbcd2a2a8993b30a092985ec17ab12a",
+  "split_sha256": "e7211e41bdfd3b0a2594c597db47742e199edd4bca6221fde31c3d9bb873736e",
+  "candidate_count": 12,
+  "candidate_episode_count": 7,
+  "audit_positive_episode_count": 5,
+  "selected_count": 4,
+  "input_episode_ids": [
+    813,
+    818,
+    825,
+    850,
+    852,
+    860,
+    876,
+    887,
+    908,
+    978,
+    983,
+    984,
+    985,
+    1011,
+    1020,
+    1024,
+    1035,
+    1074,
+    1075,
+    1100,
+    1102,
+    1108,
+    1131,
+    1143,
+    1148,
+    1151,
+    1166,
+    1171,
+    1187,
+    1219,
+    1225,
+    1233,
+    1242,
+    1243,
+    1245
+  ],
+  "dev_image_access": false,
+  "semantic_accuracy": "UNKNOWN; unlabeled motion/feature proxy only",
+  "train_updates": 0,
+  "bank_repeat_sha256": [
+    "1d78709651259d73edc5f1d00a687f30ce0c251b3e79b5045d73478673953d66",
+    "1d78709651259d73edc5f1d00a687f30ce0c251b3e79b5045d73478673953d66"
+  ],
+  "repeat_bank_identical": true,
+  "norms": [
+    0.9999999403953552,
+    1.0,
+    0.9999999403953552,
+    1.0
+  ],
+  "max_off_diagonal_cosine": 0.4658375382423401,
+  "audit_positive_q75_minus_background_q95": 0.02683873474597931,
+  "audit_positive_q75_minus_premover_q95": 0.05823116302490239,
+  "audit_response_distributions": {
+    "positive": {
+      "count": 7,
+      "quantiles": [
+        0.7568103075027466,
+        0.7693747878074646,
+        0.8432120084762573,
+        0.9162653386592865,
+        0.9483992755413055,
+        0.9559340476989746
+      ]
+    },
+    "background": {
+      "count": 2252,
+      "quantiles": [
+        0.17956766486167908,
+        0.4860505908727646,
+        0.5868856608867645,
+        0.6986754089593887,
+        0.8894266039133072,
+        0.973453164100647
+      ]
+    },
+    "premover": {
+      "count": 347,
+      "quantiles": [
+        0.33132925629615784,
+        0.4575413465499878,
+        0.5741516351699829,
+        0.6492983996868134,
+        0.8580341756343841,
+        0.9758923053741455
+      ]
+    }
+  },
+  "failures": [
+    "candidate_count below 16"
+  ],
+  "status": "G2_AUTO_PROTOTYPE_UNRELIABLE",
+  "algorithm_must_not_be_retuned_after_gate": true
+}

@@ -1,0 +1,7 @@
+{
+  "model": "fixed",
+  "forwards": 20,
+  "wall_seconds": 0.819361811503768,
+  "forwards_per_second": 24.409241093741194,
+  "peak_gpu_bytes": 387637248
+}

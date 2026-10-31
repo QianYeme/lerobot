@@ -1,0 +1,5 @@
+PREFIX /root/autodl-tmp/p48_isolated_env
+LEROBOT /root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index1/result/workspace/lerobot/src/lerobot/__init__.py
+TORCH 2.8.0+cu128
+HF_LIBERO 0.1.3
+CUDA True

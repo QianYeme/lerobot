@@ -1,0 +1,45 @@
+{
+  "action": [
+    -16.977428436279297,
+    -35.4998779296875,
+    50.8345947265625,
+    16.28506851196289,
+    -60.78962707519531,
+    11.220436096191406
+  ],
+  "common": {
+    "cameras": {
+      "top": {
+        "type": "opencv",
+        "index_or_path": 4,
+        "width": 640,
+        "height": 480,
+        "fps": 30
+      },
+      "gripper": {
+        "type": "opencv",
+        "index_or_path": 2,
+        "width": 640,
+        "height": 480,
+        "fps": 30,
+        "fourcc": "MJPG"
+      }
+    },
+    "robot_type": "so101_follower",
+    "robot_port": "/dev/ttyACM0",
+    "robot_id": "nn",
+    "max_relative_target": 5.0,
+    "n_action_steps": 1,
+    "temporal_ensemble_coeff": 0.01,
+    "fps": 30,
+    "episode_time_s": 60.0,
+    "reset_time_s": 30.0,
+    "task": "Cup pick and place",
+    "light": "bright",
+    "water": "half",
+    "repeat": 1,
+    "local_on": false,
+    "repo_revision": "SEE_DOWNLOAD_RECEIPT"
+  },
+  "status": "SYNTHETIC_SMOKE_NOT_ROBOT"
+}

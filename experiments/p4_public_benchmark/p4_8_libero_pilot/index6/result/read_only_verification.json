@@ -1,0 +1,7 @@
+{
+  "status": "R5_CHECKPOINT_BANK_AND_SOURCE_SHA_UNCHANGED",
+  "checkpoints_verified": 6,
+  "new_optimizer_updates": 0,
+  "new_rollouts": 0,
+  "model_weights_saved": false
+}

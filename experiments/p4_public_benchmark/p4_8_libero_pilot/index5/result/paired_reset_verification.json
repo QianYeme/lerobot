@@ -1,0 +1,18 @@
+{
+  "status": "THREE_MODEL_PAIRED_INITIAL_PUBLIC_STATE_BITWISE_EQUAL",
+  "initial_ids": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "max_absolute_state_difference": 0.0,
+  "source": "recorded pre-action8D public state, not target object privileged state",
+  "success_sets_identical": true
+}

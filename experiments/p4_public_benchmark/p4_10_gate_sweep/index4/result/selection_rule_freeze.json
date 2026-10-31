@@ -1,0 +1,21 @@
+{
+  "frozen_before_full50_outcomes": true,
+  "classification": "exploratory ranking, not a statistical noninferiority test",
+  "noninferiority_tolerance_success_count": 2,
+  "denominator_per_seed": 50,
+  "margin_percentage_points": 4,
+  "eligibility": [
+    "legal source and matched budget",
+    "finite stable outputs",
+    "no confirmed major prototype semantic failure"
+  ],
+  "noninferiority_rule": "per seed candidate >= NOOBJ-2 AND candidate >= Gate0-2",
+  "ranking": [
+    "prefer benefit direction nonnegative in both seeds against matched ACT and Gate0",
+    "then seed-equal mean success rate",
+    "report paired differences and uncertainty; no posthoc metric substitution"
+  ],
+  "tie_rule": "if mean rates differ by <=.04 retain up to2 candidates, do not force unique winner",
+  "if_no_reliable_gain": "KEEP_ORIGINAL or INCONCLUSIVE; not proof zero optimal",
+  "cross_task": "task-equal aggregation, never treat50 starts as50 tasks"
+}

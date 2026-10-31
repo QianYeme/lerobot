@@ -1,0 +1,13 @@
+{
+  "status": "SEMANTIC_CONCERN_NOT_CONFIRMED_PROTOTYPE_FAILURE",
+  "allow_known_start_replication": true,
+  "confirmed_prototype_failure": false,
+  "formal6_gate": "REVIEW_PENDING_NOT_YET_RELEASED",
+  "observed_pngs": [
+    "init42:0,66,118",
+    "init38:140"
+  ],
+  "scope": "executor qualitative inspection only; no GT; stable off-target object-group response and some moving-target response; cannot certify target-exclusive tracking",
+  "state_and_action_replay_max_error": 0.0,
+  "no_confirmation_images_read": true
+}

@@ -1,0 +1,4 @@
+scope,model,suite,task_id,init_id,seed,steps,reported_success,not_model_evaluation
+G1_NO_POLICY_SMOKE,NONE,libero_object,0,0,4701,20,False,True
+G1_NO_POLICY_SMOKE,NONE,libero_object,0,1,4701,20,False,True
+G1_NO_POLICY_SMOKE,NONE,libero_object,0,2,4701,20,False,True

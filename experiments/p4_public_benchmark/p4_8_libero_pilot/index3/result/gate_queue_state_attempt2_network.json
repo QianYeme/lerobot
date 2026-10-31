@@ -1,0 +1,15 @@
+{
+  "controller_pid": 119639,
+  "started": 1793371556.570507,
+  "status": "ENGINEERING_FAILURE",
+  "stages": [
+    {
+      "stage": "train_video_fetch",
+      "started": 1793371556.5706306,
+      "script_sha256": "abbd70150836dac2c3647f76e5d60141be6459312d86375ba9a17e16772d2066",
+      "pid": 119640,
+      "exit_code": 1,
+      "finished": 1793371686.4497592
+    }
+  ]
+}

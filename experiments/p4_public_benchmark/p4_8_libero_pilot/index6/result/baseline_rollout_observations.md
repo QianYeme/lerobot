@@ -1,0 +1,9 @@
+# D5 existing r5 rollout review
+
+仅复用r5原有30段视频和公开8D state/action轨迹；没有新rollout。全部视频SHA已核验，三组各10段取固定六个时刻，形成rollout_evidence/*_all_initial_states_contact.jpg；Codex实际查看了三张总览。这是覆盖全部init的固定抽帧检查，不是逐帧接触标注。
+
+成功组init10–13的取样画面可见罐头随夹爪搬运、接近篮子的动作链。失败组多个取样画面可见机械臂继续搬运路径，而目标罐头似仍在原位置，支持“未形成/未保持有效夹持”的定性疑点。不能仅凭这些间隔帧区分最初漏抓、短暂夹起后滑脱或准确失败帧；first_failure_stage保留UNKNOWN，没有用success flag代替视频判读。
+
+baseline_rollout_observations.csv另记录每段可观测的闭合/随后打开指令时刻、公开夹爪joint gap变化及EEF z变化。指令不是接触真值，EEF升高不是物体抬升高度。源视频两路RGB可见过程，但没有杯/罐contact或物体轨迹GT。
+
+本轮动作执行窗口保持r5原生100步块，视频中错过夹持后继续后续轨迹与缺少即时纠偏相容；没有执行窗口的受控对照，不能据此作因果结论，也未修改该参数。原始4/10结果和所有视频不变。

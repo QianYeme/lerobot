@@ -1,0 +1,4 @@
+kind,batch_size,chunk_size,repeats,mean_seconds,median_seconds,p95_seconds,params,trainable_params,peak_gpu_bytes,scope
+act,1,100,50,0.008557399436831474,0.008558743633329868,0.008580497559159994,51600263,51600263,293475328,isolated after all training/rollout jobs; preprocessed input; full chunk prediction
+legacy,1,100,50,0.017018020786345005,0.017018025740981102,0.017087071761488916,74941448,52884872,387502080,isolated after all training/rollout jobs; preprocessed input; full chunk prediction
+fixed,1,100,50,0.01724781535565853,0.01705633755773306,0.018314140290021895,74941448,52884872,387502080,isolated after all training/rollout jobs; preprocessed input; full chunk prediction

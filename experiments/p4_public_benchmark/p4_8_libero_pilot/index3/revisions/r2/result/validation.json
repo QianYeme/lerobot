@@ -1,0 +1,29 @@
+{
+  "status": "G2_PROTOTYPE_PROVENANCE_BLOCKED",
+  "result_ready": true,
+  "pilot_completed": false,
+  "decision_byte_identity": true,
+  "source_local_server_hash_equal": true,
+  "historical_train_membership": "PASS",
+  "split_integrity": "PASS",
+  "real_train_frame_arithmetic_probe": "PASS",
+  "p1_effective_input_hook": "NOT_RUN",
+  "policy_training_updates": 0,
+  "policy_rollouts": 0,
+  "final15_accessed": false,
+  "independent_builder_review": "PENDING",
+  "independent_redteam_review": "PENDING",
+  "audit_script_compile": "PASS",
+  "all_artifact_json_parse": "PASS",
+  "unexecuted_metric_tables_header_only": "PASS",
+  "git_diff_check": {
+    "full_worktree": {
+      "exit_code": 2,
+      "status": "FAIL_UNRELATED_PREEXISTING_GUIDE_WHITESPACE"
+    },
+    "changed_context_files": {
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  }
+}

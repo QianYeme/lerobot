@@ -1,0 +1,36 @@
+{
+  "time": "2026-10-30T18:05:33.519654+00:00",
+  "status": "DONE",
+  "deleted_files": 6489,
+  "deleted_logical_bytes": 44500238842,
+  "deleted_resume_files": 52,
+  "retained_resume_files": 18,
+  "retained_resume_sha": "PASS",
+  "r5_manifest_assets_verified_unchanged": 256,
+  "before": {
+    "/root/autodl-tmp/lerobot-main": {
+      "total": 107374182400,
+      "used": 87642972160,
+      "free": 19731210240
+    },
+    "/": {
+      "total": 32212254720,
+      "used": 6748286976,
+      "free": 25463967744
+    }
+  },
+  "after": {
+    "/root/autodl-tmp/lerobot-main": {
+      "total": 107374182400,
+      "used": 43729399808,
+      "free": 63644782592
+    },
+    "/": {
+      "total": 32212254720,
+      "used": 6145212416,
+      "free": 26067042304
+    }
+  },
+  "data_disk_freed_bytes": 43913572352,
+  "raw_logs_videos_datasets_robot_exports": "PRESERVED"
+}

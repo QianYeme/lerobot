@@ -1,0 +1,30 @@
+[
+  {
+    "role": "L1",
+    "repo_id": "QYyyyyyyy/lerobot-p4-l1-legacy-p1"
+  },
+  {
+    "role": "F3",
+    "repo_id": "QYyyyyyyy/lerobot-p4-f3-fixed-p1"
+  },
+  {
+    "role": "A1",
+    "repo_id": "QYyyyyyyy/lerobot-p4-a1-act-matched"
+  },
+  {
+    "role": "VACT-S1",
+    "repo_id": "QYyyyyyyy/lerobot-p45-vanilla-act-s1"
+  },
+  {
+    "role": "VDP-S1",
+    "repo_id": "QYyyyyyyy/lerobot-p45-vanilla-diffusion-s1"
+  },
+  {
+    "role": "NG-L-GL",
+    "repo_id": "QYyyyyyyy/lerobot-p45-newgl-legacy-gl"
+  },
+  {
+    "role": "NG-F-GL",
+    "repo_id": "QYyyyyyyy/lerobot-p45-newgl-fixed-gl"
+  }
+]

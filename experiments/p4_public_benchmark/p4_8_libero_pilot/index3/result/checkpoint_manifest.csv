@@ -1,0 +1,2 @@
+model,purpose,step,path,sha256,formal_pilot_checkpoint
+ACT-LIBERO,DISPOSABLE_ENGINEERING_SMOKE,100,/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index3/result/act_engineering_smoke/resume_000100.pt,f84a24a6f76c82dfeef32cf5f83d37b274e422dd3f2b15a86fb57f8824bce621,False

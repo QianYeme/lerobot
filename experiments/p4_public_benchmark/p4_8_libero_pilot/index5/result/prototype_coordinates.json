@@ -1,0 +1,42 @@
+[
+  {
+    "episode": 813,
+    "frame": 38,
+    "x": 192,
+    "y": 120,
+    "source_rgb_sha256": "0407b77ffce3b08dc470993ddc93aaff56d5f5f77950839db4792e305e026111",
+    "coordinate_system": "native256x256 dataset RGB, no flip/crop",
+    "selected_by": "Codex image inspection: contact sheet plus all four 3x nearest-neighbor displays",
+    "reason": "Interior blue sidewall of alphabet-soup can behind the orange milk carton, below the gripper; not left red-green can, basket or robot. Approximate visual reference, not pixelwise ground truth."
+  },
+  {
+    "episode": 908,
+    "frame": 48,
+    "x": 192,
+    "y": 120,
+    "source_rgb_sha256": "eea8c72f1c049ae317a472b68ffc1ba9595f3901250bf53e4ce022f9b7a90324",
+    "coordinate_system": "native256x256 dataset RGB, no flip/crop",
+    "selected_by": "Codex image inspection: contact sheet plus all four 3x nearest-neighbor displays",
+    "reason": "Interior blue sidewall of alphabet-soup can behind the orange milk carton, below the gripper; not left red-green can, basket or robot. Approximate visual reference, not pixelwise ground truth."
+  },
+  {
+    "episode": 1074,
+    "frame": 37,
+    "x": 192,
+    "y": 120,
+    "source_rgb_sha256": "a6784223dc805e862f881aa2ce3f52e69237cd71656e8d8291ff95029dddf416",
+    "coordinate_system": "native256x256 dataset RGB, no flip/crop",
+    "selected_by": "Codex image inspection: contact sheet plus all four 3x nearest-neighbor displays",
+    "reason": "Interior blue sidewall of alphabet-soup can behind the orange milk carton, below the gripper; not left red-green can, basket or robot. Approximate visual reference, not pixelwise ground truth."
+  },
+  {
+    "episode": 1166,
+    "frame": 37,
+    "x": 192,
+    "y": 120,
+    "source_rgb_sha256": "52e21cec99c00c814eb1caf7a235906fbdcb5f939e6acfe35073339eed0f768e",
+    "coordinate_system": "native256x256 dataset RGB, no flip/crop",
+    "selected_by": "Codex image inspection: contact sheet plus all four 3x nearest-neighbor displays",
+    "reason": "Interior blue sidewall of alphabet-soup can behind the orange milk carton, below the gripper; not left red-green can, basket or robot. Approximate visual reference, not pixelwise ground truth."
+  }
+]

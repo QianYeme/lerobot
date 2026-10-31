@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "train_manifest_sha256": "2deb0f118fbabb1866fe8a78d8074563bca8f66c4dd2634d8a82114524221479",
+  "prototype_provenance_sha256": "96b1e040aa0839bc3416f3b0128f1cf2615eab72697cdbd76ca2c1a2778e1bde",
+  "selected_episode_ids": [
+    0,
+    29,
+    58,
+    86
+  ],
+  "all_in_train90": true,
+  "final15_accessed": false
+}

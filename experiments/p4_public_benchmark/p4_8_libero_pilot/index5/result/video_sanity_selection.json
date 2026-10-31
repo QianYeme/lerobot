@@ -1,0 +1,28 @@
+{
+  "episode_ids": [
+    857,
+    877,
+    905,
+    934,
+    945,
+    1002,
+    1152,
+    1205,
+    1224
+  ],
+  "files": [
+    "videos/observation.images.image/chunk-000/file-019.mp4",
+    "videos/observation.images.image/chunk-000/file-020.mp4",
+    "videos/observation.images.image/chunk-000/file-021.mp4",
+    "videos/observation.images.image/chunk-000/file-022.mp4",
+    "videos/observation.images.image/chunk-000/file-025.mp4",
+    "videos/observation.images.image/chunk-000/file-026.mp4",
+    "videos/observation.images.image2/chunk-000/file-019.mp4",
+    "videos/observation.images.image2/chunk-000/file-020.mp4",
+    "videos/observation.images.image2/chunk-000/file-021.mp4",
+    "videos/observation.images.image2/chunk-000/file-022.mp4",
+    "videos/observation.images.image2/chunk-000/file-025.mp4",
+    "videos/observation.images.image2/chunk-000/file-026.mp4"
+  ],
+  "selection": "Frozen Dev9 video chunks, fetched only after prototype freeze; not for prototype selection"
+}

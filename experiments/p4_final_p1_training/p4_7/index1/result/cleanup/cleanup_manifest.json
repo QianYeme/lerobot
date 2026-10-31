@@ -1,0 +1,46 @@
+{
+  "status": "DONE",
+  "time": 1793359480.8406682,
+  "files": [
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_5_robot_reliability_server10h/index1/result/server/newgl_smoke/legacy/checkpoints/000001/resume.pt",
+      "bytes": 723632632,
+      "sha256": "d947ff994140fd38d75ef8f6ae5b5b43a9f6cf85921c8eab86b897fbf39bb610",
+      "reason": "Disposable smoke checkpoint; numerical evidence/logs and all formal weights retained"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_5_robot_reliability_server10h/index1/result/server/newgl_smoke/fixed/checkpoints/000001/resume.pt",
+      "bytes": 723632632,
+      "sha256": "6b735c9b67058718fde4f7f1c21d3f22ee299b740e221239f31b40b76d3c1c14",
+      "reason": "Disposable smoke checkpoint; numerical evidence/logs and all formal weights retained"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_5_robot_reliability_server10h/index1/result/server/newgl_smoke_native_numerics/legacy/checkpoints/000001/resume.pt",
+      "bytes": 723632696,
+      "sha256": "2cad5ab6d9e130bd3ae9b60835effc31388bbf6c0a4f9f578ed35d6809018aaa",
+      "reason": "Disposable smoke checkpoint; numerical evidence/logs and all formal weights retained"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_5_robot_reliability_server10h/index1/result/server/newgl_smoke_native_numerics/fixed/checkpoints/000001/resume.pt",
+      "bytes": 723632696,
+      "sha256": "f11fa5cbfbf8d1372e4dfa222c7ff960f37cc6d0f9de9fd87dd5fb19dd4de6f9",
+      "reason": "Disposable smoke checkpoint; numerical evidence/logs and all formal weights retained"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_5_robot_reliability_server10h/index1/result/server/runs/STOCK_RELOAD_SMOKE/smoke_resume.pt",
+      "bytes": 619685634,
+      "sha256": "1dfb5b47fdc14d0628aaf8c2dd0bb655fea87cc62867130959e0e81f8d951886",
+      "reason": "Disposable smoke checkpoint; numerical evidence/logs and all formal weights retained"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_5_robot_reliability_server10h/supplements/diffusion_baseline/index1/result/CPU_READINESS/smoke_resume.pt",
+      "bytes": 3199752851,
+      "sha256": "2795162d48f14bfb3a4b8ed704d1d22529951e6ee4d2c80bd63a9a945fa9a132",
+      "reason": "Disposable smoke checkpoint; numerical evidence/logs and all formal weights retained"
+    }
+  ],
+  "freed_bytes": 6713969141,
+  "free_before": 24083546112,
+  "free_after": 30797164544,
+  "protected_formal_checkpoints": 9
+}

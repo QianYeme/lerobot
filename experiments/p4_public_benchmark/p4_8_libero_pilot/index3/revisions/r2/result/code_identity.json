@@ -1,0 +1,30 @@
+{
+  "local_git_head": "9ee61afdc5a083f6a8f604a46854eb8864902299",
+  "server_git_head": "4e9e80a342fc4808811daba7d4e4ad9cca799e73",
+  "working_tree_is_dirty": true,
+  "source_file_comparison": {
+    "scripts/p4_1_pilot.py": {
+      "server_sha256": "06d1bcf9871ae3143e23cbf3e4a1c6db98c6b3e21559b014e7ba8e917dc9929f",
+      "local_sha256": "06d1bcf9871ae3143e23cbf3e4a1c6db98c6b3e21559b014e7ba8e917dc9929f",
+      "equal": true
+    },
+    "src/lerobot/policies/act/object_conditioning/modeling_object_conditioning.py": {
+      "server_sha256": "00a9a4232bfe5679e9ca08bd9a1ae26c8ddc80506604cc603f57f3110dcca146",
+      "local_sha256": "00a9a4232bfe5679e9ca08bd9a1ae26c8ddc80506604cc603f57f3110dcca146",
+      "equal": true
+    },
+    "src/lerobot/policies/act/configuration_act.py": {
+      "server_sha256": "06fe4231413a9d91c153d6fbe03a9872822461961e84b577f7c12fdeaa4a78a3",
+      "local_sha256": "06fe4231413a9d91c153d6fbe03a9872822461961e84b577f7c12fdeaa4a78a3",
+      "equal": true
+    },
+    "experiments/position/d2_1_evidence_completion/index1/result/B3_config.json": {
+      "server_sha256": "df98b7e1bce5c842a188fd2f5bd787cbd472e2c69a20b1fead081c257b2d3375",
+      "local_sha256": "df98b7e1bce5c842a188fd2f5bd787cbd472e2c69a20b1fead081c257b2d3375",
+      "equal": true
+    }
+  },
+  "decision_sha256": "af4d1aa083b5fa5886a08697c37c3c3285232a9fb48017f54c2a36339e20a1d2",
+  "audit_script_sha256": "37ac986c6184e1a62cc86c5a9c3243bf536b55a6a5503e8c8f123548df579a7d",
+  "note": "Commit alone does not identify uncommitted source; source_audit_raw.json includes server file bytes and hashes."
+}

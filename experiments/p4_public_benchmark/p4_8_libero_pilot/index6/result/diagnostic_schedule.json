@@ -1,0 +1,7 @@
+{
+  "serial_end_to_end_seconds": 16.4249484539032,
+  "parallel_end_to_end_seconds": 8.429584741592407,
+  "speedup": 1.948488443666848,
+  "selected": "parallel",
+  "scope": "loading+20 identical forward probes per model, not a policy performance comparison"
+}

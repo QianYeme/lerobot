@@ -1,0 +1,18 @@
+[
+  {
+    "repository": "Physical-Intelligence/openpi",
+    "file": "examples/libero/convert_libero_data_to_lerobot.py",
+    "file_last_commit": "871f120a7af9e6439354d39292c17331e0b14699",
+    "url": "https://raw.githubusercontent.com/Physical-Intelligence/openpi/871f120a7af9e6439354d39292c17331e0b14699/examples/libero/convert_libero_data_to_lerobot.py",
+    "sha256": "199c309a601f23fa120e0c9ca3d8f7f2dba525924a60e79906fca4c6b9f03602",
+    "retrieved_at": "2026-10-30T15:57:04.878138+00:00"
+  },
+  {
+    "repository": "openvla/openvla",
+    "file": "experiments/robot/libero/regenerate_libero_dataset.py",
+    "file_last_commit": "0ebc5e333ee7a916813bf50db240f1af7ba1d295",
+    "url": "https://raw.githubusercontent.com/openvla/openvla/0ebc5e333ee7a916813bf50db240f1af7ba1d295/experiments/robot/libero/regenerate_libero_dataset.py",
+    "sha256": "f17dd49e61659b515ccd691c0ee57d20fb57909af3b8b53ef7e7e6bee55ceb49",
+    "retrieved_at": "2026-10-30T15:57:05.806268+00:00"
+  }
+]

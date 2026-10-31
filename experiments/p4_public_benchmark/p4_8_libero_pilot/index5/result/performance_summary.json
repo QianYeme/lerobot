@@ -1,0 +1,101 @@
+{
+  "pilot_only": true,
+  "rows": [
+    {
+      "kind": "act",
+      "training_updates": 10000,
+      "successes": 4,
+      "rollouts": 10,
+      "h0_arm_normalized_mae": 0.5483864347139994,
+      "h0_gripper_normalized_mae": 0.21462954746352303,
+      "h0_arm_raw_mae": 0.08025016304519442,
+      "h0_gripper_raw_mae": 0.21389803124798668,
+      "h0_dim0_raw_mae": 0.1405876932872666,
+      "h0_dim1_raw_mae": 0.10012036396397485,
+      "h0_dim2_raw_mae": 0.16093694335884517,
+      "h0_dim3_raw_mae": 0.013697516069644027,
+      "h0_dim4_raw_mae": 0.0371968328124947,
+      "h0_dim5_raw_mae": 0.028961626605855093,
+      "h0_dim6_raw_mae": 0.21389803124798668,
+      "training_wall_seconds": 895.5824818611145
+    },
+    {
+      "kind": "legacy",
+      "training_updates": 10000,
+      "successes": 4,
+      "rollouts": 10,
+      "h0_arm_normalized_mae": 0.5356355077690549,
+      "h0_gripper_normalized_mae": 0.21141216986709171,
+      "h0_arm_raw_mae": 0.0787467426723904,
+      "h0_gripper_raw_mae": 0.21069160931640202,
+      "h0_dim0_raw_mae": 0.13607901500331032,
+      "h0_dim1_raw_mae": 0.09923115041520861,
+      "h0_dim2_raw_mae": 0.15873763627476162,
+      "h0_dim3_raw_mae": 0.01313205316869749,
+      "h0_dim4_raw_mae": 0.037739059784346156,
+      "h0_dim5_raw_mae": 0.027561552719109587,
+      "h0_dim6_raw_mae": 0.21069160931640202,
+      "training_wall_seconds": 1025.3596773147583
+    },
+    {
+      "kind": "fixed",
+      "training_updates": 10000,
+      "successes": 4,
+      "rollouts": 10,
+      "h0_arm_normalized_mae": 0.5403415262699127,
+      "h0_gripper_normalized_mae": 0.21778012149863774,
+      "h0_arm_raw_mae": 0.07867101331551869,
+      "h0_gripper_raw_mae": 0.21703785161177316,
+      "h0_dim0_raw_mae": 0.1390401472647985,
+      "h0_dim1_raw_mae": 0.10053273207611507,
+      "h0_dim2_raw_mae": 0.15327171815766227,
+      "h0_dim3_raw_mae": 0.013407396463056406,
+      "h0_dim4_raw_mae": 0.03781123335162798,
+      "h0_dim5_raw_mae": 0.02796284192138248,
+      "h0_dim6_raw_mae": 0.21703785161177316,
+      "training_wall_seconds": 1024.1014847755432
+    }
+  ],
+  "latency": [
+    {
+      "kind": "act",
+      "batch_size": 1,
+      "chunk_size": 100,
+      "repeats": 50,
+      "mean_seconds": 0.008557399436831474,
+      "median_seconds": 0.008558743633329868,
+      "p95_seconds": 0.008580497559159994,
+      "params": 51600263,
+      "trainable_params": 51600263,
+      "peak_gpu_bytes": 293475328,
+      "scope": "isolated after all training/rollout jobs; preprocessed input; full chunk prediction"
+    },
+    {
+      "kind": "legacy",
+      "batch_size": 1,
+      "chunk_size": 100,
+      "repeats": 50,
+      "mean_seconds": 0.017018020786345005,
+      "median_seconds": 0.017018025740981102,
+      "p95_seconds": 0.017087071761488916,
+      "params": 74941448,
+      "trainable_params": 52884872,
+      "peak_gpu_bytes": 387502080,
+      "scope": "isolated after all training/rollout jobs; preprocessed input; full chunk prediction"
+    },
+    {
+      "kind": "fixed",
+      "batch_size": 1,
+      "chunk_size": 100,
+      "repeats": 50,
+      "mean_seconds": 0.01724781535565853,
+      "median_seconds": 0.01705633755773306,
+      "p95_seconds": 0.018314140290021895,
+      "params": 74941448,
+      "trainable_params": 52884872,
+      "peak_gpu_bytes": 387502080,
+      "scope": "isolated after all training/rollout jobs; preprocessed input; full chunk prediction"
+    }
+  ],
+  "evidence_level": "single task seed1, 10k updates and10 paired simulator episodes; no real robot and no leaderboard claim"
+}

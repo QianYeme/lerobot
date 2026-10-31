@@ -1,0 +1,40 @@
+{
+  "executor_status": "D0_D5_CONTRACT_CHECKS_PASS",
+  "primary_conclusion": "GATE_SUPPRESSION_SUPPORTED",
+  "csv_rows": {
+    "object_signal_scales": 160,
+    "gate_dose_response": 960,
+    "gradients": 168,
+    "checkpoint_5k_10k_comparison": 48,
+    "prototype_heatmap_index": 160,
+    "object_dependency_probes": 192,
+    "baseline_rollout_observations": 30,
+    "measurement_audit": 160
+  },
+  "matched_r5_rows": 54,
+  "max_r5_reproduction_error": 0.0,
+  "max_physical_bypass_difference": 0.0,
+  "max_repeat_difference": 0.0,
+  "initial_hash_verified_both": true,
+  "initial_object_internal_gradient_zero": true,
+  "gradient_finite_fraction": 1.0,
+  "parameter_buffer_states_unchanged": true,
+  "upstream_6_checkpoints_bank_source_sha_unchanged": true,
+  "no_checkpoint_weights_in_delivery": true,
+  "forbidden_update_or_weight_save_call_scan": "PASS",
+  "new_training_updates": 0,
+  "new_rollouts": 0,
+  "independent_builder_review": "PENDING",
+  "independent_redteam_review": "PENDING",
+  "git_diff_check": {
+    "full_worktree": {
+      "exit_code": 2,
+      "status": "FAIL_PREEXISTING_UNRELATED_GUIDE_WHITESPACE"
+    },
+    "changed_context_files": {
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  },
+  "scripts_compile": "PASS"
+}

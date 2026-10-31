@@ -1,0 +1,2 @@
+scope,infrastructure_rollouts,steps,policy_evaluation_episodes,status
+G1_NO_POLICY_SMOKE,3,60,0,RESET_STEP_RENDER_PASS_NOT_MODEL_SUCCESS

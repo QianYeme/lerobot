@@ -1,0 +1,7 @@
+kind,step,path,sha256,complete_resume,purpose
+act,5000,/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/act/checkpoints/005000/resume.pt,88dfc7bd94cf5be870f97d502d91096b5b940252bdecf059c2ae1a29686e3093,True,FORMAL_PILOT
+act,10000,/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/act/checkpoints/010000/resume.pt,db88858d6ecd7b3fe67da75649f3bd85cb5a7133ca31cb6e0056579040942ed1,True,FORMAL_PILOT
+legacy,5000,/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/checkpoints/005000/resume.pt,c18b6503988249ca9d7c3189891f917e8aed1e9f04185110366d2dcf6442c6d2,True,FORMAL_PILOT
+legacy,10000,/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/checkpoints/010000/resume.pt,b8126d91542fd5a7898f3120e6e9fd9b6a1fb85b9e47c315a133992edebdfa5f,True,FORMAL_PILOT
+fixed,5000,/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/checkpoints/005000/resume.pt,d63b762e7b4d9ed93f5c6bb175b3a793db2c3ea368099c26b3c1c0541552bfb1,True,FORMAL_PILOT
+fixed,10000,/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/checkpoints/010000/resume.pt,7852aac589649a67a69d22bb4b473bfd6e6e9f3d1f10ead3363132690720b727,True,FORMAL_PILOT

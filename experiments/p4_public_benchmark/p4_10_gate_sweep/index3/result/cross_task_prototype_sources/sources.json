@@ -1,0 +1,30 @@
+[
+  {
+    "episode": 810,
+    "frame": 32,
+    "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_10_gate_sweep/index3/result/cross_task_prototype_sources/ep810_f32.png",
+    "rgb_sha256": "9585bc5367497ac53f4d25fd3ecfd902c6dac2f12cd50dbde76a0f46598c3488",
+    "selection": "sorted Train quarter IDs,25%%frame; no confirmation images"
+  },
+  {
+    "episode": 935,
+    "frame": 34,
+    "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_10_gate_sweep/index3/result/cross_task_prototype_sources/ep935_f34.png",
+    "rgb_sha256": "edaf1c2f81de78d85faeeccc70da1c51254a00a0d8d218b14f082c3ddd53cff5",
+    "selection": "sorted Train quarter IDs,25%%frame; no confirmation images"
+  },
+  {
+    "episode": 1055,
+    "frame": 36,
+    "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_10_gate_sweep/index3/result/cross_task_prototype_sources/ep1055_f36.png",
+    "rgb_sha256": "0bd351013641343b1ff2582c5cffc1fd7280f3c65b1e9419cbe900e31d1d3457",
+    "selection": "sorted Train quarter IDs,25%%frame; no confirmation images"
+  },
+  {
+    "episode": 1153,
+    "frame": 32,
+    "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_10_gate_sweep/index3/result/cross_task_prototype_sources/ep1153_f32.png",
+    "rgb_sha256": "732f4b7b9099c158b0d73f140312f28ef0a96d86acac752bb61b21f2e61745aa",
+    "selection": "sorted Train quarter IDs,25%%frame; no confirmation images"
+  }
+]

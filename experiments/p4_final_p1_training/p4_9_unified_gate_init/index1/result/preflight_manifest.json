@@ -1,0 +1,135 @@
+{
+  "status": "ASSET_IDENTITY_PASS",
+  "formal6_revision": "83a829af6df245ed53596dbc22b18c19f8bd3315",
+  "formal6_cached_pinned_tree_file_checks": [
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/.gitattributes",
+      "hash": "bed0738c7eeb449bca98b5d2f33c89a1ee56349a"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/README.md",
+      "hash": "4f66c50a4146e35a4417e71c57cd084c0896612b"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/data/chunk-000/file-000.parquet",
+      "hash": "57d1975d1ddd8b2b7e48f90bafffd160a397924f9d8f2011da089c35714f2dd4"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/meta/episodes/chunk-000/file-000.parquet",
+      "hash": "141c5e40b5f1848c65481434dd6e77b520e5483e7a0f5ab87a96a88ad0f6401b"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/meta/info.json",
+      "hash": "f8f687a0e85acfb211581c5fb2c69f4d82b1bad9"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/meta/stats.json",
+      "hash": "1e524d4e1d28e7466ff791fc4b9891ac293cd205"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/meta/tasks.parquet",
+      "hash": "fe8d4db43d6bee100dc1c4ce636aa4be678502e93bbd6a83e8ba6dfe2e591317"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.gripper/chunk-000/file-000.mp4",
+      "hash": "69b9f1e4e3f1e59599f39972aaa7b989383799161b70bf6b252bd16d53c8dc37"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.gripper/chunk-000/file-001.mp4",
+      "hash": "4475dbe948b4edde9c39f4dd88cc55625e0f33b245d272d9bc695d81ad7016c7"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.gripper/chunk-000/file-002.mp4",
+      "hash": "1351d4e958b6dd780135f691b5746b91d650c5457caa67907bbe6e70a23a92d6"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.gripper/chunk-000/file-003.mp4",
+      "hash": "a318147d922ac6f89bb536c85b82f29e193b1cf3f73abfbbcd952816d77111aa"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.gripper/chunk-000/file-004.mp4",
+      "hash": "0aa294d76473bba4f45c939b052172cf3c1f931a3017e68e0a1f1462bb710fbb"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.gripper/chunk-000/file-005.mp4",
+      "hash": "d1ed9a795e06b55ab070a29d804054cafb6433901de5c8ddab8a57f04bae787c"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.gripper/chunk-000/file-006.mp4",
+      "hash": "4872c4a2e4cbec79316cc6151860308ca58a544f04dbaf8a377196cb0d9db73a"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.gripper/chunk-000/file-007.mp4",
+      "hash": "b95a9ccf618b603b92d0770e6f5a4036deb6519ba926bb316748db3cd3e30c7f"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.top/chunk-000/file-000.mp4",
+      "hash": "7202e90a6f790ae2968d30bd4638056be9a8e85bf5898371780bc3ac9cfa46b7"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.top/chunk-000/file-001.mp4",
+      "hash": "2866bf43f0085e09c77e7309068d293cb1083596ceb5d0e0945dce88778ae460"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.top/chunk-000/file-002.mp4",
+      "hash": "e25b64d0cd1655ae77bbdd0dd9a1712df87891237c6dc413be3f24881b6fa1b0"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.top/chunk-000/file-003.mp4",
+      "hash": "68b1c6af49e315e91bf89f2ad3f2649e39627a939e888cfb3b77e406def02e8f"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.top/chunk-000/file-004.mp4",
+      "hash": "4a98ff534407853403bae97012d9e29b1ab86dfa42c95b57b31ee34e546d9765"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.top/chunk-000/file-005.mp4",
+      "hash": "f4b8d16df48d82c813450ae0112595677711b31c10f7a24f695797354feefe5d"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.top/chunk-000/file-006.mp4",
+      "hash": "3ba70c25e9973d2b42aee0de20513dc2f359e8290c51f4c7c411709f211dab5a"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/outputs/p4_0/formal6_merged/videos/observation.images.top/chunk-000/file-007.mp4",
+      "hash": "d3d32c86fd9a4de2c2a7c84b8073f38c635d25be7dcc13b88b568127c5167561"
+    }
+  ],
+  "split": [
+    90,
+    15,
+    15
+  ],
+  "final_access": "ID list/hash only; no Final episode decoding, inference, or metrics",
+  "r5_assets_unchanged": 256,
+  "assets": [
+    {
+      "path": "/root/autodl-tmp/lerobot-main/src/lerobot/policies/act/modeling_act.py",
+      "sha256": "591b11963e3c386ffafbf7dc9696262f372b1db90174ab522e3235028f3851b7"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_2_1_dino_repair_parallel/index1/code/src/lerobot/policies/act/modeling_act.py",
+      "sha256": "08d63116d2f432bc9c5a77b8a067a6c3ddde1e40c2b40e56f92f4a37cb89b198"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_1_unattended_p1_pilot/index3/result/formal6_train90_prototypes.pt",
+      "sha256": "787a7084f1a387c71caaae635618458ec620b750d258df5df52578b1e7bc272f"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_1_unattended_p1_pilot/index3/result/train90_statistics.pt",
+      "sha256": "60303d64e5b7fed9059c91af5d62f153fe03d7ca5fbf6448f880e6602b672e84"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_bank.pt",
+      "sha256": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/train35_statistics.pt",
+      "sha256": "c01c7256ba2fb30047abf5038ffffab148d5a378d3fbc4a7ed61374be474608d"
+    }
+  ],
+  "initial_formal6_identity": "RECIPE_MATCHED_NOT_BYTE_MATCHED; historical step0 not persisted",
+  "resource": "Sat Oct 31 02:10:17 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 595.71.05              Driver Version: 595.71.05      CUDA Version: 13.2     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5090        On  |   00000000:27:00.0 Off |                  N/A |\n| 38%   27C    P8              7W /  575W |       2MiB /  32607MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+\n",
+  "free_disk_bytes": 63634632704,
+  "active_processes": "   PID COMMAND\n     1 bash /init/boot/boot.sh\n  1185 /bin/supervisord -c /init/supervisor/supervisor.ini\n  1206 /root/miniconda3/bin/python /root/miniconda3/bin/tensorboard --host 0.0.0.0 --port 6007 --logdir /root/tf-logs\n  1208 /root/miniconda3/bin/python /root/miniconda3/bin/jupyter-lab --allow-root --config=/init/jupyter/jupyter_config.py\n  1209 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups\n  1211 autopanel serve --work-dir=/root/autodl-tmp --cache-dir=/root/autodl-tmp\n  1212 proxy -c /init/proxy/proxy.ini\n  1213 proxy -c /init/proxy/proxy-hot-backup.ini\n  1277 /root/miniconda3/lib/python3.12/site-packages/tensorboard_data_server/bin/server --logdir=/root/tf-logs --reload=5 --samples-per-plugin= --port=0 --port-file=/tmp/tensorboard_data_server_8zq9nps5/port --die-after-stdin --error-file=/tmp/tensorboard_data_server_8zq9nps5/startup_error\n  2413 /root/.vscode-server/code-e646868227c3e3a9e3f24277c8c7220be42c0be7 --cli-data-dir /root/.vscode-server/cli agent host\n141452 /root/autodl-tmp/p48_isolated_env/bin/python -u /root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_9_unified_gate_init/index1/workspace/scripts/p49_preflight.py\n141459 ps -eo pid,args\n"
+}

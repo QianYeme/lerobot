@@ -1,0 +1,3821 @@
+{
+  "repo_id": "lerobot/libero-assets",
+  "revision": "0b3ea86be5fe169d0fd036ae63d1070ec09e90f6",
+  "files": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "2f7be7b964cb0059d4cec29ae28656f22fc16d07",
+      "size": 7723
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet.xml",
+      "blobId": "b013a18cbb3f74d25ce7bddc8c8fead049e617f2",
+      "size": 3442
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_base/basin_faucet_base.mtl",
+      "blobId": "9813ccd2b1c415c1fe8037b26751fe1392302325",
+      "size": 455
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_base/basin_faucet_base.obj",
+      "blobId": "a427f87ee90a2300d371d274f61bf7872358ee6e",
+      "size": 84367
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_base/basin_faucet_base.xml",
+      "blobId": "fb9b2c3815b55f26b6b66fe637d368f9c211728c",
+      "size": 1678
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_base/basin_faucet_base_col.obj",
+      "blobId": "eb1fbec254e9e11be0f45071cf1d4968e5b14f05",
+      "size": 2867
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_base/visual/basin_faucet_base_vis.msh",
+      "blobId": "e559f3395145373a31ecc2511d6ebad97c312363",
+      "size": 108664,
+      "lfs": {
+        "sha256": "198108aef8aa6509a7777a91e561e5631c12481582f6b624cecfb97c3139754e",
+        "size": 108664,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_movable/basin_faucet_movable.mtl",
+      "blobId": "c3196bf5d95ce14b880444ca1a456ed73c9d248c",
+      "size": 259
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_movable/basin_faucet_movable.obj",
+      "blobId": "e4af52b1d21b358551d6453567d495868d6fb05e",
+      "size": 34282
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_movable/basin_faucet_movable.xml",
+      "blobId": "85021f4d478458da039b974aecf99b0ae86e7b1e",
+      "size": 1468
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_movable/basin_faucet_movable_col.obj",
+      "blobId": "43248169bd08e4b8c4c390dfc5ef16626332c05c",
+      "size": 1914
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/basin_faucet_movable/visual/basin_faucet_movable_vis.msh",
+      "blobId": "dd00d30cd6d4bfe19fa15dca34888efcc2f73463",
+      "size": 46672
+    },
+    {
+      "rfilename": "articulated_objects/basin_faucet/ceramic.png",
+      "blobId": "891c50a69b45e57cc9befa6f8fcc579d35552fc4",
+      "size": 1442030,
+      "lfs": {
+        "sha256": "beef464a2aa9143ba6a25a44adcbfd1f1aff16c5969edbf08019b61025388402",
+        "size": 1442030,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "articulated_objects/faucet.xml",
+      "blobId": "01df1fcbe1119b389768aadbb90345af3dd2571d",
+      "size": 3128
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove.xml",
+      "blobId": "b64cb1d72dedd7dbc1b64e29d1368846d14da80a",
+      "size": 7180
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/button_dark_texture.png",
+      "blobId": "fee5b684002a6a3fe3601189cd272b25cc01c7cc",
+      "size": 156406,
+      "lfs": {
+        "sha256": "c4c9f069e1e5f976879466de9c2e158ed338f3d1fbf2a37c837abe8d432783a1",
+        "size": 156406,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/steel-scratched.png",
+      "blobId": "96c24dd05d9dd8ac7be045baf71c668582b1cd7d",
+      "size": 391216,
+      "lfs": {
+        "sha256": "7e22a111d516cc84addde9b2b18353d8a6ec521b9b79ec5e9c169e2d9000d3fe",
+        "size": 391216,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_burner/burnerplate.stl",
+      "blobId": "46740b572af7ae501a1e520460d8494af07d54f3",
+      "size": 35284
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_base/steel-scratched.png",
+      "blobId": "96c24dd05d9dd8ac7be045baf71c668582b1cd7d",
+      "size": 391216,
+      "lfs": {
+        "sha256": "7e22a111d516cc84addde9b2b18353d8a6ec521b9b79ec5e9c169e2d9000d3fe",
+        "size": 391216,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_base/stove_knob_base.mtl",
+      "blobId": "1b2ad651492e61c775026ee325c8fb6163f265bf",
+      "size": 251
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_base/stove_knob_base.obj",
+      "blobId": "c6e0744a307b701c00519c7734f64189948374ec",
+      "size": 7395
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_base/stove_knob_base.xml",
+      "blobId": "af75c8cd795c607da917f3261535b64e52dfbdfb",
+      "size": 4197
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_base/stove_knob_base_col.obj",
+      "blobId": "f71f74b19a21185f2400b3a3545417a0d1a89895",
+      "size": 13281
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_base/visual/stove_knob_base_vis.msh",
+      "blobId": "35c6f02defaa7e977b2600730802bdfb21435b7a",
+      "size": 13408
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_button/button_dark_texture.png",
+      "blobId": "fee5b684002a6a3fe3601189cd272b25cc01c7cc",
+      "size": 156406,
+      "lfs": {
+        "sha256": "c4c9f069e1e5f976879466de9c2e158ed338f3d1fbf2a37c837abe8d432783a1",
+        "size": 156406,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_button/steel-scratched.png",
+      "blobId": "96c24dd05d9dd8ac7be045baf71c668582b1cd7d",
+      "size": 391216,
+      "lfs": {
+        "sha256": "7e22a111d516cc84addde9b2b18353d8a6ec521b9b79ec5e9c169e2d9000d3fe",
+        "size": 391216,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_button/stove_knob_button.mtl",
+      "blobId": "629d6eb5f518f79b355f5c3fce6972e30a487cc1",
+      "size": 257
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_button/stove_knob_button.obj",
+      "blobId": "cf1a149774bfd5ac48ec72670148244e4d1a938e",
+      "size": 36265
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_button/stove_knob_button.xml",
+      "blobId": "663288fa6905bb924da023ddf2f3545ebc943375",
+      "size": 5154
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_button/stove_knob_button_col.obj",
+      "blobId": "1c9ffd7e0409b6d427716927623e2459d9fd1582",
+      "size": 17251
+    },
+    {
+      "rfilename": "articulated_objects/flat_stove/stove_knob_button/visual/stove_knob_button_vis.msh",
+      "blobId": "6cfac06573063313b1bbf565be497e0764dc99ee",
+      "size": 34792
+    },
+    {
+      "rfilename": "articulated_objects/meshes/faucet/faucetbase.stl",
+      "blobId": "ea2cbb42aec6e9cc90ad13aa177af60f54db98b8",
+      "size": 28884
+    },
+    {
+      "rfilename": "articulated_objects/meshes/faucet/faucethandle1.stl",
+      "blobId": "cc768c41deb0d19613d0c227c050a8b4c8c96c08",
+      "size": 6484
+    },
+    {
+      "rfilename": "articulated_objects/meshes/faucet/faucethead.stl",
+      "blobId": "4472d8fa9babc92e72aed091ede4f31bc9a0863b",
+      "size": 12884
+    },
+    {
+      "rfilename": "articulated_objects/meshes/microwave/micro.stl",
+      "blobId": "6ed68021611282d23877e12e459b069f1b870fb7",
+      "size": 14484
+    },
+    {
+      "rfilename": "articulated_objects/meshes/microwave/microbutton.stl",
+      "blobId": "2d7f1e331fa0bebfb4d63bf9112544a494d726bc",
+      "size": 5484
+    },
+    {
+      "rfilename": "articulated_objects/meshes/microwave/microdoor.stl",
+      "blobId": "fa8c5485aae408445e6cbe8b9d74d8296330f3b5",
+      "size": 6484
+    },
+    {
+      "rfilename": "articulated_objects/meshes/microwave/microefeet.stl",
+      "blobId": "98e7069b093a1cee33c7cdd16543e279cf7228c7",
+      "size": 7284
+    },
+    {
+      "rfilename": "articulated_objects/meshes/microwave/microfeet.stl",
+      "blobId": "a5162995d483bb128115dc373b47474288adc03d",
+      "size": 7284
+    },
+    {
+      "rfilename": "articulated_objects/meshes/microwave/microhandle.stl",
+      "blobId": "ed31a707e48a7c97ab45ee06277372be436c4a6c",
+      "size": 8284
+    },
+    {
+      "rfilename": "articulated_objects/meshes/microwave/microwindow.stl",
+      "blobId": "07d3c85b182f6b25099a4303d23800859daac303",
+      "size": 684
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/window_base.stl",
+      "blobId": "8d880199346ed2c97e92e54ef18e7f4386a4cf66",
+      "size": 2284
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/window_frame.stl",
+      "blobId": "a0f4f8a8c0028b2a68a2fa80aa5fcf4a9d0e5a3d",
+      "size": 6484
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/window_h_base.stl",
+      "blobId": "c9dcfa88e6e1a5811b235c16321c5c072e5a40df",
+      "size": 2284
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/window_h_frame.stl",
+      "blobId": "b6008246d5481f115be285951e2cd633b754a5f1",
+      "size": 6484
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/windowa_frame.stl",
+      "blobId": "2eb2eb550a6ee212ff2317d406e9cee09218ece3",
+      "size": 7684
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/windowa_glass.stl",
+      "blobId": "f44bd3127738377d6611efa3bf58f7ec5d7298df",
+      "size": 684
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/windowa_h_frame.stl",
+      "blobId": "12cb48c8f960fee375ee2760f9dcf45c11ce6fd5",
+      "size": 7684
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/windowa_h_glass.stl",
+      "blobId": "4c329c6bc91c1ea08472fabd7e79bd61e9e483a7",
+      "size": 684
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/windowb_frame.stl",
+      "blobId": "6ca31585c7776fb0847f77fc64177101f89a6fda",
+      "size": 8284
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/windowb_glass.stl",
+      "blobId": "c8e311622419302d2e8b75ad13b76ed38a339982",
+      "size": 684
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/windowb_h_frame.stl",
+      "blobId": "725827171d927975cf395d5b3e6a51e19fed4f91",
+      "size": 8284
+    },
+    {
+      "rfilename": "articulated_objects/meshes/window/windowb_h_glass.stl",
+      "blobId": "fefd5c1af5e2f7bad39f950574aa2cf84b3f687b",
+      "size": 684
+    },
+    {
+      "rfilename": "articulated_objects/microwave.xml",
+      "blobId": "14a1522a333c54e6bc74c779fcbfba2ac79e1a0f",
+      "size": 4442
+    },
+    {
+      "rfilename": "articulated_objects/microwave/micro.stl",
+      "blobId": "6ed68021611282d23877e12e459b069f1b870fb7",
+      "size": 14484
+    },
+    {
+      "rfilename": "articulated_objects/microwave/microbutton.stl",
+      "blobId": "2d7f1e331fa0bebfb4d63bf9112544a494d726bc",
+      "size": 5484
+    },
+    {
+      "rfilename": "articulated_objects/microwave/microdoor.stl",
+      "blobId": "fa8c5485aae408445e6cbe8b9d74d8296330f3b5",
+      "size": 6484
+    },
+    {
+      "rfilename": "articulated_objects/microwave/microefeet.stl",
+      "blobId": "98e7069b093a1cee33c7cdd16543e279cf7228c7",
+      "size": 7284
+    },
+    {
+      "rfilename": "articulated_objects/microwave/microfeet.stl",
+      "blobId": "a5162995d483bb128115dc373b47474288adc03d",
+      "size": 7284
+    },
+    {
+      "rfilename": "articulated_objects/microwave/microhandle.stl",
+      "blobId": "ed31a707e48a7c97ab45ee06277372be436c4a6c",
+      "size": 8284
+    },
+    {
+      "rfilename": "articulated_objects/microwave/microwindow.stl",
+      "blobId": "07d3c85b182f6b25099a4303d23800859daac303",
+      "size": 684
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet.xml",
+      "blobId": "c7d37911571ae698978f58efce9a32d14551641c",
+      "size": 11895
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/base/base.xml",
+      "blobId": "9017625db77f6da9188f72ffabb446774662ad57",
+      "size": 2236
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/base/base_col.obj",
+      "blobId": "1a130dc141ae9f1d141e64a86b691ee4a494e54f",
+      "size": 5648
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/base/base_vis.mtl",
+      "blobId": "6d3320726e01b4c86efa72bfb0f65c5054931ff6",
+      "size": 231
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/base/base_vis.obj",
+      "blobId": "6e81834969435175a46c024fa98d1b8812f85e3a",
+      "size": 8639
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/base/base_vis.xml",
+      "blobId": "982355a5ba3d51919943d34d4605b8ed8ba6a511",
+      "size": 2246
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/base/dark-wood.png",
+      "blobId": "09784cca1e9f2de13f0306189a9ad21aaa47241b",
+      "size": 239227,
+      "lfs": {
+        "sha256": "5da8dbf7af06ecd251840aceec25fedcfa98267041cea289b2829c982e008dc3",
+        "size": 239227,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/base/visual/base_vis_vis.msh",
+      "blobId": "4026619bd9a5c6ba825b47030380aa69d4743c94",
+      "size": 10384
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_high/drawer_high.mtl",
+      "blobId": "05a115df4a7c85854b01aecdacd8723c47c70b0d",
+      "size": 418
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_high/drawer_high.obj",
+      "blobId": "75c4edbb7cb03eb5fbbe15b7703ae2224fbe3773",
+      "size": 95383
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_high/drawer_high.xml",
+      "blobId": "9456933fd47053ee964098675deab3363ad901c3",
+      "size": 3206
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_high/drawer_high_col.obj",
+      "blobId": "3fad6e2877d9f92627ef69c576a32b8bd38a3d52",
+      "size": 9516
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_high/visual/drawer_high_vis.msh",
+      "blobId": "4c2e869c1b562a92641dfb7ffa3b3699e4ce19d0",
+      "size": 155104,
+      "lfs": {
+        "sha256": "d8b0b9c069a6ceab249afdecd63a5f79d45af72c1cf80a4e0685fe7e638f96c1",
+        "size": 155104,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_low/drawer_low.mtl",
+      "blobId": "ccea7e0493e9e42e1d5bb9824a9eca8e4f107919",
+      "size": 417
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_low/drawer_low.obj",
+      "blobId": "b5f7d793529d2c415fa250962ab1ad90900ab917",
+      "size": 96112
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_low/drawer_low.xml",
+      "blobId": "3add0b3e46a0ade30c1bc0b68ff6163e42f3af24",
+      "size": 3208
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_low/drawer_low_col.obj",
+      "blobId": "e5d091cf59300f3e72224719b38a6aaba17462e0",
+      "size": 9593
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_low/visual/drawer_low_vis.msh",
+      "blobId": "9690c9a6f52965ed6825c4ecf6545e43525e3d44",
+      "size": 155104,
+      "lfs": {
+        "sha256": "5bc6f541d59cfc15a58d7c5ed37a7d66dcc1c7145efb6997d3cffdb3bd68ecc4",
+        "size": 155104,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_middle/drawer_middle.mtl",
+      "blobId": "f2bd1014d48f5dd7c30c41dfec2d9c1eb432c370",
+      "size": 420
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_middle/drawer_middle.obj",
+      "blobId": "0bba74bddbbc62676c3851dd247b9149eb5fef9c",
+      "size": 95595
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_middle/drawer_middle.xml",
+      "blobId": "6e5f634cbe7e654fb8510b056a09d166d1210ffb",
+      "size": 3226
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_middle/drawer_middle_col.obj",
+      "blobId": "7e842f90d08815eeccbc147e4aa19d1172b29092",
+      "size": 9578
+    },
+    {
+      "rfilename": "articulated_objects/short_cabinet/drawer_middle/visual/drawer_middle_vis.msh",
+      "blobId": "a48553b583633617bff03cef2530d2131023faf2",
+      "size": 155104,
+      "lfs": {
+        "sha256": "57c71536261b759a2260de5ee0c9b22d393574f3024542e6913632ad86c87865",
+        "size": 155104,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge.xml",
+      "blobId": "b7ba0481e9c03d578413489a718fff0632182559",
+      "size": 6713
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/base/base.mtl",
+      "blobId": "8f64e45e2c17a6da0b600de06bea5f418b28c5f5",
+      "size": 968
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/base/base.obj",
+      "blobId": "c9e61548ab14d200cda18e09fa4d0d0222472f43",
+      "size": 265129
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/base/base.xml",
+      "blobId": "db8cabfbd6c32a85dbd40e9eb8cfaa4ade6f8525",
+      "size": 3628
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/base/base_col.obj",
+      "blobId": "2e0c2fb092a3fc477ee8eaf629425f1327b62bd5",
+      "size": 11530
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/base/visual/base_layers_vis.msh",
+      "blobId": "367ea7631e154f6ad67e34632c6c1f1ff7fff357",
+      "size": 13624
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/base/visual/base_vis.msh",
+      "blobId": "321895eb9370292062b23b6a406168eff18ae6b4",
+      "size": 410848,
+      "lfs": {
+        "sha256": "1909bc959ccd4547b036b3722d62e4b6286b1494e08f337438006ed8d95e3285",
+        "size": 410848,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/door/door.mtl",
+      "blobId": "f4beff40b6c9aad244d19167b1000289e84efda8",
+      "size": 606
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/door/door.obj",
+      "blobId": "42de189d897dcaf2ef13a55aa8f904e1ac997b42",
+      "size": 7249
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/door/door.xml",
+      "blobId": "058703c5fa3d05aa1f204dd1621ec40183d41a83",
+      "size": 2204
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/door/door_col.obj",
+      "blobId": "85f5874b8945911091ef113739cd34d514c2dd9e",
+      "size": 5671
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/door/visual/door_vis.msh",
+      "blobId": "2be7857eb3bdaaa1f3e6423a021600d128b32c4a",
+      "size": 14704
+    },
+    {
+      "rfilename": "articulated_objects/short_fridge/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/slide_cabinet.xml",
+      "blobId": "5d444be0084c755491caf7aaba5d1b29cd9a891b",
+      "size": 3738
+    },
+    {
+      "rfilename": "articulated_objects/textures/metal1.png",
+      "blobId": "990982000adb702df9f849d5812443b85f34259c",
+      "size": 289552,
+      "lfs": {
+        "sha256": "0d25fa8affbb0f579220f0cdad6ee74f875495822ee79bb5afd23d73671f6363",
+        "size": 289552,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/textures/metal2.png",
+      "blobId": "aa754a46d765eba08bc7c71bc465b78e27fb1e66",
+      "size": 228486,
+      "lfs": {
+        "sha256": "70bf8f1c02841b802bcdabd734c8190f39e45cb3b4f916ddcad22335a26d5c12",
+        "size": 228486,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet.xml",
+      "blobId": "01acc4c96feb075ecd1ffbba452599416f2f6aca",
+      "size": 14365
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet/white_cabinet_base/visual/white_cabinet_base_vis.msh",
+      "blobId": "e8d8a999b50da6c7f2b4896bab59a19749be4f32",
+      "size": 21400
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet/white_cabinet_bottom/visual/white_cabinet_bottom_vis.msh",
+      "blobId": "26ffd95a0eebcc7abf96f4afb106ec1311116478",
+      "size": 9088
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet/white_cabinet_bottom_handle/visual/white_cabinet_bottom_handle_vis.msh",
+      "blobId": "af2f7d708366aae9fc6d878d7bea1493b6d9c755",
+      "size": 40192
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet/white_cabinet_middle/visual/white_cabinet_middle_vis.msh",
+      "blobId": "74bc8594b02936b1b652ba6abb43d3973da15a0b",
+      "size": 9088
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet/white_cabinet_middle_handle/visual/white_cabinet_middle_handle_vis.msh",
+      "blobId": "e14ba760bcc35281e8a15c2d49a689ceb94e6b2f",
+      "size": 40192
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet/white_cabinet_top/visual/white_cabinet_top_vis.msh",
+      "blobId": "e47e2966277288ffc240ddb9b6fbba835f03ef9c",
+      "size": 9088
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet/white_cabinet_top_handle/visual/white_cabinet_top_handle_vis.msh",
+      "blobId": "cb4cc931e5349e12ba23554af9bef8fb4a9f80b3",
+      "size": 40192
+    },
+    {
+      "rfilename": "articulated_objects/white_cabinet/white_wood.png",
+      "blobId": "1fcaab2ac22ebd3f04707caeb29c56a58927eb47",
+      "size": 2209978,
+      "lfs": {
+        "sha256": "43524d6bca8df5042d5b45d0b0e458f34ea7f2d6445d026c5b204ee32acd8bea",
+        "size": 2209978,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "articulated_objects/window.xml",
+      "blobId": "bd77f163a1e9ab804a655669fc67076bc5aa73af",
+      "size": 6773
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet.xml",
+      "blobId": "25be7cb2b37dafb6272c6b1f9561eb9b841fdf4c",
+      "size": 14435
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/dark_fine_wood.png",
+      "blobId": "6d79f8b77af90bf818d4182a678688eefe74d3b6",
+      "size": 42358,
+      "lfs": {
+        "sha256": "9aaa94ef4cd61592b566569bba3569276a38ea5ff22ed4b978b77b038b38a11f",
+        "size": 42358,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_base/dark_fine_wood.png",
+      "blobId": "6d79f8b77af90bf818d4182a678688eefe74d3b6",
+      "size": 42358,
+      "lfs": {
+        "sha256": "9aaa94ef4cd61592b566569bba3569276a38ea5ff22ed4b978b77b038b38a11f",
+        "size": 42358,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_base/visual/wooden_cabinet_base_vis.msh",
+      "blobId": "e8d8a999b50da6c7f2b4896bab59a19749be4f32",
+      "size": 21400
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_base/wooden_cabinet_base.mtl",
+      "blobId": "19ffce7e5647580c08c4424edf3abea218d16f0c",
+      "size": 493
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_base/wooden_cabinet_base.obj",
+      "blobId": "490e9d18a3d4352b0ca33c99d50fad85e91b1d86",
+      "size": 14231
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_base/wooden_cabinet_base.xml",
+      "blobId": "d0933207c5330bab28e2db41f11c17fb5d71969b",
+      "size": 3037
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_base/wooden_cabinet_base_col.obj",
+      "blobId": "2f8f50ebf2a6eefab21e41b1faeb4d3cec743a6d",
+      "size": 11202
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom/dark_fine_wood.png",
+      "blobId": "6d79f8b77af90bf818d4182a678688eefe74d3b6",
+      "size": 42358,
+      "lfs": {
+        "sha256": "9aaa94ef4cd61592b566569bba3569276a38ea5ff22ed4b978b77b038b38a11f",
+        "size": 42358,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom/visual/wooden_cabinet_bottom_vis.msh",
+      "blobId": "26ffd95a0eebcc7abf96f4afb106ec1311116478",
+      "size": 9088
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom/wooden_cabinet_bottom.mtl",
+      "blobId": "3c711c85a800416c1ea8191ed1cbdf2fabb7bdfd",
+      "size": 252
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom/wooden_cabinet_bottom.obj",
+      "blobId": "818a91e25119fffdac887617d2c0763d7e638503",
+      "size": 5341
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom/wooden_cabinet_bottom.xml",
+      "blobId": "3788246076751e251d0f49c40afcc042353b3e45",
+      "size": 2350
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom/wooden_cabinet_bottom_col.obj",
+      "blobId": "af403f737ecef2c9b01ae72e9d3fec520bf546fd",
+      "size": 5609
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom_handle/dark_fine_wood.png",
+      "blobId": "6d79f8b77af90bf818d4182a678688eefe74d3b6",
+      "size": 42358,
+      "lfs": {
+        "sha256": "9aaa94ef4cd61592b566569bba3569276a38ea5ff22ed4b978b77b038b38a11f",
+        "size": 42358,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom_handle/visual/wooden_cabinet_bottom_handle_vis.msh",
+      "blobId": "af2f7d708366aae9fc6d878d7bea1493b6d9c755",
+      "size": 40192
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom_handle/wooden_cabinet_bottom_handle.mtl",
+      "blobId": "c46aae1cb8447f169997118df8deb2199c73d0ee",
+      "size": 437
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom_handle/wooden_cabinet_bottom_handle.obj",
+      "blobId": "1f2cf2263dc8715737bc7b2f0dc2a2ba4fd1a608",
+      "size": 22912
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom_handle/wooden_cabinet_bottom_handle.xml",
+      "blobId": "73c403305b30e076202dc8ef4cb2ea2acd705dae",
+      "size": 1704
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_bottom_handle/wooden_cabinet_bottom_handle_col.obj",
+      "blobId": "dd2da7097c1cd32be86bf50762fcb6d6b54e5668",
+      "size": 2820
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle/dark_fine_wood.png",
+      "blobId": "6d79f8b77af90bf818d4182a678688eefe74d3b6",
+      "size": 42358,
+      "lfs": {
+        "sha256": "9aaa94ef4cd61592b566569bba3569276a38ea5ff22ed4b978b77b038b38a11f",
+        "size": 42358,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle/visual/wooden_cabinet_middle_vis.msh",
+      "blobId": "74bc8594b02936b1b652ba6abb43d3973da15a0b",
+      "size": 9088
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle/wooden_cabinet_middle.mtl",
+      "blobId": "9c6f534eeda444ee74907625ffb1772d98311994",
+      "size": 252
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle/wooden_cabinet_middle.obj",
+      "blobId": "58996074a8ad9de5cc1fcd67d2144d079f4ec7a8",
+      "size": 5332
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle/wooden_cabinet_middle.xml",
+      "blobId": "095ce2ba4e5cfed3d8d32797760a91b4e803a1d1",
+      "size": 2350
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle/wooden_cabinet_middle_col.obj",
+      "blobId": "8bc326bcd34d1fd107ee31f656c4ab940f44658e",
+      "size": 5609
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle_handle/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle_handle/visual/wooden_cabinet_middle_handle_vis.msh",
+      "blobId": "e14ba760bcc35281e8a15c2d49a689ceb94e6b2f",
+      "size": 40192
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle_handle/wooden_cabinet_middle_handle.mtl",
+      "blobId": "711a33f5480ac1113ffc7e4f14cd3c71511eaab8",
+      "size": 437
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle_handle/wooden_cabinet_middle_handle.obj",
+      "blobId": "dac4a6638cbfddb772ebc1b4e3224772b8d06800",
+      "size": 22912
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle_handle/wooden_cabinet_middle_handle.xml",
+      "blobId": "30dc5a80b8c5d8a3ebdd5b8217394b18703671c6",
+      "size": 1695
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_middle_handle/wooden_cabinet_middle_handle_col.obj",
+      "blobId": "202fffa3a424c5195e9a18ff81ee08d631ae8916",
+      "size": 2820
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top/dark_fine_wood.png",
+      "blobId": "6d79f8b77af90bf818d4182a678688eefe74d3b6",
+      "size": 42358,
+      "lfs": {
+        "sha256": "9aaa94ef4cd61592b566569bba3569276a38ea5ff22ed4b978b77b038b38a11f",
+        "size": 42358,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top/visual/wooden_cabinet_top_vis.msh",
+      "blobId": "e47e2966277288ffc240ddb9b6fbba835f03ef9c",
+      "size": 9088
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top/wooden_cabinet_top.mtl",
+      "blobId": "27e9ca508964c98db224d9b7cf5fa26dbf1a4aa1",
+      "size": 253
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top/wooden_cabinet_top.obj",
+      "blobId": "e7102c3858c7bcadd16381e745680591fca22498",
+      "size": 5342
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top/wooden_cabinet_top.xml",
+      "blobId": "53e6bb9d5cfef16f308dac8f77865016a448f506",
+      "size": 2326
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top/wooden_cabinet_top_col.obj",
+      "blobId": "aef64c1bc92bcec5e1fb2a64a29dc6ca604a8962",
+      "size": 5606
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top_handle/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top_handle/visual/wooden_cabinet_top_handle_vis.msh",
+      "blobId": "cb4cc931e5349e12ba23554af9bef8fb4a9f80b3",
+      "size": 40192
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top_handle/wooden_cabinet_top_handle.mtl",
+      "blobId": "6687ded9bb7e5e794cb7ed64a77f213d4c39bad3",
+      "size": 434
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top_handle/wooden_cabinet_top_handle.obj",
+      "blobId": "6b3a88ba7562eee254108336a87ddb5aa5ba8b01",
+      "size": 22909
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top_handle/wooden_cabinet_top_handle.xml",
+      "blobId": "fec28e2cdf3dcdbecb02d9597ebe62959f5f907c",
+      "size": 1671
+    },
+    {
+      "rfilename": "articulated_objects/wooden_cabinet/wooden_cabinet_top_handle/wooden_cabinet_top_handle_col.obj",
+      "blobId": "b27f829b01f62d43d5d393e62b1bf2fed67211e8",
+      "size": 2817
+    },
+    {
+      "rfilename": "scenes/black_book/black_book.mtl",
+      "blobId": "816b86737f9684bfba4785c83d5217a3b6d7aa13",
+      "size": 657
+    },
+    {
+      "rfilename": "scenes/black_book/black_book.obj",
+      "blobId": "34025c798161d9293fa521ad2781f8bcdda68764",
+      "size": 512689
+    },
+    {
+      "rfilename": "scenes/black_book/black_book.xml",
+      "blobId": "572749cac2d61accd69de02b77f1e1c3f5089a02",
+      "size": 1094
+    },
+    {
+      "rfilename": "scenes/black_book/black_book_texture.png",
+      "blobId": "358503c8920d9045b63750a64c6199043ec47d47",
+      "size": 186624,
+      "lfs": {
+        "sha256": "b743b0e878a10e579371707f3d135c6e7a80a8c307fffabfe1fea6a784830ec2",
+        "size": 186624,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/black_book/collision/black_book_ch.stl",
+      "blobId": "ed65ad7a26968e7a322ee67e34258d13ae5040df",
+      "size": 3884
+    },
+    {
+      "rfilename": "scenes/black_book/visual/black_book_vis.msh",
+      "blobId": "0bc60c6bbefe822be317f8875128f86087f92f15",
+      "size": 773296,
+      "lfs": {
+        "sha256": "ca4a7f95bad5dee37a99c0374df132eadf5f8304770e5830f3286d730c844049",
+        "size": 773296,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/coffee_table_seats/FabricLeatherBuffaloRustic001_COL_VAR1_4K.png",
+      "blobId": "0524cd5a1f5943c6dd50a23599834ac0cb28cbac",
+      "size": 12825082,
+      "lfs": {
+        "sha256": "6fabe46d134c4e0c7058795535df2e84a34bd5e2af83f881037a398f20629d57",
+        "size": 12825082,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "scenes/coffee_table_seats/coffee_table_seats.mtl",
+      "blobId": "dfd171b1c1f172a11283c76538cb7ef2435fedaa",
+      "size": 293
+    },
+    {
+      "rfilename": "scenes/coffee_table_seats/coffee_table_seats.obj",
+      "blobId": "f90232a7940d323d7cf4bd7701618fdf9659abc8",
+      "size": 1633914
+    },
+    {
+      "rfilename": "scenes/coffee_table_seats/coffee_table_seats.xml",
+      "blobId": "ce49fec39ab49746af9ae5f759e17e564d2e0f08",
+      "size": 1205
+    },
+    {
+      "rfilename": "scenes/coffee_table_seats/collision/coffee_table_seats_ch.stl",
+      "blobId": "ac20fa71f6a3dd86da7f81d7d38adb6b5ae42bd3",
+      "size": 103284,
+      "lfs": {
+        "sha256": "9017472a107c5e56c5222ca5212163b3156d19d10c773a717a835046d3cd81c3",
+        "size": 103284,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/coffee_table_seats/visual/coffee_table_seats_vis.msh",
+      "blobId": "04ebd13c7c5721eaa6337ffcd503ec42d0f4dc08",
+      "size": 2073616,
+      "lfs": {
+        "sha256": "a206214be7f9ebb9d1a0358fffe07efbdae513e822371803480da67d4b7ae0fd",
+        "size": 2073616,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/desk/desk.mtl",
+      "blobId": "03b24252a3584ff238013d64f2c3d692390c25a2",
+      "size": 657
+    },
+    {
+      "rfilename": "scenes/desk/desk.obj",
+      "blobId": "d8ec9217d234051506bdef07816b03e4b9556149",
+      "size": 380512
+    },
+    {
+      "rfilename": "scenes/desk/desk.xml",
+      "blobId": "f197d078b7836e381fa8b687ec21fca95aafac78",
+      "size": 2453
+    },
+    {
+      "rfilename": "scenes/desk/desk_col.obj",
+      "blobId": "52dcd9625b6173d0dd0f28d4b5654be4fdf3d799",
+      "size": 6524
+    },
+    {
+      "rfilename": "scenes/desk/desk_texture.png",
+      "blobId": "63056f46962891d8bb28e3cf12820c57f517ea35",
+      "size": 489350,
+      "lfs": {
+        "sha256": "f1f228aca1dab2c88833d00d10983d3df62e64569bb61ad66865490cbd08a5c3",
+        "size": 489350,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/desk/visual/desk_vis.msh",
+      "blobId": "49d4431fe59972a7abd262c753a9a8ee0159db4c",
+      "size": 742624,
+      "lfs": {
+        "sha256": "b883c91335372a5f7be2af0b83b95d2db429a5010110c8ca9739aef03d15f8f3",
+        "size": 742624,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/floor_lamp/collision/floor_lamp_ch.stl",
+      "blobId": "c7d7bc8d33dc0c43e59f0a86d757dad622d7e3da",
+      "size": 149584,
+      "lfs": {
+        "sha256": "47f1aa661fb6f911b3ace8b56dc2ea048a2a62b1e65a197252a2076561723191",
+        "size": 149584,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/floor_lamp/floor_lamp.mtl",
+      "blobId": "3a525c1434e9ff8d0ea6ccd9f4dbf987b62ce1c3",
+      "size": 2447
+    },
+    {
+      "rfilename": "scenes/floor_lamp/floor_lamp.obj",
+      "blobId": "24e5894dc48fd27a09582847122a558c91cc0d00",
+      "size": 5687626
+    },
+    {
+      "rfilename": "scenes/floor_lamp/floor_lamp.xml",
+      "blobId": "255e97f34a6b230593c9485343ae138fe4a7976e",
+      "size": 1088
+    },
+    {
+      "rfilename": "scenes/floor_lamp/lamp_texture.png",
+      "blobId": "acba83fc726f4a4a447d7b24c60a99e03e467e82",
+      "size": 24160,
+      "lfs": {
+        "sha256": "a9735321ebc866113449bc4debb0c078752389d2b50541313ae7788f0fcde80d",
+        "size": 24160,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "scenes/floor_lamp/visual/floor_lamp_vis.msh",
+      "blobId": "5bd2f9e63d84a71cfc7453aeb30cb00934762d3a",
+      "size": 7983160,
+      "lfs": {
+        "sha256": "6de4776381809fdc2f7a6eae997a8269fb40fe09ef977e05a3e4fa1949a4e949",
+        "size": 7983160,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/fridge/collision/fridge_ch.stl",
+      "blobId": "7d61fc964e2cacc69c28cbbc1cbe673ad47b9b41",
+      "size": 43284
+    },
+    {
+      "rfilename": "scenes/fridge/fridge.mtl",
+      "blobId": "2926b5c68853c0722df159a355039e1b3d889be5",
+      "size": 265
+    },
+    {
+      "rfilename": "scenes/fridge/fridge.obj",
+      "blobId": "2fdb991eb1c1b10293db960e65fe4b16ddc64127",
+      "size": 878298
+    },
+    {
+      "rfilename": "scenes/fridge/fridge.xml",
+      "blobId": "ec80d6280eb9361b8533550cb099cd370b8425ea",
+      "size": 1057
+    },
+    {
+      "rfilename": "scenes/fridge/kitchen_fridge_background.png",
+      "blobId": "4a13325a5d80222348e6db291580db8403fb9d89",
+      "size": 26145,
+      "lfs": {
+        "sha256": "f29dcf2c6135094db9dc5800756fa41806d0d9f299d9bf897bc464ab6c2cc163",
+        "size": 26145,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "scenes/fridge/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/fridge/steel-scratched.png",
+      "blobId": "96c24dd05d9dd8ac7be045baf71c668582b1cd7d",
+      "size": 391216,
+      "lfs": {
+        "sha256": "7e22a111d516cc84addde9b2b18353d8a6ec521b9b79ec5e9c169e2d9000d3fe",
+        "size": 391216,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/fridge/visual/fridge_vis.msh",
+      "blobId": "eb6469cd2597465094c0fd2bd942c11d3cfcbcfc",
+      "size": 1395808,
+      "lfs": {
+        "sha256": "41edbedd182c3c27ffe8bc2c2808f61bc575c80bc37d717a17af71d10a04a208",
+        "size": 1395808,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/kitchen_background/collision/kitchen_background_ch.stl",
+      "blobId": "41f21089b79fb704c6abdb0566f5172fb7a50732",
+      "size": 5284
+    },
+    {
+      "rfilename": "scenes/kitchen_background/kitchen_background.mtl",
+      "blobId": "fdd907d2ed2ef763a0b35219c7436c6e9dd6b833",
+      "size": 2509
+    },
+    {
+      "rfilename": "scenes/kitchen_background/kitchen_background.obj",
+      "blobId": "d281a3daea9c27e195b2c71b7f613848a51fc5d2",
+      "size": 4942104
+    },
+    {
+      "rfilename": "scenes/kitchen_background/kitchen_background.png",
+      "blobId": "b10ed8c3d14c790612adcc9004af3e417f9b0bf2",
+      "size": 172490,
+      "lfs": {
+        "sha256": "cb9379766b531eb8e6f44a1fa3df92430e0c73c6c3856a88521510e689bca15a",
+        "size": 172490,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/kitchen_background/kitchen_background.xml",
+      "blobId": "76e3aa06b734bf8dae91e002deeaa9c7744bffb9",
+      "size": 1194
+    },
+    {
+      "rfilename": "scenes/kitchen_background/visual/kitchen_background_vis.msh",
+      "blobId": "6d5c41ef108ada1f25d2acb1eca6b2281d32e50c",
+      "size": 7534528,
+      "lfs": {
+        "sha256": "6b2487166e07650ba787129919fb3c4f77bfd912fdd4e265f5bf68992175417a",
+        "size": 7534528,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/kitchen_background_hot_pot/collision/kitchen_background_hot_pot_ch.stl",
+      "blobId": "3a25097efbbd712282cdf3e10525cb53047bb82a",
+      "size": 52284
+    },
+    {
+      "rfilename": "scenes/kitchen_background_hot_pot/kitchen_background_hot_pot.mtl",
+      "blobId": "f6e305e900c9c4eff22820e0c855ce6f3e9d332d",
+      "size": 376
+    },
+    {
+      "rfilename": "scenes/kitchen_background_hot_pot/kitchen_background_hot_pot.obj",
+      "blobId": "78b14c67282b0fb47afac614f02ae5f4600cf75a",
+      "size": 536306
+    },
+    {
+      "rfilename": "scenes/kitchen_background_hot_pot/kitchen_background_hot_pot.xml",
+      "blobId": "3f24d154c8fdc25e6f471081b4d1b796007e1e59",
+      "size": 1278
+    },
+    {
+      "rfilename": "scenes/kitchen_background_hot_pot/visual/kitchen_background_hot_pot_vis.msh",
+      "blobId": "40aea0d40c9751bf2d682501e5cab86818ac8ed6",
+      "size": 845440,
+      "lfs": {
+        "sha256": "05c173fb9ae96f7ed2fdccbeb14abb38e8db601f7802e9b78db04d9a5e2b0ce2",
+        "size": 845440,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/kitchen_background_pot/collision/kitchen_background_pot_ch.stl",
+      "blobId": "ba448f6081726252cd9b84def2b8ddc7cdb90d16",
+      "size": 183784,
+      "lfs": {
+        "sha256": "91f3a0265ed7173debf1a4fd12216f0c2edf696967d84a21ac5f36a0875df996",
+        "size": 183784,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/kitchen_background_pot/kitchen_background_pot.mtl",
+      "blobId": "8a6d981986f12e404e51d218887f6e88c2c09278",
+      "size": 1197
+    },
+    {
+      "rfilename": "scenes/kitchen_background_pot/kitchen_background_pot.obj",
+      "blobId": "db309cbcf570a1a2ba70dfc5f5ca92de6c928b46",
+      "size": 3828839
+    },
+    {
+      "rfilename": "scenes/kitchen_background_pot/kitchen_background_pot.png",
+      "blobId": "55e2259ee375b9406909bda088cb1804d16a3eaf",
+      "size": 19103,
+      "lfs": {
+        "sha256": "d953b50c28c2e7c42e5a31bee757984ea398ce464917edb4d02cb188dfc9b44f",
+        "size": 19103,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "scenes/kitchen_background_pot/kitchen_background_pot.xml",
+      "blobId": "65646e467269a2f4c86ec64c2ced3593464d983e",
+      "size": 1242
+    },
+    {
+      "rfilename": "scenes/kitchen_background_pot/visual/kitchen_background_pot_vis.msh",
+      "blobId": "2c715822e901fdb0a9cd30c3a2ac405750e50a85",
+      "size": 4344316,
+      "lfs": {
+        "sha256": "f3348ee8738bcaf84b6f9df6cae65d764bbc159410aea32d5d40c09dc58b69ec",
+        "size": 4344316,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/kitchen_background_stove/collision/kitchen_background_stove_ch.stl",
+      "blobId": "9e5ca16cff0db69b20301621579396c8399d5be2",
+      "size": 17584
+    },
+    {
+      "rfilename": "scenes/kitchen_background_stove/kitchen_background_stove.mtl",
+      "blobId": "7ac8452c30ac8d83ece972be1b122e49f42c6aca",
+      "size": 861
+    },
+    {
+      "rfilename": "scenes/kitchen_background_stove/kitchen_background_stove.obj",
+      "blobId": "b6a4c4ef5a651d2f481623d8fe178a21f52bd62c",
+      "size": 5189498
+    },
+    {
+      "rfilename": "scenes/kitchen_background_stove/kitchen_background_stove.png",
+      "blobId": "321f28fd0802a839f42123c6d0f6240f0078f243",
+      "size": 38611,
+      "lfs": {
+        "sha256": "05be4ff65b6f9f4e89332b97628e9b9f1a176562afca6e14f5d325bd41f36e72",
+        "size": 38611,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "scenes/kitchen_background_stove/kitchen_background_stove.xml",
+      "blobId": "3969a362a7ddcf123da94fd5a71bff50d2bbb4ba",
+      "size": 1260
+    },
+    {
+      "rfilename": "scenes/kitchen_background_stove/visual/kitchen_background_stove_vis.msh",
+      "blobId": "c4d60daee252d336451de7a0533442599f50433a",
+      "size": 6212608,
+      "lfs": {
+        "sha256": "0efe7517df5bb76730dd0b951dcf40644e7c494005a89421229b422217998702",
+        "size": 6212608,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/libero_coffee_table_base_style.xml",
+      "blobId": "ce8e0d8af33d44fcb0c852df1adede7f6ed1208f",
+      "size": 5888
+    },
+    {
+      "rfilename": "scenes/libero_coffee_table_blue_style.xml",
+      "blobId": "e2061c87feaab8676f6d2eb0c3c01c863df2a424",
+      "size": 4855
+    },
+    {
+      "rfilename": "scenes/libero_coffee_table_warm_style.xml",
+      "blobId": "f417be70dfc09d170f996083fc119db2932936f4",
+      "size": 5410
+    },
+    {
+      "rfilename": "scenes/libero_floor_base_style.xml",
+      "blobId": "77d2b3d8f8784b6d1c73de74c19f8fceeb3e5010",
+      "size": 4216
+    },
+    {
+      "rfilename": "scenes/libero_floor_blue_style.xml",
+      "blobId": "43c6de79babf65eb37eea27037792df00f641ea1",
+      "size": 3890
+    },
+    {
+      "rfilename": "scenes/libero_floor_coffee_style.xml",
+      "blobId": "c51d3aafb5a3f414a9aac78341f1fe377d69dee1",
+      "size": 4122
+    },
+    {
+      "rfilename": "scenes/libero_floor_warm_style.xml",
+      "blobId": "7ba0c0aab6658e4e1d6238c7e3c845b88367857d",
+      "size": 3910
+    },
+    {
+      "rfilename": "scenes/libero_kitchen_tabletop_base_style.xml",
+      "blobId": "2906c2935d0f74a7d243a5c10a53bffb2e849341",
+      "size": 7214
+    },
+    {
+      "rfilename": "scenes/libero_living_room_tabletop_base_style.xml",
+      "blobId": "76ad901e30ee01cfe1d962b8838f633afa68ff75",
+      "size": 6745
+    },
+    {
+      "rfilename": "scenes/libero_study_base_style.xml",
+      "blobId": "ed7d598c8925ac11b7a71ef754bfaa94c29cc3cd",
+      "size": 9420
+    },
+    {
+      "rfilename": "scenes/libero_tabletop_base_style.xml",
+      "blobId": "7aaf3b8b910d012fd1f7220139b4f9bc6ef0ae4b",
+      "size": 4857
+    },
+    {
+      "rfilename": "scenes/libero_tabletop_blue_style.xml",
+      "blobId": "663bf66b090adfb58f55b69a76f29da267905388",
+      "size": 4924
+    },
+    {
+      "rfilename": "scenes/libero_tabletop_warm_style.xml",
+      "blobId": "c6525587540e6976ef53c61617757b50d78fc984",
+      "size": 4655
+    },
+    {
+      "rfilename": "scenes/living_room/collision/living_room_ch.stl",
+      "blobId": "6f028539b5dd7c4775d6a9f4fedfaaaca1fe2b3d",
+      "size": 29784
+    },
+    {
+      "rfilename": "scenes/living_room/living_room.mtl",
+      "blobId": "9aacb5cad197eba967d1985c35fd2083c2c9cf99",
+      "size": 1557
+    },
+    {
+      "rfilename": "scenes/living_room/living_room.obj",
+      "blobId": "6c28ca37563cda57cba906c45b9b0f3b55706d2e",
+      "size": 4207621
+    },
+    {
+      "rfilename": "scenes/living_room/living_room.xml",
+      "blobId": "9be2899091f5d7ccf2f149ce011e1220f6ceb051",
+      "size": 1108
+    },
+    {
+      "rfilename": "scenes/living_room/living_room_wall_unit.png",
+      "blobId": "ed0955ea0c11b024267bca0749f1ba87aa4df2ca",
+      "size": 65012,
+      "lfs": {
+        "sha256": "7e6f264015ca84d29a2850a7854517d0017ed53902ae3d851ae76441f5644730",
+        "size": 65012,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "scenes/living_room/visual/living_room_vis.msh",
+      "blobId": "7dd83070cab31c99cfd611cab8a8bf1c8269e209",
+      "size": 6514576,
+      "lfs": {
+        "sha256": "326c50b18dfce7d338473ab8d99edce64c752cfef0203495faa2471dcafd4f8b",
+        "size": 6514576,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/living_room_table/collision/living_room_table_ch.stl",
+      "blobId": "8ab2c4481b411749be6fd4ea261af686ac708828",
+      "size": 232084,
+      "lfs": {
+        "sha256": "deae447cb884f4d692e934a62a3b8ec7a30cf6746f7cd5cbb6a943d57a16dbd2",
+        "size": 232084,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/living_room_table/living_room_table.mtl",
+      "blobId": "5061e4edea0745f88e13e5b063022b2d229daa29",
+      "size": 312
+    },
+    {
+      "rfilename": "scenes/living_room_table/living_room_table.obj",
+      "blobId": "bb71e32031f04fd33e987557abbaa1308500a76b",
+      "size": 1079843
+    },
+    {
+      "rfilename": "scenes/living_room_table/living_room_table.xml",
+      "blobId": "f9ce4654248ffdc12345ad4e475b62d7a554422c",
+      "size": 2331
+    },
+    {
+      "rfilename": "scenes/living_room_table/living_room_table_col.obj",
+      "blobId": "dd1c6addf1c217289b0171ae85ebe966cdb75c98",
+      "size": 5609
+    },
+    {
+      "rfilename": "scenes/living_room_table/living_room_table_texture.png",
+      "blobId": "60a474267315742d93dae01ff672d171c3e5d773",
+      "size": 1331834,
+      "lfs": {
+        "sha256": "38f401fdbbdeae06bf4c674f2488ab4bda8b89519a1d58976c7265b1f7c8c1e7",
+        "size": 1331834,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/living_room_table/visual/living_room_table_vis.msh",
+      "blobId": "60828d04c1e6584316a6bd6499a5b0b3e5fc5162",
+      "size": 1699504,
+      "lfs": {
+        "sha256": "9877f90c22971b98840ca6f8611fec6e0a8bec85f0e5f0a78e9e08bb57a8e2ec",
+        "size": 1699504,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/office_book_shelf/ceramic.png",
+      "blobId": "891c50a69b45e57cc9befa6f8fcc579d35552fc4",
+      "size": 1442030,
+      "lfs": {
+        "sha256": "beef464a2aa9143ba6a25a44adcbfd1f1aff16c5969edbf08019b61025388402",
+        "size": 1442030,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/office_book_shelf/collision/office_book_shelf_ch.stl",
+      "blobId": "b526e87364574c1ff408eacadb6643fa7b1ba4b9",
+      "size": 1084
+    },
+    {
+      "rfilename": "scenes/office_book_shelf/office_book_shelf.mtl",
+      "blobId": "39c762b703ed703876258387b5be5e2954f32d21",
+      "size": 263
+    },
+    {
+      "rfilename": "scenes/office_book_shelf/office_book_shelf.obj",
+      "blobId": "974c62840a5920895e5ad5bf48948b2e010367c0",
+      "size": 20800
+    },
+    {
+      "rfilename": "scenes/office_book_shelf/office_book_shelf.xml",
+      "blobId": "e30526d0c089dd1d6b0310bc345cc7537944dcf2",
+      "size": 1160
+    },
+    {
+      "rfilename": "scenes/office_book_shelf/visual/office_book_shelf_vis.msh",
+      "blobId": "54f6fc1af56ee2fc31fdf9f48a873c55d56cae8e",
+      "size": 45160
+    },
+    {
+      "rfilename": "scenes/plant/collision/plant_ch.stl",
+      "blobId": "460157590ad0161db5bf4b1a69555f037624d2c9",
+      "size": 11584
+    },
+    {
+      "rfilename": "scenes/plant/plant.mtl",
+      "blobId": "63ba9f699457c837b40edd0c46c478c68c822954",
+      "size": 240
+    },
+    {
+      "rfilename": "scenes/plant/plant.obj",
+      "blobId": "d708c9d383a3f445ff97c5d1e46fd607713ad4ea",
+      "size": 574967
+    },
+    {
+      "rfilename": "scenes/plant/plant.xml",
+      "blobId": "7f6294cb0fc39de61985e1c8c4117d1e47f453c1",
+      "size": 1034
+    },
+    {
+      "rfilename": "scenes/plant/plant_texture.png",
+      "blobId": "fedd465c790ed5e8062f361bb52a852394ad295b",
+      "size": 1583401,
+      "lfs": {
+        "sha256": "216886be0ecd4a765b5f00fe664dd27f25d7af19caef1c2012c4cca429d66349",
+        "size": 1583401,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/plant/visual/plant_vis.msh",
+      "blobId": "9fc242e76cb87cfce54dd22e098ff3982c9ab8a7",
+      "size": 732472,
+      "lfs": {
+        "sha256": "648fed3592f88784f1dfde93387ca744b1b428ffed5d6a3a7317108b3cae45c5",
+        "size": 732472,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/short_coffee_table/Marble062_COL_4K.png",
+      "blobId": "942a4a4df42a9123e140a6038de8c0ec3a64215d",
+      "size": 9625750,
+      "lfs": {
+        "sha256": "6cc288b8006e1931f1904ae50741539e4c44c1ed67686822386c96aad013864c",
+        "size": 9625750,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/short_coffee_table/collision/short_coffee_table_ch.stl",
+      "blobId": "8dcd441f1d9b24c311f9411e956d818c9229d3ba",
+      "size": 15084
+    },
+    {
+      "rfilename": "scenes/short_coffee_table/short_coffee_table.mtl",
+      "blobId": "aac578ee904a4cbc0ce85cd7227c6b70b6e05d99",
+      "size": 285
+    },
+    {
+      "rfilename": "scenes/short_coffee_table/short_coffee_table.obj",
+      "blobId": "3bcff59da77e7ca041a2f4b9764bf599290d092d",
+      "size": 58190
+    },
+    {
+      "rfilename": "scenes/short_coffee_table/short_coffee_table.xml",
+      "blobId": "6d901eaed33690456c4328987e1601913edea9d6",
+      "size": 1180
+    },
+    {
+      "rfilename": "scenes/short_coffee_table/visual/short_coffee_table_vis.msh",
+      "blobId": "f6ba2703e12ed852939837ce484fc216d10ba106",
+      "size": 73888
+    },
+    {
+      "rfilename": "scenes/study_background/collision/study_background_ch.stl",
+      "blobId": "b900d0d9f397b6567f4084993e26117bfc6ce382",
+      "size": 5584
+    },
+    {
+      "rfilename": "scenes/study_background/study_background.mtl",
+      "blobId": "7d8f046f25b6d66e80c2b965b67e4e6df8ab1f4e",
+      "size": 242
+    },
+    {
+      "rfilename": "scenes/study_background/study_background.obj",
+      "blobId": "79495e958f309b8566609d75da5b87f327e13578",
+      "size": 602332
+    },
+    {
+      "rfilename": "scenes/study_background/study_background.png",
+      "blobId": "6ba68597baca961e8f898cd1e1c60c5a954af1b9",
+      "size": 1184577,
+      "lfs": {
+        "sha256": "7a8ed45bfbe8aebc689cc72a1c3fba0bfd6f0847ba8a830bb1c0eac595e19252",
+        "size": 1184577,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/study_background/study_background.xml",
+      "blobId": "c0156a0fb469de8eca24c72545e72ed66fb5895c",
+      "size": 1158
+    },
+    {
+      "rfilename": "scenes/study_background/visual/study_background_vis.msh",
+      "blobId": "be6f2efe7d1fcad4afb1950ccdd89fec7875d9cd",
+      "size": 777616,
+      "lfs": {
+        "sha256": "15f667adb66f79ad7c6fe472a51d27b33d8a2f5a9457c91488aca26e02424811",
+        "size": 777616,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/study_wall_painting/collision/study_wall_painting_ch.stl",
+      "blobId": "4dd0368c2091e1ebb7f8fb64a18e41aed6cd98b2",
+      "size": 1984
+    },
+    {
+      "rfilename": "scenes/study_wall_painting/study_wall_painting.mtl",
+      "blobId": "7fe700a636ba7978409e18260c4202e1cd212467",
+      "size": 272
+    },
+    {
+      "rfilename": "scenes/study_wall_painting/study_wall_painting.obj",
+      "blobId": "d6bf29195d3e5d519a8d831cd43c7716560551d4",
+      "size": 47958
+    },
+    {
+      "rfilename": "scenes/study_wall_painting/study_wall_painting.png",
+      "blobId": "0a76965810b4adebe2a16c2443f533cab2558c53",
+      "size": 432815,
+      "lfs": {
+        "sha256": "fa1bf8b6658d03b9b20ff6ea0276fed8b68d50894579d43caca2a94fd246063a",
+        "size": 432815,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "scenes/study_wall_painting/study_wall_painting.xml",
+      "blobId": "76e72ab1ee74f427864402a63f1f9a191b3b7c7b",
+      "size": 1194
+    },
+    {
+      "rfilename": "scenes/study_wall_painting/visual/study_wall_painting_vis.msh",
+      "blobId": "280e336a61f5c4d4a438a19832a79d46832fe5f6",
+      "size": 98080
+    },
+    {
+      "rfilename": "scenes/wall_decoration/visual/wall_decoration_vis.msh",
+      "blobId": "4f4fcdc55997a371eb2e44aea1687f7d29431768",
+      "size": 1312
+    },
+    {
+      "rfilename": "scenes/wall_decoration/wall_decoration.mtl",
+      "blobId": "4b1ac92539293c8db1fdc2086e61ee5b62735fd5",
+      "size": 254
+    },
+    {
+      "rfilename": "scenes/wall_decoration/wall_decoration.obj",
+      "blobId": "69b43a86137f9a817318c063f424aa0af88970d1",
+      "size": 1117
+    },
+    {
+      "rfilename": "scenes/wall_decoration/wall_decoration_texture.jpg",
+      "blobId": "2604aca4dd3121744a63b79faa520cbea7e926ca",
+      "size": 1924813,
+      "lfs": {
+        "sha256": "fd6d3721066054b772ebe4829cfcbec9816690df89f83349dd262029a3ecb457",
+        "size": 1924813,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "scenes/wall_decoration/wall_decoration_texture.png",
+      "blobId": "a8cd650e6b7fa9624e1bd36bb14471089dc916ea",
+      "size": 4492846,
+      "lfs": {
+        "sha256": "b30b2b6f7499d05a4c502e3699027e14e9646023f4035b14b56f1fb55703bc3e",
+        "size": 4492846,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "serving_region.xml",
+      "blobId": "0adaca1fc7bc81f2f90a018f17eb34c363bbfbdb",
+      "size": 616
+    },
+    {
+      "rfilename": "stable_hope_objects/alphabet_soup/alphabet_soup.xml",
+      "blobId": "593a673e90eb2f8ad803da0638d86f9cda8dea81",
+      "size": 5812
+    },
+    {
+      "rfilename": "stable_hope_objects/alphabet_soup/alphabet_soup_col.obj",
+      "blobId": "f71bbcc0c18379af550456b8668da8d01f31b289",
+      "size": 20622
+    },
+    {
+      "rfilename": "stable_hope_objects/alphabet_soup/texture_map.png",
+      "blobId": "35dc47a6487249daa5ff892482278f243cb35646",
+      "size": 1138366,
+      "lfs": {
+        "sha256": "cd47556b3b2916ae138e8fd370d4f5192a2fe100369eec254c3c173409f48674",
+        "size": 1138366,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/alphabet_soup/textured.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/alphabet_soup/textured.obj",
+      "blobId": "c5a2cc4ceb72fc1fc210d8c33af5e80576c8cff3",
+      "size": 2360661
+    },
+    {
+      "rfilename": "stable_hope_objects/alphabet_soup/visual/textured_vis.msh",
+      "blobId": "884ad9f2348c95070f4ac9b82740bd01ae6b9ccc",
+      "size": 1496788,
+      "lfs": {
+        "sha256": "a9f36a95f4ad97cb141f134251114d46cc4f3950229d76ac815e751cc0cf121e",
+        "size": 1496788,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/bbq_sauce/bbq_sauce.mtl",
+      "blobId": "0cd3e2ea3a02028319adb1ed86c73cdfc7d3a797",
+      "size": 259
+    },
+    {
+      "rfilename": "stable_hope_objects/bbq_sauce/bbq_sauce.obj",
+      "blobId": "5299d871cfbf66ea5747e877639eb5c6d56cac1e",
+      "size": 1750112
+    },
+    {
+      "rfilename": "stable_hope_objects/bbq_sauce/bbq_sauce.xml",
+      "blobId": "c6ae2264626ba8040b9d97bf7f5b883d6455d2ff",
+      "size": 1680
+    },
+    {
+      "rfilename": "stable_hope_objects/bbq_sauce/hope_bbq_coll.obj",
+      "blobId": "d3f2bdcf35e316a4e38bfe5a52a0ffdbbae0b1a5",
+      "size": 9280
+    },
+    {
+      "rfilename": "stable_hope_objects/bbq_sauce/texture_map.png",
+      "blobId": "be659b5c42d8e7b1d712aad058cd39ce6e59eed6",
+      "size": 2089204,
+      "lfs": {
+        "sha256": "be21c2549bc0da64ec29665e3d064fcdb1d42a9f93f89eb38eecc4b08b4a3d39",
+        "size": 2089204,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/bbq_sauce/visual/bbq_sauce_vis.msh",
+      "blobId": "a865f7e4c0fd4f1613594db92d47a68a2ddbfbe4",
+      "size": 1737736,
+      "lfs": {
+        "sha256": "8c2c8c6238e5b78c50fa7986a6de52f3c437a0e85cc1048760ed1f5fa868480c",
+        "size": 1737736,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/butter/butter.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/butter/butter.obj",
+      "blobId": "8369feb7476327a7712b5a4e58b35cf78ec1749f",
+      "size": 2446598
+    },
+    {
+      "rfilename": "stable_hope_objects/butter/butter.xml",
+      "blobId": "9f76e04a0c2edc56e9007337cb9cdb037052adb0",
+      "size": 1053
+    },
+    {
+      "rfilename": "stable_hope_objects/butter/hope_butter_coll.obj",
+      "blobId": "8f3ca875964e652b01b2874c75efcae4a782432b",
+      "size": 956
+    },
+    {
+      "rfilename": "stable_hope_objects/butter/texture_map.png",
+      "blobId": "252d5343a41015b9f082b953f2b87829dab879a4",
+      "size": 3158511,
+      "lfs": {
+        "sha256": "e344d473644d71b919484f6b93d52707ea4821fe05c14514d7cd6cc24f2486c2",
+        "size": 3158511,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/butter/visual/butter_vis.msh",
+      "blobId": "92455c01d98533f9788b55c7b353b69cb9e0c0f6",
+      "size": 1554676,
+      "lfs": {
+        "sha256": "88b3916e53c813c7e06c856d7e0563e636c07247d95982c2cd05abc0ebd0cc68",
+        "size": 1554676,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/chocolate_pudding/chocolate_pudding.xml",
+      "blobId": "98be28d190e139671214a1a8f0ea4a1ac50eb817",
+      "size": 1065
+    },
+    {
+      "rfilename": "stable_hope_objects/chocolate_pudding/chocolate_pudding_col.obj",
+      "blobId": "241972b17f2c963211c777e9e67228179f32ce53",
+      "size": 984
+    },
+    {
+      "rfilename": "stable_hope_objects/chocolate_pudding/texture_map.png",
+      "blobId": "5f0ab11d5491ea3f529cf0af3007cee19904d8f6",
+      "size": 3334239,
+      "lfs": {
+        "sha256": "4d2db3872437523fd5fc5611728c154d475d05642c0d2a64ce60065e3c6ffc48",
+        "size": 3334239,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/chocolate_pudding/textured.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/chocolate_pudding/textured.obj",
+      "blobId": "b74e95dba576d3fe69558f3acc5bbb32a87ce23a",
+      "size": 3069329
+    },
+    {
+      "rfilename": "stable_hope_objects/chocolate_pudding/visual/textured_vis.msh",
+      "blobId": "7038d89f89c329105eba6aa57846ee94749ba96f",
+      "size": 1949848,
+      "lfs": {
+        "sha256": "34c7f14b29daa9f99daafe962866e0b4ea59d38863d04e3da1d4a7ed4e6244fd",
+        "size": 1949848,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/cookies/cookies.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/cookies/cookies.xml",
+      "blobId": "7c16b7430f3a38572ba776a88fea3954cd5c4704",
+      "size": 1063
+    },
+    {
+      "rfilename": "stable_hope_objects/cookies/texture_map.png",
+      "blobId": "3b8c578ccb13df3d4093bbc53e08ca8ff269ad3e",
+      "size": 3248302,
+      "lfs": {
+        "sha256": "e1c4be04c8a9d60ba33ef100354c451a4b02f1bdc2fc7607708b2ff4ff82d783",
+        "size": 3248302,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/cookies/visual/cookies_vis.msh",
+      "blobId": "c07f03cc3ce6ac71cfa0a7eb67d03d2c3c54b94a",
+      "size": 1928248,
+      "lfs": {
+        "sha256": "bd2f87872eb6ac780525ec5bd710d690d520f7d6725b10625f8ee403115308df",
+        "size": 1928248,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/cream_cheese/cream_cheese.mtl",
+      "blobId": "0cd3e2ea3a02028319adb1ed86c73cdfc7d3a797",
+      "size": 259
+    },
+    {
+      "rfilename": "stable_hope_objects/cream_cheese/cream_cheese.obj",
+      "blobId": "4f89ca756f19490c60f222876b6c21be24575551",
+      "size": 1593380
+    },
+    {
+      "rfilename": "stable_hope_objects/cream_cheese/cream_cheese.xml",
+      "blobId": "d3551a445c8dc59e19f8adb1705872a998507af9",
+      "size": 1550
+    },
+    {
+      "rfilename": "stable_hope_objects/cream_cheese/hope_cream_cheese_coll.obj",
+      "blobId": "df11a65a6c2e3851b02955f47d92c8c9a0902117",
+      "size": 962
+    },
+    {
+      "rfilename": "stable_hope_objects/cream_cheese/texture_map.png",
+      "blobId": "6d18e1874b0fcf9c4418f3caff2429d8b36c50ec",
+      "size": 3071899,
+      "lfs": {
+        "sha256": "6ef390c92c83f6f27da79df09130e48bda6785f98181942d2ec2548ab2afa814",
+        "size": 3071899,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/cream_cheese/visual/cream_cheese_vis.msh",
+      "blobId": "924eda705cb0ed0272e22e0e7f4da633d2250a8d",
+      "size": 1753612,
+      "lfs": {
+        "sha256": "0110fcd0351384174e70956ae83c4b30a677bc5673aa8107213b73334efbdf3b",
+        "size": 1753612,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/ketchup/ketchup.xml",
+      "blobId": "c13384e80b8730b0b700c8db413b4b3b22df70fb",
+      "size": 3656
+    },
+    {
+      "rfilename": "stable_hope_objects/ketchup/ketchup_col.obj",
+      "blobId": "3d15e149aa76d24add9535c07e3c973c5992a120",
+      "size": 11493
+    },
+    {
+      "rfilename": "stable_hope_objects/ketchup/texture_map.png",
+      "blobId": "1515bfbbd4ccd60452a6c680c5bf79a2f11167fd",
+      "size": 1898296,
+      "lfs": {
+        "sha256": "01edda2f924589b0a23aac084c1270a4a39afde79131a1bec73f7a23ad592bfe",
+        "size": 1898296,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/ketchup/textured.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/ketchup/textured.obj",
+      "blobId": "318e805f79f9da0dd6165c820a1bf90eef8752f1",
+      "size": 2628402
+    },
+    {
+      "rfilename": "stable_hope_objects/ketchup/visual/textured_vis.msh",
+      "blobId": "02c91ad88067aa2ae8cb2eeca4c0f4ef647d55e9",
+      "size": 1677796,
+      "lfs": {
+        "sha256": "52a6903d11261ef819b707241f058de28dced28746f9bbb142649a18f1d48321",
+        "size": 1677796,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/macaroni_and_cheese/macaroni_and_cheese.xml",
+      "blobId": "cc8762a0275dbe9226bf069e9dc56751fed55a8f",
+      "size": 1070
+    },
+    {
+      "rfilename": "stable_hope_objects/macaroni_and_cheese/macaroni_and_cheese_col.obj",
+      "blobId": "0deb0e619182f017bfde2b5ee9c0d21b8696f951",
+      "size": 991
+    },
+    {
+      "rfilename": "stable_hope_objects/macaroni_and_cheese/texture_map.png",
+      "blobId": "9a340bb4a1ea0c116fb68375d68f079bb464312d",
+      "size": 3069741,
+      "lfs": {
+        "sha256": "e3328a2d757dfeb93383340f8cee37de3d1caffebabae53f909345dd94b66b29",
+        "size": 3069741,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/macaroni_and_cheese/textured.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/macaroni_and_cheese/textured.obj",
+      "blobId": "7b72a119249be249a5c1984b9500ede0b079ef4a",
+      "size": 3433961
+    },
+    {
+      "rfilename": "stable_hope_objects/macaroni_and_cheese/visual/textured_vis.msh",
+      "blobId": "099e506622b36576079a1e5a5d769c0f3cd29619",
+      "size": 2179240,
+      "lfs": {
+        "sha256": "9c40762b4af7ec0a14789da2757a0452756c35f1bfa7e3ab7cc280312d06a6c8",
+        "size": 2179240,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/milk/collision/textured_ch.stl",
+      "blobId": "66e624dc65bd5b57b1f60d8df0973804245bc51d",
+      "size": 64684
+    },
+    {
+      "rfilename": "stable_hope_objects/milk/milk.xml",
+      "blobId": "ce0c0b57d5706cf3332ef30b9fb9805bbd679a9f",
+      "size": 1778
+    },
+    {
+      "rfilename": "stable_hope_objects/milk/milk_col.obj",
+      "blobId": "8ec2a35fef2e92ffa4c6e5a3e6d7718770334c2e",
+      "size": 3791
+    },
+    {
+      "rfilename": "stable_hope_objects/milk/texture_map.png",
+      "blobId": "f66d35d66ab7ee26896c451c81c028c5977c3688",
+      "size": 3384036,
+      "lfs": {
+        "sha256": "0e6130ec7a6a611a2574bba4f3d77bfaecd8ff6ed0fd449e34fe8479f4585ec3",
+        "size": 3384036,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/milk/textured.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/milk/textured.obj",
+      "blobId": "4b7c8bfb0b243b9ef27a68904dd20a2ae100f423",
+      "size": 2485070
+    },
+    {
+      "rfilename": "stable_hope_objects/milk/visual/textured_vis.msh",
+      "blobId": "113edbf4e42cec468db60f1723f3fa803f5561ba",
+      "size": 1578328,
+      "lfs": {
+        "sha256": "540a0eedb3d483e96dda195f06ce531f9991c9f07fece482f569131ab69a8036",
+        "size": 1578328,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/new_salad_dressing/new_salad_dressing.xml",
+      "blobId": "313c856ee7109a3aa94f80bafc0fc5d8512ca6f7",
+      "size": 4441
+    },
+    {
+      "rfilename": "stable_hope_objects/new_salad_dressing/salad_dressing_col.obj",
+      "blobId": "75f8da68387d1f457d7b89c8b2d39c6965a8dcdc",
+      "size": 14516
+    },
+    {
+      "rfilename": "stable_hope_objects/new_salad_dressing/texture_map.png",
+      "blobId": "6996802464c5e965b75e4fd3289f4aa96f256bd7",
+      "size": 2721594,
+      "lfs": {
+        "sha256": "17ac6d99eebf065eaa2243ebc578da65e7d5f112bbff75f083e451578efaae22",
+        "size": 2721594,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/new_salad_dressing/textured.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/new_salad_dressing/textured.obj",
+      "blobId": "cacd80147a08e47bdad3c0d2757e28b8be3787fa",
+      "size": 3329104
+    },
+    {
+      "rfilename": "stable_hope_objects/new_salad_dressing/visual/textured_vis.msh",
+      "blobId": "6a9717ca96aa1a5fb063b9092a0dfdbdf4a8cffb",
+      "size": 2117896,
+      "lfs": {
+        "sha256": "11e210c93786626e66c832f1d5a0178eddf88e79775cc8e59cc060b52fc0abab",
+        "size": 2117896,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/orange_juice/collision/textured_ch.stl",
+      "blobId": "66e624dc65bd5b57b1f60d8df0973804245bc51d",
+      "size": 64684
+    },
+    {
+      "rfilename": "stable_hope_objects/orange_juice/orange_juice.xml",
+      "blobId": "04f99926f1e303fd851a52edf561d5129a08114e",
+      "size": 1786
+    },
+    {
+      "rfilename": "stable_hope_objects/orange_juice/orange_juice_col.obj",
+      "blobId": "114ffa9053435694d8f420847f0d70e3d2c15a57",
+      "size": 3801
+    },
+    {
+      "rfilename": "stable_hope_objects/orange_juice/texture_map.png",
+      "blobId": "af7d6c64d7ae44e7ccb13c5d03b50c03c063bb9f",
+      "size": 3637784,
+      "lfs": {
+        "sha256": "2488e5d72c7848db195be1d5a08d45a00b04122fff7ddcc107014d177d6d08c9",
+        "size": 3637784,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/orange_juice/textured.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/orange_juice/textured.obj",
+      "blobId": "52ceb873ff899f9d508e94a35f9b789b1713474d",
+      "size": 3398580
+    },
+    {
+      "rfilename": "stable_hope_objects/orange_juice/visual/textured_vis.msh",
+      "blobId": "2a6a1aed38de8defdc43fda02a204486034b971f",
+      "size": 2152672,
+      "lfs": {
+        "sha256": "9ebfebfe88f469abd9015bea348f242ee36a93829f75975535dcb44a5c3d876d",
+        "size": 2152672,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/popcorn/popcorn.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/popcorn/popcorn.obj",
+      "blobId": "3b66a8df3840a3f743cb54889a7bab8b61c44bbb",
+      "size": 3055007
+    },
+    {
+      "rfilename": "stable_hope_objects/popcorn/popcorn.xml",
+      "blobId": "913c9a6676bec52926447e5114a47748329f23e7",
+      "size": 1077
+    },
+    {
+      "rfilename": "stable_hope_objects/popcorn/popcorn_coll.obj",
+      "blobId": "1563cd2f26293dd1c4bbc805998e5af59f6a1f9d",
+      "size": 965
+    },
+    {
+      "rfilename": "stable_hope_objects/popcorn/texture_map.png",
+      "blobId": "fac1dbe672b9e3f40c086e512ac3f5d5326ce23e",
+      "size": 3231298,
+      "lfs": {
+        "sha256": "4d2469127fcf474e20cb66d803e95f1df0cd2183cdb88815f863562f00ad8078",
+        "size": 3231298,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/popcorn/visual/popcorn_vis.msh",
+      "blobId": "3ace9313d2cefc0d09f8366011b1bf8ac533dcb0",
+      "size": 1942072,
+      "lfs": {
+        "sha256": "06ad7d7cec8ae493650438eecb66193e891ce36532516bf645ba7d5dd5944b2c",
+        "size": 1942072,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/salad_dressing/salad_dressing.xml",
+      "blobId": "3ffc9e25782d4e6898951e0801b509a05bc48563",
+      "size": 4379
+    },
+    {
+      "rfilename": "stable_hope_objects/salad_dressing/salad_dressing_col.obj",
+      "blobId": "75f8da68387d1f457d7b89c8b2d39c6965a8dcdc",
+      "size": 14516
+    },
+    {
+      "rfilename": "stable_hope_objects/salad_dressing/texture_map.png",
+      "blobId": "6996802464c5e965b75e4fd3289f4aa96f256bd7",
+      "size": 2721594,
+      "lfs": {
+        "sha256": "17ac6d99eebf065eaa2243ebc578da65e7d5f112bbff75f083e451578efaae22",
+        "size": 2721594,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/salad_dressing/textured.mtl",
+      "blobId": "2eceea945c97d9c7280736d82ba39e0e8795afc0",
+      "size": 48
+    },
+    {
+      "rfilename": "stable_hope_objects/salad_dressing/textured.obj",
+      "blobId": "cacd80147a08e47bdad3c0d2757e28b8be3787fa",
+      "size": 3329104
+    },
+    {
+      "rfilename": "stable_hope_objects/salad_dressing/visual/textured_vis.msh",
+      "blobId": "6a9717ca96aa1a5fb063b9092a0dfdbdf4a8cffb",
+      "size": 2117896,
+      "lfs": {
+        "sha256": "11e210c93786626e66c832f1d5a0178eddf88e79775cc8e59cc060b52fc0abab",
+        "size": 2117896,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/tomato_sauce/texture_map.png",
+      "blobId": "072a7da4ec16ec7118c207b55a7397b797695972",
+      "size": 2451651,
+      "lfs": {
+        "sha256": "9372cff38688004b69e7a1fc60ffa2576d6cf31a884de279d0d67bdd4a35c631",
+        "size": 2451651,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_hope_objects/tomato_sauce/textured.mtl",
+      "blobId": "a52277e71a2397d472cf92ab69db6d9e7cf189cf",
+      "size": 50
+    },
+    {
+      "rfilename": "stable_hope_objects/tomato_sauce/textured.obj",
+      "blobId": "b74ffc2569f6121ac9eead602e361733b35352b8",
+      "size": 4935386
+    },
+    {
+      "rfilename": "stable_hope_objects/tomato_sauce/tomato_sauce.xml",
+      "blobId": "99269ce28d8a19f21067122ecdecdab6d6add2ad",
+      "size": 6520
+    },
+    {
+      "rfilename": "stable_hope_objects/tomato_sauce/tomato_sauce_col.obj",
+      "blobId": "daeb6194b4b1d363abb21dbc544228f0b0b4dbde",
+      "size": 23679
+    },
+    {
+      "rfilename": "stable_hope_objects/tomato_sauce/visual/textured_vis.msh",
+      "blobId": "e5e2c5532f3f8e6ceea67d851f0b1fdd5ea13d1c",
+      "size": 3087520,
+      "lfs": {
+        "sha256": "eeb9ee401b204db5ca5b98cf8d52274695b5562ee31f0affaca58a25a07cc2e4",
+        "size": 3087520,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/akita_black_bowl/akita_black_bowl.mtl",
+      "blobId": "b66fa78b69d06d16e2d27c6a76b72680cd7262e3",
+      "size": 244
+    },
+    {
+      "rfilename": "stable_scanned_objects/akita_black_bowl/akita_black_bowl.obj",
+      "blobId": "8af9a0720117cbfd791c718862207dcb4485957d",
+      "size": 4232879
+    },
+    {
+      "rfilename": "stable_scanned_objects/akita_black_bowl/akita_black_bowl.xml",
+      "blobId": "43d6ae58c8b9b0c8e74bca041043e1901a8e892c",
+      "size": 10343
+    },
+    {
+      "rfilename": "stable_scanned_objects/akita_black_bowl/akita_black_bowl_col.obj",
+      "blobId": "1eb2764398bc4197da1d1ac675f823a4075611b7",
+      "size": 40089
+    },
+    {
+      "rfilename": "stable_scanned_objects/akita_black_bowl/texture.png",
+      "blobId": "31e78f0933c331b9061870d468eec6f011e37435",
+      "size": 12751242,
+      "lfs": {
+        "sha256": "8a646d98b084b7400dd91beed9c83e10b4a4dca572896b3974356b7937a4bd85",
+        "size": 12751242,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/akita_black_bowl/visual/akita_black_bowl_vis.msh",
+      "blobId": "17f425fd97131944e989814b0d5164793e7d24dd",
+      "size": 4592392,
+      "lfs": {
+        "sha256": "6474d536a740e995c3a2eaeb74c61e14da94131b0b222c250b61b30b13d11229",
+        "size": 4592392,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_base/basin_faucet_base.mtl",
+      "blobId": "9813ccd2b1c415c1fe8037b26751fe1392302325",
+      "size": 455
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_base/basin_faucet_base.obj",
+      "blobId": "a427f87ee90a2300d371d274f61bf7872358ee6e",
+      "size": 84367
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_base/basin_faucet_base.xml",
+      "blobId": "fb9b2c3815b55f26b6b66fe637d368f9c211728c",
+      "size": 1678
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_base/basin_faucet_base_col.obj",
+      "blobId": "eb1fbec254e9e11be0f45071cf1d4968e5b14f05",
+      "size": 2867
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_base/visual/basin_faucet_base_vis.msh",
+      "blobId": "e559f3395145373a31ecc2511d6ebad97c312363",
+      "size": 108664,
+      "lfs": {
+        "sha256": "198108aef8aa6509a7777a91e561e5631c12481582f6b624cecfb97c3139754e",
+        "size": 108664,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_movable/basin_faucet_movable.mtl",
+      "blobId": "c3196bf5d95ce14b880444ca1a456ed73c9d248c",
+      "size": 259
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_movable/basin_faucet_movable.obj",
+      "blobId": "e4af52b1d21b358551d6453567d495868d6fb05e",
+      "size": 34282
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_movable/basin_faucet_movable.xml",
+      "blobId": "85021f4d478458da039b974aecf99b0ae86e7b1e",
+      "size": 1468
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_movable/basin_faucet_movable_col.obj",
+      "blobId": "43248169bd08e4b8c4c390dfc5ef16626332c05c",
+      "size": 1914
+    },
+    {
+      "rfilename": "stable_scanned_objects/basin_faucet_movable/visual/basin_faucet_movable_vis.msh",
+      "blobId": "dd00d30cd6d4bfe19fa15dca34888efcc2f73463",
+      "size": 46672
+    },
+    {
+      "rfilename": "stable_scanned_objects/basket/basket.mtl",
+      "blobId": "7537a952230c921de13df76731dd5ffe78f70e00",
+      "size": 235
+    },
+    {
+      "rfilename": "stable_scanned_objects/basket/basket.obj",
+      "blobId": "b0b1a4e974a6c6853869fdfe7f23fe0b556ae8da",
+      "size": 7049522
+    },
+    {
+      "rfilename": "stable_scanned_objects/basket/basket.xml",
+      "blobId": "b710dc317b332d3a1f9b9b048cac68c8df5a5ab8",
+      "size": 2167
+    },
+    {
+      "rfilename": "stable_scanned_objects/basket/basket_col.obj",
+      "blobId": "44773831e78b6d30896c09e687c5315ff9f762bd",
+      "size": 4642
+    },
+    {
+      "rfilename": "stable_scanned_objects/basket/texture.png",
+      "blobId": "db4b93efd313538e5fba3bc774a8900cd8ade0f5",
+      "size": 11112400,
+      "lfs": {
+        "sha256": "89c2107a39ce27d7dffc383153153e021958408cd6fffd8bf8f318a0bb2c302b",
+        "size": 11112400,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/basket/visual/basket_vis.msh",
+      "blobId": "ce992170cb13e3051e27dbdd0cb67fc402dc6612",
+      "size": 7170136,
+      "lfs": {
+        "sha256": "51ca04e71fbca8a4fdd5fa86362867d414e401923e1cb9b0daed488513b46734",
+        "size": 7170136,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/bowl.zip",
+      "blobId": "689d3cc2f21d24ea85008f155610952920fa359e",
+      "size": 4614115,
+      "lfs": {
+        "sha256": "cdbf7590b1010e7a30760c8344ec95d922b655132fb67025d6042a3681873d26",
+        "size": 4614115,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/chefmate_8_frypan/chefmate_8_frypan.mtl",
+      "blobId": "64955ec1edce008bc764b01878ece077799c8022",
+      "size": 266
+    },
+    {
+      "rfilename": "stable_scanned_objects/chefmate_8_frypan/chefmate_8_frypan.obj",
+      "blobId": "a75ffa16649e4cb6e086643b57373f804d4e82a1",
+      "size": 918767
+    },
+    {
+      "rfilename": "stable_scanned_objects/chefmate_8_frypan/chefmate_8_frypan.xml",
+      "blobId": "7cf7568cb5ae88b0aeba8b90ea1c95c9828a05c9",
+      "size": 6791
+    },
+    {
+      "rfilename": "stable_scanned_objects/chefmate_8_frypan/chefmate_8_frypan_col.obj",
+      "blobId": "1fc75a209491464476868197716d88a93c765f56",
+      "size": 24673
+    },
+    {
+      "rfilename": "stable_scanned_objects/chefmate_8_frypan/texture.png",
+      "blobId": "cb195e89e0b4a00bc39e47ae88f55063bf1b8bcf",
+      "size": 752681,
+      "lfs": {
+        "sha256": "7b6adc65fc2f18030a1aa0c3dde2c1719e7b74431e0e5279bea9b6416af7deb6",
+        "size": 752681,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/chefmate_8_frypan/visual/chefmate_8_frypan_vis.msh",
+      "blobId": "263277a04d34cb02cc3d15533a73c5c3d549b692",
+      "size": 1006576,
+      "lfs": {
+        "sha256": "65e0483c19250107aef692fa80a8d597ef89bcf7ea28e6e9c2a4adcfa775acd2",
+        "size": 1006576,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/glazed_rim_porcelain_ramekin/glazed_rim_porcelain_ramekin.mtl",
+      "blobId": "7bf478fe3f1fee5bfaa4f3998250af0f0b8eb25f",
+      "size": 279
+    },
+    {
+      "rfilename": "stable_scanned_objects/glazed_rim_porcelain_ramekin/glazed_rim_porcelain_ramekin.obj",
+      "blobId": "7f8535dee4f874a0461be853e347f8fbfd2e7b61",
+      "size": 1602426
+    },
+    {
+      "rfilename": "stable_scanned_objects/glazed_rim_porcelain_ramekin/glazed_rim_porcelain_ramekin.xml",
+      "blobId": "5960a507d3f7766c4cb2ac962eb4807503cec166",
+      "size": 6886
+    },
+    {
+      "rfilename": "stable_scanned_objects/glazed_rim_porcelain_ramekin/glazed_rim_porcelain_ramekin_col.obj",
+      "blobId": "9cd72533245d8bd2e140606f0e171a60655e7a01",
+      "size": 24771
+    },
+    {
+      "rfilename": "stable_scanned_objects/glazed_rim_porcelain_ramekin/texture.png",
+      "blobId": "1c37df60d6d066ed3375af1fa532917884501b0d",
+      "size": 311263,
+      "lfs": {
+        "sha256": "7323b1d08b6242dd9127f853e23bb5b2651c8665dcb3c78ed00a632aef567750",
+        "size": 311263,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/glazed_rim_porcelain_ramekin/visual/glazed_rim_porcelain_ramekin_vis.msh",
+      "blobId": "998972f05d47af42549b63ff69326229070f1fc0",
+      "size": 1757608,
+      "lfs": {
+        "sha256": "9ef1877c027112d27fca3e8b16e7c226fb02f52345750b8d8c8217ad0c41c5eb",
+        "size": 1757608,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/plate/model.mtl",
+      "blobId": "6b8ec6d2159b72d8f090a4d79bd65e059ad17164",
+      "size": 410
+    },
+    {
+      "rfilename": "stable_scanned_objects/plate/model.obj",
+      "blobId": "97e8080b0720239af2245dfebf575fddd64fb30b",
+      "size": 297757
+    },
+    {
+      "rfilename": "stable_scanned_objects/plate/plate.xml",
+      "blobId": "004fadc5500c3d2bb76d44c3b894856e6882c031",
+      "size": 3158
+    },
+    {
+      "rfilename": "stable_scanned_objects/plate/plate_col.obj",
+      "blobId": "8b00f6a233cabf09ec6f970bce26489b56b45762",
+      "size": 9608
+    },
+    {
+      "rfilename": "stable_scanned_objects/plate/texture.png",
+      "blobId": "4fbdeec0dfe6ddf57968afab43051f86db09b650",
+      "size": 8660937,
+      "lfs": {
+        "sha256": "6b742142bf0e29a90d76c4b0254a4481e9eff4807eff3ac6c4ac67a5888fb005",
+        "size": 8660937,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/plate/visual/model_vis.msh",
+      "blobId": "2ca109d9dbbe07ee85fdc03e671347c78b161765",
+      "size": 374128,
+      "lfs": {
+        "sha256": "7d3278b1cefb2ed496094cad18f0c66004ee65ab933122ec8d5efdc78daa96b4",
+        "size": 374128,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/red_bowl/ceramic_bowl_col.obj",
+      "blobId": "e4dda28b2f44ae7c2622da9a8e617c94e9ae7e56",
+      "size": 36010
+    },
+    {
+      "rfilename": "stable_scanned_objects/red_bowl/model.mtl",
+      "blobId": "6b8ec6d2159b72d8f090a4d79bd65e059ad17164",
+      "size": 410
+    },
+    {
+      "rfilename": "stable_scanned_objects/red_bowl/model.obj",
+      "blobId": "f4bbde9b038be290085a62d1b0ea057fb819596f",
+      "size": 1224919
+    },
+    {
+      "rfilename": "stable_scanned_objects/red_bowl/red_bowl.xml",
+      "blobId": "043e57ad27993d644f1a0066c90b299cd45fbaa5",
+      "size": 9294
+    },
+    {
+      "rfilename": "stable_scanned_objects/red_bowl/texture.png",
+      "blobId": "5b969042e2a871bffb845c85e1100ae8f55fe209",
+      "size": 7982813,
+      "lfs": {
+        "sha256": "a850aaf925421f49a7399f6fc80444a1ab5de7b1110f4294598c5dc2231ea3fd",
+        "size": 7982813,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/red_bowl/visual/model_vis.msh",
+      "blobId": "b3aa33711b56b4a8439b0af499a86ca83edf828d",
+      "size": 1515256,
+      "lfs": {
+        "sha256": "260756fe40301b42f948d644f072eccf57b1ba57d20d3d26e5261383bdace350",
+        "size": 1515256,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/simple_rack/simple_rack.mtl",
+      "blobId": "00ba6c28178ea4647a34dda7788c4d89bbe11a3c",
+      "size": 137
+    },
+    {
+      "rfilename": "stable_scanned_objects/simple_rack/simple_rack.obj",
+      "blobId": "e1b4475f33877b2ffa8b21b5f3f17d53add9f1c2",
+      "size": 111916
+    },
+    {
+      "rfilename": "stable_scanned_objects/simple_rack/simple_rack.xml",
+      "blobId": "d998f46aec3b442c2ede98798075cfa3f56cb8d7",
+      "size": 4287
+    },
+    {
+      "rfilename": "stable_scanned_objects/simple_rack/simple_rack_col.obj",
+      "blobId": "7f5165c4b067760d19cb10d6a5dfe920210e5c22",
+      "size": 14472
+    },
+    {
+      "rfilename": "stable_scanned_objects/simple_rack/visual/simple_rack_vis.msh",
+      "blobId": "c5d66048c454874181f2c452c8662c4665034f41",
+      "size": 188800,
+      "lfs": {
+        "sha256": "3a4d5bcf3ce3718cecc51dea9e2edac068b80d4d6f58a27124f31eb408ca177f",
+        "size": 188800,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/white_bowl/ceramic_bowl_col.obj",
+      "blobId": "e4dda28b2f44ae7c2622da9a8e617c94e9ae7e56",
+      "size": 36010
+    },
+    {
+      "rfilename": "stable_scanned_objects/white_bowl/model.mtl",
+      "blobId": "6b8ec6d2159b72d8f090a4d79bd65e059ad17164",
+      "size": 410
+    },
+    {
+      "rfilename": "stable_scanned_objects/white_bowl/model.obj",
+      "blobId": "f4bbde9b038be290085a62d1b0ea057fb819596f",
+      "size": 1224919
+    },
+    {
+      "rfilename": "stable_scanned_objects/white_bowl/texture.png",
+      "blobId": "5b969042e2a871bffb845c85e1100ae8f55fe209",
+      "size": 7982813,
+      "lfs": {
+        "sha256": "a850aaf925421f49a7399f6fc80444a1ab5de7b1110f4294598c5dc2231ea3fd",
+        "size": 7982813,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/white_bowl/visual/model_vis.msh",
+      "blobId": "b3aa33711b56b4a8439b0af499a86ca83edf828d",
+      "size": 1515256,
+      "lfs": {
+        "sha256": "260756fe40301b42f948d644f072eccf57b1ba57d20d3d26e5261383bdace350",
+        "size": 1515256,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "stable_scanned_objects/white_bowl/white_bowl.xml",
+      "blobId": "cdf2cdd08a90209c0e42facc4164a486e41c77d9",
+      "size": 9307
+    },
+    {
+      "rfilename": "textures/brown_ceramic_tile.png",
+      "blobId": "6b589038c4b9bffa74de4adb1a49a881e69ff9e5",
+      "size": 1192761,
+      "lfs": {
+        "sha256": "76f19ce9c0a307a447d9c65edcf0757e405358e6d22e2a52cfa2cd6dc5c63224",
+        "size": 1192761,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/canvas_sky_blue.png",
+      "blobId": "61b35f10079aaf02b6b1ded5a6e2ee4598259013",
+      "size": 1748434,
+      "lfs": {
+        "sha256": "19201f8c7f35ff0668ebde2145f40163c3955b7885b4dd14ca7e430bdc58a621",
+        "size": 1748434,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/capriccio_sky.png",
+      "blobId": "a691014644663f581c7cedc8feb76718b69aef28",
+      "size": 939041,
+      "lfs": {
+        "sha256": "39fc56c01dc26c840e1a20d1f695796caa130b70dd6ee3159da22a70e0421fd5",
+        "size": 939041,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/ceramic.png",
+      "blobId": "891c50a69b45e57cc9befa6f8fcc579d35552fc4",
+      "size": 1442030,
+      "lfs": {
+        "sha256": "beef464a2aa9143ba6a25a44adcbfd1f1aff16c5969edbf08019b61025388402",
+        "size": 1442030,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/cream-plaster.png",
+      "blobId": "d77333eb1bd7d44057939b3c12c8d9a620e4a8e1",
+      "size": 696397,
+      "lfs": {
+        "sha256": "5f989033f089158b2c8f0f1f7881f6922b018a5b154558b2edcc9f41a21ab983",
+        "size": 696397,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/dapper_gray_floor.png",
+      "blobId": "58b3fd160fa966755920a5adbe5331fe58ef0543",
+      "size": 176753,
+      "lfs": {
+        "sha256": "99f641e7f34f43896155816c265b7206972ebd3997e83ab98f3be210222deec0",
+        "size": 176753,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/dark_blue_wall.png",
+      "blobId": "6fad048026dc2e06eef18821ba9e80622d3c22f8",
+      "size": 1216412,
+      "lfs": {
+        "sha256": "ecb999e23c85dfef374feeea938c6864f8fc14ba22b8a4c1b37785812d0923c5",
+        "size": 1216412,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/dark_floor_texture.png",
+      "blobId": "65b06d2c0aa05fc65d16992bd8fd5eec617860ae",
+      "size": 432717,
+      "lfs": {
+        "sha256": "182b1d927029d6284b5cbe3e317b111cbc5b147b692fd0f19e4181a02d08f647",
+        "size": 432717,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/dark_gray_plaster.png",
+      "blobId": "2944a7f6357e669b14425e2cc210d9aaceee6b0a",
+      "size": 172397,
+      "lfs": {
+        "sha256": "122ac950498a1e157ddbe54df9a585344059018e36328341d2dd4eef72f5337c",
+        "size": 172397,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/dark_green_plaster_wall.png",
+      "blobId": "8eff5106394d8d1ff9305ab71406e0ecceff90c8",
+      "size": 6873572,
+      "lfs": {
+        "sha256": "a2a9531fc002626a79a7ac3aaaee26a15bb5fee03253ab80f6b3004f3c9d1878",
+        "size": 6873572,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/gray_ceramic_tile.png",
+      "blobId": "fb458a375892b208845c4d518eb00f0487c97a32",
+      "size": 435890,
+      "lfs": {
+        "sha256": "93a1c2b647f31aded62b4125439e17aa1a55c8f4e77820909d9a1c235f6c7315",
+        "size": 435890,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/gray_floor.png",
+      "blobId": "0b4f7f11b745139b11052ecdd687bd463a2b33f5",
+      "size": 1289546,
+      "lfs": {
+        "sha256": "8c806924415a06b5fa49d852ad14a0b1bb07afc225153eb832f3369bcefabc60",
+        "size": 1289546,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/gray_plaster.png",
+      "blobId": "ae7b5aab473e2f7e4a3a7fcfcb12c5b17f4c52cc",
+      "size": 700270,
+      "lfs": {
+        "sha256": "5c3f8353cdebc86273b8619205f3bb1bc2be252d3db41d77848a32d9eda0d965",
+        "size": 700270,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/gray_wall.png",
+      "blobId": "32f8c1cc6cbab7a8f62d8439a2d8d57d26717de5",
+      "size": 7088154,
+      "lfs": {
+        "sha256": "c90b41e7f3f0b32635804f47811bc8deba14cf561b1af40ec62972fb6039cef9",
+        "size": 7088154,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/grigia_caldera_porcelain_floor.png",
+      "blobId": "d9243a8daef23eb1bd5d48eb1643d421adf09d28",
+      "size": 87431,
+      "lfs": {
+        "sha256": "1382cde9e4674cd7c251c5c79f0035d863c4c2e2fb49c01baee316f4401025ea",
+        "size": 87431,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "textures/kona_gotham.png",
+      "blobId": "3c88977169d1eac04934e51519302c97d1dc1e67",
+      "size": 17680,
+      "lfs": {
+        "sha256": "e5c809ed713d65fcfbb560456c1ad412ce8777ecd5abe76ade04ca1c2bb411c8",
+        "size": 17680,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "textures/light-gray-floor-tile.png",
+      "blobId": "70a290f75e6545ae5bc745acadf63566fadd6c2c",
+      "size": 73373,
+      "lfs": {
+        "sha256": "a2aae4ba3b38c3ab9851eca9ad6e76cef9357ef75b3e9a4b280f694ca30acbc5",
+        "size": 73373,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "textures/light-gray-plaster.png",
+      "blobId": "8553f5e438ccf68cfe9ce9300ce8c94712ba1e8f",
+      "size": 516639,
+      "lfs": {
+        "sha256": "d0bdaf13b44ab6ef3122451f6b3853e40bdf20bb9be7662649683ba525dfe191",
+        "size": 516639,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/light_blue_wall.png",
+      "blobId": "d080cb25aadd4cec971d54eef737c5d01420691e",
+      "size": 180284,
+      "lfs": {
+        "sha256": "0e53979a16a1464ba0ba693e38cf71fb541875a5529e00853ed9b3c739687df2",
+        "size": 180284,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/light_floor.png",
+      "blobId": "dda395ea6d71825740a514ee071e62d02ac06e66",
+      "size": 868219,
+      "lfs": {
+        "sha256": "f6e69937f87ef7d956e4434535ab2ff99939216cc03c842cd9b4ba16023b32e6",
+        "size": 868219,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/light_gray_plaster.png",
+      "blobId": "a5c19f9c2dc0be77d4d45c6b68d3e0972e0401b2",
+      "size": 1309377,
+      "lfs": {
+        "sha256": "d590eae1c249dd8644a698ab1776aa1380262630cf79556a1cb2f9a726729844",
+        "size": 1309377,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/light_grey_plaster.png",
+      "blobId": "392374aef0a3d04e4076e3a4c9759903b32806b7",
+      "size": 392158,
+      "lfs": {
+        "sha256": "c7fc746d496fcaed1c716ad5fc5f8237095613e09dd80eae3e969f599cee9c06",
+        "size": 392158,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/marble_floor.png",
+      "blobId": "64769e336ecba4c6bd1b773b31cc79cb98699940",
+      "size": 158880,
+      "lfs": {
+        "sha256": "097ed503a7e6280549a8f249d92f6813f491a3e20b7b8d9a29d5f03b6e4c973c",
+        "size": 158880,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/martin_novak_wood_table.png",
+      "blobId": "a2fc4490aaf2a74614641f6bfdfc71532483d217",
+      "size": 940180,
+      "lfs": {
+        "sha256": "9d714fbf44d4d44f279761c0ddd0b2fd7271446cdbb85fcbef8677fe5f929850",
+        "size": 940180,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/meeka-beige-plaster.png",
+      "blobId": "73ae329335948120d6fe3c64a348cfaf1325c24d",
+      "size": 657870,
+      "lfs": {
+        "sha256": "a24b1b67ef66a52358dfe7382e955cc9eca699ae846072d9745f78000e41b10c",
+        "size": 657870,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/new_light_gray_plaster.png",
+      "blobId": "7b11226f118e00cdd5a5183a188730724c45c431",
+      "size": 1457824,
+      "lfs": {
+        "sha256": "5a51d3ac1fc9991c1530eefdf7922aefdbd18f4cb1fd08ca0ee81e74b586defd",
+        "size": 1457824,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/rustic_floor.png",
+      "blobId": "4d49afd60821ae6cebaebc152080a49ca389ded4",
+      "size": 350989,
+      "lfs": {
+        "sha256": "915563b7009b30fe63c69b0107f36cc40448ab3e9b83ce8a67f5ebbb2f94c7fe",
+        "size": 350989,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/seamless_wood_planks_floor.png",
+      "blobId": "54804e77cf0f2147cd75ab169cd4dc6293a5bfbe",
+      "size": 3174441,
+      "lfs": {
+        "sha256": "c7a70ef3fad0cafc1d196e49f9ff1b483d0a5e62ed457b108a9c9b2c9ed1dd13",
+        "size": 3174441,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "textures/smooth_light_gray_plaster.png",
+      "blobId": "8553f5e438ccf68cfe9ce9300ce8c94712ba1e8f",
+      "size": 516639,
+      "lfs": {
+        "sha256": "d0bdaf13b44ab6ef3122451f6b3853e40bdf20bb9be7662649683ba525dfe191",
+        "size": 516639,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/stucco_wall.png",
+      "blobId": "2441202586ab762e124ff3b2b8b1595bca2649b1",
+      "size": 282099,
+      "lfs": {
+        "sha256": "b4c2cc15cf253c3c2e7e88930cae7d5b699552f9397673ba5df874f871c6c84d",
+        "size": 282099,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/table_light_wood.png",
+      "blobId": "a2a72a8bee1b62ba36b77c7cbc69dd6aa58cd0d2",
+      "size": 202250,
+      "lfs": {
+        "sha256": "c260c4543647d53da9379078a788d183a334734103739a42dce1a004a2eb0e33",
+        "size": 202250,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/tile_grigia_caldera_porcelain_floor.png",
+      "blobId": "70a290f75e6545ae5bc745acadf63566fadd6c2c",
+      "size": 73373,
+      "lfs": {
+        "sha256": "a2aae4ba3b38c3ab9851eca9ad6e76cef9357ef75b3e9a4b280f694ca30acbc5",
+        "size": 73373,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "textures/white_marble_floor.png",
+      "blobId": "a1fbee00d615b1638571bd692ecad25288b3277b",
+      "size": 652993,
+      "lfs": {
+        "sha256": "d79fb61f545669659a6bbdfd68c750fe4fd2830e448465f223fe4c224b8d17ca",
+        "size": 652993,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "textures/white_wall.png",
+      "blobId": "d374309af500e2301b3542c70b83375b5ecb8e6a",
+      "size": 15793,
+      "lfs": {
+        "sha256": "c02f6ad8cbd0e217da8d0068eca3dcff5752611c46999666ad7d4835de05bf12",
+        "size": 15793,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "textures/yellow_linen_wall_texture.png",
+      "blobId": "47f880f92e32f0deccf8d98f7826ff9217419fdd",
+      "size": 607573,
+      "lfs": {
+        "sha256": "292d1bb3a8536b2faf73c91b9d6b11ac90c58136cbaade2af0d7b941f70904aa",
+        "size": 607573,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/black_book/black_book.mtl",
+      "blobId": "816b86737f9684bfba4785c83d5217a3b6d7aa13",
+      "size": 657
+    },
+    {
+      "rfilename": "turbosquid_objects/black_book/black_book.obj",
+      "blobId": "34025c798161d9293fa521ad2781f8bcdda68764",
+      "size": 512689
+    },
+    {
+      "rfilename": "turbosquid_objects/black_book/black_book.xml",
+      "blobId": "73481d4f87d7480cc75add0fe7cce147e5ea2921",
+      "size": 1086
+    },
+    {
+      "rfilename": "turbosquid_objects/black_book/black_book_col.obj",
+      "blobId": "92a900bd57c61fb29f2ccf108046330c8d3ad439",
+      "size": 933
+    },
+    {
+      "rfilename": "turbosquid_objects/black_book/black_book_texture.png",
+      "blobId": "358503c8920d9045b63750a64c6199043ec47d47",
+      "size": 186624,
+      "lfs": {
+        "sha256": "b743b0e878a10e579371707f3d135c6e7a80a8c307fffabfe1fea6a784830ec2",
+        "size": 186624,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/black_book/visual/black_book_vis.msh",
+      "blobId": "0bc60c6bbefe822be317f8875128f86087f92f15",
+      "size": 773296,
+      "lfs": {
+        "sha256": "ca4a7f95bad5dee37a99c0374df132eadf5f8304770e5830f3286d730c844049",
+        "size": 773296,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/bowl_drainer/bowl_drainer.mtl",
+      "blobId": "87011f1c22990517481bbe1e10375f44719b867e",
+      "size": 240
+    },
+    {
+      "rfilename": "turbosquid_objects/bowl_drainer/bowl_drainer.obj",
+      "blobId": "afc215df955861acb11329a9676a4e4a3aeda80e",
+      "size": 1103826
+    },
+    {
+      "rfilename": "turbosquid_objects/bowl_drainer/bowl_drainer.xml",
+      "blobId": "c2c1e40a5a469011d3a5cb42fb8dcecf41da1b48",
+      "size": 2844
+    },
+    {
+      "rfilename": "turbosquid_objects/bowl_drainer/bowl_drainer_col.obj",
+      "blobId": "2fa78114d97b94ac803875d0b89f55dd560126f7",
+      "size": 5689
+    },
+    {
+      "rfilename": "turbosquid_objects/bowl_drainer/ceramic.png",
+      "blobId": "891c50a69b45e57cc9befa6f8fcc579d35552fc4",
+      "size": 1442030,
+      "lfs": {
+        "sha256": "beef464a2aa9143ba6a25a44adcbfd1f1aff16c5969edbf08019b61025388402",
+        "size": 1442030,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/bowl_drainer/visual/bowl_drainer_vis.msh",
+      "blobId": "3fb620e7db45e54d650dfffd7029035c9d8a950e",
+      "size": 1597984,
+      "lfs": {
+        "sha256": "05e0e419d1ba1642caf17b708091090b3acbba73964725fdde702f7f12b21146",
+        "size": 1597984,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/desk_caddy/desk_caddy.mtl",
+      "blobId": "e2f22354cdaa99f176df5c88579aed9700a2cbdb",
+      "size": 245
+    },
+    {
+      "rfilename": "turbosquid_objects/desk_caddy/desk_caddy.obj",
+      "blobId": "21033b2a362702e9108a232731b519cc10b6e94d",
+      "size": 2413068
+    },
+    {
+      "rfilename": "turbosquid_objects/desk_caddy/desk_caddy.xml",
+      "blobId": "bb59530d8629878f8974efaed4abf79d31743ee3",
+      "size": 5572
+    },
+    {
+      "rfilename": "turbosquid_objects/desk_caddy/desk_caddy_col.obj",
+      "blobId": "3b67c24f86009477c92cc9e10bc82a09e3936b68",
+      "size": 16196
+    },
+    {
+      "rfilename": "turbosquid_objects/desk_caddy/desk_caddy_site.obj",
+      "blobId": "196f9c7451a052998d8b2d6e078f07b92d0b9a16",
+      "size": 3797
+    },
+    {
+      "rfilename": "turbosquid_objects/desk_caddy/desk_caddy_site.xml",
+      "blobId": "75d2ea34d6848f5092fa1a125dfd7dce850dea97",
+      "size": 1415
+    },
+    {
+      "rfilename": "turbosquid_objects/desk_caddy/desk_caddy_texture.png",
+      "blobId": "a8aab85145534e14ab08ff22f82fd687184f9feb",
+      "size": 11230178,
+      "lfs": {
+        "sha256": "ea07fb85ab5ef7167040e459ae4442827d114d778aaf4f6a8229bc3898406238",
+        "size": 11230178,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/desk_caddy/visual/desk_caddy_vis.msh",
+      "blobId": "0856bbb2fca5d73a369f899496710975f3b9efac",
+      "size": 2696776,
+      "lfs": {
+        "sha256": "c2a31df6411aa382d91553a594faa2cb9577908c3881b9022616f9d6604333a4",
+        "size": 2696776,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/dining_set_group/dining_set_group.xml",
+      "blobId": "38dc6ae22292ed4899c921993259a802f17507e0",
+      "size": 2706
+    },
+    {
+      "rfilename": "turbosquid_objects/dining_set_group/dining_set_utensils.mtl",
+      "blobId": "fe041fceedce63512fd2bd9b4af9f6544f4ecdfb",
+      "size": 256
+    },
+    {
+      "rfilename": "turbosquid_objects/dining_set_group/dining_set_utensils.obj",
+      "blobId": "9f33210f528c389e687ad33bc9459ad71b156ab9",
+      "size": 160007
+    },
+    {
+      "rfilename": "turbosquid_objects/dining_set_group/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/dining_set_group/visual/dining_set_utensils_vis.msh",
+      "blobId": "a5360acf686cf60ca1cdecbeb15fe30ec94516cc",
+      "size": 262240,
+      "lfs": {
+        "sha256": "a3d3d44c836e908a25784e54e28c2083f4c01a45dcfa0ec69e72109356798d25",
+        "size": 262240,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/dining_set_group/white_linen_texture.png",
+      "blobId": "4a9c6276e2a4627014a59f3cdd9413a4d6bc6c22",
+      "size": 465048,
+      "lfs": {
+        "sha256": "0ee137d6efc1dbac08db147f3b2c9cde59e204f429ac552267a8ca9e54917ccd",
+        "size": 465048,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/metal_diff.png",
+      "blobId": "c88dc71ca6c1ebacba3067d9405976a7e8528c0b",
+      "size": 1036822,
+      "lfs": {
+        "sha256": "4b59ae89c09579b8edcf29df79fc17090f9d9fd1ac8275a7bd3b5cabf376ffaa",
+        "size": 1036822,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/moka_pot.xml",
+      "blobId": "bd108aec4ca49f22fee5008280b09eb8a3ca60aa",
+      "size": 4917
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/moka_pot_body.mtl",
+      "blobId": "7d4a8a31d4a74443a231ffbd35fac8cbd0d6ba72",
+      "size": 244
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/moka_pot_body.obj",
+      "blobId": "9556a3a6c3a8b0fb88ce674ff2d39d8a4e89ceb2",
+      "size": 109476
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/moka_pot_col.obj",
+      "blobId": "c7af5d9a867192ce40e35266dc0f2f199a36ee3a",
+      "size": 14278
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/moka_pot_handle.mtl",
+      "blobId": "aad6050d1d1bc6a8f6acf36160b0fb15c24445d5",
+      "size": 248
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/moka_pot_handle.obj",
+      "blobId": "f11e932db419bfe3f5bab553ab8a86a84cea264b",
+      "size": 49121
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/moka_pot_handle.xml",
+      "blobId": "584c2eb9acf8b2bc3ba07dac273f605fc0345a6f",
+      "size": 4430
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/rubber_black.png",
+      "blobId": "ff630a6a8cac318f51d0487d5cfa01e2e8ce6bcf",
+      "size": 492169,
+      "lfs": {
+        "sha256": "8147f34af7c3e5c6b7c8496e34f848662a91d10cb55aae5bab8150eb7ff02e81",
+        "size": 492169,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/visual/moka_pot_body_vis.msh",
+      "blobId": "536d69be406ec52b515735468685d7bbcefd3edd",
+      "size": 155212,
+      "lfs": {
+        "sha256": "5b3009030d48d383572e7a3930ef0bbb55e16b59e9f2451a798c904dfdc227ca",
+        "size": 155212,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/moka_pot/visual/moka_pot_handle_vis.msh",
+      "blobId": "49b5f16e022f33f9d53e4aaf350c72166d26b4b9",
+      "size": 81772
+    },
+    {
+      "rfilename": "turbosquid_objects/porcelain_mug/porcelain_mug.mtl",
+      "blobId": "d3c48a5607eb6107f5a62e4b8038ab4868e63412",
+      "size": 251
+    },
+    {
+      "rfilename": "turbosquid_objects/porcelain_mug/porcelain_mug.obj",
+      "blobId": "78170c9c31b8bced6981c866827aadd93abff011",
+      "size": 1558046
+    },
+    {
+      "rfilename": "turbosquid_objects/porcelain_mug/porcelain_mug.xml",
+      "blobId": "290fd410b6ae373c4e6280dd14cdbe7a8a66608e",
+      "size": 6073
+    },
+    {
+      "rfilename": "turbosquid_objects/porcelain_mug/porcelain_mug_col.obj",
+      "blobId": "f4f7ce142910b33f184b0d8d503afee0aae324b3",
+      "size": 21253
+    },
+    {
+      "rfilename": "turbosquid_objects/porcelain_mug/porcelain_mug_texture.png",
+      "blobId": "e4257bc6dd66ac3d27f409d9e68a6ee7ecb98c75",
+      "size": 7293802,
+      "lfs": {
+        "sha256": "bab4363b4e86e3352718ef1c3849a632fa06f83528bb408f4b533ceb01b3bc25",
+        "size": 7293802,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/porcelain_mug/visual/porcelain_mug_vis.msh",
+      "blobId": "977925c44d1c1df0407fc54a9fb5c898b1f2ccf9",
+      "size": 1797568,
+      "lfs": {
+        "sha256": "e0dc3f0a0585d172c6ff22e49173774e37bc8a4a8e74d8c583ecb7eb314ffc13",
+        "size": 1797568,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/red_coffee_mug/red_coffee_mug.mtl",
+      "blobId": "d9ec9c06c98fd2befc07c5eef0a9e2b7f50e760d",
+      "size": 253
+    },
+    {
+      "rfilename": "turbosquid_objects/red_coffee_mug/red_coffee_mug.obj",
+      "blobId": "54a5cda1a19eb017e81f68c8123a763401735fa5",
+      "size": 1035116
+    },
+    {
+      "rfilename": "turbosquid_objects/red_coffee_mug/red_coffee_mug.xml",
+      "blobId": "0f7224bad560ac75537b08566ec461c11a87e2f5",
+      "size": 3485
+    },
+    {
+      "rfilename": "turbosquid_objects/red_coffee_mug/red_coffee_mug_col.obj",
+      "blobId": "562dff752d5220eb73654d7cb4d713cfbfbc04c2",
+      "size": 10365
+    },
+    {
+      "rfilename": "turbosquid_objects/red_coffee_mug/red_coffee_mug_texture.png",
+      "blobId": "250a9647c697ceff416ece1d7dfb704055e1f0f5",
+      "size": 9780486,
+      "lfs": {
+        "sha256": "056fe075297343bd294678be0f8df694a4f4e0563f42033bb167ce6b5bd0b3a9",
+        "size": 9780486,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/red_coffee_mug/visual/red_coffee_mug_vis.msh",
+      "blobId": "2ec287f4d9f9c42ba9ca1040529d56b1ce904427",
+      "size": 1212208,
+      "lfs": {
+        "sha256": "c4f694d1ea953d86ce29a085cf3613363a193a6e99446c190d88c47016d94fb6",
+        "size": 1212208,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/white_storage_box/ceramic.png",
+      "blobId": "891c50a69b45e57cc9befa6f8fcc579d35552fc4",
+      "size": 1442030,
+      "lfs": {
+        "sha256": "beef464a2aa9143ba6a25a44adcbfd1f1aff16c5969edbf08019b61025388402",
+        "size": 1442030,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/white_storage_box/visual/white_storage_box_vis.msh",
+      "blobId": "2660d3606856d393651c828d1ef0400612682490",
+      "size": 48400
+    },
+    {
+      "rfilename": "turbosquid_objects/white_storage_box/white_storage_box.mtl",
+      "blobId": "ce9b6738b154f494c61bc8c0613dea930000e795",
+      "size": 244
+    },
+    {
+      "rfilename": "turbosquid_objects/white_storage_box/white_storage_box.obj",
+      "blobId": "735551c52fbf61a86b82f9d10ebe57a8a934c728",
+      "size": 30847
+    },
+    {
+      "rfilename": "turbosquid_objects/white_storage_box/white_storage_box.xml",
+      "blobId": "695e72aa272ef4cb467e09f72691a2f76fb85be2",
+      "size": 2491
+    },
+    {
+      "rfilename": "turbosquid_objects/white_storage_box/white_storage_box_col.obj",
+      "blobId": "66fc926383c49b915d926b029bc03630be0e03df",
+      "size": 3745
+    },
+    {
+      "rfilename": "turbosquid_objects/white_yellow_mug/visual/white_yellow_mug_vis.msh",
+      "blobId": "b20134a5a4c9f424cabae4eaa97424d5595fd4b9",
+      "size": 913048,
+      "lfs": {
+        "sha256": "aeabcc3a57b84549568a1d6907542ef9e65ea126c101f6f3985deb8b55d3aa79",
+        "size": 913048,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/white_yellow_mug/white_yellow_mug.mtl",
+      "blobId": "2af2ec642a9c3afd4c88c29c30cf314846aa77ce",
+      "size": 257
+    },
+    {
+      "rfilename": "turbosquid_objects/white_yellow_mug/white_yellow_mug.obj",
+      "blobId": "d340635bf590e7e61568b82f30f0976d5d5fd498",
+      "size": 774409
+    },
+    {
+      "rfilename": "turbosquid_objects/white_yellow_mug/white_yellow_mug.xml",
+      "blobId": "e10314ab93566a7f0d375059b019fe925a9e15cc",
+      "size": 10121
+    },
+    {
+      "rfilename": "turbosquid_objects/white_yellow_mug/white_yellow_mug_col.obj",
+      "blobId": "b1eed24a3ccbff58902523c4566e50f44182fe31",
+      "size": 38330
+    },
+    {
+      "rfilename": "turbosquid_objects/white_yellow_mug/white_yellow_mug_texture.png",
+      "blobId": "a9db22636283df1f0059949f8fbe4f3b335adf3e",
+      "size": 8119611,
+      "lfs": {
+        "sha256": "152a4b711c33e8cb6956233043580331bd0f54d5b3dbc13a9bc870201b295890",
+        "size": 8119611,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/Cork_Texture_by_faycop.jpg",
+      "blobId": "6df4b732352b5d9367be985a43241aacebf03836",
+      "size": 277008,
+      "lfs": {
+        "sha256": "a59f0b4204a858367bb7d41c94b2d4b5f27b2b30859637a6c8d072d3122a53d9",
+        "size": 277008,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/cork_texture.png",
+      "blobId": "1d6d6bfefaf274442207b06e49606cc1614358b6",
+      "size": 1322298,
+      "lfs": {
+        "sha256": "93a9c1d22c7256e423a1473b2bf9107b4e120cd249423f7e01289f9c6fd63feb",
+        "size": 1322298,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/label_wine.png",
+      "blobId": "6d089f79f0025059fc7c9f0abb294b8bda092965",
+      "size": 158360,
+      "lfs": {
+        "sha256": "a8caed4b3414dcf4b72558e339ce1cad1b90b4f159d0d293f06ed04a1f473241",
+        "size": 158360,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/visual/wine_bottle_red_cork_vis.msh",
+      "blobId": "c1a504b2f3364fb65c3cff472c0b321e5ac2cd39",
+      "size": 96352
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/visual/wine_bottle_red_logo_vis.msh",
+      "blobId": "d2c4808d828ab4ab1f7e2deb0b227deb9ae15e92",
+      "size": 3472
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/visual/wine_bottle_red_main_vis.msh",
+      "blobId": "d88460d886f0e1d5b5fa547c990b1cf3bfbba0bf",
+      "size": 487096,
+      "lfs": {
+        "sha256": "92a7a897bdac34f47161cb418fbe6f7fc9056d2f0e93647beb8139cffeed270a",
+        "size": 487096,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/wine_bottle.xml",
+      "blobId": "751f47e936e12db803b52c40d4169f99853eacc2",
+      "size": 6827
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/wine_bottle_red_cork.mtl",
+      "blobId": "bdd5b96d322a12b254541d000fb97fae0b5563ad",
+      "size": 263
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/wine_bottle_red_cork.obj",
+      "blobId": "9c8501d6b023235142311340d015760c8dee188c",
+      "size": 59786
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/wine_bottle_red_logo.mtl",
+      "blobId": "55af56352f2ad803fab5b248ad4c10768427f845",
+      "size": 251
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/wine_bottle_red_logo.obj",
+      "blobId": "99aa9b422dbc09e7413f1a450563e837026910aa",
+      "size": 2768
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/wine_bottle_red_main.mtl",
+      "blobId": "e67ff1de1ef9aec5dd5cc3afde2c3bf149ae746e",
+      "size": 606
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/wine_bottle_red_main.obj",
+      "blobId": "565a143cbbf022599dfe0fe551e39f278aa47c93",
+      "size": 304055
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/wine_bottle_red_main.xml",
+      "blobId": "323850527d6d1a782193bc64a26997a82549409a",
+      "size": 5875
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_bottle/wine_bottle_red_main_col.obj",
+      "blobId": "49831c92f0a20bc570b037f0eb994be8a665214f",
+      "size": 20286
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/light-wood.png",
+      "blobId": "92f9d6aa33937bb75a49fb9543e0c6a74a88aff6",
+      "size": 801173,
+      "lfs": {
+        "sha256": "967be64bdb170d36283bc43c2ae5d525ec88f78bc837dc7d0efc9a28d68caad1",
+        "size": 801173,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/light_yellow_metal.png",
+      "blobId": "10776e536222cb8a19ee38f22c3a2c0e298d86bc",
+      "size": 1729294,
+      "lfs": {
+        "sha256": "b8d8abf32b1940b938c097e6955ef7c5e0b84ab97296e53aa65315efbf1f1359",
+        "size": 1729294,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/mahogany.png",
+      "blobId": "0b8647b2858e4db87e7b0ad6ade7b56f7f8ab22b",
+      "size": 66375,
+      "lfs": {
+        "sha256": "702a734fef1bf0df4e446f98f571628f81e423caba64b5fcfd683bae42135c3b",
+        "size": 66375,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/visual/wine_rack_planes_vis.msh",
+      "blobId": "57c40ee7e4aaf86aecc5966c3f41f3105fe023c4",
+      "size": 65140
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/visual/wine_rack_stand_vis.msh",
+      "blobId": "f7299b3628551a6e2eaf11ed9ca2d6fc3871a725",
+      "size": 41488
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/visual/wine_rack_stoppers_vis.msh",
+      "blobId": "44aec53d507801138f9db8526511f6f158991fe8",
+      "size": 20752
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack.xml",
+      "blobId": "bbe734ff93f6ab3274642128aa35377f4fcb9b07",
+      "size": 4121
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_planes.mtl",
+      "blobId": "9c39b235e9a2fabea8967dee25c51f050536e0f6",
+      "size": 321
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_planes.obj",
+      "blobId": "d3de2600a2b903e1d6a7f7e0ca8d31f00327b115",
+      "size": 45151
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_planes.xml",
+      "blobId": "e72f398fc8ee0c4588f4656f3312a9387b94126a",
+      "size": 1372
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_planes_col.obj",
+      "blobId": "80cce6c0dc96ba0d71063f662365a3dc611ebd97",
+      "size": 1900
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_stand.mtl",
+      "blobId": "a9958daad3b6fd32342b0ff95f090c22713ea5af",
+      "size": 343
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_stand.obj",
+      "blobId": "7d1c570d0e9cc4a7a15b9d9c71189057d9ca811b",
+      "size": 28554
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_stand.xml",
+      "blobId": "815274ae3fe62ed9228df3354f3b69d52ea400cd",
+      "size": 2071
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_stand_col.obj",
+      "blobId": "05d184bc26da757d978b28d0e52ba69c1ef2cc72",
+      "size": 4719
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_stoppers.mtl",
+      "blobId": "390aa2c50186563354e956dd7db2a6cea04aa1f7",
+      "size": 1714
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_stoppers.obj",
+      "blobId": "bd25537a5ab7a0deef8ded696f20668ba4624a23",
+      "size": 17925
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_stoppers.xml",
+      "blobId": "0a82e79f4edc1fd879fdf7984696d62949b77f6e",
+      "size": 1388
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack/wine_rack_stoppers_col.obj",
+      "blobId": "dc963f4a4e34df446c0da22d2a53610815c7445b",
+      "size": 1918
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack_stand/metal.png",
+      "blobId": "f5260ff57151e704fb133e4e0ea88af4a455ee24",
+      "size": 196878,
+      "lfs": {
+        "sha256": "93784216a66b52be9c8ccc3732e50f511815291e32f34f97bd139ed7229061fa",
+        "size": 196878,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack_stand/visual/wine_rack_stand_vis.msh",
+      "blobId": "c8960e9bde067ee9065f11d13c2f892a99e33885",
+      "size": 41488
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack_stand/wine_rack_stand.mtl",
+      "blobId": "6b65c2055f6416d8c3ccac3f7701e8c9c6716f0a",
+      "size": 242
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack_stand/wine_rack_stand.obj",
+      "blobId": "e3e06bdef3cbac42306acbb5ca1de347593a65fa",
+      "size": 28554
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack_stand/wine_rack_stand.xml",
+      "blobId": "33de9687fadb7484aee40976c27acbc3252608da",
+      "size": 2067
+    },
+    {
+      "rfilename": "turbosquid_objects/wine_rack_stand/wine_rack_stand_col.obj",
+      "blobId": "50aabb9411d4d33db2a5983d19dcb065d55a749f",
+      "size": 4723
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_cabinet_base/dark_fine_wood.png",
+      "blobId": "6d79f8b77af90bf818d4182a678688eefe74d3b6",
+      "size": 42358,
+      "lfs": {
+        "sha256": "9aaa94ef4cd61592b566569bba3569276a38ea5ff22ed4b978b77b038b38a11f",
+        "size": 42358,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_cabinet_base/visual/wooden_cabinet_base_vis.msh",
+      "blobId": "79f7b7bb2f9c09f2bf4d3637eddcddc5d44f659b",
+      "size": 21400
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_cabinet_base/wooden_cabinet_base.mtl",
+      "blobId": "11c00a85e117fe2466f73b71d4ca83f412dbeb0d",
+      "size": 441
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_cabinet_base/wooden_cabinet_base.obj",
+      "blobId": "3f8046f83c03f60bc738ea9bf4b1ae713f2cbd3c",
+      "size": 14212
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_cabinet_base/wooden_cabinet_base.xml",
+      "blobId": "6e3e5fb9753f690286bad85937fb0be80e9b05aa",
+      "size": 3038
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_cabinet_base/wooden_cabinet_base_col.obj",
+      "blobId": "0659b757109d3a5c0d689120a09b1f4015b96e94",
+      "size": 11328
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_shelf/dark_fine_wood.png",
+      "blobId": "6d79f8b77af90bf818d4182a678688eefe74d3b6",
+      "size": 42358,
+      "lfs": {
+        "sha256": "9aaa94ef4cd61592b566569bba3569276a38ea5ff22ed4b978b77b038b38a11f",
+        "size": 42358,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_shelf/visual/wooden_shelf_vis.msh",
+      "blobId": "79f7b7bb2f9c09f2bf4d3637eddcddc5d44f659b",
+      "size": 21400
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_shelf/wooden_shelf.mtl",
+      "blobId": "d863756a5abdcd180e11eff9c24003b67dc7511b",
+      "size": 486
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_shelf/wooden_shelf.obj",
+      "blobId": "d485e525b8c4ddc7b552f864eec9b76bc211dd20",
+      "size": 14229
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_shelf/wooden_shelf.xml",
+      "blobId": "5896664769184eff77b9f74842ddbd8637855a9d",
+      "size": 3658
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_shelf/wooden_shelf_col.obj",
+      "blobId": "7fd06ae08b2ebb9c113819157ce91449f148dc0d",
+      "size": 11321
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_tray/crate_mat_BaseColor.png",
+      "blobId": "28e0bb650016e0e94370fe3cc0b325e316d61664",
+      "size": 4988248,
+      "lfs": {
+        "sha256": "3524386ee45899ff14c6e386294e2552f3fb11d4e0f478ef3e71f055f68f800a",
+        "size": 4988248,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_tray/visual/wooden_tray_vis.msh",
+      "blobId": "f04d6bfc297721b86badec0e45df9341fb797e3f",
+      "size": 19456
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_tray/wooden_tray.mtl",
+      "blobId": "0c72654534d33301a78b01234d5f95faf158cbf5",
+      "size": 307
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_tray/wooden_tray.obj",
+      "blobId": "512d840e346e4b2966ef2a0efee3234f4a11295e",
+      "size": 13536
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_tray/wooden_tray.xml",
+      "blobId": "55032bb68b6a02d329b3da986844ffd924082e0a",
+      "size": 4573
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_tray/wooden_tray_col.obj",
+      "blobId": "96d6dcf489a682a89ab8a73fe26f53eb14b8b083",
+      "size": 14261
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_two_layer_shelf/dark_fine_wood.png",
+      "blobId": "6d79f8b77af90bf818d4182a678688eefe74d3b6",
+      "size": 42358,
+      "lfs": {
+        "sha256": "9aaa94ef4cd61592b566569bba3569276a38ea5ff22ed4b978b77b038b38a11f",
+        "size": 42358,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_two_layer_shelf/visual/wooden_two_layer_shelf_vis.msh",
+      "blobId": "10c269c6c06daae25985aa3326f2be756e7a96d2",
+      "size": 11896
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_two_layer_shelf/wooden_two_layer_shelf.mtl",
+      "blobId": "921ae90274a3e5bbc627f5be6733ffbd9cde9c18",
+      "size": 439
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_two_layer_shelf/wooden_two_layer_shelf.obj",
+      "blobId": "734cf93e032e028ea021171d876ad6996bad12d2",
+      "size": 8385
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_two_layer_shelf/wooden_two_layer_shelf.xml",
+      "blobId": "39e1d414b58206ae1ac815fd2f5a1cb2ff87ea20",
+      "size": 2825
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_two_layer_shelf/wooden_two_layer_shelf_col.obj",
+      "blobId": "ef2b4d726f4c28eb5227b1282d5f6cd52639506f",
+      "size": 8243
+    },
+    {
+      "rfilename": "turbosquid_objects/wooden_two_layer_shelf/wooden_two_layer_shelf_site.obj",
+      "blobId": "ffe78c890fa1e0ce00fe555f39cf6c28d62d92b8",
+      "size": 2833
+    },
+    {
+      "rfilename": "turbosquid_objects/yellow_book/visual/yellow_book_vis.msh",
+      "blobId": "57aa4458029b645700b1c2f742f5a40833dcf39d",
+      "size": 773296,
+      "lfs": {
+        "sha256": "b1292bb7e96409a465a38aef94a6316b85608c9821cae0779b51082d8a777c34",
+        "size": 773296,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/yellow_book/yellow_book.mtl",
+      "blobId": "f7e2b9fcaef216dfcb1d5b212168563de0714fdc",
+      "size": 631
+    },
+    {
+      "rfilename": "turbosquid_objects/yellow_book/yellow_book.obj",
+      "blobId": "b0f4eff62201633a8db59aeb63b6b80bbf7af6c7",
+      "size": 511301
+    },
+    {
+      "rfilename": "turbosquid_objects/yellow_book/yellow_book.png",
+      "blobId": "4dd7caff3078c49113fdc675f41703e10b473a00",
+      "size": 14194,
+      "lfs": {
+        "sha256": "e73422fb9aad0cb0925954dce764dc1402bea13ab59a153e9dcfe0809850e767",
+        "size": 14194,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "turbosquid_objects/yellow_book/yellow_book.xml",
+      "blobId": "b7f3754c8da1238d73ab553053642dcc762fe83c",
+      "size": 1085
+    },
+    {
+      "rfilename": "turbosquid_objects/yellow_book/yellow_book_col.obj",
+      "blobId": "4db429531217ce66e0f54b23b018f2ba5277be02",
+      "size": 934
+    },
+    {
+      "rfilename": "wall.xml",
+      "blobId": "7d1581fb08ed16c8f1a0b943e22ab3de0151e8a7",
+      "size": 755
+    },
+    {
+      "rfilename": "wall_frames.stl",
+      "blobId": "f4389690be228b08999a11bd50eb71d9231c0cc0",
+      "size": 20084
+    }
+  ]
+}

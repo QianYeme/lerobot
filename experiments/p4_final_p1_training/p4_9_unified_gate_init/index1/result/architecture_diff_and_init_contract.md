@@ -1,0 +1,6 @@
+# Initialization contract
+
+Only scientific variable: learnable scalar gate initial0 -> +.001. Signed scalar, adapter, attention, tokens, residual scale, data, seeds, loss and budgets remain historical. Local run directories/source snapshots are administrative changes. Machine identity and zero-vs-plus non-gate tensor equality are recorded per smoke job.
+LIBERO full reconstructed initial hash must match frozen r5; formal6 historical original step0 was not persisted: RECIPE_MATCHED_NOT_BYTE_MATCHED, even though reconstructed zero/plus non-gate tensors match. No old trained weights initialize new runs. Historical trained checkpoints are strictly loaded only for baseline checks/scoring.
+Each pair uses identical evaluation code/observations. Dev15 uses the historical six fractions per episode (90 observations), not all Dev frames; Dev9 uses every1391 frame. Final episode IDs are inspected only for split disjointness; no Final decoding or inference. File container hashing for revision verification is not episode access.
+Temporary zero-gate evaluations measure mechanism only. New/reference alpha remains unchanged after probes. Raw units differ across formal6 and LIBERO; do not pool MAE across domains.

@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "identity": {
+    "job": "F6_FIXED_GATEPLUS_S3",
+    "domain": "f6",
+    "kind": "fixed",
+    "seed": 3,
+    "target": 80000,
+    "gate_initial_value": 0.0010000000474974513,
+    "initial_non_gate_sha256": "78514fd3ac3b427390bcfbd24da677c9318a50d17622059f0130c9afc3631400",
+    "baseline_path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_2_1_dino_repair_parallel/index1/result/workers/F3/runs/F3/checkpoints/formal/080000/resume.pt",
+    "baseline_sha256": "92b421820d759b939e04536541d1833eae47d237c1762667eae505a16e75f3f5",
+    "formal6_pairing": "RECIPE_MATCHED_NOT_BYTE_MATCHED",
+    "stats_sha256": "60303d64e5b7fed9059c91af5d62f153fe03d7ca5fbf6448f880e6602b672e84",
+    "bank_sha256": "787a7084f1a387c71caaae635618458ec620b750d258df5df52578b1e7bc272f"
+  },
+  "initial_non_gate_equal": true,
+  "gradients": {
+    "plus": {
+      "gate": 0.06098910793662071,
+      "adapter": 0.0016606574550353038,
+      "attention": 0.00409364510073688,
+      "slots": 6.282315766355135e-05
+    },
+    "zero": {
+      "gate": 0.06112851947546005,
+      "adapter": 0.0,
+      "attention": 0.0,
+      "slots": 0.0
+    }
+  },
+  "baseline_strict_load": true,
+  "exact_next_update_hash": true,
+  "sampler_cursor_batch_equal": true,
+  "smoke_updates_discarded": true,
+  "formal_updates": 0
+}

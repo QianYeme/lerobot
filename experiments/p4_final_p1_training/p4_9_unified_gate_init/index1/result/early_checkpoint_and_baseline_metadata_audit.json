@@ -1,0 +1,24 @@
+[
+  {
+    "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_1_unattended_p1_pilot/index3/result/checkpoints/pilot/080000/resume.pt",
+    "metadata": "PASS",
+    "step": 80000,
+    "scheduler": null
+  },
+  {
+    "path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_2_1_dino_repair_parallel/index1/result/workers/F3/runs/F3/checkpoints/formal/080000/resume.pt",
+    "metadata": "PASS",
+    "step": 80000,
+    "scheduler": null
+  },
+  {
+    "job": "LB_LEGACY_GATEPLUS",
+    "step": 1000,
+    "full_resume_sha": "PASS"
+  },
+  {
+    "job": "LB_FIXED_GATEPLUS",
+    "step": 1000,
+    "full_resume_sha": "PASS"
+  }
+]

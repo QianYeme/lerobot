@@ -1,0 +1,25 @@
+{
+  "status": "BLOCKED_NOT_INSTANTIATED",
+  "effective_runtime_config": null,
+  "formal_updates": 0,
+  "requested_training_updates": 10000,
+  "seed": 1,
+  "contract_targets_only": {
+    "state_dim": 8,
+    "action_dim": 7,
+    "raw_object_token_dim": 387,
+    "adapter_dim": 256,
+    "hidden_dim": 512,
+    "prototypes": 4,
+    "object_tokens": 5,
+    "partitions": "global plus fixed2x2",
+    "temperature": 0.2,
+    "gate_initial_value": 0,
+    "unbounded_signed_scalar_gate": true,
+    "prototype_normalizations": 1,
+    "online_dino_normalizations": 1,
+    "prototype_bank_diagnostic_sha256": "1d78709651259d73edc5f1d00a687f30ce0c251b3e79b5045d73478673953d66"
+  },
+  "prototype_bank_approved_for_training": false,
+  "reason": "G2 automatic prototype gate failed; no model integration or training was launched"
+}

@@ -1,0 +1,33 @@
+{
+  "max_concurrency": 4,
+  "measurements": {
+    "1": {
+      "serial_relative_speedup": 1.0000001319886593,
+      "aggregate_updates_per_second": 11.072009769271315,
+      "peak_bytes": 1605400064
+    },
+    "2": {
+      "serial_relative_speedup": 1.7942842572728517,
+      "aggregate_updates_per_second": 22.957987245508306,
+      "peak_bytes": 4877520384
+    },
+    "3": {
+      "serial_relative_speedup": 2.3646824689179957,
+      "aggregate_updates_per_second": 29.624614363545497,
+      "peak_bytes": 6482920448
+    },
+    "4": {
+      "serial_relative_speedup": 2.6362376236634,
+      "aggregate_updates_per_second": 32.514592445270125,
+      "peak_bytes": 8087336448
+    }
+  },
+  "priority": [
+    "F6_LEGACY_GATEPLUS_S1",
+    "F6_FIXED_GATEPLUS_S3",
+    "LB_LEGACY_GATEPLUS",
+    "LB_FIXED_GATEPLUS"
+  ],
+  "isolation": "separate processes, samplers, logs; numerical final state checked",
+  "comparison": "mixed-domain aggregate updates differ in cost; speedup uses sum serial times / parallel walltime"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "D0_D4_PROBES_DONE",
+  "kind": "legacy",
+  "weights_saved": false,
+  "new_optimizer_updates": 0,
+  "read_only_state_checks": [
+    {
+      "model": "legacy",
+      "checkpoint_step": 5000,
+      "state_before_after_identical": true,
+      "checkpoint_sha256": "c18b6503988249ca9d7c3189891f917e8aed1e9f04185110366d2dcf6442c6d2"
+    },
+    {
+      "model": "legacy",
+      "checkpoint_step": 10000,
+      "state_before_after_identical": true,
+      "checkpoint_sha256": "b8126d91542fd5a7898f3120e6e9fd9b6a1fb85b9e47c315a133992edebdfa5f"
+    }
+  ],
+  "initial_hash_verified": true,
+  "input_lock_sha256": "33d384d893d39706323a9e978722c3760172bd125f649f7cdab4f31d27c87830"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PAIRED_COMMON_INIT_CNN_AND_PREPROCESS_PASS",
+  "shared_common_initial_sha256": "5524afe798d2915c08010708965ac69347452d6dfda7bc2c102b8aaabf7bfe1d",
+  "paired_p1_initial_model_sha256": "d27a37598fdc32125b191d3ea83c7d909360e2bfca26a130b1b13aa261594761",
+  "cnn_input_and_features_bitwise_identical": true,
+  "next_update_replay_differences": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "prototype_sha256": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+  "legacy_fixed_difference": "online DINO preprocessing only"
+}

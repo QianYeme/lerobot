@@ -1,0 +1,7 @@
+# 验证范围
+
+七模型的safe导出逐tensor相同；独立包source/src推理流与原checkpoint对照，首三个真实Dev帧native输出差0，reset差0，归一化按Train90统计单独核对。Diffusion独立下载后扩展为首9帧，跨原生8-action重规划边界；NewGL独立下载后对Local safe权重与原checkpoint逐tensor核对并确认Local ON/OFF不直接改arm。
+
+源与导出使用同一经审阅runtime：该证据验证权重导出/装载及流式一致性，不是独立实现算法复现，也不是真机表现证明。服务器新目录按HF revision下载验证与操作者控制主机本地加载必须区分；后者仍待现场，无机器人连接或操作。
+
+不使用P4.5旧错误指标；不跨旧评估表宣称绝对误差可比；L1/F3不同seed，NG Global选中步数不同，均非严格单变量固定step归因。

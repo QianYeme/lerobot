@@ -1,0 +1,422 @@
+[
+  {
+    "episode": 813,
+    "event": 52,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 205,
+    "premover_patches": 36,
+    "observed_gripper_joint_change": [
+      -0.01916433311998844,
+      0.0210314579308033
+    ]
+  },
+  {
+    "episode": 818,
+    "event": 59,
+    "audit_only": false,
+    "positive_patches": 2,
+    "background_patches": 204,
+    "premover_patches": 34,
+    "observed_gripper_joint_change": [
+      -0.01590072549879551,
+      0.0036558248102664948
+    ]
+  },
+  {
+    "episode": 825,
+    "event": 50,
+    "audit_only": true,
+    "positive_patches": 0,
+    "background_patches": 205,
+    "premover_patches": 33,
+    "observed_gripper_joint_change": [
+      -0.01026608794927597,
+      0.0070771463215351105
+    ]
+  },
+  {
+    "episode": 850,
+    "event": 51,
+    "audit_only": false,
+    "positive_patches": 2,
+    "background_patches": 206,
+    "premover_patches": 34,
+    "observed_gripper_joint_change": [
+      -0.007766984403133392,
+      0.009670412167906761
+    ]
+  },
+  {
+    "episode": 852,
+    "event": 51,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 207,
+    "premover_patches": 35,
+    "observed_gripper_joint_change": [
+      -0.012933358550071716,
+      0.010877395048737526
+    ]
+  },
+  {
+    "episode": 860,
+    "event": 56,
+    "audit_only": true,
+    "positive_patches": 1,
+    "background_patches": 206,
+    "premover_patches": 29,
+    "observed_gripper_joint_change": [
+      -0.017199093475937843,
+      0.0007276050746440887
+    ]
+  },
+  {
+    "episode": 876,
+    "event": 51,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 209,
+    "premover_patches": 0,
+    "observed_gripper_joint_change": [
+      -0.008183561265468597,
+      0.013797203078866005
+    ]
+  },
+  {
+    "episode": 887,
+    "event": 48,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 205,
+    "premover_patches": 39,
+    "observed_gripper_joint_change": [
+      -0.008678790181875229,
+      0.007105980068445206
+    ]
+  },
+  {
+    "episode": 908,
+    "event": 52,
+    "audit_only": true,
+    "positive_patches": 0,
+    "background_patches": 204,
+    "premover_patches": 35,
+    "observed_gripper_joint_change": [
+      -0.03792897239327431,
+      0.03779983147978783
+    ]
+  },
+  {
+    "episode": 978,
+    "event": 77,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 207,
+    "premover_patches": 0,
+    "observed_gripper_joint_change": [
+      -0.007590238004922867,
+      0.009304376319050789
+    ]
+  },
+  {
+    "episode": 983,
+    "event": 49,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 204,
+    "premover_patches": 35,
+    "observed_gripper_joint_change": [
+      -0.011768415570259094,
+      0.005630653351545334
+    ]
+  },
+  {
+    "episode": 984,
+    "event": 49,
+    "audit_only": true,
+    "positive_patches": 0,
+    "background_patches": 200,
+    "premover_patches": 32,
+    "observed_gripper_joint_change": [
+      -0.004800181835889816,
+      0.026112951338291168
+    ]
+  },
+  {
+    "episode": 985,
+    "event": 42,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 204,
+    "premover_patches": 36,
+    "observed_gripper_joint_change": [
+      -0.00512995570898056,
+      0.011542921885848045
+    ]
+  },
+  {
+    "episode": 1011,
+    "event": 51,
+    "audit_only": false,
+    "positive_patches": 1,
+    "background_patches": 214,
+    "premover_patches": 12,
+    "observed_gripper_joint_change": [
+      -0.03222212567925453,
+      0.032524220645427704
+    ]
+  },
+  {
+    "episode": 1020,
+    "event": 58,
+    "audit_only": true,
+    "positive_patches": 0,
+    "background_patches": 205,
+    "premover_patches": 34,
+    "observed_gripper_joint_change": [
+      -0.010697886347770691,
+      0.0054613687098026276
+    ]
+  },
+  {
+    "episode": 1024,
+    "event": 48,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 206,
+    "premover_patches": 34,
+    "observed_gripper_joint_change": [
+      -0.006293628364801407,
+      0.013683576136827469
+    ]
+  },
+  {
+    "episode": 1035,
+    "event": 51,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 206,
+    "premover_patches": 0,
+    "observed_gripper_joint_change": [
+      -0.007868494838476181,
+      0.009463995695114136
+    ]
+  },
+  {
+    "episode": 1074,
+    "event": 46,
+    "audit_only": true,
+    "positive_patches": 0,
+    "background_patches": 205,
+    "premover_patches": 34,
+    "observed_gripper_joint_change": [
+      -0.005692437291145325,
+      0.019521251320838928
+    ]
+  },
+  {
+    "episode": 1075,
+    "event": 59,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 209,
+    "premover_patches": 0,
+    "observed_gripper_joint_change": [
+      -0.005604982376098633,
+      0.01435057446360588
+    ]
+  },
+  {
+    "episode": 1100,
+    "event": 46,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 204,
+    "premover_patches": 40,
+    "observed_gripper_joint_change": [
+      -0.0377434566617012,
+      0.03782093524932861
+    ]
+  },
+  {
+    "episode": 1102,
+    "event": 46,
+    "audit_only": true,
+    "positive_patches": 1,
+    "background_patches": 201,
+    "premover_patches": 37,
+    "observed_gripper_joint_change": [
+      -0.012456400319933891,
+      0.0065686143934726715
+    ]
+  },
+  {
+    "episode": 1108,
+    "event": 46,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 206,
+    "premover_patches": 36,
+    "observed_gripper_joint_change": [
+      -0.007306203246116638,
+      0.009478123858571053
+    ]
+  },
+  {
+    "episode": 1131,
+    "event": 46,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 206,
+    "premover_patches": 32,
+    "observed_gripper_joint_change": [
+      -0.008763501420617104,
+      0.007670130580663681
+    ]
+  },
+  {
+    "episode": 1143,
+    "event": 54,
+    "audit_only": true,
+    "positive_patches": 2,
+    "background_patches": 212,
+    "premover_patches": 31,
+    "observed_gripper_joint_change": [
+      -0.037668727338314056,
+      0.037619661539793015
+    ]
+  },
+  {
+    "episode": 1148,
+    "event": 49,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 205,
+    "premover_patches": 33,
+    "observed_gripper_joint_change": [
+      -0.008611852303147316,
+      0.009769588708877563
+    ]
+  },
+  {
+    "episode": 1151,
+    "event": 59,
+    "audit_only": false,
+    "positive_patches": 2,
+    "background_patches": 206,
+    "premover_patches": 2,
+    "observed_gripper_joint_change": [
+      -0.0105990469455719,
+      0.006339553743600845
+    ]
+  },
+  {
+    "episode": 1166,
+    "event": 53,
+    "audit_only": true,
+    "positive_patches": 0,
+    "background_patches": 206,
+    "premover_patches": 14,
+    "observed_gripper_joint_change": [
+      -0.012293580919504166,
+      0.01200183667242527
+    ]
+  },
+  {
+    "episode": 1171,
+    "event": 49,
+    "audit_only": false,
+    "positive_patches": 3,
+    "background_patches": 203,
+    "premover_patches": 31,
+    "observed_gripper_joint_change": [
+      -0.009393569082021713,
+      0.007839750498533249
+    ]
+  },
+  {
+    "episode": 1187,
+    "event": 50,
+    "audit_only": false,
+    "positive_patches": 1,
+    "background_patches": 207,
+    "premover_patches": 34,
+    "observed_gripper_joint_change": [
+      -0.018875544890761375,
+      0.004409145563840866
+    ]
+  },
+  {
+    "episode": 1219,
+    "event": 50,
+    "audit_only": true,
+    "positive_patches": 1,
+    "background_patches": 204,
+    "premover_patches": 37,
+    "observed_gripper_joint_change": [
+      -0.01639709807932377,
+      0.0011461041867733002
+    ]
+  },
+  {
+    "episode": 1225,
+    "event": 52,
+    "audit_only": false,
+    "positive_patches": 1,
+    "background_patches": 206,
+    "premover_patches": 33,
+    "observed_gripper_joint_change": [
+      -0.011653564870357513,
+      0.004699785262346268
+    ]
+  },
+  {
+    "episode": 1233,
+    "event": 48,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 205,
+    "premover_patches": 39,
+    "observed_gripper_joint_change": [
+      -0.008442983031272888,
+      0.010599164292216301
+    ]
+  },
+  {
+    "episode": 1242,
+    "event": 53,
+    "audit_only": true,
+    "positive_patches": 2,
+    "background_patches": 204,
+    "premover_patches": 31,
+    "observed_gripper_joint_change": [
+      -0.010085668414831161,
+      0.0070230066776275635
+    ]
+  },
+  {
+    "episode": 1243,
+    "event": 52,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 204,
+    "premover_patches": 38,
+    "observed_gripper_joint_change": [
+      -0.00865781307220459,
+      0.008661255240440369
+    ]
+  },
+  {
+    "episode": 1245,
+    "event": 50,
+    "audit_only": false,
+    "positive_patches": 0,
+    "background_patches": 202,
+    "premover_patches": 36,
+    "observed_gripper_joint_change": [
+      -0.0054987408220767975,
+      0.011687016114592552
+    ]
+  }
+]

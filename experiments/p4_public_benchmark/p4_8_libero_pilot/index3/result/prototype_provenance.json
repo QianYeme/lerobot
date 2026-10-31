@@ -1,0 +1,90 @@
+[
+  {
+    "episode": 1171,
+    "frame": 49,
+    "patch_index": 177,
+    "patch_xy": [
+      1,
+      11
+    ],
+    "pixel_xy_224": [
+      21,
+      161
+    ],
+    "source_rgb_sha256": "8f041ed6264d0265e2385a3ee85726f02025acba5a9d1d74050292c8620e6371",
+    "score": 0.3681845963001251,
+    "pre_motion": 0.21006304025650024,
+    "post_motion": 8.281350135803223,
+    "feature_stability": 0.9214016199111938,
+    "ee_speed_correlation": 0.7964344024658203,
+    "proximity_to_premover_proxy": 14.0,
+    "split": "Train35/discovery",
+    "semantic_target_verified": false
+  },
+  {
+    "episode": 1187,
+    "frame": 50,
+    "patch_index": 132,
+    "patch_xy": [
+      4,
+      8
+    ],
+    "pixel_xy_224": [
+      63,
+      119
+    ],
+    "source_rgb_sha256": "cc3b20dd9ed7e69f4f36c7885a0edf4593a78aad56e99e1edd3ec97c08780ccd",
+    "score": 0.15891987085342407,
+    "pre_motion": 0.7915356755256653,
+    "post_motion": 8.687142372131348,
+    "feature_stability": 0.7954617738723755,
+    "ee_speed_correlation": 0.5814086198806763,
+    "proximity_to_premover_proxy": 14.0,
+    "split": "Train35/discovery",
+    "semantic_target_verified": false
+  },
+  {
+    "episode": 1151,
+    "frame": 59,
+    "patch_index": 225,
+    "patch_xy": [
+      1,
+      14
+    ],
+    "pixel_xy_224": [
+      21,
+      203
+    ],
+    "source_rgb_sha256": "8beeeeeec97ec9f325aadddc8c89389eabc8e6af65f22766b5af5499b2975287",
+    "score": 0.16981305181980133,
+    "pre_motion": 0.35708555579185486,
+    "post_motion": 4.110739231109619,
+    "feature_stability": 0.9815027713775635,
+    "ee_speed_correlation": 0.6876132488250732,
+    "proximity_to_premover_proxy": 31.30495262145996,
+    "split": "Train35/discovery",
+    "semantic_target_verified": false
+  },
+  {
+    "episode": 850,
+    "frame": 51,
+    "patch_index": 183,
+    "patch_xy": [
+      7,
+      11
+    ],
+    "pixel_xy_224": [
+      105,
+      161
+    ],
+    "source_rgb_sha256": "a6a58dc7d673fec85136d87a50272931e9cc4aa90a864aa6e9bb6256ffee166e",
+    "score": 0.1409236490726471,
+    "pre_motion": 1.0736619234085083,
+    "post_motion": 2.946638584136963,
+    "feature_stability": 0.8710427284240723,
+    "ee_speed_correlation": 0.7754424214363098,
+    "proximity_to_premover_proxy": 14.0,
+    "split": "Train35/discovery",
+    "semantic_target_verified": false
+  }
+]

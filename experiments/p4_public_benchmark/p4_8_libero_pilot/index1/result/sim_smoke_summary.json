@@ -1,0 +1,31 @@
+{
+  "status": "RESET_STEP_RENDER_PASS",
+  "rollouts": [
+    {
+      "init_id": 0,
+      "seed": 4701,
+      "steps": 20,
+      "reported_success": false,
+      "controller": "NO_POLICY_DUMMY_ARM_ZERO_GRIPPER_OPEN",
+      "not_a_model_evaluation": true
+    },
+    {
+      "init_id": 1,
+      "seed": 4701,
+      "steps": 20,
+      "reported_success": false,
+      "controller": "NO_POLICY_DUMMY_ARM_ZERO_GRIPPER_OPEN",
+      "not_a_model_evaluation": true
+    },
+    {
+      "init_id": 2,
+      "seed": 4701,
+      "steps": 20,
+      "reported_success": false,
+      "controller": "NO_POLICY_DUMMY_ARM_ZERO_GRIPPER_OPEN",
+      "not_a_model_evaluation": true
+    }
+  ],
+  "policy_training": false,
+  "robot": false
+}

@@ -1,0 +1,9 @@
+{
+  "preparation_and_audit_scripts": {
+    "p48_r5_export_sources.py": "46a47757956ac39210311d62dff3a15eef3fd8e362ce801638b113d45bac44c7",
+    "p48_r5_build_prototypes.py": "bbde08ad77dc811a90375d53c7863687288abafd44d43635e969650258cc12d7",
+    "p48_r5_optimizer_gate_audit.py": "cb1c2fea42043eb8b0c6a049a8e81a48f1535a53371dcfe00f90304b838e703f"
+  },
+  "original_runtime_code_identity": "code_identity.json",
+  "weights_and_budget_unchanged": true
+}

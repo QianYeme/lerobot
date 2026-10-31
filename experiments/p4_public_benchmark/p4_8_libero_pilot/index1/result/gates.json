@@ -1,0 +1,9 @@
+{
+  "G0": "PASS_ISOLATED_PINNED",
+  "G1": "ENGINEERING_PASS; TIMING_RECIPE_REVIEW_REQUIRED",
+  "G2": "PROTOTYPE_SEMANTICS_BLOCKED",
+  "G3": "NOT_RUN",
+  "G4": "NOT_AUTHORIZED_AUTO_RUN",
+  "training_queued": false,
+  "parallel_preference_recorded": true
+}

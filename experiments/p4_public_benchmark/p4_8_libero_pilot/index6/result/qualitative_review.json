@@ -1,0 +1,21 @@
+{
+  "reviewer": "Codex executor",
+  "stage_contact_sheets_viewed": [
+    "legacy_stage_contact.png",
+    "fixed_stage_contact.png"
+  ],
+  "all_eight_reference_heatmaps_viewed": true,
+  "three_existing_rollout_overviews_viewed": true,
+  "rollout_review_method": "six deterministic sampled times per video,30 videos; not continuous frame-by-frame contact annotation",
+  "legacy_observation": "diffuse/weak target-specific matching",
+  "fixed_observation": "better reference consistency, but stage samples retain response near initial right-side object group after target moves",
+  "random_control_sources_viewed": true,
+  "random_control_visual_locations": [
+    "robot/gripper body",
+    "upper background",
+    "table",
+    "image edge near basket"
+  ],
+  "random_control_feature_semantic_unrelatedness": "UNKNOWN; DINO has global context",
+  "no_new_roi_or_bank_selection": true
+}

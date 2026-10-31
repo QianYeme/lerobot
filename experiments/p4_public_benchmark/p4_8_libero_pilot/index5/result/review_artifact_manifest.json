@@ -1,0 +1,1682 @@
+{
+  "original_auto_zip_sha256": "6b89bab458a12d1fd69f356564b48e78dc74892e15de22beda15a868770702e2",
+  "original_auto_manifest_unchanged": true,
+  "artifacts": {
+    "decision.md": {
+      "sha256": "2890a0a5dc997a198015558d3572faaf80560d23a4dc3555f37d7de0ae814c71",
+      "bytes": 11107,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/decision.md"
+    },
+    "result/dataset_split_manifest.json": {
+      "sha256": "e7211e41bdfd3b0a2594c597db47742e199edd4bca6221fde31c3d9bb873736e",
+      "bytes": 1059,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/dataset_split_manifest.json"
+    },
+    "result/prototype_contact_sheet.png": {
+      "sha256": "f2f40e4cc12771ce9ed1a96edacec179632e346f60d7293590bc4613b29d5f19",
+      "bytes": 256484,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_contact_sheet.png"
+    },
+    "result/prototype_sources.json": {
+      "sha256": "4773c3a847d566dd23990bd881937c1ceae20d0dcc108caf17948e38b20830e4",
+      "bytes": 2565,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_sources.json"
+    },
+    "result/prototype_coordinates.json": {
+      "sha256": "a877a7f88d641e902f439aa16afcb5ef925373dfa92b425fa904d9911da4c1f3",
+      "bytes": 2235,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_coordinates.json"
+    },
+    "result/prototype_build.log": {
+      "sha256": "143fd2e5d170bc7b7cf1250821aa2e429940fc087b5a5f4510dcc42a44f52c08",
+      "bytes": 1738,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_build.log"
+    },
+    "result/prototype_bank.pt": {
+      "sha256": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+      "bytes": 10409,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_bank.pt"
+    },
+    "result/prototype_provenance.json": {
+      "sha256": "bf0d68dfcb08c3f5973c42b41b923e12bda6c9ff343c6d777ce5d1cda400a41e",
+      "bytes": 4261,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_provenance.json"
+    },
+    "result/prototype_roi_contact_sheet.png": {
+      "sha256": "b69ffafe7824514ef2d59b32631232d8d47e5fdfcf2c58ea45050c88bbea336a",
+      "bytes": 256223,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_roi_contact_sheet.png"
+    },
+    "result/prototype_numeric_validation.json": {
+      "sha256": "eb06a23e661dab9cbd402027a0dcd382dcebbe4b502516578a86d548b49fc123",
+      "bytes": 1406,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_numeric_validation.json"
+    },
+    "result/cache_build.log": {
+      "sha256": "27b58e5d5113ed655281339a664bded4106042b29d5693b97f8f78e1bc25736d",
+      "bytes": 750,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/cache_build.log"
+    },
+    "result/train35_statistics.pt": {
+      "sha256": "c01c7256ba2fb30047abf5038ffffab148d5a378d3fbc4a7ed61374be474608d",
+      "bytes": 3559,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/train35_statistics.pt"
+    },
+    "result/prototype_gate.json": {
+      "sha256": "bcde0d81256998a71fb2029748627426c45aa505bd1ec7bb4ee29acd22edefc7",
+      "bytes": 1206,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_gate.json"
+    },
+    "result/prototype_geometry_audit.md": {
+      "sha256": "0b343cbd18fafdeb6582be5684120206f26f42145451a5f01a4fe0d14913d62a",
+      "bytes": 1839,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_geometry_audit.md"
+    },
+    "result/smoke_legacy.log": {
+      "sha256": "1a062c9615dc6018d26301ef8901cec02fb9fc813543bed601859235d41fcc2f",
+      "bytes": 2067,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke_legacy.log"
+    },
+    "result/smoke_fixed.log": {
+      "sha256": "b35635ee90e01cff833d739bd9b56afe3c498f9a68d968716f5e7baf4b4ac657",
+      "bytes": 2064,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke_fixed.log"
+    },
+    "result/smoke_act.log": {
+      "sha256": "51253b44043681e135815e87f28fc89a117470d08552c7511fe35ff589d3d4f6",
+      "bytes": 1506,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke_act.log"
+    },
+    "result/timing_contract.json": {
+      "sha256": "702c6acb3bf4e144d3f9147693fd4e3dc3afb310040670071479b9571c21d3ae",
+      "bytes": 2042,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/timing_contract.json"
+    },
+    "result/timing_source_evidence.json": {
+      "sha256": "9ffe8ffd11dec6f8238047f090276efa22305840582bb7687f21c5b5becfd417",
+      "bytes": 997,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/timing_source_evidence.json"
+    },
+    "result/timing_and_camera_audit.md": {
+      "sha256": "22bd62e85a088fb9a31e4b9603e70e36c7e40d9284cbc8401b5f2a2bc704557b",
+      "bytes": 2115,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/timing_and_camera_audit.md"
+    },
+    "result/pinned_hf_file_metadata.json": {
+      "sha256": "c0b908d9c7d180f9ef930ced52f871454b1e13a9e4577572273699ad5ae46d11",
+      "bytes": 146423,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/pinned_hf_file_metadata.json"
+    },
+    "result/controller_console.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/controller_console.log"
+    },
+    "result/status.json": {
+      "sha256": "eec05c2d9c9a22e5e7daf73fc2159953b95778318ec67153a86bc568a7265d83",
+      "bytes": 246,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/status.json"
+    },
+    "result/paired_implementation_gate.json": {
+      "sha256": "c6cee154269e085e0d086a023dd396ef25db7ccf9a6ee2ea6a4c0e212c6a672c",
+      "bytes": 541,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/paired_implementation_gate.json"
+    },
+    "result/active_stage.json": {
+      "sha256": "f90abb07e48aa6096cd75e5f2e6de00905537ab1422726d770ca89d2a70bf6c8",
+      "bytes": 81,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/active_stage.json"
+    },
+    "result/throughput_benchmark.csv": {
+      "sha256": "a10c2c3247ad6a184f78513ad51ce8f168d08c84960ac8391667e9ef9f9e956d",
+      "bytes": 2387,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/throughput_benchmark.csv"
+    },
+    "result/scheduling_decision.json": {
+      "sha256": "fc2f081d63961739a50e9c8b62bb10228e8c1a39b8bfae821ebb497dffb383ab",
+      "bytes": 862,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/scheduling_decision.json"
+    },
+    "result/dev_preload_wrapper.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/dev_preload_wrapper.log"
+    },
+    "result/dev_preload_fetch.log": {
+      "sha256": "548b3ec271c1faee682fc9e99bf3ec625bc23fe9a7cdf34367e8f627b921c41f",
+      "bytes": 2390,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/dev_preload_fetch.log"
+    },
+    "result/context_update_running.md": {
+      "sha256": "91a5360dec01646471ed57930b12edf135500601a356525208b6ab8ddbc4f177",
+      "bytes": 2293,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/context_update_running.md"
+    },
+    "result/dev_preload_wrapper_attempt2.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/dev_preload_wrapper_attempt2.log"
+    },
+    "result/dev_preload_fetch_attempt2_accelerated.log": {
+      "sha256": "f09fa5204c8587dc37015bdc980f3bb52163b487edaef107273d3098f8161abf",
+      "bytes": 212,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/dev_preload_fetch_attempt2_accelerated.log"
+    },
+    "result/video_download_checksums.json": {
+      "sha256": "2ac7c3972f106d51e843091a07e0b8860525c07337fe2cdbccfdd1ba34277db1",
+      "bytes": 2624,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/video_download_checksums.json"
+    },
+    "result/video_sanity_selection.json": {
+      "sha256": "ff35336ccb8a46f56d317793af1dc7d24895af0707803f636b7a50f51580b624",
+      "bytes": 986,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/video_sanity_selection.json"
+    },
+    "result/dev_preload_cache.log": {
+      "sha256": "1144c64001ea960412ee0c031da8baeb053f18ef65d297bcf3ddee8d371c1402",
+      "bytes": 504,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/dev_preload_cache.log"
+    },
+    "result/training_metrics.csv": {
+      "sha256": "f9054ee730b5e7503629b3a5306d3161a6e46b3f3059e24d35e751b0a08a0932",
+      "bytes": 221040,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/training_metrics.csv"
+    },
+    "result/dev9_metrics.csv": {
+      "sha256": "c6524fdcc911be9ad87838d2d547be950c9ca75b7428551bce1e9ad36b340556",
+      "bytes": 6521,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/dev9_metrics.csv"
+    },
+    "result/libero_rollouts.csv": {
+      "sha256": "db6b5d1ab6b1cd5bad7607260023fe2d22849b83b33373cba61a014897f3f08f",
+      "bytes": 9727,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/libero_rollouts.csv"
+    },
+    "result/checkpoint_manifest.csv": {
+      "sha256": "048558fc7a1b0192f48f1218859eb57ca52bc39822a580ce7a202efa780b69b2",
+      "bytes": 1420,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/checkpoint_manifest.csv"
+    },
+    "result/object_path_diagnostics.csv": {
+      "sha256": "ddb74c2947f410860d522ca0012ecbdab5c3b732be326a917a117c88f996bb9b",
+      "bytes": 11104,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/object_path_diagnostics.csv"
+    },
+    "result/latency_and_parameters.csv": {
+      "sha256": "b6e89f63ad315f85e79db34895fadcd559d28ca8fe2db177075e9dc7d17d4502",
+      "bytes": 691,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/latency_and_parameters.csv"
+    },
+    "result/performance_summary.json": {
+      "sha256": "4f8b7a5be30997bb440f50cb4a0a623b330ca54a4e131c193454681d894b37ac",
+      "bytes": 3548,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/performance_summary.json"
+    },
+    "result/performance_summary.md": {
+      "sha256": "f01c9a3ffcd83bee60064f1abab0cd42b41c15c29117bc0c8bf7e722cfc3d39c",
+      "bytes": 2255,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/performance_summary.md"
+    },
+    "result/summary.md": {
+      "sha256": "f01c9a3ffcd83bee60064f1abab0cd42b41c15c29117bc0c8bf7e722cfc3d39c",
+      "bytes": 2255,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/summary.md"
+    },
+    "result/builder_review.md": {
+      "sha256": "a462ccacc907a68965760c4667a8a8e46247c6d81726d4e75da58cb0de7affff",
+      "bytes": 290,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/builder_review.md"
+    },
+    "result/redteam_review.md": {
+      "sha256": "2f1fdb16af263474f16b0fd8ea050ba3bd6b0e0432bdbf84e11f8fae02abe56e",
+      "bytes": 401,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/redteam_review.md"
+    },
+    "result/validation.json": {
+      "sha256": "0deb783edc93c44c0632e1f85b451907b30166c9f62df33c7792dc950c0cb5ff",
+      "bytes": 453,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/validation.json"
+    },
+    "result/final_server_snapshot.json": {
+      "sha256": "81514172ccff4edf57c92bcc1d69ffea0954a92baf68c61d74a598700ced2a23",
+      "bytes": 171,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/final_server_snapshot.json"
+    },
+    "result/code_identity.json": {
+      "sha256": "3c1a4f8760c9b0f4e6ba60d3ce8035315feddecee0dbc03f4dd183a13a53b742",
+      "bytes": 1043,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/code_identity.json"
+    },
+    "result/prototype_frames/ep0813_frame0038_raw.png": {
+      "sha256": "e9564facf47a10e82c796a751cef6e65a7ec8be21a79def7e9f5beafa391a847",
+      "bytes": 64747,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep0813_frame0038_raw.png"
+    },
+    "result/prototype_frames/ep0813_frame0038_display3x.png": {
+      "sha256": "6ab1604bc75c147e4bd3ac5fa54882b9adc8720ee0a3f4557ae2136c2c8521f4",
+      "bytes": 85535,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep0813_frame0038_display3x.png"
+    },
+    "result/prototype_frames/ep0908_frame0048_raw.png": {
+      "sha256": "1a173eaff95cdfc0607c4c5d77db1297bf739083ea97f63e9644e50a9bc404bf",
+      "bytes": 63715,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep0908_frame0048_raw.png"
+    },
+    "result/prototype_frames/ep0908_frame0048_display3x.png": {
+      "sha256": "787e151cc8fa241647747ef7ba7a712cb5056f963a0724f30dfa541801b923c3",
+      "bytes": 84407,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep0908_frame0048_display3x.png"
+    },
+    "result/prototype_frames/ep1074_frame0037_raw.png": {
+      "sha256": "333b5dd9a134c2722dadfe4c5ae5cd3d0fde8ef5d6bf9c62f0b5f6034250be37",
+      "bytes": 64146,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep1074_frame0037_raw.png"
+    },
+    "result/prototype_frames/ep1074_frame0037_display3x.png": {
+      "sha256": "343855af0b17b7a30eb9c0e427ee87d20a246fefcb08652ccef58d9a6619a909",
+      "bytes": 85211,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep1074_frame0037_display3x.png"
+    },
+    "result/prototype_frames/ep1166_frame0037_raw.png": {
+      "sha256": "e0cb6a0e22909f7003cfd0cb759bdecbcdab35282210a9253eec48903f2467d6",
+      "bytes": 64139,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep1166_frame0037_raw.png"
+    },
+    "result/prototype_frames/ep1166_frame0037_display3x.png": {
+      "sha256": "6297496a9a2a18d940e88f53b6f03c237c0a14a28658c760ab7191c2f84a1700",
+      "bytes": 84819,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep1166_frame0037_display3x.png"
+    },
+    "result/prototype_frames/ep0813_roi_overlay.png": {
+      "sha256": "736a676fb685daa2605c588d7e43b240047795d3aed2eb9acd906b7ef5b8113f",
+      "bytes": 65016,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep0813_roi_overlay.png"
+    },
+    "result/prototype_frames/ep0908_roi_overlay.png": {
+      "sha256": "b92943cbbc57019495bc8d09843b3296160c193cf8bf9146d4926b161c1aa8dd",
+      "bytes": 63901,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep0908_roi_overlay.png"
+    },
+    "result/prototype_frames/ep1074_roi_overlay.png": {
+      "sha256": "30811767800cd9b489d2091f5a1c5602e460d726a75a18c073b7770a20dc7c44",
+      "bytes": 64445,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep1074_roi_overlay.png"
+    },
+    "result/prototype_frames/ep1166_roi_overlay.png": {
+      "sha256": "bf3f07a1733fb57390cf5c1732ed7e4a84c8f0b6ff29c2935bf068a10ac43f9d",
+      "bytes": 64339,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/prototype_frames/ep1166_roi_overlay.png"
+    },
+    "result/effective_configs/act.yaml": {
+      "sha256": "3abef54c5e64dd9b6a85798dabd5fb1ab94d2c16785e353796677e8a9e6643d0",
+      "bytes": 2434,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/effective_configs/act.yaml"
+    },
+    "result/effective_configs/legacy.yaml": {
+      "sha256": "55d912cb6bc583f6b4564c1799073651af0578662376a40b6c7e59df127c9249",
+      "bytes": 2994,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/effective_configs/legacy.yaml"
+    },
+    "result/effective_configs/fixed.yaml": {
+      "sha256": "dc1468a87325c150eeba854a270d2668a7456e689e0c3740d49d04418bdabb30",
+      "bytes": 2993,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/effective_configs/fixed.yaml"
+    },
+    "result/queue_logs/bench_act_repeat1_act.log": {
+      "sha256": "878ea39c5ccb408ee399566854d83b48c3b9379f88a3490dfba8acee98fa7d1e",
+      "bytes": 805,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_act_repeat1_act.log"
+    },
+    "result/queue_logs/bench_legacy_repeat1_legacy.log": {
+      "sha256": "edec06db6dcb20141ff897a74c2dc0f5ab6b9c3f248d0a3a04079ba3766b2e76",
+      "bytes": 1364,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_legacy_repeat1_legacy.log"
+    },
+    "result/queue_logs/bench_fixed_repeat1_fixed.log": {
+      "sha256": "52e6ec66527848b51c2a335062ec721cf6923b1bd3df7bdd04445442f72f3188",
+      "bytes": 1364,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_fixed_repeat1_fixed.log"
+    },
+    "result/queue_logs/bench_legacy_fixed_repeat1_legacy.log": {
+      "sha256": "71abb756f7c85dfefeeeb3a9240f6103e1058adca00b854e84c301a4060043b1",
+      "bytes": 1364,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_legacy_fixed_repeat1_legacy.log"
+    },
+    "result/queue_logs/bench_legacy_fixed_repeat1_fixed.log": {
+      "sha256": "53290ac479eae54f796c77b7d64505233a2f4a7fb3a5760a16ad7c18d22fd34f",
+      "bytes": 1361,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_legacy_fixed_repeat1_fixed.log"
+    },
+    "result/queue_logs/bench_act_legacy_fixed_repeat1_act.log": {
+      "sha256": "6b299f93d69ea95a86dc104c52a34f7c0884617e4312673424ef5080f0cbe939",
+      "bytes": 806,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_act_legacy_fixed_repeat1_act.log"
+    },
+    "result/queue_logs/bench_act_legacy_fixed_repeat1_legacy.log": {
+      "sha256": "5bd9d17c8b15824d7b51e322c3ee005973f9486281ca13dcd2b33ccc43f8ff0c",
+      "bytes": 1365,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_act_legacy_fixed_repeat1_legacy.log"
+    },
+    "result/queue_logs/bench_act_legacy_fixed_repeat1_fixed.log": {
+      "sha256": "381e43959d6d6ca6e0f615b4e29b7c68ca18ac02f49a46cca38baca5ae27b0c9",
+      "bytes": 1364,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_act_legacy_fixed_repeat1_fixed.log"
+    },
+    "result/queue_logs/bench_act_repeat2_act.log": {
+      "sha256": "29222548717b21bb9cda50f19115bddd7b684ab76db49d5cb1d442c9abd990d6",
+      "bytes": 804,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_act_repeat2_act.log"
+    },
+    "result/queue_logs/bench_legacy_repeat2_legacy.log": {
+      "sha256": "985ab51fec8355e7d370ddb5f064094690d37a813d10783294574b4cb1651be5",
+      "bytes": 1365,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_legacy_repeat2_legacy.log"
+    },
+    "result/queue_logs/bench_fixed_repeat2_fixed.log": {
+      "sha256": "2a912ede699c12545f434b9f415c2d7e2427286627c8f7e65e2dc1e2cc3c0966",
+      "bytes": 1363,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_fixed_repeat2_fixed.log"
+    },
+    "result/queue_logs/bench_legacy_fixed_repeat2_legacy.log": {
+      "sha256": "01f4a39a9689ca8ea4cbdd83dcc8c46929f43d747b39c0093fa5d3fd7553ce16",
+      "bytes": 1363,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_legacy_fixed_repeat2_legacy.log"
+    },
+    "result/queue_logs/bench_legacy_fixed_repeat2_fixed.log": {
+      "sha256": "02c53d25d08c9fd757db6c00c259636d2afd6f6104f96b8a0f2b9974bf015e4e",
+      "bytes": 1362,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_legacy_fixed_repeat2_fixed.log"
+    },
+    "result/queue_logs/bench_act_legacy_fixed_repeat2_act.log": {
+      "sha256": "dd18a3152892140e9c20b514e1ee221d8c7d815cc84f0f5e3ff39a980010c759",
+      "bytes": 804,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_act_legacy_fixed_repeat2_act.log"
+    },
+    "result/queue_logs/bench_act_legacy_fixed_repeat2_legacy.log": {
+      "sha256": "ee840e9d6386fa2f8bc7bd3110e6773c76db663773f2e7e3af9d15e516fc4166",
+      "bytes": 1361,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_act_legacy_fixed_repeat2_legacy.log"
+    },
+    "result/queue_logs/bench_act_legacy_fixed_repeat2_fixed.log": {
+      "sha256": "207a8925d245c855492c42208cd4c185ebd784daf20397b80d58d94abc2fc0c7",
+      "bytes": 1362,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/bench_act_legacy_fixed_repeat2_fixed.log"
+    },
+    "result/queue_logs/train_act.log": {
+      "sha256": "f8c8a05ca441ed9a69b4aafb05d20a2b46d2db131207cea84bc40439891fbc77",
+      "bytes": 1391,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/train_act.log"
+    },
+    "result/queue_logs/train_legacy.log": {
+      "sha256": "a0a740bbfd5f951ab2768eb24c9c9be838f5c0d1c2670eca9087dc4c3c2d794e",
+      "bytes": 2019,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/train_legacy.log"
+    },
+    "result/queue_logs/train_fixed.log": {
+      "sha256": "ee3b784a54b37be7271341d22fd4483f80db937364f974de0ece3b4f45d9b30d",
+      "bytes": 2014,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/train_fixed.log"
+    },
+    "result/queue_logs/eval_video_files_fetch.log": {
+      "sha256": "a2eb845710d6fd45e30de3f952b75dcfd741311c4e2f4865dc4b7c535fe04d06",
+      "bytes": 71,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/eval_video_files_fetch.log"
+    },
+    "result/queue_logs/dev_cache_dev.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/dev_cache_dev.log"
+    },
+    "result/queue_logs/dev9_act.log": {
+      "sha256": "6da5c624c6ca1f0ffb4501d43bd287ef138f77722f904111a5f0ab3d1a1e37c9",
+      "bytes": 196,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/dev9_act.log"
+    },
+    "result/queue_logs/dev9_legacy.log": {
+      "sha256": "6890b6ef213f997024c9511c09c88ee8215aa3438f6db9382c3d1c5347b9285a",
+      "bytes": 755,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/dev9_legacy.log"
+    },
+    "result/queue_logs/dev9_fixed.log": {
+      "sha256": "8b0b8080aebfa32801d3ffa6863abf24e976609254263f47514f4b4c4cd996f3",
+      "bytes": 754,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/dev9_fixed.log"
+    },
+    "result/queue_logs/paired_rollouts_act.log": {
+      "sha256": "b6e84983ad990af33fd682e5b4691de1e726b79bd49f93256f21acd0b415a0ab",
+      "bytes": 1163,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/paired_rollouts_act.log"
+    },
+    "result/queue_logs/paired_rollouts_legacy.log": {
+      "sha256": "5df273eedbae78d242154e19dfd7df9d3289a9de02453a1c4a3ef81aff53bda2",
+      "bytes": 1749,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/paired_rollouts_legacy.log"
+    },
+    "result/queue_logs/paired_rollouts_fixed.log": {
+      "sha256": "528f87e2f829ee9be450946312db62e0b6aa6b57d465f0da99d81b3a7a58d34f",
+      "bytes": 1739,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/queue_logs/paired_rollouts_fixed.log"
+    },
+    "result/figures/camera_orientation_evidence.png": {
+      "sha256": "fc71057963c8e301025c7e9144b64c08cdbbd686c589249a421662dade8fb9ca",
+      "bytes": 244972,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/figures/camera_orientation_evidence.png"
+    },
+    "result/figures/training_and_paired_pilot.png": {
+      "sha256": "a44ae141a6ff0136cacc8d834f9b900c917585c98b5863859ed4cb4c62c1b332",
+      "bytes": 85614,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/figures/training_and_paired_pilot.png"
+    },
+    "result/tools/p48_r5_common.py": {
+      "sha256": "ce10a9316e37483e5acaadce2f6b4cbd7bdce5cc5b0b834ef048048775d91de8",
+      "bytes": 6509,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_common.py"
+    },
+    "result/tools/p48_r5_worker.py": {
+      "sha256": "6d7668f3a4a726e34564948dd283f1e3078a22d2c7446ae9b8892ec92deec21a",
+      "bytes": 11590,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_worker.py"
+    },
+    "result/tools/p48_r5_controller.py": {
+      "sha256": "592b99235b5198c9feb35be1af7d0d10bb846c8267bdb170ce53321de36fdf3d",
+      "bytes": 7476,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_controller.py"
+    },
+    "result/tools/p48_r5_cache.py": {
+      "sha256": "b9e00df894b3bbb9593c44f17cb9de0088451738fe51dcae73278283446e097e",
+      "bytes": 5891,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_cache.py"
+    },
+    "result/tools/p48_r5_fetch_eval_videos.py": {
+      "sha256": "d91271cfd364b6e8d951593daf188ae5912daaf4790b0d546103e3649c24a157",
+      "bytes": 3197,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_fetch_eval_videos.py"
+    },
+    "result/tools/p48_r5_evaluate.py": {
+      "sha256": "e56d9f04418c694260eefc2d2db2fb11a384dd03db322ceb2ef350836dc5f1b0",
+      "bytes": 10119,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_evaluate.py"
+    },
+    "result/tools/p48_r5_finalize.py": {
+      "sha256": "285886b1b3a4b7b1f0f9ce537f677826099209ba87d5d59109f8be105a4733bc",
+      "bytes": 10967,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_finalize.py"
+    },
+    "result/tools/historical_object_conditioning.py": {
+      "sha256": "00a9a4232bfe5679e9ca08bd9a1ae26c8ddc80506604cc603f57f3110dcca146",
+      "bytes": 8693,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/historical_object_conditioning.py"
+    },
+    "result/data_cache/train/images.npy": {
+      "sha256": "68065dcd19371e285de685966016364621388da57acc8d8d27f6f3003e0ad5d3",
+      "bytes": 2153250944,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/data_cache/train/images.npy"
+    },
+    "result/data_cache/train/arrays.npz": {
+      "sha256": "64e7a9f0f769ef108d95321ea74564dac3e6422c16fe9b4a145bfb650bc3f0dc",
+      "bytes": 461232,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/data_cache/train/arrays.npz"
+    },
+    "result/data_cache/train/complete.json": {
+      "sha256": "6e8b8e1c909c8e5ff0dad0fbc2c5dbcadd344afd5fc70e8d4925197f433bb663",
+      "bytes": 2929,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/data_cache/train/complete.json"
+    },
+    "result/data_cache/dev/images.npy": {
+      "sha256": "1feff08258863c3b9c5414726afaa4d4fcade274a5eb3aa2123d090a69d89ae4",
+      "bytes": 546963584,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/data_cache/dev/images.npy"
+    },
+    "result/data_cache/dev/arrays.npz": {
+      "sha256": "69f1c8f47fd75932fbaebcf96a60edaecbef23b5d43c3308f31909be5f48716b",
+      "bytes": 118092,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/data_cache/dev/arrays.npz"
+    },
+    "result/data_cache/dev/complete.json": {
+      "sha256": "6ee88980523b0255ea1f61ea07c23d00ae41b09393178fffeeed794d2838c030",
+      "bytes": 2916,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/data_cache/dev/complete.json"
+    },
+    "result/smoke/fixed/metrics.csv": {
+      "sha256": "b06f22746ee6859fb2ab5507d3ca7991da19890949497e54ac020e192c859dc4",
+      "bytes": 4080,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/fixed/metrics.csv"
+    },
+    "result/smoke/fixed/latest.json": {
+      "sha256": "77d1a517935dcdb8c5c9a99dff864c75c96aa58679fbffbe208c57ea54ce2fc7",
+      "bytes": 292,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/fixed/latest.json"
+    },
+    "result/smoke/fixed/checkpoint_manifest.csv": {
+      "sha256": "a28c9725d34442170640600f8d91326da6e8a46b8011130a8d1a649a99b0a977",
+      "bytes": 255,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/fixed/checkpoint_manifest.csv"
+    },
+    "result/smoke/fixed/validation.json": {
+      "sha256": "dd513e331d37a69b7136b0c1803cd7b2e5c50b8e91b4d6e1ba6d0d1704c80785",
+      "bytes": 1264,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/fixed/validation.json"
+    },
+    "result/smoke/act/metrics.csv": {
+      "sha256": "02f4025be1bcdb971784c1ff449323e4bb1d11e6220d511d1e3bf58342788de4",
+      "bytes": 4095,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/act/metrics.csv"
+    },
+    "result/smoke/act/latest.json": {
+      "sha256": "e21fc0fbeec293b38991c3f3c1e70ae7b08258d048ed868591cb82a60bb202c2",
+      "bytes": 288,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/act/latest.json"
+    },
+    "result/smoke/act/checkpoint_manifest.csv": {
+      "sha256": "329f74241bfbe7767a8bff8f2bafddb510f0963a76ff8476b76cedf1fdb8cc41",
+      "bytes": 251,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/act/checkpoint_manifest.csv"
+    },
+    "result/smoke/act/validation.json": {
+      "sha256": "f08914073126b67bc990cdb18f3b8fa0ca1f0a1d4618e8264ff90d746c3843c4",
+      "bytes": 1262,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/act/validation.json"
+    },
+    "result/smoke/legacy/metrics.csv": {
+      "sha256": "33107b200e79cf4b25cb4b5ecfc4262953f8455b8a1c2a870ed9a8d39a4d03ab",
+      "bytes": 4091,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/legacy/metrics.csv"
+    },
+    "result/smoke/legacy/latest.json": {
+      "sha256": "be55a39040f922a2398a8a2db859b64329721ff47ea44b043c31cbe81df314fb",
+      "bytes": 294,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/legacy/latest.json"
+    },
+    "result/smoke/legacy/checkpoint_manifest.csv": {
+      "sha256": "c480b9fd1823188193379c30302d26d3f6926a600850d164ad7ec58c6e38616e",
+      "bytes": 257,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/legacy/checkpoint_manifest.csv"
+    },
+    "result/smoke/legacy/validation.json": {
+      "sha256": "5982f68bc8ff511d21a87397bc7f0640fa969d5b3592587fd4d9f4e0987c0bc6",
+      "bytes": 1267,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/legacy/validation.json"
+    },
+    "result/smoke/fixed/checkpoints/000100/resume.pt": {
+      "sha256": "06a25e502333da077bb7300363dc301f861b23086e210d7545bceb0c1d305dd0",
+      "bytes": 723451188,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/fixed/checkpoints/000100/resume.pt"
+    },
+    "result/smoke/act/checkpoints/000100/resume.pt": {
+      "sha256": "a918f4b1626f4db553506a657ca1ae52768219efcca0b48c4828bb4796c9090e",
+      "bytes": 619712276,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/act/checkpoints/000100/resume.pt"
+    },
+    "result/smoke/legacy/checkpoints/000100/resume.pt": {
+      "sha256": "c8c556e97607f6dadecc1dadb0385ff6d883a1b0d0c11630c610dce179c2892c",
+      "bytes": 723451188,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/legacy/checkpoints/000100/resume.pt"
+    },
+    "result/effective_configs/act/config.json": {
+      "sha256": "c1f44c18acea8383b921aca1499ee8d1dc5e258b38baabffc7293b8c0eef548e",
+      "bytes": 1669,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/effective_configs/act/config.json"
+    },
+    "result/effective_configs/native_class_default/config.json": {
+      "sha256": "79bc635ae42c18e780cee0ff5559265524dead6636783dc21210ca57da63cc64",
+      "bytes": 1066,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/effective_configs/native_class_default/config.json"
+    },
+    "result/effective_configs/legacy/config.json": {
+      "sha256": "c1f44c18acea8383b921aca1499ee8d1dc5e258b38baabffc7293b8c0eef548e",
+      "bytes": 1669,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/effective_configs/legacy/config.json"
+    },
+    "result/effective_configs/fixed/config.json": {
+      "sha256": "c1f44c18acea8383b921aca1499ee8d1dc5e258b38baabffc7293b8c0eef548e",
+      "bytes": 1669,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/effective_configs/fixed/config.json"
+    },
+    "result/bench/act/act_repeat1/metrics.csv": {
+      "sha256": "e4ad2c1f92228a44aa32bcc1c8324dee1c64001267d83553622a10f788cf078d",
+      "bytes": 6437,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/act/act_repeat1/metrics.csv"
+    },
+    "result/bench/act/act_repeat1/benchmark.json": {
+      "sha256": "b8caec0237c178eb7ca076d8bb2af985946b1773868f423d6282733b4a9c67a9",
+      "bytes": 573,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/act/act_repeat1/benchmark.json"
+    },
+    "result/bench/act/act_legacy_fixed_repeat1/metrics.csv": {
+      "sha256": "7925fbd625cc12a84f89fa4135de60d7106c449fdba4d53c4b49c0730f75bd9f",
+      "bytes": 6416,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/act/act_legacy_fixed_repeat1/metrics.csv"
+    },
+    "result/bench/act/act_legacy_fixed_repeat1/benchmark.json": {
+      "sha256": "36e4a2b6a450ca1edc1aa582239c778b367ac85e6b3dd18b371e451c90dc17d0",
+      "bytes": 574,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/act/act_legacy_fixed_repeat1/benchmark.json"
+    },
+    "result/bench/act/act_repeat2/metrics.csv": {
+      "sha256": "896363937ea5ea7e92161d546b7125cf8ca5c868660dbe7468893c978181ba90",
+      "bytes": 6437,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/act/act_repeat2/metrics.csv"
+    },
+    "result/bench/act/act_repeat2/benchmark.json": {
+      "sha256": "83667b9c8178e19b2eff1192195b5423286c9fcc8893cca06797d62acf5b33c0",
+      "bytes": 572,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/act/act_repeat2/benchmark.json"
+    },
+    "result/bench/act/act_legacy_fixed_repeat2/metrics.csv": {
+      "sha256": "3ad51d603cd5a873229f8d6f1f63495d391977981edd57fb060362cc0f566576",
+      "bytes": 6428,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/act/act_legacy_fixed_repeat2/metrics.csv"
+    },
+    "result/bench/act/act_legacy_fixed_repeat2/benchmark.json": {
+      "sha256": "f6f1357e91d1f1d2e3a9b260edeb4c73524c78904c7f16fb4dbbd0521e03386f",
+      "bytes": 572,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/act/act_legacy_fixed_repeat2/benchmark.json"
+    },
+    "result/bench/legacy/legacy_repeat1/metrics.csv": {
+      "sha256": "64f33a49ddc7cbb8d45bea565e214f3755965b51ac2fcb6bb17d00c23f0da431",
+      "bytes": 6430,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/legacy_repeat1/metrics.csv"
+    },
+    "result/bench/legacy/legacy_repeat1/benchmark.json": {
+      "sha256": "b767b0615676204c786ff1d4eff126ecb18d50b094c9555de80b39d0d6b6f4fd",
+      "bytes": 576,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/legacy_repeat1/benchmark.json"
+    },
+    "result/bench/legacy/legacy_fixed_repeat1/metrics.csv": {
+      "sha256": "c654a52973f95559c85feb4d1db0affded17afe9f94fca93db4ef223283719b8",
+      "bytes": 6427,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/legacy_fixed_repeat1/metrics.csv"
+    },
+    "result/bench/legacy/legacy_fixed_repeat1/benchmark.json": {
+      "sha256": "d9abe708f29146ab17df3dab7326b7cd37b3481c2e09b517f09d6ae7f5c627b0",
+      "bytes": 576,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/legacy_fixed_repeat1/benchmark.json"
+    },
+    "result/bench/legacy/act_legacy_fixed_repeat1/metrics.csv": {
+      "sha256": "1bb8c13292c15ceb88476843baa16acb800fe11be3ae00bf0f405c31fe895a63",
+      "bytes": 6421,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/act_legacy_fixed_repeat1/metrics.csv"
+    },
+    "result/bench/legacy/act_legacy_fixed_repeat1/benchmark.json": {
+      "sha256": "0a1a21889ca911f80590b0452803fdd0b0ca9158800ed8f285c4b9b538e165b5",
+      "bytes": 577,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/act_legacy_fixed_repeat1/benchmark.json"
+    },
+    "result/bench/legacy/legacy_repeat2/metrics.csv": {
+      "sha256": "25804da43c41331d65ba1b20b5d4ad078d3bc7bc84b46fbd1e42c0e27e9c4f1e",
+      "bytes": 6434,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/legacy_repeat2/metrics.csv"
+    },
+    "result/bench/legacy/legacy_repeat2/benchmark.json": {
+      "sha256": "ccfab8ac0a7aae576b6f14890dd1b7fd2c7743bdfe2b94fb7a42142e654eba11",
+      "bytes": 577,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/legacy_repeat2/benchmark.json"
+    },
+    "result/bench/legacy/legacy_fixed_repeat2/metrics.csv": {
+      "sha256": "6f6b86481bb9b3751b5a4a11f5e1e9593bc261cdbecabe1ee49b69bb91af7dcf",
+      "bytes": 6419,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/legacy_fixed_repeat2/metrics.csv"
+    },
+    "result/bench/legacy/legacy_fixed_repeat2/benchmark.json": {
+      "sha256": "0388358d0c7da5519df14114fbc39a20bb2eae59a4b7723e2f1350f9bfd8ee70",
+      "bytes": 575,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/legacy_fixed_repeat2/benchmark.json"
+    },
+    "result/bench/legacy/act_legacy_fixed_repeat2/metrics.csv": {
+      "sha256": "c6d2747ff2743da66d29a0585b23cda35451d6b993e0a73be8bee82b47c46ce2",
+      "bytes": 6427,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/act_legacy_fixed_repeat2/metrics.csv"
+    },
+    "result/bench/legacy/act_legacy_fixed_repeat2/benchmark.json": {
+      "sha256": "ccf80eaa8a584259ff2cb9fc2fc340ad5786170d43203dce139d118d59a8982d",
+      "bytes": 573,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/legacy/act_legacy_fixed_repeat2/benchmark.json"
+    },
+    "result/bench/fixed/fixed_repeat1/metrics.csv": {
+      "sha256": "a33c426ed505bd01ffb5ed5b8bae87d5b68544286a02ed8cd7513a131930adcd",
+      "bytes": 6404,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/fixed_repeat1/metrics.csv"
+    },
+    "result/bench/fixed/fixed_repeat1/benchmark.json": {
+      "sha256": "7ceab6731b17adbb4dbae3c86a689afe284fce123a0b2569a56c3a547d8d2a4d",
+      "bytes": 576,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/fixed_repeat1/benchmark.json"
+    },
+    "result/bench/fixed/legacy_fixed_repeat1/metrics.csv": {
+      "sha256": "dab06857f1532479a6f49c10a6c878344d180b2e02e8a0eb19cd9a9003b21a6e",
+      "bytes": 6422,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/legacy_fixed_repeat1/metrics.csv"
+    },
+    "result/bench/fixed/legacy_fixed_repeat1/benchmark.json": {
+      "sha256": "3c48ae9f568654e442f2cbfb0e1fb742d74d3af082a35b87036e1d28476c5704",
+      "bytes": 573,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/legacy_fixed_repeat1/benchmark.json"
+    },
+    "result/bench/fixed/act_legacy_fixed_repeat1/metrics.csv": {
+      "sha256": "b20e7155a9add93e0364933c21fc41a6a7d84c240646765ac4e6712bc4f708dd",
+      "bytes": 6414,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/act_legacy_fixed_repeat1/metrics.csv"
+    },
+    "result/bench/fixed/act_legacy_fixed_repeat1/benchmark.json": {
+      "sha256": "324b0e639ebf884599865da6d82245b6a8d5081ee32fb6bc4fc7a42106e4d440",
+      "bytes": 576,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/act_legacy_fixed_repeat1/benchmark.json"
+    },
+    "result/bench/fixed/fixed_repeat2/metrics.csv": {
+      "sha256": "6c4a4ee4cb8dfa67eb568f3eb283d3bba21d7c692f2ce7a8b3eec649f6e95952",
+      "bytes": 6418,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/fixed_repeat2/metrics.csv"
+    },
+    "result/bench/fixed/fixed_repeat2/benchmark.json": {
+      "sha256": "a6e411b50d8406ae01c79ce2864781a2104655c1fe3fcf02c9dede3052530cf6",
+      "bytes": 575,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/fixed_repeat2/benchmark.json"
+    },
+    "result/bench/fixed/legacy_fixed_repeat2/metrics.csv": {
+      "sha256": "6f60f7823c8bb710db26a9af6ca509dd2863397c1f46c230c4582165b0026683",
+      "bytes": 6411,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/legacy_fixed_repeat2/metrics.csv"
+    },
+    "result/bench/fixed/legacy_fixed_repeat2/benchmark.json": {
+      "sha256": "d24bf6db7d768e616cbccf9007ad2e20138db8a24d0cdc4bd4c512eef987c2e9",
+      "bytes": 574,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/legacy_fixed_repeat2/benchmark.json"
+    },
+    "result/bench/fixed/act_legacy_fixed_repeat2/metrics.csv": {
+      "sha256": "47de0de60e543cfd86afdb63b19f407e650a51e11ea2caf8ed6c3ad780e65cde",
+      "bytes": 6413,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/act_legacy_fixed_repeat2/metrics.csv"
+    },
+    "result/bench/fixed/act_legacy_fixed_repeat2/benchmark.json": {
+      "sha256": "8dc865d70013d31bbcbb05b92495cd1280cf64dec98f4a3e4335ef248c2d53d3",
+      "bytes": 574,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/bench/fixed/act_legacy_fixed_repeat2/benchmark.json"
+    },
+    "result/runs/legacy/training_metrics.csv": {
+      "sha256": "fbfda1cff65c9002277660f37655b363dd47440fc39cf45e9d9a6c8615ad91f3",
+      "bytes": 68003,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/training_metrics.csv"
+    },
+    "result/runs/legacy/heartbeat.json": {
+      "sha256": "988dcaa55ba3938fe411f0e0f91e17915d94c6f3792096c288fcddc4ddfb4ffb",
+      "bytes": 202,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/heartbeat.json"
+    },
+    "result/runs/legacy/latest.json": {
+      "sha256": "d8b1e9f355442c3e85f88588d6995499c5bed1c57528c54dd32982383ca91e43",
+      "bytes": 295,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/latest.json"
+    },
+    "result/runs/legacy/checkpoint_manifest.csv": {
+      "sha256": "6156771f1ee5a63f197eb9434ffdb1431b428ab8ac853e5e4a42d54b99ef10dc",
+      "bytes": 476,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/checkpoint_manifest.csv"
+    },
+    "result/runs/legacy/training_complete.json": {
+      "sha256": "8f471e8ed97c36cb65a92ac9ee3ef89f4ea3afbd8f0a2da1d5211dea887b8601",
+      "bytes": 1343,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/training_complete.json"
+    },
+    "result/runs/act/training_metrics.csv": {
+      "sha256": "4d3468fd56260c34fdcdf2689334e43e317890713429113155756162ad9c9569",
+      "bytes": 68065,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/act/training_metrics.csv"
+    },
+    "result/runs/act/heartbeat.json": {
+      "sha256": "a5d95361c485943f111183c3fa3b570f75efba959767105a190d2c7a058ad339",
+      "bytes": 201,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/act/heartbeat.json"
+    },
+    "result/runs/act/latest.json": {
+      "sha256": "5a1bff41df97e4b88f7270d4f3581da81865b047b9b9abea0ade25d980176f2a",
+      "bytes": 289,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/act/latest.json"
+    },
+    "result/runs/act/checkpoint_manifest.csv": {
+      "sha256": "3aa1933cfee95b77b4debd4e894f7f47b23ca7f38e396ce7b2fd1ab4a0d2e6db",
+      "bytes": 464,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/act/checkpoint_manifest.csv"
+    },
+    "result/runs/act/training_complete.json": {
+      "sha256": "42c9e3825267bc2f5d0f0248366411b1063afb138d567c6cbcb303af928f4f20",
+      "bytes": 1271,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/act/training_complete.json"
+    },
+    "result/runs/fixed/training_metrics.csv": {
+      "sha256": "e1dfdf754e86a0bcaa5f6b2d21cc46b345534739f737826d31e237cd41d21c2a",
+      "bytes": 68063,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/training_metrics.csv"
+    },
+    "result/runs/fixed/heartbeat.json": {
+      "sha256": "05ac83b55d2f9f2e6bf0c42c112499bc002b8bcb23d5b287080e13c055864b27",
+      "bytes": 203,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/heartbeat.json"
+    },
+    "result/runs/fixed/latest.json": {
+      "sha256": "85d4ee6331f7295e17fdac004f986dc29206f38bb485e47a7d6eaba31c36e546",
+      "bytes": 293,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/latest.json"
+    },
+    "result/runs/fixed/checkpoint_manifest.csv": {
+      "sha256": "8e24a7150ad2f984c81a5d6f0f9cf7c706effcb0338f9be9da72cebf54b9a3ee",
+      "bytes": 472,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/checkpoint_manifest.csv"
+    },
+    "result/runs/fixed/training_complete.json": {
+      "sha256": "24ace60a8e2dcfa5c02fe5d69568a62d38b83448b4c9eb2898c645168f59abe7",
+      "bytes": 1338,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/training_complete.json"
+    },
+    "result/runs/legacy/checkpoints/005000/resume.pt": {
+      "sha256": "c18b6503988249ca9d7c3189891f917e8aed1e9f04185110366d2dcf6442c6d2",
+      "bytes": 723451188,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/checkpoints/005000/resume.pt"
+    },
+    "result/runs/legacy/checkpoints/010000/resume.pt": {
+      "sha256": "b8126d91542fd5a7898f3120e6e9fd9b6a1fb85b9e47c315a133992edebdfa5f",
+      "bytes": 723451188,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/legacy/checkpoints/010000/resume.pt"
+    },
+    "result/runs/act/checkpoints/005000/resume.pt": {
+      "sha256": "88dfc7bd94cf5be870f97d502d91096b5b940252bdecf059c2ae1a29686e3093",
+      "bytes": 619712276,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/act/checkpoints/005000/resume.pt"
+    },
+    "result/runs/act/checkpoints/010000/resume.pt": {
+      "sha256": "db88858d6ecd7b3fe67da75649f3bd85cb5a7133ca31cb6e0056579040942ed1",
+      "bytes": 619712276,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/act/checkpoints/010000/resume.pt"
+    },
+    "result/runs/fixed/checkpoints/005000/resume.pt": {
+      "sha256": "d63b762e7b4d9ed93f5c6bb175b3a793db2c3ea368099c26b3c1c0541552bfb1",
+      "bytes": 723451188,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/checkpoints/005000/resume.pt"
+    },
+    "result/runs/fixed/checkpoints/010000/resume.pt": {
+      "sha256": "7852aac589649a67a69d22bb4b473bfd6e6e9f3d1f10ead3363132690720b727",
+      "bytes": 723451188,
+      "packaged": false,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/checkpoints/010000/resume.pt"
+    },
+    "result/evaluation/act/dev9_metrics.csv": {
+      "sha256": "0fc80e64a5beb56eea337b17f1522cda7fba990f9e0c7446a97583001aebd785",
+      "bytes": 2300,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/act/dev9_metrics.csv"
+    },
+    "result/evaluation/act/dev9_h0_predictions.npz": {
+      "sha256": "762ddcadc7b46408a1ce7fb0b17e81db9b410954aad6563bd3a65a030ebfdbaa",
+      "bytes": 179610,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/act/dev9_h0_predictions.npz"
+    },
+    "result/evaluation/act/dev_complete.json": {
+      "sha256": "5680ce6c072f796834663b53ad37c135ffa13c3976b75208a2cb99bcafe382a9",
+      "bytes": 1203,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/act/dev_complete.json"
+    },
+    "result/evaluation/legacy/dev9_metrics.csv": {
+      "sha256": "f2799bc214464e60cf5218af2e8903db251a778c804969030e8d877a8963134e",
+      "bytes": 2327,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/legacy/dev9_metrics.csv"
+    },
+    "result/evaluation/legacy/dev9_h0_predictions.npz": {
+      "sha256": "c0506bf12dc00ef5d17efeabbd34e58a61cc27326d314bfcd1fb8582a79aa28d",
+      "bytes": 179610,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/legacy/dev9_h0_predictions.npz"
+    },
+    "result/evaluation/legacy/object_path_diagnostics.csv": {
+      "sha256": "501e8fafbb49ab73042615aa44683cd549d46088b87776bd553b540eccee7f3a",
+      "bytes": 5726,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/legacy/object_path_diagnostics.csv"
+    },
+    "result/evaluation/legacy/dev_complete.json": {
+      "sha256": "7f09cabe4e9be6f59c00d7a1b1b74a61dba28decb4c329a7260c09cb16d298b9",
+      "bytes": 1213,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/legacy/dev_complete.json"
+    },
+    "result/evaluation/fixed/dev9_metrics.csv": {
+      "sha256": "6f204f63870b74e9de01729a21c369949ef8b18aee0b15502a646ed8f0fdec2f",
+      "bytes": 2326,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/fixed/dev9_metrics.csv"
+    },
+    "result/evaluation/fixed/dev9_h0_predictions.npz": {
+      "sha256": "f54cbfb0c3ae4784bdcddfb2501267ca6d72d46d47ce0e288a7daf532072e772",
+      "bytes": 179610,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/fixed/dev9_h0_predictions.npz"
+    },
+    "result/evaluation/fixed/object_path_diagnostics.csv": {
+      "sha256": "3d7df2c74ced57cdca346b0c55c65c90b8f4fbd36c5ad16bc24755a0a3371010",
+      "bytes": 5597,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/fixed/object_path_diagnostics.csv"
+    },
+    "result/evaluation/fixed/dev_complete.json": {
+      "sha256": "b5940d53b482901c25d486598e162de2a839e58c1162f0e3c9a9c807f779a73d",
+      "bytes": 1208,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/evaluation/fixed/dev_complete.json"
+    },
+    "result/rollouts/act/init_10.mp4": {
+      "sha256": "fb88f4dd10242cbeaa886ee04db08f4c793dfda36d3e9c84a2e126dc60267851",
+      "bytes": 606312,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_10.mp4"
+    },
+    "result/rollouts/act/init_10_trajectory.json": {
+      "sha256": "9283c55d90f2facabda2a4f698164a2b335c986fb813ca79f7519ff6775f281d",
+      "bytes": 81567,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_10_trajectory.json"
+    },
+    "result/rollouts/act/libero_rollouts.csv": {
+      "sha256": "5717a01918e007ea50be9953e35b2d5e5ef0695df1983476c5926dafb2a6738c",
+      "bytes": 3312,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/libero_rollouts.csv"
+    },
+    "result/rollouts/act/init_11.mp4": {
+      "sha256": "c8365922773a224fe8910ef3282de080a1e8d82e2d2e5c8a077112943ea5f6c3",
+      "bytes": 601140,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_11.mp4"
+    },
+    "result/rollouts/act/init_11_trajectory.json": {
+      "sha256": "9ffe18385f06ee431cb9f891aa1bc55c195dd08b873d71a9aa79e6edb0c2e3ba",
+      "bytes": 81503,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_11_trajectory.json"
+    },
+    "result/rollouts/act/init_12.mp4": {
+      "sha256": "d6bd25ae12bd7bbe8f537d8fca844fbb028d08129c60a9f7261a6cb16a186e4f",
+      "bytes": 654775,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_12.mp4"
+    },
+    "result/rollouts/act/init_12_trajectory.json": {
+      "sha256": "334aede086e89f297c9c538b7e8f11d0631b03fd0f8bca43aa5501d3338c902a",
+      "bytes": 89570,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_12_trajectory.json"
+    },
+    "result/rollouts/act/init_13.mp4": {
+      "sha256": "6cdbaac5330a3ac550ca9d963d9e5325f47929fc0d11ade30be1d4b9df246dab",
+      "bytes": 688206,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_13.mp4"
+    },
+    "result/rollouts/act/init_13_trajectory.json": {
+      "sha256": "0eb09dd32e69297b9651fbb0e966c53bdf8b8e91eb507d3a42a17f05f6aa78e9",
+      "bytes": 91538,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_13_trajectory.json"
+    },
+    "result/rollouts/act/init_14.mp4": {
+      "sha256": "169f696a1675a6ef3b595f9a4d80dd515166799cc21aceccaca2e13ef6d60818",
+      "bytes": 1279058,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_14.mp4"
+    },
+    "result/rollouts/act/init_14_trajectory.json": {
+      "sha256": "7ae1cbe9514b79b8c3333d4802852957b84c109863505c9a4bff3235f734443b",
+      "bytes": 174779,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_14_trajectory.json"
+    },
+    "result/rollouts/act/init_15.mp4": {
+      "sha256": "06ee58f9965f08becb979ff7d0fa3fc5d0f677072de8641711889b4bd8138882",
+      "bytes": 1388748,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_15.mp4"
+    },
+    "result/rollouts/act/init_15_trajectory.json": {
+      "sha256": "19c0946793b63664ee759b0aabc75e7a3922ef2f7cf5a7699e7bf5871d773322",
+      "bytes": 174714,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_15_trajectory.json"
+    },
+    "result/rollouts/act/init_16.mp4": {
+      "sha256": "86fd369b0cc90737ccf83bc146d9f25167dff481340b159fcf38c3fd6468e22d",
+      "bytes": 1413339,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_16.mp4"
+    },
+    "result/rollouts/act/init_16_trajectory.json": {
+      "sha256": "2776edfb74cf10f911ccf42eb49679e926057e2e6dfbb5492a9c576eeae65ba8",
+      "bytes": 174203,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_16_trajectory.json"
+    },
+    "result/rollouts/act/init_17.mp4": {
+      "sha256": "18161d7eae5a6a8cf628f7f5ea8d26e03c0a6a09550721b76ae9b3da2ec01cf1",
+      "bytes": 1325351,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_17.mp4"
+    },
+    "result/rollouts/act/init_17_trajectory.json": {
+      "sha256": "bab81e6129cf636de8d040e968312aa889897b7fcf2586d606ed0189df72b4f5",
+      "bytes": 174523,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_17_trajectory.json"
+    },
+    "result/rollouts/act/init_18.mp4": {
+      "sha256": "a4942735322b5f8bfa07a4d6c4af1acf4d5c857cbc94264411919511760ef145",
+      "bytes": 1350084,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_18.mp4"
+    },
+    "result/rollouts/act/init_18_trajectory.json": {
+      "sha256": "8ee17ff9937cac6ba2e8b711bf50a52463ce568c1fa5cad93befc4be89377aff",
+      "bytes": 174714,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_18_trajectory.json"
+    },
+    "result/rollouts/act/init_19.mp4": {
+      "sha256": "71ffe6cd6a8f7fad071c4a3928ae75c8b71d8a01b41cef934943e719d5016ec0",
+      "bytes": 1418929,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_19.mp4"
+    },
+    "result/rollouts/act/init_19_trajectory.json": {
+      "sha256": "883028e3e3e5ac3adb8013c507f7e81b2f29d852b118c3392381ee5c02043ef5",
+      "bytes": 174376,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/init_19_trajectory.json"
+    },
+    "result/rollouts/act/rollout_complete.json": {
+      "sha256": "fa1da24656fc01a46a052f17357776f3711c9fd4ad2b9468d59edc319c9c2939",
+      "bytes": 793,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/act/rollout_complete.json"
+    },
+    "result/rollouts/legacy/init_10.mp4": {
+      "sha256": "79a790bdfd2ac21e3845b20cea20fe73c5dbafc8f68e25f1e1e576891a4449d8",
+      "bytes": 595225,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_10.mp4"
+    },
+    "result/rollouts/legacy/init_10_trajectory.json": {
+      "sha256": "b611cbd2b4442c7d5b0b544e6fa8fa27198331899b10964efab4e2ed6f4807c7",
+      "bytes": 82843,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_10_trajectory.json"
+    },
+    "result/rollouts/legacy/libero_rollouts.csv": {
+      "sha256": "2ce3d259ee588e466de784ff73477ebf9ad4e0d7fbf67c1dcbac54c576183d30",
+      "bytes": 3370,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/libero_rollouts.csv"
+    },
+    "result/rollouts/legacy/init_11.mp4": {
+      "sha256": "8b474ab1e44c8e398ea602d9703299020fbda1f7866e5b4bd50bc02a53e70b6f",
+      "bytes": 597296,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_11.mp4"
+    },
+    "result/rollouts/legacy/init_11_trajectory.json": {
+      "sha256": "6fd5d2674362fd5c0904fb90ad5b0574a612fb368d5892c4237881730a3bfb7b",
+      "bytes": 80288,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_11_trajectory.json"
+    },
+    "result/rollouts/legacy/init_12.mp4": {
+      "sha256": "134771bf303bffea40f84c3494cc8137545a1eacdc00010aed3683211fc25aa2",
+      "bytes": 673549,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_12.mp4"
+    },
+    "result/rollouts/legacy/init_12_trajectory.json": {
+      "sha256": "81e88b7dd7794ffc59f28632c0c870893dad29620c0039f1dc9014136493ccc7",
+      "bytes": 91526,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_12_trajectory.json"
+    },
+    "result/rollouts/legacy/init_13.mp4": {
+      "sha256": "13a72e03d622f7fa251e59b9662bd4f52524eda2757794c5241921bdfcfb410f",
+      "bytes": 680962,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_13.mp4"
+    },
+    "result/rollouts/legacy/init_13_trajectory.json": {
+      "sha256": "a840b77388ac02c6b24b319bd98dc34fa394cea5cff48bcf3e7b74b3e6fb49e2",
+      "bytes": 90841,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_13_trajectory.json"
+    },
+    "result/rollouts/legacy/init_14.mp4": {
+      "sha256": "106990469b978c61f0dcd3f970cd9f83d33c5e5b6918620b44f8e29c0ec16a8e",
+      "bytes": 1286898,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_14.mp4"
+    },
+    "result/rollouts/legacy/init_14_trajectory.json": {
+      "sha256": "862540d2da809f954f24c1c3bf3ba2a3a07b90082603c5c8368e5fbf5cb4b1cb",
+      "bytes": 174736,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_14_trajectory.json"
+    },
+    "result/rollouts/legacy/init_15.mp4": {
+      "sha256": "a3066b96e2aa8bdd79032f5abc9dd6f3f451444abe3a560bc94607a878073b6e",
+      "bytes": 1367786,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_15.mp4"
+    },
+    "result/rollouts/legacy/init_15_trajectory.json": {
+      "sha256": "e60a570c8ed71e0bf9f07618376e0eb0f5d2ae78b8015e651ab8471b9b40c19e",
+      "bytes": 174913,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_15_trajectory.json"
+    },
+    "result/rollouts/legacy/init_16.mp4": {
+      "sha256": "57d779f512936625a4554ee4f4e889fbe615ee85f0e62902fc9205a2b65bd754",
+      "bytes": 1387535,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_16.mp4"
+    },
+    "result/rollouts/legacy/init_16_trajectory.json": {
+      "sha256": "633717d77d530dad040d9b9bff038190e9c9aeab0369a0da4c93eed3cfdfffad",
+      "bytes": 174464,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_16_trajectory.json"
+    },
+    "result/rollouts/legacy/init_17.mp4": {
+      "sha256": "51881d8977b8b63a6bd1a348d774318eacde782637acae2a4a3b497902279735",
+      "bytes": 1288686,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_17.mp4"
+    },
+    "result/rollouts/legacy/init_17_trajectory.json": {
+      "sha256": "4e15d88be21396281c5938cd01655b3ffbbfe70a54c4c0cb542e4f3035a2c3c2",
+      "bytes": 174592,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_17_trajectory.json"
+    },
+    "result/rollouts/legacy/init_18.mp4": {
+      "sha256": "c3c0586400d32edd133f20f537c4ddc0e463a9db10a16a58cb5834f0e777500a",
+      "bytes": 1301029,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_18.mp4"
+    },
+    "result/rollouts/legacy/init_18_trajectory.json": {
+      "sha256": "e2d118828bd4ef565e60b6746ae39d7650de089f619d6269bd89bed03ebde03d",
+      "bytes": 174677,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_18_trajectory.json"
+    },
+    "result/rollouts/legacy/init_19.mp4": {
+      "sha256": "b487e13aed72a3c9247fda416e82e19da933f56254a66ac8046a5c4fdf46f97f",
+      "bytes": 1402613,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_19.mp4"
+    },
+    "result/rollouts/legacy/init_19_trajectory.json": {
+      "sha256": "be37ec29bfb3c1d940cff9b9137d469660f1ef8753d2d09b4911f94df3a9efd1",
+      "bytes": 174572,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/init_19_trajectory.json"
+    },
+    "result/rollouts/legacy/rollout_complete.json": {
+      "sha256": "aa2163aa5f64310d839db19c88be6aa782ec445549d288feb6c3013c27c14403",
+      "bytes": 802,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/legacy/rollout_complete.json"
+    },
+    "result/rollouts/fixed/init_10.mp4": {
+      "sha256": "e14a6bbe6dee69b5000d8af9ff4d35518c0b6040ecec8245d1efefe53c9d3a2c",
+      "bytes": 616433,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_10.mp4"
+    },
+    "result/rollouts/fixed/init_10_trajectory.json": {
+      "sha256": "7e70ea8777e95208e7c6dfca9b28063f3452cf20f7f326f01d1291f008fa7bf2",
+      "bytes": 82802,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_10_trajectory.json"
+    },
+    "result/rollouts/fixed/libero_rollouts.csv": {
+      "sha256": "99766e9c7f4c5cf1210aee04cde4bc8df335754497900123986d77e00ccd6afa",
+      "bytes": 3351,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/libero_rollouts.csv"
+    },
+    "result/rollouts/fixed/init_11.mp4": {
+      "sha256": "9b7aaf18ba94fe03f9ae4ebd642221f356c70f6560003ef147eec1c3bfd99c1f",
+      "bytes": 610765,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_11.mp4"
+    },
+    "result/rollouts/fixed/init_11_trajectory.json": {
+      "sha256": "adc1689ae7a07d21e705939975927e7e59331c6cf3d7114d24e3f19949826e81",
+      "bytes": 81581,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_11_trajectory.json"
+    },
+    "result/rollouts/fixed/init_12.mp4": {
+      "sha256": "5977dddf20de9395f5c5c89044e541dad3795aff82c3218e7ee7a127c5f2177d",
+      "bytes": 685506,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_12.mp4"
+    },
+    "result/rollouts/fixed/init_12_trajectory.json": {
+      "sha256": "e87179a439146466f58bb7f05f701ee7a93d4c48be75350d44a0a9fc4b06b63f",
+      "bytes": 90864,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_12_trajectory.json"
+    },
+    "result/rollouts/fixed/init_13.mp4": {
+      "sha256": "0bed3b5a19c356219df265135c0efd91fa6839a1227250699a37096d47ff4f1a",
+      "bytes": 695412,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_13.mp4"
+    },
+    "result/rollouts/fixed/init_13_trajectory.json": {
+      "sha256": "a2ff0b7793d6630235ede46f73ce4f96c0a13f73dfc9cd6870f53ed37f568b0c",
+      "bytes": 90854,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_13_trajectory.json"
+    },
+    "result/rollouts/fixed/init_14.mp4": {
+      "sha256": "5fca2812d58732d8e03c9a8b1c09ae229b0f3b4178f1572e342509c4f90e4efa",
+      "bytes": 1313898,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_14.mp4"
+    },
+    "result/rollouts/fixed/init_14_trajectory.json": {
+      "sha256": "4b5d1755d6f861e27f0a237e5d40dbd2fbf41ff8b0982a7672e624c9b729dffd",
+      "bytes": 174678,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_14_trajectory.json"
+    },
+    "result/rollouts/fixed/init_15.mp4": {
+      "sha256": "6d2440209f4c9e9672da875338eac93ead0bf02f7c7d13e371ba6a9e6a586caf",
+      "bytes": 1413383,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_15.mp4"
+    },
+    "result/rollouts/fixed/init_15_trajectory.json": {
+      "sha256": "e8633bae035fbc6b0e06da869a37b96a8f2cce1e1efa078696f5bba1e5406478",
+      "bytes": 174761,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_15_trajectory.json"
+    },
+    "result/rollouts/fixed/init_16.mp4": {
+      "sha256": "4861801ed54d1b43fc182b314f96e5113b9147539a506480f30bd864043b65f1",
+      "bytes": 1392118,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_16.mp4"
+    },
+    "result/rollouts/fixed/init_16_trajectory.json": {
+      "sha256": "62d076a91e81b54871b078ae89030b2cd1c02ab00e4c7dfff1fcf3dca2aab42b",
+      "bytes": 174377,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_16_trajectory.json"
+    },
+    "result/rollouts/fixed/init_17.mp4": {
+      "sha256": "b6a34d883b0752117b63dbf8e5a19aeaecd709af277fa03c581bbf07c4d996bb",
+      "bytes": 1299711,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_17.mp4"
+    },
+    "result/rollouts/fixed/init_17_trajectory.json": {
+      "sha256": "bd862cb0a4b71f0ee1a0fc8d8f00ef23bf4ea3d98e69f5c5b856cd93fdadb754",
+      "bytes": 174539,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_17_trajectory.json"
+    },
+    "result/rollouts/fixed/init_18.mp4": {
+      "sha256": "81bad765ed72b9df546c7b32b39b37b540421310a14772beea8740d8393e5b13",
+      "bytes": 1323852,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_18.mp4"
+    },
+    "result/rollouts/fixed/init_18_trajectory.json": {
+      "sha256": "03b008e3fa3a11d7e90f8e8cf2d729bfdc7448e2238bffa2fcdfabd4a93a9a61",
+      "bytes": 174813,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_18_trajectory.json"
+    },
+    "result/rollouts/fixed/init_19.mp4": {
+      "sha256": "b1d20f4ab1167fefa6735c07f3dd88b9582a9c4a23898b354ea6ba767e1e7c26",
+      "bytes": 1386819,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_19.mp4"
+    },
+    "result/rollouts/fixed/init_19_trajectory.json": {
+      "sha256": "d04fdd92d31aba7b3799895abea844f7d4e1f055743dae7647083094b22983da",
+      "bytes": 174575,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/init_19_trajectory.json"
+    },
+    "result/rollouts/fixed/rollout_complete.json": {
+      "sha256": "0971e794edaa7aaba3af7a41f460b44e6095760e1a37878580851f99f57a6238",
+      "bytes": 799,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/rollouts/fixed/rollout_complete.json"
+    },
+    "result/changed_context_files_diff_check.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/changed_context_files_diff_check.log",
+      "added_in_executor_postrun_review": true
+    },
+    "result/context_update_complete.md": {
+      "sha256": "d4795a5937f174243662c6a54e21a622076df13f34d5344554c59d4666434227",
+      "bytes": 2171,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/context_update_complete.md",
+      "added_in_executor_postrun_review": true
+    },
+    "result/dinov2_source_snapshot.zip": {
+      "sha256": "2276293e2b78b95ed1d8eb033652a8e3e58621339a0ddcf06e155d70b2bb9e66",
+      "bytes": 260669,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/dinov2_source_snapshot.zip",
+      "added_in_executor_postrun_review": true
+    },
+    "result/executor_postrun_review.md": {
+      "sha256": "a1143f7d3d0c55a8a69514e5b86b8a359ca7ad03c20c169713adfb7b799e8930",
+      "bytes": 3874,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/executor_postrun_review.md",
+      "added_in_executor_postrun_review": true
+    },
+    "result/full_worktree_diff_check.log": {
+      "sha256": "9fc2b407d835537e0051a4db2da380b985bc1eefdd5199cb1901c0240064b7b2",
+      "bytes": 15488,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/full_worktree_diff_check.log",
+      "added_in_executor_postrun_review": true
+    },
+    "result/implementation_diff.md": {
+      "sha256": "41e42e51545395f79edd8b0a57d2ba582ca0020d5fbef9cd4c78043a862a1791",
+      "bytes": 3576,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/implementation_diff.md",
+      "added_in_executor_postrun_review": true
+    },
+    "result/mechanism_summary.json": {
+      "sha256": "f91f57c6876a23268e8f97a0c5fb59b1c5572247a8e1a799f4a2d5b460c0d740",
+      "bytes": 2289,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/mechanism_summary.json",
+      "added_in_executor_postrun_review": true
+    },
+    "result/optimizer_gate_audit.json": {
+      "sha256": "8725b27abd5d970eaa29a3b5ff010cad1ffec35b4fbee1cd10747d2d9fdfe7b9",
+      "bytes": 1215,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/optimizer_gate_audit.json",
+      "added_in_executor_postrun_review": true
+    },
+    "result/optimizer_gate_audit.log": {
+      "sha256": "1bd43123acc1b9936640faee82c00992e56b44e5bf6a5b6eee9850f648afe7e4",
+      "bytes": 1478,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/optimizer_gate_audit.log",
+      "added_in_executor_postrun_review": true
+    },
+    "result/paired_outcomes.csv": {
+      "sha256": "dd9f07d1c8cc6eecb4d9136a06a9b55e6b07540d69f40fc08003f0fd92397027",
+      "bytes": 507,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/paired_outcomes.csv",
+      "added_in_executor_postrun_review": true
+    },
+    "result/paired_reset_verification.json": {
+      "sha256": "d96559f77af9aa17b26432aa05d5c50edabccf6a74848fc15b4d07ba94a11130",
+      "bytes": 353,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/paired_reset_verification.json",
+      "added_in_executor_postrun_review": true
+    },
+    "result/postrun_code_identity.json": {
+      "sha256": "83951eb74fffc1001f76707bd85cf1edb19a5984baa2dc34e912d1cb469aff50",
+      "bytes": 459,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/postrun_code_identity.json",
+      "added_in_executor_postrun_review": true
+    },
+    "result/postrun_server_verification.json": {
+      "sha256": "e088be59663444d0b315fc8a6d9fd76c0a18834d451d37ef4021878ee7d30063",
+      "bytes": 340,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/postrun_server_verification.json",
+      "added_in_executor_postrun_review": true
+    },
+    "result/postrun_validation.json": {
+      "sha256": "06163acfdae91cb460a6e4c83eb4d2441b30f3329bcc99cea093d0bfe0c63b10",
+      "bytes": 662,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/postrun_validation.json",
+      "added_in_executor_postrun_review": true
+    },
+    "result/proposal.md": {
+      "sha256": "de609693a1c0ad1de287d7793eff930c87df1a7062a8eda1bc6574d1536eefe9",
+      "bytes": 970,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/proposal.md",
+      "added_in_executor_postrun_review": true
+    },
+    "result/REPRODUCTION_NOTES.md": {
+      "sha256": "815a3af7edb6c9a13d19ce03df433e79074e42281f7c6ab50afea7d2b490cd2e",
+      "bytes": 2376,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/REPRODUCTION_NOTES.md",
+      "added_in_executor_postrun_review": true
+    },
+    "result/server_auto_delivery_receipt.json": {
+      "sha256": "2903db6414d67fc10037cb58c5f1655732ffb19858f13191727c172964a2d32b",
+      "bytes": 394,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/server_auto_delivery_receipt.json",
+      "added_in_executor_postrun_review": true
+    },
+    "result/tools/p48_r5_build_prototypes.py": {
+      "sha256": "bbde08ad77dc811a90375d53c7863687288abafd44d43635e969650258cc12d7",
+      "bytes": 6018,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_build_prototypes.py",
+      "added_in_executor_postrun_review": true
+    },
+    "result/tools/p48_r5_export_sources.py": {
+      "sha256": "46a47757956ac39210311d62dff3a15eef3fd8e362ce801638b113d45bac44c7",
+      "bytes": 2560,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_export_sources.py",
+      "added_in_executor_postrun_review": true
+    },
+    "result/tools/p48_r5_optimizer_gate_audit.py": {
+      "sha256": "cb1c2fea42043eb8b0c6a049a8e81a48f1535a53371dcfe00f90304b838e703f",
+      "bytes": 2164,
+      "packaged": true,
+      "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/tools/p48_r5_optimizer_gate_audit.py",
+      "added_in_executor_postrun_review": true
+    }
+  }
+}

@@ -1,0 +1,2125 @@
+usage: lerobot_eval.py [-h] [--config_path str] [--env str]
+                       [--env.type {aloha,pusht,gym_manipulator,libero,metaworld,isaaclab_arena}]
+                       [--env.visualization_width int]
+                       [--env.visualization_height int] [--robot str]
+                       [--env.robot.type {}] [--teleop str]
+                       [--env.teleop.type {}] [--processor str]
+                       [--env.processor.control_mode str] [--observation str]
+                       [--env.processor.observation.add_joint_velocity_to_observation bool]
+                       [--env.processor.observation.add_current_to_observation bool]
+                       [--env.processor.observation.add_ee_pose_to_observation bool]
+                       [--env.processor.observation.display_cameras bool]
+                       [--image_preprocessing str]
+                       [--env.processor.image_preprocessing.crop_params_dict [Dict]]
+                       [--env.processor.image_preprocessing.resize_size [int int]]
+                       [--gripper str]
+                       [--env.processor.gripper.use_gripper bool]
+                       [--env.processor.gripper.gripper_penalty float]
+                       [--reset str]
+                       [--env.processor.reset.fixed_reset_joint_positions [Any]]
+                       [--env.processor.reset.reset_time_s float]
+                       [--env.processor.reset.control_time_s float]
+                       [--env.processor.reset.terminate_on_success bool]
+                       [--inverse_kinematics str]
+                       [--env.processor.inverse_kinematics.urdf_path [str]]
+                       [--env.processor.inverse_kinematics.target_frame_name [str]]
+                       [--env.processor.inverse_kinematics.end_effector_bounds [Dict]]
+                       [--env.processor.inverse_kinematics.end_effector_step_sizes [Dict]]
+                       [--reward_classifier str]
+                       [--env.processor.reward_classifier.pretrained_path [str]]
+                       [--env.processor.reward_classifier.success_threshold float]
+                       [--env.processor.reward_classifier.success_reward float]
+                       [--env.processor.max_gripper_pos [float]]
+                       [--env.name str] [--env.task_ids [List]]
+                       [--env.camera_name str] [--env.init_states bool]
+                       [--env.camera_name_mapping [Dict]]
+                       [--env.observation_height int]
+                       [--env.observation_width int] [--env.control_mode str]
+                       [--env.obs_type str] [--env.render_mode str]
+                       [--env.multitask_eval bool] [--env.task [str]]
+                       [--env.fps int] [--env.features Dict]
+                       [--env.features_map Dict]
+                       [--env.max_parallel_tasks int]
+                       [--env.disable_env_checker bool] [--env.hub_path str]
+                       [--env.episode_length int] [--env.num_envs int]
+                       [--env.embodiment [str]] [--env.object [str]]
+                       [--env.mimic bool] [--env.teleop_device [str]]
+                       [--env.seed [int]] [--env.device [str]]
+                       [--env.disable_fabric bool] [--env.enable_cameras bool]
+                       [--env.headless bool] [--env.enable_pinocchio bool]
+                       [--env.environment [str]] [--env.state_dim int]
+                       [--env.action_dim int] [--env.camera_height int]
+                       [--env.camera_width int] [--env.video bool]
+                       [--env.video_length int] [--env.video_interval int]
+                       [--env.state_keys str] [--env.camera_keys [str]]
+                       [--env.kwargs [dict]] [--eval str]
+                       [--eval.n_episodes int] [--eval.batch_size int]
+                       [--eval.use_async_envs bool] [--policy str]
+                       [--policy.type {act,diffusion,groot,pi0,pi0_fast,pi05,smolvla,tdmpc,vqbet,wall_x,xvla,sac,reward_classifier,sarm}]
+                       [--policy.replace_final_stride_with_dilation int]
+                       [--policy.pre_norm bool] [--policy.dim_model int]
+                       [--policy.n_heads int] [--policy.dim_feedforward int]
+                       [--policy.feedforward_activation str]
+                       [--policy.n_encoder_layers int]
+                       [--policy.n_decoder_layers int] [--policy.use_vae bool]
+                       [--policy.n_vae_encoder_layers int]
+                       [--policy.temporal_ensemble_coeff [float]]
+                       [--policy.kl_weight float]
+                       [--policy.optimizer_lr_backbone float]
+                       [--policy.resize_shape [int int]]
+                       [--policy.crop_ratio float]
+                       [--policy.use_separate_rgb_encoder_per_camera bool]
+                       [--policy.down_dims int [int, ...]]
+                       [--policy.kernel_size int] [--policy.n_groups int]
+                       [--policy.diffusion_step_embed_dim int]
+                       [--policy.use_film_scale_modulation bool]
+                       [--policy.noise_scheduler_type str]
+                       [--policy.num_train_timesteps int]
+                       [--policy.beta_schedule str]
+                       [--policy.beta_start float] [--policy.beta_end float]
+                       [--policy.prediction_type str]
+                       [--policy.clip_sample bool]
+                       [--policy.clip_sample_range float]
+                       [--policy.do_mask_loss_for_padding bool]
+                       [--policy.scheduler_name str]
+                       [--policy.image_size int int]
+                       [--policy.base_model_path str]
+                       [--policy.tokenizer_assets_repo str]
+                       [--policy.embodiment_tag str] [--policy.tune_llm bool]
+                       [--policy.tune_visual bool]
+                       [--policy.tune_projector bool]
+                       [--policy.tune_diffusion_model bool]
+                       [--policy.lora_rank int] [--policy.lora_alpha int]
+                       [--policy.lora_dropout float]
+                       [--policy.lora_full_model bool]
+                       [--policy.warmup_ratio float] [--policy.use_bf16 bool]
+                       [--policy.video_backend str]
+                       [--policy.balance_dataset_weights bool]
+                       [--policy.balance_trajectory_weights bool]
+                       [--policy.dataset_paths [List]]
+                       [--policy.output_dir str] [--policy.save_steps int]
+                       [--policy.max_steps int]
+                       [--policy.dataloader_num_workers int]
+                       [--policy.report_to str] [--policy.resume bool]
+                       [--policy.max_action_tokens int]
+                       [--policy.text_tokenizer_name str]
+                       [--policy.action_tokenizer_name str]
+                       [--policy.temperature float]
+                       [--policy.max_decoding_steps int]
+                       [--policy.fast_skip_tokens int]
+                       [--policy.validate_action_token_prefix bool]
+                       [--policy.use_kv_cache bool]
+                       [--policy.paligemma_variant str]
+                       [--policy.action_expert_variant str]
+                       [--policy.num_inference_steps int]
+                       [--policy.time_sampling_beta_alpha float]
+                       [--policy.time_sampling_beta_beta float]
+                       [--policy.time_sampling_scale float]
+                       [--policy.time_sampling_offset float]
+                       [--policy.image_resolution int int]
+                       [--policy.gradient_checkpointing bool]
+                       [--policy.adapt_to_pi_aloha bool]
+                       [--policy.use_delta_joint_actions_aloha bool]
+                       [--policy.num_steps int] [--policy.use_cache bool]
+                       [--policy.train_expert_only bool]
+                       [--policy.train_state_proj bool]
+                       [--policy.vlm_model_name str]
+                       [--policy.load_vlm_weights bool]
+                       [--policy.add_image_special_tokens bool]
+                       [--policy.attention_mode str]
+                       [--policy.prefix_length int]
+                       [--policy.num_expert_layers int]
+                       [--policy.num_vlm_layers int]
+                       [--policy.self_attn_every_n_layers int]
+                       [--policy.expert_width_multiplier float]
+                       [--policy.min_period float] [--policy.max_period float]
+                       [--rtc_config str] [--policy.rtc_config.enabled bool]
+                       [--policy.rtc_config.prefix_attention_schedule RTCAttentionSchedule]
+                       [--policy.rtc_config.max_guidance_weight float]
+                       [--policy.rtc_config.execution_horizon int]
+                       [--policy.rtc_config.debug bool]
+                       [--policy.rtc_config.debug_maxlen int]
+                       [--policy.compile_model bool]
+                       [--policy.compile_mode str]
+                       [--policy.n_action_repeats int] [--policy.horizon int]
+                       [--policy.q_ensemble_size int] [--policy.mlp_dim int]
+                       [--policy.use_mpc bool] [--policy.cem_iterations int]
+                       [--policy.max_std float] [--policy.min_std float]
+                       [--policy.n_gaussian_samples int]
+                       [--policy.n_pi_samples int]
+                       [--policy.uncertainty_regularizer_coeff float]
+                       [--policy.n_elites int]
+                       [--policy.elite_weighting_temperature float]
+                       [--policy.gaussian_mean_momentum float]
+                       [--policy.max_random_shift_ratio float]
+                       [--policy.reward_coeff float]
+                       [--policy.expectile_weight float]
+                       [--policy.value_coeff float]
+                       [--policy.consistency_coeff float]
+                       [--policy.advantage_scaling float]
+                       [--policy.pi_coeff float]
+                       [--policy.temporal_decay_coeff float]
+                       [--policy.target_model_momentum float]
+                       [--policy.n_action_pred_token int]
+                       [--policy.action_chunk_size int]
+                       [--policy.vision_backbone str]
+                       [--policy.crop_shape [int int]]
+                       [--policy.crop_is_random bool]
+                       [--policy.pretrained_backbone_weights [str]]
+                       [--policy.use_group_norm bool]
+                       [--policy.spatial_softmax_num_keypoints int]
+                       [--policy.n_vqvae_training_steps int]
+                       [--policy.vqvae_n_embed int]
+                       [--policy.vqvae_embedding_dim int]
+                       [--policy.vqvae_enc_hidden_dim int]
+                       [--policy.gpt_block_size int]
+                       [--policy.gpt_input_dim int]
+                       [--policy.gpt_output_dim int]
+                       [--policy.gpt_n_layer int] [--policy.gpt_n_head int]
+                       [--policy.gpt_hidden_dim int]
+                       [--policy.offset_loss_weight float]
+                       [--policy.primary_code_loss_weight float]
+                       [--policy.secondary_code_loss_weight float]
+                       [--policy.bet_softmax_temperature float]
+                       [--policy.sequentially_select bool]
+                       [--policy.optimizer_vqvae_lr float]
+                       [--policy.optimizer_vqvae_weight_decay float]
+                       [--policy.pretrained_name_or_path str]
+                       [--policy.action_tokenizer_path [str]]
+                       [--policy.prediction_mode str]
+                       [--policy.attn_implementation str]
+                       [--policy.chunk_size int] [--policy.n_action_steps int]
+                       [--policy.dtype str] [--policy.florence_config Dict]
+                       [--policy.tokenizer_name str]
+                       [--policy.tokenizer_max_length int]
+                       [--policy.tokenizer_padding_side str]
+                       [--policy.pad_language_to str]
+                       [--policy.hidden_size int] [--policy.depth int]
+                       [--policy.mlp_ratio float] [--policy.num_domains int]
+                       [--policy.len_soft_prompts int] [--policy.dim_time int]
+                       [--policy.max_len_seq int]
+                       [--policy.use_hetero_proj bool]
+                       [--policy.action_mode str]
+                       [--policy.num_denoising_steps int]
+                       [--policy.use_proprio bool]
+                       [--policy.max_action_dim int]
+                       [--policy.domain_feature_key [str]]
+                       [--policy.resize_imgs_with_padding [int int]]
+                       [--policy.num_image_views [int]]
+                       [--policy.empty_cameras int]
+                       [--policy.freeze_language_encoder bool]
+                       [--policy.train_policy_transformer bool]
+                       [--policy.train_soft_prompts bool]
+                       [--policy.optimizer_lr float]
+                       [--policy.optimizer_betas float float]
+                       [--policy.optimizer_eps float]
+                       [--policy.optimizer_weight_decay float]
+                       [--policy.optimizer_grad_clip_norm float]
+                       [--policy.optimizer_soft_prompt_lr_scale float]
+                       [--policy.optimizer_soft_prompt_warmup_lr_scale [float]]
+                       [--policy.scheduler_warmup_steps int]
+                       [--policy.scheduler_decay_steps int]
+                       [--policy.scheduler_decay_lr float]
+                       [--policy.dataset_stats [Dict]]
+                       [--policy.storage_device str]
+                       [--policy.vision_encoder_name [str]]
+                       [--policy.freeze_vision_encoder bool]
+                       [--policy.image_encoder_hidden_dim int]
+                       [--policy.shared_encoder bool]
+                       [--policy.num_discrete_actions [int]]
+                       [--policy.online_steps int]
+                       [--policy.online_buffer_capacity int]
+                       [--policy.offline_buffer_capacity int]
+                       [--policy.async_prefetch bool]
+                       [--policy.online_step_before_learning int]
+                       [--policy.policy_update_freq int]
+                       [--policy.discount float]
+                       [--policy.temperature_init float]
+                       [--policy.num_critics int]
+                       [--policy.num_subsample_critics [int]]
+                       [--policy.critic_lr float] [--policy.actor_lr float]
+                       [--policy.temperature_lr float]
+                       [--policy.critic_target_update_weight float]
+                       [--policy.utd_ratio int]
+                       [--policy.state_encoder_hidden_dim int]
+                       [--policy.target_entropy [float]]
+                       [--policy.use_backup_entropy bool]
+                       [--critic_network_kwargs str]
+                       [--policy.critic_network_kwargs.hidden_dims List]
+                       [--policy.critic_network_kwargs.activate_final bool]
+                       [--policy.critic_network_kwargs.final_activation [str]]
+                       [--actor_network_kwargs str]
+                       [--policy.actor_network_kwargs.hidden_dims List]
+                       [--policy.actor_network_kwargs.activate_final bool]
+                       [--policy_kwargs str]
+                       [--policy.policy_kwargs.use_tanh_squash bool]
+                       [--policy.policy_kwargs.std_min float]
+                       [--policy.policy_kwargs.std_max float]
+                       [--policy.policy_kwargs.init_final float]
+                       [--discrete_critic_network_kwargs str]
+                       [--policy.discrete_critic_network_kwargs.hidden_dims List]
+                       [--policy.discrete_critic_network_kwargs.activate_final bool]
+                       [--policy.discrete_critic_network_kwargs.final_activation [str]]
+                       [--actor_learner_config str]
+                       [--policy.actor_learner_config.learner_host str]
+                       [--policy.actor_learner_config.learner_port int]
+                       [--policy.actor_learner_config.policy_parameters_push_frequency int]
+                       [--policy.actor_learner_config.queue_get_timeout float]
+                       [--concurrency str] [--policy.concurrency.actor str]
+                       [--policy.concurrency.learner str]
+                       [--policy.use_torch_compile bool] [--policy.name str]
+                       [--policy.num_classes int] [--policy.latent_dim int]
+                       [--policy.image_embedding_pooling_dim int]
+                       [--policy.dropout_rate float] [--policy.model_name str]
+                       [--policy.model_type str] [--policy.num_cameras int]
+                       [--policy.learning_rate float]
+                       [--policy.weight_decay float]
+                       [--policy.grad_clip_norm float]
+                       [--policy.n_obs_steps int]
+                       [--policy.input_features dict]
+                       [--policy.output_features dict] [--policy.device [str]]
+                       [--policy.use_amp bool] [--policy.use_peft bool]
+                       [--policy.push_to_hub bool] [--policy.repo_id [str]]
+                       [--policy.private [bool]] [--policy.tags [List]]
+                       [--policy.license [str]]
+                       [--policy.pretrained_path [Path]]
+                       [--policy.annotation_mode str] [--policy.frame_gap int]
+                       [--policy.max_rewind_steps int]
+                       [--policy.image_dim int] [--policy.text_dim int]
+                       [--policy.hidden_dim int] [--policy.num_heads int]
+                       [--policy.num_layers int] [--policy.max_state_dim int]
+                       [--policy.drop_n_last_frames int]
+                       [--policy.batch_size int]
+                       [--policy.clip_batch_size int] [--policy.dropout float]
+                       [--policy.stage_loss_weight float]
+                       [--policy.rewind_probability float]
+                       [--policy.language_perturbation_probability float]
+                       [--policy.num_sparse_stages int]
+                       [--policy.sparse_subtask_names [list]]
+                       [--policy.sparse_temporal_proportions [list]]
+                       [--policy.num_dense_stages [int]]
+                       [--policy.dense_subtask_names [list]]
+                       [--policy.dense_temporal_proportions [list]]
+                       [--policy.pretrained_model_path [str]]
+                       [--policy.image_key str] [--policy.state_key str]
+                       [--policy.normalization_mapping Dict]
+                       [--output_dir [Path]] [--job_name [str]] [--seed [int]]
+                       [--rename_map Dict] [--trust_remote_code bool]
+
+options:
+  -h, --help            show this help message and exit
+  --config_path str     Path for a config file to parse with draccus (default:
+                        None)
+  --env str             Config file for env (default: None)
+  --robot str           Config file for robot (default: None)
+  --teleop str          Config file for teleop (default: None)
+  --processor str       Config file for processor (default: None)
+  --observation str     Config file for observation (default: None)
+  --image_preprocessing str
+                        Config file for image_preprocessing (default: None)
+  --gripper str         Config file for gripper (default: None)
+  --reset str           Config file for reset (default: None)
+  --inverse_kinematics str
+                        Config file for inverse_kinematics (default: None)
+  --reward_classifier str
+                        Config file for reward_classifier (default: None)
+  --eval str            Config file for eval (default: None)
+  --policy str          Config file for policy (default: None)
+  --rtc_config str      Config file for rtc_config (default: None)
+  --rtc_config str      Config file for rtc_config (default: None)
+  --rtc_config str      Config file for rtc_config (default: None)
+  --rtc_config str      Config file for rtc_config (default: None)
+  --critic_network_kwargs str
+                        Config file for critic_network_kwargs (default: None)
+  --actor_network_kwargs str
+                        Config file for actor_network_kwargs (default: None)
+  --policy_kwargs str   Config file for policy_kwargs (default: None)
+  --discrete_critic_network_kwargs str
+                        Config file for discrete_critic_network_kwargs
+                        (default: None)
+  --actor_learner_config str
+                        Config file for actor_learner_config (default: None)
+  --concurrency str     Config file for concurrency (default: None)
+
+EvalPipelineConfig:
+
+  --output_dir [Path]
+  --job_name [str]
+  --seed [int]          
+  --rename_map Dict     Rename map for the observation to override the image
+                        and state keys (default: {})
+  --trust_remote_code bool
+                        Explicit consent to execute remote code from the Hub
+                        (required for hub environments). (default: False)
+
+EnvConfig ['env']:
+  Either the repo ID of a model hosted on the Hub or a path to a directory containing weights
+  saved using `Policy.save_pretrained`. If not provided, the policy is initialized from scratch
+  (useful for debugging). This argument is mutually exclusive with `--config`.
+
+  --env.type {aloha,pusht,gym_manipulator,libero,metaworld,isaaclab_arena}
+                        Which type of EnvConfig ['env'] to use (default: None)
+
+AlohaEnv ['env']:
+  Either the repo ID of a model hosted on the Hub or a path to a directory containing weights
+  saved using `Policy.save_pretrained`. If not provided, the policy is initialized from scratch
+  (useful for debugging). This argument is mutually exclusive with `--config`.
+
+  --env.task [str]      
+  --env.fps int         
+  --env.features Dict   
+  --env.features_map Dict
+  --env.max_parallel_tasks int
+  --env.disable_env_checker bool
+  --env.episode_length int
+  --env.obs_type str    
+  --env.observation_height int
+  --env.observation_width int
+  --env.render_mode str
+
+PushtEnv ['env']:
+  Either the repo ID of a model hosted on the Hub or a path to a directory containing weights
+  saved using `Policy.save_pretrained`. If not provided, the policy is initialized from scratch
+  (useful for debugging). This argument is mutually exclusive with `--config`.
+
+  --env.task [str]      
+  --env.fps int         
+  --env.features Dict   
+  --env.features_map Dict
+  --env.max_parallel_tasks int
+  --env.disable_env_checker bool
+  --env.episode_length int
+  --env.obs_type str    
+  --env.render_mode str
+  --env.visualization_width int
+  --env.visualization_height int
+  --env.observation_height int
+  --env.observation_width int
+
+HILSerlRobotEnvConfig ['env']:
+  Either the repo ID of a model hosted on the Hub or a path to a directory containing weights
+  saved using `Policy.save_pretrained`. If not provided, the policy is initialized from scratch
+  (useful for debugging). This argument is mutually exclusive with `--config`.
+
+  --env.task [str]
+  --env.fps int         
+  --env.features Dict   
+  --env.features_map Dict
+  --env.max_parallel_tasks int
+  --env.disable_env_checker bool
+  --env.name str        
+
+Optional ['env.robot']:
+
+RobotConfig ['env.robot']:
+
+  --env.robot.type {}   Which type of RobotConfig ['env.robot'] to use
+                        (default: None)
+
+Optional ['env.teleop']:
+
+TeleoperatorConfig ['env.teleop']:
+
+  --env.teleop.type {}  Which type of TeleoperatorConfig ['env.teleop'] to use
+                        (default: None)
+
+HILSerlProcessorConfig ['env.processor']:
+  Configuration for environment processing pipeline.
+
+  --env.processor.control_mode str
+  --env.processor.max_gripper_pos [float]
+
+Optional ['env.processor.observation']:
+
+ObservationConfig ['env.processor.observation']:
+  Configuration for observation processing.
+
+  --env.processor.observation.add_joint_velocity_to_observation bool
+  --env.processor.observation.add_current_to_observation bool
+  --env.processor.observation.add_ee_pose_to_observation bool
+  --env.processor.observation.display_cameras bool
+
+Optional ['env.processor.image_preprocessing']:
+
+ImagePreprocessingConfig ['env.processor.image_preprocessing']:
+
+  --env.processor.image_preprocessing.crop_params_dict [Dict]
+  --env.processor.image_preprocessing.resize_size [int int]
+
+Optional ['env.processor.gripper']:
+
+GripperConfig ['env.processor.gripper']:
+  Configuration for gripper control and penalties.
+
+  --env.processor.gripper.use_gripper bool
+  --env.processor.gripper.gripper_penalty float
+
+Optional ['env.processor.reset']:
+
+ResetConfig ['env.processor.reset']:
+  Configuration for environment reset behavior.
+
+  --env.processor.reset.fixed_reset_joint_positions [Any]
+  --env.processor.reset.reset_time_s float
+  --env.processor.reset.control_time_s float
+  --env.processor.reset.terminate_on_success bool
+
+Optional ['env.processor.inverse_kinematics']:
+
+InverseKinematicsConfig ['env.processor.inverse_kinematics']:
+  Configuration for inverse kinematics processing.
+
+  --env.processor.inverse_kinematics.urdf_path [str]
+  --env.processor.inverse_kinematics.target_frame_name [str]
+  --env.processor.inverse_kinematics.end_effector_bounds [Dict]
+  --env.processor.inverse_kinematics.end_effector_step_sizes [Dict]
+
+Optional ['env.processor.reward_classifier']:
+
+RewardClassifierConfig ['env.processor.reward_classifier']:
+  Configuration for reward classification.
+
+  --env.processor.reward_classifier.pretrained_path [str]
+  --env.processor.reward_classifier.success_threshold float
+  --env.processor.reward_classifier.success_reward float
+
+LiberoEnv ['env']:
+  Either the repo ID of a model hosted on the Hub or a path to a directory containing weights
+  saved using `Policy.save_pretrained`. If not provided, the policy is initialized from scratch
+  (useful for debugging). This argument is mutually exclusive with `--config`.
+
+  --env.task str        can also choose libero_spatial, libero_object, etc.
+                        (default: libero_10)
+  --env.fps int         
+  --env.features Dict   
+  --env.features_map Dict
+  --env.max_parallel_tasks int
+  --env.disable_env_checker bool
+  --env.task_ids [List]
+  --env.episode_length [int]
+  --env.obs_type str    
+  --env.render_mode str
+  --env.camera_name str
+  --env.init_states bool
+  --env.camera_name_mapping [Dict]
+  --env.observation_height int
+  --env.observation_width int
+  --env.control_mode str
+                        or "absolute" (default: relative)
+
+MetaworldEnv ['env']:
+  Either the repo ID of a model hosted on the Hub or a path to a directory containing weights
+  saved using `Policy.save_pretrained`. If not provided, the policy is initialized from scratch
+  (useful for debugging). This argument is mutually exclusive with `--config`.
+
+  --env.task str        add all tasks (default: metaworld-push-v2)
+  --env.fps int         
+  --env.features Dict   
+  --env.features_map Dict
+  --env.max_parallel_tasks int
+  --env.disable_env_checker bool
+  --env.episode_length int
+  --env.obs_type str    
+  --env.render_mode str
+  --env.multitask_eval bool
+
+IsaaclabArenaEnv ['env']:
+  Either the repo ID of a model hosted on the Hub or a path to a directory containing weights
+  saved using `Policy.save_pretrained`. If not provided, the policy is initialized from scratch
+  (useful for debugging). This argument is mutually exclusive with `--config`.
+
+  --env.task [str]      
+  --env.fps int         
+  --env.features Dict   
+  --env.features_map Dict
+  --env.max_parallel_tasks int
+  --env.disable_env_checker bool
+  --env.hub_path str    
+  --env.episode_length int
+  --env.num_envs int    
+  --env.embodiment [str]
+  --env.object [str]    
+  --env.mimic bool      
+  --env.teleop_device [str]
+  --env.seed [int]      
+  --env.device [str]    
+  --env.disable_fabric bool
+  --env.enable_cameras bool
+  --env.headless bool   
+  --env.enable_pinocchio bool
+  --env.environment [str]
+  --env.state_dim int   
+  --env.action_dim int  
+  --env.camera_height int
+  --env.camera_width int
+  --env.video bool      
+  --env.video_length int
+  --env.video_interval int
+  --env.state_keys str  Comma-separated keys, e.g.,
+                        "robot_joint_pos,left_eef_pos" (default:
+                        robot_joint_pos)
+  --env.camera_keys [str]
+                        Comma-separated keys, e.g.,
+                        "robot_pov_cam_rgb,front_cam_rgb" Set to None or ""
+                        for environments without cameras (default: None)
+  --env.kwargs [dict]
+
+EvalConfig ['eval']:
+
+  --eval.n_episodes int
+  --eval.batch_size int
+                        `batch_size` specifies the number of environments to
+                        use in a gym.vector.VectorEnv. (default: 50)
+  --eval.use_async_envs bool
+                        `use_async_envs` specifies whether to use asynchronous
+                        environments (multiprocessing). (default: False)
+
+Optional ['policy']:
+
+PreTrainedConfig ['policy']:
+  
+      Base configuration class for policy models.
+  
+      Args:
+          n_obs_steps: Number of environment steps worth of observations to pass to the policy (takes the
+              current step and additional steps going back).
+          input_features: A dictionary defining the PolicyFeature of the input data for the policy. The key represents
+              the input data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          output_features: A dictionary defining the PolicyFeature of the output data for the policy. The key represents
+              the output data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          normalization_mapping: A dictionary that maps from a str value of FeatureType (e.g., "STATE", "VISUAL") to
+              a corresponding NormalizationMode (e.g., NormalizationMode.MIN_MAX)
+      
+
+  --policy.type {act,diffusion,groot,pi0,pi0_fast,pi05,smolvla,tdmpc,vqbet,wall_x,xvla,sac,reward_classifier,sarm}
+                        Which type of PreTrainedConfig ['policy'] to use
+                        (default: None)
+
+ACTConfig ['policy']:
+  Configuration class for the Action Chunking Transformers policy.
+  
+      Defaults are configured for training on bimanual Aloha tasks like "insertion" or "transfer".
+  
+      The parameters you will most likely need to change are the ones which depend on the environment / sensors.
+      Those are: `input_features` and `output_features`.
+  
+      Notes on the inputs and outputs:
+          - Either:
+              - At least one key starting with "observation.image is required as an input.
+                AND/OR
+              - The key "observation.environment_state" is required as input.
+          - If there are multiple keys beginning with "observation.images." they are treated as multiple camera
+            views. Right now we only support all images having the same shape.
+          - May optionally work without an "observation.state" key for the proprioceptive robot state.
+          - "action" is required as an output key.
+  
+      Args:
+          n_obs_steps: Number of environment steps worth of observations to pass to the policy (takes the
+              current step and additional steps going back).
+          chunk_size: The size of the action prediction "chunks" in units of environment steps.
+          n_action_steps: The number of action steps to run in the environment for one invocation of the policy.
+              This should be no greater than the chunk size. For example, if the chunk size size 100, you may
+              set this to 50. This would mean that the model predicts 100 steps worth of actions, runs 50 in the
+              environment, and throws the other 50 out.
+          input_features: A dictionary defining the PolicyFeature of the input data for the policy. The key represents
+              the input data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          output_features: A dictionary defining the PolicyFeature of the output data for the policy. The key represents
+              the output data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          normalization_mapping: A dictionary that maps from a str value of FeatureType (e.g., "STATE", "VISUAL") to
+              a corresponding NormalizationMode (e.g., NormalizationMode.MIN_MAX)
+          vision_backbone: Name of the torchvision resnet backbone to use for encoding images.
+          pretrained_backbone_weights: Pretrained weights from torchvision to initialize the backbone.
+              `None` means no pretrained weights.
+          replace_final_stride_with_dilation: Whether to replace the ResNet's final 2x2 stride with a dilated
+              convolution.
+          pre_norm: Whether to use "pre-norm" in the transformer blocks.
+          dim_model: The transformer blocks' main hidden dimension.
+          n_heads: The number of heads to use in the transformer blocks' multi-head attention.
+          dim_feedforward: The dimension to expand the transformer's hidden dimension to in the feed-forward
+              layers.
+          feedforward_activation: The activation to use in the transformer block's feed-forward layers.
+          n_encoder_layers: The number of transformer layers to use for the transformer encoder.
+          n_decoder_layers: The number of transformer layers to use for the transformer decoder.
+          use_vae: Whether to use a variational objective during training. This introduces another transformer
+              which is used as the VAE's encoder (not to be confused with the transformer encoder - see
+              documentation in the policy class).
+          latent_dim: The VAE's latent dimension.
+          n_vae_encoder_layers: The number of transformer layers to use for the VAE's encoder.
+          temporal_ensemble_coeff: Coefficient for the exponential weighting scheme to apply for temporal
+              ensembling. Defaults to None which means temporal ensembling is not used. `n_action_steps` must be
+              1 when using this feature, as inference needs to happen at every step to form an ensemble. For
+              more information on how ensembling works, please see `ACTTemporalEnsembler`.
+          dropout: Dropout to use in the transformer layers (see code for details).
+          kl_weight: The weight to use for the KL-divergence component of the loss if the variational objective
+              is enabled. Loss is then calculated as: `reconstruction_loss + kl_weight * kld_loss`.
+      
+
+  --policy.n_obs_steps int
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        e.g. "cuda", "cuda:0", "cpu", or "mps" (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.chunk_size int
+  --policy.n_action_steps int
+  --policy.normalization_mapping Dict
+  --policy.vision_backbone str
+  --policy.pretrained_backbone_weights [str]
+  --policy.replace_final_stride_with_dilation int
+  --policy.pre_norm bool
+  --policy.dim_model int
+  --policy.n_heads int  
+  --policy.dim_feedforward int
+  --policy.feedforward_activation str
+  --policy.n_encoder_layers int
+  --policy.n_decoder_layers int
+  --policy.use_vae bool
+  --policy.latent_dim int
+  --policy.n_vae_encoder_layers int
+  --policy.temporal_ensemble_coeff [float]
+  --policy.dropout float
+  --policy.kl_weight float
+  --policy.optimizer_lr float
+                        Training preset (default: 1e-05)
+  --policy.optimizer_weight_decay float
+  --policy.optimizer_lr_backbone float
+
+DiffusionConfig ['policy']:
+  Configuration class for DiffusionPolicy.
+  
+      Defaults are configured for training with PushT providing proprioceptive and single camera observations.
+  
+      The parameters you will most likely need to change are the ones which depend on the environment / sensors.
+      Those are: `input_features` and `output_features`.
+  
+      Notes on the inputs and outputs:
+          - "observation.state" is required as an input key.
+          - Either:
+              - At least one key starting with "observation.image is required as an input.
+                AND/OR
+              - The key "observation.environment_state" is required as input.
+          - If there are multiple keys beginning with "observation.image" they are treated as multiple camera
+            views. Right now we only support all images having the same shape.
+          - "action" is required as an output key.
+  
+      Args:
+          n_obs_steps: Number of environment steps worth of observations to pass to the policy (takes the
+              current step and additional steps going back).
+          horizon: Diffusion model action prediction size as detailed in `DiffusionPolicy.select_action`.
+          n_action_steps: The number of action steps to run in the environment for one invocation of the policy.
+              See `DiffusionPolicy.select_action` for more details.
+          input_features: A dictionary defining the PolicyFeature of the input data for the policy. The key represents
+              the input data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          output_features: A dictionary defining the PolicyFeature of the output data for the policy. The key represents
+              the output data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          normalization_mapping: A dictionary that maps from a str value of FeatureType (e.g., "STATE", "VISUAL") to
+              a corresponding NormalizationMode (e.g., NormalizationMode.MIN_MAX)
+          vision_backbone: Name of the torchvision resnet backbone to use for encoding images.
+          resize_shape: (H, W) shape to resize images to as a preprocessing step for the vision
+              backbone. If None, no resizing is done and the original image resolution is used.
+          crop_ratio: Ratio in (0, 1] used to derive the crop size from resize_shape
+              (crop_h = int(resize_shape[0] * crop_ratio), likewise for width).
+              Set to 1.0 to disable cropping. Only takes effect when resize_shape is not None.
+          crop_shape: (H, W) shape to crop images to. When resize_shape is set and crop_ratio < 1.0,
+              this is computed automatically. Can also be set directly for legacy configs that use
+              crop-only (without resize). If None and no derivation applies, no cropping is done.
+          crop_is_random: Whether the crop should be random at training time (it's always a center
+              crop in eval mode).
+          pretrained_backbone_weights: Pretrained weights from torchvision to initialize the backbone.
+              `None` means no pretrained weights.
+          use_group_norm: Whether to replace batch normalization with group normalization in the backbone.
+              The group sizes are set to be about 16 (to be precise, feature_dim // 16).
+          spatial_softmax_num_keypoints: Number of keypoints for SpatialSoftmax.
+          use_separate_rgb_encoder_per_camera: Whether to use a separate RGB encoder for each camera view.
+          down_dims: Feature dimension for each stage of temporal downsampling in the diffusion modeling Unet.
+              You may provide a variable number of dimensions, therefore also controlling the degree of
+              downsampling.
+          kernel_size: The convolutional kernel size of the diffusion modeling Unet.
+          n_groups: Number of groups used in the group norm of the Unet's convolutional blocks.
+          diffusion_step_embed_dim: The Unet is conditioned on the diffusion timestep via a small non-linear
+              network. This is the output dimension of that network, i.e., the embedding dimension.
+          use_film_scale_modulation: FiLM (https://huggingface.co/papers/1709.07871) is used for the Unet conditioning.
+              Bias modulation is used be default, while this parameter indicates whether to also use scale
+              modulation.
+          noise_scheduler_type: Name of the noise scheduler to use. Supported options: ["DDPM", "DDIM"].
+          num_train_timesteps: Number of diffusion steps for the forward diffusion schedule.
+          beta_schedule: Name of the diffusion beta schedule as per DDPMScheduler from Hugging Face diffusers.
+          beta_start: Beta value for the first forward-diffusion step.
+          beta_end: Beta value for the last forward-diffusion step.
+          prediction_type: The type of prediction that the diffusion modeling Unet makes. Choose from "epsilon"
+              or "sample". These have equivalent outcomes from a latent variable modeling perspective, but
+              "epsilon" has been shown to work better in many deep neural network settings.
+          clip_sample: Whether to clip the sample to [-`clip_sample_range`, +`clip_sample_range`] for each
+              denoising step at inference time. WARNING: you will need to make sure your action-space is
+              normalized to fit within this range.
+          clip_sample_range: The magnitude of the clipping range as described above.
+          num_inference_steps: Number of reverse diffusion steps to use at inference time (steps are evenly
+              spaced). If not provided, this defaults to be the same as `num_train_timesteps`.
+          do_mask_loss_for_padding: Whether to mask the loss when there are copy-padded actions. See
+              `LeRobotDataset` and `load_previous_and_future_frames` for more information. Note, this defaults
+              to False as the original Diffusion Policy implementation does the same.
+      
+
+  --policy.n_obs_steps int
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        e.g. "cuda", "cuda:0", "cpu", or "mps" (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.horizon int  
+  --policy.n_action_steps int
+  --policy.normalization_mapping Dict
+  --policy.drop_n_last_frames int
+                        horizon - n_action_steps - n_obs_steps + 1 (default:
+                        7)
+  --policy.vision_backbone str
+  --policy.resize_shape [int int]
+  --policy.crop_ratio float
+  --policy.crop_shape [int int]
+  --policy.crop_is_random bool
+  --policy.pretrained_backbone_weights [str]
+  --policy.use_group_norm bool
+  --policy.spatial_softmax_num_keypoints int
+  --policy.use_separate_rgb_encoder_per_camera bool
+  --policy.down_dims int [int, ...]
+  --policy.kernel_size int
+  --policy.n_groups int
+  --policy.diffusion_step_embed_dim int
+  --policy.use_film_scale_modulation bool
+  --policy.noise_scheduler_type str
+                        Noise scheduler. (default: DDPM)
+  --policy.num_train_timesteps int
+  --policy.beta_schedule str
+  --policy.beta_start float
+  --policy.beta_end float
+  --policy.prediction_type str
+  --policy.clip_sample bool
+  --policy.clip_sample_range float
+  --policy.num_inference_steps [int]
+  --policy.compile_model bool
+                        Optimization (default: False)
+  --policy.compile_mode str
+  --policy.do_mask_loss_for_padding bool
+  --policy.optimizer_lr float
+                        Training presets (default: 0.0001)
+  --policy.optimizer_betas Any
+  --policy.optimizer_eps float
+  --policy.optimizer_weight_decay float
+  --policy.scheduler_name str
+  --policy.scheduler_warmup_steps int
+
+GrootConfig ['policy']:
+  Configuration for Groot policy wrapper.
+
+  --policy.n_obs_steps int
+                        Basic policy settings (default: 1)
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        e.g. "cuda", "cuda:0", "cpu", or "mps" (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.chunk_size int
+  --policy.n_action_steps int
+  --policy.max_state_dim int
+                        Dimension settings (must match pretrained GR00T model
+                        expectations) Maximum state dimension. Shorter states
+                        will be zero-padded. (default: 64)
+  --policy.max_action_dim int
+                        Maximum action dimension. Shorter actions will be
+                        zero-padded. (default: 32)
+  --policy.normalization_mapping Dict
+                        Normalization (start with identity, adjust as needed)
+                        (default: {'VISUAL': <NormalizationMode.IDENTITY:
+                        'IDENTITY'>, 'STATE': <NormalizationMode.MEAN_STD:
+                        'MEAN_STD'>, 'ACTION': <NormalizationMode.MEAN_STD:
+                        'MEAN_STD'>})
+  --policy.image_size int int
+                        Image preprocessing (adjust to match Groot's expected
+                        input) (default: (224, 224))
+  --policy.base_model_path str
+                        Groot-specific model parameters (from
+                        groot_finetune_script.py) Path or HuggingFace model ID
+                        for the base Groot model (default:
+                        nvidia/GR00T-N1.5-3B)
+  --policy.tokenizer_assets_repo str
+                        HF repo ID (or local path) that hosts vocab.json and
+                        merges.txt for Eagle tokenizer. (default:
+                        lerobot/eagle2hg-processor-groot-n1p5)
+  --policy.embodiment_tag str
+                        Embodiment tag to use for training (e.g.
+                        'new_embodiment', 'gr1') (default: new_embodiment)
+  --policy.tune_llm bool
+                        Fine-tuning control arguments Whether to fine-tune the
+                        llm backbone (default: False)
+  --policy.tune_visual bool
+                        Whether to fine-tune the vision tower (default: False)
+  --policy.tune_projector bool
+                        Whether to fine-tune the projector (default: True)
+  --policy.tune_diffusion_model bool
+                        Whether to fine-tune the diffusion model (default:
+                        True)
+  --policy.lora_rank int
+                        LoRA parameters (from groot_finetune_script.py) Rank
+                        for the LORA model. If 0, no LORA will be used.
+                        (default: 0)
+  --policy.lora_alpha int
+                        Alpha value for the LORA model (default: 16)
+  --policy.lora_dropout float
+                        Dropout rate for the LORA model (default: 0.1)
+  --policy.lora_full_model bool
+                        Whether to use the full model for LORA (default:
+                        False)
+  --policy.optimizer_lr float
+                        Training parameters (matching
+                        groot_finetune_script.py) (default: 0.0001)
+  --policy.optimizer_betas float float
+  --policy.optimizer_eps float
+  --policy.optimizer_weight_decay float
+  --policy.warmup_ratio float
+  --policy.use_bf16 bool
+  --policy.video_backend str
+                        Dataset parameters Video backend to use for training
+                        ('decord' or 'torchvision_av') (default: decord)
+  --policy.balance_dataset_weights bool
+                        Whether to balance dataset weights in mixture datasets
+                        (default: True)
+  --policy.balance_trajectory_weights bool
+                        Whether to sample trajectories weighted by their
+                        length (default: True)
+  --policy.dataset_paths [List]
+                        Optional dataset paths for delegating training to
+                        Isaac-GR00T runner (default: None)
+  --policy.output_dir str
+  --policy.save_steps int
+  --policy.max_steps int
+  --policy.batch_size int
+  --policy.dataloader_num_workers int
+  --policy.report_to str
+  --policy.resume bool  
+
+PI0Config ['policy']:
+
+  --policy.n_obs_steps int
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        Device to use for the model (None = auto-detect)
+                        (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.paligemma_variant str
+  --policy.action_expert_variant str
+  --policy.dtype str    Options: "bfloat16", "float32" (default: float32)
+  --policy.chunk_size int
+                        Number of action steps to predict, in openpi called
+                        "action_horizon" (default: 50)
+  --policy.n_action_steps int
+                        Number of action steps to execute (default: 50)
+  --policy.max_state_dim int
+                        Shorter state and action vectors will be padded to
+                        these dimensions (default: 32)
+  --policy.max_action_dim int
+  --policy.num_inference_steps int
+                        Number of denoising steps during inference (default:
+                        10)
+  --policy.time_sampling_beta_alpha float
+  --policy.time_sampling_beta_beta float
+  --policy.time_sampling_scale float
+  --policy.time_sampling_offset float
+  --policy.min_period float
+  --policy.max_period float
+  --policy.image_resolution int int
+  --policy.empty_cameras int
+                        see openpi `preprocessing_pytorch.py` Add empty
+                        images. Used to add empty cameras when no image
+                        features are present. (default: 0)
+  --policy.normalization_mapping Dict
+                        Normalization (default: {'VISUAL':
+                        <NormalizationMode.IDENTITY: 'IDENTITY'>, 'STATE':
+                        <NormalizationMode.MEAN_STD: 'MEAN_STD'>, 'ACTION':
+                        <NormalizationMode.MEAN_STD: 'MEAN_STD'>})
+  --policy.gradient_checkpointing bool
+                        Enable gradient checkpointing for memory optimization
+                        (default: False)
+  --policy.compile_model bool
+                        Whether to use torch.compile for model optimization
+                        (default: False)
+  --policy.compile_mode str
+                        Torch compile mode (default: max-autotune)
+  --policy.freeze_vision_encoder bool
+                        Freeze only the vision encoder (default: False)
+  --policy.train_expert_only bool
+                        Freeze entire VLM, train only action expert and
+                        projections (default: False)
+  --policy.optimizer_lr float
+                        see openpi `CosineDecaySchedule: peak_lr` (default:
+                        2.5e-05)
+  --policy.optimizer_betas float float
+  --policy.optimizer_eps float
+  --policy.optimizer_weight_decay float
+  --policy.optimizer_grad_clip_norm float
+  --policy.scheduler_warmup_steps int
+                        Scheduler settings: see openpi `CosineDecaySchedule`
+                        Note: These will auto-scale if --steps <
+                        scheduler_decay_steps For example, --steps=3000 will
+                        scale warmup to 100 and decay to 3000 (default: 1000)
+  --policy.scheduler_decay_steps int
+  --policy.scheduler_decay_lr float
+  --policy.tokenizer_max_length int
+                        see openpi `__post_init__` (default: 48)
+
+Optional ['policy.rtc_config']:
+  Real-Time Chunking (RTC) configuration
+
+RTCConfig ['policy.rtc_config']:
+  Real-Time Chunking (RTC) configuration
+
+  --policy.rtc_config.enabled bool
+                        Infrastructure (default: False)
+  --policy.rtc_config.prefix_attention_schedule RTCAttentionSchedule
+                        Core RTC settings Todo change to exp (default:
+                        RTCAttentionSchedule.LINEAR)
+  --policy.rtc_config.max_guidance_weight float
+  --policy.rtc_config.execution_horizon int
+  --policy.rtc_config.debug bool
+                        Debug settings (default: False)
+  --policy.rtc_config.debug_maxlen int
+
+PI0FastConfig ['policy']:
+
+  --policy.n_obs_steps int
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        Device to use for the model (None = auto-detect)
+                        (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.paligemma_variant str
+  --policy.action_expert_variant str
+  --policy.dtype str    Options: "bfloat16", "float32" (default: float32)
+  --policy.chunk_size int
+                        Number of action steps to predict, in openpi called
+                        "action_horizon" (default: 50)
+  --policy.n_action_steps int
+                        Number of action steps to execute (default: 50)
+  --policy.max_state_dim int
+                        Shorter state and action vectors will be padded to
+                        these dimensions (default: 32)
+  --policy.max_action_dim int
+  --policy.max_action_tokens int
+  --policy.image_resolution int int
+  --policy.empty_cameras int
+                        see openpi `preprocessing_pytorch.py` Add empty
+                        images. Used to add empty cameras when no image
+                        features are present. (default: 0)
+  --policy.tokenizer_max_length int
+                        see openpi `__post_init__` (default: 200)
+  --policy.text_tokenizer_name str
+  --policy.action_tokenizer_name str
+  --policy.temperature float
+  --policy.max_decoding_steps int
+  --policy.fast_skip_tokens int
+  --policy.validate_action_token_prefix bool
+                        Whether to validate that decoded action tokens start
+                        with "Action: " prefix (default: True)
+  --policy.use_kv_cache bool
+                        Whether to use KV cache for faster autoregressive
+                        decoding (default: True)
+  --policy.normalization_mapping Dict
+  --policy.gradient_checkpointing bool
+                        Enable gradient checkpointing for memory optimization
+                        (default: False)
+  --policy.compile_model bool
+                        Whether to use torch.compile for model optimization
+                        (default: False)
+  --policy.compile_mode str
+                        Torch compile mode (default: max-autotune)
+  --policy.optimizer_lr float
+                        see openpi `CosineDecaySchedule: peak_lr` (default:
+                        2.5e-05)
+  --policy.optimizer_betas float float
+  --policy.optimizer_eps float
+  --policy.optimizer_weight_decay float
+  --policy.optimizer_grad_clip_norm float
+  --policy.scheduler_warmup_steps int
+                        Scheduler settings: see openpi `CosineDecaySchedule`
+                        Note: These will auto-scale if --steps <
+                        scheduler_decay_steps For example, --steps=3000 will
+                        scale warmup to 100 and decay to 3000 (default: 1000)
+  --policy.scheduler_decay_steps int
+  --policy.scheduler_decay_lr float
+
+Optional ['policy.rtc_config']:
+  Real-Time Chunking (RTC) configuration
+
+RTCConfig ['policy.rtc_config']:
+  Real-Time Chunking (RTC) configuration
+
+  --policy.rtc_config.enabled bool
+                        Infrastructure (default: False)
+  --policy.rtc_config.prefix_attention_schedule RTCAttentionSchedule
+                        Core RTC settings Todo change to exp (default:
+                        RTCAttentionSchedule.LINEAR)
+  --policy.rtc_config.max_guidance_weight float
+  --policy.rtc_config.execution_horizon int
+  --policy.rtc_config.debug bool
+                        Debug settings (default: False)
+  --policy.rtc_config.debug_maxlen int
+
+PI05Config ['policy']:
+
+  --policy.n_obs_steps int
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        Device to use for the model (None = auto-detect)
+                        (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.paligemma_variant str
+  --policy.action_expert_variant str
+  --policy.dtype str    Options: "bfloat16", "float32" (default: float32)
+  --policy.chunk_size int
+                        Number of action steps to predict, in openpi called
+                        "action_horizon" (default: 50)
+  --policy.n_action_steps int
+                        Number of action steps to execute (default: 50)
+  --policy.max_state_dim int
+                        Shorter state and action vectors will be padded to
+                        these dimensions (default: 32)
+  --policy.max_action_dim int
+  --policy.num_inference_steps int
+                        Flow matching parameters: see openpi `PI0Pytorch`
+                        (default: 10)
+  --policy.time_sampling_beta_alpha float
+  --policy.time_sampling_beta_beta float
+  --policy.time_sampling_scale float
+  --policy.time_sampling_offset float
+  --policy.min_period float
+  --policy.max_period float
+  --policy.image_resolution int int
+  --policy.empty_cameras int
+                        see openpi `preprocessing_pytorch.py` Add empty
+                        images. Used to add empty cameras when no image
+                        features are present. (default: 0)
+  --policy.tokenizer_max_length int
+                        see openpi `__post_init__` (default: 200)
+  --policy.normalization_mapping Dict
+  --policy.gradient_checkpointing bool
+                        Enable gradient checkpointing for memory optimization
+                        (default: False)
+  --policy.compile_model bool
+                        Whether to use torch.compile for model optimization
+                        (default: False)
+  --policy.compile_mode str
+                        Torch compile mode (default: max-autotune)
+  --policy.freeze_vision_encoder bool
+                        Freeze only the vision encoder (default: False)
+  --policy.train_expert_only bool
+                        Freeze entire VLM, train only action expert and
+                        projections (default: False)
+  --policy.optimizer_lr float
+                        see openpi `CosineDecaySchedule: peak_lr` (default:
+                        2.5e-05)
+  --policy.optimizer_betas float float
+  --policy.optimizer_eps float
+  --policy.optimizer_weight_decay float
+  --policy.optimizer_grad_clip_norm float
+  --policy.scheduler_warmup_steps int
+                        Scheduler settings: see openpi `CosineDecaySchedule`
+                        Note: These will auto-scale if --steps <
+                        scheduler_decay_steps For example, --steps=3000 will
+                        scale warmup to 100 and decay to 3000 (default: 1000)
+  --policy.scheduler_decay_steps int
+  --policy.scheduler_decay_lr float
+
+Optional ['policy.rtc_config']:
+  Real-Time Chunking (RTC) configuration
+
+RTCConfig ['policy.rtc_config']:
+  Real-Time Chunking (RTC) configuration
+
+  --policy.rtc_config.enabled bool
+                        Infrastructure (default: False)
+  --policy.rtc_config.prefix_attention_schedule RTCAttentionSchedule
+                        Core RTC settings Todo change to exp (default:
+                        RTCAttentionSchedule.LINEAR)
+  --policy.rtc_config.max_guidance_weight float
+  --policy.rtc_config.execution_horizon int
+  --policy.rtc_config.debug bool
+                        Debug settings (default: False)
+  --policy.rtc_config.debug_maxlen int
+
+SmolVLAConfig ['policy']:
+
+  --policy.n_obs_steps int
+                        Input / output structure. (default: 1)
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        e.g. "cuda", "cuda:0", "cpu", or "mps" (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.chunk_size int
+  --policy.n_action_steps int
+  --policy.normalization_mapping Dict
+  --policy.max_state_dim int
+                        Shorter state and action vectors will be padded
+                        (default: 32)
+  --policy.max_action_dim int
+  --policy.resize_imgs_with_padding int int
+                        Image preprocessing (default: (512, 512))
+  --policy.empty_cameras int
+                        Add empty images. Used by smolvla_aloha_sim which adds
+                        the empty left and right wrist cameras in addition to
+                        the top camera. (default: 0)
+  --policy.adapt_to_pi_aloha bool
+                        Converts the joint and gripper values from the
+                        standard Aloha space to the space used by the pi
+                        internal runtime which was used to train the base
+                        model. (default: False)
+  --policy.use_delta_joint_actions_aloha bool
+                        Converts joint dimensions to deltas with respect to
+                        the current state before passing to the model. Gripper
+                        dimensions will remain in absolute values. (default:
+                        False)
+  --policy.tokenizer_max_length int
+                        Tokenizer (default: 48)
+  --policy.num_steps int
+                        Decoding (default: 10)
+  --policy.use_cache bool
+                        Attention utils (default: True)
+  --policy.freeze_vision_encoder bool
+                        Finetuning settings (default: True)
+  --policy.train_expert_only bool
+  --policy.train_state_proj bool
+  --policy.optimizer_lr float
+                        Training presets (default: 0.0001)
+  --policy.optimizer_betas float float
+  --policy.optimizer_eps float
+  --policy.optimizer_weight_decay float
+  --policy.optimizer_grad_clip_norm float
+  --policy.scheduler_warmup_steps int
+  --policy.scheduler_decay_steps int
+  --policy.scheduler_decay_lr float
+  --policy.vlm_model_name str
+                        Select the VLM backbone. (default:
+                        HuggingFaceTB/SmolVLM2-500M-Video-Instruct)
+  --policy.load_vlm_weights bool
+                        Set to False in case of training the expert from
+                        scratch. True when init from pretrained SmolVLA
+                        weights (default: False)
+  --policy.add_image_special_tokens bool
+                        Whether to use special image tokens around image
+                        features. (default: False)
+  --policy.attention_mode str
+  --policy.prefix_length int
+  --policy.pad_language_to str
+                        "max_length" (default: longest)
+  --policy.num_expert_layers int
+                        Less or equal to 0 is the default where the action
+                        expert has the same number of layers of VLM. Otherwise
+                        the expert have less layers. (default: -1)
+  --policy.num_vlm_layers int
+                        Number of layers used in the VLM (first num_vlm_layers
+                        layers) (default: 16)
+  --policy.self_attn_every_n_layers int
+                        Interleave SA layers each self_attn_every_n_layers
+                        (default: 2)
+  --policy.expert_width_multiplier float
+                        The action expert hidden size (wrt to the VLM)
+                        (default: 0.75)
+  --policy.min_period float
+                        sensitivity range for the timestep used in sine-cosine
+                        positional encoding (default: 0.004)
+  --policy.max_period float
+  --policy.compile_model bool
+                        Whether to use torch.compile for model optimization
+                        (default: False)
+  --policy.compile_mode str
+                        Torch compile mode (default: max-autotune)
+
+Optional ['policy.rtc_config']:
+  Real-Time Chunking (RTC) configuration
+
+RTCConfig ['policy.rtc_config']:
+  Real-Time Chunking (RTC) configuration
+
+  --policy.rtc_config.enabled bool
+                        Infrastructure (default: False)
+  --policy.rtc_config.prefix_attention_schedule RTCAttentionSchedule
+                        Core RTC settings Todo change to exp (default:
+                        RTCAttentionSchedule.LINEAR)
+  --policy.rtc_config.max_guidance_weight float
+  --policy.rtc_config.execution_horizon int
+  --policy.rtc_config.debug bool
+                        Debug settings (default: False)
+  --policy.rtc_config.debug_maxlen int
+
+TDMPCConfig ['policy']:
+  Configuration class for TDMPCPolicy.
+  
+      Defaults are configured for training with xarm_lift_medium_replay providing proprioceptive and single
+      camera observations.
+  
+      The parameters you will most likely need to change are the ones which depend on the environment / sensors.
+      Those are: `input_features`, `output_features`, and perhaps `max_random_shift_ratio`.
+  
+      Args:
+          n_action_repeats: The number of times to repeat the action returned by the planning. (hint: Google
+              action repeats in Q-learning or ask your favorite chatbot)
+          horizon: Horizon for model predictive control.
+          n_action_steps: Number of action steps to take from the plan given by model predictive control. This
+              is an alternative to using action repeats. If this is set to more than 1, then we require
+              `n_action_repeats == 1`, `use_mpc == True` and `n_action_steps <= horizon`. Note that this
+              approach of using multiple steps from the plan is not in the original implementation.
+          input_features: A dictionary defining the PolicyFeature of the input data for the policy. The key represents
+              the input data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          output_features: A dictionary defining the PolicyFeature of the output data for the policy. The key represents
+              the output data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          normalization_mapping: A dictionary that maps from a str value of FeatureType (e.g., "STATE", "VISUAL") to
+              a corresponding NormalizationMode (e.g., NormalizationMode.MIN_MAX)
+          image_encoder_hidden_dim: Number of channels for the convolutional layers used for image encoding.
+          state_encoder_hidden_dim: Hidden dimension for MLP used for state vector encoding.
+          latent_dim: Observation's latent embedding dimension.
+          q_ensemble_size: Number of Q function estimators to use in an ensemble for uncertainty estimation.
+          mlp_dim: Hidden dimension of MLPs used for modelling the dynamics encoder, reward function, policy
+              (π), Q ensemble, and V.
+          discount: Discount factor (γ) to use for the reinforcement learning formalism.
+          use_mpc: Whether to use model predictive control. The alternative is to just sample the policy model
+              (π) for each step.
+          cem_iterations: Number of iterations for the MPPI/CEM loop in MPC.
+          max_std: Maximum standard deviation for actions sampled from the gaussian PDF in CEM.
+          min_std: Minimum standard deviation for noise applied to actions sampled from the policy model (π).
+              Doubles up as the minimum standard deviation for actions sampled from the gaussian PDF in CEM.
+          n_gaussian_samples: Number of samples to draw from the gaussian distribution every CEM iteration. Must
+              be non-zero.
+          n_pi_samples: Number of samples to draw from the policy / world model rollout every CEM iteration. Can
+              be zero.
+          uncertainty_regularizer_coeff: Coefficient for the uncertainty regularization used when estimating
+              trajectory values (this is the λ coefficient in eqn 4 of FOWM).
+          n_elites: The number of elite samples to use for updating the gaussian parameters every CEM iteration.
+          elite_weighting_temperature: The temperature to use for softmax weighting (by trajectory value) of the
+              elites, when updating the gaussian parameters for CEM.
+          gaussian_mean_momentum: Momentum (α) used for EMA updates of the mean parameter μ of the gaussian
+              parameters optimized in CEM. Updates are calculated as μ⁻ ← αμ⁻ + (1-α)μ.
+          max_random_shift_ratio: Maximum random shift (as a proportion of the image size) to apply to the
+              image(s) (in units of pixels) for training-time augmentation. If set to 0, no such augmentation
+              is applied. Note that the input images are assumed to be square for this augmentation.
+          reward_coeff: Loss weighting coefficient for the reward regression loss.
+          expectile_weight: Weighting (τ) used in expectile regression for the state value function (V).
+              v_pred < v_target is weighted by τ and v_pred >= v_target is weighted by (1-τ). τ is expected to
+              be in [0, 1]. Setting τ closer to 1 results in a more "optimistic" V. This is sensible to do
+              because v_target is obtained by evaluating the learned state-action value functions (Q) with
+              in-sample actions that may not be always optimal.
+          value_coeff: Loss weighting coefficient for both the state-action value (Q) TD loss, and the state
+              value (V) expectile regression loss.
+          consistency_coeff: Loss weighting coefficient for the consistency loss.
+          advantage_scaling: A factor by which the advantages are scaled prior to exponentiation for advantage
+              weighted regression of the policy (π) estimator parameters. Note that the exponentiated advantages
+              are clamped at 100.0.
+          pi_coeff: Loss weighting coefficient for the action regression loss.
+          temporal_decay_coeff: Exponential decay coefficient for decaying the loss coefficient for future time-
+              steps. Hint: each loss computation involves `horizon` steps worth of actions starting from the
+              current time step.
+          target_model_momentum: Momentum (α) used for EMA updates of the target models. Updates are calculated
+              as ϕ ← αϕ + (1-α)θ where ϕ are the parameters of the target model and θ are the parameters of the
+              model being trained.
+      
+
+  --policy.n_obs_steps int
+                        Input / output structure. (default: 1)
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        e.g. "cuda", "cuda:0", "cpu", or "mps" (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.n_action_repeats int
+  --policy.horizon int  
+  --policy.n_action_steps int
+  --policy.normalization_mapping Dict
+  --policy.image_encoder_hidden_dim int
+  --policy.state_encoder_hidden_dim int
+  --policy.latent_dim int
+  --policy.q_ensemble_size int
+  --policy.mlp_dim int  
+  --policy.discount float
+  --policy.use_mpc bool
+  --policy.cem_iterations int
+  --policy.max_std float
+  --policy.min_std float
+  --policy.n_gaussian_samples int
+  --policy.n_pi_samples int
+  --policy.uncertainty_regularizer_coeff float
+  --policy.n_elites int
+  --policy.elite_weighting_temperature float
+  --policy.gaussian_mean_momentum float
+  --policy.max_random_shift_ratio float
+  --policy.reward_coeff float
+  --policy.expectile_weight float
+  --policy.value_coeff float
+  --policy.consistency_coeff float
+  --policy.advantage_scaling float
+  --policy.pi_coeff float
+  --policy.temporal_decay_coeff float
+  --policy.target_model_momentum float
+  --policy.optimizer_lr float
+                        Training presets (default: 0.0003)
+
+VQBeTConfig ['policy']:
+  Configuration class for VQ-BeT.
+  
+      Defaults are configured for training with PushT providing proprioceptive and single camera observations.
+  
+      The parameters you will most likely need to change are the ones which depend on the environment / sensors.
+      Those are: `input_features` and `output_features`.
+  
+      Notes on the inputs and outputs:
+          - "observation.state" is required as an input key.
+          - At least one key starting with "observation.image is required as an input.
+          - If there are multiple keys beginning with "observation.image" they are treated as multiple camera
+            views. Right now we only support all images having the same shape.
+          - "action" is required as an output key.
+  
+      Args:
+          n_obs_steps: Number of environment steps worth of observations to pass to the policy (takes the
+              current step and additional steps going back).
+          n_action_pred_token: Total number of current token and future tokens that VQ-BeT predicts.
+          action_chunk_size: Action chunk size of each action prediction token.
+          input_features: A dictionary defining the PolicyFeature of the input data for the policy. The key represents
+              the input data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          output_features: A dictionary defining the PolicyFeature of the output data for the policy. The key represents
+              the output data name, and the value is PolicyFeature, which consists of FeatureType and shape attributes.
+          normalization_mapping: A dictionary that maps from a str value of FeatureType (e.g., "STATE", "VISUAL") to
+              a corresponding NormalizationMode (e.g., NormalizationMode.MIN_MAX)
+          vision_backbone: Name of the torchvision resnet backbone to use for encoding images.
+          crop_shape: (H, W) shape to crop images to as a preprocessing step for the vision backbone. Must fit
+              within the image size. If None, no cropping is done.
+          crop_is_random: Whether the crop should be random at training time (it's always a center crop in eval
+              mode).
+          pretrained_backbone_weights: Pretrained weights from torchvision to initialize the backbone.
+              `None` means no pretrained weights.
+          use_group_norm: Whether to replace batch normalization with group normalization in the backbone.
+              The group sizes are set to be about 16 (to be precise, feature_dim // 16).
+          spatial_softmax_num_keypoints: Number of keypoints for SpatialSoftmax.
+          n_vqvae_training_steps: Number of optimization steps for training Residual VQ.
+          vqvae_n_embed: Number of embedding vectors in the RVQ dictionary (each layer).
+          vqvae_embedding_dim: Dimension of each embedding vector in the RVQ dictionary.
+          vqvae_enc_hidden_dim: Size of hidden dimensions of Encoder / Decoder part of Residaul VQ-VAE
+          gpt_block_size: Max block size of minGPT (should be larger than the number of input tokens)
+          gpt_input_dim: Size of output input of GPT. This is also used as the dimension of observation features.
+          gpt_output_dim: Size of output dimension of GPT. This is also used as a input dimension of offset / bin prediction headers.
+          gpt_n_layer: Number of layers of GPT
+          gpt_n_head: Number of headers of GPT
+          gpt_hidden_dim: Size of hidden dimensions of GPT
+          dropout: Dropout rate for GPT
+          offset_loss_weight:  A constant that is multiplied to the offset loss
+          primary_code_loss_weight: A constant that is multiplied to the primary code prediction loss
+          secondary_code_loss_weight: A constant that is multiplied to the secondary code prediction loss
+          bet_softmax_temperature: Sampling temperature of code for rollout with VQ-BeT
+          sequentially_select: Whether select code of primary / secondary as sequentially (pick primary code,
+              and then select secodnary code), or at the same time.
+      
+
+  --policy.n_obs_steps int
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        e.g. "cuda", "cuda:0", "cpu", or "mps" (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.n_action_pred_token int
+  --policy.action_chunk_size int
+  --policy.normalization_mapping Dict
+  --policy.vision_backbone str
+  --policy.crop_shape [int int]
+  --policy.crop_is_random bool
+  --policy.pretrained_backbone_weights [str]
+  --policy.use_group_norm bool
+  --policy.spatial_softmax_num_keypoints int
+  --policy.n_vqvae_training_steps int
+  --policy.vqvae_n_embed int
+  --policy.vqvae_embedding_dim int
+  --policy.vqvae_enc_hidden_dim int
+  --policy.gpt_block_size int
+  --policy.gpt_input_dim int
+  --policy.gpt_output_dim int
+  --policy.gpt_n_layer int
+  --policy.gpt_n_head int
+  --policy.gpt_hidden_dim int
+  --policy.dropout float
+  --policy.offset_loss_weight float
+  --policy.primary_code_loss_weight float
+  --policy.secondary_code_loss_weight float
+  --policy.bet_softmax_temperature float
+  --policy.sequentially_select bool
+  --policy.optimizer_lr float
+                        Training presets (default: 0.0001)
+  --policy.optimizer_betas Any
+  --policy.optimizer_eps float
+  --policy.optimizer_weight_decay float
+  --policy.optimizer_vqvae_lr float
+  --policy.optimizer_vqvae_weight_decay float
+  --policy.scheduler_warmup_steps int
+
+WallXConfig ['policy']:
+  
+      Configuration class for Wall-X policy.
+  
+      Wall-X is based on Qwen2.5-VL with action prediction capabilities using flow matching.
+      It supports cross-embodiment robotic control through unified action representations.
+  
+      This config supports multi-modal learning with vision, language, and action data.
+      
+
+  --policy.n_obs_steps int
+                        ==================== Input / Output Structure
+                        ==================== (default: 1)
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        e.g. "cuda", "cuda:0", "cpu", or "mps" (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.chunk_size int
+                        action_horizon in wall-x (default: 32)
+  --policy.n_action_steps int
+  --policy.max_action_dim int
+                        Action dimension - wall-x uses 20 (default: 20)
+  --policy.max_state_dim int
+                        For proprioception (default: 20)
+  --policy.normalization_mapping Dict
+  --policy.pretrained_name_or_path str
+                        ==================== Action Prediction
+                        ==================== Pretrained model paths (default:
+                        x-square-robot/wall-oss-flow)
+  --policy.action_tokenizer_path [str]
+                        Tokenizer settings (default: physical-
+                        intelligence/fast)
+  --policy.prediction_mode str
+                        Action prediction mode: "diffusion" or "fast"
+                        (default: diffusion)
+  --policy.attn_implementation str
+                        Attention Implementation, options: "eager",
+                        "flash_attention_2", "sdpa" NOTE: flash-
+                        attn==2.7.4.post1 is required for flash_attention_2
+                        implementation (default: eager)
+  --policy.optimizer_lr float
+                        ==================== Optimizer Presets
+                        ==================== (default: 2e-05)
+  --policy.optimizer_betas float float
+  --policy.optimizer_eps float
+  --policy.optimizer_weight_decay float
+  --policy.optimizer_grad_clip_norm float
+  --policy.scheduler_warmup_steps int
+  --policy.scheduler_decay_steps int
+  --policy.scheduler_decay_lr float
+
+XVLAConfig ['policy']:
+  
+      Configuration class for the XVLA (Extended Vision-Language-Action) policy so it can
+      plug into the LeRobot training stack.
+  
+      The config mirrors the knobs exposed in the original XVLA repository but also
+      declares the input/output feature contract required by LeRobot.
+      
+
+  --policy.n_obs_steps int
+                        Input / output structure (default: 1)
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device [str]
+                        e.g. "cuda", "cuda:0", "cpu", or "mps" (default: None)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.chunk_size int
+  --policy.n_action_steps int
+  --policy.dtype str    Options: "bfloat16", "float32" (default: float32)
+  --policy.normalization_mapping Dict
+  --policy.florence_config Dict
+                        Florence2 backbone and tokenizer configuration
+                        (default: {})
+  --policy.tokenizer_name str
+  --policy.tokenizer_max_length int
+  --policy.tokenizer_padding_side str
+  --policy.pad_language_to str
+  --policy.hidden_size int
+                        Transformer head (default: 1024)
+  --policy.depth int    
+  --policy.num_heads int
+  --policy.mlp_ratio float
+  --policy.num_domains int
+  --policy.len_soft_prompts int
+  --policy.dim_time int
+  --policy.max_len_seq int
+  --policy.use_hetero_proj bool
+  --policy.action_mode str
+                        Action & proprioception (default: ee6d)
+  --policy.num_denoising_steps int
+  --policy.use_proprio bool
+  --policy.max_state_dim int
+  --policy.max_action_dim int
+                        Maximum action dimension for padding (used by "auto"
+                        action mode) (default: 20)
+  --policy.domain_feature_key [str]
+  --policy.resize_imgs_with_padding [int int]
+                        Vision preprocessing (default: None)
+  --policy.num_image_views [int]
+  --policy.empty_cameras int
+  --policy.freeze_vision_encoder bool
+                        Freeze VLM vision encoder weights (default: False)
+  --policy.freeze_language_encoder bool
+                        Freeze VLM language encoder weights (default: False)
+  --policy.train_policy_transformer bool
+                        Allow policy transformer to train (default: True)
+  --policy.train_soft_prompts bool
+                        Allow soft prompts to train (default: True)
+  --policy.optimizer_lr float
+                        Training presets (default: 0.0001)
+  --policy.optimizer_betas float float
+  --policy.optimizer_eps float
+  --policy.optimizer_weight_decay float
+  --policy.optimizer_grad_clip_norm float
+  --policy.optimizer_soft_prompt_lr_scale float
+                        Scale factor for soft-prompt LR (default: 1.0)
+  --policy.optimizer_soft_prompt_warmup_lr_scale [float]
+                        Start scale for warmup (e.g., 0.01) (default: None)
+  --policy.scheduler_warmup_steps int
+  --policy.scheduler_decay_steps int
+  --policy.scheduler_decay_lr float
+
+SACConfig ['policy']:
+  Soft Actor-Critic (SAC) configuration.
+  
+      SAC is an off-policy actor-critic deep RL algorithm based on the maximum entropy
+      reinforcement learning framework. It learns a policy and a Q-function simultaneously
+      using experience collected from the environment.
+  
+      This configuration class contains all the parameters needed to define a SAC agent,
+      including network architectures, optimization settings, and algorithm-specific
+      hyperparameters.
+      
+
+  --policy.n_obs_steps int
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device str   Architecture specifics Device to run the model on
+                        (e.g., "cuda", "cpu") (default: cpu)
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.normalization_mapping Dict
+                        Mapping of feature types to normalization modes
+                        (default: {'VISUAL': <NormalizationMode.MEAN_STD:
+                        'MEAN_STD'>, 'STATE': <NormalizationMode.MIN_MAX:
+                        'MIN_MAX'>, 'ENV': <NormalizationMode.MIN_MAX:
+                        'MIN_MAX'>, 'ACTION': <NormalizationMode.MIN_MAX:
+                        'MIN_MAX'>})
+  --policy.dataset_stats [Dict]
+                        Statistics for normalizing different types of inputs
+                        (default: {'observation.image': {'mean': [0.485,
+                        0.456, 0.406], 'std': [0.229, 0.224, 0.225]},
+                        'observation.state': {'min': [0.0, 0.0], 'max': [1.0,
+                        1.0]}, 'action': {'min': [0.0, 0.0, 0.0], 'max': [1.0,
+                        1.0, 1.0]}})
+  --policy.storage_device str
+                        Device to store the model on (default: cpu)
+  --policy.vision_encoder_name [str]
+                        Name of the vision encoder model (Set to
+                        "helper2424/resnet10" for hil serl resnet10) (default:
+                        None)
+  --policy.freeze_vision_encoder bool
+                        Whether to freeze the vision encoder during training
+                        (default: True)
+  --policy.image_encoder_hidden_dim int
+                        Hidden dimension size for the image encoder (default:
+                        32)
+  --policy.shared_encoder bool
+                        Whether to use a shared encoder for actor and critic
+                        (default: True)
+  --policy.num_discrete_actions [int]
+                        Number of discrete actions, eg for gripper actions
+                        (default: None)
+  --policy.image_embedding_pooling_dim int
+                        Dimension of the image embedding pooling (default: 8)
+  --policy.online_steps int
+                        Training parameter Number of steps for online training
+                        (default: 1000000)
+  --policy.online_buffer_capacity int
+                        Capacity of the online replay buffer (default: 100000)
+  --policy.offline_buffer_capacity int
+                        Capacity of the offline replay buffer (default:
+                        100000)
+  --policy.async_prefetch bool
+                        Whether to use asynchronous prefetching for the
+                        buffers (default: False)
+  --policy.online_step_before_learning int
+                        Number of steps before learning starts (default: 100)
+  --policy.policy_update_freq int
+                        Frequency of policy updates (default: 1)
+  --policy.discount float
+                        SAC algorithm parameters Discount factor for the SAC
+                        algorithm (default: 0.99)
+  --policy.temperature_init float
+                        Initial temperature value (default: 1.0)
+  --policy.num_critics int
+                        Number of critics in the ensemble (default: 2)
+  --policy.num_subsample_critics [int]
+                        Number of subsampled critics for training (default:
+                        None)
+  --policy.critic_lr float
+                        Learning rate for the critic network (default: 0.0003)
+  --policy.actor_lr float
+                        Learning rate for the actor network (default: 0.0003)
+  --policy.temperature_lr float
+                        Learning rate for the temperature parameter (default:
+                        0.0003)
+  --policy.critic_target_update_weight float
+                        Weight for the critic target update (default: 0.005)
+  --policy.utd_ratio int
+                        Update-to-data ratio for the UTD algorithm (If you
+                        want enable utd_ratio, you need to set it to >1)
+                        (default: 1)
+  --policy.state_encoder_hidden_dim int
+                        Hidden dimension size for the state encoder (default:
+                        256)
+  --policy.latent_dim int
+                        Dimension of the latent space (default: 256)
+  --policy.target_entropy [float]
+                        Target entropy for the SAC algorithm (default: None)
+  --policy.use_backup_entropy bool
+                        Whether to use backup entropy for the SAC algorithm
+                        (default: True)
+  --policy.grad_clip_norm float
+                        Gradient clipping norm for the SAC algorithm (default:
+                        40.0)
+  --policy.use_torch_compile bool
+                        Optimizations (default: True)
+
+CriticNetworkConfig ['policy.critic_network_kwargs']:
+  Network configuration
+  Configuration for the critic network architecture
+
+  --policy.critic_network_kwargs.hidden_dims List
+  --policy.critic_network_kwargs.activate_final bool
+  --policy.critic_network_kwargs.final_activation [str]
+
+ActorNetworkConfig ['policy.actor_network_kwargs']:
+  Configuration for the actor network architecture
+
+  --policy.actor_network_kwargs.hidden_dims List
+  --policy.actor_network_kwargs.activate_final bool
+
+PolicyConfig ['policy.policy_kwargs']:
+  Configuration for the policy parameters
+
+  --policy.policy_kwargs.use_tanh_squash bool
+  --policy.policy_kwargs.std_min float
+  --policy.policy_kwargs.std_max float
+  --policy.policy_kwargs.init_final float
+
+CriticNetworkConfig ['policy.discrete_critic_network_kwargs']:
+  Configuration for the discrete critic network
+
+  --policy.discrete_critic_network_kwargs.hidden_dims List
+  --policy.discrete_critic_network_kwargs.activate_final bool
+  --policy.discrete_critic_network_kwargs.final_activation [str]
+
+ActorLearnerConfig ['policy.actor_learner_config']:
+  Configuration for actor-learner architecture
+
+  --policy.actor_learner_config.learner_host str
+  --policy.actor_learner_config.learner_port int
+  --policy.actor_learner_config.policy_parameters_push_frequency int
+  --policy.actor_learner_config.queue_get_timeout float
+
+ConcurrencyConfig ['policy.concurrency']:
+  Configuration for concurrency settings (you can use threads or processes for the actor and learner)
+
+  --policy.concurrency.actor str
+  --policy.concurrency.learner str
+
+RewardClassifierConfig ['policy']:
+  Configuration for the Reward Classifier model.
+
+  --policy.n_obs_steps int
+  --policy.input_features [Dict]
+  --policy.output_features [Dict]
+  --policy.device str   
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.name str     
+  --policy.num_classes int
+  --policy.hidden_dim int
+  --policy.latent_dim int
+  --policy.image_embedding_pooling_dim int
+  --policy.dropout_rate float
+  --policy.model_name str
+  --policy.model_type str
+                        "transformer" or "cnn" (default: cnn)
+  --policy.num_cameras int
+  --policy.learning_rate float
+  --policy.weight_decay float
+  --policy.grad_clip_norm float
+  --policy.normalization_mapping Dict
+
+SARMConfig ['policy']:
+  Configuration class for SARM (Stage-Aware Reward Modeling).
+  
+      Supports three annotation modes:
+  
+      1. single_stage (default): No annotations needed. Uses the episode's task description
+         as a single stage covering the entire episode.
+  
+      2. dense_only: Uses dense (fine-grained) annotations from VLM, with an auto-generated
+         single sparse "task" stage covering the full episode. The dense head learns detailed
+         subtask progression while sparse provides overall task completion.
+  
+      3. dual: Full dual-head mode with both sparse (high-level) and dense (fine-grained)
+         annotations from VLM. Both heads are trained on their respective annotations.
+  
+      The annotation_mode determines how sparse_temporal_proportions and dense_temporal_proportions
+      are loaded/generated during model initialization.
+      
+
+  --policy.n_obs_steps int
+                        Number of observation history steps (default: 8)
+  --policy.input_features dict
+                        Populated by the processor (video_features,
+                        state_features, text_features) (default: {})
+  --policy.output_features dict
+                        Output features (updated in __post_init__) (default:
+                        {'stage': PolicyFeature(type=<FeatureType.REWARD:
+                        'REWARD'>, shape=(9, 5)), 'progress':
+                        PolicyFeature(type=<FeatureType.REWARD: 'REWARD'>,
+                        shape=(9, 1))})
+  --policy.device [str]
+  --policy.use_amp bool
+                        `use_amp` determines whether to use Automatic Mixed
+                        Precision (AMP) for training and evaluation. With AMP,
+                        automatic gradient scaling is used. (default: False)
+  --policy.use_peft bool
+                        Whether the policy employed PEFT for training.
+                        (default: False)
+  --policy.push_to_hub bool
+                        type: ignore[assignment] # TODO: use a different name
+                        to avoid override (default: True)
+  --policy.repo_id [str]
+  --policy.private [bool]
+                        Upload on private repository on the Hugging Face hub.
+                        (default: None)
+  --policy.tags [List]  Add tags to your policy on the hub. (default: None)
+  --policy.license [str]
+                        Add tags to your policy on the hub. (default: None)
+  --policy.pretrained_path [Path]
+                        Either the repo ID of a model hosted on the Hub or a
+                        path to a directory containing weights saved using
+                        `Policy.save_pretrained`. If not provided, the policy
+                        is initialized from scratch. (default: None)
+  --policy.annotation_mode str
+                        "single_stage", "dense_only", or "dual" (default:
+                        single_stage)
+  --policy.frame_gap int
+                        Frame gap between frames (at 30 fps = 1 second)
+                        (default: 30)
+  --policy.max_rewind_steps int
+                        Maximum rewind steps for temporal augmentation
+                        (default: 4)
+  --policy.image_dim int
+                        Total frames = 1 + n_obs_steps + max_rewind_steps
+                        (computed in property) During training with rewind:
+                        [obs_frames] + [rewind_frames] During inference:
+                        [obs_frames] only Architecture params (default: 512)
+  --policy.text_dim int
+  --policy.hidden_dim int
+  --policy.num_heads int
+  --policy.num_layers int
+  --policy.max_state_dim int
+  --policy.drop_n_last_frames int
+  --policy.batch_size int
+  --policy.clip_batch_size int
+  --policy.dropout float
+  --policy.stage_loss_weight float
+                        Weight for stage classification loss when using
+                        subtask annotations (default: 1.0)
+  --policy.rewind_probability float
+  --policy.language_perturbation_probability float
+  --policy.num_sparse_stages int
+                        Sparse annotations (high-level stages) (default: 1)
+  --policy.sparse_subtask_names [list]
+  --policy.sparse_temporal_proportions [list]
+  --policy.num_dense_stages [int]
+                        Dense annotations (fine-grained stages) (default:
+                        None)
+  --policy.dense_subtask_names [list]
+  --policy.dense_temporal_proportions [list]
+  --policy.pretrained_model_path [str]
+  --policy.image_key str
+                        Key for image used from the dataset (default:
+                        observation.images.top)
+  --policy.state_key str
+  --policy.normalization_mapping Dict

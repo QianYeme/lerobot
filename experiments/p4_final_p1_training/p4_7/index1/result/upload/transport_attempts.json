@@ -1,0 +1,14 @@
+[
+  {
+    "method": "SSH reverse local proxy with default TLS",
+    "result": "Network disconnect during multipart completion; no verified publication receipt"
+  },
+  {
+    "method": "TLS1.2 plus standard HF upload retry",
+    "result": "Incomplete upload; objects retained by HF for resume"
+  },
+  {
+    "method": "Cross-repo hash-identical CommitOperationCopy",
+    "result": "FileDuplicationError on already stored non-Xet LFS objects; supported upload API fallback, no source or weight changes"
+  }
+]

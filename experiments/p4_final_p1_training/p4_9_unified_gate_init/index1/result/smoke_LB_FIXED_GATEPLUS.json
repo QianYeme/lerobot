@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "identity": {
+    "job": "LB_FIXED_GATEPLUS",
+    "domain": "lb",
+    "kind": "fixed",
+    "seed": 1,
+    "target": 10000,
+    "gate_initial_value": 0.0010000000474974513,
+    "initial_non_gate_sha256": "d68cc3dbbcaa3141a6103d5c404f6bda75ead1e36b9c05165f1f950f782753d1",
+    "baseline_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/runs/fixed/checkpoints/010000/resume.pt",
+    "baseline_sha256": "7852aac589649a67a69d22bb4b473bfd6e6e9f3d1f10ead3363132690720b727",
+    "formal6_pairing": "BYTE_MATCHED_INIT",
+    "stats_sha256": "c01c7256ba2fb30047abf5038ffffab148d5a378d3fbc4a7ed61374be474608d",
+    "bank_sha256": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4"
+  },
+  "initial_non_gate_equal": true,
+  "gradients": {
+    "plus": {
+      "gate": 0.026501037180423737,
+      "adapter": 0.0007310369160997412,
+      "attention": 0.0014461262836593664,
+      "slots": 2.4147910347048843e-05
+    },
+    "zero": {
+      "gate": 0.0263996459543705,
+      "adapter": 0.0,
+      "attention": 0.0,
+      "slots": 0.0
+    }
+  },
+  "baseline_strict_load": true,
+  "exact_next_update_hash": true,
+  "sampler_cursor_batch_equal": true,
+  "smoke_updates_discarded": true,
+  "formal_updates": 0
+}

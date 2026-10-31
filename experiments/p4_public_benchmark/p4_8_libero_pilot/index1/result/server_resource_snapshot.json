@@ -1,0 +1,8 @@
+{
+  "time": 1793361054.3070035,
+  "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB, 2 MiB, 0 %\n",
+  "processes": "   PID   PPID     ELAPSED COMMAND\n     1      0  1-21:11:19 bash\n  1185      1  1-21:11:17 supervisord\n  1206   1185  1-21:11:17 tensorboard\n  1208   1185  1-21:11:17 jupyter-lab\n  1209   1185  1-21:11:17 sshd\n  1211   1185  1-21:11:17 autopanel\n  1212   1185  1-21:11:17 proxy\n  1213   1185  1-21:11:17 proxy\n  1277   1206  1-21:11:17 server\n  2413      1  1-21:03:36 code-e646868227\n110625      1       00:00 python\n110631 110625       00:00 ps\n",
+  "free_data_bytes": 28698984448,
+  "free_system_bytes": 26055315456,
+  "wall_clock_limit": null
+}

@@ -1,0 +1,37 @@
+{
+  "server_time": "2026-10-30T23:00:04+08:00",
+  "disk": "Filesystem        1B-blocks        Used   Available Use% Mounted on\n/dev/md0       107374182400 78530195456 28843986944  74% /root/autodl-tmp",
+  "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB, 2 MiB, 0 %",
+  "processes": "",
+  "bank": {
+    "shape": [
+      4,
+      384
+    ],
+    "dtype": "torch.float32",
+    "finite": true,
+    "sha256": "1d78709651259d73edc5f1d00a687f30ce0c251b3e79b5045d73478673953d66",
+    "selected_sources_in_train": true
+  },
+  "large_evidence": [
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index3/result/train_only_feature_track_cache.pt",
+      "bytes": 125146473,
+      "sha256": "045a66ff9fd179810da822e2212bf9e217433cc6013d7d8537d156235eb482e1",
+      "purpose": "diagnostic or discarded engineering smoke; not formal trained policy"
+    },
+    {
+      "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index3/result/act_engineering_smoke/resume_000100.pt",
+      "bytes": 619724863,
+      "sha256": "f84a24a6f76c82dfeef32cf5f83d37b274e422dd3f2b15a86fb57f8824bce621",
+      "purpose": "diagnostic or discarded engineering smoke; not formal trained policy"
+    }
+  ],
+  "scripts": {
+    "p48_r3_fetch_train_videos.py": "6716dcc6c7c67df29d5c01c475528a5eae6f5012ba98a8a8619a1e73672f321d",
+    "p48_r3_gate_queue.py": "db61c90aab542e159adcc29bfae11ec9cfc999b653f9bb5c4ff695648491ccdc",
+    "p48_r3_auto_prototypes.py": "1cc5ab120bc02c1392f6013988a5df987dc4b032196bc9101edaa7b52b35118b",
+    "p48_r3_act_smoke.py": "a41c9f70512b47c74051c169d8098826371385d02607bad63cdc6285973f9782",
+    "p48_r3_gate_evidence.py": "a969b01041771827190dfe3fdbae3f703a4cf8a800afbf7fb7dce1d00c293cef"
+  }
+}

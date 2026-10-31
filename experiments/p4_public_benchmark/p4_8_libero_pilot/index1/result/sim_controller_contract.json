@@ -1,0 +1,57 @@
+{
+  "control_freq": 20,
+  "hard_reset": true,
+  "mode": "relative",
+  "action_low": [
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0
+  ],
+  "action_high": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "controller_input_min": [
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0
+  ],
+  "controller_input_max": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "controller_output_min": [
+    -0.05,
+    -0.05,
+    -0.05,
+    -0.5,
+    -0.5,
+    -0.5
+  ],
+  "controller_output_max": [
+    0.05,
+    0.05,
+    0.05,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "requested_backend": "egl",
+  "effective_backend": "egl"
+}

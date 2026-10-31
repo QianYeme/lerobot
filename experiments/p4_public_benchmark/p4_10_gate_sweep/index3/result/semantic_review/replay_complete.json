@@ -1,0 +1,701 @@
+{
+  "status": "DONE",
+  "cases": [
+    {
+      "init": 35,
+      "max_state_error": 0.0,
+      "max_action_error": 0.0,
+      "frames": 280,
+      "checkpoint_sha": "87ffc7162bc1d21c495b65ea7925b293a0c1a87e4672c06ce34cb455b17daeb0",
+      "prototype_sha": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+      "trajectory_sha": "f077cd65a8f59121edd5aa4f13e0180b5b26e492f442c28efd95539c263c7d4d",
+      "replay": "EXACT_WITHIN_1e-6",
+      "maps": [
+        {
+          "step": 0,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.1875791996717453,
+            0.019606564193964005,
+            0.5329077243804932
+          ]
+        },
+        {
+          "step": 42,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.20086662471294403,
+            0.02294434979557991,
+            0.5168986916542053
+          ]
+        },
+        {
+          "step": 84,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.2047591358423233,
+            0.0076260073110461235,
+            0.5415788292884827
+          ]
+        },
+        {
+          "step": 140,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.1153469830751419,
+            0.036884818226099014,
+            0.41253891587257385
+          ]
+        },
+        {
+          "step": 195,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.17409747838974,
+            0.024272706359624863,
+            0.5420526266098022
+          ]
+        },
+        {
+          "step": 251,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.17651715874671936,
+            0.013365410268306732,
+            0.5322883129119873
+          ]
+        },
+        {
+          "step": 279,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.14551019668579102,
+            0.0054423268884420395,
+            0.5380900502204895
+          ]
+        }
+      ],
+      "no_gt_segmentation": true
+    },
+    {
+      "init": 38,
+      "max_state_error": 0.0,
+      "max_action_error": 0.0,
+      "frames": 280,
+      "checkpoint_sha": "87ffc7162bc1d21c495b65ea7925b293a0c1a87e4672c06ce34cb455b17daeb0",
+      "prototype_sha": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+      "trajectory_sha": "0132c15f0b0ce7d8597b0a361a81abeab5af4d8fe74c8c56cbc689b4af404b8a",
+      "replay": "EXACT_WITHIN_1e-6",
+      "maps": [
+        {
+          "step": 0,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.19220754504203796,
+            0.01962527446448803,
+            0.5419858694076538
+          ]
+        },
+        {
+          "step": 42,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.21037666499614716,
+            0.007151994854211807,
+            0.5192161798477173
+          ]
+        },
+        {
+          "step": 84,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.21409152448177338,
+            0.0023344652727246284,
+            0.5420236587524414
+          ]
+        },
+        {
+          "step": 140,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.15484891831874847,
+            0.03617739677429199,
+            0.459301620721817
+          ]
+        },
+        {
+          "step": 195,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.16635048389434814,
+            0.009570498950779438,
+            0.5255289673805237
+          ]
+        },
+        {
+          "step": 251,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.16431120038032532,
+            0.008679467253386974,
+            0.5301665663719177
+          ]
+        },
+        {
+          "step": 279,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.16234132647514343,
+            0.0076423343271017075,
+            0.522540271282196
+          ]
+        }
+      ],
+      "no_gt_segmentation": true
+    },
+    {
+      "init": 42,
+      "max_state_error": 0.0,
+      "max_action_error": 0.0,
+      "frames": 132,
+      "checkpoint_sha": "87ffc7162bc1d21c495b65ea7925b293a0c1a87e4672c06ce34cb455b17daeb0",
+      "prototype_sha": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+      "trajectory_sha": "01839dd7ad118281d5a19ef9cfc7a7fd14b31e014b965df1b0c4a3207ec6ee18",
+      "replay": "EXACT_WITHIN_1e-6",
+      "maps": [
+        {
+          "step": 0,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.18731777369976044,
+            0.018732894212007523,
+            0.5363693237304688
+          ]
+        },
+        {
+          "step": 20,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.19843968749046326,
+            0.01049086544662714,
+            0.5443577766418457
+          ]
+        },
+        {
+          "step": 39,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.19753378629684448,
+            0.02244614064693451,
+            0.4931768774986267
+          ]
+        },
+        {
+          "step": 66,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.1609192043542862,
+            -0.011370105668902397,
+            0.44372740387916565
+          ]
+        },
+        {
+          "step": 92,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.09755948930978775,
+            0.030426025390625,
+            0.42056435346603394
+          ]
+        },
+        {
+          "step": 118,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.04204863682389259,
+            0.011564690619707108,
+            0.4211309850215912
+          ]
+        },
+        {
+          "step": 131,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.03134225308895111,
+            0.015298843383789062,
+            0.4289196729660034
+          ]
+        }
+      ],
+      "no_gt_segmentation": true
+    },
+    {
+      "init": 43,
+      "max_state_error": 0.0,
+      "max_action_error": 0.0,
+      "frames": 136,
+      "checkpoint_sha": "87ffc7162bc1d21c495b65ea7925b293a0c1a87e4672c06ce34cb455b17daeb0",
+      "prototype_sha": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+      "trajectory_sha": "eaea7518bcfa78bbcb9835fa07ad164c7fa0a0563927d013f71c8a514ddc7ed2",
+      "replay": "EXACT_WITHIN_1e-6",
+      "maps": [
+        {
+          "step": 0,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.20021088421344757,
+            0.021168170496821404,
+            0.5506795644760132
+          ]
+        },
+        {
+          "step": 20,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.20851683616638184,
+            0.011437737382948399,
+            0.5585924386978149
+          ]
+        },
+        {
+          "step": 40,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.21159856021404266,
+            0.017860669642686844,
+            0.5284093022346497
+          ]
+        },
+        {
+          "step": 68,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.17955181002616882,
+            -0.004505184479057789,
+            0.4718707203865051
+          ]
+        },
+        {
+          "step": 94,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.11314434558153152,
+            0.029800405725836754,
+            0.4429709315299988
+          ]
+        },
+        {
+          "step": 122,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.044804736971855164,
+            0.012759843841195107,
+            0.4453336298465729
+          ]
+        },
+        {
+          "step": 135,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.06280085444450378,
+            0.024721115827560425,
+            0.4408114552497864
+          ]
+        }
+      ],
+      "no_gt_segmentation": true
+    },
+    {
+      "init": 48,
+      "max_state_error": 0.0,
+      "max_action_error": 0.0,
+      "frames": 137,
+      "checkpoint_sha": "87ffc7162bc1d21c495b65ea7925b293a0c1a87e4672c06ce34cb455b17daeb0",
+      "prototype_sha": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+      "trajectory_sha": "244f72dd7a21f97e69dfef9898104512e58b666cc373756b58449f25638034df",
+      "replay": "EXACT_WITHIN_1e-6",
+      "maps": [
+        {
+          "step": 0,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.19420041143894196,
+            0.013885268941521645,
+            0.5459129810333252
+          ]
+        },
+        {
+          "step": 20,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.20704694092273712,
+            0.005143653601408005,
+            0.560625433921814
+          ]
+        },
+        {
+          "step": 41,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.1996266394853592,
+            0.020837638527154922,
+            0.5211659669876099
+          ]
+        },
+        {
+          "step": 68,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.19115695357322693,
+            -0.01629377342760563,
+            0.4790954887866974
+          ]
+        },
+        {
+          "step": 95,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.10548657178878784,
+            0.02784464880824089,
+            0.4377622604370117
+          ]
+        },
+        {
+          "step": 122,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.04698432236909866,
+            0.011041855439543724,
+            0.4336984157562256
+          ]
+        },
+        {
+          "step": 136,
+          "phase": "TIME_FRACTION_ONLY_NOT_GT_STAGE",
+          "patch_grid": [
+            16,
+            16
+          ],
+          "image_size": [
+            256,
+            256
+          ],
+          "coordinate_map": "patch row/col -> pixel center ((col+.5)*16,(row+.5)*16)",
+          "global_xy": [
+            0.05614081397652626,
+            0.021328335627913475,
+            0.43692630529403687
+          ]
+        }
+      ],
+      "no_gt_segmentation": true
+    }
+  ],
+  "review": "EXECUTOR_VISUAL_REVIEW_PENDING"
+}

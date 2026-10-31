@@ -1,0 +1,22 @@
+{
+  "status": "PASS_TASK_EPISODE_BOUNDARIES",
+  "all_episodes_single_task": true,
+  "selected_episodes": 44,
+  "selected_frames": 6867,
+  "selected_lengths_match_metadata": true,
+  "feature_columns": [
+    "observation.images.image",
+    "observation.images.image2",
+    "observation.state",
+    "action",
+    "timestamp",
+    "frame_index",
+    "episode_index",
+    "index",
+    "task_index"
+  ],
+  "object_region_annotation_files": [],
+  "object_region_supervision_available": false,
+  "prototype_constructed": false,
+  "models_trained": 0
+}

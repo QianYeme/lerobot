@@ -1,0 +1,15 @@
+# r5 timebase and camera contract
+
+TIMEBASE_PASS_NATIVE_STEP_PROTOCOL，范围为公开原生序号执行协议；不宣称元数据秒数等于仿真秒数。
+
+新找到的直接源码证据见timing_source_evidence.json（固定file commit及SHA）。OpenPI的RLDS→LeRobot转换示例把fps设为10，并逐条写入RLDS step，没有隔行抽样。OpenVLA回放代码跳过no-op后，每个保留动作只调用一次env.step，并说明HDF5→RLDS会旋转相机180度。这解释了为什么不能把数据编码fps10直接当作机器人控制10Hz，或据此重复动作两次。
+
+本轮采用官方原生逐动作协议：训练delta_timestamps=i/10只用于找到相邻动作序号；仿真每次取一个预测动作，调用一个原生20Hz step，无插值、无重复、无改控制频率。chunk100保留原生执行100、无temporal ensemble。编码跨度0–9.9s与仿真100step约5s分别报告，不混为同一物理时间。
+
+r3实际env.step增量.05s的工程证据继续保留。精确数据发布所用转换commit、所有行到上游RLDS的逐字节对应仍UNKNOWN；公开源码解释与原生benchmark协议可支持本次配对工程pilot，不支持原始数据采集时钟的完整取证结论或论文leaderboard复现声明。
+
+相机接入已纠正：现有dataset_ep813_first与sim_smoke_init0_first图显示数据RGB与官方仿真处理后方向一致；OpenVLA源码同时解释了上游180度旋转。r5训练/原型不再额外flip；仿真raw帧仅交由官方LiberoProcessor旋转H/W一次。旧r3额外flip只影响已丢弃工程smoke，无正式模型；历史文件保持不变。
+
+训练缓存对3集首/中/末两相机共18样本与TorchCodec逐像素差0；主干输入/特征在ACT/Legacy/Fixed初始化下的SHA相同，三模型100步恢复下一步权重差0。图像位置/归一化/动作schema由新index5单独冻结，P4.7和旧轮不被热改。
+
+闭环冻结同一init10–19、每次seed1、hard reset、原生等待10step、relative OSC_POSE、最大280step；三模型各10次，不增加seed或task。该小预算只报告pilot。

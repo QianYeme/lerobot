@@ -1,0 +1,30 @@
+{
+  "status": "MEASURED_SCHEDULING_READY",
+  "chosen": "triple",
+  "estimates": [
+    {
+      "repeat": 1,
+      "serial_seconds": 2357.3329746723175,
+      "pair_then_act_seconds": 1584.3074321746826,
+      "triple_seconds": 995.6716597080231,
+      "pair_speedup": 1.487926476136358,
+      "triple_speedup": 2.367580669478527
+    },
+    {
+      "repeat": 2,
+      "serial_seconds": 2104.796975851059,
+      "pair_then_act_seconds": 1618.496984243393,
+      "triple_seconds": 1008.06525349617,
+      "pair_speedup": 1.3004639466999064,
+      "triple_speedup": 2.087957072770047
+    }
+  ],
+  "eligible_total_time_seconds": {
+    "serial": 2231.0649752616882,
+    "pair_then_act": 1601.4022082090378,
+    "triple": 1001.8684566020966
+  },
+  "parallel_next_state_identical": true,
+  "minimum_repeated_aggregate_speedup": 1.1,
+  "formal_updates_per_model": 10000
+}

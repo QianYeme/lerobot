@@ -1,0 +1,26 @@
+{
+  "status": "ACTUAL_FROZEN_DINO_FORWARD_PASS",
+  "episode": 813,
+  "frame": 52,
+  "train_only": true,
+  "source_sha256": "00a9a4232bfe5679e9ca08bd9a1ae26c8ddc80506604cc603f57f3110dcca146",
+  "resize": "RGB uint8 OpenCV bilinear to224, matching frozen prototype builder; online policy integration NOT_RUN",
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "feature_shape": [
+    1,
+    256,
+    384
+  ],
+  "fixed_prototype_input_max_diff": 0.0,
+  "legacy_fixed_input_max_diff": 9.248488426208496,
+  "legacy_fixed_feature_mean_abs_diff": 1.6546753644943237,
+  "fixed_prototype_feature_max_diff": 0.0,
+  "p1_policy_forward_executed": false,
+  "cnn_invariance_in_full_p1": "NOT_RUN",
+  "formal_updates": 0
+}

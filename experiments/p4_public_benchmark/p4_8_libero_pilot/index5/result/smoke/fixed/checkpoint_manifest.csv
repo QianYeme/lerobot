@@ -1,0 +1,2 @@
+kind,step,path,sha256,complete_resume
+fixed,100,/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/fixed/checkpoints/000100/resume.pt,06a25e502333da077bb7300363dc301f861b23086e210d7545bceb0c1d305dd0,True

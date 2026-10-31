@@ -1,0 +1,25 @@
+{
+  "time": 1793364516.9837956,
+  "setup_attempt_pids": [
+    110309,
+    110625
+  ],
+  "data_fetch_pid": 111102,
+  "assets_fetch_pid": 112452,
+  "sim_probe_pids": [
+    113561,
+    113853,
+    114142
+  ],
+  "video_data_attempt_pids": [
+    114545,
+    114753,
+    114983
+  ],
+  "status": "G0_G1_TASKS_FINISHED",
+  "active_model_training": [],
+  "training_queued": false,
+  "reason": "G2 prototype provenance gate requires proposal review",
+  "gpu": "NVIDIA GeForce RTX 5090, 2 MiB, 0 %",
+  "free_disk_bytes": 29952106496
+}

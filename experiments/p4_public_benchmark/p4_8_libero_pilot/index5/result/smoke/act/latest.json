@@ -1,0 +1,7 @@
+{
+  "kind": "act",
+  "step": 100,
+  "path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/act/checkpoints/000100/resume.pt",
+  "sha256": "a918f4b1626f4db553506a657ca1ae52768219efcca0b48c4828bb4796c9090e",
+  "complete_resume": true
+}

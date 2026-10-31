@@ -1,0 +1,9 @@
+{
+  "status": "TABLES_READY",
+  "revision": "a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4",
+  "frames": 273465,
+  "tasks": 40,
+  "data_root": "/root/autodl-tmp/p48_data/lerobot_libero",
+  "videos_downloaded": false,
+  "training": false
+}

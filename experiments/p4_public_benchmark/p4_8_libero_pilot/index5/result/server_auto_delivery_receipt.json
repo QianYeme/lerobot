@@ -1,0 +1,9 @@
+{
+  "status": "ZIP_CRC_AND_PACKAGED_SHA_PASS",
+  "zip_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/P4_8_r5_MATCH_FORMAL6_PAIRED_PILOT_result.zip",
+  "zip_sha256": "6b89bab458a12d1fd69f356564b48e78dc74892e15de22beda15a868770702e2",
+  "bytes": 35786315,
+  "zip_entries": 246,
+  "manifest_records": 256,
+  "large_files_retained_on_server": true
+}

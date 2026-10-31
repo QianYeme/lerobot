@@ -1,0 +1,116 @@
+{
+  "kind": "legacy",
+  "act_config": {
+    "type": "act",
+    "n_obs_steps": 1,
+    "input_features": {
+      "observation.state": {
+        "type": "STATE",
+        "shape": [
+          8
+        ]
+      },
+      "observation.images.image": {
+        "type": "VISUAL",
+        "shape": [
+          3,
+          256,
+          256
+        ]
+      },
+      "observation.images.image2": {
+        "type": "VISUAL",
+        "shape": [
+          3,
+          256,
+          256
+        ]
+      }
+    },
+    "output_features": {
+      "action": {
+        "type": "ACTION",
+        "shape": [
+          7
+        ]
+      }
+    },
+    "device": "cuda",
+    "use_amp": false,
+    "use_peft": false,
+    "push_to_hub": true,
+    "repo_id": null,
+    "private": null,
+    "tags": null,
+    "license": null,
+    "pretrained_path": null,
+    "chunk_size": 100,
+    "n_action_steps": 100,
+    "normalization_mapping": {
+      "VISUAL": "MEAN_STD",
+      "STATE": "MEAN_STD",
+      "ACTION": "MEAN_STD"
+    },
+    "vision_backbone": "resnet18",
+    "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1",
+    "replace_final_stride_with_dilation": false,
+    "pre_norm": false,
+    "dim_model": 512,
+    "n_heads": 8,
+    "dim_feedforward": 3200,
+    "feedforward_activation": "relu",
+    "n_encoder_layers": 4,
+    "n_decoder_layers": 1,
+    "use_vae": true,
+    "latent_dim": 32,
+    "n_vae_encoder_layers": 4,
+    "temporal_ensemble_coeff": null,
+    "dropout": 0.1,
+    "kl_weight": 10.0,
+    "optimizer_lr": 1e-05,
+    "optimizer_weight_decay": 0.0001,
+    "optimizer_lr_backbone": 1e-05
+  },
+  "optimizer": {
+    "lr": 1e-05,
+    "weight_decay": 0.0001,
+    "grad_clip_norm": 10.0,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "seed": 1,
+  "steps": 10000,
+  "batch_size": 8,
+  "drop_last": false,
+  "augmentation": false,
+  "amp": false,
+  "train_rgb_flip": false,
+  "train_stats_sha256": "c01c7256ba2fb30047abf5038ffffab148d5a378d3fbc4a7ed61374be474608d",
+  "split_sha256": "e7211e41bdfd3b0a2594c597db47742e199edd4bca6221fde31c3d9bb873736e",
+  "sampler": "numpy PCG64 SeedSequence([1,epoch]); exact epoch/cursor checkpointed",
+  "numerical_mode": "float32; deterministic algorithms; TF32 off; CUBLAS_WORKSPACE_CONFIG=:4096:8",
+  "steps_and_seed_and_cache_sampler_are_explicit_training_loop_overrides": true,
+  "original_stock_commit": "8fff0fde7c79f23a93d845d1a50e985de01f8b8a",
+  "object_conditioning": {
+    "prototype_bank_sha256": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+    "dino": "frozen dinov2_vits14 Top only",
+    "prototype_normalizations": 1,
+    "online_dino_normalizations": 2,
+    "prototypes": 4,
+    "object_tokens": 5,
+    "local_regions": "fixed2x2",
+    "temperature": 0.2,
+    "raw_token_dim": 387,
+    "adapter": [
+      387,
+      256,
+      512
+    ],
+    "cross_attention": "ACT encoder input Q, object K/V",
+    "gate": "unbounded signed scalar, init0",
+    "fusion": "before native ACT transformer encoder"
+  }
+}

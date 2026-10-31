@@ -1,0 +1,10 @@
+{
+  "gate_requires_grad": false,
+  "gate_in_optimizer": false,
+  "alpha": 0.05,
+  "seed": 1,
+  "parameter_filter_applied_before_optimizer_build": true,
+  "scope": "fixed alpha mechanism control; not just a learnable initialization change",
+  "source_worker_sha256": "5dd2528d9c81baa1f21da23c83dbb11e7ef739f3dd521a472d7d5c7cf03ad2fb",
+  "wrapper_sha256": "741f11bc18c1a0b6e3177eb2f85fe5294c952c57a4b86ad7d077a7950d089c13"
+}

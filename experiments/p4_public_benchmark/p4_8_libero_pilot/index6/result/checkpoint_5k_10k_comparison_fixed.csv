@@ -1,0 +1,25 @@
+model,checkpoint_step,parameter,parameter_l2,optimizer_step,exp_avg_l2,exp_avg_sq_l2,units,measurement,eval_dtype
+fixed,5000,model.object_conditioning.gate,8.576095751777757e-06,5000.0,5.297704046824947e-05,7.587752861581976e-07,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.adapter.0.weight,9.24799919128418,5000.0,6.909861838266806e-08,1.0451721648254472e-14,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.adapter.0.bias,0.4542202353477478,5000.0,2.6262545471666954e-09,1.6536470704524016e-16,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.adapter.1.weight,15.99986457824707,5000.0,2.0301449410453642e-09,1.8951495309533015e-16,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.adapter.1.bias,0.0011826843256130815,5000.0,2.1714736675448876e-09,1.1357428038369485e-16,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.adapter.3.weight,13.076725959777832,5000.0,4.966836897324356e-08,5.03792327137282e-15,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.adapter.3.bias,0.8161677718162537,5000.0,5.387671198064936e-09,4.210103678340207e-16,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.token_slot_embedding.weight,50.49998474121094,5000.0,2.543816046696179e-09,4.0728546947318566e-17,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.cross_attention.in_proj_weight,27.705720901489258,5000.0,9.083206720106318e-08,8.307378121183168e-15,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.cross_attention.in_proj_bias,0.0036882355343550444,5000.0,7.545831515187729e-09,8.393041951270785e-16,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.cross_attention.out_proj.weight,13.058039665222168,5000.0,1.1137197475363791e-07,1.2392404573487951e-14,parameter / Adam moment norms,checkpoint state,float32
+fixed,5000,model.object_conditioning.cross_attention.out_proj.bias,0.0049623483791947365,5000.0,1.3286882705187963e-08,2.449909392243871e-15,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.gate,4.1456203803136304e-07,10000.0,0.00032210929202847183,1.0430834436192526e-06,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.adapter.0.weight,9.24828815460205,10000.0,7.560107917470305e-08,1.977106358404951e-14,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.adapter.0.bias,0.45421409606933594,10000.0,2.9081050900714445e-09,3.1440690390843273e-16,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.adapter.1.weight,15.999364852905273,10000.0,2.7741051678020767e-09,3.6675250772734403e-16,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.adapter.1.bias,0.0021267803385853767,10000.0,2.4052897451554145e-09,2.1743858534165023e-16,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.adapter.3.weight,13.07627010345459,10000.0,5.849282658232369e-08,9.658474446117872e-15,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.adapter.3.bias,0.8162562847137451,10000.0,6.4118328424456195e-09,8.273364136757633e-16,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.token_slot_embedding.weight,50.499595642089844,10000.0,3.087379685240421e-09,8.216567665968476e-17,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.cross_attention.in_proj_weight,27.704984664916992,10000.0,1.1221418105833436e-07,1.587125952038672e-14,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.cross_attention.in_proj_bias,0.00654453132301569,10000.0,9.413064994134857e-09,1.6545134792783243e-15,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.cross_attention.out_proj.weight,13.05693531036377,10000.0,1.2649609004711238e-07,2.1754902837945594e-14,parameter / Adam moment norms,checkpoint state,float32
+fixed,10000,model.object_conditioning.cross_attention.out_proj.bias,0.008181210607290268,10000.0,1.59105422170569e-08,4.817495228827623e-15,parameter / Adam moment norms,checkpoint state,float32

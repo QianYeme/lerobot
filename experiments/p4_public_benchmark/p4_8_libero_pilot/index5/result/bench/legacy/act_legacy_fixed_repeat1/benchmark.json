@@ -1,0 +1,14 @@
+{
+  "status": "DISPOSABLE_BENCH_DONE",
+  "kind": "legacy",
+  "updates": 100,
+  "timed_updates": 80,
+  "timed_wall_seconds": 7.927212953567505,
+  "updates_per_second": 10.091819214216692,
+  "total_wall_seconds": 10.687066793441772,
+  "initial_common_sha256": "5524afe798d2915c08010708965ac69347452d6dfda7bc2c102b8aaabf7bfe1d",
+  "initial_model_sha256": "d27a37598fdc32125b191d3ea83c7d909360e2bfca26a130b1b13aa261594761",
+  "final_model_sha256": "504821316da81857430cf5f7d6a563018959b09cd81b97d5171dbd50b6acaf95",
+  "peak_memory_bytes": 1605400064,
+  "discarded_updates": true
+}

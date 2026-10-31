@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "seed": 4701,
+  "initial_id": 0,
+  "max_differences": {
+    "observation.images.image": 0.0,
+    "observation.images.image2": 0.0,
+    "observation.state": 0.0
+  }
+}

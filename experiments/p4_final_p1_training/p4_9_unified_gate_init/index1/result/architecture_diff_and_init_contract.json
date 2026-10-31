@@ -1,0 +1,64 @@
+{
+  "F6_LEGACY_GATEPLUS_S1": {
+    "actual_config_diff": {
+      "object_conditioning_prototype_path": {
+        "zero": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_9_unified_gate_init/index1/result/smoke/F6_LEGACY_GATEPLUS_S1/zero_init_reference/formal6_train90_prototypes.pt",
+        "plus": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_9_unified_gate_init/index1/result/smoke/F6_LEGACY_GATEPLUS_S1/formal6_train90_prototypes.pt"
+      },
+      "object_conditioning_gate_init": {
+        "zero": 0.0,
+        "plus": 0.001
+      }
+    },
+    "runtime_only_gate_fill": false,
+    "non_gate_initial_equal": true,
+    "scientific_variable": {
+      "gate_init": [
+        0,
+        0.001
+      ]
+    }
+  },
+  "F6_FIXED_GATEPLUS_S3": {
+    "actual_config_diff": {
+      "object_conditioning_prototype_path": {
+        "zero": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_9_unified_gate_init/index1/result/smoke/F6_FIXED_GATEPLUS_S3/zero_init_reference/formal6_train90_prototypes.pt",
+        "plus": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_9_unified_gate_init/index1/result/smoke/F6_FIXED_GATEPLUS_S3/formal6_train90_prototypes.pt"
+      },
+      "object_conditioning_gate_init": {
+        "zero": 0.0,
+        "plus": 0.001
+      }
+    },
+    "runtime_only_gate_fill": false,
+    "non_gate_initial_equal": true,
+    "scientific_variable": {
+      "gate_init": [
+        0,
+        0.001
+      ]
+    }
+  },
+  "LB_LEGACY_GATEPLUS": {
+    "actual_config_diff": {},
+    "runtime_only_gate_fill": true,
+    "non_gate_initial_equal": true,
+    "scientific_variable": {
+      "gate_init": [
+        0,
+        0.001
+      ]
+    }
+  },
+  "LB_FIXED_GATEPLUS": {
+    "actual_config_diff": {},
+    "runtime_only_gate_fill": true,
+    "non_gate_initial_equal": true,
+    "scientific_variable": {
+      "gate_init": [
+        0,
+        0.001
+      ]
+    }
+  }
+}

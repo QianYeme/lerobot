@@ -1,0 +1,53 @@
+{
+  "role": "VDP-S1",
+  "proposed_repo_id": "QYyyyyyyy/lerobot-p45-vanilla-diffusion-s1",
+  "private": true,
+  "source_checkpoint_path": "/root/autodl-tmp/lerobot-main/experiments/p4_final_p1_training/p4_5_robot_reliability_server10h/supplements/diffusion_baseline/index1/result/VDP-S1/checkpoints/100000/resume.pt",
+  "source_checkpoint_sha256": "c32087093aacdb7de465bc552d167521dc3922a53c5703f2e958a350e87ea90f",
+  "step": 100000,
+  "seed": 1,
+  "model_sha256": "4199b3a874bddb3502f3f794ae4c1753c3f2d3a32e723346c4ab99c6d1421233",
+  "tensor_roundtrip_bitwise": true,
+  "inference_validation": {
+    "status": "PASS",
+    "role": "VDP-S1",
+    "dev_episode": 5,
+    "frames": [
+      0,
+      1,
+      2
+    ],
+    "max_export_source_native_difference": 0.0,
+    "reset_max_difference": 0.0,
+    "local_arm_unchanged": false,
+    "local_mean_abs_native": null,
+    "normalization_check": "PASS",
+    "robot_operated": false,
+    "final15_accessed": false,
+    "scope": "Source-checkpoint versus safe exported weights through same reviewed streaming runtime; not closed-loop evidence"
+  },
+  "upload_status": "PRIVATE_RELEASE",
+  "historical_identity": {},
+  "git_commit": "4e9e80a342fc4808811daba7d4e4ad9cca799e73",
+  "official_stock": true,
+  "official_commit": "8fff0fde7c79f23a93d845d1a50e985de01f8b8a",
+  "dataset_revision": "83a829af6df245ed53596dbc22b18c19f8bd3315",
+  "split": "Train90; Dev15; no Final15",
+  "state_fields": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+  ],
+  "separate_load": false,
+  "double_norm": false,
+  "units": "arm degrees; gripper normalized0..100; same nn calibration",
+  "local_application": "Once after temporal ensemble and global denormalization; before relative limit",
+  "authentication_override": "User explicitly authorized supplied credential; token value never packaged",
+  "repo_id": "QYyyyyyyy/lerobot-p45-vanilla-diffusion-s1",
+  "validated_prior_revision": "a6249219f9c3c110c26cf3a72d3921768e18e199",
+  "hardware_validation": "PENDING_OPERATOR",
+  "git_commit_scope": "Server checkout; exact deployment source content hashes are in checksums.json"
+}

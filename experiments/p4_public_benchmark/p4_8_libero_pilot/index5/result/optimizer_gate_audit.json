@@ -1,0 +1,35 @@
+{
+  "status": "GATE_REGISTERED_AND_ADAM_STATE_UPDATED",
+  "rows": [
+    {
+      "kind": "legacy",
+      "gate_requires_grad": true,
+      "optimizer_group_count": 1,
+      "optimizer_lr": 1e-05,
+      "optimizer_weight_decay": 0.0001,
+      "optimizer_step": 10000.0,
+      "exp_avg": 0.0001485493266955018,
+      "exp_avg_sq": 1.3562090543928207e-06,
+      "gate_at_5000": -3.0105735277174972e-05,
+      "gate_at_10000": -6.751543423888506e-06,
+      "new_optimizer_updates": 0,
+      "model_weights_modified": false
+    },
+    {
+      "kind": "fixed",
+      "gate_requires_grad": true,
+      "optimizer_group_count": 1,
+      "optimizer_lr": 1e-05,
+      "optimizer_weight_decay": 0.0001,
+      "optimizer_step": 10000.0,
+      "exp_avg": 0.00032210929202847183,
+      "exp_avg_sq": 1.0430834436192526e-06,
+      "gate_at_5000": 8.576095751777757e-06,
+      "gate_at_10000": -4.1456203803136304e-07,
+      "new_optimizer_updates": 0,
+      "model_weights_modified": false
+    }
+  ],
+  "interpretation": "Rules out missing optimizer registration. Moments are historical clipped-gradient statistics, not a fresh gradient measurement.",
+  "scope": "CPU read-only; no new training, seed, data or policy evaluation"
+}

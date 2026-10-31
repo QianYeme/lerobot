@@ -1,0 +1,8 @@
+variant,gate_initial,steps,reuse
+G0,0,5000,True
+G1e-3,0.001,5000,True
+G1e-2,0.01,5000,False
+G5e-2,0.05,5000,False
+G1e-1,0.1,5000,False
+GNEG,-0.01,5000,False
+NOOBJ,N/A,5000,True

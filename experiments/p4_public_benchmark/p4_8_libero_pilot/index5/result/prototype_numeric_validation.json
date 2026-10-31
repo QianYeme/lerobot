@@ -1,0 +1,55 @@
+{
+  "status": "GEOMETRY_AND_NUMERICS_PASS_AWAITING_VISUAL_ROI_REVIEW",
+  "shape": [
+    4,
+    384
+  ],
+  "norms": [
+    1.0,
+    0.9999999403953552,
+    1.0,
+    1.0
+  ],
+  "pairwise_cosine": [
+    [
+      1.0,
+      0.8603651523590088,
+      0.8626329898834229,
+      0.9829719662666321
+    ],
+    [
+      0.8603651523590088,
+      1.0,
+      0.9508227109909058,
+      0.8448966145515442
+    ],
+    [
+      0.8626329898834229,
+      0.9508227109909058,
+      1.0,
+      0.8549619913101196
+    ],
+    [
+      0.9829719662666321,
+      0.8448966145515442,
+      0.8549619913101196,
+      0.9999998807907104
+    ]
+  ],
+  "max_repeat_difference": 0.0,
+  "bank_sha256": "15dbf9323f1b363b5ad2dac1c358069ad8e936f7c1a21150e9d5552fdca4f3b4",
+  "byte_repeat_identical": true,
+  "selected_patch_counts": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "geometry": "rx=35*256/640=14; ry=35*256/480=18.6666667; patch centers backprojected to256",
+  "dino_weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "dino_source_sha256": "00a9a4232bfe5679e9ca08bd9a1ae26c8ddc80506604cc603f57f3110dcca146",
+  "dino_repository_revision": "UNKNOWN (existing torch.hub source archive); frozen source tree hash below",
+  "no_dev_or_simulator_target_input": true,
+  "manual_user_annotation_required": false,
+  "dino_source_tree_py_sha256": "041ad5d1e3d0d97986db3d8c8db60a8723006ea1250f7c112ddbdc178c634bf6"
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "role": "F3",
+  "dev_episode": 5,
+  "frames": [
+    0,
+    1,
+    2
+  ],
+  "max_export_source_native_difference": 0.0,
+  "reset_max_difference": 0.0,
+  "local_arm_unchanged": false,
+  "local_mean_abs_native": null,
+  "normalization_check": "PASS",
+  "robot_operated": false,
+  "final15_accessed": false,
+  "scope": "Source-checkpoint versus safe exported weights through same reviewed streaming runtime; not closed-loop evidence"
+}

@@ -1,0 +1,16 @@
+{
+  "episode_ids": [
+    813,
+    1035,
+    1245
+  ],
+  "files": [
+    "videos/observation.images.image/chunk-000/file-018.mp4",
+    "videos/observation.images.image/chunk-000/file-023.mp4",
+    "videos/observation.images.image/chunk-000/file-027.mp4",
+    "videos/observation.images.image2/chunk-000/file-018.mp4",
+    "videos/observation.images.image2/chunk-000/file-023.mp4",
+    "videos/observation.images.image2/chunk-000/file-027.mp4"
+  ],
+  "selection": "First/median/last selected task; data sanity only; not a prototype or performance selection"
+}

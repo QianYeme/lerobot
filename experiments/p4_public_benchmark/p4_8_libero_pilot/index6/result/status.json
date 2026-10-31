@@ -1,0 +1,18 @@
+{
+  "status": "RESULT_READY",
+  "pid": 137588,
+  "started": 1793379941.5790977,
+  "training_updates": 0,
+  "new_rollouts": 0,
+  "finished": 1793380005.3899717,
+  "primary_conclusion": "GATE_SUPPRESSION_SUPPORTED",
+  "independent_builder_review": "PENDING",
+  "independent_redteam_review": "PENDING",
+  "D0": "DONE",
+  "D1": "DONE",
+  "D2": "DONE",
+  "D3": "DONE",
+  "D4": "DONE",
+  "D5": "DONE",
+  "historical_cause": "UNRESOLVED_MULTIPLE_COMPETING_EXPLANATIONS"
+}

@@ -1,0 +1,32 @@
+{
+  "status": "REAL_TRAIN_100_UPDATE_RESTORE_PASS",
+  "kind": "act",
+  "discarded_updates": true,
+  "formal_updates": 0,
+  "initial_common_sha256": "5524afe798d2915c08010708965ac69347452d6dfda7bc2c102b8aaabf7bfe1d",
+  "initial_model_sha256": "5524afe798d2915c08010708965ac69347452d6dfda7bc2c102b8aaabf7bfe1d",
+  "initial_cnn_inputs_and_features": [
+    {
+      "input_sha256": "ddbcb3fd35e247f305373dd038fe639651c413faab80aee75db691e8f78c46bb",
+      "feature_sha256": "6d90618b054dcd781aa3deac15736c4881ba8551de0735ff0997a7accf9ae179"
+    },
+    {
+      "input_sha256": "de1e8b1946fa2ea67df8e1c795eb3742f70d4448eae84769796ffc98051451a5",
+      "feature_sha256": "d6267572c5c2d2fe78b867b2d86f56f2ad72f5206536830cb5bd51be03ddbf4e"
+    }
+  ],
+  "next_update_max_difference": 0.0,
+  "dino_effective_input_verified": false,
+  "train_rgb_flip": false,
+  "output_shape": [
+    8,
+    100,
+    7
+  ],
+  "elapsed_s": 10.807806253433228,
+  "params": 51600263,
+  "trainable_params": 51600263,
+  "peak_memory_bytes": 2320464896,
+  "checkpoint": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/act/checkpoints/000100/resume.pt",
+  "checkpoint_sha256": "a918f4b1626f4db553506a657ca1ae52768219efcca0b48c4828bb4796c9090e"
+}

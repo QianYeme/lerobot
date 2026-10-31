@@ -1,0 +1,16 @@
+{
+  "status": "COMPUTE_DELIVERABLES_VALIDATED",
+  "prototype": "G2_PROTOTYPE_PASS",
+  "training": "G3_TRAINING_PASS",
+  "closed_loop": "G4_CLOSED_LOOP_PASS",
+  "models": 3,
+  "updates_each": 10000,
+  "dev9_frames_each": 1391,
+  "dev_episode_rows": 27,
+  "paired_rollouts": 30,
+  "object_diagnostic_rows": 54,
+  "checkpoint_sha_verified": true,
+  "pilot_only": true,
+  "independent_builder_review": "PENDING",
+  "independent_redteam_review": "PENDING"
+}

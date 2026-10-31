@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "p48_r5_common.py": "ce10a9316e37483e5acaadce2f6b4cbd7bdce5cc5b0b834ef048048775d91de8",
+    "p48_r5_worker.py": "6d7668f3a4a726e34564948dd283f1e3078a22d2c7446ae9b8892ec92deec21a",
+    "p48_r5_controller.py": "592b99235b5198c9feb35be1af7d0d10bb846c8267bdb170ce53321de36fdf3d",
+    "p48_r5_cache.py": "b9e00df894b3bbb9593c44f17cb9de0088451738fe51dcae73278283446e097e",
+    "p48_r5_fetch_eval_videos.py": "d91271cfd364b6e8d951593daf188ae5912daaf4790b0d546103e3649c24a157",
+    "p48_r5_evaluate.py": "e56d9f04418c694260eefc2d2db2fb11a384dd03db322ceb2ef350836dc5f1b0",
+    "p48_r5_finalize.py": "285886b1b3a4b7b1f0f9ce537f677826099209ba87d5d59109f8be105a4733bc"
+  },
+  "object_module_sha256": "00a9a4232bfe5679e9ca08bd9a1ae26c8ddc80506604cc603f57f3110dcca146",
+  "decision_sha256": "2890a0a5dc997a198015558d3572faaf80560d23a4dc3555f37d7de0ae814c71",
+  "server_git_head": "4e9e80a342fc4808811daba7d4e4ad9cca799e73",
+  "dirty_source_explicit_hashes": true,
+  "official_stock_commit": "8fff0fde7c79f23a93d845d1a50e985de01f8b8a"
+}

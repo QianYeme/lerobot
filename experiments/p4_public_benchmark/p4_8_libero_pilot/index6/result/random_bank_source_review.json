@@ -1,0 +1,31 @@
+{
+  "selection_rule": "fixed PCG64 seed(1+episode), excludes reference ROI123/124; not changed after review",
+  "sources": [
+    {
+      "episode": 813,
+      "frame": 38,
+      "patch": 60,
+      "qualitative_region": "robot/gripper body"
+    },
+    {
+      "episode": 908,
+      "frame": 48,
+      "patch": 11,
+      "qualitative_region": "upper wall/background"
+    },
+    {
+      "episode": 1074,
+      "frame": 37,
+      "patch": 230,
+      "qualitative_region": "table/background"
+    },
+    {
+      "episode": 1166,
+      "frame": 37,
+      "patch": 112,
+      "qualitative_region": "edge/background near basket"
+    }
+  ],
+  "semantic_unrelated_features_guaranteed": false,
+  "reason": "Source locations visually non-target; frozen ViT features include global context. Not segmentation GT."
+}

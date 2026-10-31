@@ -1,0 +1,11 @@
+{
+  "status": "REVIEWED_ZIP_CRC_AND_ALL_PACKAGED_SHA_PASS",
+  "path": "experiments\\p4_public_benchmark\\p4_8_libero_pilot\\index5\\P4_8_r5_MATCH_FORMAL6_PAIRED_PILOT_REVIEWED_result_20261031.zip",
+  "sha256": "3b64bd9cd68c35c8df2766754dc6b5855772136664758722bd5595862d66a7f8",
+  "bytes": 36068134,
+  "zip_entries": 267,
+  "added_evidence_files": 20,
+  "original_auto_receipt": "delivery_receipt.json",
+  "filename": "P4_8_r5_MATCH_FORMAL6_PAIRED_PILOT_REVIEWED_result_20261031.zip",
+  "server_path": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/P4_8_r5_MATCH_FORMAL6_PAIRED_PILOT_REVIEWED_result_20261031.zip"
+}

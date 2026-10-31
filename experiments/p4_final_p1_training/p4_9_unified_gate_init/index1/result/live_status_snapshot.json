@@ -1,0 +1,38 @@
+{
+  "sampled_utc": "2026-10-30T18:22:32.419062+00:00",
+  "scope": "snapshot, not completion",
+  "jobs": {
+    "F6_LEGACY_GATEPLUS_S1": {
+      "job": "F6_LEGACY_GATEPLUS_S1",
+      "pid": 144244,
+      "step": 1700,
+      "target": 80000,
+      "updates_per_second": 7.045941189226889,
+      "time": 1793384544.3613303
+    },
+    "F6_FIXED_GATEPLUS_S3": {
+      "job": "F6_FIXED_GATEPLUS_S3",
+      "pid": 144245,
+      "step": 1700,
+      "target": 80000,
+      "updates_per_second": 6.930615582244671,
+      "time": 1793384548.3729882
+    },
+    "LB_LEGACY_GATEPLUS": {
+      "job": "LB_LEGACY_GATEPLUS",
+      "pid": 144246,
+      "step": 1700,
+      "target": 10000,
+      "updates_per_second": 6.974888933007965,
+      "time": 1793384544.3079991
+    },
+    "LB_FIXED_GATEPLUS": {
+      "job": "LB_FIXED_GATEPLUS",
+      "pid": 144247,
+      "step": 1700,
+      "target": 10000,
+      "updates_per_second": 6.998187699100022,
+      "time": 1793384543.580933
+    }
+  }
+}

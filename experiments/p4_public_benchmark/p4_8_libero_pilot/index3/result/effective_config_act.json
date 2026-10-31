@@ -1,0 +1,162 @@
+{
+  "status": "ENGINEERING_SMOKE_EXECUTED_FORMAL_PILOT_NOT_STARTED",
+  "native_default_config": {
+    "type": "act",
+    "n_obs_steps": 1,
+    "input_features": {},
+    "output_features": {},
+    "device": "cuda",
+    "use_amp": false,
+    "use_peft": false,
+    "push_to_hub": true,
+    "repo_id": null,
+    "private": null,
+    "tags": null,
+    "license": null,
+    "pretrained_path": null,
+    "chunk_size": 100,
+    "n_action_steps": 100,
+    "normalization_mapping": {
+      "VISUAL": "MEAN_STD",
+      "STATE": "MEAN_STD",
+      "ACTION": "MEAN_STD"
+    },
+    "vision_backbone": "resnet18",
+    "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1",
+    "replace_final_stride_with_dilation": false,
+    "pre_norm": false,
+    "dim_model": 512,
+    "n_heads": 8,
+    "dim_feedforward": 3200,
+    "feedforward_activation": "relu",
+    "n_encoder_layers": 4,
+    "n_decoder_layers": 1,
+    "use_vae": true,
+    "latent_dim": 32,
+    "n_vae_encoder_layers": 4,
+    "temporal_ensemble_coeff": null,
+    "dropout": 0.1,
+    "kl_weight": 10.0,
+    "optimizer_lr": 1e-05,
+    "optimizer_weight_decay": 0.0001,
+    "optimizer_lr_backbone": 1e-05
+  },
+  "actual_smoke_effective_config": {
+    "type": "act",
+    "n_obs_steps": 1,
+    "input_features": {
+      "observation.state": {
+        "type": "STATE",
+        "shape": [
+          8
+        ]
+      },
+      "observation.images.image": {
+        "type": "VISUAL",
+        "shape": [
+          3,
+          256,
+          256
+        ]
+      },
+      "observation.images.image2": {
+        "type": "VISUAL",
+        "shape": [
+          3,
+          256,
+          256
+        ]
+      }
+    },
+    "output_features": {
+      "action": {
+        "type": "ACTION",
+        "shape": [
+          7
+        ]
+      }
+    },
+    "device": "cuda",
+    "use_amp": false,
+    "use_peft": false,
+    "push_to_hub": true,
+    "repo_id": null,
+    "private": null,
+    "tags": null,
+    "license": null,
+    "pretrained_path": null,
+    "chunk_size": 100,
+    "n_action_steps": 100,
+    "normalization_mapping": {
+      "VISUAL": "MEAN_STD",
+      "STATE": "MEAN_STD",
+      "ACTION": "MEAN_STD"
+    },
+    "vision_backbone": "resnet18",
+    "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1",
+    "replace_final_stride_with_dilation": false,
+    "pre_norm": false,
+    "dim_model": 512,
+    "n_heads": 8,
+    "dim_feedforward": 3200,
+    "feedforward_activation": "relu",
+    "n_encoder_layers": 4,
+    "n_decoder_layers": 1,
+    "use_vae": true,
+    "latent_dim": 32,
+    "n_vae_encoder_layers": 4,
+    "temporal_ensemble_coeff": null,
+    "dropout": 0.1,
+    "kl_weight": 10.0,
+    "optimizer_lr": 1e-05,
+    "optimizer_weight_decay": 0.0001,
+    "optimizer_lr_backbone": 1e-05
+  },
+  "overrides": {
+    "input_features": {
+      "default": {},
+      "effective": {
+        "observation.state": {
+          "type": "STATE",
+          "shape": [
+            8
+          ]
+        },
+        "observation.images.image": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            256,
+            256
+          ]
+        },
+        "observation.images.image2": {
+          "type": "VISUAL",
+          "shape": [
+            3,
+            256,
+            256
+          ]
+        }
+      }
+    },
+    "output_features": {
+      "default": {},
+      "effective": {
+        "action": {
+          "type": "ACTION",
+          "shape": [
+            7
+          ]
+        }
+      }
+    }
+  },
+  "train_batch_size": 8,
+  "train_state_action_statistics": "train35_statistics.pt",
+  "train_stats_source_frames": 5476,
+  "training_budget_status": "100 disposable engineering updates only; no 10k policy job",
+  "stock_method_default_hyperparameters": true,
+  "matched_training_recipe_executed": false,
+  "same_seed_initialization_across_three_models": "NOT_RUN"
+}

@@ -1,0 +1,2 @@
+kind,step,path,sha256,complete_resume
+legacy,100,/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index5/result/smoke/legacy/checkpoints/000100/resume.pt,c8c556e97607f6dadecc1dadb0385ff6d883a1b0d0c11630c610dce179c2892c,True

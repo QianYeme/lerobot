@@ -1,0 +1,2 @@
+scope,executed_sim_steps,training_steps,training_throughput,inference_latency,note
+G0_G1_ONLY,60,0,,,Training/model inference not executed; no cost estimate presented as measurement

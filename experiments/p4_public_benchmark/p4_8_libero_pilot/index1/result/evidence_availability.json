@@ -1,0 +1,8 @@
+{
+  "training_manifest": "HEADER_ONLY_NO_TRAINING_GATE2_BLOCKED",
+  "checkpoint_manifest": "HEADER_ONLY_NO_POLICY_CHECKPOINT",
+  "object_path_diagnostics": "HEADER_ONLY_NO_P1_MODEL",
+  "eval_rollouts": "THREE_REAL_NO_POLICY_SMOKES_ONLY",
+  "cost_profile": "MODEL_TIMING_NOT_MEASURED",
+  "formal_pilot": "NOT_RUN"
+}

@@ -1,0 +1,10 @@
+{
+  "all_original_server_manifest_entries_sha256": "PASS",
+  "entries": 256,
+  "at": "2026-10-31T00:26:32+08:00",
+  "gpu": "2 MiB, 0 %",
+  "disk_free_bytes": 19804336128,
+  "training_processes": "",
+  "dino_source_snapshot_sha256": "2276293e2b78b95ed1d8eb033652a8e3e58621339a0ddcf06e155d70b2bb9e66",
+  "dino_source_snapshot_bytes": 260669
+}

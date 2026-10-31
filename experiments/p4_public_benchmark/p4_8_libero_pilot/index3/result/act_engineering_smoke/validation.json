@@ -1,0 +1,22 @@
+{
+  "status": "NATIVE_ACT_ENGINEERING_SMOKE_PASS",
+  "updates": 100,
+  "discarded_updates": true,
+  "formal_pilot_updates": 0,
+  "batch_size": 8,
+  "episode": 813,
+  "train_stats_frames": 5476,
+  "next_update_max_weight_difference": 0.0,
+  "paired_losses": [
+    3.694314479827881,
+    3.694314479827881
+  ],
+  "checkpoint": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index3/result/act_engineering_smoke/resume_000100.pt",
+  "checkpoint_sha256": "f84a24a6f76c82dfeef32cf5f83d37b274e422dd3f2b15a86fb57f8824bce621",
+  "parameters": 51600263,
+  "native_model_source": "/root/autodl-tmp/lerobot-main/experiments/p4_public_benchmark/p4_8_libero_pilot/index1/result/workspace/lerobot/src/lerobot/policies/act/modeling_act.py",
+  "normalization": "Train35 state/action statistics; ImageNet RGB once; flipH/W once",
+  "elapsed_s": 10.582953691482544,
+  "peak_memory_bytes": 1470090240,
+  "does_not_validate_generalization_or_closed_loop": true
+}

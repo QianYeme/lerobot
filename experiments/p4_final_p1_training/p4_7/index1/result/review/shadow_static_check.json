@@ -1,0 +1,6 @@
+{
+  "status": "PASS_STATIC",
+  "send_action_calls": 0,
+  "hardware_test": "NOT_RUN",
+  "scope": "AST review only; actual shadow hardware setup remains operator responsibility"
+}

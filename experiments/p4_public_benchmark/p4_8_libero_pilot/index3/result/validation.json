@@ -1,0 +1,37 @@
+{
+  "result_ready": true,
+  "G2": "G2_AUTO_PROTOTYPE_BLOCKED",
+  "underlying_gate_status": "G2_AUTO_PROTOTYPE_UNRELIABLE",
+  "TIMEBASE": "TIMEBASE_BLOCKED",
+  "native_timebase_engineering_interface": "PASS",
+  "TRAIN": "TRAIN_PILOT_NOT_STARTED",
+  "SIM": "SIM_ROLLOUT_BLOCKED",
+  "formal_updates": {
+    "ACT-LIBERO": 0,
+    "P1-LIBERO-LEGACY": 0,
+    "P1-LIBERO-FIXED": 0
+  },
+  "native_act_smoke": "NATIVE_ACT_ENGINEERING_SMOKE_PASS",
+  "native_act_next_update_difference": 0.0,
+  "actual_dino_probe": "PASS",
+  "prototype_bank_approved_for_training": false,
+  "prototype_deterministic_repeat": "PASS",
+  "train_only_membership": "PASS",
+  "thresholds_changed_after_outputs": false,
+  "independent_builder_review": "PENDING",
+  "independent_redteam_review": "PENDING",
+  "audit_scripts_compile": "PASS (5 scripts)",
+  "artifact_json_parse": "PASS",
+  "smoke_metrics_100_rows": "PASS",
+  "unexecuted_model_tables_header_only": "PASS",
+  "git_diff_check": {
+    "full_worktree": {
+      "exit_code": 2,
+      "status": "FAIL_PREEXISTING_UNRELATED_GUIDE_WHITESPACE"
+    },
+    "changed_context_files": {
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  }
+}

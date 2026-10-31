@@ -1,0 +1,16 @@
+{
+  "status": "ALL256_R5_MANIFEST_ASSETS_UNCHANGED_AFTER_R6",
+  "entries": 256,
+  "time": "2026-10-31T01:40:40+08:00",
+  "gpu": "NVIDIA GeForce RTX 5090, 2 MiB, 0 %",
+  "active_diagnostic_or_training_jobs": "",
+  "disk_free_bytes": 19746664448,
+  "r6_executed_source_hashes": {
+    "p48_r6_prepare.py": "254df9eb5d3a0616a7af26efcb71566aa5ce7104318d9b9793098c27e185b98f",
+    "p48_r6_probe.py": "6d53160e070db98702a97b95ca6e1dee7c9a213a2791e587a2d7dc9fba8cbd91",
+    "p48_r6_queue.py": "eb73f7029fefb8790b7a766d012c6e52de419be91f2b7c86ba1213140db2047e",
+    "p48_r6_render_summary.py": "682be1626591259ff87e003436e928861f300f111aca3cfd1e7f72a4c9fd79ac",
+    "p48_r6_parameter_deltas.py": "11a9e154ac221e7730091d9f13d46f2cfb0bf50c6cdb88f86cd4661bba964580",
+    "p48_r6_complete_chunk_metrics.py": "ad8a236d0c7c87f001bc0f16d362983d4a941e7d80ceb8121191e02a4a23c871"
+  }
+}
